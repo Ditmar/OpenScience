@@ -1,0 +1,41 @@
+---
+import Layout from '@layouts/Layout.astro';
+import type { Movie } from '../../types/movies.dto';
+const { id } = Astro.params;
+//https://api.themoviedb.org/3/movie/823464?api_key=bb207f6bb3ec02ab983a14ed248eebb3&language=en-US
+
+const response = await fetch(
+  `${Astro.locals.API_END_POINT}/3/movie/${id}?api_key=${Astro.locals.API_KEY}u&language=en-US`
+);
+const data: Movie = await response.json();
+console.log(data);
+const urlBase = Astro.locals.API_BASE_ROUTE;
+if (data.success === false) {
+  Astro.response.status = 500;
+}
+---
+
+<Layout title="">
+  <div class="row">
+    <div class="container">
+      <div class="card" style="width: 30rem;">
+        <img
+          src={urlBase + data.poster_path}
+          class="card-img-top"
+          alt={data.original_title}
+        />
+        <div class="card-body">
+          <h5 class="card-title">{data.original_title}</h5>
+          <p class="card-text">
+            {data.original_title}
+            <br />
+            {data.original_language}
+            <br />
+            {data.overview}
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
