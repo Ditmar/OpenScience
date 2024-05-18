@@ -1,0 +1,22 @@
+module.exports = {
+  ignorePatterns: [
+    'node_modules/',
+    'dist/',
+    'build/',
+    'public/',
+    'stories',
+    'style-guide',
+    'agnosticStyles/',
+    'storybook-static/',
+    'storybook-global/',
+    '.eslintrc.js',
+    '.eslintrc.cjs',
+    'astro-config.ts',
+    'vite.config.ts',
+    'vite.config.js',
+    'vitest.config.unit.ts',
+    'vitest.config.e2e.ts',
+    '*.d.ts',
+    'vite.config.ts.timestamp-*.mjs',
+  ],
+};

@@ -1,0 +1,30 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+      "declaration": true,
+      "declarationMap": true,
+      "inlineSources": false,
+      "noUnusedLocals": false,
+      "noUnusedParameters": false,
+      "preserveWatchOutput": true,
+      "target": "ESNext",
+      "module": "ESNext",
+      "moduleResolution": "Bundler",
+      "allowImportingTsExtensions": true,
+      "resolveJsonModule": true,
+      "verbatimModuleSyntax": true,
+      "isolatedModules": true,
+      "noEmit": true,
+      "forceConsistentCasingInFileNames": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "allowJs": true,
+      "strict": true,
+      "strictNullChecks": true,
+      "plugins": [
+        {
+          "name": "typescript-plugin-css-modules"
+        }
+      ]
+    }
+  }
