@@ -8,7 +8,6 @@ const response = await fetch(
   `${Astro.locals.API_END_POINT}/3/movie/${id}?api_key=${Astro.locals.API_KEY}u&language=en-US`
 );
 const data: Movie = await response.json();
-console.log(data);
 const urlBase = Astro.locals.API_BASE_ROUTE;
 if (data.success === false) {
   Astro.response.status = 500;

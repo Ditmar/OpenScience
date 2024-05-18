@@ -1,5 +1,5 @@
-import { defineMiddleware } from "astro:middleware";
-import type{ Config } from "../types/config";
+import { defineMiddleware } from 'astro:middleware';
+import type{ Config } from '../types/config';
 export const errors = defineMiddleware ( async(context, next) => {
 
     const defineErrorPages: Config = {

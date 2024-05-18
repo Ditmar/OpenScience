@@ -1,5 +1,5 @@
-import { defineMiddleware } from "astro:middleware";
-import type { Locals } from "src/types/locals";
+import { defineMiddleware } from 'astro:middleware';
+import type { Locals } from 'src/types/locals';
 
 export const loadEnvs = defineMiddleware ( (context, next) => {
     //controlar si existen 
