@@ -1,9 +1,10 @@
 ---
-import Layout from '@layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
 import type { Movie } from '../../components/movies/dto/Movie';
 
 const { search } = Astro.params;
-const endpoint = `${Astro.locals.API_END_POINT}/3/search/movie?api_key=${Astro.locals.API_KEY}&language=en-US&query=${search}&page=1&include_adult=false`;
+const endpoint = 
+`${Astro.locals.API_END_POINT}/3/search/movie?api_key=${Astro.locals.API_KEY}&language=en-US&query=${search}&page=1&include_adult=false`;
 const response = await fetch(endpoint);
 const data = await response.json();
 const movies: Movie[] = data.results as Movie[];

@@ -11,7 +11,7 @@ module.exports = {
     'check-file/filename-naming-convention': [
       'error',
       {
-        '{**/!(index|main).{jsx,tsx,svelte},**/!(*pages*)/!(index).astro}':
+        '{**/!(index|main).{jsx,tsx,svelte},**/!(*pages*)/!/^[A-Z]([A-Za-z0-9]+)?([w+])?.astro$/':
           'PASCAL_CASE',
         '{**/!(index|main).{js,ts}}': 'KEBAB_CASE',
       },
