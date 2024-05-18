@@ -1,3 +1,3 @@
 export interface Config {
-    path: string;
+  path: string;
 }
