@@ -1,8 +1,5 @@
 module.exports = {
-  plugins: [
-    require.resolve('prettier-plugin-astro'),
-    require.resolve('prettier-plugin-svelte'),
-  ],
+  plugins: [require.resolve('prettier-plugin-astro'), require.resolve('prettier-plugin-svelte')],
   overrides: [
     {
       files: '*.astro',
@@ -26,4 +23,5 @@ module.exports = {
   svelteStrictMode: true,
   svelteAllowShorthand: false,
   svelteIndentScriptAndStyle: false,
+  endOfLine: 'lf',
 };

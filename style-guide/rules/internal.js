@@ -17,11 +17,7 @@ module.exports = {
     'import/first': 0,
     'import/prefer-default-export': 0,
     'no-shadow': 'off',
-    'lines-between-class-members': [
-      'off',
-      'always',
-      { exceptAfterSingleLine: true },
-    ],
+    'lines-between-class-members': ['off', 'always', { exceptAfterSingleLine: true }],
     'no-useless-constructor': 'off',
     'react/require-default-props': ['off'],
     'react/jsx-key': [

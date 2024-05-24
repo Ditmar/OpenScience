@@ -1,36 +1,32 @@
 {
-    "$schema": "https://json.schemastore.org/stylelintrc",
-    "extends": "stylelint-config-standard",
-    "plugins": [
-      "stylelint-order",
-      "stylelint-declaration-strict-value",
-      "stylelint-scss"
-    ],
-    "rules": {
-      "at-rule-no-unknown": null,
-      "import-notation": null,
-      "scss/at-rule-no-unknown": true,
-      "selector-class-pattern": "^[a-z0-9\\-]+(__[a-z0-9\\-]+)?(--[a-z0-9\\-]+){0,2}$",
-      "property-no-unknown": true,
-      "scale-unlimited/declaration-strict-value": [["color", "background-color"], {
+  "$schema": "https://json.schemastore.org/stylelintrc",
+  "extends": "stylelint-config-standard",
+  "plugins": ["stylelint-order", "stylelint-declaration-strict-value", "stylelint-scss"],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "import-notation": null,
+    "scss/at-rule-no-unknown": true,
+    "selector-class-pattern": "^[a-z0-9\\-]+(__[a-z0-9\\-]+)?(--[a-z0-9\\-]+){0,2}$",
+    "property-no-unknown": true,
+    "scale-unlimited/declaration-strict-value": [
+      ["color", "background-color"],
+      {
         "ignoreKeywords": ["transparent", "inherit", "currentColor"],
         "ignoreFunctions": false
-      }],
-      "max-nesting-depth": 3,
-      "order/order": [
-        "custom-properties",
-        "declarations"
-      ],
-      "order/properties-alphabetical-order": true
-    },
-    "overrides": [
-      {
-        "files": ["**/*.scss","**/*.module.scss","**/*.css"],
-        "customSyntax": "postcss-scss"
-      },
-      {
-        "files": ["**/*.svelte"],
-        "customSyntax": "postcss-html"
       }
-    ]
-  }
+    ],
+    "max-nesting-depth": 3,
+    "order/order": ["custom-properties", "declarations"],
+    "order/properties-alphabetical-order": true
+  },
+  "overrides": [
+    {
+      "files": ["**/*.scss", "**/*.module.scss", "**/*.css"],
+      "customSyntax": "postcss-scss"
+    },
+    {
+      "files": ["**/*.svelte"],
+      "customSyntax": "postcss-html"
+    }
+  ]
+}

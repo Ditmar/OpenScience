@@ -1,7 +1,7 @@
-import type { Locals } from "./types/locals";
+import type { Locals } from './types/locals';
 
-declare module "astro" {
-    interface AstroGlobal {
-        locals : Locals
-    }
+declare module 'astro' {
+  interface AstroGlobal {
+    locals: Locals;
+  }
 }
