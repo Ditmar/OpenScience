@@ -9,11 +9,13 @@
     "astro": "astro",
     "lint": "npx eslint .",
     "lint:fix": "npx eslint . --fix",
+    "prettier:fix": "npx prettier --write .",
     "lint:css": "stylelint '**/*.{css,scss}'",
     "lint:css:fix": "stylelint '**/*.{css,scss}' --fix",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
     "test:watch": "vitest"
   },
   "engines": {
@@ -52,6 +54,7 @@
     "@types/jest": "29.5.12",
     "@typescript-eslint/eslint-plugin": "7.9.0",
     "@typescript-eslint/parser": "7.9.0",
+    "@vitest/coverage-v8": "1.6.0",
     "eslint": "8.56.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-airbnb-base": "15.0.0",

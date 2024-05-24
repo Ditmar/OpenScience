@@ -22,5 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+coverage
 
 *storybook.log
