@@ -16,6 +16,10 @@
     "test": "vitest run",
     "test:watch": "vitest"
   },
+  "engines": {
+    "node": "18.19",
+    "yarn": "1.22.21"
+  },
   "dependencies": {
     "@astrojs/check": "0.5.10",
     "@astrojs/node": "8.2.5",
