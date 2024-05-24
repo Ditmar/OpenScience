@@ -1,4 +1,4 @@
 {
     "extends": "./style-guide/stylelint.json",
-    "ignoreFiles": ["./src/stories/**"]
+    "ignoreFiles": ["./src/examples/stories/**"]
 }
