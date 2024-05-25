@@ -1,3 +1,2 @@
-#!/bin/sh
-yarn lint
-yarn lint:css
+#!/usr/bin/env sh
+. "${0%/*}/h"

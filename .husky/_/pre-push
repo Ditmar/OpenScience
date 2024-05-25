@@ -1,2 +1,2 @@
-#!/bin/sh
-yarn test
+#!/usr/bin/env sh
+. "${0%/*}/h"
