@@ -1,6 +1,6 @@
 {
-  "name": "movies",
-  "version": "0.0.1",
+  "name": "opensicence",
+  "version": "0.1.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
