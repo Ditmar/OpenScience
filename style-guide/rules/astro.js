@@ -1,4 +1,12 @@
 module.exports = {
+  overrides: [
+    {
+      files: ['*.astro'],
+      rules: {
+        'import/no-unresolved': 'off',
+      },
+    },
+  ],
   rules: {
     'import/extensions': [
       'error',

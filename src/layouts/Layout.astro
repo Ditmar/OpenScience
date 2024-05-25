@@ -1,5 +1,7 @@
 ---
-interface Props {
+import Button from '../ui/components/atoms/button/Button';
+
+export interface Props {
   title: string;
 }
 const { title } = Astro.props;
@@ -27,15 +29,22 @@ const { title } = Astro.props;
   </head>
   <body>
     <slot />
+    <Button iconAfter="/icons/google.svg" client:only> Test Button </Button>
   </body>
 </html>
+
 <style is:global>
   :root {
-    --ads-primary-main:"#0793bf";
-    --ads-secondary-main:"#004369";
-    --ads-text-main:"#02322c";
-    --ads-text-mian-hover:"#000000";
-    --ads-background-main:"#f5f5f5";
-    --ads-color-main:"#ffffff";
+    --ads-primary-main: #0793bf;
+    --ads-secondary-main: #004369;
+    --ads-text-main: #02322c;
+    --ads-text-mian-hover: #000000;
+    --ads-background-main: #f5f5f5;
+    --ads-color-main: #ffffff;
+    /* break points */
+    --breakpoint-small: 480px;
+    --breakpoint-medium: 768px;
+    --breakpoint-large: 1024px;
+    --breakpoint-extra-large: 1280px;
   }
 </style>
