@@ -53,3 +53,26 @@
 ### Playwright
 - **Description**: Playwright is a browser automation tool that enables end-to-end testing with a powerful and flexible API.
 - **Documentation**: [Playwright Docs](https://playwright.dev/docs/intro)
+
+- ## Installation and Usage
+
+**Clone the repository**:
+```sh
+git clone https://github.com/your-username/openscience.git
+cd openscience
+```
+### Install dependencies
+```sh
+yarn install
+```
+### Start the development environment:
+```sh
+yarn dev
+```
+### Contribution
+To contribute to this project, please follow these steps:
+Fork the repository.
+Create a new branch (git checkout -b feature/new-feature).
+Make your changes and commit them (git commit -am 'Add new feature').
+Push your changes (git push origin feature/new-feature).
+Create a Pull Request.
