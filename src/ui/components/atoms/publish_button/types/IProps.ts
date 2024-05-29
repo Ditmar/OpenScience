@@ -8,6 +8,7 @@ export interface IProps {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   variant: 'primary' | 'secondary' | 'tertiary' | 'warning' | 'danger';
   onClick?: () => void;
 =======
@@ -28,4 +29,7 @@ export interface IProps {
   variant: 'primary' | 'secondary' | 'tertiary' | 'warning' | 'danger';
   onClick?: () => void;
 >>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
+=======
+  variant?: string;
+>>>>>>> 3e47174 (feature(common):added SEM-040)
 }
