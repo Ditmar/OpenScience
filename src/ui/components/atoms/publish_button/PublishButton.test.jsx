@@ -67,6 +67,9 @@ describe('Testing PublishButton React Component', () => {
     const labelElement = screen.getByText(/PUBLICAR ARTICULO/i);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 57ecd38 (feature(common):added SEM-040)
 
     expect(buttonElement).toHaveClass('buttonPublish__button');
     expect(labelElement).toHaveClass('buttonPublish__label');
@@ -187,10 +190,18 @@ describe('Testing PublishButton React Component', () => {
     expect(labelElement).toHaveStyle('text-transform: uppercase');
 >>>>>>> 3e47174 (feature(common):added SEM-040)
 =======
+=======
+    screen.debug();
+
+    expect(buttonElement).toHaveClass('buttonPublish__button');
+    expect(buttonElement).toHaveStyle({ background: '#0793bf' });
+    expect(labelElement).toHaveClass('buttonPublish__label');
+>>>>>>> 85d6f72 (feature(common):added SEM-040)
 
     const styles = window.getComputedStyle(labelElement);
 
     expect(styles.color).toBe('rgb(255, 255, 255)');
+<<<<<<< HEAD
 >>>>>>> d6e7f28 (feature(common):added SEM-040)
 =======
 >>>>>>> c09f0e3 (feature(common):added SEM-040 changes)
@@ -198,6 +209,7 @@ describe('Testing PublishButton React Component', () => {
 >>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
 =======
 >>>>>>> 85d6f72 (feature(common):added SEM-040)
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 57ecd38 (feature(common):added SEM-040)
 =======
@@ -373,5 +385,7 @@ describe('Testing Button React Component', () => {
 >>>>>>> d6e7f28 (feature(common):added SEM-040)
 =======
 >>>>>>> c09f0e3 (feature(common):added SEM-040 changes)
+=======
+>>>>>>> 57ecd38 (feature(common):added SEM-040)
   });
 });
