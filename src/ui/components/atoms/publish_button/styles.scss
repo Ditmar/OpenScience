@@ -124,6 +124,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 8882fca (feature(common):added SEM-040 changes)
@@ -164,6 +165,9 @@
 >>>>>>> 261e345 (feature(common):added SEM-040 changes)
 =======
 >>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
+=======
+  background: $ads-primary-main ;
+>>>>>>> ed0ea7c (feature(common):added SEM-040 changes)
   border: 2px solid transparent;
   border-radius: 1.563rem;
   padding: 0.2rem;
@@ -301,7 +305,6 @@
 =======
     padding:5px 20px;
   }
-
 
   @include respond-to('medium') {
     width: 30%;
@@ -1129,11 +1132,12 @@
   @include respond-to('extra-large') {
     width: 25%;
   }
+
+  &:hover{
+    background: $ads-secondary-main;
+  }
 }
 
-.buttonPublish__button:hover {
-  background: $ads-secondary-main;
-}
 
 .buttonPublish__label {
   color: $ads-color-main;
@@ -1141,8 +1145,10 @@
   text-transform: uppercase;
   text-align: center;
   font-weight: 700;
+
   @include respond-to('small') {
     font-size: 18px;
 >>>>>>> 3e47174 (feature(common):added SEM-040)
   }
+
 }
