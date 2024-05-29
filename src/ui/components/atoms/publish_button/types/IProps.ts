@@ -18,6 +18,7 @@ export interface IProps {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 841618e (feature(common):added SEM-040 changes)
 =======
@@ -88,4 +89,6 @@ export interface IProps {
 =======
   variant?: string;
 >>>>>>> dbe8bf5 (feature(common):added SEM-040)
+=======
+>>>>>>> 3d4ac0c (feature(common):added SEM-040 changes)
 }
