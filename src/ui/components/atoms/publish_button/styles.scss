@@ -8,7 +8,7 @@
 }
 
 .buttonPublish__button {
-  background: $ads-primary-main !important;
+  background: $ads-primary-main ;
   border: 2px solid transparent;
   border-radius: 1.563rem;
   padding: 1rem;
@@ -17,7 +17,6 @@
     width: 35%;
     padding:5px 20px;
   }
-
 
   @include respond-to('medium') {
     width: 30%;
@@ -32,11 +31,12 @@
   @include respond-to('extra-large') {
     width: 25%;
   }
+
+  &:hover{
+    background: $ads-secondary-main;
+  }
 }
 
-.buttonPublish__button:hover {
-  background: $ads-secondary-main;
-}
 
 .buttonPublish__label {
   color: $ads-color-main;
@@ -44,7 +44,9 @@
   text-transform: uppercase;
   text-align: center;
   font-weight: 700;
+
   @include respond-to('small') {
     font-size: 18px;
   }
+
 }
