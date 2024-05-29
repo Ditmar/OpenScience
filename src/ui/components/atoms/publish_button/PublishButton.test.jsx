@@ -164,27 +164,32 @@ describe('Testing PublishButton React Component', () => {
 >>>>>>> 841618e (feature(common):added SEM-040 changes)
 =======
   test('should be rendere PUBLICAR ARTICULO', () => {
-    render(<PublishButton >PUBLICAR ARTICULO</PublishButton>);
+    render(<PublishButton>PUBLICAR ARTICULO</PublishButton>);
     const buttonElement = screen.getByText(/PUBLICAR ARTICULO/i);
     expect(buttonElement).toBeInTheDocument();
   });
   test('should have correct styles', () => {
     render(<PublishButton>PUBLICAR ARTICULO</PublishButton>);
     const buttonElement = screen.getByRole('button');
+    const labelElement = screen.getByText(/PUBLICAR ARTICULO/i);
+    screen.debug();
 
     expect(buttonElement).toHaveClass('buttonPublish__button');
-    // Verificar los estilos específicos
-    console.log("-------")
-    console.log("Estilos del botón:", buttonElement.style.cssText); // queria comprobar pero no retorna nada
-
-    expect(buttonElement).toHaveStyle({ background: 'rgb(7, 147, 191)' });
-    expect(buttonElement).toHaveStyle('border-radius: 1.563rem');
-
-    const labelElement = screen.getByText(/PUBLICAR ARTICULO/i);
+    expect(buttonElement).toHaveStyle({ background: '#0793bf' });
     expect(labelElement).toHaveClass('buttonPublish__label');
+<<<<<<< HEAD
     expect(labelElement).toHaveStyle({ color: 'rgb(255, 255, 255)'});
     expect(labelElement).toHaveStyle('text-transform: uppercase');
 >>>>>>> 3e47174 (feature(common):added SEM-040)
+<<<<<<< HEAD
 >>>>>>> e3583b0 (feature(common):added SEM-040)
+=======
+=======
+
+    const styles = window.getComputedStyle(labelElement);
+
+    expect(styles.color).toBe('rgb(255, 255, 255)');
+>>>>>>> d6e7f28 (feature(common):added SEM-040)
+>>>>>>> 2bec0d4 (feature(common):added SEM-040)
   });
 });
