@@ -9,6 +9,7 @@ function PublishButton(props: IProps) {
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
   const { children, variant, onClick } = props;
   return (
+<<<<<<< HEAD
     <div className="buttonPublish">
       <button
         className={`buttonPublish__button buttonPublish__button--${variant}`}
@@ -76,6 +77,11 @@ function PublishButton(props: IProps) {
           {children}
         </span>
 >>>>>>> 85d6f72 (feature(common):added SEM-040)
+=======
+    <div className="buttonPublish" data-testid="publish-button">
+      <button className="buttonPublish__button">
+        <span className="buttonPublish__label">{children}</span>
+>>>>>>> fb4f33d (feature(common):added SEM-040 changes)
       </button>
     </div>
   );

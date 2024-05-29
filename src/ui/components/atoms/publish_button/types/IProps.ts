@@ -6,6 +6,7 @@ export interface IProps {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   variant: 'primary' | 'secondary' | 'tertiary' | 'warning' | 'danger';
   onClick?: () => void;
 =======
@@ -20,4 +21,6 @@ export interface IProps {
 =======
   variant?: string;
 >>>>>>> 64b0a1d (feature(common):added SEM-040)
+=======
+>>>>>>> fb4f33d (feature(common):added SEM-040 changes)
 }
