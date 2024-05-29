@@ -15,7 +15,10 @@ const meta = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e3583b0 (feature(common):added SEM-040)
 =======
 >>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
 >>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
@@ -56,7 +59,12 @@ const meta = {
       options: ['primary', 'secondary', 'tertiary', 'warning', 'danger'],
     },
 >>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
+<<<<<<< HEAD
 >>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
+=======
+=======
+>>>>>>> 3e47174 (feature(common):added SEM-040)
+>>>>>>> e3583b0 (feature(common):added SEM-040)
   },
 } as Meta<typeof PublishButton>;
 
@@ -76,10 +84,13 @@ export const Primary: Story = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 96aa7d9 (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> e3583b0 (feature(common):added SEM-040)
     children: 'PUBLICAR ARTICULO',
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -294,6 +305,12 @@ export const Danger: Story = {
 >>>>>>> 701646e (feature(common):added changes per PR comments SEM-040)
     variant: 'danger',
 >>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
+<<<<<<< HEAD
 >>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
+=======
+=======
+    children: 'PUBLICAR ARTICULO',
+>>>>>>> 3e47174 (feature(common):added SEM-040)
+>>>>>>> e3583b0 (feature(common):added SEM-040)
   },
 };

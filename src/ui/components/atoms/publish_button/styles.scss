@@ -7,8 +7,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> e3583b0 (feature(common):added SEM-040)
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 =======
 >>>>>>> 3e47174 (feature(common):added SEM-040)
@@ -31,7 +34,12 @@
 =======
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 >>>>>>> 89b403a (feature(common):added changes per PR comments SEM-040)
+<<<<<<< HEAD
 >>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
+=======
+=======
+>>>>>>> 3e47174 (feature(common):added SEM-040)
+>>>>>>> e3583b0 (feature(common):added SEM-040)
 
 .buttonPublish {
   width: 100%;
@@ -55,11 +63,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 8882fca (feature(common):added SEM-040 changes)
 =======
 >>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> e3583b0 (feature(common):added SEM-040)
 =======
 >>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
 =======
@@ -77,10 +88,16 @@
   border: 2px solid transparent;
   border-radius: 1.563rem;
 <<<<<<< HEAD
+=======
+  background: $ads-primary-main;
+  border: 2px solid transparent;
+  border-radius: 1.563rem;
+>>>>>>> 3e47174 (feature(common):added SEM-040)
   padding: 1rem;
   width: 50%;
   @include respond-to('small') {
     width: 35%;
+<<<<<<< HEAD
     padding: 0.313rem 1.25rem;
   }
 >>>>>>> 261e345 (feature(common):added SEM-040 changes)
@@ -101,10 +118,20 @@
 =======
     width: 30%;
     padding: 0.313rem 0rem;
+=======
+    padding:5px 20px;
+  }
+
+
+  @include respond-to('medium') {
+    width: 30%;
+    padding: 5px 0px;
+>>>>>>> 3e47174 (feature(common):added SEM-040)
   }
 
   @include respond-to('large') {
     width: 25%;
+<<<<<<< HEAD
     padding: 0.313rem 0rem;
 >>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
   }
@@ -525,6 +552,31 @@
     font-size: 1.5rem;
     line-height: 1.829rem;
 >>>>>>> 89b403a (feature(common):added changes per PR comments SEM-040)
+<<<<<<< HEAD
 >>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
+=======
+=======
+    padding: 5px 0px;
+  }
+
+  @include respond-to('extra-large') {
+    width: 25%;
+  }
+}
+
+.buttonPublish__button:hover {
+  background: $ads-secondary-main;
+}
+
+.buttonPublish__label {
+  color: $ads-color-main;
+  font-size: $ads-size-main;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  @include respond-to('small') {
+    font-size: 18px;
+>>>>>>> 3e47174 (feature(common):added SEM-040)
+>>>>>>> e3583b0 (feature(common):added SEM-040)
   }
 }
