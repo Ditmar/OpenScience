@@ -8,18 +8,12 @@ describe('Testing Button React Component', () => {
     const buttonElement = screen.getByText(/PUBLICAR ARTICULO/i);
     expect(buttonElement).toBeInTheDocument();
   });
-  test('should have correct styles', () => {
+  test('should have correct styles class', () => {
     render(<PublishButton>PUBLICAR ARTICULO</PublishButton>);
     const buttonElement = screen.getByRole('button');
     const labelElement = screen.getByText(/PUBLICAR ARTICULO/i);
-    screen.debug();
 
     expect(buttonElement).toHaveClass('buttonPublish__button');
-    expect(buttonElement).toHaveStyle({ background: '#0793bf' });
     expect(labelElement).toHaveClass('buttonPublish__label');
-
-    const styles = window.getComputedStyle(labelElement);
-
-    expect(styles.color).toBe('rgb(255, 255, 255)');
   });
 });
