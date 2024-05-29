@@ -23,6 +23,7 @@ describe('Testing PublishButton React Component', () => {
     const buttonElement = screen.getByRole('button');
     const labelElement = screen.getByText(/PUBLICAR ARTICULO/i);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     expect(buttonElement).toHaveClass('buttonPublish__button');
     expect(labelElement).toHaveClass('buttonPublish__label');
@@ -53,10 +54,12 @@ describe('Testing PublishButton React Component', () => {
 =======
 =======
     screen.debug();
+=======
+>>>>>>> fb4f33d (feature(common):added SEM-040 changes)
 
     expect(buttonElement).toHaveClass('buttonPublish__button');
-    expect(buttonElement).toHaveStyle({ background: '#0793bf' });
     expect(labelElement).toHaveClass('buttonPublish__label');
+<<<<<<< HEAD
 >>>>>>> 85d6f72 (feature(common):added SEM-040)
 
     const styles = window.getComputedStyle(labelElement);
@@ -135,6 +138,11 @@ describe('Testing PublishButton React Component', () => {
 >>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
 =======
 >>>>>>> 85d6f72 (feature(common):added SEM-040)
+<<<<<<< HEAD
 >>>>>>> 57ecd38 (feature(common):added SEM-040)
+=======
+=======
+>>>>>>> fb4f33d (feature(common):added SEM-040 changes)
+>>>>>>> 841618e (feature(common):added SEM-040 changes)
   });
 });
