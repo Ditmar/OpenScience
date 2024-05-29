@@ -340,9 +340,26 @@ function PublishButton(props: IProps) {
   const { children } = props;
   return (
     <div className="buttonPublish">
+<<<<<<< HEAD
       <button className="buttonPublish__button">
         <span className="buttonPublish__label">{children}</span>
 >>>>>>> 64b0a1d (feature(common):added SEM-040)
+=======
+      <button
+        className="buttonPublish__button"
+        style={{
+          background: '#0793bf',
+        }}
+      >
+        <span
+          className="buttonPublish__label"
+          style={{
+            color: '#fff',
+          }}
+        >
+          {children}
+        </span>
+>>>>>>> 85d6f72 (feature(common):added SEM-040)
       </button>
     </div>
   );
