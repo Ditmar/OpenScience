@@ -8,10 +8,13 @@ const meta = {
     onClick: {
       action: 'click',
     },
+<<<<<<< HEAD
     variant: {
       control: 'select',
       options: ['primary', 'secondary', 'tertiary', 'warning', 'danger'],
     },
+=======
+>>>>>>> 3e47174 (feature(common):added SEM-040)
   },
 } as Meta<typeof PublishButton>;
 
@@ -22,6 +25,7 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     children: 'PUBLICAR ARTICULO',
+<<<<<<< HEAD
     variant: 'primary',
   },
 };
@@ -51,5 +55,7 @@ export const Danger: Story = {
   args: {
     children: 'TODO: until the implementation of the task [SEM - 209]',
     variant: 'danger',
+=======
+>>>>>>> 3e47174 (feature(common):added SEM-040)
   },
 };
