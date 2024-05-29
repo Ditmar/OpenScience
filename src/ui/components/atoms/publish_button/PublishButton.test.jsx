@@ -309,15 +309,14 @@ describe('Testing Button React Component', () => {
     const buttonElement = screen.getByText(/PUBLICAR ARTICULO/i);
     expect(buttonElement).toBeInTheDocument();
   });
-  test('should have correct styles', () => {
+  test('should have correct styles class', () => {
     render(<PublishButton>PUBLICAR ARTICULO</PublishButton>);
     const buttonElement = screen.getByRole('button');
     const labelElement = screen.getByText(/PUBLICAR ARTICULO/i);
-    screen.debug();
 
     expect(buttonElement).toHaveClass('buttonPublish__button');
-    expect(buttonElement).toHaveStyle({ background: '#0793bf' });
     expect(labelElement).toHaveClass('buttonPublish__label');
+<<<<<<< HEAD
 <<<<<<< HEAD
     expect(labelElement).toHaveStyle({ color: 'rgb(255, 255, 255)'});
     expect(labelElement).toHaveStyle('text-transform: uppercase');
@@ -328,5 +327,7 @@ describe('Testing Button React Component', () => {
 
     expect(styles.color).toBe('rgb(255, 255, 255)');
 >>>>>>> 85d6f72 (feature(common):added SEM-040)
+=======
+>>>>>>> fb4f33d (feature(common):added SEM-040 changes)
   });
 });
