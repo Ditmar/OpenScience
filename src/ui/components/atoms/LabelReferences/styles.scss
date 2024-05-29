@@ -1,0 +1,49 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.label-references {
+  display: inline; 
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  text-align: left;
+  text-transform: uppercase;
+  
+  @include respond-to('small') {
+    width: 80px;
+  }
+
+  @include respond-to('medium') {
+    width: 100px;
+  }
+
+  @include respond-to('large') {
+    width: 120px;
+  }
+}
+
+.label-references-small {
+  font-size: 16px;
+}
+
+.label-references-medium {
+  font-size: 32px;
+}
+
+.label-references-large {
+  font-size: 48px;
+}
+
+.label-references-primary {
+  color: $ads-text-mian-hover; 
+}
+
+.label-references-main {
+  color: $ads-color-main; 
+}
+
+.label-references-main-bg {
+  background-color: $ads-primary-main; 
+  padding: 0 4px; 
+}
