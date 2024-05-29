@@ -2,12 +2,15 @@
 @import '../../../../globals/mixins';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 =======
 >>>>>>> 3e47174 (feature(common):added SEM-040)
 =======
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 >>>>>>> 647d254 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 64b0a1d (feature(common):added SEM-040)
 
 .buttonPublish {
   width: 100%;
@@ -16,6 +19,7 @@
 }
 
 .buttonPublish__button {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -176,5 +180,45 @@
     font-size: 1.5rem;
     line-height: 1.829rem;
 >>>>>>> 647d254 (feature(common):added changes per PR comments SEM-040)
+=======
+  background: $ads-primary-main;
+  border: 2px solid transparent;
+  border-radius: 1.563rem;
+  padding: 1rem;
+  width: 50%;
+  @include respond-to('small') {
+    width: 35%;
+    padding:5px 20px;
+  }
+
+
+  @include respond-to('medium') {
+    width: 30%;
+    padding: 5px 0px;
+  }
+
+  @include respond-to('large') {
+    width: 25%;
+    padding: 5px 0px;
+  }
+
+  @include respond-to('extra-large') {
+    width: 25%;
+  }
+}
+
+.buttonPublish__button:hover {
+  background: $ads-secondary-main;
+}
+
+.buttonPublish__label {
+  color: $ads-color-main;
+  font-size: $ads-size-main;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  @include respond-to('small') {
+    font-size: 18px;
+>>>>>>> 64b0a1d (feature(common):added SEM-040)
   }
 }

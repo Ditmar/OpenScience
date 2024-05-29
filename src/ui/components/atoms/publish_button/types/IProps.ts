@@ -5,6 +5,7 @@ export interface IProps {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   variant: 'primary' | 'secondary' | 'tertiary' | 'warning' | 'danger';
   onClick?: () => void;
 =======
@@ -16,4 +17,7 @@ export interface IProps {
   variant: 'primary' | 'secondary' | 'tertiary' | 'warning' | 'danger';
   onClick?: () => void;
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
+=======
+  variant?: string;
+>>>>>>> 64b0a1d (feature(common):added SEM-040)
 }

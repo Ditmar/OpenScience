@@ -10,6 +10,7 @@ const meta = {
     },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     variant: {
       control: 'select',
       options: ['primary', 'secondary', 'tertiary', 'warning', 'danger'],
@@ -22,6 +23,8 @@ const meta = {
       options: ['primary', 'secondary', 'tertiary', 'warning', 'danger'],
     },
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 64b0a1d (feature(common):added SEM-040)
   },
 } as Meta<typeof PublishButton>;
 
@@ -31,6 +34,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     children: 'PUBLICAR ARTICULO',
@@ -100,5 +104,8 @@ export const Danger: Story = {
 >>>>>>> 34f16c2 (feature(common):added changes per PR comments SEM-040)
     variant: 'danger',
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
+=======
+    children: 'PUBLICAR ARTICULO',
+>>>>>>> 64b0a1d (feature(common):added SEM-040)
   },
 };
