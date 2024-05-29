@@ -109,6 +109,7 @@ function PublishButton(props: IProps) {
   return (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div className="buttonPublish">
 <<<<<<< HEAD
       <button className="buttonPublish__button">
@@ -363,6 +364,9 @@ function PublishButton(props: IProps) {
 >>>>>>> 85d6f72 (feature(common):added SEM-040)
 =======
     <div className="buttonPublish" data-testid="publish-button">
+=======
+    <div className="buttonPublish">
+>>>>>>> 261e345 (feature(common):added SEM-040 changes)
       <button className="buttonPublish__button">
         <span className="buttonPublish__label">{children}</span>
 >>>>>>> fb4f33d (feature(common):added SEM-040 changes)
