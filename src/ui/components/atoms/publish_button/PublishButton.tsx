@@ -226,6 +226,7 @@ function PublishButton(props: IProps) {
 =======
 >>>>>>> 85d6f72 (feature(common):added SEM-040)
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 57ecd38 (feature(common):added SEM-040)
 =======
 =======
@@ -434,6 +435,13 @@ function PublishButton(props: IProps) {
 =======
 >>>>>>> 85d6f72 (feature(common):added SEM-040)
 >>>>>>> 57ecd38 (feature(common):added SEM-040)
+=======
+=======
+    <div className="buttonPublish" data-testid="publish-button">
+      <button className="buttonPublish__button">
+        <span className="buttonPublish__label">{children}</span>
+>>>>>>> fb4f33d (feature(common):added SEM-040 changes)
+>>>>>>> 841618e (feature(common):added SEM-040 changes)
       </button>
     </div>
   );
