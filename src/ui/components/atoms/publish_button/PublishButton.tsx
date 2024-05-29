@@ -132,6 +132,7 @@ function PublishButton(props: IProps) {
 =======
   const { children } = props;
   return (
+<<<<<<< HEAD
     <div className="buttonPublish">
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -157,6 +158,7 @@ function PublishButton(props: IProps) {
           {children}
         </span>
 >>>>>>> d6e7f28 (feature(common):added SEM-040)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     <div className="buttonPublish" data-testid="publish-button">
@@ -194,6 +196,13 @@ function PublishButton(props: IProps) {
 >>>>>>> e3583b0 (feature(common):added SEM-040)
 =======
 >>>>>>> 2bec0d4 (feature(common):added SEM-040)
+=======
+=======
+    <div className="buttonPublish" data-testid="publish-button">
+      <button className="buttonPublish__button">
+        <span className="buttonPublish__label">{children}</span>
+>>>>>>> c09f0e3 (feature(common):added SEM-040 changes)
+>>>>>>> 2022cd9 (feature(common):added SEM-040 changes)
       </button>
     </div>
   );
