@@ -19,6 +19,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
 =======
@@ -29,6 +30,8 @@
 >>>>>>> 61fd5a7 (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> e3583b0 (feature(common):added SEM-040)
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 =======
 >>>>>>> 3e47174 (feature(common):added SEM-040)
@@ -52,6 +55,7 @@
 =======
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 >>>>>>> 89b403a (feature(common):added changes per PR comments SEM-040)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
@@ -92,6 +96,10 @@
 >>>>>>> 647d254 (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
+=======
+=======
+>>>>>>> 3e47174 (feature(common):added SEM-040)
+>>>>>>> e3583b0 (feature(common):added SEM-040)
 
 .buttonPublish {
   width: 100%;
@@ -100,6 +108,7 @@
 }
 
 .buttonPublish__button {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -159,6 +168,8 @@
 =======
 >>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
 =======
+>>>>>>> e3583b0 (feature(common):added SEM-040)
+=======
 >>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
 =======
   background: $ads-primary-main !important;
@@ -210,6 +221,7 @@
   border-radius: 1.563rem;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   background: $ads-primary-main;
 =======
@@ -252,6 +264,13 @@
 >>>>>>> 8882fca (feature(common):added SEM-040 changes)
 =======
 >>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
+=======
+=======
+  background: $ads-primary-main;
+  border: 2px solid transparent;
+  border-radius: 1.563rem;
+>>>>>>> 3e47174 (feature(common):added SEM-040)
+>>>>>>> e3583b0 (feature(common):added SEM-040)
   padding: 1rem;
   width: 50%;
   @include respond-to('small') {
@@ -271,6 +290,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e3583b0 (feature(common):added SEM-040)
     padding: 0.313rem 1.25rem;
 =======
     padding:0.313rem 1.25rem;
@@ -297,6 +319,7 @@
 =======
     width: 30%;
     padding: 0.313rem 0rem;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     padding:5px 20px;
@@ -372,6 +395,17 @@
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
+=======
+=======
+    padding:5px 20px;
+  }
+
+
+  @include respond-to('medium') {
+    width: 30%;
+    padding: 5px 0px;
+>>>>>>> 3e47174 (feature(common):added SEM-040)
+>>>>>>> e3583b0 (feature(common):added SEM-040)
   }
 
   @include respond-to('large') {
@@ -385,6 +419,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e3583b0 (feature(common):added SEM-040)
     padding: 0.313rem 0rem;
 >>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
   }
@@ -893,6 +930,7 @@
     line-height: 1.829rem;
 >>>>>>> 89b403a (feature(common):added changes per PR comments SEM-040)
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
 =======
 =======
@@ -1025,10 +1063,15 @@
 =======
     padding: 0.313rem 0rem;
 >>>>>>> d48dd33 (feature(common):added changes per PR comments SEM-040)
+=======
+=======
+    padding: 5px 0px;
+>>>>>>> e3583b0 (feature(common):added SEM-040)
   }
 
   @include respond-to('extra-large') {
     width: 25%;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -1385,5 +1428,23 @@
     line-height: 1.829rem;
 >>>>>>> 89b403a (feature(common):added changes per PR comments SEM-040)
 >>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
+=======
+  }
+}
+
+.buttonPublish__button:hover {
+  background: $ads-secondary-main;
+}
+
+.buttonPublish__label {
+  color: $ads-color-main;
+  font-size: $ads-size-main;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  @include respond-to('small') {
+    font-size: 18px;
+>>>>>>> 3e47174 (feature(common):added SEM-040)
+>>>>>>> e3583b0 (feature(common):added SEM-040)
   }
 }

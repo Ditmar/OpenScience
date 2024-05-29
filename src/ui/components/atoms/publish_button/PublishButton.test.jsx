@@ -21,6 +21,7 @@ import PublishButton from './PublishButton.tsx';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> e3583b0 (feature(common):added SEM-040)
@@ -28,6 +29,8 @@ import PublishButton from './PublishButton.tsx';
 >>>>>>> 172c9d9 (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> e3583b0 (feature(common):added SEM-040)
 =======
 >>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
 =======
@@ -235,6 +238,7 @@ describe('Testing PublishButton React Component', () => {
 =======
 =======
 >>>>>>> fb4f33d (feature(common):added SEM-040 changes)
+<<<<<<< HEAD
 >>>>>>> 841618e (feature(common):added SEM-040 changes)
 =======
   test('should be rendere PUBLICAR ARTICULO', () => {
@@ -411,5 +415,31 @@ describe('Testing Button React Component', () => {
 =======
 >>>>>>> fb4f33d (feature(common):added SEM-040 changes)
 >>>>>>> 841618e (feature(common):added SEM-040 changes)
+=======
+=======
+describe('Testing Button React Component', () => {
+  test('should be rendere PUBLICAR ARTICULO', () => {
+    render(<PublishButton >PUBLICAR ARTICULO</PublishButton>);
+    const buttonElement = screen.getByText(/PUBLICAR ARTICULO/i);
+    expect(buttonElement).toBeInTheDocument();
+  });
+  test('should have correct styles', () => {
+    render(<PublishButton>PUBLICAR ARTICULO</PublishButton>);
+    const buttonElement = screen.getByRole('button');
+
+    expect(buttonElement).toHaveClass('buttonPublish__button');
+    // Verificar los estilos específicos
+    console.log("-------")
+    console.log("Estilos del botón:", buttonElement.style.cssText); // queria comprobar pero no retorna nada
+
+    expect(buttonElement).toHaveStyle({ background: 'rgb(7, 147, 191)' });
+    expect(buttonElement).toHaveStyle('border-radius: 1.563rem');
+
+    const labelElement = screen.getByText(/PUBLICAR ARTICULO/i);
+    expect(labelElement).toHaveClass('buttonPublish__label');
+    expect(labelElement).toHaveStyle({ color: 'rgb(255, 255, 255)'});
+    expect(labelElement).toHaveStyle('text-transform: uppercase');
+>>>>>>> 3e47174 (feature(common):added SEM-040)
+>>>>>>> e3583b0 (feature(common):added SEM-040)
   });
 });
