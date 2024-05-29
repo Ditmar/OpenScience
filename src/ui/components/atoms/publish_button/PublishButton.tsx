@@ -410,13 +410,19 @@ function PublishButton(props: IProps) {
     <div className="buttonPublish">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2bec0d4 (feature(common):added SEM-040)
       <button className="buttonPublish__button">
         <span className="buttonPublish__label">{children}</span>
 >>>>>>> 3e47174 (feature(common):added SEM-040)
 =======
       <button
+<<<<<<< HEAD
 =======
 >>>>>>> 85d6f72 (feature(common):added SEM-040)
+=======
+>>>>>>> 2bec0d4 (feature(common):added SEM-040)
         className="buttonPublish__button"
         style={{
           background: '#0793bf',
@@ -430,6 +436,7 @@ function PublishButton(props: IProps) {
         >
           {children}
         </span>
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> d6e7f28 (feature(common):added SEM-040)
 =======
@@ -467,6 +474,9 @@ function PublishButton(props: IProps) {
         <span className="buttonPublish__label">{children}</span>
 >>>>>>> 3e47174 (feature(common):added SEM-040)
 >>>>>>> e3583b0 (feature(common):added SEM-040)
+=======
+>>>>>>> d6e7f28 (feature(common):added SEM-040)
+>>>>>>> 2bec0d4 (feature(common):added SEM-040)
       </button>
     </div>
   );
