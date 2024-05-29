@@ -15,6 +15,7 @@ function PublishButton(props: IProps) {
 <<<<<<< HEAD
     <div className="buttonPublish">
       <button
+<<<<<<< HEAD
         className={`buttonPublish__button buttonPublish__button--${variant}`}
         onClick={onClick}
       >
@@ -35,6 +36,8 @@ function PublishButton(props: IProps) {
 >>>>>>> 3e47174 (feature(common):added SEM-040)
 =======
       <button
+=======
+>>>>>>> 85d6f72 (feature(common):added SEM-040)
         className="buttonPublish__button"
         style={{
           background: '#0793bf',
@@ -48,6 +51,7 @@ function PublishButton(props: IProps) {
         >
           {children}
         </span>
+<<<<<<< HEAD
 >>>>>>> d6e7f28 (feature(common):added SEM-040)
 =======
     <div className="buttonPublish" data-testid="publish-button">
@@ -60,6 +64,7 @@ function PublishButton(props: IProps) {
 =======
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
 =======
+<<<<<<< HEAD
   const { children } = props;
   return (
     <div className="buttonPublish">
@@ -141,6 +146,11 @@ function PublishButton(props: IProps) {
 >>>>>>> c09f0e3 (feature(common):added SEM-040 changes)
 =======
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
+=======
+>>>>>>> 85d6f72 (feature(common):added SEM-040)
+>>>>>>> 57ecd38 (feature(common):added SEM-040)
       </button>
     </div>
   );
