@@ -43,7 +43,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 8882fca (feature(common):added SEM-040 changes)
 =======
 >>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
 =======
@@ -54,6 +57,17 @@
   border-radius: 1.563rem;
   padding: 0.2rem;
   width: 7.563rem;
+=======
+  background: $ads-primary-main ;
+  border: 2px solid transparent;
+  border-radius: 1.563rem;
+  padding: 1rem;
+  width: 50%;
+  @include respond-to('small') {
+    width: 35%;
+    padding:5px 20px;
+  }
+>>>>>>> 261e345 (feature(common):added SEM-040 changes)
 
   @include respond-to('medium') {
     width: 19.438rem;
@@ -69,6 +83,7 @@
     }
   }
 
+<<<<<<< HEAD
   &--secondary {
     background: $ads-secondary-main;
     color: $ads-color-main;
@@ -106,11 +121,23 @@
     }
   }
 }
+=======
+  @include respond-to('extra-large') {
+    width: 25%;
+  }
+
+  &:hover{
+    background: $ads-secondary-main;
+  }
+}
+
+>>>>>>> 261e345 (feature(common):added SEM-040 changes)
 
 .buttonPublish__label {
   font-size: 0.75rem;
   text-transform: uppercase;
   text-align: center;
+<<<<<<< HEAD
   font-weight: $ads-font-weight;
   font-family: Montserrat;
   line-height: 0.914rem;
@@ -207,6 +234,7 @@
     line-height: 1.829rem;
 >>>>>>> 647d254 (feature(common):added changes per PR comments SEM-040)
 =======
+<<<<<<< HEAD
   background: $ads-primary-main;
 =======
   background: $ads-primary-main !important;
@@ -382,5 +410,15 @@
     font-size: 1.5rem;
     line-height: 1.829rem;
 >>>>>>> 647d254 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
+=======
+  font-weight: 700;
+
+  @include respond-to('small') {
+    font-size: 18px;
+>>>>>>> 261e345 (feature(common):added SEM-040 changes)
+>>>>>>> 8882fca (feature(common):added SEM-040 changes)
   }
+
 }
