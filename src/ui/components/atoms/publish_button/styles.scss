@@ -14,6 +14,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
 =======
@@ -72,6 +73,8 @@
 >>>>>>> 39c123b (feature(common):added SEM-040)
 =======
 >>>>>>> 61fd5a7 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 64b0a1d (feature(common):added SEM-040)
 
 .buttonPublish {
   width: 100%;
@@ -80,6 +83,7 @@
 }
 
 .buttonPublish__button {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -172,10 +176,16 @@
   border: 2px solid transparent;
   border-radius: 1.563rem;
 >>>>>>> dbe8bf5 (feature(common):added SEM-040)
+=======
+  background: $ads-primary-main;
+  border: 2px solid transparent;
+  border-radius: 1.563rem;
+>>>>>>> 64b0a1d (feature(common):added SEM-040)
   padding: 1rem;
   width: 50%;
   @include respond-to('small') {
     width: 35%;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -238,10 +248,20 @@
 =======
     padding: 0.313rem 0rem;
 >>>>>>> 3a0fa91 (feature(common):added changes per PR comments SEM-040)
+=======
+    padding:5px 20px;
+  }
+
+
+  @include respond-to('medium') {
+    width: 30%;
+    padding: 5px 0px;
+>>>>>>> 64b0a1d (feature(common):added SEM-040)
   }
 
   @include respond-to('large') {
     width: 25%;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -965,5 +985,27 @@
     line-height: 1.829rem;
 >>>>>>> 647d254 (feature(common):added changes per PR comments SEM-040)
 >>>>>>> 61fd5a7 (feature(common):added changes per PR comments SEM-040)
+=======
+    padding: 5px 0px;
+  }
+
+  @include respond-to('extra-large') {
+    width: 25%;
+  }
+}
+
+.buttonPublish__button:hover {
+  background: $ads-secondary-main;
+}
+
+.buttonPublish__label {
+  color: $ads-color-main;
+  font-size: $ads-size-main;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  @include respond-to('small') {
+    font-size: 18px;
+>>>>>>> 64b0a1d (feature(common):added SEM-040)
   }
 }

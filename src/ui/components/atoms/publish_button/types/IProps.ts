@@ -23,6 +23,7 @@ export interface IProps {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 841618e (feature(common):added SEM-040 changes)
 =======
@@ -116,4 +117,7 @@ export interface IProps {
 >>>>>>> 17142bb (feature(common):added SEM-040 changes)
 =======
 >>>>>>> d48dd33 (feature(common):added changes per PR comments SEM-040)
+=======
+  variant?: string;
+>>>>>>> 64b0a1d (feature(common):added SEM-040)
 }
