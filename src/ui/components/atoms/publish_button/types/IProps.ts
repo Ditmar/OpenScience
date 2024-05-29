@@ -17,6 +17,7 @@ export interface IProps {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 841618e (feature(common):added SEM-040 changes)
 =======
@@ -84,4 +85,7 @@ export interface IProps {
   variant: 'primary' | 'secondary' | 'tertiary' | 'warning' | 'danger';
   onClick?: () => void;
 >>>>>>> 797db11 (feat:resolve rebase SEM-040)
+=======
+  variant?: string;
+>>>>>>> dbe8bf5 (feature(common):added SEM-040)
 }
