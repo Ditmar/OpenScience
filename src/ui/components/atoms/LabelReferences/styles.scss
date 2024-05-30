@@ -2,48 +2,41 @@
 @import '../../../../globals/mixins';
 
 .label-references {
-  display: inline; 
+  display: inline;
   font-family: Lato, sans-serif;
+  font-size: 16px; // Tamaño de fuente predeterminado
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
   line-height: 1.5;
   text-align: left;
   text-transform: uppercase;
-  
-  @include respond-to('small') {
-    width: 80px;
-  }
+  width: 100%;
 
   @include respond-to('medium') {
-    width: 100px;
+    font-size: 16px; // Tamaño de fuente para pantalla medium
+    width: 80%;
   }
 
   @include respond-to('large') {
-    width: 120px;
+    font-size: 32px; // Tamaño de fuente para pantalla large
+    width: 30%;
   }
-}
 
-.label-references-small {
-  font-size: 16px;
-}
+  @include respond-to('extra-large') {
+    font-size: 48px; // Tamaño de fuente para pantalla extra-large
+    width: 30%;
+  }
 
-.label-references-medium {
-  font-size: 32px;
-}
+  &.label-references-primary {
+    color: $ads-text-mian-hover;
+  }
 
-.label-references-large {
-  font-size: 48px;
-}
+  &.label-references-main {
+    color: $ads-color-main;
+  }
 
-.label-references-primary {
-  color: $ads-text-mian-hover; 
-}
-
-.label-references-main {
-  color: $ads-color-main; 
-}
-
-.label-references-main-bg {
-  background-color: $ads-primary-main; 
-  padding: 0 4px; 
+  &.label-references-main-bg {
+    background-color: $ads-primary-main;
+    padding: 0 0.25rem;
+  }
 }

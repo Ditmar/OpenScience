@@ -8,9 +8,6 @@ const meta: Meta<typeof LabelReferences> = {
   argTypes: {
     text: { control: 'text' },
     colorVariant: { control: { type: 'select', options: ['primary', 'main'] } },
-    sizeVariant: {
-      control: { type: 'select', options: ['small', 'medium', 'large'] },
-    },
   },
 };
 
@@ -18,7 +15,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const CustomText: Story = {
+export const Default: Story = {
   args: {
     text: 'Referencias',
   },

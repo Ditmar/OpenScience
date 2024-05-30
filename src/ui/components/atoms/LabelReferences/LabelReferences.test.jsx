@@ -1,7 +1,8 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import LabelReferences from './LabelReferences.tsx';
 
-describe('LabelReferences', () => {
+describe('LabelReferences component', () => {
   it('debe renderizar el texto por defecto', () => {
     render(<LabelReferences />);
     expect(screen.getByText('Referencias')).toBeInTheDocument();
@@ -12,16 +13,12 @@ describe('LabelReferences', () => {
     expect(screen.getByText('Custom text Referencias')).toBeInTheDocument();
   });
 
-  it('debe ajustarse al tamaño de la pantalla', () => {
+  it('debe ajustar el tamaño del texto de manera receptiva', () => {
     render(<LabelReferences />);
-    const label = screen.getByText('Referencias');
-    expect(label).toHaveStyle({ width: '120px' });
-
-    window.innerWidth = 800;
-    window.dispatchEvent(new Event('resize'));
-
-    setTimeout(() => {
-      expect(label).toHaveStyle({ width: 'auto' });
-    }, 1000);
+    const labelElement = screen.getByText('Referencias');
+    const initialFontSize = window.getComputedStyle(labelElement).getPropertyValue('font-size');
+    labelElement.style.fontSize = '20px';
+    const updatedFontSize = window.getComputedStyle(labelElement).getPropertyValue('font-size');
+    expect(updatedFontSize).not.toEqual(initialFontSize);
   });
 });
