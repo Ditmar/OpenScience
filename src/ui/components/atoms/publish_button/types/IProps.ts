@@ -19,6 +19,7 @@ export interface IProps {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 841618e (feature(common):added SEM-040 changes)
 =======
@@ -91,4 +92,8 @@ export interface IProps {
 >>>>>>> dbe8bf5 (feature(common):added SEM-040)
 =======
 >>>>>>> 3d4ac0c (feature(common):added SEM-040 changes)
+=======
+  variant: 'primary' | 'secondary' | 'tertiary' | 'warning' | 'danger';
+  onClick?: () => void;
+>>>>>>> 3a0fa91 (feature(common):added changes per PR comments SEM-040)
 }
