@@ -22,6 +22,7 @@ export interface IProps {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 841618e (feature(common):added SEM-040 changes)
 =======
@@ -36,6 +37,8 @@ export interface IProps {
 >>>>>>> 39c123b (feature(common):added SEM-040)
 =======
 >>>>>>> 17142bb (feature(common):added SEM-040 changes)
+=======
+>>>>>>> d48dd33 (feature(common):added changes per PR comments SEM-040)
   variant: 'primary' | 'secondary' | 'tertiary' | 'warning' | 'danger';
   onClick?: () => void;
 =======
@@ -49,6 +52,7 @@ export interface IProps {
   variant: 'primary' | 'secondary' | 'tertiary' | 'warning' | 'danger';
   onClick?: () => void;
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
+<<<<<<< HEAD
 =======
   variant?: string;
 >>>>>>> 64b0a1d (feature(common):added SEM-040)
@@ -110,4 +114,6 @@ export interface IProps {
 =======
 >>>>>>> c09f0e3 (feature(common):added SEM-040 changes)
 >>>>>>> 17142bb (feature(common):added SEM-040 changes)
+=======
+>>>>>>> d48dd33 (feature(common):added changes per PR comments SEM-040)
 }

@@ -15,6 +15,7 @@ function PublishButton(props: IProps) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
 =======
@@ -33,6 +34,10 @@ function PublishButton(props: IProps) {
 >>>>>>> 797db11 (feat:resolve rebase SEM-040)
 =======
 >>>>>>> 39c123b (feature(common):added SEM-040)
+=======
+=======
+>>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
+>>>>>>> d48dd33 (feature(common):added changes per PR comments SEM-040)
   const { children, variant, onClick } = props;
   return (
     <div className="buttonPublish">
@@ -44,6 +49,9 @@ function PublishButton(props: IProps) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d48dd33 (feature(common):added changes per PR comments SEM-040)
 =======
   const { children } = props;
 =======
@@ -203,6 +211,7 @@ function PublishButton(props: IProps) {
 =======
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
 =======
@@ -324,6 +333,8 @@ function PublishButton(props: IProps) {
         <span className="buttonPublish__label">{children}</span>
 >>>>>>> c09f0e3 (feature(common):added SEM-040 changes)
 >>>>>>> 17142bb (feature(common):added SEM-040 changes)
+=======
+>>>>>>> d48dd33 (feature(common):added changes per PR comments SEM-040)
       </button>
     </div>
   );
