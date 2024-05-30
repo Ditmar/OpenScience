@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Thumbnail from './Thumbnail';
-import Rectangle27 from '../../../../assets/imgs/Rectangle27.png';
-import Rectangle28 from '../../../../assets/imgs/Rectangle28.png';
-import Rectangle29 from '../../../../assets/imgs/Rectangle29.png';
-import Rectangle30 from '../../../../assets/imgs/Rectangle30.png';
-import Rectangle31 from '../../../../assets/imgs/Rectangle31.png';
-import Rectangle32 from '../../../../assets/imgs/Rectangle32.png';
+import Rectangle27 from './imgs/Rectangle27.png';
+import Rectangle28 from './imgs/Rectangle28.png';
+import Rectangle29 from './imgs/Rectangle29.png';
+import Rectangle30 from './imgs/Rectangle30.png';
+import Rectangle31 from './imgs/Rectangle31.png';
+import Rectangle32 from './imgs/Rectangle32.png';
 
 const meta = {
   title: 'ui/components/atoms/thumbnail',
