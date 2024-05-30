@@ -9,12 +9,23 @@ const meta = {
       action: 'click',
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     variant: {
       control: 'select',
       options: ['primary', 'secondary', 'tertiary', 'warning', 'danger'],
     },
 =======
 >>>>>>> 3e47174 (feature(common):added SEM-040)
+=======
+    variant: {
+      control: 'select',
+      options: ['primary', 'secondary', 'tertiary'],
+    },
+    textVariant: {
+      control: 'select',
+      options: ['primary', 'secondary', 'tertiary'],
+    },
+>>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
   },
 } as Meta<typeof PublishButton>;
 
@@ -26,6 +37,9 @@ export const Primary: Story = {
   args: {
     children: 'PUBLICAR ARTICULO',
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
     variant: 'primary',
   },
 };
@@ -39,23 +53,36 @@ export const Secondary: Story = {
 
 export const Tertiary: Story = {
   args: {
+<<<<<<< HEAD
     children: 'TODO: until the implementation of the task [SEM - 209]',
+=======
+    children: 'PUBLICAR ARTICULO',
+>>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
     variant: 'tertiary',
   },
 };
 
 export const Warning: Story = {
   args: {
+<<<<<<< HEAD
     children: 'TODO: until the implementation of the task [SEM - 209]',
+=======
+    children: 'PUBLICAR ARTICULO',
+>>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
     variant: 'warning',
   },
 };
 
 export const Danger: Story = {
   args: {
+<<<<<<< HEAD
     children: 'TODO: until the implementation of the task [SEM - 209]',
     variant: 'danger',
 =======
 >>>>>>> 3e47174 (feature(common):added SEM-040)
+=======
+    children: 'PUBLICAR ARTICULO',
+    variant: 'danger',
+>>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
   },
 };
