@@ -17,6 +17,7 @@ function PublishButton(props: IProps) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
 =======
@@ -291,11 +292,17 @@ function PublishButton(props: IProps) {
   const { children, variant, onClick } = props;
   return (
     <div className="buttonPublish">
+=======
+  const { children, variant, onClick } = props;
+  return (
+    <div className="buttonPublish">
+>>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
       <button
         className={`buttonPublish__button buttonPublish__button--${variant}`}
         onClick={onClick}
       >
         <span className={`buttonPublish__label `}>{children}</span>
+<<<<<<< HEAD
 >>>>>>> 3a0fa91 (feature(common):added changes per PR comments SEM-040)
 =======
 =======
@@ -370,6 +377,8 @@ function PublishButton(props: IProps) {
       <button className="buttonPublish__button">
         <span className="buttonPublish__label">{children}</span>
 >>>>>>> fb4f33d (feature(common):added SEM-040 changes)
+=======
+>>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
       </button>
     </div>
   );
