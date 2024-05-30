@@ -1,0 +1,10 @@
+@import './variables.css';
+
+.referencia-apa {
+  background-color: var(--color-dark-green);
+  border-radius: 5px;
+  color: var(--color-white);
+  font-family: Calibri, "Segoe UI", sans-serif;
+  padding: 10px;
+ 
+}

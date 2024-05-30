@@ -89,6 +89,6 @@
     "stylelint-order": "6.0.4",
     "stylelint-scss": "6.2.1",
     "svelte": "4.2.9",
-    "vitest": "1.6.0"
+    "vitest": "^1.6.0"
   }
 }
