@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import PublishButton from './PublishButton.tsx';
 
-describe('Testing Button React Component', () => {
+describe('Testing PublishButton React Component', () => {
   test('should be rendere PUBLICAR ARTICULO', () => {
     render(<PublishButton>PUBLICAR ARTICULO</PublishButton>);
     const buttonElement = screen.getByText(/PUBLICAR ARTICULO/i);
