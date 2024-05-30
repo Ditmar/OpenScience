@@ -4,8 +4,8 @@
 .label-references {
   display: inline;
   font-family: Lato, sans-serif;
-  font-size: 16px; // Tamaño de fuente predeterminado
-  font-weight: 700;
+  font-size: 16px; 
+  font-weight: $font-weight-bold;   
   letter-spacing: 0.0625rem;
   line-height: 1.5;
   text-align: left;
@@ -13,17 +13,17 @@
   width: 100%;
 
   @include respond-to('medium') {
-    font-size: 16px; // Tamaño de fuente para pantalla medium
+    font-size: 16px; 
     width: 80%;
   }
 
   @include respond-to('large') {
-    font-size: 32px; // Tamaño de fuente para pantalla large
+    font-size: 32px; 
     width: 30%;
   }
 
   @include respond-to('extra-large') {
-    font-size: 48px; // Tamaño de fuente para pantalla extra-large
+    font-size: 48px; 
     width: 30%;
   }
 

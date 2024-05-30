@@ -1,5 +1,3 @@
-// LabelReferences.tsx
-
 import React from 'react';
 import './styles.scss';
 import type { IProps } from './types/IProps';
