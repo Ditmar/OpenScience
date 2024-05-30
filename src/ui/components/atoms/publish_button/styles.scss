@@ -132,6 +132,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 8882fca (feature(common):added SEM-040 changes)
@@ -149,6 +150,8 @@
 >>>>>>> 57ecd38 (feature(common):added SEM-040)
 =======
 >>>>>>> 8882fca (feature(common):added SEM-040 changes)
+=======
+>>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
 =======
@@ -235,6 +238,8 @@
 =======
 =======
   background: $ads-primary-main ;
+=======
+>>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
   border: 2px solid transparent;
   border-radius: 1.563rem;
 >>>>>>> 8882fca (feature(common):added SEM-040 changes)
@@ -255,7 +260,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     padding: 0.313rem 1.25rem;
+=======
+    padding:0.313rem 1.25rem;
+>>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
   }
 >>>>>>> 261e345 (feature(common):added SEM-040 changes)
 
@@ -275,6 +284,7 @@
 =======
     width: 30%;
     padding: 0.313rem 0rem;
+<<<<<<< HEAD
 =======
     padding:5px 20px;
 =======
@@ -347,10 +357,13 @@
 =======
     padding: 0.313rem 0rem;
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
   }
 
   @include respond-to('large') {
     width: 25%;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -426,6 +439,10 @@
     &:hover {
       background: $ads-secondary-main;
     }
+=======
+    padding: 0.313rem 0rem;
+>>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
+>>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
   }
 
 <<<<<<< HEAD
@@ -471,8 +488,51 @@
     width: 25%;
   }
 
-  &:hover{
+  &--primary {
+    background: $ads-primary-main;
+    color: $ads-color-main; 
+
+    &:hover {
+      background: $ads-secondary-main;
+    }
+  }
+
+  &--secondary {
     background: $ads-secondary-main;
+    color: $ads-color-main; 
+
+    &:hover {
+      background: darken($ads-secondary-main, 10%);
+    }
+  }
+
+  &--tertiary {
+    background:  $ads-tertiary-main;
+    color: $ads-text-secondary;
+    border: 0.063rem solid #6c757d;
+
+
+    &:hover {
+      background: darken($ads-tertiary-main, 10%);
+      color: darken($ads-text-secondary, 10%);
+    }
+  }
+
+  &--warning {
+    background: $ads-warning-main;
+    color:  $ads-color-main;
+
+    &:hover {
+        background: darken($ads-warning-main, 10%);
+    }
+  }
+  &--danger{
+    background: $ads-danger-main;
+    color:  $ads-color-main;
+
+    &:hover {
+        background-color: darken($ads-danger-main, 10%);
+    }
   }
 }
 
@@ -486,6 +546,9 @@
 .buttonPublish__label {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
   font-size: 0.75rem;
   text-transform: uppercase;
   text-align: center;
@@ -776,6 +839,7 @@
   @include respond-to('small') {
     font-size: 18px;
 >>>>>>> 261e345 (feature(common):added SEM-040 changes)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 8882fca (feature(common):added SEM-040 changes)
@@ -1271,6 +1335,17 @@
 >>>>>>> 647d254 (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> 8882fca (feature(common):added SEM-040 changes)
+=======
+=======
+  font-size: $ads-size-main;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: $ads-font-weight-700;
+
+  @include respond-to('small') {
+    font-size: 1.125rem;
+>>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
+>>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
   }
 
 }
