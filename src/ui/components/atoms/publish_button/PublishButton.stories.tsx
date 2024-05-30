@@ -14,6 +14,11 @@ const meta = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
+>>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
     variant: {
       control: 'select',
       options: ['primary', 'secondary', 'tertiary', 'warning', 'danger'],
@@ -27,6 +32,7 @@ const meta = {
     },
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
 =======
+<<<<<<< HEAD
 >>>>>>> 64b0a1d (feature(common):added SEM-040)
 =======
     variant: {
@@ -42,6 +48,19 @@ const meta = {
       options: ['primary', 'secondary', 'tertiary', 'warning', 'danger'],
     },
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
+=======
+    variant: {
+      control: 'select',
+      options: ['primary', 'secondary', 'tertiary'],
+    },
+    textVariant: {
+      control: 'select',
+      options: ['primary', 'secondary', 'tertiary'],
+    },
+>>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
+>>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
   },
 } as Meta<typeof PublishButton>;
 
@@ -64,6 +83,9 @@ export const Primary: Story = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
 =======
@@ -79,6 +101,7 @@ export const Primary: Story = {
 >>>>>>> 701646e (feature(common):added changes per PR comments SEM-040)
 =======
     children: 'PUBLICAR ARTICULO',
+<<<<<<< HEAD
 >>>>>>> 89b403a (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
@@ -88,6 +111,11 @@ export const Primary: Story = {
 =======
     children: 'PUBLICAR ARTICULO',
 >>>>>>> 647d254 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
+=======
+>>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
+>>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
     variant: 'primary',
   },
 };
@@ -107,6 +135,9 @@ export const Tertiary: Story = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
     children: 'TODO: until the implementation of the task [SEM - 209]',
 =======
     children: 'PUBLICAR ARTICULO',
@@ -119,6 +150,7 @@ export const Tertiary: Story = {
 >>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
 =======
     children: 'TODO: until the implementation of the task [SEM - 209]',
+<<<<<<< HEAD
 >>>>>>> 701646e (feature(common):added changes per PR comments SEM-040)
 =======
     children: 'PUBLICAR ARTICULO',
@@ -126,6 +158,12 @@ export const Tertiary: Story = {
 =======
     children: 'TODO: until the implementation of the task [SEM - 209]',
 >>>>>>> 34f16c2 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
+=======
+    children: 'PUBLICAR ARTICULO',
+>>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
+>>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
     variant: 'tertiary',
   },
 };
@@ -138,6 +176,9 @@ export const Warning: Story = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
     children: 'TODO: until the implementation of the task [SEM - 209]',
 =======
     children: 'PUBLICAR ARTICULO',
@@ -150,6 +191,7 @@ export const Warning: Story = {
 >>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
 =======
     children: 'TODO: until the implementation of the task [SEM - 209]',
+<<<<<<< HEAD
 >>>>>>> 701646e (feature(common):added changes per PR comments SEM-040)
 =======
     children: 'PUBLICAR ARTICULO',
@@ -157,6 +199,12 @@ export const Warning: Story = {
 =======
     children: 'TODO: until the implementation of the task [SEM - 209]',
 >>>>>>> 34f16c2 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
+=======
+    children: 'PUBLICAR ARTICULO',
+>>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
+>>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
     variant: 'warning',
   },
 };
@@ -169,6 +217,9 @@ export const Danger: Story = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
     children: 'TODO: until the implementation of the task [SEM - 209]',
     variant: 'danger',
 =======
@@ -189,6 +240,7 @@ export const Danger: Story = {
     children: 'TODO: until the implementation of the task [SEM - 209]',
 >>>>>>> 701646e (feature(common):added changes per PR comments SEM-040)
     variant: 'danger',
+<<<<<<< HEAD
 >>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
 =======
     children: 'PUBLICAR ARTICULO',
@@ -200,5 +252,12 @@ export const Danger: Story = {
 >>>>>>> 34f16c2 (feature(common):added changes per PR comments SEM-040)
     variant: 'danger',
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
+=======
+    children: 'PUBLICAR ARTICULO',
+    variant: 'danger',
+>>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
+>>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
   },
 };
