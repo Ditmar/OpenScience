@@ -10,9 +10,12 @@ import PublishButton from './PublishButton.tsx';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> e3583b0 (feature(common):added SEM-040)
+=======
+>>>>>>> 172c9d9 (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
 =======
@@ -122,6 +125,9 @@ describe('Testing PublishButton React Component', () => {
 =======
 describe('Testing Button React Component', () => {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 172c9d9 (feature(common):added changes per PR comments SEM-040)
 =======
 describe('Testing PublishButton React Component', () => {
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
