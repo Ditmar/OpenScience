@@ -5,9 +5,7 @@
     @media (min-width: map-get($breakpoints, $breakpoint)) {
       @content;
     }
-  }
-
- @else {
+  } @else {
     @warn "It has not been found: #{$breakpoint}.";
   }
 }
