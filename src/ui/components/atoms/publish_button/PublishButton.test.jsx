@@ -7,6 +7,7 @@ import PublishButton from './PublishButton.tsx';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 describe('Testing PublishButton React Component', () => {
   test('should be rendere PUBLICAR ARTICULO', () => {
     render(<PublishButton>PUBLICAR ARTICULO</PublishButton>);
@@ -89,6 +90,9 @@ describe('Testing PublishButton React Component', () => {
 >>>>>>> fb4f33d (feature(common):added SEM-040 changes)
 =======
 describe('Testing Button React Component', () => {
+=======
+describe('Testing PublishButton React Component', () => {
+>>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
   test('should be rendere PUBLICAR ARTICULO', () => {
     render(<PublishButton>PUBLICAR ARTICULO</PublishButton>);
     const buttonElement = screen.getByText(/PUBLICAR ARTICULO/i);
