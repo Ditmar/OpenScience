@@ -19,6 +19,7 @@ import PublishButton from './PublishButton.tsx';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> e3583b0 (feature(common):added SEM-040)
@@ -313,6 +314,9 @@ describe('Testing PublishButton React Component', () => {
 >>>>>>> 17142bb (feature(common):added SEM-040 changes)
 =======
 describe('Testing Button React Component', () => {
+=======
+describe('Testing PublishButton React Component', () => {
+>>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
   test('should be rendere PUBLICAR ARTICULO', () => {
     render(<PublishButton>PUBLICAR ARTICULO</PublishButton>);
     const buttonElement = screen.getByText(/PUBLICAR ARTICULO/i);
