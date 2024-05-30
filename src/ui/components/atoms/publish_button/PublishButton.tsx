@@ -22,6 +22,7 @@ function PublishButton(props: IProps) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
 =======
@@ -33,12 +34,15 @@ function PublishButton(props: IProps) {
 >>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> e3583b0 (feature(common):added SEM-040)
+=======
+>>>>>>> 172c9d9 (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
 =======
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
+<<<<<<< HEAD
 >>>>>>> 172c9d9 (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> 797db11 (feat:resolve rebase SEM-040)
@@ -48,11 +52,14 @@ function PublishButton(props: IProps) {
 =======
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
 >>>>>>> d48dd33 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 172c9d9 (feature(common):added changes per PR comments SEM-040)
   const { children, variant, onClick } = props;
   return (
 <<<<<<< HEAD
     <div className="buttonPublish">
       <button
+<<<<<<< HEAD
 <<<<<<< HEAD
         className={`buttonPublish__button buttonPublish__button--${variant}`}
         onClick={onClick}
@@ -177,6 +184,9 @@ function PublishButton(props: IProps) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 172c9d9 (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> 172c9d9 (feature(common):added changes per PR comments SEM-040)
 >>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
@@ -236,6 +246,7 @@ function PublishButton(props: IProps) {
 >>>>>>> c09f0e3 (feature(common):added SEM-040 changes)
 =======
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -494,6 +505,8 @@ function PublishButton(props: IProps) {
         <span className="buttonPublish__label">{children}</span>
 >>>>>>> c09f0e3 (feature(common):added SEM-040 changes)
 >>>>>>> 2022cd9 (feature(common):added SEM-040 changes)
+=======
+>>>>>>> 172c9d9 (feature(common):added changes per PR comments SEM-040)
       </button>
     </div>
   );
