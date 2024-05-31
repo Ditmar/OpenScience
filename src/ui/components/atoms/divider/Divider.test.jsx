@@ -2,19 +2,19 @@ import { render, screen } from '@testing-library/react';
 import Divider from './Divider.tsx';
 
 describe('Testing Divider React Component', () => {
-  test('should render with solid style', () => {
+  test('Should be rendered with a solid style', () => {
     render(<Divider variant="solid" />);
     const dividerElement = screen.getByRole('separator');
     expect(dividerElement).toHaveClass('divider--solid');
   });
 
-  test('should render with dotted style', () => {
+  test('Should be rendered with a dotted style', () => {
     render(<Divider variant="dotted" />);
     const dividerElement = screen.getByRole('separator');
     expect(dividerElement).toHaveClass('divider--dotted');
   });
 
-  test('should render with dashed style', () => {
+  test('Should be rendered with a dashed style', () => {
     render(<Divider variant="dashed" />);
     const dividerElement = screen.getByRole('separator');
     expect(dividerElement).toHaveClass('divider--dashed');
