@@ -1,9 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import seoConfig from '../../seo.config';
+
+const { title, description, openGraph } = seoConfig;
+const { url, siteName, images } = openGraph;
+const [ogImage] = images;
 ---
 
-<Layout title="Welcome to Astro.">
-  <h1>OPENSICENCE</h1>
+<Layout title="Welcome to OPENSICENCE.">
+  <html lang="es">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta property="og:type" content="website" />
+      <meta property="og:locale" content="es_ES" />
+      <meta property="og:url" content={url} />
+      <meta property="og:site_name" content={siteName} />
+      {}
+      <meta property="og:image" content={ogImage.url} />
+      <meta property="og:image:width" content={ogImage.width.toString()} />
+      {}
+      <meta property="og:image:height" content={ogImage.height.toString()} />
+      {}
+      <meta property="og:image:alt" content={ogImage.alt} />
+    </head>
+    <body>
+      <h1>OPENSICENCE</h1>
+    </body>
+  </html>
 </Layout>
-
-<style></style>
