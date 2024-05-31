@@ -232,6 +232,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     padding: 0.313rem 1.25rem;
   }
 >>>>>>> 261e345 (feature(common):added SEM-040 changes)
@@ -266,6 +267,9 @@
 =======
     padding: 0.313rem 1.25rem;
 >>>>>>> 701646e (feature(common):added changes per PR comments SEM-040)
+=======
+    padding: 0.313rem 1.25rem;
+>>>>>>> 34f16c2 (feature(common):added changes per PR comments SEM-040)
   }
 
   @include respond-to('medium') {
@@ -1150,7 +1154,7 @@
 
   &--primary {
     background: $ads-primary-main;
-    color: $ads-color-main; 
+    color: $ads-color-main;
 
     &:hover {
       background: $ads-secondary-main;
@@ -1159,7 +1163,7 @@
 
   &--secondary {
     background: $ads-secondary-main;
-    color: $ads-color-main; 
+    color: $ads-color-main;
 
     &:hover {
       background: darken($ads-secondary-main, 10%);
@@ -1167,10 +1171,9 @@
   }
 
   &--tertiary {
-    background:  $ads-tertiary-main;
+    background: $ads-tertiary-main;
     color: $ads-text-secondary;
     border: 0.063rem solid #6c757d;
-
 
     &:hover {
       background: darken($ads-tertiary-main, 10%);
@@ -1180,22 +1183,21 @@
 
   &--warning {
     background: $ads-warning-main;
-    color:  $ads-color-main;
+    color: $ads-color-main;
 
     &:hover {
-        background: darken($ads-warning-main, 10%);
+      background: darken($ads-warning-main, 10%);
     }
   }
-  &--danger{
+  &--danger {
     background: $ads-danger-main;
-    color:  $ads-color-main;
+    color: $ads-color-main;
 
     &:hover {
-        background-color: darken($ads-danger-main, 10%);
+      background-color: darken($ads-danger-main, 10%);
     }
   }
 }
-
 
 .buttonPublish__label {
   font-size: $ads-size-main;
@@ -1211,5 +1213,4 @@
     font-size: 1.125rem;
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
   }
-
 }
