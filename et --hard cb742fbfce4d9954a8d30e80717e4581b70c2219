@@ -1,0 +1,200 @@
+[33mcommit cb742fbfce4d9954a8d30e80717e4581b70c2219[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/SEM-066[m[33m, [m[1;31morigin/feature/SEM-066[m[33m)[m
+Author: Jimenez-Martinez-Victoria <edenvictoriajimenes@gmail.com>
+Date:   Fri May 31 14:48:25 2024 -0600
+
+    fix: in test comment(Should be rendered with a solid style)
+
+[33mcommit 924ab6d3ea89e93f901725235d15142ba2559ecd[m
+Author: Jimenez-Martinez-Victoria <edenvictoriajimenes@gmail.com>
+Date:   Thu May 30 00:20:53 2024 -0600
+
+    feat: added atomic divider component [SEM-066]
+
+[33mcommit 15dc03a25019d4b587735f679c750b3081a8bda4[m[33m ([m[1;32mmain[m[33m)[m
+Author: Ditmar <spyatorio@gmail.com>
+Date:   Sun May 26 00:46:56 2024 -0400
+
+    Update README.md
+
+[33mcommit 3cffa29b60b5fbd75e9608b62f0a6fd96196e95d[m
+Author: Ditmar <spyatorio@gmail.com>
+Date:   Sun May 26 00:29:46 2024 -0400
+
+    Update README.md
+
+[33mcommit e8081aefb367128fe4a251340a691806ef09c97b[m
+Author: Ditmar <spyatorio@gmail.com>
+Date:   Sat May 25 19:11:54 2024 -0400
+
+    feat: fixed linter
+
+[33mcommit 82b4e14f9a7172a643bf875498865bda8c03761f[m
+Author: Ditmar <spyatorio@gmail.com>
+Date:   Sat May 25 18:58:12 2024 -0400
+
+    feat: bump
+
+[33mcommit ac04c9604d24b48c82bf6d7596aca64d421083d9[m
+Author: Ditmar <spyatorio@gmail.com>
+Date:   Sat May 25 18:56:36 2024 -0400
+
+    feat: test
+
+[33mcommit fffce7f570bd26ca788a2b494e0cb1abd4f903d4[m
+Merge: adb925e 4dddb28
+Author: Ditmar <spyatorio@gmail.com>
+Date:   Sat May 25 12:46:15 2024 -0400
+
+    Merge pull request #2 from Ditmar/feature/SEM-045
+    
+    [sem 045]: Boton variable(Facebook/Google)
+
+[33mcommit 4dddb28d5036861ffaf610885a0587e707cce463[m[33m ([m[1;31morigin/feature/SEM-045[m[33m)[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Sat May 25 10:15:53 2024 -0400
+
+    feat: fixed husky
+
+[33mcommit fdd20a49de2a6d89618a7701873912dea7c96116[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Sat May 25 10:14:49 2024 -0400
+
+    feat: fixed husky
+
+[33mcommit dc439100e45ccfcce4a6cd36c9b6fe5a464c3804[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Sat May 25 10:13:48 2024 -0400
+
+    feat: fixed husky
+
+[33mcommit f82876f029edf2f35d9c97d1af420eebf2520d31[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Sat May 25 10:12:21 2024 -0400
+
+    feat: fixed husky
+
+[33mcommit f41fa4e73dadb796005733c27c4262d0f757464b[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Sat May 25 10:05:01 2024 -0400
+
+    feat: added atomic button component [SEM-045]
+
+[33mcommit adb925ee4a9114046e903c7328b9fe9b519970e4[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Sat May 25 08:24:54 2024 -0400
+
+    feat: fixed prettier
+
+[33mcommit 6d9ac5a4f71654d6c9e37d22ee3ba9c84710c00c[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Fri May 24 16:05:10 2024 -0400
+
+    feat: added rules
+
+[33mcommit 03ac620d0ee192d036de1cce76906c0981f987bc[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Fri May 24 16:01:10 2024 -0400
+
+    feat: added lint project
+
+[33mcommit b0152cb88ae93e9c22aaa46245f1004477b03f78[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Fri May 24 14:18:11 2024 -0400
+
+    feat: added engines of node and yarn
+
+[33mcommit c64b84b614f59fe1e3c05b736f239541ee97c3f5[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Fri May 24 14:15:48 2024 -0400
+
+    feat: added test:watch
+
+[33mcommit e2b984810194d7eaaa1f9ea5cb0bb774c9f0f695[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Fri May 24 14:12:44 2024 -0400
+
+    feat: added husky pre push test
+
+[33mcommit 9bc7f65f25823cd4eaa3fc81a627cc09b951ee4f[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Fri May 24 14:10:57 2024 -0400
+
+    feat: added vitest and fix lf format prettier
+
+[33mcommit 100df7f3f7d519352048df9fbe2994faeca44379[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Fri May 24 13:49:28 2024 -0400
+
+    feat: moved examples stories
+
+[33mcommit ed352127c1fadac8598454a2c88cf098bbbfd18d[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Fri May 24 13:45:50 2024 -0400
+
+    feat: added eslint css
+
+[33mcommit dea5642421af02a9586fec6f83ce1f99493aa79c[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Fri May 24 12:10:30 2024 -0400
+
+    feat: added stotybook
+
+[33mcommit e55c5c931e9ff2d512e0e83ede5fe6cac5964956[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Fri May 24 12:09:45 2024 -0400
+
+    feat: added stotybook
+
+[33mcommit a690d9d7e8c252470e9619237bacaef0efae7b66[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Fri May 24 11:41:20 2024 -0400
+
+    feat: clean stories
+
+[33mcommit bc6d4fc9a9266ef8bcb330947decb03342793436[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Fri May 24 11:41:00 2024 -0400
+
+    feat: added clean project
+
+[33mcommit 94847fa13473a179f3b863ca8d4f38ee2a022b05[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Sun May 19 21:43:31 2024 -0400
+
+    feat: maded the linter rules more lax
+
+[33mcommit f42f4ebc2786149b0a5e4706722ea657d38610fb[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Sat May 18 02:16:32 2024 -0400
+
+    feat: fixed linter
+
+[33mcommit fcd0bde5961d8424262c83bfba0490018d06a205[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Sat May 18 02:01:04 2024 -0400
+
+    feat: added data
+
+[33mcommit 1cbd09aca86d739123a359a56bf160038498fb92[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Sat May 18 01:51:17 2024 -0400
+
+    feat: added eslint
+
+[33mcommit b1c26ef64b2fc84b2202865bef57fbd8c6dec998[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Fri May 17 23:53:14 2024 -0400
+
+    feat: added eslint
+
+[33mcommit 52b03d8c811ba4f4c527b1b1d979499cf7973275[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Fri May 17 23:26:17 2024 -0400
+
+    feat: base project
+
+[33mcommit de8ebb228f0f7d4c2da3dba9c0cf097b32e514e1[m
+Author: Ditmar <spyatorio@gmail.com>
+Date:   Fri May 17 22:20:55 2024 -0400
+
+    Initial commit
