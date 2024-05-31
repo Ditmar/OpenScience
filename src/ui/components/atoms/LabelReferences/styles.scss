@@ -4,8 +4,8 @@
 .label-references {
   display: inline;
   font-family: Lato, sans-serif;
-  font-size: 16px; 
-  font-weight: $font-weight-bold;   
+  font-size: 1rem;  
+  font-weight: $ads-font-weight-bold;   
   letter-spacing: 0.0625rem;
   line-height: 1.5;
   text-align: left;
@@ -37,6 +37,6 @@
 
   &.label-references-main-bg {
     background-color: $ads-primary-main;
-    padding: 0 0.25rem;
+    padding: $ads-letter-spacing;
   }
 }

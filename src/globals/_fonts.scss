@@ -1,0 +1,17 @@
+/* global.scss */
+@font-face {
+  font-display: swap; /* Después de font-weight, antes de src */
+  font-family: Lato; /* Sin comillas */
+  font-style: normal; /* Antes de font-weight */
+  font-weight: normal; /* Después de font-style, antes de src */
+  src: url('/fonts/Lato-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap; /* Después de font-weight, antes de src */
+  font-family: Lato; /* Sin comillas */
+  font-style: normal; /* Antes de font-weight */
+  font-weight: bold; /* Después de font-style, antes de src */
+  src: url('/fonts/Lato-Bold.woff2') format('woff2');
+}
+

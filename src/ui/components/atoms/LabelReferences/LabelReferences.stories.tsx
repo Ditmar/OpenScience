@@ -20,3 +20,9 @@ export const Default: Story = {
     text: 'Referencias',
   },
 };
+
+export const Primary: Story = {
+  args: {
+    colorVariant: 'main',
+  },
+};
