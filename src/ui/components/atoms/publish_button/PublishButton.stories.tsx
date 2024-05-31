@@ -90,11 +90,7 @@ const meta = {
 =======
     variant: {
       control: 'select',
-      options: ['primary', 'secondary', 'tertiary'],
-    },
-    textVariant: {
-      control: 'select',
-      options: ['primary', 'secondary', 'tertiary'],
+      options: ['primary', 'secondary', 'tertiary', 'warning', 'danger'],
     },
 >>>>>>> 3a0fa91 (feature(common):added changes per PR comments SEM-040)
   },
@@ -106,6 +102,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -200,13 +197,16 @@ export const Primary: Story = {
 >>>>>>> 797db11 (feat:resolve rebase SEM-040)
 =======
 >>>>>>> 3a0fa91 (feature(common):added changes per PR comments SEM-040)
+=======
+    children: 'TODO: until the implementation of the task [SEM - 209]',
+>>>>>>> dc211b8 (feature(common):added changes per PR comments SEM-040)
     variant: 'primary',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    children: 'PUBLICAR ARTICULO',
+    children: 'TODO: until the implementation of the task [SEM - 209]',
     variant: 'secondary',
   },
 };
@@ -225,6 +225,7 @@ export const Tertiary: Story = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
 =======
@@ -280,6 +281,9 @@ export const Tertiary: Story = {
 =======
     children: 'PUBLICAR ARTICULO',
 >>>>>>> 3a0fa91 (feature(common):added changes per PR comments SEM-040)
+=======
+    children: 'TODO: until the implementation of the task [SEM - 209]',
+>>>>>>> dc211b8 (feature(common):added changes per PR comments SEM-040)
     variant: 'tertiary',
   },
 };
@@ -298,6 +302,7 @@ export const Warning: Story = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
 =======
@@ -353,12 +358,16 @@ export const Warning: Story = {
 =======
     children: 'PUBLICAR ARTICULO',
 >>>>>>> 3a0fa91 (feature(common):added changes per PR comments SEM-040)
+=======
+    children: 'TODO: until the implementation of the task [SEM - 209]',
+>>>>>>> dc211b8 (feature(common):added changes per PR comments SEM-040)
     variant: 'warning',
   },
 };
 
 export const Danger: Story = {
   args: {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -446,6 +455,9 @@ export const Danger: Story = {
 >>>>>>> dbe8bf5 (feature(common):added SEM-040)
 =======
     children: 'PUBLICAR ARTICULO',
+=======
+    children: 'TODO: until the implementation of the task [SEM - 209]',
+>>>>>>> dc211b8 (feature(common):added changes per PR comments SEM-040)
     variant: 'danger',
 >>>>>>> 3a0fa91 (feature(common):added changes per PR comments SEM-040)
   },
