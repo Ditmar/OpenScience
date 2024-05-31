@@ -315,10 +315,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e3583b0 (feature(common):added SEM-040)
 =======
 >>>>>>> 172c9d9 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 897d825 (feature(common):added changes per PR comments SEM-040)
     padding: 0.313rem 1.25rem;
 =======
     padding:0.313rem 1.25rem;
@@ -409,6 +412,9 @@
 =======
     padding:0.313rem 1.25rem;
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
+=======
+    padding: 0.313rem 1.25rem;
+>>>>>>> 34f16c2 (feature(common):added changes per PR comments SEM-040)
   }
 
   @include respond-to('medium') {
@@ -1471,7 +1477,7 @@
 
   &--primary {
     background: $ads-primary-main;
-    color: $ads-color-main; 
+    color: $ads-color-main;
 
     &:hover {
       background: $ads-secondary-main;
@@ -1480,7 +1486,7 @@
 
   &--secondary {
     background: $ads-secondary-main;
-    color: $ads-color-main; 
+    color: $ads-color-main;
 
     &:hover {
       background: darken($ads-secondary-main, 10%);
@@ -1488,10 +1494,9 @@
   }
 
   &--tertiary {
-    background:  $ads-tertiary-main;
+    background: $ads-tertiary-main;
     color: $ads-text-secondary;
     border: 0.063rem solid #6c757d;
-
 
     &:hover {
       background: darken($ads-tertiary-main, 10%);
@@ -1501,22 +1506,21 @@
 
   &--warning {
     background: $ads-warning-main;
-    color:  $ads-color-main;
+    color: $ads-color-main;
 
     &:hover {
-        background: darken($ads-warning-main, 10%);
+      background: darken($ads-warning-main, 10%);
     }
   }
-  &--danger{
+  &--danger {
     background: $ads-danger-main;
-    color:  $ads-color-main;
+    color: $ads-color-main;
 
     &:hover {
-        background-color: darken($ads-danger-main, 10%);
+      background-color: darken($ads-danger-main, 10%);
     }
   }
 }
-
 
 .buttonPublish__label {
   font-size: $ads-size-main;
@@ -1536,5 +1540,4 @@
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
 >>>>>>> 172c9d9 (feature(common):added changes per PR comments SEM-040)
   }
-
 }
