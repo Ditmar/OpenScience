@@ -19,11 +19,7 @@ const meta = {
 =======
     variant: {
       control: 'select',
-      options: ['primary', 'secondary', 'tertiary'],
-    },
-    textVariant: {
-      control: 'select',
-      options: ['primary', 'secondary', 'tertiary'],
+      options: ['primary', 'secondary', 'tertiary', 'warning', 'danger'],
     },
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
   },
@@ -35,18 +31,22 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
+<<<<<<< HEAD
     children: 'PUBLICAR ARTICULO',
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
+=======
+    children: 'TODO: until the implementation of the task [SEM - 209]',
+>>>>>>> 34f16c2 (feature(common):added changes per PR comments SEM-040)
     variant: 'primary',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    children: 'PUBLICAR ARTICULO',
+    children: 'TODO: until the implementation of the task [SEM - 209]',
     variant: 'secondary',
   },
 };
@@ -54,10 +54,14 @@ export const Secondary: Story = {
 export const Tertiary: Story = {
   args: {
 <<<<<<< HEAD
+<<<<<<< HEAD
     children: 'TODO: until the implementation of the task [SEM - 209]',
 =======
     children: 'PUBLICAR ARTICULO',
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
+=======
+    children: 'TODO: until the implementation of the task [SEM - 209]',
+>>>>>>> 34f16c2 (feature(common):added changes per PR comments SEM-040)
     variant: 'tertiary',
   },
 };
@@ -65,10 +69,14 @@ export const Tertiary: Story = {
 export const Warning: Story = {
   args: {
 <<<<<<< HEAD
+<<<<<<< HEAD
     children: 'TODO: until the implementation of the task [SEM - 209]',
 =======
     children: 'PUBLICAR ARTICULO',
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
+=======
+    children: 'TODO: until the implementation of the task [SEM - 209]',
+>>>>>>> 34f16c2 (feature(common):added changes per PR comments SEM-040)
     variant: 'warning',
   },
 };
@@ -76,12 +84,16 @@ export const Warning: Story = {
 export const Danger: Story = {
   args: {
 <<<<<<< HEAD
+<<<<<<< HEAD
     children: 'TODO: until the implementation of the task [SEM - 209]',
     variant: 'danger',
 =======
 >>>>>>> 3e47174 (feature(common):added SEM-040)
 =======
     children: 'PUBLICAR ARTICULO',
+=======
+    children: 'TODO: until the implementation of the task [SEM - 209]',
+>>>>>>> 34f16c2 (feature(common):added changes per PR comments SEM-040)
     variant: 'danger',
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
   },
