@@ -3,11 +3,13 @@
 .label-ref {
   display: flex;
   align-items: center;
-  background: #02322C;
+  background: #02322c;
   padding: 1rem;
   border-radius: 0.5rem;
   color: white;
-  width: 400px;
+  width: 448px; 
+  height: 70px; 
+  position: relative; 
 
   &__icon {
     display: flex;
@@ -17,22 +19,29 @@
     color: white;
     width: 2.5rem; 
     height: 2.5rem; 
-    border-radius: 0.5rem;
+    border-radius: 11px;
     margin-right: 0.5rem; 
     font-weight: bold;
-    font-family: Arial, sans-serif;
+    font-family: MS PGothic;
     border: 2px solid white;
-    font-size: 1.5rem; 
+    font-size: 36px; 
+    font-weight: 400;
+    line-height: 54.72px;
+    
   }
 
   &__label {
-    font-size: 1.2rem; 
+    width: 330px;
+    height: 65px;
+  
+    font-size:48px; 
     background-color: #02322C;
     color: white;
     padding: 0.5rem;
     border-radius: 0.25rem;
-    font-family: Arial, sans-serif;
-    font-weight: normal;
+    font-family:Lato;
+    font-weight: 800px;
     text-transform: uppercase;
+    line-height: 65.28px;
   }
 }
