@@ -10,11 +10,7 @@ const meta = {
     },
     variant: {
       control: 'select',
-      options: ['primary', 'secondary', 'tertiary'],
-    },
-    textVariant: {
-      control: 'select',
-      options: ['primary', 'secondary', 'tertiary'],
+      options: ['primary', 'secondary', 'tertiary', 'warning', 'danger'],
     },
   },
 } as Meta<typeof PublishButton>;
@@ -25,35 +21,35 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: 'PUBLICAR ARTICULO',
+    children: 'TODO: until the implementation of the task [SEM - 209]',
     variant: 'primary',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    children: 'PUBLICAR ARTICULO',
+    children: 'TODO: until the implementation of the task [SEM - 209]',
     variant: 'secondary',
   },
 };
 
 export const Tertiary: Story = {
   args: {
-    children: 'PUBLICAR ARTICULO',
+    children: 'TODO: until the implementation of the task [SEM - 209]',
     variant: 'tertiary',
   },
 };
 
 export const Warning: Story = {
   args: {
-    children: 'PUBLICAR ARTICULO',
+    children: 'TODO: until the implementation of the task [SEM - 209]',
     variant: 'warning',
   },
 };
 
 export const Danger: Story = {
   args: {
-    children: 'PUBLICAR ARTICULO',
+    children: 'TODO: until the implementation of the task [SEM - 209]',
     variant: 'danger',
   },
 };
