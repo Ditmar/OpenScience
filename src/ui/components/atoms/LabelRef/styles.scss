@@ -1,0 +1,37 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.label-ref {
+  display: flex;
+  align-items: center;
+  background: #02322c;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  width: 500px; 
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #02322c;
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    border: 2px solid white; 
+  }
+
+  &__label {
+    font-size: 1rem;
+    background-color: #02322c;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+}
