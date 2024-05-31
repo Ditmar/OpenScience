@@ -261,10 +261,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     padding: 0.313rem 1.25rem;
 =======
     padding:0.313rem 1.25rem;
 >>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
+=======
+    padding: 0.313rem 1.25rem;
+>>>>>>> 96aa7d9 (feature(common):added changes per PR comments SEM-040)
   }
 >>>>>>> 261e345 (feature(common):added SEM-040 changes)
 
@@ -490,7 +494,7 @@
 
   &--primary {
     background: $ads-primary-main;
-    color: $ads-color-main; 
+    color: $ads-color-main;
 
     &:hover {
       background: $ads-secondary-main;
@@ -499,7 +503,7 @@
 
   &--secondary {
     background: $ads-secondary-main;
-    color: $ads-color-main; 
+    color: $ads-color-main;
 
     &:hover {
       background: darken($ads-secondary-main, 10%);
@@ -507,10 +511,9 @@
   }
 
   &--tertiary {
-    background:  $ads-tertiary-main;
+    background: $ads-tertiary-main;
     color: $ads-text-secondary;
     border: 0.063rem solid #6c757d;
-
 
     &:hover {
       background: darken($ads-tertiary-main, 10%);
@@ -520,27 +523,31 @@
 
   &--warning {
     background: $ads-warning-main;
-    color:  $ads-color-main;
+    color: $ads-color-main;
 
     &:hover {
-        background: darken($ads-warning-main, 10%);
+      background: darken($ads-warning-main, 10%);
     }
   }
-  &--danger{
+  &--danger {
     background: $ads-danger-main;
-    color:  $ads-color-main;
+    color: $ads-color-main;
 
     &:hover {
-        background-color: darken($ads-danger-main, 10%);
+      background-color: darken($ads-danger-main, 10%);
     }
   }
 }
 
->>>>>>> 261e345 (feature(common):added SEM-040 changes)
-
 <<<<<<< HEAD
 >>>>>>> 261e345 (feature(common):added SEM-040 changes)
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 261e345 (feature(common):added SEM-040 changes)
+
+=======
+>>>>>>> 96aa7d9 (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> 701646e (feature(common):added changes per PR comments SEM-040)
 .buttonPublish__label {
@@ -1347,5 +1354,4 @@
 >>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
 >>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
   }
-
 }
