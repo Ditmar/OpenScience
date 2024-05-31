@@ -1,0 +1,14 @@
+@import '../../../../globals/breakpoints';
+@import '../../../../globals/mixins';
+@import '../../../../globals/variables';
+
+.volumen {
+    color: $ads-text-main;
+    font-size: $ads-size-main;
+    font-weight: $ads-font-weight;
+    width: fit-content;
+    font-family: Arial, Helvetica, sans-serif;
+    &:hover {
+        color: $ads-text-mian-hover;
+    }
+}
