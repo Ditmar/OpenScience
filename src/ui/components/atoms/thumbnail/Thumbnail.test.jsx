@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import Rectangle28 from './imgs/Rectangle28.png';
-import Rectangle30 from './imgs/Rectangle30.png';
+import Rectangle28 from './__mock__/imgs/Rectangle28.png';
+import Rectangle30 from './__mock__/imgs/Rectangle30.png';
 import Thumbnail from './Thumbnail.tsx';
 
 describe('First testing Thumbnail React Component', () => {
