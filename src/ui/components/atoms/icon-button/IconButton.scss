@@ -35,6 +35,12 @@
   width: 80%;
 }
 
+.button__icons svg {
+  display: flexbox;
+  height: 80%;
+  width: 80%;
+}
+
 .button__share:hover {
   background: $ads-secondary-main;
 }
