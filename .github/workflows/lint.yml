@@ -12,17 +12,15 @@ jobs:
   lint:
     runs-on: ubuntu-latest
 
+    container:
+      image: node:18.19-alpine
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 18
-
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
 
       - name: Run lint
         run: yarn lint
