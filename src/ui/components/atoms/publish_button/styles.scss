@@ -1,9 +1,13 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 <<<<<<< HEAD
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 =======
 >>>>>>> 3e47174 (feature(common):added SEM-040)
+=======
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+>>>>>>> 647d254 (feature(common):added changes per PR comments SEM-040)
 
 .buttonPublish {
   width: 100%;
@@ -96,25 +100,12 @@
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
   border: 2px solid transparent;
   border-radius: 1.563rem;
-  padding: 1rem;
-  width: 50%;
-  @include respond-to('small') {
-    width: 35%;
-    padding: 0.313rem 1.25rem;
-  }
+  padding: 0.2rem;
+  width: 7.563rem;
 
   @include respond-to('medium') {
-    width: 30%;
-    padding: 0.313rem 0rem;
-  }
-
-  @include respond-to('large') {
-    width: 25%;
-    padding: 0.313rem 0rem;
-  }
-
-  @include respond-to('extra-large') {
-    width: 25%;
+    width: 19.438rem;
+    padding: 0.2rem;
   }
 
   &--primary {
@@ -165,11 +156,14 @@
 }
 
 .buttonPublish__label {
-  font-size: $ads-size-main;
+  font-size: 0.75rem;
   text-transform: uppercase;
   text-align: center;
   font-weight: $ads-font-weight;
+  font-family: Montserrat;
+  line-height: 0.914rem;
 
+<<<<<<< HEAD
   @include respond-to('small') {
 <<<<<<< HEAD
     font-size: 18px;
@@ -177,5 +171,10 @@
 =======
     font-size: 1.125rem;
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
+=======
+  @include respond-to('medium') {
+    font-size: 1.5rem;
+    line-height: 1.829rem;
+>>>>>>> 647d254 (feature(common):added changes per PR comments SEM-040)
   }
 }
