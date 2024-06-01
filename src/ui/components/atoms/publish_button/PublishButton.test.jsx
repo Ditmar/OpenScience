@@ -64,11 +64,14 @@ describe('Testing PublishButton React Component', () => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 1dcc95d (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 1dcc95d (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
 >>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
@@ -393,6 +396,8 @@ describe('Testing PublishButton React Component', () => {
   test('should be rendere PUBLICAR ARTICULO', () => {
     render(<PublishButton>PUBLICAR ARTICULO</PublishButton>);
     const buttonElement = screen.getByText(/PUBLICAR ARTICULO/i);
+=======
+>>>>>>> 647d254 (feature(common):added changes per PR comments SEM-040)
     expect(buttonElement).toBeInTheDocument();
   });
   test('should have correct styles class', () => {
