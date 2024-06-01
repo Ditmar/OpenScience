@@ -9,6 +9,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
 =======
@@ -49,6 +50,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 >>>>>>> 647d254 (feature(common):added changes per PR comments SEM-040)
 >>>>>>> 1dcc95d (feature(common):added changes per PR comments SEM-040)
+=======
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+>>>>>>> 797db11 (feat:resolve rebase SEM-040)
 
 .buttonPublish {
   width: 100%;
@@ -57,6 +61,7 @@
 }
 
 .buttonPublish__button {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -485,6 +490,8 @@
 >>>>>>> ed0ea7c (feature(common):added SEM-040 changes)
 =======
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 797db11 (feat:resolve rebase SEM-040)
   border: 2px solid transparent;
   border-radius: 1.563rem;
   padding: 0.2rem;
@@ -550,18 +557,10 @@
   font-family: Montserrat;
   line-height: 0.914rem;
 
-<<<<<<< HEAD
-  @include respond-to('small') {
-<<<<<<< HEAD
-    font-size: 18px;
->>>>>>> 3e47174 (feature(common):added SEM-040)
-=======
-    font-size: 1.125rem;
->>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
-=======
   @include respond-to('medium') {
     font-size: 1.5rem;
     line-height: 1.829rem;
+<<<<<<< HEAD
 >>>>>>> 647d254 (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
@@ -605,16 +604,12 @@
 =======
     padding: 0.313rem 0rem;
 >>>>>>> d364e01 (feature(common):added changes per PR comments SEM-040)
-  }
-
-  @include respond-to('extra-large') {
-    width: 25%;
 =======
-
+>>>>>>> 797db11 (feat:resolve rebase SEM-040)
+  }
   @include respond-to('medium') {
     width: 19.438rem;
     padding: 0.2rem;
->>>>>>> 647d254 (feature(common):added changes per PR comments SEM-040)
   }
 
   &--primary {
@@ -672,8 +667,8 @@
   font-family: Montserrat;
   line-height: 0.914rem;
 
-<<<<<<< HEAD
   @include respond-to('small') {
+<<<<<<< HEAD
 <<<<<<< HEAD
     font-size: 18px;
 >>>>>>> 3e47174 (feature(common):added SEM-040)
@@ -692,5 +687,12 @@
     line-height: 1.829rem;
 >>>>>>> 647d254 (feature(common):added changes per PR comments SEM-040)
 >>>>>>> 1dcc95d (feature(common):added changes per PR comments SEM-040)
+=======
+    font-size: 1.125rem;
+  }
+  @include respond-to('medium') {
+    font-size: 1.5rem;
+    line-height: 1.829rem;
+>>>>>>> 797db11 (feat:resolve rebase SEM-040)
   }
 }
