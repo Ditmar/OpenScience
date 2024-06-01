@@ -2,7 +2,7 @@ import type { StoryObj, Meta } from '@storybook/react';
 import PointsDivider from './PointsDivider';
 
 const meta = {
-  title: 'ui/components/atoms/PointsDivider',
+  title: 'ui/components/atoms/points-divider',
   component: PointsDivider,
   argTypes: {
     color: {
@@ -15,7 +15,7 @@ const meta = {
     },
     variant: {
       control: 'select',
-      options: [/* 'solid', 'dotted', 'double',  */'solid-line', 'segmented-line', 'points'],
+      options: ['solid-line', 'segmented-line', 'points'],
     },
   },
 } as Meta<typeof PointsDivider>;
@@ -24,30 +24,6 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-/* export const PrimarySolid: Story = {
-  args: {
-    color: 'primary',
-    size: 'medium',
-    variant: 'solid',
-  },
-};
-
-export const SecondaryDotted: Story = {
-  args: {
-    color: 'secondary',
-    size: 'large',
-    variant: 'dotted',
-  },
-};
-
-export const TertiaryDouble: Story = {
-  args: {
-    color: 'tertiary',
-    size: 'small',
-    variant: 'double',
-  },
-};
- */
 export const PrimarySolidLine: Story = {
   args: {
     color: 'primary',
