@@ -3,7 +3,7 @@ import LabelReferences from './LabelReferences';
 import '../../../../globals/_variables.scss';
 
 const meta: Meta<typeof LabelReferences> = {
-  title: 'ui/components/atoms/LabelReferences',
+  title: 'ui/components/atoms/label-references',
   component: LabelReferences,
   argTypes: {
     text: { control: 'text' },
