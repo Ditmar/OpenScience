@@ -15,7 +15,7 @@ const meta = {
     },
     variant: {
       control: 'select',
-      options: ['solid', 'dotted', 'double'],
+      options: [/* 'solid', 'dotted', 'double',  */'solid-line', 'segmented-line', 'points'],
     },
   },
 } as Meta<typeof PointsDivider>;
@@ -24,11 +24,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-/**
- * PrimarySolid variant of the Divider component.
- * This variant uses the primary color, medium size, and solid style.
- */
-export const PrimarySolid: Story = {
+/* export const PrimarySolid: Story = {
   args: {
     color: 'primary',
     size: 'medium',
@@ -36,10 +32,6 @@ export const PrimarySolid: Story = {
   },
 };
 
-/**
- * SecondaryDotted variant of the Divider component.
- * This variant uses the secondary color, large size, and dotted style.
- */
 export const SecondaryDotted: Story = {
   args: {
     color: 'secondary',
@@ -48,14 +40,34 @@ export const SecondaryDotted: Story = {
   },
 };
 
-/**
- * TertiaryDouble variant of the Divider component.
- * This variant uses the tertiary color, small size, and double style.
- */
 export const TertiaryDouble: Story = {
   args: {
     color: 'tertiary',
     size: 'small',
     variant: 'double',
+  },
+};
+ */
+export const PrimarySolidLine: Story = {
+  args: {
+    color: 'primary',
+    size: 'medium',
+    variant: 'solid-line',
+  },
+};
+
+export const SecondarySegmentedLine: Story = {
+  args: {
+    color: 'secondary',
+    size: 'large',
+    variant: 'segmented-line',
+  },
+};
+
+export const TertiaryPoints: Story = {
+  args: {
+    color: 'tertiary',
+    size: 'small',
+    variant: 'points',
   },
 };

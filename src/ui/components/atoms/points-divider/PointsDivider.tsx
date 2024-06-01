@@ -4,11 +4,16 @@ import type { DividerProps } from './types/IProps';
 
 function PointsDivider(props: DividerProps) {
   const { color = 'primary', size = 'small', variant = 'solid' } = props;
+
   return (
-    <div className={`divider ${color} ${size} ${variant}`}>
-      <span className="dot" />
-      <span className="dot" />
-      <span className="dot" />
+    <div className={`divider divider--${color} divider--${size} divider--${variant}`}>
+      {variant === 'points' && (
+        <>
+          <span className="divider__dot" />
+          <span className="divider__dot" />
+          <span className="divider__dot" />
+        </>
+      )}
     </div>
   );
 }
