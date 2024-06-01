@@ -2,21 +2,21 @@
 @import '../../../../globals/mixins';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-.buttonPublish {
-  width: 100%;
+.button-Publish {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
-.buttonPublish__button {
+.button-Publish__button {
   border: 0.125rem solid transparent;
   border-radius: 1.563rem;
   padding: 0.2rem;
   width: 7.563rem;
 
   @include respond-to('medium') {
-    width: 19.438rem;
     padding: 0.2rem;
+    width: 19.438rem;
   }
 
   &--primary {
@@ -66,13 +66,13 @@
   }
 }
 
-.buttonPublish__label {
+.button-Publish__label {
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.75rem;
+  font-weight: $ads-font-weight;
+  line-height: 0.914rem;
   text-transform: uppercase;
   text-align: center;
-  font-weight: $ads-font-weight;
-  font-family: Montserrat;
-  line-height: 0.914rem;
 
   @include respond-to('medium') {
     font-size: 1.5rem;
