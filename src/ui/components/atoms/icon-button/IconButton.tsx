@@ -7,7 +7,7 @@ function IconButton(props: IProps) {
     <button className="button__share" aria-label="icon">
       <span
         data-testid="button__icon"
-        className="button__icon__share"
+        className="button__icons"
         dangerouslySetInnerHTML={{ __html: icon ?? '<div></div>' }}
       />
     </button>
