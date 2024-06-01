@@ -2,7 +2,7 @@ import type { StoryObj, Meta } from '@storybook/react';
 import PublishButton from './PublishButton';
 
 const meta = {
-  title: 'ui/components/atoms/PublishButton',
+  title: 'ui/components/atoms/publish-button',
   component: PublishButton,
   argTypes: {
     onClick: {
