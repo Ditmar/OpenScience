@@ -40,6 +40,7 @@ describe('Testing PublishButton React Component', () => {
     const buttonElement = screen.getByText(/PUBLICAR ARTICULO/i);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     console.log(buttonElement);
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -246,6 +247,9 @@ describe('Testing PublishButton React Component', () => {
   test('should be rendere PUBLICAR ARTICULO', () => {
     render(<PublishButton>PUBLICAR ARTICULO</PublishButton>);
     const buttonElement = screen.getByText(/PUBLICAR ARTICULO/i);
+=======
+    console.log(buttonElement);
+>>>>>>> 89b403a (feature(common):added changes per PR comments SEM-040)
     expect(buttonElement).toBeInTheDocument();
   });
   test('should have correct styles class', () => {
