@@ -1,6 +1,10 @@
 $ads-primary-main: #0793bf;
 $ads-secondary-main: #004369;
+$ads-tertiary-main: #fff;
+$ads-danger-main: #dc3545;
+$ads-warning-main: #ffc107;
 $ads-text-main: #02322c;
+$ads-text-secondary: #6c757d;
 $ads-text-mian-hover: #000;
 $ads-background-main: #f5f5f5;
 $ads-color-main: #fff;
@@ -8,4 +12,10 @@ $ads-size-main: 1.3rem;
 $ads-text-main-alpha: rgb(2 50 44 / 85%);
 $ads-font-weight-bold: 700;
 $ads-letter-spacing: 0.0625rem;
+<<<<<<< HEAD
 $ads-font-weight: 700;
+=======
+$ads-font-weight-bold: 700;
+$ads-letter-spacing: 0.0625rem;
+$ads-font-weight: 700;
+>>>>>>> e71579e (fix: arrangement of lint.scss SEM-040)
