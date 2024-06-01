@@ -1,11 +1,12 @@
 import { render } from '@testing-library/react';
-import PointsDivider from './PointsDivider';
+import PointsDivider from './PointsDivider.tsx';
 import '@testing-library/jest-dom';
 
 describe('Testing Points Divider React Component', () => {
-  
   test('should render with primary color, medium size, and solid-line variant', () => {
-    const { container } = render(<PointsDivider color="primary" size="medium" variant="solid-line" />);
+    const { container } = render(
+      <PointsDivider color="primary" size="medium" variant="solid-line" />,
+    );
     const dividerElement = container.firstChild;
     expect(dividerElement).toHaveClass('divider--primary');
     expect(dividerElement).toHaveClass('divider--medium');
@@ -13,7 +14,9 @@ describe('Testing Points Divider React Component', () => {
   });
 
   test('should render with secondary color, large size, and segmented-line variant', () => {
-    const { container } = render(<PointsDivider color="secondary" size="large" variant="segmented-line" />);
+    const { container } = render(
+      <PointsDivider color="secondary" size="large" variant="segmented-line" />,
+    );
     const dividerElement = container.firstChild;
     expect(dividerElement).toHaveClass('divider--secondary');
     expect(dividerElement).toHaveClass('divider--large');
