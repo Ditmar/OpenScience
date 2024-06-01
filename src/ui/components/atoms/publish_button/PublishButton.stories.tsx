@@ -179,6 +179,7 @@ export const Primary: Story = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     children: 'PUBLICAR ARTICULO',
 <<<<<<< HEAD
@@ -303,13 +304,16 @@ export const Primary: Story = {
 =======
     children: 'TODO: until the implementation of the task [SEM - 209]',
 >>>>>>> 34f16c2 (feature(common):added changes per PR comments SEM-040)
+=======
+    children: 'PUBLICAR ARTICULO',
+>>>>>>> 647d254 (feature(common):added changes per PR comments SEM-040)
     variant: 'primary',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    children: 'TODO: until the implementation of the task [SEM - 209]',
+    children: 'PUBLICAR ARTICULO',
     variant: 'secondary',
   },
 };
