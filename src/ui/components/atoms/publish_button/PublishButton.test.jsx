@@ -13,7 +13,7 @@ describe('Testing PublishButton React Component', () => {
     const buttonElement = screen.getByRole('button');
     const labelElement = screen.getByText(/PUBLICAR ARTICULO/i);
 
-    expect(buttonElement).toHaveClass('buttonPublish__button');
-    expect(labelElement).toHaveClass('buttonPublish__label');
+    expect(buttonElement).toHaveClass('button-publish__button');
+    expect(labelElement).toHaveClass('button-publish__label');
   });
 });
