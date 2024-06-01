@@ -2,7 +2,7 @@ import type { StoryObj, Meta } from '@storybook/react';
 import ReferenceAPA from './Reference.apa';
 
 const meta = {
-  title: 'ui/components/atoms/labelreference',
+  title: 'ui/components/atoms/reference-information',
   component: ReferenceAPA,
   argTypes: {
     referencia: { control: 'text' },
