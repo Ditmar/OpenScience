@@ -4,12 +4,12 @@ import type { IProps } from './types/IProps';
 function PublishButton(props: IProps) {
   const { children, variant, onClick } = props;
   return (
-    <div className="buttonPublish">
+    <div className="button-Publish">
       <button
-        className={`buttonPublish__button buttonPublish__button--${variant}`}
+        className={`button-Publish__button button-Publish__button--${variant}`}
         onClick={onClick}
       >
-        <span className={`buttonPublish__label `}>{children}</span>
+        <span className={`button-Publish__label `}>{children}</span>
       </button>
     </div>
   );
