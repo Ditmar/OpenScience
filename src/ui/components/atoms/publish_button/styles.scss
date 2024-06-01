@@ -2,13 +2,13 @@
 @import '../../../../globals/mixins';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-.button-Publish {
+.button-publish {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-.button-Publish__button {
+.button-publish__button {
   border: 0.125rem solid transparent;
   border-radius: 1.563rem;
   padding: 0.2rem;
@@ -24,7 +24,7 @@
     color: $ads-color-main;
 
     &:hover {
-      background: $ads-secondary-main;
+      background: #002a40;
     }
   }
 
@@ -33,18 +33,18 @@
     color: $ads-color-main;
 
     &:hover {
-      background: darken($ads-secondary-main, 10%);
+      background: #00101a;
     }
   }
 
   &--tertiary {
     background: $ads-tertiary-main;
-    color: $ads-text-secondary;
     border: 0.063rem solid #6c757d;
+    color: $ads-text-secondary;
 
     &:hover {
-      background: darken($ads-tertiary-main, 10%);
-      color: darken($ads-text-secondary, 10%);
+      background: #ccc;
+      color: $ads-text-mian-hover;
     }
   }
 
@@ -53,26 +53,27 @@
     color: $ads-color-main;
 
     &:hover {
-      background: darken($ads-warning-main, 10%);
+      background: #8a6d00;
     }
   }
+
   &--danger {
     background: $ads-danger-main;
     color: $ads-color-main;
 
     &:hover {
-      background-color: darken($ads-danger-main, 10%);
+      background: #801c24;
     }
   }
 }
 
-.button-Publish__label {
-  font-family: 'Montserrat', sans-serif;
+.button-publish__label {
+  font-family: Montserrat, sans-serif;
   font-size: 0.75rem;
   font-weight: $ads-font-weight;
   line-height: 0.914rem;
-  text-transform: uppercase;
   text-align: center;
+  text-transform: uppercase;
 
   @include respond-to('medium') {
     font-size: 1.5rem;
