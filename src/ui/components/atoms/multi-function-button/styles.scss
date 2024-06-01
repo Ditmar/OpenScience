@@ -1,0 +1,67 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.variable__button {
+  background: $ads-background-main;
+  border: none;
+  height: 3.5rem;
+  padding: 0.5rem;
+  width: 3rem;
+
+  @include respond-to('small') {
+    background: $ads-background-main;
+    height: 3.5rem;
+    width: 3rem;
+  }
+
+  @include respond-to('medium') {
+    background: $ads-background-main;
+    height: 4.5rem;
+    width: 4rem;
+  }
+
+  @include respond-to('large') {
+    background: $ads-primary-main;
+    height: 5.5rem;
+    width: 5rem;
+  }
+
+  @include respond-to('extra-large') {
+    background: $ads-primary-main;
+    height: 6rem;
+    width: 5.2rem;
+  }
+}
+
+.button__icon svg {
+  display: flexbox;
+  height: 75%;
+  width: 80%;
+}
+
+.button__icon #path {
+  display: flexbox;
+  fill: $ads-primary-main;
+
+  @include respond-to('large') {
+    fill: $ads-color-main;
+  }
+
+  @include respond-to('extra-large') {
+    fill: $ads-color-main;
+  }
+}
+
+.variable__button:hover {
+  background: $ads-text-main;
+
+  .button__icon #path {
+    @include respond-to('small') {
+      fill: $ads-color-main;
+    }
+
+    @include respond-to('medium') {
+      fill: $ads-color-main;
+    }
+  }
+}
