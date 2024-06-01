@@ -41,3 +41,6 @@ jobs:
 
       - name: Run lint:css
         run: yarn lint:css
+      
+      - name: Run test
+        run: yarn test
