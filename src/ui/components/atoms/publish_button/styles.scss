@@ -1,5 +1,6 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 .buttonPublish {
   width: 100%;
@@ -10,25 +11,12 @@
 .buttonPublish__button {
   border: 2px solid transparent;
   border-radius: 1.563rem;
-  padding: 1rem;
-  width: 50%;
-  @include respond-to('small') {
-    width: 35%;
-    padding: 0.313rem 1.25rem;
-  }
+  padding: 0.2rem;
+  width: 7.563rem;
 
   @include respond-to('medium') {
-    width: 30%;
-    padding: 0.313rem 0rem;
-  }
-
-  @include respond-to('large') {
-    width: 25%;
-    padding: 0.313rem 0rem;
-  }
-
-  @include respond-to('extra-large') {
-    width: 25%;
+    width: 19.438rem;
+    padding: 0.2rem;
   }
 
   &--primary {
@@ -79,12 +67,15 @@
 }
 
 .buttonPublish__label {
-  font-size: $ads-size-main;
+  font-size: 0.75rem;
   text-transform: uppercase;
   text-align: center;
   font-weight: $ads-font-weight;
+  font-family: Montserrat;
+  line-height: 0.914rem;
 
-  @include respond-to('small') {
-    font-size: 1.125rem;
+  @include respond-to('medium') {
+    font-size: 1.5rem;
+    line-height: 1.829rem;
   }
 }

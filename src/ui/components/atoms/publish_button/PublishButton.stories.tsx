@@ -21,14 +21,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: 'TODO: until the implementation of the task [SEM - 209]',
+    children: 'PUBLICAR ARTICULO',
     variant: 'primary',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    children: 'TODO: until the implementation of the task [SEM - 209]',
+    children: 'PUBLICAR ARTICULO',
     variant: 'secondary',
   },
 };

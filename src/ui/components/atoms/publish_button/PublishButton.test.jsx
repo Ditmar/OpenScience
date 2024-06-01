@@ -6,6 +6,7 @@ describe('Testing PublishButton React Component', () => {
   test('should be rendere PUBLICAR ARTICULO', () => {
     render(<PublishButton>PUBLICAR ARTICULO</PublishButton>);
     const buttonElement = screen.getByText(/PUBLICAR ARTICULO/i);
+    console.log(buttonElement);
     expect(buttonElement).toBeInTheDocument();
   });
   test('should have correct styles class', () => {
