@@ -98,6 +98,7 @@ export const Primary: Story = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 96aa7d9 (feature(common):added changes per PR comments SEM-040)
 =======
@@ -106,6 +107,8 @@ export const Primary: Story = {
 >>>>>>> e3583b0 (feature(common):added SEM-040)
 =======
 >>>>>>> 897d825 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 1dcc95d (feature(common):added changes per PR comments SEM-040)
     children: 'PUBLICAR ARTICULO',
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -145,6 +148,7 @@ export const Primary: Story = {
 =======
     children: 'PUBLICAR ARTICULO',
 >>>>>>> 647d254 (feature(common):added changes per PR comments SEM-040)
+<<<<<<< HEAD
 =======
 >>>>>>> 182f71a3fb35a796eec4ec3751c01a7140e436e6
 =======
@@ -166,13 +170,15 @@ export const Primary: Story = {
     children: 'TODO: until the implementation of the task [SEM - 209]',
 >>>>>>> 34f16c2 (feature(common):added changes per PR comments SEM-040)
 >>>>>>> 897d825 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 1dcc95d (feature(common):added changes per PR comments SEM-040)
     variant: 'primary',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    children: 'TODO: until the implementation of the task [SEM - 209]',
+    children: 'PUBLICAR ARTICULO',
     variant: 'secondary',
   },
 };
