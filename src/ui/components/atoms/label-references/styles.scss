@@ -1,0 +1,88 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+<<<<<<< HEAD
+.label-references__text {
+  display: inline-block;
+=======
+.label-references {
+  display: inline;
+>>>>>>> 462ad1433154561492121f5d5b9f6b2ed8c86c53
+  font-family: Lato, sans-serif;
+  font-size: 1rem;  
+  font-weight: $ads-font-weight-bold;   
+  letter-spacing: 0.0625rem;
+  line-height: 1.5;
+<<<<<<< HEAD
+  padding: $ads-letter-spacing;
+  text-transform: uppercase;
+
+
+  @include respond-to('small') {
+    font-size: 1rem;
+    width: 7.5rem;
+  }
+
+  @include respond-to('medium') {
+    font-size: 1rem;
+    width: 7.5rem;
+  }
+
+  @include respond-to('large') {
+    font-size: 2rem;
+    width: 16rem;
+  }
+
+  @include respond-to('extra-large') {
+    font-size: 2rem;
+    width: 16rem;
+  }
+}
+
+.label-references--primary .label-references__text {
+  color: $ads-text-mian-hover;
+}
+
+.label-references--main .label-references__text {
+  background-color: $ads-primary-main;
+  color: $ads-color-main;
+  padding: $ads-letter-spacing;
+}
+
+
+
+
+=======
+  text-align: left;
+  text-transform: uppercase;
+  width: 100%;
+
+  @include respond-to('medium') {
+    font-size: 16px; 
+    width: 80%;
+  }
+
+  @include respond-to('large') {
+    font-size: 32px; 
+    width: 30%;
+  }
+
+  @include respond-to('extra-large') {
+    font-size: 48px; 
+    width: 30%;
+  }
+
+  &.label-references-primary {
+    color: $ads-text-mian-hover;
+  }
+
+  &.label-references-main {
+    color: $ads-color-main;
+  }
+
+  &.label-references-main-bg {
+    background-color: $ads-primary-main;
+    padding: $ads-letter-spacing;
+  }
+}
+>>>>>>> 462ad1433154561492121f5d5b9f6b2ed8c86c53
