@@ -23,6 +23,7 @@ import PublishButton from './PublishButton.tsx';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> e3583b0 (feature(common):added SEM-040)
@@ -48,10 +49,13 @@ import PublishButton from './PublishButton.tsx';
 >>>>>>> d48dd33 (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 797db11 (feat:resolve rebase SEM-040)
 describe('Testing PublishButton React Component', () => {
   test('should be rendere PUBLICAR ARTICULO', () => {
     render(<PublishButton>PUBLICAR ARTICULO</PublishButton>);
     const buttonElement = screen.getByText(/PUBLICAR ARTICULO/i);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -201,6 +205,8 @@ describe('Testing PublishButton React Component', () => {
 =======
 >>>>>>> 89b403a (feature(common):added changes per PR comments SEM-040)
 >>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 797db11 (feat:resolve rebase SEM-040)
     expect(buttonElement).toBeInTheDocument();
   });
   test('should have correct styles class', () => {
@@ -210,6 +216,7 @@ describe('Testing PublishButton React Component', () => {
 
     expect(buttonElement).toHaveClass('buttonPublish__button');
     expect(labelElement).toHaveClass('buttonPublish__label');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     expect(labelElement).toHaveStyle({ color: 'rgb(255, 255, 255)'});
@@ -461,5 +468,7 @@ describe('Testing Button React Component', () => {
 =======
 >>>>>>> c09f0e3 (feature(common):added SEM-040 changes)
 >>>>>>> 2022cd9 (feature(common):added SEM-040 changes)
+=======
+>>>>>>> 797db11 (feat:resolve rebase SEM-040)
   });
 });
