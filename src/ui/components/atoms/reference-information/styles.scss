@@ -8,4 +8,11 @@
   font-family: Calibri, "Segoe UI", sans-serif;
   padding: 0.625rem;
 
+  &--large {
+    padding: $ads-padding-large; 
+  }
+
+  &__text {
+    font-size: $ads-size-main;
+  }
 }
