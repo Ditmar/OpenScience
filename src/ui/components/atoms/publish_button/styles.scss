@@ -18,6 +18,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
 =======
@@ -26,6 +27,8 @@
 >>>>>>> 1dcc95d (feature(common):added changes per PR comments SEM-040)
 =======
 >>>>>>> 61fd5a7 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 =======
 >>>>>>> 3e47174 (feature(common):added SEM-040)
@@ -49,6 +52,7 @@
 =======
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 >>>>>>> 89b403a (feature(common):added changes per PR comments SEM-040)
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
 =======
@@ -86,6 +90,8 @@
 =======
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 >>>>>>> 647d254 (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
 
 .buttonPublish {
   width: 100%;
@@ -203,6 +209,7 @@
   border: 2px solid transparent;
   border-radius: 1.563rem;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   background: $ads-primary-main;
 =======
@@ -243,6 +250,8 @@
   border: 2px solid transparent;
   border-radius: 1.563rem;
 >>>>>>> 8882fca (feature(common):added SEM-040 changes)
+=======
+>>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
   padding: 1rem;
   width: 50%;
   @include respond-to('small') {
@@ -424,16 +433,20 @@
 =======
   padding: 0.2rem;
   width: 7.563rem;
+<<<<<<< HEAD
 =======
     padding:5px 20px;
   }
 >>>>>>> 261e345 (feature(common):added SEM-040 changes)
 >>>>>>> 8882fca (feature(common):added SEM-040 changes)
+=======
+>>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
 
   @include respond-to('medium') {
     width: 19.438rem;
     padding: 0.2rem;
 >>>>>>> 89b403a (feature(common):added changes per PR comments SEM-040)
+<<<<<<< HEAD
   }
 
   &--primary {
@@ -490,6 +503,8 @@
 =======
   @include respond-to('extra-large') {
     width: 25%;
+=======
+>>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
   }
 
   &--primary {
@@ -554,8 +569,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
+=======
+>>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
   font-size: 0.75rem;
   text-transform: uppercase;
   text-align: center;
@@ -1345,13 +1363,27 @@
 =======
 =======
   font-size: $ads-size-main;
+=======
+  font-size: 0.75rem;
+>>>>>>> 89b403a (feature(common):added changes per PR comments SEM-040)
   text-transform: uppercase;
   text-align: center;
   font-weight: $ads-font-weight;
+  font-family: Montserrat;
+  line-height: 0.914rem;
 
+<<<<<<< HEAD
   @include respond-to('small') {
     font-size: 1.125rem;
 >>>>>>> bae7f3a (feature(common):added changes per PR comments SEM-040)
+<<<<<<< HEAD
 >>>>>>> 76a2ecd (feature(common):added changes per PR comments SEM-040)
+=======
+=======
+  @include respond-to('medium') {
+    font-size: 1.5rem;
+    line-height: 1.829rem;
+>>>>>>> 89b403a (feature(common):added changes per PR comments SEM-040)
+>>>>>>> 256c086 (feature(common):added changes per PR comments SEM-040)
   }
 }
