@@ -6,7 +6,7 @@ function Thumbnail(props: IProps) {
 
   return (
     <div className="thumbnail">
-      <img src={pathImage} alt={alt} className="thumbnail" />
+      <img src={pathImage} alt={alt} />
       <div className="overlay" aria-label="overlay">
         {' '}
       </div>
