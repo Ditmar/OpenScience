@@ -1,7 +1,6 @@
 import type { StoryObj, Meta } from '@storybook/react';
 import ContainerContent from './ContainerContent';
 import Container from '../../../../assets/icons/Rectangle 131.svg?raw';
-import '../../../../globals/_variables.scss';
 
 const meta = {
   title: 'ui/components/atoms/container-content',
