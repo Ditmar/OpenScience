@@ -13,4 +13,3 @@ function Share(props: IProps) {
     </label>
   );
 }
-export default Share;

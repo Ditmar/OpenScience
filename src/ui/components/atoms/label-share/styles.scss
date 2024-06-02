@@ -25,8 +25,6 @@
   padding: 0.1rem;
   width: 100%; 
 
-
-
   @include respond-to('small') {
     font-size: 1rem;
     width: 7.5rem;
