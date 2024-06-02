@@ -13,9 +13,9 @@ describe('Testing containerContent React Component', () => {
   test('collapses content when clicked by user', () => {
     render(<ContainerContent icon={Container}>Container</ContainerContent>);
     expect(screen.queryByText(/Expanded content/i)).not.toBeInTheDocument();
-    fireEvent.click(screen.getByText(/Container/i)); // Simula un clic
-    expect(screen.getByText(/Container/i)).toBeInTheDocument(); // Verifica que el contenido se expandió
     fireEvent.click(screen.getByText(/Container/i));
-    // expect(screen.queryByText(/Container/i)).not.toBeInTheDocument(); // Verifica que el contenido se colapsó nuevamente
+    expect(screen.getByText(/Container/i)).toBeInTheDocument();
+    fireEvent.click(screen.getByText(/Container/i));
+    // expect(screen.queryByText(/Container/i)).not.toBeInTheDocument();
   });
 });
