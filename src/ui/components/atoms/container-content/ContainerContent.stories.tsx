@@ -6,7 +6,6 @@ import Container from './mock/assets/img/Rectangle 131.svg?raw';
 const meta: Meta = {
 =======
 import Container from '../../../../assets/icons/Rectangle 131.svg?raw';
-import '../../../../globals/_variables.scss';
 
 const meta = {
 >>>>>>> 5c170bf (fear: add container content actualizado 2)
