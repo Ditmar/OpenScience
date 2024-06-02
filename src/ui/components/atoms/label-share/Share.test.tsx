@@ -11,7 +11,7 @@ describe('Testing Share React Component', () => {
 
   test('should render icon for Compartir', () => {
     render(<Share icon={share} text="Compartir" />);
-    const iconElement = screen.getByRole('img', { hidden: true });
+    const iconElement = screen.getByTestId('share-icon');
     expect(iconElement).toBeInTheDocument();
   });
 });

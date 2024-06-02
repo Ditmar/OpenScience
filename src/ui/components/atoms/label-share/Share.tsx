@@ -10,6 +10,7 @@ function Share({ text = 'Compatir', colorVariant = 'primary', icon }: IProps) {
     <div className={`label-share ${getColorClassName()}`}>
       <span
         className="label-share__icon"
+        data-testid="share-icon"
         dangerouslySetInnerHTML={{ __html: icon ?? '<div></div>' }}
       />
       <span className="label-share__text">{text}</span>

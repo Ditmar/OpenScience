@@ -3,22 +3,10 @@
 
 .label-share {
   background: $ads-primary-main;
-  padding: 1rem;
-  width: auto;
-  display: inline-flex;
-  background-color: $ads-text-main;
-  color: $ads-color-main;
-}
-.label-share__text {
-  display: inline-block;
-  font-family: Lato, sans-serif;
-  font-size: 1rem;
-  font-weight: $ads-font-weight-bold;
-  letter-spacing: 0.0625rem;
-  line-height: 1;
-  padding: $ads-letter-spacing;
-  text-transform: uppercase;
-  padding: 0.1rem;
+  background-color: $ads-text-main; 
+  height: 2rem; 
+  padding: 1rem;     
+  width: 40rem;
 
   @include respond-to('small') {
     font-size: 1rem;
@@ -41,6 +29,16 @@
   }
 }
 
+.label-share__text {    
+  font-family: Lato, sans-serif;
+  font-size: 1rem;
+  font-weight: $ads-font-weight-bold;
+  letter-spacing: 0.0625rem;
+  line-height: 1;
+  padding: $ads-letter-spacing;
+  text-transform: uppercase;    
+}
+
 .label-share__icon {
   height: 20%;
 }
@@ -48,11 +46,7 @@
 .label-share__icon svg {
   display: flexbox;
   height: 65%;
-  width: 50%;
-}
-
-.label-share-primary .label-share__text {
-  color: $ads-text-main-hover;
+  width: 5%;
 }
 
 .label-share--main .label-share__text {
