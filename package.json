@@ -20,12 +20,17 @@
   },
   "engines": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "node": ">=18.19 <=18.21",
     "yarn": ">=1.22.21 <=1.22.22"
 =======
     "node": "18.20.3",
     "yarn": "1.22.22"
 >>>>>>> 4532e2e (feat :add container conteint)
+=======
+    "node": "18.19",
+    "yarn": "1.22.21"
+>>>>>>> 5a9205a (feat :add container conteint actualizado)
   },
   "dependencies": {
     "@astrojs/check": "0.5.10",
