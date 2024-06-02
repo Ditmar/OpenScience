@@ -1,0 +1,65 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.label-share {
+  background: $ads-primary-main;  
+  padding: 1.26rem;
+  width: auto;
+  font-weight: $ads-font-weight-bold; 
+  display:inline-flex;
+  font-family: Lato, sans-serif;
+  font-size: 1rem; 
+  letter-spacing: 0.0625rem;
+  background-color: $ads-text-main;
+  color: $ads-color-main;  
+}
+.label-share__text {
+  display: inline-block;
+  font-family: Lato, sans-serif;
+  font-size: 1rem;  
+  font-weight: $ads-font-weight-bold;   
+  letter-spacing: 0.0625rem;
+  line-height: 1;
+  padding: $ads-letter-spacing;
+  text-transform: uppercase;
+  padding: 0.1rem;
+  width: 100%; 
+  
+
+
+  @include respond-to('small') {
+    font-size: 1rem;
+    width: 7.5rem;
+  }
+
+  @include respond-to('medium') {
+    font-size: 1rem;
+    width: 7.5rem;
+  }
+
+  @include respond-to('large') {
+    font-size: 2rem;
+    width: 16rem;
+  }
+
+  @include respond-to('extra-large') {
+    font-size: 2rem;
+    width: 16rem;
+  }
+}
+
+
+.label-share__icon {
+    content: '';    
+    height: 3px;
+    width: 18%;
+}
+
+  .label-share__icon .label-share__text {
+    background-color: $ads-primary-main;
+    color: $ads-color-main;
+    padding: $ads-letter-spacing;
+}
+  
+
+
