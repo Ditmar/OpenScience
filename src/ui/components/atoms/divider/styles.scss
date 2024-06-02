@@ -1,33 +1,32 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 
-
 .divider--solid {
-    border-style: solid;
-    color: $ads-text-main;
-    width: 85%;
+  border-style: solid;
+  color: $ads-text-main;
+  width: 85%;
 }
 
-.divider--solid:hover{
-    color: $ads-text-main-alpha;
+.divider--solid:hover {
+  color: $ads-text-main-alpha;
 }
-  
+
 .divider--dotted {
-    border-style: dotted;
-    color: $ads-text-main;
-    width: 85%;
+  border-style: dotted;
+  color: $ads-text-main;
+  width: 85%;
 }
 
-.divider--dotted:hover{
-    color: $ads-text-main-alpha;
+.divider--dotted:hover {
+  color: $ads-text-main-alpha;
 }
 
 .divider--dashed {
-    border-style: dashed;
-    color: $ads-text-main;
-    width: 85%;
+  border-style: dashed;
+  color: $ads-text-main;
+  width: 85%;
 }
 
-.divider--dashed:hover{
-    color: $ads-text-main-alpha;
+.divider--dashed:hover {
+  color: $ads-text-main-alpha;
 }

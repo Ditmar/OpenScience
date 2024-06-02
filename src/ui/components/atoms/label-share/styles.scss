@@ -2,28 +2,23 @@
 @import '../../../../globals/mixins';
 
 .label-share {
-  background: $ads-primary-main;  
-  padding: 1.26rem;
+  background: $ads-primary-main;
+  padding: 1rem;
   width: auto;
-  font-weight: $ads-font-weight-bold; 
-  display:inline-flex;
-  font-family: Lato, sans-serif;
-  font-size: 1rem; 
-  letter-spacing: 0.0625rem;
+  display: inline-flex;
   background-color: $ads-text-main;
-  color: $ads-color-main;  
+  color: $ads-color-main;
 }
 .label-share__text {
   display: inline-block;
   font-family: Lato, sans-serif;
-  font-size: 1rem;  
-  font-weight: $ads-font-weight-bold;   
+  font-size: 1rem;
+  font-weight: $ads-font-weight-bold;
   letter-spacing: 0.0625rem;
   line-height: 1;
   padding: $ads-letter-spacing;
   text-transform: uppercase;
   padding: 0.1rem;
-  width: 100%; 
 
   @include respond-to('small') {
     font-size: 1rem;
@@ -46,15 +41,20 @@
   }
 }
 
-
 .label-share__icon {
-    content: '';    
-    height: 3px;
-    width: 18%;
+  height: 20%;
 }
 
-  .label-share__icon .label-share__text {
-    background-color: $ads-primary-main;
-    color: $ads-color-main;
-    padding: $ads-letter-spacing;
+.label-share__icon svg {
+  display: flexbox;
+  height: 65%;
+  width: 50%;
+}
+
+.label-share-primary .label-share__text {
+  color: $ads-text-main-hover;
+}
+
+.label-share--main .label-share__text {
+  color: $ads-color-main;
 }

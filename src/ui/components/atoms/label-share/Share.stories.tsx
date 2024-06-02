@@ -2,13 +2,13 @@ import type { StoryObj, Meta } from '@storybook/react';
 import Share from './Share';
 import '../../../../globals/_variables.scss';
 import share from '../../../../assets/icons/share.svg?raw';
-import media from '../../../../assets/icons/media.svg?raw';
 
 const meta: Meta<typeof Share> = {
   title: 'ui/components/atoms/label-share',
   component: Share,
   argTypes: {
-    text: { control: 'text' },    
+    text: { control: 'text' },
+    colorVariant: { control: { type: 'select', options: ['primary', 'main'] } },
   },
 };
 
@@ -16,18 +16,16 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Compartir: Story = {
+export const Default: Story = {
   args: {
-    children: 'Compartir',
-    text: 'Compartir',
+    text: 'Compatir',
     icon: share,
   },
 };
 
-export const Media: Story = {
+export const Primary: Story = {
   args: {
-    children: 'Media',
-    text: 'Media',
-    icon: media,
+    colorVariant: 'main',
+    icon: share,
   },
 };
