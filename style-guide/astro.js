@@ -7,7 +7,7 @@ module.exports = {
     'plugin:svelte/recommended',
     'plugin:astro/recommended',
   ],
-  ignorePatterns: ['app-server/**'],
+  ignorePatterns: ['app-server/**', '.yarn/**', 'Dockerfile'],
   overrides: [
     {
       files: ['*.astro'],

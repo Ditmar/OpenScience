@@ -4,13 +4,12 @@
 .label-references__text {
   display: inline-block;
   font-family: Lato, sans-serif;
-  font-size: 1rem;  
-  font-weight: $ads-font-weight-bold;   
+  font-size: 1rem;
+  font-weight: $ads-font-weight-bold;
   letter-spacing: 0.0625rem;
   line-height: 1.5;
   padding: $ads-letter-spacing;
   text-transform: uppercase;
-
 
   @include respond-to('small') {
     font-size: 1rem;
@@ -42,7 +41,3 @@
   color: $ads-color-main;
   padding: $ads-letter-spacing;
 }
-
-
-
-
