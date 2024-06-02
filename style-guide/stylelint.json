@@ -18,7 +18,8 @@
     ],
     "max-nesting-depth": 3,
     "order/order": ["custom-properties", "declarations"],
-    "order/properties-alphabetical-order": true
+    "order/properties-alphabetical-order": true,
+    "scss/dollar-variable-pattern": "^ads(-[a-z]+){2,3}$"
   },
   "overrides": [
     {

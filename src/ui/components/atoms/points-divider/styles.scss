@@ -1,0 +1,68 @@
+@import '../../../../globals/variables';
+
+.divider {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem; // Espacio entre los puntos
+  justify-content: center;
+
+  &__dot {
+    background-color: $ads-background-main;
+    border-radius: 50%;
+    height: 1rem;
+    width: 1rem;
+  }
+
+  &--primary {
+    color: $ads-primary-main;
+  }
+
+  &--secondary {
+    color: $ads-secondary-main;
+  }
+
+  &--tertiary {
+    color: $ads-text-main;
+  }
+
+  &--small &__dot {
+    height: 0.5rem;
+    width: 0.5rem;
+  }
+
+  &--medium &__dot {
+    height: 1rem;
+    width: 1rem;
+  }
+
+  &--large &__dot {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  &--solid &__dot {
+    border-style: solid;
+  }
+
+  &--dotted &__dot {
+    border-style: dotted;
+  }
+
+  &--double &__dot {
+    border-style: double;
+  }
+
+  &--solid-line {
+    border-bottom: 2px solid currentcolor;
+    width: 100%;
+  }
+
+  &--segmented-line {
+    border-bottom: 2px dashed currentcolor;
+    width: 100%;
+  }
+
+  &--points {
+    display: flex;
+  }
+}
