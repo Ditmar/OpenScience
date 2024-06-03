@@ -1,0 +1,131 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.error-message {
+  color: $ads-primary-main;
+  font-family: Arial, sans-serif;
+  padding: 10rem;
+  text-align: center;
+
+  h1 {
+    color: $ads-primary-main;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 6rem;
+    font-weight: 400;
+    line-height: 7.261rem;
+    margin: 0;
+
+    @include respond-to('small') {
+      font-size: 4rem;
+    }
+
+    @include respond-to('medium') {
+      font-size: 5rem;
+    }
+
+    @include respond-to('large') {
+      font-size: 6rem;
+    }
+
+    @include respond-to('extra-large') {
+      font-size: 7rem;
+    }
+  }
+
+  .title {
+    color: $ads-primary-main;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 3.026rem;
+    margin: 0;
+    margin-bottom: 0.5rem;
+
+    @include respond-to('small') {
+      font-size: 1.5rem;
+    }
+
+    @include respond-to('medium') {
+      font-size: 1.75rem;
+    }
+
+    @include respond-to('large') {
+      font-size: 2.5rem;
+    }
+
+    @include respond-to('extra-large') {
+      font-size: 2.25rem;
+    }
+  }
+
+  .message {
+    color: $ads-primary-main;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 0.908rem;
+    margin: 0.1rem;
+
+    @include respond-to('small') {
+      font-size: 1.25rem;
+    }
+
+    @include respond-to('medium') {
+      font-size: 1.5rem;
+    }
+
+    @include respond-to('large') {
+      font-size: 0.75rem;
+    }
+
+    @include respond-to('extra-large') {
+      font-size: 2rem;
+    }
+  }
+
+  .a {
+    color: $ads-primary-main;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 0.908rem;
+    margin: 0.1rem;    
+
+    @include respond-to('small') {
+      font-size: 1.25rem;
+    }
+
+    @include respond-to('medium') {
+      font-size: 1.5rem;
+    }
+
+    @include respond-to('large') {
+      font-size: 0.75rem;
+    }
+
+    @include respond-to('extra-large') {
+      font-size: 2rem;
+    }
+  }
+}
+
+.server-error {
+  h1 { 
+    font-family: Inter, Arial, sans-serif;
+    font-size: 8rem;  
+    font-weight: 800;
+    line-height: 9.682rem;
+  }
+
+  .title { 
+    font-family: Inter, Arial, sans-serif;
+    font-size: 2.5rem; 
+    font-weight: 700;
+    line-height: 3.026rem;
+  }
+
+  .message { 
+    font-family: Inter, Arial, sans-serif;
+    font-size: 0.938rem; 
+    font-weight: 400;
+    line-height: 1.134rem;
+  }
+}
