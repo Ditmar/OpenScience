@@ -1,0 +1,34 @@
+---
+// src/components/ArticleInfo.astro
+
+const { date, volumeNumber } = Astro.props;
+---
+
+<div class="article-info">
+  <div class="article-info__item">
+    <span class="article-info__label">Fecha:</span>
+    <span class="article-info__value">{date}</span>
+  </div>
+  <div class="article-info__item">
+    <span class="article-info__label">Número de Volumen:</span>
+    <span class="article-info__value">{volumeNumber}</span>
+  </div>
+</div>
+
+<style>
+  .article-info {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 300px;
+  }
+  .article-info__item {
+    margin-bottom: 0.5rem;
+  }
+  .article-info__label {
+    font-weight: bold;
+  }
+  .article-info__value {
+    margin-left: 0.5rem;
+  }
+</style>

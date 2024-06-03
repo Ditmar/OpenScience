@@ -1,0 +1,20 @@
+---
+
+import ArticlePage from '../components/ArticlePage.astro';
+import { breadcrumbsMock } from '../mocks/mockData.js';
+
+const articleData = {
+  date: '2024-05-26',
+  volumeNumber: '42',
+  breadcrumbs: breadcrumbsMock
+};
+---
+
+<html>
+  <head>
+    <title>Article Page</title>
+  </head>
+  <body>
+    <ArticlePage {...articleData} />
+  </body>
+</html>

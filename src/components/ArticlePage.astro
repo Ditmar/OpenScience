@@ -1,0 +1,18 @@
+---
+
+import Breadcrumbs from './Breadcrumbs.astro';
+import ArticleInfo from './ArticleInfo.astro';
+
+const { date, volumeNumber, breadcrumbs } = Astro.props;
+---
+
+<div class="article-page">
+  <Breadcrumbs breadcrumbs={breadcrumbs} />
+  <ArticleInfo date={date} volumeNumber={volumeNumber} />
+</div>
+
+<style>
+  .article-page {
+    margin: 20px;
+  }
+</style>
