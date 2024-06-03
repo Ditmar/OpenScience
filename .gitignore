@@ -25,6 +25,3 @@ pnpm-debug.log*
 coverage
 
 *storybook.log
-
-#ignore build of storyb-book
-storybook-static
