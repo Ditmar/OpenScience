@@ -3,11 +3,10 @@
 
 .label-volumes__text {
   background-color: $ads-background-main;
-  color: $ads-secondary-main;
   display: inline-block;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 1.875rem;
-  font-weight: $ads-font-weight-bold;
+  font-weight: 800;
   padding: 0.625rem 1.25rem;
 
   &--primary {
