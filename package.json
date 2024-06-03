@@ -19,8 +19,8 @@
     "test:watch": "vitest"
   },
   "engines": {
-    "node": "18.19",
-    "yarn": "1.22.21"
+    "node": ">=18.19 <=18.21",
+    "yarn": ">=1.22.21 <=1.22.22"
   },
   "dependencies": {
     "@astrojs/check": "0.5.10",
