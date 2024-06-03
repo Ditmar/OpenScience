@@ -26,7 +26,6 @@
     "@astrojs/check": "0.5.10",
     "@astrojs/node": "8.2.5",
     "@astrojs/react": "3.3.0",
-    "@rollup/rollup-win32-x64-msvc": "^4.18.0",
     "@types/react": "18.2.79",
     "@types/react-dom": "18.2.25",
     "astro": "4.6.3",
