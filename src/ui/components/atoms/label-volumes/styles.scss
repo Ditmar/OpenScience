@@ -1,0 +1,39 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.label-volumes__text {
+  background-color: $ads-background-main;
+  color: $ads-secondary-main;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.875rem;
+  font-weight: $ads-font-weight-bold;
+  padding: 0.625rem 1.25rem;
+
+  &--primary {
+    color: $ads-secondary-main;
+  }
+
+  &--secondary {
+    color: $ads-primary-main;
+  }
+
+  &--tertiary {
+    color: $ads-text-main;
+  }
+
+  @include respond-to('small') {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+  }
+
+  @include respond-to('medium') {
+    font-size: 1.75rem;
+    padding: 0.625rem 1.25rem;
+  }
+
+  @include respond-to('large') {
+    font-size: 1.875rem;
+    padding: 0.625rem 1.25rem;
+  }
+}
