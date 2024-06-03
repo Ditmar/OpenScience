@@ -1,15 +1,12 @@
-name: Lint
+name: Deploy Storybook to GitHub Pages
 
 on:
   push:
     branches:
-      - '**'
-  pull_request:
-    branches:
-      - '**'
+      - 'main'
 
 jobs:
-  lint:
+  build:
     runs-on: ubuntu-latest
 
     container:
@@ -19,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Setup Node.js and Yarn
+      - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '>=18.19 <=18.21'
@@ -33,14 +30,11 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: List installed packages
-        run: yarn list
+      - name: Build Storybook
+        run: yarn build-storybook
 
-      - name: Run lint
-        run: yarn lint
-
-      - name: Run lint:css
-        run: yarn lint:css
-
-      - name: Run test
-        run: yarn test
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ../storybook-static
