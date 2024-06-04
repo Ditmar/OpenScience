@@ -1,4 +1,4 @@
 export interface IProps {
-    title: string;
-    variant?: 'default';
-  }
+  title: string;
+  variant?: 'default';
+}

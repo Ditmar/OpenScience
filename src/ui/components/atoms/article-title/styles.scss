@@ -2,13 +2,12 @@
 @import '../../../../globals/mixins';
 
 .title-text {
+    display: flex;
     font-family: Roboto, sans-serif;
     font-size: 2.5rem;
     font-weight: 800;
     letter-spacing: 0.001rem;
     line-height: 3.492rem;
-
-    display: flex;
 
   
     @include respond-to ('small'){
