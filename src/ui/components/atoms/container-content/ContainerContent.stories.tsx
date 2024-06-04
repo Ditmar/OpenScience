@@ -1,8 +1,8 @@
 import type { StoryObj, Meta } from '@storybook/react';
 import ContainerContent from './ContainerContent';
-import Container from '../../../../assets/icons/Rectangle 131.svg?raw';
+import Container from './mock/assets/img/Rectangle 131.svg?raw';
 
-const meta = {
+const meta: Meta = {
   title: 'ui/components/atoms/container-content',
   component: ContainerContent,
   argTypes: {
@@ -10,7 +10,7 @@ const meta = {
       action: 'click',
     },
   },
-} as Meta<typeof ContainerContent>;
+};
 
 export default meta;
 
