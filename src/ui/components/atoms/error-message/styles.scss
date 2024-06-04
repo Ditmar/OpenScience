@@ -10,7 +10,7 @@
   @include respond-to('small-mobile') {
     padding: 0;
     padding-top: 12rem;
-  } 
+  }
 
   @include respond-to('small') {
     padding-top: 5rem;
@@ -19,11 +19,10 @@
   @include respond-to('large-tablet') {
     padding-top: 15rem;
   }
-  
+
   @include respond-to('large') {
     padding-top: 15rem;
   }
-  
 
   h1 {
     color: $ads-primary-main;
@@ -32,7 +31,6 @@
     font-weight: $ads-font-weight-first;
     line-height: 7.261rem;
     margin: 0;
-    
 
     @include respond-to('small-mobile') {
       font-size: 5rem;
@@ -42,17 +40,16 @@
     @include respond-to('large-tablet') {
       font-size: 10rem;
     }
-    
+
     @include respond-to('large') {
       font-size: 10rem;
     }
-    
+
     @include respond-to('medium') {
       font-size: $ads-font-size-first;
       font-weight: $ads-font-weight-first;
       line-height: 4rem;
     }
-
   }
 
   .title {
@@ -73,7 +70,6 @@
       font-weight: $ads-font-weight-first;
       line-height: 3.026rem;
     }
-
   }
 
   .message {
@@ -106,7 +102,7 @@
     font-size: $ads-font-size-fifth;
     font-weight: $ads-font-weight-first;
     line-height: 0.908rem;
-    margin: 0.1rem;    
+    margin: 0.1rem;
 
     @include respond-to('small') {
       font-size: 1.25rem;
@@ -130,7 +126,7 @@
   @include respond-to('small-mobile') {
     padding: 0;
     padding-top: 12rem;
-  } 
+  }
 
   @include respond-to('small') {
     padding-top: 5rem;
@@ -139,14 +135,14 @@
   @include respond-to('large-tablet') {
     padding-top: 15rem;
   }
-  
+
   @include respond-to('large') {
     padding-top: 12rem;
   }
-  
-  h1 { 
+
+  h1 {
     font-family: Inter, sans-serif;
-    font-size: $ads-font-size-third;  
+    font-size: $ads-font-size-third;
     font-weight: $ads-font-weight-second;
     line-height: 9.682rem;
 
@@ -158,21 +154,21 @@
     @include respond-to('large-tablet') {
       font-size: 10rem;
     }
-    
+
     @include respond-to('large') {
       font-size: 10rem;
     }
-    
+
     @include respond-to('medium') {
-      font-size: $ads-font-size-third;  
+      font-size: $ads-font-size-third;
       font-weight: $ads-font-weight-second;
       line-height: 9.682rem;
     }
   }
 
-  .title { 
+  .title {
     font-family: Inter, sans-serif;
-    font-size: $ads-font-size-quarter; 
+    font-size: $ads-font-size-quarter;
     font-weight: $ads-font-weight;
     line-height: 3.026rem;
 
@@ -182,15 +178,15 @@
     }
 
     @include respond-to('medium') {
-      font-size: $ads-font-size-quarter; 
+      font-size: $ads-font-size-quarter;
       font-weight: $ads-font-weight;
       line-height: 3.026rem;
     }
   }
 
-  .message { 
+  .message {
     font-family: Inter, sans-serif;
-    font-size: $ads-font-size-sixth; 
+    font-size: $ads-font-size-sixth;
     font-weight: $ads-font-weight-first;
     line-height: 1.134rem;
 
@@ -200,7 +196,7 @@
     }
 
     @include respond-to('medium') {
-      font-size: $ads-font-size-sixth; 
+      font-size: $ads-font-size-sixth;
       font-weight: $ads-font-weight-first;
       line-height: 1.134rem;
     }
