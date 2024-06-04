@@ -24,6 +24,10 @@
     padding-top: 15rem;
   }
 
+  @include respond-to('estra-large') {
+    padding-top: 15rem;
+  }
+
   h1 {
     color: $ads-primary-main;
     font-family: Inter, sans-serif;
@@ -93,7 +97,9 @@
 
     @include respond-to('extra-large') {
       font-size: 2rem;
+      line-height: 2.5rem;
     }
+    
   }
 
   .a {
