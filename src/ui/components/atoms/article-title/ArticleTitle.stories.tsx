@@ -2,18 +2,18 @@ import type { StoryObj, Meta } from '@storybook/react';
 import ArticleTitle from './ArticleTitle';
 
 const meta = {
-    title: 'ui/components/atoms/article-title',
-    component: ArticleTitle ,
-    argTypes: {
-        variant: {
-            options: ['Default'],
-            control: {type: 'select'},
-        },
-        text: {
-            action: 'text',
-        },
+  title: 'ui/components/atoms/article-title',
+  component: ArticleTitle,
+  argTypes: {
+    variant: {
+      options: ['Default'],
+      control: { type: 'select' },
     },
-} as Meta <typeof ArticleTitle>;
+    text: {
+      action: 'text',
+    },
+  },
+} as Meta<typeof ArticleTitle>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
