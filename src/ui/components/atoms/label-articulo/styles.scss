@@ -4,7 +4,8 @@
 .label {
     background: $ads-background-main;
     padding: 1.26rem;
-    /*text-align: center;*/
+
+    /* text-align: center; */
     width: 100%;
 
     @include respond-to('medium') {
@@ -22,7 +23,7 @@
 
 .label__text {
     color: $ads-primary-main;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-size: $ads-size-main;
     font-weight: 800;
     line-height: 3.657rem;
