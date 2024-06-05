@@ -1,0 +1,52 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+.button-label {
+  align-items: center;
+  border: 2px solid transparent;
+  border-radius: 1.5rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  max-width: 150px;
+  padding: 1.26rem;
+  width: 100%;
+
+  @include respond-to('medium') {
+    width: 80%;
+  }
+
+  @include respond-to('large') {
+    width: 30%;
+  }
+
+  @include respond-to('extra-large') {
+    width: 30%;
+  }
+}
+
+.button-label:hover {
+  //background: $ads-primary-main;
+  //background: $ads-text-secondary;
+}
+
+.button__label {
+  color: $ads-color-main;
+  font-family: Roboto Flex, sans-serif;
+  font-size: $ads-size-main;
+  font-weight: 800;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 0.9rem;
+  line-height: 1.465rem;
+  text-align: center;
+}
+
+.button__icon--before {
+  content: '';
+  display: inline-block;
+  height: 16px;
+  margin-bottom: 2.2rem;
+  margin-right: 29px;
+  width: 16px;
+}
