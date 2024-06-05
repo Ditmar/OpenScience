@@ -1,0 +1,49 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.component {
+  border: transparent;
+  opacity: 0,5;  
+  padding: 1.26rem;
+  width: 800;
+
+  @include respond-to('medium') {
+    width: 30%;
+  }
+
+  @include respond-to('large') {
+    width: 30%;
+  }
+
+  @include respond-to('extra-large') {
+    width: 30%;
+  }
+}
+
+.component__label {
+  color: $ads-color-main;
+  font-size: $ads-size-main;
+  line-height: 23.44px;
+  margin-left: 0.5rem;
+  margin-right: 1rem;
+  size: 20px;
+  text-transform: uppercase;
+  width: 800;
+}
+
+.component__icon-before {
+  content: '';
+  display: inline-block;
+  height: 33px;
+  width: 34px;
+  
+}
+
+.component__icon-before svg{
+    height: 33px;
+    width: 34px;
+}
+
+.component__label .component__icon-before{
+    padding: 10px;
+}
