@@ -3,12 +3,13 @@ import { render, screen } from '@testing-library/react';
 import LabelReferences from './LabelReferences.tsx';
 
 describe('LabelReferences component', () => {
-  it('Should be rendered the default text', () => {
+  it('should be rendered the default text', () => {
     render(<LabelReferences />);
     expect(screen.getByText('Referencias')).toBeInTheDocument();
   });
 
-  it('Should render the custom text.', () => {
+
+  it('should render the custom text.', () => {
     render(<LabelReferences text="Custom text Referencias" />);
     expect(screen.getByText('Custom text Referencias')).toBeInTheDocument();
   });
