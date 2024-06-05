@@ -1,0 +1,27 @@
+@import '../../../../globals/breakpoints';
+@import '../../../../globals/mixins';
+@import '../../../../globals/variables';
+
+.author-label{
+  font-size: $ads-size-main;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: $ads-text-main;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: $ads-size-main;
+  padding: 1.26rem;
+  width: 100%;
+  border: 2px solid transparent;
+
+  @include respond-to('medium') {
+    width: 80%;
+  }
+
+  @include respond-to('large') {
+    width: 30%;
+  }
+
+  @include respond-to('extra-large') {
+    width: 30%;
+  }
+}
