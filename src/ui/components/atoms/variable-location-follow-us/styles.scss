@@ -1,0 +1,24 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+  
+  .location a{
+    color:$ads-text-main;
+    text-decoration: none;
+  }
+
+  .link__icon {
+    display: inline-block;
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+  }
+
+  .link__label {
+  font-size: 1.1rem;
+  letter-spacing: 0.0625rem;
+  }
+
+  .link__icon svg {
+    display: flexbox;
+    height: 80%;
+    width: 90%;
+  }
