@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import {LabelRecentsArticles} from './LabelRecentsArticles.tsx';
+import LabelRecentsArticles from './LabelRecentsArticles';
 
 describe('Recents Articles Component', () => {
   test('Should display the correct text', () => {
