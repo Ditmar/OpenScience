@@ -1,14 +1,19 @@
 import './styles.scss';
 import type { IProps } from './types/IProps';
-import { Icon } from '../../../utils/svg-icons/icons';
 
 function VariableLocationFollowUs(props: IProps) {
-  const { text, icon, url, divider } = props;
+  const { label, url, icon, pathImage, alt } = props;
   return (
     <div className="location">
-      <a href={url}>{text} </a>
-      {icon && <Icon data-testid="link-icon" src={icon} className="link__icon" />}
-      <span className="divider">{divider}</span>
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        <span className="link__label">{label}</span>
+        <span
+          className="link__icon"
+          data-testid="link-icon"
+          dangerouslySetInnerHTML={{ __html: icon ?? '<div></div>' }}
+        />
+        <img src={pathImage} alt={alt} />
+      </a>
     </div>
   );
 }
