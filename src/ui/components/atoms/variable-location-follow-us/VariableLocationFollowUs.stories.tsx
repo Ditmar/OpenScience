@@ -20,20 +20,10 @@ type Story = StoryObj<typeof meta>;
 export const Location: Story = {
   args: {
     label: 'UBICACION',
-    url: 'https://www.google.com/maps',
-    icon: Ubicacion,
-  },
-};
-export const img: Story = {
-  args: {
+    iconlocation: Ubicacion,
     pathImage: String(Rectangle168),
     alt: 'Rectangle168',
-  },
-};
-export const facebook: Story = {
-  args: {
-    label: 'SIGUENOS EN',
-    url: 'https://www.facebook.com/tuPaginaDeFacebook',
-    icon: Facebook,
+    iconfacebook: Facebook,
+    label1: 'SIGUENOS EN',
   },
 };
