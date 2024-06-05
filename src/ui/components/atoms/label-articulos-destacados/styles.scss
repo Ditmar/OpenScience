@@ -1,0 +1,36 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.label-articulos-destacados__text {
+  display: inline-block;
+  font-family: Montserrat, sans-serif;
+  font-size: 1rem;
+  font-weight: $ads-font-weight-bold;
+  letter-spacing: 0.0625rem;
+  line-height: 1;
+  padding: $ads-letter-spacing;
+
+  @include respond-to('small') {
+    font-size: 1rem;
+    width: 7.5rem;
+  }
+
+  @include respond-to('large') {
+    font-size: 2rem;
+    width: 16rem;
+  }
+}
+
+.label-articulos-destacados--main .label-articulos-destacados__text {
+  background-color: $ads-background-main;
+  color: $ads-primary-main;
+  padding: $ads-letter-spacing;
+}
+
+.label-articulos-destacados--primary .label-articulos-destacados__text {
+  color: $ads-primary-main;
+}
+
+.label-articulos-destacados--secondary .label-articulos-destacados__text {
+  color: $ads-secondary-main;
+}
