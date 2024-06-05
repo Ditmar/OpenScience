@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import LabelRef from './LabelRef.tsx';
 
+
 describe('Testing LabelRef React Component', () => {
   test('should render with default text', () => {
     render(<LabelRef>REFERENCIAS</LabelRef>);
