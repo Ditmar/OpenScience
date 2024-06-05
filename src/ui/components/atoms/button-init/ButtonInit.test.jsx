@@ -11,7 +11,6 @@ describe('ButtonInit component', () => {
     expect(buttonElement).toHaveClass('button__init--primary');
   });
 
-  
   test('renders with custom props - primary variant', () => {
     render(<ButtonInit varianButton="primary">INICIAR</ButtonInit>);
     const buttonElement = screen.getByRole('button');
