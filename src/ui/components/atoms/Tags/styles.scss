@@ -3,7 +3,7 @@
 
 @font-face {
   font-display: swap;
-  font-family: 'Lato';
+  font-family: Lato;
   font-style: normal;
   font-weight: 400;
   src: url('/fonts/Lato-Regular.woff2') format('woff2');
@@ -11,7 +11,7 @@
 
 @font-face {
   font-display: swap;
-  font-family: 'Lato';
+  font-family: Lato;
   font-style: normal;
   font-weight: 700;
   src: url('/fonts/Lato-Bold.woff2') format('woff2');
@@ -44,9 +44,9 @@
 }
 
 .tags {
+  font-family: Lato, sans-serif;
   list-style-type: disc; 
   padding-left: 1.25rem;
-  font-family: 'Lato', sans-serif;
 
   &.default .tag {
     color: $ads-primary-main;
