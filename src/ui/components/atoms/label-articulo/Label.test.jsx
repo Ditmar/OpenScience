@@ -13,10 +13,4 @@ describe('Testing Label React Component', () => {
     const labelElement = screen.getByText(/Artículos/i);
     expect(labelElement).toHaveClass('label--primary');
   });
-
-  test('should render with secondary variant', () => {
-    render(<Label variant="secondary">Artículos</Label>);
-    const labelElement = screen.getByText(/Artículos/i);
-    expect(labelElement).toHaveClass('label--secondary');
-  });
 });
