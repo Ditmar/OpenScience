@@ -1,8 +1,7 @@
 import type { IProps } from './types/IProps';
 import './styles.scss';
 
-export const LabelRecentsArticles = (props: IProps) => {
-             
+function LabelRecentsArticles(props: IProps) {
   const { text, color = 'primary' } = props;
   const colorText = `label-recents-articles--${color}`;
 
@@ -13,3 +12,4 @@ export const LabelRecentsArticles = (props: IProps) => {
   );
 }
 
+export default LabelRecentsArticles;
