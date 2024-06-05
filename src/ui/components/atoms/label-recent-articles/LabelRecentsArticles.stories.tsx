@@ -1,9 +1,9 @@
 import type { StoryObj, Meta } from '@storybook/react';
 import '../../../../globals/_variables.scss';
-import {LabelRecentsArticles} from './LabelRecentsArticles';
+import LabelRecentsArticles from './LabelRecentsArticles';
 
 const meta: Meta<typeof LabelRecentsArticles> = {
-  title: 'ui/components/atoms/label-recents-articles',
+  title: 'ui/components/atoms/label-recent-articles',
   component: LabelRecentsArticles,
 };
 export default meta;
@@ -21,5 +21,12 @@ export const Secundary: Story = {
   args: {
     text: 'ARTICULOS MAS RECIENTES',
     color: 'secondary',
+  },
+};
+
+export const Tertiary: Story = {
+  args: {
+    text: 'ARTICULOS MAS RECIENTES',
+    color: 'tertiary',
   },
 };
