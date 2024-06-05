@@ -1,0 +1,36 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.label-recents-articles {
+  
+  background-color: #f5f5f5;
+  display: inline-block;
+  font-family: Montserrat, sans-serif;
+  font-size: 1.875rem;
+  font-weight: 800;
+  padding: 0.625rem 1.25rem;
+
+  &--primary {
+    color: #004369;
+  }
+
+  &--secondary {
+    color: #0793BF;
+  }
+
+  @include respond-to('small') {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+  }
+
+  @include respond-to('medium') {
+    font-size: 1.75rem;
+    padding: 0.625rem 1.25rem;
+  }
+
+  @include respond-to('large') {
+    font-size: 1.875rem;
+    padding: 0.625rem 1.25rem;
+  }
+  
+}
