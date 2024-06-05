@@ -7,7 +7,6 @@ describe('LabelReferences component', () => {
     expect(screen.getByText('Referencias')).toBeInTheDocument();
   });
 
-
   it('should render the custom text.', () => {
     render(<LabelReferences text="Custom text Referencias" />);
     expect(screen.getByText('Custom text Referencias')).toBeInTheDocument();
