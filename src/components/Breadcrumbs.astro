@@ -1,34 +1,28 @@
 ---
-
 interface Breadcrumb {
   label: string;
   url: string;
 }
-
 const { breadcrumbs }: { breadcrumbs: Breadcrumb[] } = Astro.props;
-
 function generateBreadcrumbs(breadcrumbs: Breadcrumb[]) {
   return breadcrumbs.map((breadcrumb, index) => {
     const isLast = index === breadcrumbs.length - 1;
     return (
       <li class={`breadcrumb-item ${isLast ? 'active' : ''}`} key={breadcrumb.url}>
-        {isLast ? (
-          breadcrumb.label
-        ) : (
+        {isLast ? 
+          breadcrumb.label:
           <a href={breadcrumb.url}>{breadcrumb.label}</a>
-        )}
+        }
       </li>
     );
   });
 }
 ---
-
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     {generateBreadcrumbs(breadcrumbs)}
   </ol>
 </nav>
-
 <style>
   .breadcrumb {
     display: flex;
