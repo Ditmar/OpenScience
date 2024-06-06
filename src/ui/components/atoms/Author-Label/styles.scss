@@ -1,11 +1,11 @@
 @import '../../../../globals/mixins';
 @import '../../../../globals/variables';
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;275;300;400;700&display=swap');
 
 .author{
   font-family: Lato, sans-serif;
   font-size: 0.625rem;
-  font-weight: $ads-font-weight-third;
-
+  font-weight:300;
   
   
   @include respond-to('small') {

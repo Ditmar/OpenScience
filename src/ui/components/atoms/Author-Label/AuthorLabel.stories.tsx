@@ -17,7 +17,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    variant: 'Marco antonio lopez',
+    variant: 'Marco Antonio Lopez',
   },
 };
 export const Secondary: Story = {
