@@ -2,22 +2,20 @@ import './styles.scss';
 import type { IProps } from './types/IProps';
 
 function LabelArtDestacados({ text = 'ARTICULOS DESTACADOS', colorVariant = 'main' }: IProps) {
-  const getLabelColorClass = () => {
-    return colorVariant === 'main'
-      ? 'label-articulos-destacados--main'
-      : colorVariant === 'primary'
-        ? 'label-articulos-destacados--primary'
-        : 'label-articulos-destacados--secondary';
-  };
+  let labelColorClass = '';
+  let backgroundColorClass = '';
 
-  const getBackgroundColorClass = () => {
-    return colorVariant === 'main' ? 'label-articulos-destacados--main-bg' : '';
-  };
+  if (colorVariant === 'main') {
+    labelColorClass = 'label-articulos-destacados--main';
+    backgroundColorClass = 'label-articulos-destacados--main-bg';
+  } else if (colorVariant === 'primary') {
+    labelColorClass = 'label-articulos-destacados--primary';
+  } else {
+    labelColorClass = 'label-articulos-destacados--secondary';
+  }
 
   return (
-    <div
-      className={`label-articulos-destacados ${getLabelColorClass()} ${getBackgroundColorClass()}`}
-    >
+    <div className={`label-articulos-destacados ${labelColorClass} ${backgroundColorClass}`}>
       <span className="label-articulos-destacados__text">{text}</span>
     </div>
   );

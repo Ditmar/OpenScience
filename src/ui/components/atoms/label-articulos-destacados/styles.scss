@@ -4,10 +4,10 @@
 .label-articulos-destacados__text {
   display: inline-block;
   font-family: Montserrat, sans-serif;
-  font-size: 1rem;
+  font-size: 1.875rem;
   font-weight: $ads-font-weight-bold;
-  letter-spacing: 0.0625rem;
-  line-height: 1;
+  letter-spacing: $ads-letter-spacing;
+  line-height: 1.1;
   padding: $ads-letter-spacing;
 
   @include respond-to('small') {
