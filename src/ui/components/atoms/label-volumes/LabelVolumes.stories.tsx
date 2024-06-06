@@ -3,7 +3,7 @@ import '../../../../globals/_variables.scss';
 import LabelVolumes from './LabelVolumes';
 
 const meta: Meta<typeof LabelVolumes> = {
-  title: 'ui/components/atoms/lavel-volumes',
+  title: 'ui/components/atoms/label-volumes',
   component: LabelVolumes,
 };
 export default meta;
