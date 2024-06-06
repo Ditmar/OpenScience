@@ -1,0 +1,21 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.logo-image {
+  border-radius: 0 0 1.5rem;
+  height: 51px;
+  padding-top: 0;
+  width: 130px;
+
+  &--default {
+    background-color: $ads-color-main;
+  }
+
+  &--primary {
+    background-color: $ads-background-main;
+  }
+
+  &--secondary {
+    background-color: $ads-primary-main;
+  }
+}
