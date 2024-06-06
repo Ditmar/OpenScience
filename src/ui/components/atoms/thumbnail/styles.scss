@@ -1,0 +1,45 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.thumbnail {
+  border: 2px solid transparent; // Propiedades en orden alfabético
+  margin: 0 auto;
+  position: relative; // Propiedades en orden alfabético
+
+  @include respond-to('medium') {
+    width: 15rem;
+  }
+
+  @include respond-to('large') {
+    width: 20rem;
+  }
+
+  @include respond-to('extra-large') {
+    width: 20rem;
+  }
+}
+
+img {
+  border: 2px solid black; // Propiedades en orden alfabético
+  box-sizing: border-box;
+  display: block; // Propiedades en orden alfabético
+  height: auto;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.overlay {
+  background-color: transparent; // Propiedades en orden alfabético
+  box-sizing: border-box;
+  height: 100%;
+  left: 0;
+  position: absolute; // Propiedades en orden alfabético
+  top: 0;
+  width: 100%;
+}
+
+.overlay:hover {
+  background-color: $ads-primary-main;
+  border: 2px solid $ads-primary-main;
+  opacity: 0.5;
+}

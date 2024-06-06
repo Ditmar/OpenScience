@@ -1,0 +1,40 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.button__share {
+  background: $ads-primary-main;
+  border: none;
+  height: 2.8rem;
+  padding: 0.1rem;
+  width: 3rem;
+
+  @include respond-to('small') {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  @include respond-to('medium') {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+
+  @include respond-to('large') {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  @include respond-to('extra-large') {
+    height: 6rem;
+    width: 5.2rem;
+  }
+}
+
+.button__icons svg {
+  display: flexbox;
+  height: 80%;
+  width: 80%;
+}
+
+.button__share:hover {
+  background: $ads-secondary-main;
+}

@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
 import node from '@astrojs/node';
+import react from '@astrojs/react';
 
 export default defineConfig({
   output: 'server',
@@ -8,4 +8,9 @@ export default defineConfig({
   adapter: node({
     mode: 'http',
   }),
+  vite: {
+    ssr: {
+      noExternal: ['path-to-regexp'],
+    },
+  },
 });
