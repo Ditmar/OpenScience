@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Button from './ButtonLabel';
+import Button from './ButtonLabel.tsx';
 import Home from '../../../../assets/icons/home.svg?raw';
 import Articles from '../../../../assets/icons/articles.svg?raw';
 import Volume from '../../../../assets/icons/volume.svg?raw';
