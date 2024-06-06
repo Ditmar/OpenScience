@@ -3,51 +3,83 @@
 
 .label-share {
   background: $ads-primary-main;
-  background-color: $ads-text-main; 
-  height: 2rem; 
-  padding: 1rem;     
-  width: 40rem;
-
-  @include respond-to('small') {
-    font-size: 1rem;
-    width: 12rem;
-  }
-
-  @include respond-to('medium') {
-    font-size: 1rem;
-    width:13.5rem;
-  }
-
-  @include respond-to('large') {
-    font-size: 2rem;
-    width: 16rem;
-  }
-
-  @include respond-to('extra-large') {
-    font-size: 2rem;
-    width: 16rem;
-  }
+  background-color: $ads-text-main;
+  height: 65px;  
+  width: 330px;
 }
 
-.label-share__text {    
+.label-share__text {
   font-family: Lato, sans-serif;
   font-size: 1.7rem;
   font-weight: $ads-font-weight-bold;
   letter-spacing: 0.0625rem;
-  line-height: 1;  
-  text-transform: uppercase;    
-}
-
-.label-share__icon {
-  height: 40%;
+  line-height: 65.28px;   
+  size: 48px;
+  text-transform: uppercase;
 }
 
 .label-share__icon svg {
   display: flexbox;
-  height: 65%;
-  width: 20%;
+  height: 40%;
+  width: 15%;
 }
 
 .label-share--main .label-share__text {
   color: $ads-color-main;
+}
+
+/* Media queries */
+
+/* Pantalla pequeña (menos de 768px) */
+@media (width <= 767px) {
+ .label-share {
+    height: 50px;
+    width: 250px;
+  }
+
+ .label-share__text {
+    font-size: 1.4rem;
+    line-height: 50px;
+  }
+
+ .label-share__icon svg {
+    height: 30%;
+    width: 10%;
+  }
+}
+
+/* Pantalla mediana (entre 768px y 1024px) */
+@media (width >= 768px) and (width <= 1023px) {
+ .label-share {
+    height: 55px;
+    width: 280px;
+  }
+
+ .label-share__text {
+    font-size: 1.5rem;
+    line-height: 55px;
+  }
+
+ .label-share__icon svg {
+    height: 35%;
+    width: 12%;
+  }
+}
+
+/* Pantalla grande (más de 1024px) */
+@media (width >= 1024px) {
+ .label-share {
+    height: 65px;
+    width: 330px;
+  }
+
+ .label-share__text {
+    font-size: 1.7rem;
+    line-height: 65.28px;
+  }
+
+ .label-share__icon svg {
+    height: 40%;
+    width: 15%;
+  }
 }
