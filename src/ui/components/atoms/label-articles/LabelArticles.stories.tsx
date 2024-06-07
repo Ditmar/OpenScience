@@ -1,9 +1,10 @@
 import type { StoryObj, Meta } from '@storybook/react';
-import Label from './Label';
+import '../../../../globals/_variables.scss';
+import LabelArticles from './LabelArticles';
 
 const meta = {
-  title: 'ui/components/atoms/Label',
-  component: Label,
+  title: 'ui/components/atoms/label-articles',
+  component: LabelArticles,
   argTypes: {
     children: { control: 'text' },
     variant: {
@@ -11,22 +12,22 @@ const meta = {
       options: ['primary', 'secondary'],
     },
   },
-} as Meta<typeof Label>;
+} as Meta<typeof LabelArticles>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {
-    children: 'Artículos',
+    children: 'ARTICULOS',
     variant: 'default',
   },
 };
 
-export const Secondary: Story = {
+export const Primary: Story = {
   args: {
-    children: 'Artículos',
+    children: 'ARTICULOS',
     variant: 'primary',
   },
 };
