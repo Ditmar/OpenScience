@@ -6,12 +6,12 @@ function LabelArtDestacados({ text = 'ARTICULOS DESTACADOS', colorVariant = 'mai
   let backgroundColorClass = '';
 
   if (colorVariant === 'main') {
-    labelColorClass = 'LabelArticulosDestacadosMain';
-    backgroundColorClass = 'LabelArticulosDestacadosMainBg';
+    labelColorClass = 'label-articulos-destacados--main';
+    backgroundColorClass = 'label-articulos-destacados--main-bg';
   } else if (colorVariant === 'primary') {
-    labelColorClass = 'LabelArticulosDestacadosPrimary';
+    labelColorClass = 'label-articulos-destacados--primary';
   } else {
-    labelColorClass = 'LabelArticulosDestacadosSecondary';
+    labelColorClass = 'label-articulos-destacados--secondary';
   }
 
   return (
