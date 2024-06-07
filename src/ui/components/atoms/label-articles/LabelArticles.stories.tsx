@@ -20,14 +20,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: 'ARTICULOS',
+    children: 'ARTÍCULOS',
     variant: 'default',
   },
 };
 
 export const Primary: Story = {
   args: {
-    children: 'ARTICULOS',
+    children: 'ARTÍCULOS',
     variant: 'primary',
   },
 };
