@@ -1,7 +1,8 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 
-.label-articulos-destacados__text {
+.label-featured-articles__text {
+  background-color: $ads-background-main;
   display: inline-block;
   font-family: Montserrat, sans-serif;
   font-size: 1.875rem;
@@ -9,6 +10,7 @@
   letter-spacing: $ads-letter-spacing;
   line-height: 1.1;
   padding: $ads-letter-spacing;
+  text-transform: uppercase;
 
   @include respond-to('small') {
     font-size: 1rem;
@@ -26,16 +28,16 @@
   }
 }
 
-.label-articulos-destacados--main .label-articulos-destacados__text {
+.label-featured-articles--main .label-featured-articles__text {
   background-color: $ads-background-main;
   color: $ads-secondary-main;
   padding: $ads-letter-spacing;
 }
 
-.label-articulos-destacados--primary .label-articulos-destacados__text {
-  color: $ads-secondary-main;
+.label-featured-articles--primary .label-featured-articles__text {
+  color: $ads-primary-main;
 }
 
-.label-articulos-destacados--secondary .label-articulos-destacados__text {
-  color: $ads-secondary-main;
+.label-featured-articles--secondary .label-featured-articles__text {
+  color: $ads-primary-main;
 }
