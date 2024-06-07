@@ -15,7 +15,7 @@
     width: 7.5rem;
   }
 
-  @include respond-to('small') {
+  @include respond-to('midium') {
     font-size: 1.6rem;
     width: 12rem;
   }
@@ -28,12 +28,12 @@
 
 .label-articulos-destacados--main .label-articulos-destacados__text {
   background-color: $ads-background-main;
-  color: $ads-primary-main;
+  color: $ads-secondary-main;
   padding: $ads-letter-spacing;
 }
 
 .label-articulos-destacados--primary .label-articulos-destacados__text {
-  color: #00526C;
+  color: $ads-secondary-main;
 }
 
 .label-articulos-destacados--secondary .label-articulos-destacados__text {
