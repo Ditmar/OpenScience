@@ -2,7 +2,7 @@
 @import '../../../../globals/mixins';
 
 .label-recents-articles {
-  background-color: $ads-background-main;
+  background-color: #f5f5f5;
   display: inline-block;
   font-family: Montserrat, sans-serif;
   font-size: 1.875rem;
@@ -10,11 +10,11 @@
   padding: 0.625rem 1.25rem;
 
   &--primary {
-    color: $ads-secondary-main;
+    color: #004369;
   }
 
   &--secondary {
-    color: $ads-primary-main;
+    color: #0793bf;
   }
 
   @include respond-to('small') {
