@@ -2,7 +2,7 @@
 @import '../../../../globals/mixins';
 
 .label {
-  background: $ads-background-main;
+  background: $ads-color-main;
   padding: 0.5rem;
   padding-top: 2rem;
 
@@ -24,9 +24,9 @@
 
 .label-articles__text {
   color: $ads-text-main-alpha;
-  font-family: Roboto, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 3rem;
-  font-weight: 400;
+  font-weight: $ads-font-weight-second;
   line-height: 3.516rem;
 
   @include respond-to('small') {
@@ -46,9 +46,9 @@
 }
 
 .label--primary {
-  background-color: $ads-text-main-alpha;
+  background-color: $ads-secondary-main;
 
   .label-articles__text {
-    color: $ads-background-main;
+    color: $ads-color-main;
   }
 }
