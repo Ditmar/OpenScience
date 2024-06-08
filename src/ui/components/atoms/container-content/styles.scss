@@ -3,14 +3,13 @@
 
 .container-content-icon {
   height: 100%;
-  overflow: hidden; 
+  overflow: hidden;
   position: relative;
   width: 100%;
 
   @include respond-to('small') {
     padding-top: 75%;
     width: 25%;
-    
   }
 
   @include respond-to('medium') {
@@ -51,7 +50,3 @@
   top: 37.125rem;
   width: 80.125rem;
 }
-
-
-
-
