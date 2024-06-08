@@ -1,10 +1,9 @@
 import React from 'react';
 import './styles.scss';
 
-
 interface IProps {
   children: React.ReactNode;
-  variant?: 'default' | 'secondary';
+  variant: 'default' | 'secondary';
 }
 
 function LabelRef(props: IProps) {
