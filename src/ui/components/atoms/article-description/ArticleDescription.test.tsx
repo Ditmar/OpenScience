@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import ArticleDescription from './ArticleDescription.tsx';
+import ArticleDescription from './ArticleDescription';
 
 describe('ArticleDescription', () => {
   test('renders the article content correctly', () => {
