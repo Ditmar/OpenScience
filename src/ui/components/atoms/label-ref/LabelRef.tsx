@@ -9,9 +9,9 @@ interface IProps {
 function LabelRef(props: IProps) {
   const { children, variant = 'default' } = props;
   return (
-    <div className={`label-ref ${variant}`}>
-      <p className="icon">R</p>
-      <p className="label">{children}</p>
+    <div className={`label-ref label-ref--${variant}`}>
+      <p className={`label-ref__icon label-ref__icon--${variant}`}>R</p>
+      <p className="label-ref__label">{children}</p>
     </div>
   );
 }

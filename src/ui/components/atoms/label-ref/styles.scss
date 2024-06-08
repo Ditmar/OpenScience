@@ -2,10 +2,18 @@
 @import '../../../../globals/mixins';
 
 .label-ref {
+  &--default {
+    background: $ads-text-main;
+  }
+
+  &--secondary {
+    background: $ads-secondary-main;
+  }
+
   align-items: center;
-  background: $ads-text-main;
   display: flex;
   height: 4.375rem;
+  justify-content: center;
   padding: 1rem;
   width: 100%;
 
@@ -21,9 +29,8 @@
     width: 30%;
   }
 
-  .icon {
+  &__icon {
     align-items: center;
-    background: $ads-text-main;
     border: 0.125rem solid $ads-tertiary-main;
     border-radius: 0.6875rem;
     color: $ads-tertiary-main;
@@ -36,59 +43,38 @@
     line-height: 3.42rem;
     margin-right: 0.5rem;
     width: 2.8125rem;
+
+    &--default {
+      background: $ads-text-main;
+    }
+
+    &--secondary {
+      background: $ads-secondary-main;
+    }
   }
 
-  .label {
+  &__label {
     background: inherit;
     border-radius: 0.25rem;
     color: $ads-color-main;
     font-family: Lato, sans-serif;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 800;
     height: 4.0625rem;
     line-height: 4.08rem;
+    text-align: left;
     width: 20.625rem;
 
     @include respond-to('medium') {
-      font-size: 1rem;
+      font-size: 2.5rem;
     }
 
     @include respond-to('large') {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
 
     @include respond-to('extra-large') {
       font-size: 3rem;
     }
-  }
-
-  &.secondary {
-    background: $ads-primary-main;
-
-    .icon {
-      background: $ads-primary-main;
-      border-color: $ads-tertiary-main;
-      color: $ads-tertiary-main;
-    }
-
-    .label {
-      background-color: $ads-primary-main;
-      color: $ads-tertiary-main;
-    }
-  }
-
-  @include respond-to('small') {
-    font-size: 1.5rem;
-    padding: 0.5rem 1rem;
-  }
-
-  @include respond-to('medium') {
-    font-size: 1.75rem;
-    padding: 0.625rem 1.25rem;
-  }
-
-  @include respond-to('large') {
-    font-size: 1.875rem;
-    padding: 0.625rem 1.25rem;
   }
 }
