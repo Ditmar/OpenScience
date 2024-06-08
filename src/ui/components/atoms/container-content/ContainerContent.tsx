@@ -10,7 +10,7 @@ function ContainerContent(props: IProps) {
         dangerouslySetInnerHTML={{ __html: icon2 ?? '<div></div>' }}
       />
       <span
-        className="container-content-icon-image"
+        id="container-content-icon-image"
         dangerouslySetInnerHTML={{ __html: icon ?? '<div></div>' }}
       />
     </div>
