@@ -1,7 +1,7 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 
-.CloseDownloadButton {
+.close-download-button {
   background: $ads-text-main;
   border: none;
   height: 3.5rem;
@@ -31,37 +31,37 @@
     height: 6rem;
     width: 5.2rem;
   }
-}
-
-.button__icon svg {
-  display: flexbox;
-  height: 75%;
-  width: 80%;
-}
-
-.button__icon #path {
-  display: flexbox;
-  fill: $ads-text-main;
-
-  @include respond-to('large') {
-    fill: $ads-text-main;
+  
+  .button__icon svg {
+    display: flexbox;
+    height: 75%;
+    width: 80%;
   }
-
-  @include respond-to('extra-large') {
-    fill: $ads-text-main;
-  }
-}
-
-.CloseDownloadButton:hover {
-  background: $ads-text-main-alpha;
-
+  
   .button__icon #path {
-    @include respond-to('small') {
-      fill: $ads-text-main-alpha;
+    display: flexbox;
+    fill: $ads-text-main;
+  
+    @include respond-to('large') {
+      fill: $ads-text-main;
     }
+  
+    @include respond-to('extra-large') {
+      fill: $ads-text-main;
+    }
+  }
 
-    @include respond-to('medium') {
-      fill: $ads-text-main-alpha;
+  .close-download-button:hover {
+    background: $ads-text-main-alpha;
+
+    .button__icon #path {
+      @include respond-to('small') {
+        fill: $ads-text-main-alpha;
+      }
+
+      @include respond-to('medium') {
+        fill: $ads-text-main-alpha;
+      }
     }
   }
 }
