@@ -7,41 +7,11 @@
   position: relative;
   width: 100%;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  
-<<<<<<< HEAD
-=======
-  &:hover {
-    background: $ads-text-main;
-  }
->>>>>>> 5c170bf (fear: add container content actualizado 2)
-=======
-  
->>>>>>> fecd09b (feat: add and updating container content)
-}
-
-.container-content-icon-image {
-  height: 56.688rem;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 80.125rem;
-=======
-=======
-  
->>>>>>> 3315a0a6e5c1aa3004fd741d26b4b783feebcb67
   @include respond-to('small') {
     padding-top: 75%;
     width: 25%;
     
   }
-<<<<<<< HEAD
->>>>>>> 3315a0a (feat:add container content update files)
-=======
->>>>>>> 3315a0a6e5c1aa3004fd741d26b4b783feebcb67
 
   @include respond-to('medium') {
     width: 70%;
@@ -59,23 +29,26 @@
 .container-content {
   gap: 0;
   height: 73rem;
-  //left: 774.875rem;
+
+  /* left: 774.875rem; */
   left: 50rem;
   opacity: 0;
   position: relative;
-  //top: 28rem;
-  top:28rem;
+
+  /* top: 28rem; */
+  top: 28rem;
   width: 94.125rem;
 }
 
 #container-content-icon-image {
   gap: 0;
   height: 56.688rem;
-  //left: 782.875rem;
+
+  /* left: 782.875rem; */
   left: 58rem;
   opacity: 0;
   position: absolute;
-  top:37.125rem;
+  top: 37.125rem;
   width: 80.125rem;
 }
 
