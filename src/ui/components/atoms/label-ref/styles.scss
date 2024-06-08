@@ -1,0 +1,80 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.label-ref {
+  &--default {
+    background: $ads-text-main;
+  }
+
+  &--secondary {
+    background: $ads-secondary-main;
+  }
+
+  align-items: center;
+  display: flex;
+  height: 4.375rem;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+
+  @include respond-to('medium') {
+    width: 80%;
+  }
+
+  @include respond-to('large') {
+    width: 30%;
+  }
+
+  @include respond-to('extra-large') {
+    width: 30%;
+  }
+
+  &__icon {
+    align-items: center;
+    border: 0.125rem solid $ads-tertiary-main;
+    border-radius: 0.6875rem;
+    color: $ads-tertiary-main;
+    display: flex;
+    font-family: Lato, sans-serif;
+    font-size: 2.25rem;
+    font-weight: 400;
+    height: 2.875rem;
+    justify-content: center;
+    line-height: 3.42rem;
+    margin-right: 0.5rem;
+    width: 2.8125rem;
+
+    &--default {
+      background: $ads-text-main;
+    }
+
+    &--secondary {
+      background: $ads-secondary-main;
+    }
+  }
+
+  &__label {
+    background: inherit;
+    border-radius: 0.25rem;
+    color: $ads-color-main;
+    font-family: Lato, sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    height: 4.0625rem;
+    line-height: 4.08rem;
+    text-align: left;
+    width: 20.625rem;
+
+    @include respond-to('medium') {
+      font-size: 2.5rem;
+    }
+
+    @include respond-to('large') {
+      font-size: 2.5rem;
+    }
+
+    @include respond-to('extra-large') {
+      font-size: 3rem;
+    }
+  }
+}

@@ -4,7 +4,7 @@
 .label-share {
   background: $ads-primary-main;
   background-color: $ads-text-main;
-  height: 65px;  
+  height: 65px;
   width: 330px;
 }
 
@@ -13,7 +13,7 @@
   font-size: 1.7rem;
   font-weight: $ads-font-weight-bold;
   letter-spacing: 0.0625rem;
-  line-height: 65.28px;   
+  line-height: 65.28px;
   size: 48px;
   text-transform: uppercase;
 }
@@ -32,17 +32,17 @@
 
 /* Pantalla pequeña (menos de 768px) */
 @media (width <= 767px) {
- .label-share {
+  .label-share {
     height: 50px;
     width: 250px;
   }
 
- .label-share__text {
+  .label-share__text {
     font-size: 1.4rem;
     line-height: 50px;
   }
 
- .label-share__icon svg {
+  .label-share__icon svg {
     height: 30%;
     width: 10%;
   }
@@ -50,17 +50,17 @@
 
 /* Pantalla mediana (entre 768px y 1024px) */
 @media (width >= 768px) and (width <= 1023px) {
- .label-share {
+  .label-share {
     height: 55px;
     width: 280px;
   }
 
- .label-share__text {
+  .label-share__text {
     font-size: 1.5rem;
     line-height: 55px;
   }
 
- .label-share__icon svg {
+  .label-share__icon svg {
     height: 35%;
     width: 12%;
   }
@@ -68,17 +68,17 @@
 
 /* Pantalla grande (más de 1024px) */
 @media (width >= 1024px) {
- .label-share {
+  .label-share {
     height: 65px;
     width: 330px;
   }
 
- .label-share__text {
+  .label-share__text {
     font-size: 1.7rem;
     line-height: 65.28px;
   }
 
- .label-share__icon svg {
+  .label-share__icon svg {
     height: 40%;
     width: 15%;
   }
