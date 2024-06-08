@@ -11,7 +11,11 @@
 .button-publish__button {
   border: 0.125rem solid transparent;
   border-radius: 1.563rem;
+<<<<<<< HEAD
   padding: 0.8rem;
+=======
+  padding: 0.2rem;
+>>>>>>> origin/feature/SEM-067
   width: 7.563rem;
 
   @include respond-to('medium') {
