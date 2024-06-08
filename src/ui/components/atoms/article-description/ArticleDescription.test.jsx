@@ -32,7 +32,6 @@ describe('ArticleDescription', () => {
     expect(articleElement).toHaveClass('underline-text');
   });
 
-  
   test('applies highlight style when variant is highlight', () => {
     const mockArticleContent = 'This is a highlighted article.';
     render(<ArticleDescription article={mockArticleContent} variant="highlight" />);
@@ -41,4 +40,3 @@ describe('ArticleDescription', () => {
     expect(articleElement).toHaveClass('highlight-text');
   });
 });
-

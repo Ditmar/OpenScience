@@ -5,11 +5,11 @@ const meta = {
   title: 'ui/components/atoms/article-description',
   component: ArticleDescription,
   argTypes: {
-  variant: {
-    options: ['default', 'bold', 'italic', 'underline', 'highlight'], 
-    control: { type: 'select' },
+    variant: {
+      options: ['default', 'bold', 'italic', 'underline', 'highlight'],
+      control: { type: 'select' },
+    },
   },
-},
 } as Meta<typeof ArticleDescription>;
 
 export default meta;
