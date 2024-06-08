@@ -3,7 +3,7 @@ import LabelRef from './LabelRef';
 import '../../../../globals/_variables.scss';
 
 const meta: Meta<typeof LabelRef> = {
-  title: 'ui/components/atoms/LabelRef',
+  title: 'ui/components/atoms/label-ref',
   component: LabelRef,
   argTypes: {
     children: {
