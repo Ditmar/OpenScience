@@ -1,6 +1,5 @@
 import express from 'express';
 import { handler } from '../dist/server/entry.mjs';
-
 if (process.env.ENV === 'local') {
   require('dotenv').config();
 }
