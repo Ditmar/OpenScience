@@ -1,3 +1,4 @@
 export interface IProps {
-  reference: string;
+  text?: string;
+  color?: 'primary' | 'secondary' | 'tertiary';
 }
