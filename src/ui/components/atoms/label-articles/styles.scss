@@ -2,9 +2,12 @@
 @import '../../../../globals/mixins';
 
 .label {
-  background: $ads-color-main;
-  padding: 0.5rem;
-  padding-top: 2rem;
+  background: $ads-background-main;
+
+  @include respond-to('small-mobile') {
+    font-size: 2.7rem;
+    padding: 0.5rem 2rem;
+  }
 
   @include respond-to('small') {
     font-size: 1.5rem;
@@ -28,6 +31,12 @@
   font-size: 3rem;
   font-weight: $ads-font-weight-second;
   line-height: 3.516rem;
+  
+
+  @include respond-to('small-mobile') {
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+  }
 
   @include respond-to('small') {
     font-size: 1.5rem;
