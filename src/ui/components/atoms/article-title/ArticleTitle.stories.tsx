@@ -1,4 +1,5 @@
 import type { StoryObj, Meta } from '@storybook/react';
+import '../../../../globals/_variables.scss';
 import ArticleTitle from './ArticleTitle';
 
 const meta = {
@@ -6,7 +7,7 @@ const meta = {
   component: ArticleTitle,
   argTypes: {
     variant: {
-      options: ['Default'],
+      options: ['Default', 'primary', 'secondary'],
       control: { type: 'select' },
     },
     text: {
@@ -20,7 +21,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Titulo1: Story = {
   args: {
-    children: 'Title',
     title: `CANOPY-TOP MEASUREMENTS DO NOT ACCURATELY QUANTIFY CANOPY-SCALE LEAF THERMOREGULATION`,
     variant: 'default',
   },
@@ -28,15 +28,13 @@ export const Titulo1: Story = {
 
 export const Titulo2: Story = {
   args: {
-    children: 'Title',
     title: `CANOPY-TOP MEASUREMENTS DO NOT ACCURATELY QUANTIFY CANOPY-SCALE LEAF THERMOREGULATION`,
-    variant: 'default',
+    variant: 'primary',
   },
 };
 export const Titulo3: Story = {
   args: {
-    children: 'Title',
     title: `CANOPY-TOP MEASUREMENTS DO NOT ACCURATELY QUANTIFY CANOPY-SCALE LEAF THERMOREGULATION`,
-    variant: 'default',
+    variant: 'secondary',
   },
 };
