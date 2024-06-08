@@ -1,0 +1,10 @@
+node_modules/
+build/
+dist/
+.yarn
+app-server/
+coverage/
+docs/
+public/
+storybool-static/
+.github/
