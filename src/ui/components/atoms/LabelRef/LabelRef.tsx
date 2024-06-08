@@ -1,13 +1,20 @@
+import React from 'react';
 import './styles.scss';
-import type { IProps } from './types/IProps';
+
+
+interface IProps {
+  children: React.ReactNode;
+  variant?: 'default' | 'secondary';
+}
 
 function LabelRef(props: IProps) {
-  const { children } = props;
+  const { children, variant = 'default' } = props;
   return (
-    <div className="label-ref">
-      <span className="label-ref__icon">R</span>
-      <span className="label-ref__label">{children}</span>
+    <div className={`label-ref ${variant}`}>
+      <p className="icon">R</p>
+      <p className="label">{children}</p>
     </div>
   );
 }
+
 export default LabelRef;
