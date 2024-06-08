@@ -3,6 +3,7 @@ import ContainerContent from './ContainerContent';
 <<<<<<< HEAD
 <<<<<<< HEAD
 import Container from './mock/assets/img/Rectangle 131.svg?raw';
+import Container2 from './mock/assets/img/Rectangle 130.svg?raw';
 
 const meta: Meta = {
 =======
@@ -38,7 +39,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    // children: 'Container',
+    // children: 'Container2',
     icon: Container,
+    icon2: Container2,
   },
 };

@@ -1,33 +1,16 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 
-.container-content {
-  background: $ads-text-main;
-  height: 73rem;
-  left: 774.875rem;
+.container-content-icon {
+  height: 100%;
+  overflow: hidden; 
   position: relative;
-  top: 28rem;
-  width: 94.125rem;
-
-  @include respond-to('small') {
-    width: 80%;
-  }
-
-  @include respond-to('medium') {
-    width: 30%;
-  }
-
-  @include respond-to('large') {
-    width: 30%;
-  }
-
-  @include respond-to('extra-large') {
-    width: 25%;
-  }
+  width: 100%;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
   
+<<<<<<< HEAD
 =======
   &:hover {
     background: $ads-text-main;
@@ -45,16 +28,50 @@
   top: 50%;
   transform: translate(-50%, -50%);
   width: 80.125rem;
+=======
+  @include respond-to('small') {
+    padding-top: 75%;
+    width: 25%;
+    
+  }
+>>>>>>> 3315a0a (feat:add container content update files)
 
   @include respond-to('medium') {
-    width: 80%;
+    width: 70%;
   }
 
   @include respond-to('large') {
-    width: 30%;
+    width: 60%;
   }
 
   @include respond-to('extra-large') {
-    width: 30%;
+    width: 50%;
   }
 }
+
+.container-content {
+  gap: 0;
+  height: 73rem;
+  //left: 774.875rem;
+  left: 50rem;
+  opacity: 0;
+  position: relative;
+  //top: 28rem;
+  top:28rem;
+  width: 94.125rem;
+}
+
+#container-content-icon-image {
+  gap: 0;
+  height: 56.688rem;
+  //left: 782.875rem;
+  left: 58rem;
+  opacity: 0;
+  position: absolute;
+  top:37.125rem;
+  width: 80.125rem;
+}
+
+
+
+
