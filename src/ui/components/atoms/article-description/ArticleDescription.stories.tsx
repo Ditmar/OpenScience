@@ -5,14 +5,11 @@ const meta = {
   title: 'ui/components/atoms/article-description',
   component: ArticleDescription,
   argTypes: {
-    variant: {
-      options: ['default', 'bold', 'italic'],
-      control: { type: 'select' },
-    },
-    text: {
-      action: 'text',
-    },
+  variant: {
+    options: ['default', 'bold', 'italic', 'underline', 'highlight'], 
+    control: { type: 'select' },
   },
+},
 } as Meta<typeof ArticleDescription>;
 
 export default meta;
@@ -47,5 +44,25 @@ export const Italic: Story = {
         and it is intriguing to study the visual ecology of pelagic sharks with
         secondarily expanded habitats. The`,
     variant: 'italic',
+  },
+};
+
+export const Underline: Story = {
+  args: {
+    article: `
+        Spectral tuning of visual pigments often facilitates adaptation to new environments,
+        and it is intriguing to study the visual ecology of pelagic sharks with
+        secondarily expanded habitats. The`,
+    variant: 'underline',
+  },
+};
+
+export const Highlight: Story = {
+  args: {
+    article: `
+        Spectral tuning of visual pigments often facilitates adaptation to new environments,
+        and it is intriguing to study the visual ecology of pelagic sharks with
+        secondarily expanded habitats. The`,
+    variant: 'highlight',
   },
 };
