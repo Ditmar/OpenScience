@@ -1,37 +1,45 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 
+
 .title-text {
+    background: $ads-background-main;
     display: flex;
     font-family: Roboto, sans-serif;
-    font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: 0.001rem;
-    line-height: 3.492rem;
-
+    font-size: $ads-size-main;
+    font-weight: $ads-font-weight-bold;
+    letter-spacing: $ads-letter-spacing;
+    line-height: 2rem;
+    padding: 0.265rem;
   
     @include respond-to ('small'){
-        font-size: 1rem;
+        font-size: 1.5em;
         letter-spacing: 0.075rem;
+        width: 100%;
     }
-  
+
     @include respond-to ('medium'){
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         letter-spacing: 0.1rem;
+        width: 100%;
     }
-  
+
     @include respond-to ('large'){
         font-size: 1.5rem;
-        letter-spacing: 0.01rem;
+        letter-spacing: 0.0125rem;
     }
   
     @include respond-to ('extra-large'){
         font-size: 1.5rem;
-        letter-spacing: 0.01rem;
+        letter-spacing: 0.15rem;
     }
-  
 }
-  
-.bold-text {
-    font-weight: $ads-font-weight-bold;
+
+.primary-text{
+    color: $ads-primary-main;
+}
+
+.secondary-text{
+    color: $ads-secondary-main;
+    ;
 }

@@ -6,6 +6,12 @@ function ArticleTitle({ title, variant }: IProps) {
     if (variant === 'default') {
       return 'default-text';
     }
+    if (variant === 'primary') {
+      return 'primary-text';
+    }
+    if (variant === 'secondary') {
+      return 'secondary-text';
+    }
     return '';
   };
   const textStyle = getTextStyle();
