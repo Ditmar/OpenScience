@@ -1,0 +1,43 @@
+.button {
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    &--small {
+      padding: 4px 8px;
+      font-size: 12px;
+    }
+  
+    &--medium {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  
+    &--large {
+      padding: 12px 24px;
+      font-size: 16px;
+    }
+  
+    &--default {
+      background-color: $ads-background-main;
+      color: $ads-text-main-hover;
+    }
+  
+    &--primary {
+      background-color: $ads-primary-main;
+      color: $ads-color-main;
+    }
+  
+    &--secondary {
+      background-color: $ads-text-secondary;
+      color: $ads-color-main;
+    }
+  
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+  
