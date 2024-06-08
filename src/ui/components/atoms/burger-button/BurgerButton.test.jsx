@@ -1,4 +1,3 @@
-// src/ui/components/atoms/burger-button/BurgerButton.test.tsx
 import { render, fireEvent } from '@testing-library/react';
 import BurgerButton from './BurgerButton';
 
