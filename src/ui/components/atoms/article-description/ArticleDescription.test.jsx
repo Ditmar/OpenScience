@@ -23,4 +23,22 @@ describe('ArticleDescription', () => {
     const articleElement = screen.getByText(mockArticleContent);
     expect(articleElement).toHaveClass('italic-text');
   });
+
+  test('applies underline style when variant is underline', () => {
+    const mockArticleContent = 'This is an underlined article.';
+    render(<ArticleDescription article={mockArticleContent} variant="underline" />);
+
+    const articleElement = screen.getByText(mockArticleContent);
+    expect(articleElement).toHaveClass('underline-text');
+  });
+
+  
+  test('applies highlight style when variant is highlight', () => {
+    const mockArticleContent = 'This is a highlighted article.';
+    render(<ArticleDescription article={mockArticleContent} variant="highlight" />);
+
+    const articleElement = screen.getByText(mockArticleContent);
+    expect(articleElement).toHaveClass('highlight-text');
+  });
 });
+
