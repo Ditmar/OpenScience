@@ -10,6 +10,7 @@ function LogoFooter(props: IProps) {
       <span
         data-testid="logo_icon"
         className="logo-icon"
+        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: icon ?? '<div></div>' }}
       />
     </div>

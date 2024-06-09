@@ -11,6 +11,7 @@ function Share({ text = 'Compartir', colorVariant = 'primary', icon }: IProps) {
       <span
         className="label-share__icon"
         data-testid="share-icon"
+        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: icon || '<div></div>' }}
       />
       <span className="label-share__text">{text}</span>
