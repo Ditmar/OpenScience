@@ -1,12 +1,12 @@
 import type { StoryObj, Meta } from '@storybook/react';
-import ButtonLabel from './ButtonLabel';
+import LabelIcon from './ButtonLabel';
 import Home from '../../../../assets/icons/home.svg?raw';
 import Articles from '../../../../assets/icons/articles.svg?raw';
 import Volume from '../../../../assets/icons/volume.svg?raw';
 
 const meta = {
-  title: 'ui/components/atoms/button-label',
-  component: ButtonLabel,
+  title: 'ui/components/atoms/label-icon',
+  component: LabelIcon,
   argTypes: {
     onClick: {
       action: 'click',
@@ -16,7 +16,7 @@ const meta = {
       options: ['primary', 'secondary', 'tertiary'],
     },
   },
-} as Meta<typeof ButtonLabel>;
+} as Meta<typeof LabelIcon>;
 
 export default meta;
 

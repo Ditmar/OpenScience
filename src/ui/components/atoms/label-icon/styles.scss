@@ -1,6 +1,5 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 .container {
   align-items: center;
@@ -11,24 +10,12 @@
 }
 
 .label {
-  //color: $ads-color-main;
+  color: $ads-color-main;
   font-family: Roboto, sans-serif;
   font-size: $ads-size-main;
   font-weight: $ads-font-weight-second;
   margin-top: 0.5rem;
   text-align: center;
-
-  &--primary {
-    color: $ads-color-main;
-  }
-
-  &--secondary {
-    color: $ads-text-secondary;
-  }
-
-  &--tertiary {
-    color: $ads-warning-main;
-  }
 
   @include respond-to('medium') {
     font-size: 1.25rem;
@@ -37,7 +24,24 @@
 }
 
 .icon {
+  align-items: center;
+  border-radius: 100%;
   content: '';
-  height: 16px;
-  margin-bottom: 1.5rem;
+  display: flex;
+  height: 2.563rem;
+  justify-content: center;
+  margin-bottom: 0.001rem;
+  width: 2.563rem;
+
+  &--primary {
+    background-color: $ads-warning-main;
+  }
+
+  &--secondary {
+    background-color: $ads-color-main;
+  }
+
+  &--tertiary {
+    background-color: $ads-color-main;
+  }
 }
