@@ -1,0 +1,21 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.logo-icon svg {
+  height: 4.5rem;
+  width: 11.875rem;
+}
+
+.logo {
+  display: grid;
+  height: 4.5rem;
+  width: 11.875rem;
+  
+  &--primary {
+    background-color: $ads-tertiary-main;
+  }
+
+  &--secondary {
+    background-color: $ads-background-main;
+  }
+}

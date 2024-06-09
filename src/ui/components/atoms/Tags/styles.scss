@@ -1,0 +1,86 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+@font-face {
+  font-display: swap;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Lato-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/Lato-Bold.woff2') format('woff2');
+}
+
+.tag {
+  cursor: pointer;
+  margin: 0.313rem 0;
+  padding: 0.313rem 0.625px;
+
+  &.hovered {
+    color: $ads-text-main;
+  }
+
+  @include respond-to('extra-large') {
+    padding: 0.438rem 0.75rem;
+  }
+
+  @include respond-to('large') {
+    padding: 0.375rem 0.688rem;
+  }
+
+  @include respond-to('medium') {
+    padding: 0.313rem 0.625rem;
+  }
+
+  @include respond-to('small') {
+    padding: 0.25rem 0.563rem;
+  }
+}
+
+.tags {
+  font-family: Lato, sans-serif;
+  list-style-type: disc; 
+  padding-left: 1.25rem;
+
+  &.default .tag {
+    color: $ads-primary-main;
+  }
+
+  &.black .tag {
+    color: $ads-text-main-hover;
+  }
+
+  &.large-text .tag {
+    font-size: 1.25rem;
+  }
+
+  @include respond-to('extra-large') {
+    .tag {
+      font-size: 1.125rem;
+    }
+  }
+
+  @include respond-to('large') {
+    .tag {
+      font-size: 1rem;
+    }
+  }
+
+  @include respond-to('medium') {
+    .tag {
+      font-size: 0.875rem;
+    }
+  }
+
+  @include respond-to('small') {
+    .tag {
+      font-size: 0.75rem;
+    }
+  }
+}
