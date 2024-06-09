@@ -1,0 +1,34 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/breakpoints';
+
+.burger-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 2.5rem;
+  justify-content: space-around;
+  padding: 0;
+  width: 0; // Aquí se eliminó la unidad 'rem'
+}
+
+.burger-line {
+  background-color: $ads-text-main-hover;
+  height: 0.3rem;
+  transition: all 0.5s ease;
+  width: 3rem;
+}
+
+.burger-button.active .burger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-button.active .burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-button.active .burger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
