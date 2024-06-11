@@ -1,11 +1,14 @@
+import React from 'react';
 import './styles.scss';
 import type { IProps } from './types/IProps';
 
-function ButtonLabel(props: IProps) {
-  const { children, icon } = props;
+function ButtonLabel({ children, variant = 'primary', icon }: IProps) {
   return (
-    <div className="container">
-      <span className="icon" dangerouslySetInnerHTML={{ __html: icon ?? '<div></div>' }} />
+    <div>
+      <span
+        className={`icon icon--${variant}`}
+        dangerouslySetInnerHTML={{ __html: icon ?? '<div></div>' }}
+      />
       <span className="label">{children}</span>
     </div>
   );
