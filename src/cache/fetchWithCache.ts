@@ -1,68 +1,35 @@
+import fetch from 'node-fetch';
 import NodeCache from 'node-cache';
-import { useEffect, useState } from 'react';
 
-// eslint-disable-next-line turbo/no-undeclared-env-vars
 const cacheTTL = Number(process.env.CACHE_TTL) || 600;
-
 const cache = new NodeCache({ stdTTL: cacheTTL });
 
-function getCache<T>(key: string): T[] {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  return cache.get(key)!;
-}
+const getCache = (key: string) => cache.get(key);
+const setCache = (key: string, value: any) => cache.set(key, value);
+const delCache = (key: string) => cache.del(key);
 
-function setCache<T>(key: string, value: T[]) {
-  cache.set(key, JSON.stringify({ data: value }));
-}
+const fetchWithCache = async (url: string): Promise<any> => {
+  const cachedResponse = getCache(url);
 
+  if (cachedResponse) {
+    console.log('Returning cached response');
+    return cachedResponse;
+  }
 
-function delCache(key: string) {
-  cache.del(key);
-}
+  console.log('Fetching new data');
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`HTTP error: ${response.status}`);
+  }
 
+  const data = await response.json();
+  setCache(url, data);
+  return data;
+};
 
-export function useCache<T>(url: string): {
-  data: T[];
-  loading: boolean;
-  error: Error | undefined;
-} {
-  const [data, setData] = useState<T[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<Error>();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const cacheResponse: T[] = getCache(url);
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-      if (cacheResponse !== undefined) {
-        setData(cacheResponse);
-        setLoading(false);
-      } else {
-        try {
-          const res = await fetch(url);
-          if (!res.ok) {
-            throw new Error(`Failed to fetch data from ${url}`);
-          }
-          const dataJson = (await res.json()) as T[];
-          setCache(url, dataJson);
-          setData(dataJson);
-        } catch (e) {
-          if (e instanceof Error) setError(e);
-          else setError(new Error('An unknown error occurred'));
-        } finally {
-          setLoading(false);
-        }
-      }
-    };
-    fetchData().catch((e: unknown) => {
-      if (e instanceof Error) setError(e);
-      else setError(new Error('An unknown error occurred'));
-    });
-  }, [url]);
-
-  return { data, loading, error };
-}
-
-export function invalidateCache(url: string): void {
+const invalidateCache = (url: string): void => {
   delCache(url);
-}
+};
+
+export default fetchWithCache;
+export { invalidateCache };
