@@ -18,7 +18,7 @@ export const Primary: Story = {
   },
 };
 
-export const Secundary: Story = {
+export const secundary: Story = {
   args: {
     icon: logo,
     color: 'secondary',

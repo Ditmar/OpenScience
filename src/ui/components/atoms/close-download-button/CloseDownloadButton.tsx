@@ -1,4 +1,4 @@
-import './styles.scss';
+import './style.scss';
 import type { IProps } from './types/IProps';
 
 function CloseDownloadButton(props: IProps) {

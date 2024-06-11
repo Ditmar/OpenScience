@@ -35,7 +35,6 @@ function createMock() {
   let callCount = 0;
   const mockFunction = () => {
     callCount += 1;
-    // eslint-disable-next-line no-console
     console.log('It has been clicked');
   };
   mockFunction.callCount = () => callCount;

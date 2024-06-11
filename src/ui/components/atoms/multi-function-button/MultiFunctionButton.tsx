@@ -8,7 +8,6 @@ function MultiFunctionButton(props: IProps) {
       <span
         className="button__icon"
         data-testid="button-icon"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: icon ?? '<div></div>' }}
       />
     </button>

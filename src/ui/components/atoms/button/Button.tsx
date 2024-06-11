@@ -1,4 +1,3 @@
-/* eslint-disable react/no-danger */
 import './styles.scss';
 import type { IProps } from './types/IProps';
 
