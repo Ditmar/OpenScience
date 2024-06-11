@@ -1,11 +1,13 @@
 import NodeCache from 'node-cache';
 import { useEffect, useState } from 'react';
 
+// eslint-disable-next-line turbo/no-undeclared-env-vars
 const cacheTTL = Number(process.env.CACHE_TTL) || 600;
 
 const cache = new NodeCache({ stdTTL: cacheTTL });
 
 function getCache<T>(key: string): T[] {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   return cache.get(key)!;
 }
 
@@ -13,9 +15,11 @@ function setCache<T>(key: string, value: T[]) {
   cache.set(key, JSON.stringify({ data: value }));
 }
 
+
 function delCache(key: string) {
   cache.del(key);
 }
+
 
 export function useCache<T>(url: string): {
   data: T[];
@@ -29,6 +33,7 @@ export function useCache<T>(url: string): {
   useEffect(() => {
     const fetchData = async () => {
       const cacheResponse: T[] = getCache(url);
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       if (cacheResponse !== undefined) {
         setData(cacheResponse);
         setLoading(false);
