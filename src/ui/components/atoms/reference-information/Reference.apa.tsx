@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import type { IProps } from './types/IProps';
 import './styles.scss';
+import urls from './_mocked/references.json';
 
 interface Urls {
   pnasUrl: string;
@@ -14,62 +15,32 @@ function ReferenceAPA(props: IProps) {
   const colorText = color ? `reference-apa__text--${color}` : '';
   const colorLinks = color ? `reference-apa__links--${color}` : '';
 
-  const [urls, setUrls] = useState<Urls>({
-    pnasUrl: '',
-    nejmUrl: '',
-    pubmedUrl: '',
-    googleScholarUrl: '',
-  });
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          '/src/ui/components/atoms/reference-information/_mocked/references.json',
-        );
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data: Urls = (await response.json()) as Urls; // Explicitly type the response
-        setUrls(data);
-      } catch (error: unknown) {
-        if (error instanceof Error) {
-          // Aquí puedes manejar el error de una manera apropiada, como mostrarlo en la UI
-        }
-      }
-    };
-
-    fetchData().catch((error: unknown) => {
-      if (error instanceof Error) {
-        // Aquí puedes manejar el error de una manera apropiada, como mostrarlo en la UI
-      }
-    }); // Manejar explícitamente el error con .catch
-  }, []);
+  const referenceUrls: Urls = urls as Urls; // Asignar el tipo Urls al objeto urls
 
   return (
     <div className={`reference-apa__text ${colorText}`}>
       <span>{text}</span>
       <div className={`reference-apa__links ${colorLinks}`}>
         <a
-          href={urls.pnasUrl}
+          href={referenceUrls.pnasUrl}
           className={`reference-apa__link${color ? ` reference-apa__link--${color}` : ''}`}
         >
           Go to reference
         </a>
         <a
-          href={urls.nejmUrl}
+          href={referenceUrls.nejmUrl}
           className={`reference-apa__link${color ? ` reference-apa__link--${color}` : ''}`}
         >
           Crossref
         </a>
         <a
-          href={urls.pubmedUrl}
+          href={referenceUrls.pubmedUrl}
           className={`reference-apa__link${color ? ` reference-apa__link--${color}` : ''}`}
         >
           PubMed
         </a>
         <a
-          href={urls.googleScholarUrl}
+          href={referenceUrls.googleScholarUrl}
           className={`reference-apa__link${color ? ` reference-apa__link--${color}` : ''}`}
         >
           Google Scholar
