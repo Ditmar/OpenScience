@@ -17,7 +17,7 @@
     width: 7.5rem;
   }
 
-  @include respond-to('midium') {
+  @include respond-to('medium') {
     font-size: 1.6rem;
     width: 12rem;
   }
