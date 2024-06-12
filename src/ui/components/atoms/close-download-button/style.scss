@@ -1,0 +1,67 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.close-download-button {
+  background: $ads-text-main;
+  border: none;
+  height: 3.5rem;
+  padding: 0.5rem;
+  width: 3rem;
+
+  @include respond-to('small') {
+    background: $ads-text-main;
+    height: 3.5rem;
+    width: 3rem;
+  }
+
+  @include respond-to('medium') {
+    background: $ads-text-main;
+    height: 4.5rem;
+    width: 4rem;
+  }
+
+  @include respond-to('large') {
+    background: $ads-text-main;
+    height: 5.5rem;
+    width: 5rem;
+  }
+
+  @include respond-to('extra-large') {
+    background: $ads-text-main;
+    height: 6rem;
+    width: 5.2rem;
+  }
+
+  .button__icon svg {
+    display: flexbox;
+    height: 75%;
+    width: 80%;
+  }
+
+  .button__icon #path {
+    display: flexbox;
+    fill: $ads-text-main;
+
+    @include respond-to('large') {
+      fill: $ads-text-main;
+    }
+
+    @include respond-to('extra-large') {
+      fill: $ads-text-main;
+    }
+  }
+
+  .close-download-button:hover {
+    background: $ads-text-main;
+
+    .button__icon #path {
+      @include respond-to('small') {
+        fill: $ads-text-main;
+      }
+
+      @include respond-to('medium') {
+        fill: $ads-text-main;
+      }
+    }
+  }
+}
