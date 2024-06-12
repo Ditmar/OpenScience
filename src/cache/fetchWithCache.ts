@@ -1,14 +1,6 @@
-import fetch from 'node-fetch';
-import NodeCache from 'node-cache';
+import { getCache, setCache, delCache } from './cache';
 
-const cacheTTL = Number(process.env.CACHE_TTL) || 600;
-const cache = new NodeCache({ stdTTL: cacheTTL });
-
-const getCache = (key: string) => cache.get(key);
-const setCache = (key: string, value: any) => cache.set(key, value);
-const delCache = (key: string) => cache.del(key);
-
-const fetchWithCache = async (url: string): Promise<any> => {
+const fetchWithCache = async (url: string): Promise<unknown> => {
   const cachedResponse = getCache(url);
 
   if (cachedResponse) {
@@ -19,17 +11,16 @@ const fetchWithCache = async (url: string): Promise<any> => {
   console.log('Fetching new data');
   const response = await fetch(url);
   if (!response.ok) {
-    throw new Error(`HTTP error: ${response.status}`);
+    throw new Error(`HTTP error: ${response.status.toString()}`);
   }
 
-  const data = await response.json();
+  const data = (await response.json()) as unknown;
   setCache(url, data);
   return data;
 };
 
-const invalidateCache = (url: string): void => {
+export const invalidateCacheForUrl = (url: string): void => {
   delCache(url);
 };
 
 export default fetchWithCache;
-export { invalidateCache };
