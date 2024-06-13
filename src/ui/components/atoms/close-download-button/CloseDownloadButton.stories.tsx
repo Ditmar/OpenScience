@@ -5,7 +5,7 @@ import downloads from '../../../../assets/icons/downloads.svg?raw';
 import close_simple from '../../../../assets/icons/close_simple.svg?raw';
 
 const meta = {
-  title: 'ui/components/atoms/CloseDownloadButton',
+  title: 'ui/components/atoms/close-download-button',
   component: CloseDownloadButton,
   argTypes: {
     onClick: {

@@ -42,7 +42,7 @@ describe('Testing Button onClick action', () => {
     expect(onClickMock.callCount()).toBe(1);
   });
 
-  test('onClick callback when close_simple button is clicked', () => {
+  test('onClick callback when close-simple button is clicked', () => {
     const onClickMock = createMock();
     render(<CloseDownloadButton icon={close_simple} onClick={onClickMock} />);
     const buttonElement = screen.getByTestId('button-icon');
