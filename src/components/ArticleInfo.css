@@ -1,0 +1,15 @@
+.article-info {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  
+  .article-info__label {
+    font-weight: bold;
+  }
+  
+  .article-info__value {
+    margin: 0 0 10px 0;
+  }
+  

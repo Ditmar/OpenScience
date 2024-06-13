@@ -1,6 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ArticleInfo from '../components/ArticleInfo.jsx';
+
+const article = {
+  date: '2024-06-13',
+  volume: '42'
+};
 ---
+
+<ArticleInfo date={article.date} volume={article.volume} />
 
 <Layout title="Welcome to Astro.">
   <h1>OPENSICENCE</h1>
