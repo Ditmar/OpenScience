@@ -1,9 +1,9 @@
 import type { StoryObj, Meta } from '@storybook/react';
-import VariableButton from './VariableButton';
+import PrimaryButtons from './PrimaryButtons';
 
 const meta = {
-  title: 'ui/components/atoms/variable-button',
-  component: VariableButton,
+  title: 'ui/components/atoms/PrimaryButtons',
+  component: PrimaryButtons,
   argTypes: {
     onClick: {
       action: 'click',
@@ -13,7 +13,7 @@ const meta = {
       options: ['primary', 'secondary', 'tertiary'],
     },
   },
-} as Meta<typeof VariableButton>;
+} as Meta<typeof PrimaryButtons>;
 
 export default meta;
 

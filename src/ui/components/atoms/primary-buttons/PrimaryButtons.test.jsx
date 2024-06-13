@@ -1,20 +1,20 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import VariableButton from './VariableButton.tsx';
+import PrimaryButtons from './PrimaryButtons.tsx';
 
 describe('Testing VariableButton React Component', () => {
   test('should be rendere INICIAR SESION', () => {
-    render(<VariableButton>INICIAR SESION</VariableButton>);
+    render(<PrimaryButtons>INICIAR SESION</PrimaryButtons>);
     const buttonElement = screen.getByText(/INICIAR SESION/i);
     expect(buttonElement).toBeInTheDocument();
   });
   test('should be rendere REGISTRARSE', () => {
-    render(<VariableButton>REGISTRARSE</VariableButton>);
+    render(<PrimaryButtons>REGISTRARSE</PrimaryButtons>);
     const buttonElement = screen.getByText(/REGISTRARSE/i);
     expect(buttonElement).toBeInTheDocument();
   });
   test('should have correct styles class', () => {
-    render(<VariableButton>INICiAR SESION</VariableButton>);
+    render(<PrimaryButtons>INICiAR SESION</PrimaryButtons>);
     const buttonElement = screen.getByRole('button');
     const labelElement = screen.getByText(/INICIAR SESION/i);
     expect(buttonElement).toHaveClass('button-variable__button');
@@ -32,14 +32,14 @@ describe('Testing VariableButton React Component', () => {
 
   test('should call onClick handler when button is clicked for INICIAR SESION', () => {
     const mockClickHandler = createMockFunction();
-    render(<VariableButton onClick={mockClickHandler}>INICIAR SESION</VariableButton>);
+    render(<PrimaryButtons onClick={mockClickHandler}>INICIAR SESION</PrimaryButtons>);
     const buttonElement = screen.getByRole('button');
     fireEvent.click(buttonElement);
     expect(mockClickHandler.calls.length).toBe(1);
   });
   test('should call onClick handler when button is clicked for REGISTRARSE', () => {
     const mockClickHandler = createMockFunction();
-    render(<VariableButton onClick={mockClickHandler}>REGISTRARSE</VariableButton>);
+    render(<PrimaryButtons onClick={mockClickHandler}>REGISTRARSE</PrimaryButtons>);
     const buttonElement = screen.getByRole('button');
     fireEvent.click(buttonElement);
     expect(mockClickHandler.calls.length).toBe(1);
