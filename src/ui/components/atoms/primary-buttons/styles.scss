@@ -1,19 +1,11 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 
-.button-variable {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.button-variable__button {
+.buttons-primary__button {
   border: 0.063rem solid transparent;
-  padding: 0.8rem;
   width: 5.75rem;
 
-  @include respond-to('small-mobile') {
-    padding: 0.2rem;
+  @include respond-to('small') {
     width: 10.313rem;
   }
 
@@ -46,7 +38,7 @@
   }
 }
 
-.button-variable__label {
+.buttons-primary__label {
   font-family: Roboto, sans-serif;
   font-size: 0.75rem;
   font-weight: $ads-font-weight-second;
@@ -54,7 +46,7 @@
   text-align: center;
   text-transform: uppercase;
 
-  @include respond-to('small-mobile') {
+  @include respond-to('small') {
     font-size: 1.25rem;
     line-height: 1.465rem;
   }
