@@ -1,0 +1,101 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/fonts';
+
+.disguise {
+  background-color: transparent;     
+  border: none;
+  margin-left: 94%;
+  margin-top: -0.4rem;
+}
+
+.button__icons--glass svg{
+  height: 1.125rem;
+  width: 1.125rem;
+
+  @include respond-to('medium') {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  @include respond-to('extra-large') {
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+.divider--solid {
+  background-color: $ads-color-main;
+  border: none;
+  height: 0.125rem;
+  margin-top: 1.125rem;
+  width: 16.375rem;
+  
+  @include respond-to('small') {
+      height: 16.375rem;
+      width: 0.125rem;
+    }
+
+  @include respond-to('medium') {
+    height: 0.625rem;
+    width: 50rem;
+    }
+  
+    @include respond-to('large') {
+      height: 0.625rem;
+      width: 73.375rem;
+    }
+  
+    @include respond-to('extra-large') {
+      height: 0.625rem;
+      margin-top: 3.125rem;
+      width: 73.375rem;
+    }
+}
+
+
+.button1 {
+    background-color: $ads-color-main;
+    border: none;
+    border-radius: 0.125rem;
+    margin-left: 7.5rem;
+    margin-top: 0.063rem;
+    padding: 0.02rem;
+    width: 3.625rem;
+
+    @include respond-to('medium') {
+        height: 3.063rem;
+        margin-left: 20.625rem;
+        margin-top: 0.313rem;
+        width: 10.313rem;
+      }
+    
+    @include respond-to('extra-large') {
+        height: 3.063rem;
+        margin-left: 34.25rem;
+        margin-top: 0.625rem;
+        width: 10.313rem;
+    }
+}
+
+.button__label--glass {
+  color: $ads-text-main-hover;
+  font-family: Roboto, sans-serif;
+  font-size: 0.5rem;
+  font-weight: 400;
+  line-height: 0.586rem;
+  text-align: center;
+
+  @include respond-to('medium') {
+    font-size: 2.25rem;
+    font-weight: 500;
+    line-height: 1.949rem;
+    text-align: center;
+  }
+}
+
+.button1:hover {
+  background: $ads-secondary-main;
+}
+
+
