@@ -1,0 +1,15 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.text{
+    color: $ads-text-main;
+    font-size: 0.938rem;
+    font-weight: 600;
+    font-family: Montserrat, sans-serif;
+}
+
+.vertical-bar{
+    background-color: $ads-text-main;
+    margin-left:3rem;
+    margin-right: 0.5rem;
+}
