@@ -6,18 +6,10 @@ function LabelVarible(props: IProps) {
 
   return (
     <div>
-      <span className='vertical-bar'>
-        {textbar1}
-      </span>
-      <span className='text'>
-        {text1}
-      </span>
-      <span className='vertical-bar'>
-        {textbar2}
-      </span>
-      <span className='text'>
-        {text2}
-      </span>
+      <span className="vertical-bar">{textbar1}</span>
+      <span className="text">{text1}</span>
+      <span className="vertical-bar">{textbar2}</span>
+      <span className="text">{text2}</span>
     </div>
   );
 }
