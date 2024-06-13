@@ -17,8 +17,8 @@ describe('Testing VariableButton React Component', () => {
     render(<VariableButton>INICiAR SESION</VariableButton>);
     const buttonElement = screen.getByRole('button');
     const labelElement = screen.getByText(/INICIAR SESION/i);
-    expect(buttonElement).toHaveClass('button-variable__button');
-    expect(labelElement).toHaveClass('button-variable__label');
+    expect(buttonElement).toHaveClass('buttons-primary__button');
+    expect(labelElement).toHaveClass('buttons-primary__label');
   });
 
   const createMockFunction = () => {
