@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro check && astro build --logLevel warn",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "npx eslint .",
