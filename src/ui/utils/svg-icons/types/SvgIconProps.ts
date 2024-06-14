@@ -5,4 +5,5 @@ export interface SvgIconProps {
   size?: string;
   className?: string;
   styles?: React.CSSProperties;
+  ['data-testid']?: string;
 }

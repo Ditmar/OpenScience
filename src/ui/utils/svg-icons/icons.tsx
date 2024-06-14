@@ -4,11 +4,12 @@ import type { SvgIconProps } from './types/SvgIconProps';
 import optimizeSvg from './optimizeSvg';
 
 export function Icon(props: SvgIconProps) {
-  const { src, size, className, styles } = props;
+  const { src, size, className, styles, 'data-testid': dataTestId } = props;
   const optimizedSvg = optimizeSvg(src, size);
 
   const spanProps: Record<string, unknown> = {
     dangerouslySetInnerHTML: { __html: optimizedSvg },
+    ...(dataTestId && { 'data-testid': dataTestId }),
   };
 
   if (className) {
