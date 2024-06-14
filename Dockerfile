@@ -1,4 +1,5 @@
 
+#todo: fix dockerfile
 FROM node:18-alpine
 WORKDIR /app
 RUN node -v
