@@ -1,10 +1,13 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
   
+
   .location a{
-    color:$ads-text-main;
+    color:$ads-text-main-alpha;
+    position: relative;
     text-decoration: none;
-  }
+    }
 
   .link__icon {
     display: inline-block;
@@ -15,9 +18,30 @@
   }
 
   .link__label {
-  font-size: 15px;
+  font-family: Montserrat, sans-serif;
+  font-size: 1.1rem;
+  font-weight:300;
   letter-spacing: 0.0625rem;
-  margin-top: -160px;
+  line-height: 14.63px;
+  position: relative;
+
+  @include respond-to('small-mobile') {
+    font-size: 1.1rem;
+
+  }
+
+  @include respond-to('small') {
+    font-size: 1.1rem;
+  }
+
+  @include respond-to('medium') {
+    font-size: 1.1rem;
+  }
+
+  @include respond-to('large') {
+    font-size: 1rem;
+  }
+
   }
 
   .location img{
@@ -27,9 +51,4 @@
     margin-right: 1rem;
     width: 2px;
   }
-
-  .link__icon svg {
-    display: flexbox;
-    height: 60%;
-    width: 90%;
-  }
+   
