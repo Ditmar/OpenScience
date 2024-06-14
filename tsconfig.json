@@ -3,6 +3,10 @@
   "display": "Astro Project",
   "extends": "./style-guide/tsconfig/base.json",
   "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@icons": ["./ui/utils/svg-icons/icons"]
+    },
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "plugins": [
