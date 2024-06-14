@@ -1,4 +1,4 @@
-import './styles.scss';
+import './LogoFooter.scss';
 import { Icon } from '../../../utils/svg-icons/icons';
 import type { IProps } from './types/IProps';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import './ButtonLabel.scss';
 import type { IProps } from './types/IProps';
 
 function ButtonLabel({ children, variant = 'primary', icon }: IProps) {
