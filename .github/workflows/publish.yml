@@ -46,7 +46,8 @@ jobs:
           publish_dir: ./storybook-static
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-      
+      - name: clean storybook folder
+        run: rm -rf storybook-static
       - name: Login in DockerHub
         uses: docker/login-action@v1
         with:
