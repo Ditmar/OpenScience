@@ -1,18 +1,17 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 
-.container-text{
+.container-text {
   display: flex;
   font-family: Lato, sans-serif;
 }
 
-.number{
-
-  margin-right: 0.25rem;
+.number {
   font-family: Lato, sans-serif;
+  margin-right: 0.25rem;
 }
-.reference-apa {
 
+.reference-apa {
   &__text {
     // General styles for all text
     font-family: Lato, sans-serif;
@@ -57,14 +56,13 @@
         background: $ads-background-desktop;
       }
     }
-    
   }
 
   &__links {
-    display: flex; 
+    display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem; 
-    overflow-x: auto; 
+    gap: 0.5rem;
+    overflow-x: auto;
 
     a {
       font-family: Lato, sans-serif;
@@ -89,11 +87,12 @@
     &__text {
       font-size: 0.9rem;
       padding: 0.5rem;
-      
     }
+
     &__links {
       margin-left: 0.7rem;
     }
+
     &__links a {
       font-size: 0.9rem;
       padding: 0.02rem;
@@ -105,7 +104,7 @@
       font-size: 1.2rem;
       padding: 0.625rem;
     }
-    
+
     &__links {
       margin-left: 0.6rem;
     }
