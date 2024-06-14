@@ -61,10 +61,10 @@
   }
 
   &__links {
-    display: flex; // Using flexbox to align links horizontally
+    display: flex; 
     flex-wrap: wrap;
-    gap: 0.5rem; // Space between links
-    overflow-x: auto; // Allows horizontal scrolling if the links don't fit in the container
+    gap: 0.5rem; 
+    overflow-x: auto; 
 
     a {
       font-family: Lato, sans-serif;
