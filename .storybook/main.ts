@@ -16,7 +16,6 @@ const config: StorybookConfig = {
     options: {},
   },
   async viteFinal(config, { configType }) {
-    // Aplicar tsconfig-paths
     return mergeConfig(config, {
       plugins: [tsconfigPaths()],
     });
