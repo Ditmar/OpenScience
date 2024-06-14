@@ -19,7 +19,9 @@ describe('Testing MagnifyingGlass React Component', () => {
   });
 
   test('Should display the correct children', () => {
-    render(<MagnifyingGlass>BUSCAR</MagnifyingGlass>);
+    render(
+      <MagnifyingGlass icon="<svg><circle cx='25' cy='25' r='20' /></svg>">BUSCAR</MagnifyingGlass>,
+    );
 
     const buttonIcon = screen.getByTestId('button__glass');
     fireEvent.click(buttonIcon);
@@ -48,7 +50,11 @@ describe('Testing Button onClick action', () => {
   });
   test('Should display the correct children', () => {
     const onClickMock = createMock();
-    render(<MagnifyingGlass onClick={onClickMock}>BUSCAR</MagnifyingGlass>);
+    render(
+      <MagnifyingGlass icon="<svg><circle cx='25' cy='25' r='20' /></svg>" onClick={onClickMock}>
+        BUSCAR
+      </MagnifyingGlass>,
+    );
 
     const buttonIcon = screen.getByTestId('button__glass');
     fireEvent.click(buttonIcon);
