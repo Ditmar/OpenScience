@@ -3,7 +3,7 @@ name: Deploy docker hub
 on:
   push:
     branches:
-      - 'feature/ci-deployment'
+      - '**'
 
 jobs:
   build:
