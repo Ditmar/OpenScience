@@ -5,7 +5,7 @@
   background: $ads-text-main;
   border: none;
   height: 3.5rem;
-  padding: 0.5rem;
+  padding: 1.3rem;
   width: 3rem;
 
   @include respond-to('small') {
@@ -34,8 +34,8 @@
 
   .button__icon svg {
     display: flexbox;
-    height: 75%;
-    width: 80%;
+    height: 100%;
+    width: 100%;
   }
 
   .button__icon #path {

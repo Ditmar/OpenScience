@@ -1,11 +1,9 @@
-import React from 'react';
-
 export interface IProps {
-  code: React.ReactNode;
-  title: React.ReactNode;
-  message: React.ReactNode;
-  redirectTo: React.ReactNode;
-  linkText: React.ReactNode;
-  massageinit: React.ReactNode;
-  massagefinish: React.ReactNode;
+  code: number;
+  title: string;
+  message: string;
+  redirectTo: string;
+  linkText: string;
+  messageinit: string;
+  messagefinish: string;
 }

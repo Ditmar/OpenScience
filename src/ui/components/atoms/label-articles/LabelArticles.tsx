@@ -1,4 +1,4 @@
-import './styles.scss';
+import './LabelArticles.scss';
 import type { IProps } from './types/IProps';
 
 function LabelArticles(props: IProps) {

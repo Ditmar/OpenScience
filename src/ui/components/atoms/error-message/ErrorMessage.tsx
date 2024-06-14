@@ -1,4 +1,4 @@
-import './styles.scss';
+import './ErrorMessage.scss';
 import type { IProps } from './types/IProps';
 
 function ErrorMessage(props: IProps) {

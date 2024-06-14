@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import './ArticleDescription.scss';
 import type { IProps } from './types/IProps';
 
 function ArticleDescription({ article, variant }: IProps) {
