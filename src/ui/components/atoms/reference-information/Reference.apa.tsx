@@ -19,7 +19,13 @@ function ReferenceAPA(props: IProps) {
 
   return (
     <div className={`reference-apa__text ${colorText}`}>
-      <span>{text}</span>
+      <div className="container-text">
+        <div className="number">
+          <span>1</span>
+        </div>
+        <span>{text}</span>
+      </div>
+
       <div className={`reference-apa__links ${colorLinks}`}>
         <a
           href={referenceUrls.pnasUrl}
