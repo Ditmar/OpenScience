@@ -39,3 +39,19 @@
   font-weight: bold;
   src: url('/fonts/Roboto-Bold.woff2') format('woff2');
 }
+
+@font-face {
+  font-display: swap;
+  font-family: Montserrat;
+  font-style: normal;
+  src: url('/fonts/Montserrat-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Montserrat;
+  font-style: bold;
+  font-weight: normal;
+  font-weight: bold;
+  src: url('/fonts/Montserrat-Italic.woff2') format('woff2');
+}
