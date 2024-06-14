@@ -47,7 +47,7 @@ jobs:
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
       - name: clean storybook folder
-        run: rm -rf storybook-static
+        run: rm -rf ./storybook-static
       - name: Login in DockerHub
         uses: docker/login-action@v1
         with:
@@ -63,10 +63,10 @@ jobs:
       - name: build project
         run: yarn build
       - name: Build Docker image
-        run: docker build -t ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }} .
+        run: docker build -t ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }} .
       - name: Push Docker image to Docker Hub
         run: |
-          docker tag ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }} ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
-          docker push ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
+          docker tag ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }} ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
+          docker push ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
       - name: Remove local Docker image
-        run: docker rmi ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
+        run: docker rmi ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
