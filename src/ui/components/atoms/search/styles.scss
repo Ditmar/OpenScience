@@ -1,0 +1,52 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.search-container {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.search-icon {
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.5rem;
+  height: 2rem;
+  justify-content: center;
+  width: 2rem;
+}
+
+.search-bar {
+  align-items: center;
+  background-color: $ads-color-main;
+  border: 1px solid $ads-background-main;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px $ads-text-secondary;
+  display: flex;
+  left: 50%;
+  padding: 0.5rem;
+  position: absolute;
+  top: 1rem;
+  transform: translateX(-50%);
+}
+
+.search-bar input {
+  border: none;
+  flex-grow: 1;
+  margin-right: 0.5rem;
+  outline: none;
+  padding: 0.5rem;
+}
+
+.search-bar button {
+  background-color: transparent;
+  border: none;
+  color: $ads-secondary-main;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+}
