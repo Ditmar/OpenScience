@@ -7,7 +7,7 @@ function ButtonLabel({ children, variant = 'primary', icon }: IProps) {
   const colorFont = `icon--${variant as string}`;
   return (
     <div className="label-icon__container">
-      {icon && <Icon data-testid="logo_icon" src={icon} className={`icon icon-- ${colorFont}`}/>}
+      {icon && <Icon data-testid="logo_icon" src={icon} className={`icon icon-- ${colorFont}`} />}
       <span className="label">{children}</span>
     </div>
   );
