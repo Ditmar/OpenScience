@@ -2,11 +2,43 @@
 @import '../../../../globals/mixins';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
   
-
-  .location a{
+  .location {
     color:$ads-text-main-alpha;
+    font-family: Montserrat, sans-serif;
+    text-align: center;
+
+    @include respond-to('small-mobile') {
+      font-size: 0.75rem;
+  
+    }
+  
+    @include respond-to('small') {
+      font-size: 1.1rem;
+    }
+  
+    @include respond-to('medium') {
+      font-size: 1rem;
+    }
+  
+    @include respond-to('large') {
+      font-size: 1.1rem;
+    }
+
+    @include respond-to('extra-large') {
+      font-size: 0.80rem;
+    }
+  
+  }
+
+  .location a {
+    color:$ads-text-main-alpha;
+    font-family: Montserrat, sans-serif;
+    font-weight:300;
+    letter-spacing: 0.0625rem;
+    line-height: 14.63px;
     position: relative;
     text-decoration: none;
+    top: 10px;
     }
 
   .link__icon {
@@ -14,41 +46,17 @@
     height: 40px;
     margin-left: 0.1rem;
     margin-right: 0.1rem;
+    position: relative;
+    top: 17px;
     width: 30px;
-  }
-
-  .link__label {
-  font-family: Montserrat, sans-serif;
-  font-size: 1.1rem;
-  font-weight:300;
-  letter-spacing: 0.0625rem;
-  line-height: 14.63px;
-  position: relative;
-
-  @include respond-to('small-mobile') {
-    font-size: 1.1rem;
-
-  }
-
-  @include respond-to('small') {
-    font-size: 1.1rem;
-  }
-
-  @include respond-to('medium') {
-    font-size: 1.1rem;
-  }
-
-  @include respond-to('large') {
-    font-size: 1rem;
-  }
-
-  }
+    }
 
   .location img{
     display: inline-block;
     height: 31px;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+    position: relative;
+    top: 20px;
     width: 2px;
-  }
-   
+    }
