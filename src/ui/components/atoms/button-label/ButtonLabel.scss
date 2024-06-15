@@ -3,7 +3,7 @@
 @import '../../../../globals/fonts';
 
 .label-icon__container {
-  padding: 100px;
+  padding: 10px;
 }
 
 .label {
@@ -23,7 +23,7 @@
 
 .icon {
   align-items: center;
-  background: $ads-color-main;
+  background-color: $ads-color-main;
   border-radius: 50%;
   display: flex;
   height: 2.563rem;
@@ -32,11 +32,15 @@
   margin-bottom: 0.001rem;
   width: 2.563rem;
 
+  svg {
+    height: 1.5rem;
+    width: 2rem;
+  }
   &--secondary {
-    background: $ads-text-secondary;
+    background-color: $ads-text-secondary;
   }
 
   &--tertiary {
-    background: $ads-warning-main;
+    background-color: $ads-warning-main;
   }
 }
