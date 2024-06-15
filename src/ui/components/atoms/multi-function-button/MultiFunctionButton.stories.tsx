@@ -1,4 +1,4 @@
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 import MultiFunctionButton from './MultiFunctionButton';
 import Pdf from '../../../../assets/icons/pdf.svg?raw';
 import Media from '../../../../assets/icons/media.svg?raw';
@@ -13,7 +13,7 @@ const meta = {
       action: 'click',
     },
   },
-};
+} as Meta<typeof MultiFunctionButton>;
 
 export default meta;
 
@@ -23,7 +23,6 @@ export const PdfButton: Story = {
   args: {
     children: 'Pdf',
     icon: Pdf,
-    color: 'primary',
   },
 };
 
@@ -31,7 +30,6 @@ export const ShareButton: Story = {
   args: {
     children: 'Share',
     icon: Share,
-    color: 'primary',
   },
 };
 
@@ -39,7 +37,6 @@ export const MediaButton: Story = {
   args: {
     children: 'Media',
     icon: Media,
-    color: 'primary',
   },
 };
 
@@ -47,6 +44,5 @@ export const ReferencesButton: Story = {
   args: {
     children: 'References',
     icon: Reference,
-    color: 'primary',
   },
 };

@@ -1,4 +1,4 @@
-import './LabelReferences.scss';
+import './styles.scss';
 import type { IProps } from './types/IProps';
 
 function LabelReferences({ text = 'Referencias', colorVariant = 'primary' }: IProps) {

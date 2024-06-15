@@ -1,6 +1,10 @@
 import React from 'react';
-import './LabelRef.scss';
-import type { IProps } from './types/IProps';
+import './styles.scss';
+
+interface IProps {
+  children: React.ReactNode;
+  variant: 'default' | 'secondary';
+}
 
 function LabelRef(props: IProps) {
   const { children, variant = 'default' } = props;

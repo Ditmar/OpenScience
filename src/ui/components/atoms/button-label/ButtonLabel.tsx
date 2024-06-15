@@ -1,13 +1,11 @@
-import React from 'react';
-import './ButtonLabel.scss';
+import './styles.scss';
 import type { IProps } from './types/IProps';
-import { Icon } from '../../../utils/svg-icons/icons';
 
-function ButtonLabel({ children, variant = 'primary', icon }: IProps) {
-  const colorFont = `icon--${variant as string}`;
+function ButtonLabel(props: IProps) {
+  const { children, icon } = props;
   return (
-    <div className="label-icon__container">
-      {icon && <Icon data-testid="logo_icon" src={icon} className={`icon icon-- ${colorFont}`} />}
+    <div className="container">
+      <span className="icon" dangerouslySetInnerHTML={{ __html: icon ?? '<div></div>' }} />
       <span className="label">{children}</span>
     </div>
   );

@@ -1,4 +1,4 @@
-import './PublishButton.scss';
+import './styles.scss';
 import type { IProps } from './types/IProps';
 
 function PublishButton(props: IProps) {

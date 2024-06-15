@@ -5,15 +5,11 @@ import Articles from '../../../../assets/icons/articles.svg?raw';
 import Volume from '../../../../assets/icons/volume.svg?raw';
 
 const meta = {
-  title: 'ui/components/atoms/button-label',
+  title: 'ui/components/atoms/buttonLabel',
   component: ButtonLabel,
   argTypes: {
     onClick: {
       action: 'click',
-    },
-    variant: {
-      control: 'select',
-      options: ['primary', 'secondary', 'tertiary'],
     },
   },
 } as Meta<typeof ButtonLabel>;
@@ -26,7 +22,6 @@ export const Primary: Story = {
   args: {
     children: 'ARTICULOS',
     icon: Articles,
-    variant: 'primary',
   },
 };
 
@@ -34,14 +29,11 @@ export const Secondary: Story = {
   args: {
     children: 'INICIO',
     icon: Home,
-    variant: 'secondary',
   },
 };
-
-export const Tertiary: Story = {
+export const Terciary: Story = {
   args: {
     children: 'VOLUMENES',
     icon: Volume,
-    variant: 'tertiary',
   },
 };

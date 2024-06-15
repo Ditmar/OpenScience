@@ -1,5 +1,4 @@
-import './LogoFooter.scss';
-import { Icon } from '../../../utils/svg-icons/icons';
+import './styles.scss';
 import type { IProps } from './types/IProps';
 
 function LogoFooter(props: IProps) {
@@ -8,7 +7,11 @@ function LogoFooter(props: IProps) {
 
   return (
     <div className={`logo ${colorFont}`}>
-      {icon && <Icon data-testid="logo_icon" src={icon} className="logo-icon" />}
+      <span
+        data-testid="logo_icon"
+        className="logo-icon"
+        dangerouslySetInnerHTML={{ __html: icon ?? '<div></div>' }}
+      />
     </div>
   );
 }

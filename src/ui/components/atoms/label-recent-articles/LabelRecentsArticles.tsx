@@ -1,5 +1,5 @@
 import type { IProps } from './types/IProps';
-import './LabelRecentsArticles.scss';
+import './styles.scss';
 
 function LabelRecentsArticles(props: IProps) {
   const { text, color = 'primary' } = props;

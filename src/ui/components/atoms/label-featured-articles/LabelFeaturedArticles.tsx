@@ -1,4 +1,4 @@
-import './LabelFeaturedArticles.scss';
+import './styles.scss';
 import type { IProps } from './types/IProps';
 
 function LabelFeaturedArticles({ text = 'artículos destacados', ColorVariant = 'main' }: IProps) {

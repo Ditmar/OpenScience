@@ -1,5 +1,5 @@
 import React from 'react';
-import './Thumbnail.scss';
+import './styles.scss';
 import type { IProps } from './types/IProps';
 
 function Thumbnail(props: IProps) {

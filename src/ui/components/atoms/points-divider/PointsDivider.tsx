@@ -1,5 +1,5 @@
 import React from 'react';
-import './PointsDivider.scss';
+import './styles.scss';
 import type { DividerProps } from './types/IProps';
 
 function PointsDivider(props: DividerProps) {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Tags.scss';
+import './styles.scss';
 import type { ITagsProps } from './types/IProps';
 
 function Tags({ labels, variant = 'default' }: ITagsProps) {

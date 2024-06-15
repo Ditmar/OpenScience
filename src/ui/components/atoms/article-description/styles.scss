@@ -1,57 +1,60 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 
-.article-description__text {
-  font-family: Lato, sans-serif;
-  font-size: $ads-size-main;
-  font-weight: 275;
-  letter-spacing: 0.125rem;
-  line-height: 2.05rem;
-  margin-bottom: $ads-letter-spacing;
 
-  @font-face {
+
+.article-description__text{
+    font-family: Lato, sans-serif;
+    font-size: $ads-size-main;
+    font-weight: 275;
+    letter-spacing: 0.125rem;
+    line-height: 2.05rem;
+    margin-bottom: $ads-letter-spacing;
+    
+@font-face {
     font-display: swap;
     font-family: Lato;
     font-style: normal;
     src: url('/fonts/Lato-Regular.woff2') format('woff2');
-  }
+}
 
-  @include respond-to('small') {
+@include respond-to ('small'){
     font-size: 1rem;
     letter-spacing: 0.075rem;
     margin-bottom: 0.75rem;
-  }
+}
 
-  @include respond-to('medium') {
+@include respond-to ('medium'){
     font-size: 1.25rem;
     letter-spacing: 0.1rem;
     margin-bottom: 1rem;
-  }
+}
 
-  @include respond-to('large') {
+@include respond-to ('large'){
     font-size: 1.5rem;
     letter-spacing: 0.125rem;
     margin-bottom: 1.25rem;
-  }
+}
 
-  @include respond-to('extra-large') {
+@include respond-to ('extra-large'){
     font-size: 1.5rem;
     letter-spacing: 0.15rem;
-  }
+}
+
 }
 
 .bold-text {
-  font-weight: $ads-font-weight-bold;
+    font-weight: $ads-font-weight-bold;
 }
 
 .italic-text {
-  font-style: italic;
+    font-style: italic;
 }
 
 .underline-text {
-  text-decoration: underline;
+    text-decoration: underline; 
 }
 
 .highlight-text {
-  background-color: $ads-primary-main;
+    background-color: $ads-primary-main; 
 }

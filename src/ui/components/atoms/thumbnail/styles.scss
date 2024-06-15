@@ -2,9 +2,9 @@
 @import '../../../../globals/mixins';
 
 .thumbnail {
-  border: 2px solid transparent;
+  border: 2px solid transparent; // Propiedades en orden alfabético
   margin: 0 auto;
-  position: relative;
+  position: relative; // Propiedades en orden alfabético
 
   @include respond-to('medium') {
     width: 15rem;
@@ -20,20 +20,20 @@
 }
 
 img {
-  border: 2px solid black;
+  border: 2px solid black; // Propiedades en orden alfabético
   box-sizing: border-box;
-  display: block;
+  display: block; // Propiedades en orden alfabético
   height: auto;
   margin: 0 auto;
   width: 100%;
 }
 
 .overlay {
-  background-color: transparent;
+  background-color: transparent; // Propiedades en orden alfabético
   box-sizing: border-box;
   height: 100%;
   left: 0;
-  position: absolute;
+  position: absolute; // Propiedades en orden alfabético
   top: 0;
   width: 100%;
 }

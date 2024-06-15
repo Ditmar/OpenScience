@@ -1,5 +1,5 @@
 import type { IProps } from './types/IProps';
-import './LabelVolumes.scss';
+import './styles.scss';
 
 function LabelVolumes(props: IProps) {
   const { text, color = 'primary' } = props;

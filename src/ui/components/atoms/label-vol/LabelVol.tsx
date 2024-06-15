@@ -1,4 +1,4 @@
-import './LabelVol.scss';
+import './styles.scss';
 import React from 'react';
 import type { IProps } from './types/IProps';
 

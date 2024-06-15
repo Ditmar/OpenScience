@@ -1,0 +1,32 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.label {
+  color: $ads-color-main;
+  font-family: Roboto, sans-serif;
+  font-size: $ads-size-main;
+  font-weight: 800;
+  margin-top: 0.5rem;
+  text-align: center;
+
+  @include respond-to('medium') {
+    font-size: 1.25rem;
+    line-height: 1.465rem;
+  }
+}
+
+.icon {
+  content: '';
+  height: 16px;
+  margin-bottom: 1.5rem;
+  //display: inline-block;
+}
