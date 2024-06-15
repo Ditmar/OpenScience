@@ -1,6 +1,6 @@
 import type { StoryObj } from '@storybook/react';
 import BurgerButton from './BurgerButton';
-import IconBurger from '../../../../assets/icons/button-burguer.svg?raw';
+import IconBurger from '../../../../assets/icons/button-burguer.svg';
 
 const meta = {
   title: 'ui/components/atoms/burger-button',
@@ -19,6 +19,8 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     icon: IconBurger,
-    onClick: () => console.log('Button clicked'),
+    onClick: () => {
+      console.log('Button clicked');
+    },
   },
 };

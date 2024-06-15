@@ -3,7 +3,7 @@ import BurgerButton from './BurgerButton.tsx';
 
 describe('Testing BurguerButton React Component', () => {
   test('should render ButtonBurger', () => {
-    render(<Button icon={BurgerButton}></Button>);
+    render(<BurgerButton icon={BurgerButton} />);
     const buttonElement = screen.getByText('button');
     expect(buttonElement).toBeInTheDocument();
   });
