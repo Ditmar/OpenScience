@@ -15,7 +15,7 @@ const meta = {
 export default meta;
 
 type Story = StoryObj<typeof meta>;
-export const Primary: Story = {
+export const Location: Story = {
   args: {
     label: 'UBICACION',
     label1: 'SEGUINOS EN',
@@ -23,5 +23,7 @@ export const Primary: Story = {
     pathImage: String(Rectangle168),
     alt: 'Rectangle168',
     iconfacebook: Facebook,
+    urllocation: 'https://www.google.com/maps',
+    urlfacebok: 'https://www.facebook.com/tuPaginaDeFacebook',
   },
 };
