@@ -5,4 +5,6 @@ export interface IProps {
   iconfacebook?: string;
   pathImage?: string;
   alt?: string;
+  urllocation?: string;
+  urlfacebok?: string;
 }
