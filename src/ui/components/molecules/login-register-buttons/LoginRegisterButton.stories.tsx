@@ -1,6 +1,6 @@
 import type { StoryObj, Meta } from '@storybook/react';
 import LoginRegisterButtons from './LoginRegisterButtons';
-import PrimaryButtons from '../primary-buttons/PrimaryButtons';
+import PrimaryButtons from '../../atoms/primary-buttons/PrimaryButtons';
 
 const meta: Meta<typeof LoginRegisterButtons> = {
   title: 'ui/components/atoms/LoginRegisterButtons',

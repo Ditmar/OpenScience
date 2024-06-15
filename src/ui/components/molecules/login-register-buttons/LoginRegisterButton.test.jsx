@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import LoginRegisterButtons from './LoginRegisterButtons.tsx';
-import PrimaryButtons from '../primary-buttons/PrimaryButtons.tsx';
+import PrimaryButtons from '../../atoms/primary-buttons/PrimaryButtons.tsx';
 
 describe('LoginRegisterButtons Component', () => {
   test('should render both buttons', () => {
