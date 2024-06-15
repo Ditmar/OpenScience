@@ -1,14 +1,39 @@
-// AuthButtons.stories.tsx
 import type { StoryObj, Meta } from '@storybook/react';
 import LoginRegisterButtons from './LoginRegisterButtons';
+import PrimaryButtons from '../primary-buttons/PrimaryButtons';
 
 const meta: Meta<typeof LoginRegisterButtons> = {
-  title: 'ui/components/atoms/login-register-buttons/LoginRegisterButton',
+  title: 'ui/components/atoms/LoginRegisterButtons',
   component: LoginRegisterButtons,
+  argTypes: {
+    onClick: {
+      action: 'click',
+    },
+  },
 };
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Primary: Story = {
+  args: {
+    children: (
+      <>
+        <PrimaryButtons variant="primary">iniciar sesion</PrimaryButtons>
+        <PrimaryButtons variant="secondary">registrarse</PrimaryButtons>
+      </>
+    ),
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    children: (
+      <>
+        <PrimaryButtons variant="primary">iniciar sesion</PrimaryButtons>
+        <PrimaryButtons variant="tertiary">registrarse</PrimaryButtons>
+      </>
+    ),
+  },
+};
