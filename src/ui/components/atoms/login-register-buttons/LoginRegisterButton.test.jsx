@@ -1,9 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import LoginRegisterButtons from './LoginRegisterButtons.tsx';
+import PrimaryButtons from '../primary-buttons/PrimaryButtons.tsx';
 
 describe('LoginRegisterButtons Component', () => {
   test('should render both buttons', () => {
-    render(<LoginRegisterButtons />);
+    render(
+      <LoginRegisterButtons>
+        <PrimaryButtons variant="primary">Iniciar sesión</PrimaryButtons>
+        <PrimaryButtons variant="tertiary">Registrarse</PrimaryButtons>
+      </LoginRegisterButtons>,
+    );
     const loginButton = screen.getByText(/Iniciar sesión/i);
     const registerButton = screen.getByText(/Registrarse/i);
 
