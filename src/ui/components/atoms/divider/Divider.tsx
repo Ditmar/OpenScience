@@ -1,4 +1,4 @@
-import './styles.scss';
+import './Divider.scss';
 import type { IProps } from './types/IProps';
 
 function Divider(props: IProps) {

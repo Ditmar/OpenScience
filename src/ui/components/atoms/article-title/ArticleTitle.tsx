@@ -1,4 +1,4 @@
-import './styles.scss';
+import './ArticleTitle.scss';
 import type { IProps } from './types/IProps';
 
 function ArticleTitle({ title, variant }: IProps) {
