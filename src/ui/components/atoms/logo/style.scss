@@ -20,7 +20,6 @@
  
   }
 
-
   @include respond-to("large") {
     border-radius: 0 0 2.563rem 0.80rem;
     height: 6.1rem;
@@ -28,7 +27,6 @@
     margin-top:0 ;
     width: 17.688rem;
   }
-  
 
   @include respond-to("extra-large") {
     border-radius: 0 0 2.563rem 0.80rem;
@@ -85,7 +83,6 @@
     margin-left: 3rem;
     margin-top: 0.3rem;
     width: 10.75rem;
-   
     } 
   }
 
