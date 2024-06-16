@@ -3,7 +3,7 @@ import LoginRegisterButtons from './LoginRegisterButtons';
 import PrimaryButtons from '../../atoms/primary-buttons/PrimaryButtons';
 
 const meta: Meta<typeof LoginRegisterButtons> = {
-  title: 'ui/components/atoms/LoginRegisterButtons',
+  title: 'ui/components/molecules/login-register-buttons',
   component: LoginRegisterButtons,
   argTypes: {
     onClick: {
