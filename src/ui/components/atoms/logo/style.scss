@@ -1,0 +1,91 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/breakpoints';
+
+.logo-container {
+  @include respond-to("small-mobile") {  
+    border-radius: 0 1.688rem 1.688rem 0;
+    height: 3.188rem;
+    margin-left: 0;
+    margin-top: 0;
+    width: 8.125rem;
+  }
+
+  @include respond-to("medium") {  
+    border-radius: 0 1.688rem 1.688rem 0;
+    height: 3.188rem;
+    margin-left: 0;
+    margin-top: 0;
+    width: 8.125rem;
+ 
+  }
+
+
+  @include respond-to("large") {
+    border-radius: 0 0 2.563rem 0.80rem;
+    height: 6.1rem;
+    margin-left:0 ;
+    margin-top:0 ;
+    width: 17.688rem;
+  }
+  
+
+  @include respond-to("extra-large") {
+    border-radius: 0 0 2.563rem 0.80rem;
+    height: 6.1rem;
+    margin-left:0 ;
+    margin-top:0 ;
+    width: 17.688rem;
+  }
+
+  &--default {
+    background-color: $ads-color-main;
+  }
+  
+  &--primary {
+    background-color: $ads-background-main;
+  }
+  
+  &--secondary {
+    background-color: $ads-primary-main;
+
+  }
+
+}
+
+.logo-image{
+  @include respond-to("small-mobile") {
+    height:2.063rem;  
+    margin-left:0.75rem ;
+    margin-top: 0.5rem; 
+    padding-left: 0.90rem;
+    width: 4.313rem;
+ 
+  }
+
+  @include respond-to("medium") {
+    height:2.063rem;  
+    margin-left:0.75rem ;
+    margin-top: 0.5rem; 
+    padding-left: 0.90rem;
+    width: 4.313rem;
+    
+ 
+  }
+
+  @include respond-to("large") {
+    height:4.813rem;
+    margin-left: 3rem;
+    margin-top: 0.3rem;
+    width: 10.75rem; 
+  }
+
+  @include respond-to("extra-large"){
+    height:4.813rem;
+    margin-left: 3rem;
+    margin-top: 0.3rem;
+    width: 10.75rem;
+   
+    } 
+  }
+
