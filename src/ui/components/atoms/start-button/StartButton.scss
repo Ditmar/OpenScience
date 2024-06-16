@@ -1,0 +1,81 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.button__init {
+  border: none;
+  color: $ads-tertiary-main;
+  
+  
+  .button__icon--before {
+    content: '';
+    display: inline-block;
+    
+  }
+  
+
+  &--primary {
+    background-color: $ads-primary-main;
+    font-family: Montserrat, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    height: 3.063rem;
+    margin-left: 1rem;
+    width: 5.125rem;
+
+    @include respond-to('small-mobile') {
+      font-size: 1.5rem;
+      font-weight: 300;
+      height: 2.5rem;
+      width: 9rem;
+    }
+
+    @include respond-to('large') {
+      font-size: 2.5rem;
+      font-weight: 300;
+      height: 3.063rem;
+      width: 22.625rem;
+    }
+  }
+
+  &--secundary {
+    background-color: $ads-text-main;
+    font-family: Roboto, sans-serif;
+    font-size: 3rem;
+    font-weight: $ads-font-size-first;
+    height: 3.375rem;
+    width: 19.5rem;
+
+    @include respond-to('small-mobile') {
+      font-size: 1.5rem;
+      font-weight: 300;
+      height: 2.5rem;
+      width: 9rem;
+    }
+
+    @include respond-to('large') {
+      font-family: Roboto, sans-serif;
+      font-weight: $ads-font-size-first;
+      height: 3.375rem;
+      width: 19.5rem;
+    }
+  }
+
+  &--tertiary {
+    background-color: $ads-primary-main;
+    border-radius: 2rem;
+    font-family: Montserrat, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    height: 3.063rem;
+    width: 22.625rem;
+
+    @include respond-to('small-mobile') {
+      font-size: 1.5rem;
+      font-weight: 300;
+      height: 2.5rem;
+      width: 9rem;
+    } 
+
+  }
+ 
+}
