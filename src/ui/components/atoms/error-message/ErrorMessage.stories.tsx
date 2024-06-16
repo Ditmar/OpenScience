@@ -2,7 +2,7 @@ import type { StoryObj, Meta } from '@storybook/react';
 import ErrorMessage from './ErrorMessage';
 
 const meta = {
-  titles: 'ui/components/atoms/ErrorMessage',
+  titles: 'ui/components/atoms/error-message',
   component: ErrorMessage,
 } as Meta<typeof ErrorMessage>;
 
