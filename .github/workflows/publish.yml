@@ -36,9 +36,11 @@ jobs:
       - name: Run test
         run: yarn test
       - name: Build Storybook
+        if: github.ref == 'refs/heads/main'
         run: yarn build-storybook
 
       - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -46,8 +48,10 @@ jobs:
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
       - name: clean storybook folder
+        if: github.ref == 'refs/heads/main'
         run: rm -rf ./storybook-static
       - name: Login in DockerHub
+        if: github.ref == 'refs/heads/main'
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
