@@ -28,4 +28,13 @@ describe('ButtonInit component', () => {
     expect(buttonElement).toHaveClass('button__init');
     expect(buttonElement).toHaveClass('button__init--secondary');
   });
+
+  test('renders with custom props - tertiary variant', () => {
+    render(<ButtonInit varianButton="tertiary ">INICIAR</ButtonInit>);
+    const buttonElement = screen.getByRole('button');
+    expect(buttonElement).toBeInTheDocument();
+    expect(buttonElement).toHaveTextContent('INICIAR');
+    expect(buttonElement).toHaveClass('button__init');
+    expect(buttonElement).toHaveClass('button__init--tertiary ');
+  });
 });
