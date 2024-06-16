@@ -88,11 +88,59 @@ yarn install
 yarn dev
 ```
 
-### Contribution
+### Github actions pipeline
 
-To contribute to this project, please follow these steps:
-Fork the repository.
-Create a new branch (git checkout -b feature/new-feature).
-Make your changes and commit them (git commit -am 'Add new feature').
-Push your changes (git push origin feature/new-feature).
-Create a Pull Request.
+```
++---------------+       +---------------+
+|  Developer    |       |  GitHub       |
+|  (person)    +------->  Actions      |
+|               |       |  (platform) |
++---------------+       +-------+-------+
+                                    |
+                                    v
+                            +-------+-------+
+                            |  Docker Hub   |
+                            |  (registry)   |
+                            +---------------+
+                                    |
+                                    v
+                            +-------+-------+
+                            |  GitHub Pages |
+                            |  (service)   |
+                            +---------------+
+```
+
+### Containers level 2
+
+```
++----------------------------+
+|   GitHub Actions           |
+|   (Pipeline)               |
+|                            |
+|   +--------------------+   |
+|   |   Build Job        |   |
+|   |                    |   |
+|   | 1. Checkout repo   |   |
+|   | 2. Setup Node.js   |   |
+|   | 3. Install Yarn    |   |
+|   | 4. Install deps    |   |
+|   | 5. Run lint        |   |
+|   | 6. Run test        |   |
+|   | 7. Build Storybook |   |
+|   | 8. Deploy Storybook|   |
+|   | 9. Clean folder    |   |
+|   | 10. Login Docker   |   |
+|   | 11. Setup env vars |   |
+|   | 12. Get commit hash|   |
+|   | 13. Build project  |   |
+|   | 14. Build Docker   |   |
+|   | 15. Push Docker    |   |
+|   | 16. Remove image   |   |
+|   +--------------------+   |
++----------------------------+
+
+```
+
+### Pipeline
+
+![GitHub Actions Pipeline](./docs/images/pipeline.png)
