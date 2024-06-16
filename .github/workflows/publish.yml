@@ -63,10 +63,13 @@ jobs:
       - name: build project
         run: yarn build
       - name: Build Docker image
+        if: github.ref == 'refs/heads/main'
         run: docker build -t ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }} .
       - name: Push Docker image to Docker Hub
+        if: github.ref == 'refs/heads/main'
         run: |
           docker tag ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }} ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
           docker push ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
       - name: Remove local Docker image
+        if: github.ref == 'refs/heads/main'
         run: docker rmi ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
