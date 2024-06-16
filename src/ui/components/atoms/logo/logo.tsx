@@ -16,4 +16,5 @@ function Logo(props: IProps) {
     </header>
   );
 }
+
 export default Logo;
