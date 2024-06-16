@@ -4,15 +4,25 @@
 .button__init {
   border: none;
   color: $ads-tertiary-main;
+  
+  
+  .button__icon--before {
+    content: '';
+    display: inline-block;
+    height: 16px;
+    left: 218px;
+    width: 16px;
+  }
+  
 
   &--primary {
     background-color: $ads-primary-main;
-    border-radius: 2rem;
     font-family: Montserrat, sans-serif;
     font-size: 2.5rem;
     font-weight: 300;
     height: 3.063rem;
-    width: 22.625rem;
+    margin-left: 2px;
+    width: 5.125rem;
 
     @include respond-to('small-mobile') {
       font-size: 1.5rem;
@@ -51,4 +61,23 @@
       width: 19.5rem;
     }
   }
+
+  &--tertiary {
+    background-color: $ads-primary-main;
+    border-radius: 2rem;
+    font-family: Montserrat, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    height: 3.063rem;
+    width: 22.625rem;
+
+    @include respond-to('small-mobile') {
+      font-size: 1.5rem;
+      font-weight: 300;
+      height: 2.5rem;
+      width: 9rem;
+    } 
+
+  }
+ 
 }
