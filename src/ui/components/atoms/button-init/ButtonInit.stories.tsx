@@ -1,26 +1,40 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import ButtonInit from './ButtonInit';
 import '../../../../globals/_variables.scss';
+import Vector from '../../../../assets/icons/vector.svg?raw';
 
-const meta: Meta<typeof ButtonInit> = {
+const meta = {
   title: 'ui/components/atoms/button-init',
   component: ButtonInit,
-};
+  argTypes: {
+    onClick: {
+      action: 'click',
+    },
+  },
+} as Meta<typeof ButtonInit>;
 
 export default meta;
 
-type Story = StoryObj<typeof ButtonInit>;
+type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: 'INICIAR',
-    varian_Button: 'primary',
+    children: 'INICIAR ',
+    varianButton: 'primary',
+    icon: Vector,
   },
 };
 
 export const Secondary: Story = {
   args: {
     children: 'INICIAR',
-    varian_Button: 'secundary',
+    varianButton: 'secundary',
+  },
+};
+
+export const tertiary: Story = {
+  args: {
+    children: 'INICIAR',
+    varianButton: 'tertiary',
   },
 };
