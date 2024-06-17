@@ -1,4 +1,4 @@
-import './styles.scss';
+import './variableButton.scss';
 import type { IProps } from './types/IProps';
 
 function VariableButton(props: IProps) {
