@@ -1,7 +1,9 @@
 import type { StoryObj, Meta } from '@storybook/react';
 import Logo from './logo';
 import '../../../../globals/_variables.scss';
-import logoImage from '../../../../assets/icons/logo.svg';
+import image from '../../../../assets/icons/logo.svg';
+
+const logoImage = image as unknown as string;
 
 const meta: Meta<typeof Logo> = {
   title: 'ui/components/atoms/logo',
@@ -25,6 +27,7 @@ export const Primary: Story = {
     variant: 'primary',
   },
 };
+
 export const Secondary: Story = {
   args: {
     src: logoImage,
