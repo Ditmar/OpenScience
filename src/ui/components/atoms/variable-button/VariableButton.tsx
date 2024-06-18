@@ -1,14 +1,12 @@
 import './variableButton.scss';
 import type { IProps } from './types/IProps';
+import { Icon } from '../../../utils/svg-icons/icons';
 
-function VariableButton({ icon, onClick }: IProps) {
+function VariableButton(props: IProps) {
+  const { icon, onClick } = props;
   return (
     <button className="variable-button" aria-label="Abrir" onClick={onClick}>
-      <span
-        className="button-icon"
-        data-testid="button-icon"
-        dangerouslySetInnerHTML={{ __html: icon ?? '<div></div>' }}
-      />
+      {icon && <Icon data-testid="button-icon" src={icon} className="button-icon" />}
     </button>
   );
 }
