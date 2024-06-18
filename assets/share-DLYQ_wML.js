@@ -9,4 +9,4 @@ const C=`<svg width="46" height="47" viewBox="0 0 46 47" fill="none" xmlns="http
 </clipPath>
 </defs>
 </svg>
-`;export{C as S};
+`;export{C as L};
