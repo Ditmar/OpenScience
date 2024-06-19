@@ -4,7 +4,7 @@ import Facebook from '../../../../assets/icons/facebook.svg?raw';
 import Google from '../../../../assets/icons/google.svg?raw';
 
 const meta = {
-  title: 'ui/components/atoms/button',
+  title: 'ui/components/atoms/social-media-button',
   component: Button,
   argTypes: {
     onClick: {

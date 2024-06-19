@@ -2,7 +2,7 @@ import './Button.scss';
 import { Icon } from '../../../utils/svg-icons/icons';
 import type { IProps } from './types/IProps';
 
-function Button(props: IProps) {
+function SMButton(props: IProps) {
   const { children, icon, color } = props;
   const colorFont = `button--${color as string}`;
   return (
@@ -14,4 +14,4 @@ function Button(props: IProps) {
     </button>
   );
 }
-export default Button;
+export default SMButton;

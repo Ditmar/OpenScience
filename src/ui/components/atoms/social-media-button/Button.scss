@@ -1,0 +1,65 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.button {
+  align-items: center;
+  display: flex;
+  justify-content: center;  
+}
+
+.button__icon {
+  align-items: start;
+  display: flex;
+  height: 44px;
+  width: 43px;
+
+  svg {
+    align-items: start;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.button__label {
+  align-items: center;
+  background: $ads-primary-main;
+  border: 2px solid transparent;
+  border-radius: 28px;
+  color: $ads-color-main;
+  display: flex;
+  height: 93px;
+  justify-content: flex-start;
+  padding: 10px 20px;
+  width: 615px;
+
+  &:hover {
+    background: $ads-secondary-main;
+  }
+
+  @include respond-to('small') {
+    height: 93px;  
+    width: 615px;
+  }
+
+  @include respond-to('medium') {
+    height: 93px; 
+    width: 615px;
+  }
+
+  @include respond-to('large') {
+    height: 93px; 
+    width: 615px;
+  }
+
+  @include respond-to('extra-large') {
+    height: 93px;   
+    width: 615px;
+  }
+}
+
+.button__text {
+  padding: 28%;  
+  display: block;
+  font-size: $ads-font-size-quarter;
+  text-align: center;
+}
