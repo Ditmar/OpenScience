@@ -4,7 +4,7 @@ import magnifyingglass from '../../../../assets/icons/magnifyingglass.svg?raw';
 import MagnifyingGlass from './MagnifyingGlass';
 
 const meta = {
-  title: 'ui/components/molecules/magnifying-glass',
+  title: 'ui/components/atoms/magnifying-glass',
   component: MagnifyingGlass,
   argTypes: {
     onClick: {
