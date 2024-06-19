@@ -6,14 +6,13 @@
 .labeldate {
   color: $ads-text-secondary;
   font-family: Lato, Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: 10;
-  line-height: 16.32px;
+  font-size: $ads-font-size-sixth;
+  font-weight: $ads-font-size-first;
+  line-height: $ads-line-height-default;
   width: fit-content;
   
   &:hover {
     color: $ads-text-main-hover;
   }
-
- 
 }
+

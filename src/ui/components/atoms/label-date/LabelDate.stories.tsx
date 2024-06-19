@@ -10,15 +10,14 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const createStory = (month: string, day: number, year: number): Story => ({
-  render: (args) => <LabelDate month={args.month} day={args.day} year={args.year} />,
+const createStory = (date: Date, overflow?: boolean): Story => ({
+  render: (args) => <LabelDate date={args.date} overflow={args.overflow} />,
   args: {
-    month,
-    day,
-    year,
+    date,
+    overflow,
   },
 });
 
-export const LabelDate1 = createStory('January', 1, 2005);
-export const LabelDate2 = createStory('April', 30, 2018);
-export const LabelDate3 = createStory('December', 20, 2022);
+export const LabelDate1 = createStory(new Date(2005, 0, 1));
+export const LabelDate2 = createStory(new Date(2018, 3, 30));
+export const LabelDate3 = createStory(new Date(2022, 11, 20));

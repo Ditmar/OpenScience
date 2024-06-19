@@ -2,7 +2,13 @@ import './LabelDate.scss';
 import React from 'react';
 import type { IProps } from './types/IProps';
 
-function LavelDate({ month, day, year }: IProps) {
-  return <p className="labeldate">{`${month} ${day.toString()} | ${year.toString()}`}</p>;
+function LabelDate({ date, overflow = false }: IProps) {
+  const month = date.toLocaleString('es-ES', { month: 'long' });
+  const dayString = date.getDate().toString();
+  const yearString = date.getFullYear().toString();
+
+  const className = `labeldate${overflow ? ' labeldate--overflow' : ''}`;
+
+  return <p className={className}>{`${month} ${dayString} | ${yearString}`}</p>;
 }
-export default LavelDate;
+export default LabelDate;
