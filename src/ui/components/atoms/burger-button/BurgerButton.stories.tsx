@@ -24,21 +24,3 @@ export const Primary: Story = {
     },
   },
 };
-
-export const Secondary: Story = {
-  args: {
-    icon: IconBurger,
-    onClick: () => {
-      console.log('Button clicked');
-    },
-  },
-};
-
-export const Tertiary: Story = {
-  args: {
-    icon: IconBurger,
-    onClick: () => {
-      console.log('Button clicked');
-    },
-  },
-};
