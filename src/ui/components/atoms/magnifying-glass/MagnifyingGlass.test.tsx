@@ -4,7 +4,7 @@ import MagnifyingGlass from './MagnifyingGlass';
 
 describe('Testing MagnifyingGlass React Component', () => {
   test('should be rendere MagnifyingGlass icon', () => {
-    render(<MagnifyingGlass icon={magnifyingglass} variant="solid" />);
+    render(<MagnifyingGlass icon={magnifyingglass} />);
     const buttonElement = screen.getByTestId('button__glass');
     expect(buttonElement).toBeInTheDocument();
   });
@@ -20,9 +20,7 @@ describe('Testing MagnifyingGlass React Component', () => {
 
   test('Should display the correct children', () => {
     render(
-      <MagnifyingGlass variant="solid" icon="<svg>...</svg>">
-        BUSCAR
-      </MagnifyingGlass>,
+      <MagnifyingGlass icon="<svg><circle cx='25' cy='25' r='20' /></svg>">BUSCAR</MagnifyingGlass>,
     );
 
     const buttonIcon = screen.getByTestId('button__glass');
@@ -45,7 +43,7 @@ function createMock() {
 describe('Testing Button onClick action', () => {
   test('onClick callback when icon button is clicked', () => {
     const onClickMock = createMock();
-    render(<MagnifyingGlass icon={magnifyingglass} variant="solid" onClick={onClickMock} />);
+    render(<MagnifyingGlass icon={magnifyingglass} onClick={onClickMock} />);
     const buttonElement = screen.getByTestId('button__glass');
     fireEvent.click(buttonElement);
     expect(onClickMock.callCount()).toBe(0);
@@ -53,7 +51,7 @@ describe('Testing Button onClick action', () => {
   test('Should display the correct children', () => {
     const onClickMock = createMock();
     render(
-      <MagnifyingGlass icon="<svg>...</svg>" variant="solid" onClick={onClickMock}>
+      <MagnifyingGlass icon="<svg><circle cx='25' cy='25' r='20' /></svg>" onClick={onClickMock}>
         BUSCAR
       </MagnifyingGlass>,
     );
