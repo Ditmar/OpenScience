@@ -1,7 +1,6 @@
 import './style.scss';
 import { useState } from 'react';
 import type { IProps } from './types/IProps';
-import { Icon } from '../../../utils/svg-icons/icons';
 
 function MagnifyingGlass(props: IProps) {
   const { children, variant, icon, onClick } = props;
@@ -14,7 +13,11 @@ function MagnifyingGlass(props: IProps) {
   return (
     <div className="glass">
       <button onClick={handleMoreClick} className="disguise" aria-label="icon">
-        {icon && <Icon data-testid="button__glass" src={icon} className="button__icons--glass" />}
+        <span
+          data-testid="button__glass"
+          className="button__icons--glass"
+          dangerouslySetInnerHTML={{ __html: icon ?? '<div></div>' }}
+        />
       </button>
       {showMore && <hr className={`divider--${variant}`} />}
       {showMore && (
