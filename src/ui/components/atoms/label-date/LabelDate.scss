@@ -1,0 +1,18 @@
+@import '../../../../globals/breakpoints';
+@import '../../../../globals/mixins';
+@import '../../../../globals/variables';
+
+.label-date {
+  color: $ads-text-main-hover;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-size: $ads-size-main;
+  font-weight: $ads-font-size-seventh;
+
+  &--secondary {
+    color: $ads-secondary-main;
+  }
+
+  &--tertiary {
+    color: $ads-text-secondary;
+  }
+}
