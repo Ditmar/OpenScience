@@ -12,11 +12,11 @@
 
   &--primary {
     background: $ads-tertiary-main;
-    border: 0.063rem solid #6c757d;
-    color: $ads-text-secondary;
+    border: 0.063rem solid $ads-text-main-hover;
+    color: $ads-text-main-hover;
 
     &:hover {
-      background: #ccc;
+      background: $ads-background-main;
       color: $ads-text-main-hover;
     }
   }
@@ -26,7 +26,7 @@
     color: $ads-color-main;
 
     &:hover {
-      background: #00101a;
+      background: $ads-text-main-hover;
     }
   }
 
@@ -35,7 +35,7 @@
     color: $ads-color-main;
 
     &:hover {
-      background: #002a40;
+      background: $ads-secondary-main;
     }
   }
 
