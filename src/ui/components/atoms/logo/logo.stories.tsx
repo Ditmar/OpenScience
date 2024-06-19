@@ -1,4 +1,4 @@
-import type { StoryObj, Meta } from '@storybook/react';
+import type { StoryObj, Meta } from'@storybook/react';
 import Logo from './logo';
 import '../../../../globals/_variables.scss';
 import logoImage from '../../../../assets/icons/logo.svg';
