@@ -1,6 +1,6 @@
 export interface IProps {
   month: string;
-  day: string;
-  year: string;
+  day: number;
+  year: number;
   color?: 'primary' | 'secondary' | 'tertiary';
 }
