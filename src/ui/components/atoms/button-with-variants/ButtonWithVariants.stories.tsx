@@ -1,43 +1,43 @@
-import type { StoryObj, Meta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import ButtonVariant from './ButtonWithVariants';
 
-const meta = {
+const meta: Meta<typeof ButtonVariant> = {
   title: 'ui/components/atoms/button-with-variants',
   component: ButtonVariant,
   argTypes: {
     onClick: {
       action: 'clicked',
     },
-    color: {
+    variant: {
       control: {
         type: 'select',
         options: ['primary', 'secondary', 'tertiary'],
       },
     },
   },
-} as Meta<typeof ButtonVariant>;
+};
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof ButtonVariant>;
 
 export const Primary: Story = {
   args: {
     children: 'ABRIR IMAGEN',
-    color: 'primary',
+    variant: 'primary',
   },
 };
 
 export const Secondary: Story = {
   args: {
     children: 'ABRIR IMAGEN',
-    color: 'secondary',
+    variant: 'secondary',
   },
 };
 
 export const Tertiary: Story = {
   args: {
     children: 'ABRIR IMAGEN',
-    color: 'tertiary',
+    variant: 'tertiary',
   },
 };

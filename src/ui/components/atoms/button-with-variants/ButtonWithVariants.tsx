@@ -2,15 +2,17 @@ import './ButtonWithVariants.scss';
 import type { IProps } from './types/IProps';
 
 function ButtonVariant(props: IProps) {
-  const { children, color } = props;
-  const colorFont = `button--${color ?? ''}`;
+  const { children, variant, onClick } = props;
 
   return (
-    <button className="button__label">
-      <div className={`button ${colorFont}`}>
-        <span className="button__text">{children}</span>
-      </div>
-    </button>
+    <div className="buttons-variant">
+      <button
+        className={`buttons-variant__button buttons-variant__button--${variant}`}
+        onClick={onClick}
+      >
+        <span className="buttons-variant__label">{children}</span>
+      </button>
+    </div>
   );
 }
 
