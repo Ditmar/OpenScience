@@ -1,0 +1,38 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.text {
+  border-left: 0.125rem solid $ads-text-main;
+  color: $ads-text-main;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.938rem;
+  font-weight: 600;
+  padding-left: 0.625rem;
+
+  &--primary {
+    border-left: 0.125rem solid $ads-text-main;
+    color: $ads-text-main;
+    font-family: Montserrat, sans-serif;
+    font-size: 0.938rem;
+    font-weight: 600;
+    padding-left: 0.625rem;
+  }
+
+  &--secondary {
+    border-left: none;
+    color: $ads-text-main;
+    font-family: Montserrat, sans-serif;
+    font-size: 0.938rem;
+    font-weight: 600;
+    padding-left: 0.625rem;
+  }
+}
+
+.resources-page {
+  align-items: center;
+  background-color: $ads-background-main;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.625rem;
+  width: 15.625rem;
+}
