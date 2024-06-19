@@ -4,8 +4,9 @@
   
   .location {
     color:$ads-text-main-alpha;
+    display: flex;
+    flex-direction: row;
     font-family: Montserrat, sans-serif;
-    text-align: center;
 
     @include respond-to('small-mobile') {
       font-size: 0.75rem;
@@ -32,13 +33,14 @@
 
   .location a {
     color:$ads-text-main-alpha;
+    display: inline-block;
     font-family: Montserrat, sans-serif;
     font-weight:300;
     letter-spacing: 0.0625rem;
     line-height: 14.63px;
     position: relative;
     text-decoration: none;
-    top: 10px;
+    top: 15px;
     }
 
   .link__icon {
@@ -47,16 +49,13 @@
     margin-left: 0.1rem;
     margin-right: 0.1rem;
     position: relative;
-    top: 17px;
+    top: 10px;
     width: 30px;
     }
+   
+.divider {
+  color:$ads-text-main;
+  font-size: 2rem;
+  margin-left: 0.1rem;
+ }
 
-  .location img{
-    display: inline-block;
-    height: 31px;
-    margin-left: 0.1rem;
-    margin-right: 0.1rem;
-    position: relative;
-    top: 20px;
-    width: 2px;
-    }
