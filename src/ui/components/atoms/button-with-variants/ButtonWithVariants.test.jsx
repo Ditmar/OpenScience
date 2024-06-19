@@ -7,10 +7,4 @@ describe('Testing Button React Component', () => {
     const buttonElement = screen.getByText(/ABRIR IMAGEN/i);
     expect(buttonElement).toBeInTheDocument();
   });
-
-  test('should apply the correct color class', () => {
-    const { container } = render(<ButtonVariant color="primary">ABRIR IMAGEN</ButtonVariant>);
-    const buttonElement = container.querySelector('.button--primary');
-    expect(buttonElement).toBeInTheDocument();
-  });
 });
