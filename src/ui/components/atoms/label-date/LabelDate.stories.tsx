@@ -1,14 +1,10 @@
 import type { StoryObj, Meta } from '@storybook/react';
-import LabelDate from './LabelDate'; // Ensure correct file name and extension
+import LabelDate from './LabelDate';
 
 const meta: Meta<typeof LabelDate> = {
-  title: 'ui/components/atoms/label-date', // Corrected PascalCase
+  title: 'ui/components/atoms/label-date',
   component: LabelDate,
-  argTypes: {
-    month: { control: 'text' },
-    day: { control: { type: 'number', min: 1, max: 31 } },
-    year: { control: 'number' },
-  },
+  argTypes: {},
 };
 export default meta;
 
