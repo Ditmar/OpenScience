@@ -1,0 +1,27 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.button__icon-burger--before {
+  align-items: center;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  width: 60px;
+
+  @include respond-to('small') {
+    height: 60px;
+    width: 60px;
+  }
+
+  @include respond-to('medium') {
+    height: 60px;
+    width: 60px;
+  }
+
+  @include respond-to('large') {
+    height: 60px;
+    width: 60px;
+  }
+}

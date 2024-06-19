@@ -2,9 +2,9 @@
 @import '../../../../globals/mixins';
 
 .variable-button {
-  background: transparent; 
+  background: transparent;
   border: none;
-  cursor: pointer; 
+  cursor: pointer;
   height: 3.5rem;
   padding: 0.5rem;
   width: 3rem;
@@ -37,13 +37,13 @@
 }
 
 .button-icon path {
-  fill: $ads-primary-main; 
+  fill: $ads-primary-main;
 }
 
 .variable-button:hover {
-  background: transparent; 
+  background: transparent;
 }
 
 .variable-button:active {
-  transform: scale(0.95); 
+  transform: scale(0.95);
 }
