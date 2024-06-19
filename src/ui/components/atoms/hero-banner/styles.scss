@@ -1,0 +1,96 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/breakpoints';
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.heroBanner img{
+  background-attachment: fixed;
+  background-size: cover;
+  height: 226px;
+  position: relative;
+  width: 100%;
+}
+
+.hero-banner {
+  align-items: center;
+  background-attachment: fixed;
+  background-position: top;
+  background-size: cover;
+  border: 2px solid transparent; 
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: center ;
+  margin: 0 auto;
+  max-width: 100%;
+  min-height: 16.6rem;
+  overflow: hidden; /* Asegura que la imagen no desborde */
+  position: relative;
+ 
+  @include respond-to ('small'){
+    /* background-position: top;
+    max-width: 480px;
+    height: 7.1rem;
+    display: block;
+    object-fit: cover;
+    padding: 10px; */
+    .heroBanner img{
+      height: 284px;;
+    }
+}
+
+@include respond-to ('medium'){
+    background-position: top;  
+    max-width: 768px;
+    object-fit: cover;
+    padding: 10px;
+}
+
+@include respond-to ('large'){
+    background-attachment: scroll;
+    background-position: top;
+    letter-spacing: 0.0125rem;
+    max-width: 1024px;
+    object-fit: cover;
+}
+
+@include respond-to ('extra-large'){
+    background-attachment: scroll;
+    background-position: top;
+    letter-spacing: 0.15rem;
+    max-width: 1280px;
+    object-fit: cover;
+}
+}
+
+.imgclearfix::after {
+  background-position: top;
+  box-sizing: border-box;
+  clear: both; 
+  display: table; 
+  height: auto;
+  margin: 0 auto;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.overlay {
+  box-sizing: border-box;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.overlay:hover {
+  background-color: $ads-primary-main;
+  border: 2px solid $ads-primary-main;
+  opacity: 0.5;
+}
