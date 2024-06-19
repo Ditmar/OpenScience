@@ -9,6 +9,7 @@ describe('Testing React LabelDate Component', () => {
     expect(labelElement).toBeInTheDocument();
     expect(labelElement).toHaveClass('labeldate');
     expect(labelElement).not.toHaveClass('labeldate--overflow');
+    expect(labelElement.dataset.iso).toBe('2022-01-05');
   });
 
   test('Must render Label Date 2', () => {
@@ -17,6 +18,7 @@ describe('Testing React LabelDate Component', () => {
     expect(labelElement).toBeInTheDocument();
     expect(labelElement).toHaveClass('labeldate');
     expect(labelElement).not.toHaveClass('labeldate--overflow');
+    expect(labelElement.dataset.iso).toBe('2018-04-20');
   });
 
   test('Must render Label Date 3', () => {
@@ -25,5 +27,6 @@ describe('Testing React LabelDate Component', () => {
     expect(labelElement).toBeInTheDocument();
     expect(labelElement).toHaveClass('labeldate');
     expect(labelElement).not.toHaveClass('labeldate--overflow');
+    expect(labelElement.dataset.iso).toBe('2022-12-01');
   });
 });
