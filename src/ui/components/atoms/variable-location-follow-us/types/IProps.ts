@@ -1,10 +1,6 @@
 export interface IProps {
-  label?: string;
-  label1?: string;
-  iconlocation?: string;
-  iconfacebook?: string;
-  pathImage?: string;
-  alt?: string;
-  urllocation?: string;
-  urlfacebok?: string;
+  text?: string;
+  icon?: string;
+  url?: string;
+  divider?: string;
 }

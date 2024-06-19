@@ -2,23 +2,16 @@ import './styles.scss';
 import type { IProps } from './types/IProps';
 
 function VariableLocationFollowUs(props: IProps) {
-  const { label, label1, iconlocation, iconfacebook, urllocation, urlfacebok, pathImage, alt } =
-    props;
+  const { text, icon, url, divider } = props;
   return (
     <div className="location">
-      <a href={urllocation}>{label} </a>
+      <a href={url}>{text} </a>
       <span
         className="link__icon"
         data-testid="link-icon"
-        dangerouslySetInnerHTML={{ __html: iconlocation ?? '<div></div>' }}
+        dangerouslySetInnerHTML={{ __html: icon ?? '<div></div>' }}
       />
-      <img src={pathImage} alt={alt} />
-      <a href={urlfacebok}> {label1} </a>
-      <span
-        className="link__icon"
-        data-testid="link-iconn"
-        dangerouslySetInnerHTML={{ __html: iconfacebook ?? '<div></div>' }}
-      />
+      <span className="divider">{divider}</span>
     </div>
   );
 }
