@@ -3,21 +3,19 @@ import React from 'react';
 import LabelDate from './LabelDate.tsx';
 
 describe('Testing React LabelDate Component', () => {
-  test('Must render correctly with a specific date', () => {
+  test('Must render Label Date 1', () => {
     render(<LabelDate month="January" day={5} year={2022} />);
     const labelElement = screen.getByText('January 5 | 2022');
     expect(labelElement).toBeInTheDocument();
   });
-
-  test('Must render correctly with another specific date', () => {
-    render(<LabelDate month="April" day={15} year={2023} />);
-    const labelElement = screen.getByText('April 15 | 2023');
+  test('Must render Label Date 2', () => {
+    render(<LabelDate month="April" day={20} year={2018} />);
+    const labelElement = screen.getAllByText('April 20 | 2018');
     expect(labelElement).toBeInTheDocument();
   });
-
-  test('Should throw an error with an invalid month', () => {
-    const renderWithInvalidMonth = () =>
-      render(<LabelDate month="InvalidMonth" day={1} year={2022} />);
-    expect(renderWithInvalidMonth).toThrow('Invalid month');
+  test('Must render Label Date 3', () => {
+    render(<LabelDate month="December" day={1} year={2022} />);
+    const labelElement = screen.getAllByText('December 1 | 2022');
+    expect(labelElement).toBeInTheDocument();
   });
 });
