@@ -3,17 +3,17 @@ import type { IProps } from './types/IProps';
 
 function LabelReferences({ text = 'Referencias', colorVariant = 'primary' }: IProps) {
   const getColorClassName = () => {
-    return colorVariant === 'main' ? 'label-references-main' : 'label-references-primary';
+    return colorVariant === 'main' ? 'label-references--main' : 'label-references--primary';
   };
 
   const getBackgroundClassName = () => {
-    return colorVariant === 'main' ? 'label-references-main-bg' : '';
+    return colorVariant === 'main' ? 'label-references--main-bg' : '';
   };
 
   return (
-    <span className={`label-references ${getColorClassName()} ${getBackgroundClassName()}`}>
-      {text}
-    </span>
+    <div className={`label-references ${getColorClassName()} ${getBackgroundClassName()}`}>
+      <span className="label-references__text">{text}</span>
+    </div>
   );
 }
 

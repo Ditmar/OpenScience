@@ -1,7 +1,6 @@
-@import '../../../../globals/breakpoints';
+@import '../../../../globals/fonts';
 @import '../../../../globals/mixins';
 @import '../../../../globals/variables';
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@200;275;300&display=swap');
 
 
 .author{
@@ -10,9 +9,7 @@
   font-size: 0.625rem;
   font-weight: 275;
   line-height: 0.85rem;
-  
-
-  
+   
   @include respond-to('small') {
     font-size: 0.625rem;
   }
