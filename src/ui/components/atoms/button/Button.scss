@@ -4,7 +4,7 @@
 .button {
   align-items: center;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
 }
 
 .button__icon {
@@ -27,8 +27,8 @@
   border-radius: 28px;
   color: $ads-color-main;
   display: flex;
-  gap: 20px; 
-  height: 93px;  
+  gap: 20px;
+  height: 93px;
   justify-content: flex-start;
   padding: 10px 20px;
   width: 615px;
@@ -38,22 +38,22 @@
   }
 
   @include respond-to('small') {
-    height: 93px;  
+    height: 93px;
     width: 615px;
   }
 
   @include respond-to('medium') {
-    height: 93px; 
+    height: 93px;
     width: 615px;
   }
 
   @include respond-to('large') {
-    height: 93px; 
+    height: 93px;
     width: 615px;
   }
 
   @include respond-to('extra-large') {
-    height: 93px;   
+    height: 93px;
     width: 615px;
   }
 }
