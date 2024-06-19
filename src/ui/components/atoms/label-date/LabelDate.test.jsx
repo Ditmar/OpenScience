@@ -4,18 +4,26 @@ import LabelDate from './LabelDate.tsx';
 
 describe('Testing React LabelDate Component', () => {
   test('Must render Label Date 1', () => {
-    render(<LabelDate month="January" day={5} year={2022} />);
-    const labelElement = screen.getByText('January 5 | 2022');
+    render(<LabelDate date={new Date(2022, 0, 5)} />);
+    const labelElement = screen.getByText('enero 5 | 2022');
     expect(labelElement).toBeInTheDocument();
+    expect(labelElement).toHaveClass('labeldate');
+    expect(labelElement).not.toHaveClass('labeldate--overflow');
   });
+
   test('Must render Label Date 2', () => {
-    render(<LabelDate month="April" day={20} year={2018} />);
-    const labelElement = screen.getByText('April 20 | 2018');
+    render(<LabelDate date={new Date(2018, 3, 20)} />);
+    const labelElement = screen.getByText('abril 20 | 2018');
     expect(labelElement).toBeInTheDocument();
+    expect(labelElement).toHaveClass('labeldate');
+    expect(labelElement).not.toHaveClass('labeldate--overflow');
   });
+
   test('Must render Label Date 3', () => {
-    render(<LabelDate month="December" day={1} year={2022} />);
-    const labelElement = screen.getByText('December 1 | 2022');
+    render(<LabelDate date={new Date(2022, 11, 1)} />);
+    const labelElement = screen.getByText('diciembre 1 | 2022');
     expect(labelElement).toBeInTheDocument();
+    expect(labelElement).toHaveClass('labeldate');
+    expect(labelElement).not.toHaveClass('labeldate--overflow');
   });
 });
