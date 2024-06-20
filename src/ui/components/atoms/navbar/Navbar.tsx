@@ -7,7 +7,7 @@ function Button(props: IProps) {
   return (
     <div className="container">
       <button className="component">
-        {icon && <Icon src={icon} className={"Navbar__icon"} />}
+        {icon && <Icon src={icon} className="navbar__icon" />}
         <span className="component__label">{children}</span>
       </button>
     </div>
