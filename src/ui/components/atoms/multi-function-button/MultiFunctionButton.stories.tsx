@@ -3,7 +3,7 @@ import MultiFunctionButton from './MultiFunctionButton';
 import Pdf from '../../../../assets/icons/pdf.svg?raw';
 import Media from '../../../../assets/icons/media.svg?raw';
 import Share from '../../../../assets/icons/share.svg?raw';
-import Reference from '../../../../assets/icons/reference.svg?raw';
+import Reference from '../../../../assets/icons/reference1.svg?raw';
 
 const meta = {
   title: 'ui/components/atoms/multi-function-button',
