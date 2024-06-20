@@ -1,0 +1,80 @@
+// STYLE.SCSS
+@import '../../../../globals/variables'; // Ajustar la ruta según sea necesario
+@import '../../../../globals/mixins'; // Ajustar la ruta según sea necesario
+@import '../../../../globals/fonts'; // Ajustar la ruta según sea necesario
+
+.container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+
+.component {
+  align-items: center;
+  background: transparent;
+  border: transparent;
+  display: flex;
+  justify-content: center;
+  width: 12rem;
+
+  @media (max-width: 1200px) {
+    width: 10rem;
+  }
+
+  @media (max-width: 992px) {
+    width: 8rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 6rem;
+  }
+}
+
+.component__label {
+  color: $ads-color-main;
+  font-family: Roboto, sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.465rem;
+  margin-left: 0.5rem;
+  text-transform: uppercase;
+
+  @media (max-width: 1200px) {
+    font-size: 1.1rem;
+    margin-left: 0.4rem;
+  }
+
+  @media (max-width: 992px) {
+    font-size: 1rem;
+    margin-left: 0.3rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+    margin-left: 0.2rem;
+  }
+}
+
+.Navbar__icon {
+  display: flex;
+  align-items: center;
+  margin-right: 0.2rem;
+
+  svg {
+    height: 1.93rem;
+    width: auto;
+
+    @media (max-width: 1200px) {
+      height: 2.5rem;
+    }
+
+    @media (max-width: 992px) {
+      height: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      height: 1.5rem;
+    }
+  }
+}
