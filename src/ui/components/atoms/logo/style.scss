@@ -20,6 +20,7 @@
     margin-top: 0;
     width: 8.125rem;
   }
+
   @include respond-to('large') {
     border-radius: 0 0 2.563rem 0.8rem;
     height: 6.1rem;
@@ -49,6 +50,7 @@
     background-color: $ads-primary-main;
   }
 }
+
 .logo-image {
   border: none;
 
@@ -61,6 +63,7 @@
     width: 4.313rem;
  
   }
+
   @include respond-to('medium') {
     height: 2.063rem;
     margin: none;
