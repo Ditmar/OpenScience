@@ -1,0 +1,133 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.volumes-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+
+  @include respond-to('small-mobile') {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  @include respond-to('small') {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  @include respond-to('medium') {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  @include respond-to('large') {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.volume {
+  background-color: $ads-background-main;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
+  flex: 1;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+
+  img {
+    height: auto;
+    width: 99%;
+  }
+
+  .volume-date {
+    color: $ads-text-secondary;
+    font-family: Montserrat, sans-serif;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+
+    @include respond-to('small-mobile') {
+      font-size: 0.8rem;
+    }
+
+    @include respond-to('small') {
+      font-size: 0.9rem;
+    }
+
+    @include respond-to('medium') {
+      font-size: 1rem;
+    }
+
+    @include respond-to('large') {
+      font-size: 1.1rem;
+    }
+  }
+
+  .volume-title {
+    color: $ads-primary-main;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.5rem;
+    font-weight: $ads-font-weight-bold;
+    margin-top: 0.5rem;
+
+    @include respond-to('small-mobile') {
+      font-size: 1.2rem;
+    }
+
+    @include respond-to('small') {
+      font-size: 1.3rem;
+    }
+
+    @include respond-to('medium') {
+      font-size: 1.4rem;
+    }
+
+    @include respond-to('large') {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.carousel {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  &__nav {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 0 1rem;
+
+    &--prev {
+      margin-right: 1rem;
+    }
+
+    &--next {
+      margin-left: 1rem;
+    }
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &__item {
+    align-items: center;
+    display: flex;
+    flex: 1 0 33%;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0.5rem;
+    text-align: center;
+  }
+
+  &__error {
+    color: $ads-danger-main;
+    font-weight: bold;
+  }
+}
