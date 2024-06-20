@@ -1,0 +1,42 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.variable__upload {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  height: 3.8125rem;
+  padding: 1.3rem;
+  width: 4rem;
+
+  @include respond-to('small') {
+    height: 3.8125rem;
+    width: 4rem;
+  }
+
+  @include respond-to('medium') {
+    height: 5em;
+    width: 5rem;
+  }
+
+  @include respond-to('large') {
+    height: 5.5rem;
+    width: 5.8125rem;
+  }
+
+  @include respond-to('extra-large') {
+    height: 5.8rem;
+    width: 5.9191rem;
+  }
+}
+
+.upload__icon svg {
+  background: transparent;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.variable__upload:hover {
+  background: transparent;
+}
