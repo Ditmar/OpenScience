@@ -4,7 +4,6 @@ import ArticlesIcon from '../../../../assets/icons/article.svg?raw';
 import StartIcon from '../../../../assets/icons/start.svg?raw';
 import VolumesIcon from '../../../../assets/icons/volumes.svg?raw';
 
-
 const meta = {
   title: 'ui/components/atoms/navbar',
   component: Navbar,
