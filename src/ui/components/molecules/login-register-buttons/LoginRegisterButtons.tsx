@@ -1,4 +1,4 @@
-import type { IProps } from './types/IProps.js';
+import type { IProps } from './types/IProps';
 import './styles.scss';
 
 function LoginRegisterButtons(props: IProps) {
