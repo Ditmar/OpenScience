@@ -7,7 +7,11 @@ import HeroBanner from './HeroBanner';
 
 describe('First testing Hero Banner React Component', () => {
   test('should be rendere the hero banner image Rectangle6', () => {
-    render(<HeroBanner backgroundImage={String(Rectangle6)} alt="text" />);
+    render(
+      <HeroBanner className="heroBanner__content" backgroundImage={String(Rectangle6)} alt="text">
+        test
+      </HeroBanner>,
+    );
     const heroBannerElement = screen.getByAltText('text');
     expect(heroBannerElement).toBeInTheDocument();
   });
@@ -15,7 +19,11 @@ describe('First testing Hero Banner React Component', () => {
 
 describe('Second testing Hero Banner React Component', () => {
   test('should be rendere the hero banner image Rectangle10', () => {
-    render(<HeroBanner backgroundImage={String(Rectangle10)} alt="text" />);
+    render(
+      <HeroBanner className="heroBanner__content" backgroundImage={String(Rectangle10)} alt="text">
+        test
+      </HeroBanner>,
+    );
     const heroBannerElement = screen.getByAltText('text');
     expect(heroBannerElement).toBeInTheDocument();
   });
@@ -23,7 +31,11 @@ describe('Second testing Hero Banner React Component', () => {
 
 describe('Third testing Hero Banner React Component', () => {
   test('should be rendere the hero banner image Rectangle11', () => {
-    render(<HeroBanner backgroundImage={String(Rectangle11)} alt="text" />);
+    render(
+      <HeroBanner className="heroBanner__content" backgroundImage={String(Rectangle11)} alt="text">
+        test 2
+      </HeroBanner>,
+    );
     const heroBannerElement = screen.getByAltText('text');
     expect(heroBannerElement).toBeInTheDocument();
   });
@@ -31,7 +43,11 @@ describe('Third testing Hero Banner React Component', () => {
 
 describe('Quarter testing Hero Banner React Component', () => {
   test('should be rendere the hero banner image Rectangle12', () => {
-    render(<HeroBanner backgroundImage={String(Rectangle12)} alt="text" />);
+    render(
+      <HeroBanner className="heroBanner__content" backgroundImage={String(Rectangle12)} alt="text">
+        test 3
+      </HeroBanner>,
+    );
     const heroBannerElement = screen.getByAltText('text');
     expect(heroBannerElement).toBeInTheDocument();
   });

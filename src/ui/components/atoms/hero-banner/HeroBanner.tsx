@@ -1,15 +1,14 @@
-import React from 'react';
 import './styles.scss';
 import type { IProps } from './types/IProps';
 
 function HeroBanner(props: IProps) {
-  const { backgroundImage, alt } = props;
+  const { backgroundImage, alt, children, className } = props;
 
   return (
     <div className="heroBanner">
       <img src={backgroundImage} alt={alt} />
-      <div className="overlay" aria-label="overlay">
-        {' '}
+      <div className="overlay">
+        <div className={className}>{children}</div>
       </div>
     </div>
   );
