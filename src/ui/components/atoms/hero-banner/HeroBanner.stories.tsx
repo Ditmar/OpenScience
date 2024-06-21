@@ -29,7 +29,7 @@ export const VisualHeroBanner: Story = {
   args: {
     backgroundImage: String(Rectangle6),
     alt: 'Rectangle6',
-    className: 'heroBanner__content',
+    className: 'hero-banner__content',
     children: 'Hello World',
   },
 };

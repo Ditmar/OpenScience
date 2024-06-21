@@ -7,21 +7,24 @@ body {
   padding: 0;
 }
 
-.heroBanner img {
+.hero-banner img {
+  aspect-ratio: 16/9;
   background-attachment: fixed;
   background-size: cover;
-  aspect-ratio: 16/9;
   height: 266px;
   object-fit: cover;
   object-position: center;
   position: relative;
   width: 100%;
+
   @include respond-to('small') {
     height: 140px;
   }
+
   @include respond-to('medium') {
     height: 266px;
   }
+
   @include respond-to('large') {
     height: 300px;
   }
@@ -40,12 +43,12 @@ body {
 }
 
 .overlay {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  border: 10px solid rgba(0, 0, 0, 0.1);
+  border: 10px solid rgb(0 0 0 / 10%);
   box-sizing: border-box;
+  display: flex;
   height: auto;
+  justify-content: center;
   left: 0;
   position: absolute;
   right: 0;
@@ -55,14 +58,14 @@ body {
 // Example usage of the HeroBanner component
 // File Path: src/ui/components/atoms/hero-banner/index.js
 // Note: Remove this code once the component is fully implemented
-.heroBanner__content {
-  display: flex;
+.hero-banner__content {
   align-items: center;
-  justify-content: center;
-  color: white;
-  padding: 20px;
   bottom: 0;
+  color: $ads-color-main;
+  display: flex;
+  justify-content: center;
   left: 0;
+  padding: 20px;
   right: 0;
   width: 60%;
 }
