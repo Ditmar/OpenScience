@@ -11,17 +11,9 @@
   justify-content: center;
   width: 41px;
 
-  &:hover {
-    background: $ads-secondary-main;
-  }
-
   &--secondary {
     background: $ads-secondary-main;
-    color: $ads-color-main;
-
-    &:hover {
-      background: $ads-warning-main;
-    }
+    color: $ads-color-main;    
   }
 
   @include respond-to('small') {
