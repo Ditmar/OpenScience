@@ -1,5 +1,3 @@
-import React from 'react';
-
 export interface IProps {
   googleIcon: string;
   facebookIcon: string;

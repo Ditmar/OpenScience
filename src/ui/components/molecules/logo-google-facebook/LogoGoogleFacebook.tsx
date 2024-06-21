@@ -3,7 +3,13 @@ import './styles.scss';
 import Button from '../../atoms/button/Button';
 import LogoFooter from '../../atoms/logo-footer/LogoFooter';
 
-function LogoGoogleFacebook({ googleIcon, facebookIcon, logoIcon, onGoogleLogin, onFacebookLogin }: IProps) {
+function LogoGoogleFacebook({
+  googleIcon,
+  facebookIcon,
+  logoIcon,
+  onGoogleLogin,
+  onFacebookLogin,
+}: IProps) {
   return (
     <div className="auth-container">
       <LogoFooter icon={logoIcon} />
