@@ -1,0 +1,45 @@
+@import '../../../../../globals/variables';
+@import '../../../../../globals/mixins';
+
+.panel {    
+    background: $ads-background-main;
+    display: flex;
+    flex-direction: column;
+    height: 569px;    
+    padding: 2.2rem;      
+    width: 412px; 
+    
+    &--secondary {
+      position: sticky;      
+    }
+  }
+
+.tags .tag{     
+  font-size: 48px;
+  margin: 0.5rem;
+
+  &--secondary {
+    background: $ads-secondary-main;      
+  } 
+} 
+
+.tag:hover {  
+  text-decoration: underline;
+} 
+ 
+.logo {
+  align-items: center;
+  background: transparent;
+  display: flexbox;
+  height: 140px;
+  width: 310px;
+}
+
+.logo .logo-icon {  
+  & svg {
+    height: 100%;
+    width: 100%;    
+  }
+}
+
+  

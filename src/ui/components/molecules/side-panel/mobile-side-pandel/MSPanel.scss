@@ -1,0 +1,38 @@
+@import '../../../../../globals/variables';
+@import '../../../../../globals/mixins';
+
+.open-panel .panel{ 
+    height: 100px;
+    padding: 0;
+    width: 117px;
+
+    & .logo {
+        height: 28px;
+        padding-left: 20%;
+        width: 53px;
+    }
+
+    & .tags {
+        margin: 0;
+        padding: 0 0 0 20px;
+
+        .tag {    
+            font-size: small;
+            margin: 0;           
+            padding: 0;
+            padding-bottom: 0 1px;       
+        }
+
+        &:hover{
+            margin: 0;
+        }
+    }
+        
+}
+
+.side-panel--open {
+    display: block;    
+}
+
+
+
