@@ -10,6 +10,10 @@ const meta = {
     onClick: {
       action: 'click',
     },
+    variant: {
+      control: { type: 'select' },
+      options: ['solid', 'dotted', 'dashed'],
+    },
   },
 } as Meta<typeof MagnifyingGlass>;
 
@@ -17,9 +21,10 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const agnifyingGlass: Story = {
+export const AgnifyinGlass: Story = {
   args: {
     icon: magnifyingglass,
+    variant: 'solid',
     children: 'BUSCAR',
   },
 };
