@@ -6,8 +6,8 @@ function IconUpload(props: IProps) {
   const { icon, onClick } = props;
 
   return (
-    <button className="variable__upload" aria-label="Subir articulo" onClick={onClick}>
-      {icon && <Icon data-testid="upload__icon" src={icon} className="upload__icon" />}
+    <button className="icon-upload__button" aria-label="Subir articulo" onClick={onClick}>
+      {icon && <Icon data-testid="icon-upload__icon" src={icon} className="icon-upload__icon" />}
     </button>
   );
 }
