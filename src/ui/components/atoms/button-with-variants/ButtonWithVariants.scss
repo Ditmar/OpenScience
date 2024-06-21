@@ -13,7 +13,7 @@
   &--primary {
     background: $ads-tertiary-main;
     border: 0.063rem solid $ads-text-main-hover;
-    color: $ads-text-main-hover;
+    color: $ads-text-main;
 
     &:hover {
       background: $ads-background-main;
@@ -22,7 +22,7 @@
   }
 
   &--secondary {
-    background: $ads-secondary-main;
+    background: $ads-primary-main;
     color: $ads-color-main;
 
     &:hover {
@@ -31,7 +31,7 @@
   }
 
   &--tertiary {
-    background: $ads-primary-main;
+    background: $ads-secondary-main;
     color: $ads-color-main;
 
     &:hover {
@@ -57,7 +57,7 @@
   .buttons-variant__label {
     display: flex;
     flex: content;
-    font-family: Lato, sans-serif;
+    font-family: Lato, Arial, Helvetica, sans-serif;
     font-size: 12px;
     font-weight: 700;
     height: 15px;
