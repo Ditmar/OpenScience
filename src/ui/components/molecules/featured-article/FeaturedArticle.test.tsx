@@ -42,9 +42,9 @@ describe('FeaturedArticle Component', () => {
     const articleDescription = screen.getByText(
       /Spectral tuning of visual pigments often facilitates adaptation to new environments/i,
     );
-    const labelDate = screen.getByText(/abril 15 | 2023/i);
-    const pdfButton = screen.getByText(/PDF/i);
-    const linkButton = screen.getByText(/Link/i);
+    const labelDate = screen.getByText(/abril 15 \| 2023/i);
+    const pdfButton = screen.getByRole('button', { name: /PDF/i });
+    const linkButton = screen.getByRole('button', { name: /Link/i });
 
     expect(labelFeaturedArticles).toBeInTheDocument();
     expect(articleTitle).toBeInTheDocument();
