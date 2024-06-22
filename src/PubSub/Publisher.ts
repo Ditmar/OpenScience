@@ -1,9 +1,10 @@
-import type { Broker } from "./Ibase";
+import { Broker } from './Broker';
+import { Message } from './Message';
 
 export class Publisher {
   constructor(private broker: Broker) {}
 
-  publish(topic: string, message: any): void {
-    this.broker.publish(topic, message);
+  publish(message: Message) {
+    this.broker.publish(message);
   }
 }

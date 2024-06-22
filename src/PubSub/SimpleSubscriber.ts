@@ -1,12 +1,8 @@
-import { Subscriber } from "./Subscriber";
-import { SimpleBroker } from "./SimpleBroker";
+import type { Subscriber } from './Subscriber';
+import { Message } from './Message';
 
-export class SimpleSubscriber extends Subscriber {
-  constructor(private broker: SimpleBroker) {
-    super();
-  }
-
-  subscribe(topic: string, callback: (message: any) => void): void {
-    this.broker.subscribe(topic, callback);
+export class SimpleSubscriber implements Subscriber {
+  receive(message: Message) {
+    console.log(`Received message: ${message.content}`);
   }
 }

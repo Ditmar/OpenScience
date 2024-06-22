@@ -1,7 +1,5 @@
-import type { Subscriber as ISubscriber } from "./Ibase";
+import { Message } from './Message';
 
-export class Subscriber implements ISubscriber {
-  subscribe(topic: string, callback: (message: any) => void): void {
-    // Implementation here
-  }
+export interface Subscriber {
+  receive(message: Message): void;
 }
