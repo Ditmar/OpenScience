@@ -1,7 +1,7 @@
 import type { StoryObj, Meta } from '@storybook/react';
 import VariableLocationFollowUs from './VariableLocationFollowUs';
 import Ubicacion from '../../../../assets/icons/ubicacion.svg?raw';
-import Facebook from '../../../../assets/icons/facebookk.svg?raw';
+import facebook from '../../../../assets/icons/facebookk.svg?raw';
 
 const meta = {
   title: 'ui/components/atoms/variable-location-follow-us',
@@ -23,10 +23,11 @@ export const Divider: Story = {
     divider: '|',
   },
 };
-export const facebook: Story = {
+export const Facebook: Story = {
   args: {
     text: 'SEGUINOS EN',
-    icon: Facebook,
+    icon: facebook,
     url: 'https://www.facebook.com/tuPaginaDeFacebook',
   },
 };
+
