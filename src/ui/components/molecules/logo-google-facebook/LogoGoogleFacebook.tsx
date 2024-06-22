@@ -1,3 +1,4 @@
+// LogoGoogleFacebook.tsx
 import type { IProps } from './types/IProps';
 import './styles.scss';
 import Button from '../../atoms/button/Button';
