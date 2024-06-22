@@ -1,7 +1,7 @@
 // LogoGoogleFacebook.tsx
 import type { IProps } from './types/IProps';
 import './styles.scss';
-import Button from '../../atoms/button/Button';
+import SMButton from 'ui/components/atoms/social-media-button/Button';
 import LogoFooter from '../../atoms/logo-footer/LogoFooter';
 
 function LogoGoogleFacebook({
