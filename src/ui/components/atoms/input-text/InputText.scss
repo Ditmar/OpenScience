@@ -1,0 +1,59 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.login__field {
+  margin-bottom: 1.25rem;
+
+  span {
+    color: $ads-text-input;
+    display: block;
+    font-family: Montserrat, sans-serif; 
+    font-size: $ads-font-size-sixth;
+    font-weight: $ads-font-weight-first;
+    letter-spacing: 0.05rem;
+    margin-bottom: 0.3125rem;
+  }
+
+  input {
+    border: none;
+    border-bottom: 0.0625rem solid #ccc;
+    padding: 0.625rem;
+    transition: border-color 0.3s ease;
+    width: 60%;
+
+    &:focus {
+      border-color: $ads-primary-main;
+      outline: none;
+    }
+
+    &.invalid__input {
+      border-color: $ads-danger-main; 
+    }
+  }
+
+  .password__eye {
+    background: none;
+    border: none;
+    cursor: pointer;
+    height: 1rem;
+    margin-inline: -2rem;
+    padding: 0;
+    width: 2rem;
+
+    @include respond-to('small') {
+      height: 0.5rem;
+      margin-inline: -1.5rem;
+      width: 1.5rem;
+    }
+
+    .eye__icon {
+      height: 100%;
+      width: 100%;
+
+      &svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
