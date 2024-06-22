@@ -10,7 +10,7 @@ function FeaturedArticle(props: IProps) {
     <div className="featured-article">
       <span className="featured-article__text">{children}</span>
       <div className={`featured-article__box ${colorFont}`}>
-        {icon && <Icon src={icon} className="featured-article__icon" />}
+        {icon && <Icon src={icon} className="PDF" />}
       </div>
     </div>
   );

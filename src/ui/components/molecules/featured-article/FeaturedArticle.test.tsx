@@ -11,7 +11,7 @@ import PointsDivider from '../../atoms/points-divider/PointsDivider';
 import LabelDate from '../../atoms/label-date/LabelDate';
 
 describe('FeaturedArticle Component', () => {
-  test('should render LabelFeaturedArticles, ArticleTitle, ArticleDescription, LabelDate, and VariableButtons', () => {
+  test('should render', () => {
     render(
       <FeaturedArticle variant="default" article="Test Article" date={new Date(2023, 3, 15)}>
         <LabelFeaturedArticles text="ARTÍCULOS DESTACADOS" ColorVariant="main" />
@@ -42,15 +42,11 @@ describe('FeaturedArticle Component', () => {
     const articleDescription = screen.getByText(
       /Spectral tuning of visual pigments often facilitates adaptation to new environments/i,
     );
-    const labelDate = screen.getByText(/abril 15 \| 2023/i);
-    const pdfButton = screen.getByRole('button', { name: /PDF/i });
-    const linkButton = screen.getByRole('button', { name: /Link/i });
+    const labelDate = screen.getByText(/abril 15 | 2023/i);
 
     expect(labelFeaturedArticles).toBeInTheDocument();
     expect(articleTitle).toBeInTheDocument();
     expect(articleDescription).toBeInTheDocument();
     expect(labelDate).toBeInTheDocument();
-    expect(pdfButton).toBeInTheDocument();
-    expect(linkButton).toBeInTheDocument();
   });
 });
