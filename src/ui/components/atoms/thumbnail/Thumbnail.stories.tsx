@@ -32,3 +32,14 @@ export const VisualThumbnail: Story = {
     alt: 'Rectangle28',
   },
 };
+
+export const ThumbnailParameters = meta.parameters;
+export const ThumbnailArgTypes = meta.argTypes;
+export const ThumbnailMockImages = {
+  Rectangle27,
+  Rectangle28,
+  Rectangle29,
+  Rectangle30,
+  Rectangle31,
+  Rectangle32,
+};
