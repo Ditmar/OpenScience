@@ -26,8 +26,22 @@
         &:hover{
             margin: 0;
         }
-    }
+    }   
         
+}
+
+.open-panel--color {
+    .panel {
+        background-color: $ads-secondary-main;
+
+        .logo g{            
+            fill: $ads-tertiary-main;
+        }
+
+        .tags  .tag {
+            color: $ads-color-main;           
+        }   
+    }     
 }
 
 .side-panel--open {
