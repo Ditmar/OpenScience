@@ -28,7 +28,7 @@ export const Primary: Story = {
     children: (
       <>
         <LabelFeaturedArticles text="ARTÍCULOS DESTACADOS" ColorVariant="main" />
-        <LabelDate date={new Date(2023, 3, 15)} overflow={false} />
+        <LabelDate date={new Date(2023, 6, 15)} overflow={false} />
         <ArticleTitle
           title="CANOPY-TOP MEASUREMENTS DO NOT ACCURATELY QUANTIFY CANOPY-SCALE LEAF THERMOREGULATION"
           variant="default"
@@ -43,7 +43,7 @@ export const Primary: Story = {
           <VariableButton icon={PdfIcon}>PDF</VariableButton>
           <VariableButton icon={LinkIcon}>Link</VariableButton>
         </div>
-        <PointsDivider color="tertiary" size="medium" variant="solid-line" />
+        <PointsDivider color="secondary" size="medium" variant="solid-line" />
         <PointsDivider color="tertiary" size="small" variant="points" />
       </>
     ),
