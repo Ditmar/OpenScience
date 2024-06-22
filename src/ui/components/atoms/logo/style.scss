@@ -3,7 +3,7 @@
 @import '../../../../globals/breakpoints';
 
 .logo-container {
-   border: none;
+  border: none;
 
   @include respond-to('small-mobile') {
     border-radius: 0 1.688rem 1.688rem 0;
@@ -35,7 +35,6 @@
     margin-left: 0;
     margin-top: 0;
     width: 17.688rem;
-    
   }
 
   &--default {
@@ -56,12 +55,11 @@
 
   @include respond-to('small-mobile') {
     height: 2.063rem;
-   margin: none;
+    margin: none;
     margin-left: 0.75rem;
     padding-left: 0.1rem;
     padding-top: 0.5rem;
     width: 6rem;
- 
   }
 
   @include respond-to('medium') {
@@ -71,7 +69,6 @@
     padding-left: 0.1rem;
     padding-top: 0.5rem;
     width: 6rem;
-  
   }
 
   @include respond-to('large') {
@@ -80,7 +77,6 @@
     margin-left: 3rem;
     margin-top: 0.3rem;
     width: 10.75rem;
- 
   }
 
   @include respond-to('extra-large') {
@@ -89,8 +85,5 @@
     margin-left: 3rem;
     margin-top: 0.3rem;
     width: 10.75rem;
-
-
   }
 }
-
