@@ -4,19 +4,49 @@
 .button {
   align-items: center;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
+  flex-direction: column;
 }
 
 .button__icon {
   align-items: start;
-  display: flex;
+  display: flex; 
   height: 44px;
   width: 43px;
 
   svg {
-    align-items: start;
     height: 100%;
-    width: 100%;
+    width: 100%;    
+  }
+
+  @include respond-to('extra-large') {
+    height: 70px;
+    width: 69px;
+  }
+
+  @include respond-to('large') {
+    height: 70px;
+    width: 69px;
+  }
+
+  @include respond-to('large-tablet') {
+    height: 44px;
+    width: 43px;
+  }
+
+  @include respond-to('medium') {
+    height: 44px;
+    width: 43px 
+  }
+
+  @include respond-to('small') {
+    height: 44px;
+    width: 43px;
+  }
+
+  @include respond-to('small-mobile') {
+    height: 30px;
+    width: 29px; 
   }
 }
 
@@ -27,39 +57,68 @@
   border-radius: 28px;
   color: $ads-color-main;
   display: flex;
-  height: 93px;
-  justify-content: flex-start;
+  justify-content: flex; 
   padding: 10px 20px;
-  width: 615px;
+
+  @include respond-to('extra-large') {    
+    width: 615px;
+  }
+
+  @include respond-to('large') {    
+    width: 615px;
+  }
+
+  @include respond-to('large-tablet') {
+    height: 75px;
+    width: 450px;
+  }
+
+  @include respond-to('medium') {
+    height: 75px;
+    width: 450px;
+  }
+
+  @include respond-to('small') {
+    height: 60px;
+    width: 300px;
+  }
+
+  @include respond-to('small-mobile') {
+    height: 50px;
+    width: 250px;
+  }
 
   &:hover {
     background: $ads-secondary-main;
   }
+}
 
-  @include respond-to('small') {
-    height: 93px;  
-    width: 615px;
-  }
+.button__text {
+  display: block;
+  text-align: center;
+  padding: 28%;
 
-  @include respond-to('medium') {
-    height: 93px; 
-    width: 615px;
+  @include respond-to('extra-large') {
+    font-size: $ads-font-size-first;
   }
 
   @include respond-to('large') {
-    height: 93px; 
-    width: 615px;
+    font-size: $ads-font-size-first;
   }
 
-  @include respond-to('extra-large') {
-    height: 93px;   
-    width: 615px;
+  @include respond-to('large-tablet') {
+    font-size: $ads-font-size-fifth;
   }
-}
 
-.button__text {    
-  display: block;
-  font-size: $ads-font-size-quarter;
-  padding: 28%;
-  text-align: center;
+  @include respond-to('medium') {
+    font-size: $ads-font-size-first;
+  }
+
+  @include respond-to('small') {
+    font-size: $ads-font-size-sixth;
+  }
+
+  @include respond-to('small-mobile') {
+    font-size: $ads-font-size-sixth;
+  }
 }
