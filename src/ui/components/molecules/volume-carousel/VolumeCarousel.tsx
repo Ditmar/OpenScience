@@ -1,4 +1,4 @@
-import 'ui/components/molecules/volume-carousel/VolumeCarousel.scss';
+import './VolumeCarousel.scss';
 import Thumbnail from 'ui/components/atoms/thumbnail/Thumbnail';
 import LabelVol from 'ui/components/atoms/label-vol/LabelVol';
 import LabelDate from 'ui/components/atoms/label-date/LabelDate';
