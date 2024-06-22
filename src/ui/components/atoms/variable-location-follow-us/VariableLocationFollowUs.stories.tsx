@@ -31,4 +31,3 @@ export const Facebook: Story = {
     url: 'https://www.facebook.com/tuPaginaDeFacebook',
   },
 };
-
