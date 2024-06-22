@@ -17,26 +17,19 @@ const meta: Meta<typeof LogoGoogleFacebook> = {
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof LogoGoogleFacebook>;
 
 export const Primary: Story = {
   args: {
     children: (
       <>
-        <Logo variant="primary" />
-        <SMButton icon={Google} />
-        <SMButton icon={Facebook} />
-      </>
-    ),
-  },
-};
-export const Secondary: Story = {
-  args: {
-    children: (
-      <>
-        <Logo variant="primary" />
-        <SMButton icon={Google} />
-        <SMButton icon={Facebook} />
+        <Logo src="logoImage" variant="default" />
+        <SMButton icon={Google} color="primary">
+          Google
+        </SMButton>
+        <SMButton icon={Facebook} color="secondary">
+          Facebook
+        </SMButton>
       </>
     ),
   },
