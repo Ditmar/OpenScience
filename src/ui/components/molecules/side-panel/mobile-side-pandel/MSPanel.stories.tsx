@@ -10,14 +10,14 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Main: Story = {
+export const Primary: Story = {
   args: {
-    variant: 'main',
+    variant: 'default',
   },
 };
 
-export const Primary: Story = {
+export const Secondary: Story = {
   args: {
-    variant: 'primary',
+    variant: 'color',
   },
 };

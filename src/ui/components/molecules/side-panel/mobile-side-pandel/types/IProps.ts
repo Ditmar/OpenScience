@@ -1,3 +1,3 @@
 export interface IProps {
-  variant?: 'main' | 'primary';
+  variant?: 'default' | 'color';
 }
