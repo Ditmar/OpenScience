@@ -4,6 +4,10 @@ import type { IProps } from './types/IProps';
 import { formatDate } from './utils/dateFormatter';
 
 function LabelDate({ date, overflow = false }: IProps) {
+  if (!(date instanceof Date)) {
+    console.error('Invalid date:', date);
+    return null;
+  }
   const formattedDate = formatDate(date);
   const isoDate = date.toISOString().split('T')[0];
   const className = `labeldate${overflow ? ' labeldate--overflow' : ''}`;
