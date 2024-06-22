@@ -8,6 +8,11 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 
+app.get('/systeminfo', (req, res) => {
+  const commitHash = process.env.COMMIT_HASH || 'unknown';
+  res.json({ hashcommit: commitHash });
+});
+
 app.use(handler);
 
 app.listen(PORT, () => {
