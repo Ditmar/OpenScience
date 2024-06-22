@@ -8,7 +8,7 @@ describe('VolumeCarousel Component', () => {
       alt: 'Thumbnail Alt Text',
       volumen: 'Volume Title',
       id: 1,
-      date: new Date('2023-06-01'),
+      date: new Date(2022, 0, 5),
       overflow: false,
     };
 
@@ -25,7 +25,7 @@ describe('VolumeCarousel Component', () => {
 
     const thumbnailElement = screen.getByAltText(props.alt);
     const volumenElement = screen.getByText(new RegExp(`${props.volumen}.*${String(props.id)}`));
-    const dateElement = screen.getByText('Mayo 31 | 2023');
+    const dateElement = screen.getByText('Enero 5 | 2022');
 
     expect(thumbnailElement).toBeInTheDocument();
     expect(volumenElement).toBeInTheDocument();
