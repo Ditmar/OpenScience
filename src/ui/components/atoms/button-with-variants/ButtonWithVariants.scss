@@ -4,14 +4,14 @@
 
 .button-variant {
   background-color: $ads-color-main;
+  border: none;
   border-radius: 3.125rem;
   color: $ads-color-main;
   height: 1.375rem;
-  transition: transform 0.3s ease;
   width: 5.875rem;
 
   &:hover {
-    transform: translate(-0.313rem, -0.313rem);
+    opacity: 0.6;
   }
 
   .button-variant-label {
@@ -30,12 +30,12 @@
     width: 7.563rem;
 
     &:hover {
-      transform: translate(-0.313rem, -0.313rem);
+      opacity: 0.6;
     }
 
     .button-variant-label {
       color: $ads-color-main;
-      font-family: Montserrat, Arial, Helvetica, sans-serif;
+      font-family: Lato, Arial, Helvetica, sans-serif;
       font-size: 0.75rem;
       font-weight: $ads-font-weight-second;
     }
@@ -50,12 +50,12 @@
     width: 6.563rem;
 
     &:hover {
-      transform: translate(-0.313rem, -0.313rem);
+      opacity: 0.6;
     }
 
     .button-variant-label {
       color: $ads-tertiary-main;
-      font-family: Roboto, Arial, Helvetica, sans-serif;
+      font-family: Lato, Arial, Helvetica, sans-serif;
       font-size: 0.688rem;
       font-weight: $ads-font-weight-second;
     }
