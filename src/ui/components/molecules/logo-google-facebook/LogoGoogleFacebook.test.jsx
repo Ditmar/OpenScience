@@ -1,11 +1,13 @@
+// LogoGoogleFacebook.test.jsx
 import { render, screen, fireEvent } from '@testing-library/react';
+import { describe, it, expect, vi } from 'vitest';
 import LogoGoogleFacebook from './LogoGoogleFacebook.tsx';
 import GoogleIcon from '../../../../assets/icons/google.svg?raw';
 import FacebookIcon from '../../../../assets/icons/facebook.svg?raw';
 import LogoIcon from '../../../../assets/icons/logo.svg?raw';
 
 describe('LogoGoogleFacebook Component', () => {
-  test('should render logo and buttons', () => {
+  it('should render logo and buttons', () => {
     render(
       <LogoGoogleFacebook
         googleIcon={GoogleIcon}
@@ -22,8 +24,8 @@ describe('LogoGoogleFacebook Component', () => {
     expect(logoElement).toBeInTheDocument();
   });
 
-  test('should handle Google login click', () => {
-    const handleGoogleLogin = jest.fn();
+  it('should handle Google login click', () => {
+    const handleGoogleLogin = vi.mock();
     render(
       <LogoGoogleFacebook
         googleIcon={GoogleIcon}
@@ -37,8 +39,8 @@ describe('LogoGoogleFacebook Component', () => {
     expect(handleGoogleLogin).toHaveBeenCalled();
   });
 
-  test('should handle Facebook login click', () => {
-    const handleFacebookLogin = jest.fn();
+  it('should handle Facebook login click', () => {
+    const handleFacebookLogin = vi.mock();
     render(
       <LogoGoogleFacebook
         googleIcon={GoogleIcon}
