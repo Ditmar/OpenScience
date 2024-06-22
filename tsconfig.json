@@ -9,17 +9,6 @@
       {
         "name": "@astrojs/ts-plugin"
       }
-    ],
-    "target": "ES6",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",
-    "verbatimModuleSyntax": true
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+    ]
+  }
 }
