@@ -1,7 +1,7 @@
 import './VolumeCarousel.scss';
-import Thumbnail from 'ui/components/atoms/thumbnail/Thumbnail';
-import LabelVol from 'ui/components/atoms/label-vol/LabelVol';
-import LabelDate from 'ui/components/atoms/label-date/LabelDate';
+import LabelVol from '../../atoms/label-vol/LabelVol';
+import LabelDate from '../../atoms/label-date/LabelDate';
+import Thumbnail from '../../atoms/thumbnail/Thumbnail';
 import type { IProps } from './types/IProps';
 
 function VolumeCarousel({ pathImage, alt, volumen, id, date, overflow }: IProps) {
