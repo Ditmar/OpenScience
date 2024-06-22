@@ -1,26 +1,16 @@
-import type { Broker as IBroker, Subscriber, Publisher } from "./Ibase";
+import type { Subscriber } from './Subscriber';
+import { Message } from './Message';
 
-export class Broker implements IBroker {
-  private subscribers: { [key: string]: ((message: any) => void)[] } = {};
+export class Broker {
+  private subscribers: Subscriber[] = [];
 
-  registerPublisher(publisher: Publisher): void {
-    // Implementation here
+  subscribe(subscriber: Subscriber) {
+    this.subscribers.push(subscriber);
   }
 
-  registerSubscriber(subscriber: Subscriber): void {
-    // Implementation here
-  }
-
-  publish(topic: string, message: any): void {
-    if (this.subscribers[topic]) {
-      this.subscribers[topic].forEach(callback => callback(message));
-    }
-  }
-
-  subscribe(topic: string, callback: (message: any) => void): void {
-    if (!this.subscribers[topic]) {
-      this.subscribers[topic] = [];
-    }
-    this.subscribers[topic].push(callback);
+  publish(message: Message) {
+    this.subscribers.forEach((sub) => {
+      sub.receive(message);
+    });
   }
 }
