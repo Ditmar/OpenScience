@@ -7,7 +7,7 @@
   span {
     color: $ads-text-input;
     display: block;
-    font-family: Montserrat, sans-serif; 
+    font-family: Montserrat, sans-serif;
     font-size: $ads-font-size-sixth;
     font-weight: $ads-font-weight-first;
     letter-spacing: 0.05rem;
@@ -31,7 +31,7 @@
     }
 
     &.invalid__input {
-      border-color: $ads-danger-main; 
+      border-color: $ads-danger-main;
     }
   }
 
