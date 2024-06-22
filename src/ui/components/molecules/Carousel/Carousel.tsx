@@ -1,55 +1,57 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useEffect, useRef } from 'react';
+import Glide from '@glidejs/glide';
 import LabelVolumes from '../../atoms/label-volumes/LabelVolumes';
-
 import LabelArticles from '../../atoms/label-articles/LabelArticles';
-
 import type { CarouselProps } from './types/CarouselProps';
 
 function Carousel({ volumes }: CarouselProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [error, setError] = useState<string | null>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (volumes.length === 0) {
-      setError('Please try again later.');
-    } else {
-      setError(null);
+    if (carouselRef.current) {
+      const glide = new Glide(carouselRef.current, {
+        type: 'carousel',
+        startAt: 0,
+        perView: 4,
+        autoplay: 3000,
+      });
+
+      glide.mount();
+
+      // Cleanup function
+      return () => {
+        glide.destroy();
+      };
     }
+
+    // If carouselRef.current is null, return undefined explicitly
+    return undefined;
   }, [volumes]);
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % volumes.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + volumes.length) % volumes.length);
-  };
-
-  if (error) {
-    return <div className="carousel__error">{error}</div>;
+  if (volumes.length === 0) {
+    return <div className="carousel__error">Please try again later.</div>;
   }
 
   return (
-    <div className="carousel">
-      <button
-        className="carousel__nav carousel__nav--prev"
-        onClick={handlePrev}
-        aria-label="Previous"
-      >
-        &lt;
-      </button>
-      <div className="carousel__items">
-        {volumes.slice(currentIndex, currentIndex + 4).map((volume) => (
-          <div key={volume.id} className="carousel__item">
-            <LabelArticles variant="default">{volume.date}</LabelArticles>
-            <LabelVolumes text={volume.name} />
-          </div>
-        ))}
+    <div className="carousel" ref={carouselRef}>
+      <div className="glide__track" data-glide-el="track">
+        <ul className="glide__slides">
+          {volumes.map((volume) => (
+            <li key={volume.id} className="glide__slide">
+              <LabelArticles variant="default">{volume.date}</LabelArticles>
+              <LabelVolumes text={volume.name} />
+            </li>
+          ))}
+        </ul>
       </div>
-      <button className="carousel__nav carousel__nav--next" onClick={handleNext} aria-label="Next">
-        &gt;
-      </button>
+      <div className="glide__arrows" data-glide-el="controls">
+        <button className="glide__arrow glide__arrow--left" data-glide-dir="<">
+          &lt;
+        </button>
+        <button className="glide__arrow glide__arrow--right" data-glide-dir=">">
+          &gt;
+        </button>
+      </div>
     </div>
   );
 }
