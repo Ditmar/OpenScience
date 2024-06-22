@@ -6,6 +6,7 @@ function VariableLocationFollowUs(props: IProps) {
   return (
     <div className="location">
       <a href={url}>{text} </a>
+      
       <span
         className="link__icon"
         data-testid="link-icon"
