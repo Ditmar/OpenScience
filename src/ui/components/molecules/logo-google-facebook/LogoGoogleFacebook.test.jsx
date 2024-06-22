@@ -1,56 +1,26 @@
-// LogoGoogleFacebook.test.jsx
-import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import LogoGoogleFacebook from './LogoGoogleFacebook.tsx';
-import GoogleIcon from '../../../../assets/icons/google.svg?raw';
-import FacebookIcon from '../../../../assets/icons/facebook.svg?raw';
-import LogoIcon from '../../../../assets/icons/logo.svg?raw';
+import Logo from 'ui/components/atoms/logo/logo.tsx';
+import SMButton from 'ui/components/atoms/social-media-button/Button';
+import Facebook from '../../../../assets/icons/facebook.svg?raw';
+import Google from '../../../../assets/icons/google.svg?raw';
 
 describe('LogoGoogleFacebook Component', () => {
-  it('should render logo and buttons', () => {
+  test('should render logo and buttons', () => {
     render(
-      <LogoGoogleFacebook
-        googleIcon={GoogleIcon}
-        facebookIcon={FacebookIcon}
-        logoIcon={LogoIcon}
-      />,
+      <LogoGoogleFacebook>
+        <Logo variant='primary'/>
+        <SMButton icon={Google} />
+        <SMButton icon={Facebook} />
+      </LogoGoogleFacebook>
     );
-    const googleButton = screen.getByText(/Google/i);
-    const facebookButton = screen.getByText(/Facebook/i);
-    const logoElement = screen.getByTestId('logo_icon');
-
-    expect(googleButton).toBeInTheDocument();
-    expect(facebookButton).toBeInTheDocument();
-    expect(logoElement).toBeInTheDocument();
-  });
-
-  it('should handle Google login click', () => {
-    const handleGoogleLogin = vi.mock();
-    render(
-      <LogoGoogleFacebook
-        googleIcon={GoogleIcon}
-        facebookIcon={FacebookIcon}
-        logoIcon={LogoIcon}
-        onGoogleLogin={handleGoogleLogin}
-      />,
-    );
-    const googleButton = screen.getByText(/Google/i);
-    fireEvent.click(googleButton);
-    expect(handleGoogleLogin).toHaveBeenCalled();
-  });
-
-  it('should handle Facebook login click', () => {
-    const handleFacebookLogin = vi.mock();
-    render(
-      <LogoGoogleFacebook
-        googleIcon={GoogleIcon}
-        facebookIcon={FacebookIcon}
-        logoIcon={LogoIcon}
-        onFacebookLogin={handleFacebookLogin}
-      />,
-    );
-    const facebookButton = screen.getByText(/Facebook/i);
-    fireEvent.click(facebookButton);
-    expect(handleFacebookLogin).toHaveBeenCalled();
+    const logo = screen.getByTestId('logo');
+    const SMButton = screen.getByTestId('Google');
+    const SMButton = screen.getByTestId('Facebook');
+  
+    expect(logo).toBeInTheDocument();
+    expect(SMButton).toBeInTheDocument();
+    expect(SMButton).toBeInTheDocument();
   });
 });
