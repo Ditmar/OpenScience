@@ -21,7 +21,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const AgnifyinGlass: Story = {
+export const MagnifyinGlass: Story = {
   args: {
     icon: magnifyingglass,
     variant: 'solid',
