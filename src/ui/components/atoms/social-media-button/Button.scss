@@ -4,8 +4,8 @@
 .button {
   align-items: center;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;  
 }
 
 .button__icon {
@@ -95,9 +95,9 @@
 
 .button__text {
   display: block;
-  text-align: center;
   padding: 28%;
-
+  text-align: center;
+  
   @include respond-to('extra-large') {
     font-size: $ads-font-size-first;
   }
