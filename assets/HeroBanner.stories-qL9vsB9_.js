@@ -1,0 +1,8 @@
+import{j as e}from"./jsx-runtime-_e34SzbC.js";import"./index-DVXBtNgz.js";function o(c){const{backgroundImage:l,alt:i,children:m,className:g}=c;return e.jsxs("div",{className:"hero-banner",children:[e.jsx("img",{src:l,alt:i}),e.jsx("div",{className:"overlay",children:e.jsx("div",{className:g,children:m})})]})}o.__docgenInfo={description:"",methods:[],displayName:"HeroBanner",props:{backgroundImage:{required:!0,tsType:{name:"string"},description:""},alt:{required:!1,tsType:{name:"string"},description:""},children:{required:!0,tsType:{name:"ReactReactNode",raw:"React.ReactNode"},description:""},className:{required:!0,tsType:{name:"string"},description:""}}};const s=""+new URL("Rectangle6-eH3r9kXT.png",import.meta.url).href,d=""+new URL("Rectangle10-BizNFIlN.png",import.meta.url).href,p=""+new URL("Rectangle11-CVLUxxcP.png",import.meta.url).href,u=""+new URL("Rectangle12-DLBWRZl2.png",import.meta.url).href,R=""+new URL("Rectangle17-CIdVW_Xd.png",import.meta.url).href,N={title:"ui/components/atoms/hero-banner",component:o,parameters:{layout:"top"},argTypes:{backgroundImage:{control:"select",options:[s,d,p,u,R]},alt:{control:"text"}}},n={args:{backgroundImage:String(s),alt:"Rectangle6",className:"hero-banner__content",children:"Hello World"}};var r,t,a;n.parameters={...n.parameters,docs:{...(r=n.parameters)==null?void 0:r.docs,source:{originalSource:`{
+  args: {
+    backgroundImage: String(Rectangle6),
+    alt: 'Rectangle6',
+    className: 'hero-banner__content',
+    children: 'Hello World'
+  }
+}`,...(a=(t=n.parameters)==null?void 0:t.docs)==null?void 0:a.source}}};const f=["VisualHeroBanner"];export{n as VisualHeroBanner,f as __namedExportsOrder,N as default};
