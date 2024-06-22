@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import type { IProps } from './types/IProps';
 import { Icon } from '../../../utils/svg-icons/icons';
 import './InputText.scss';
@@ -24,9 +24,11 @@ function InputText({ label, type, name, placeholder, isValid, eyeIcon, onChangeV
         onChange={onChange}
         className={!isValid ? 'invalid__input' : ''}
       />
-      <button type="button" className="password__eye" onClick={handlerClick}>
-        {eyeIcon && <Icon data-testid="eye-icon" src={eyeIcon} className="eye__icon" />}
-      </button>
+      {type === 'password' && (
+        <button type="button" className="password__eye" onClick={handlerClick}>
+          {eyeIcon && <Icon data-testid="eye-icon" src={eyeIcon} className="eye__icon" />}
+        </button>
+      )}
     </div>
   );
 }
