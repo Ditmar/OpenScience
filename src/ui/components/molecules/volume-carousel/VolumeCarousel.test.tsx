@@ -3,7 +3,6 @@ import VolumeCarousel from './VolumeCarousel';
 
 describe('VolumeCarousel Component', () => {
   test('should render correctly with props', () => {
-    // Define props para simular el componente VolumeCarousel
     const props = {
       pathImage: 'path/to/image.jpg',
       alt: 'Thumbnail Alt Text',
@@ -25,8 +24,8 @@ describe('VolumeCarousel Component', () => {
     );
 
     const thumbnailElement = screen.getByAltText(props.alt);
-    const volumenElement = screen.getByText(props.volumen);
-    const dateElement = screen.getByText('June 1, 2023');
+    const volumenElement = screen.getByText(new RegExp(`${props.volumen}.*${String(props.id)}`));
+    const dateElement = screen.getByText('Mayo 31 | 2023');
 
     expect(thumbnailElement).toBeInTheDocument();
     expect(volumenElement).toBeInTheDocument();
