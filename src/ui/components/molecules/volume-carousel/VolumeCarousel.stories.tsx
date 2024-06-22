@@ -7,21 +7,11 @@ import {
 } from 'ui/components/atoms/label-date/LabelDate.stories';
 import VolumeCarousel from './VolumeCarousel';
 
-import {
-  ThumbnailArgTypes,
-  ThumbnailParameters,
-  ThumbnailMockImages,
-} from '../../atoms/thumbnail/Thumbnail.stories';
+import { Thumbnail28, Thumbnail29, Thumbnail30 } from '../../atoms/thumbnail/Thumbnail.stories';
 
 const meta: Meta<typeof VolumeCarousel> = {
   title: 'ui/components/molecules/volume-carousel',
   component: VolumeCarousel,
-  argTypes: {
-    ...ThumbnailArgTypes,
-  },
-  parameters: {
-    ...ThumbnailParameters,
-  },
 };
 
 export default meta;
@@ -30,8 +20,9 @@ type Story = StoryObj<typeof VolumeCarousel>;
 
 export const Primary: Story = {
   args: {
-    pathImage: String(ThumbnailMockImages.Rectangle28),
-    alt: 'Rectangle28',
+    // Checks that the element exists (?) and then provides a default value..volumen ?? '[default-value]'
+    pathImage: Thumbnail28.args?.pathImage ?? '',
+    alt: Thumbnail28.args?.alt ?? '',
     volumen: Vol1.args?.volumen ?? '',
     id: Vol1.args?.id ?? 0,
     date: LabelDate1.args?.date ?? new Date(),
@@ -41,8 +32,8 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    pathImage: String(ThumbnailMockImages.Rectangle29),
-    alt: 'Rectangle29',
+    pathImage: Thumbnail29.args?.pathImage ?? '',
+    alt: Thumbnail29.args?.alt ?? '',
     volumen: Vol2.args?.volumen ?? '',
     id: Vol2.args?.id ?? 0,
     date: LabelDate2.args?.date ?? new Date(),
@@ -52,8 +43,8 @@ export const Secondary: Story = {
 
 export const Tertiary: Story = {
   args: {
-    pathImage: String(ThumbnailMockImages.Rectangle30),
-    alt: 'Rectangle30',
+    pathImage: Thumbnail30.args?.pathImage ?? '',
+    alt: Thumbnail30.args?.alt ?? '',
     volumen: Vol3.args?.volumen ?? '',
     id: Vol3.args?.id ?? 0,
     date: LabelDate3.args?.date ?? new Date(),

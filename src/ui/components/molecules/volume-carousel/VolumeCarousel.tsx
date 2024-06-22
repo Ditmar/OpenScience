@@ -6,11 +6,11 @@ import type { IProps } from './types/IProps';
 
 function VolumeCarousel({ pathImage, alt, volumen, id, date, overflow }: IProps) {
   return (
-    <>
+    <div className="volume-carousel">
       <Thumbnail pathImage={pathImage} alt={alt} />
-      <LabelVol volumen={volumen} id={id} />
       <LabelDate date={date} overflow={overflow} />
-    </>
+      <LabelVol volumen={volumen} id={id} />
+    </div>
   );
 }
 
