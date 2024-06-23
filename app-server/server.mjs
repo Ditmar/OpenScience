@@ -1,5 +1,8 @@
 import express from 'express';
 import { handler } from '../dist/server/entry.mjs';
+import fs from 'fs';
+import path from 'path';
+
 if (process.env.ENV === 'local') {
   require('dotenv').config();
 }
@@ -8,8 +11,11 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 
-app.get('/systeminfo', (req, res) => {
-  const commitHash = process.env.COMMIT_HASH || 'unknown';
+app.get('/systeminfo', async(req, res) => {
+  const path  = path.resolve('/app/commit.txt');
+  const hash = await fs.readFileSync(path, 'utf8');
+
+  const commitHash = hash || 'unknown';
   res.json({ hashcommit: commitHash });
 });
 
