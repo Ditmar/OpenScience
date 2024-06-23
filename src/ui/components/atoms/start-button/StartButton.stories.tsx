@@ -10,6 +10,11 @@ const meta = {
     onClick: {
       action: 'click',
     },
+
+    variantButton: {
+      control: 'select',
+      options: ['primary', 'secondary', 'tertiary'],
+    },
   },
 } as Meta<typeof StartButton>;
 
@@ -20,7 +25,7 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     children: 'INICIAR ',
-    varianButton: 'primary',
+    variant: 'primary',
     icon: Vector,
   },
 };
@@ -28,13 +33,15 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     children: 'INICIAR',
-    varianButton: 'secundary',
+    variant: 'secondary',
+    icon: null,
   },
 };
 
-export const tertiary: Story = {
+export const Tertiary: Story = {
   args: {
-    children: ' INICIAR',
-    varianButton: 'tertiary',
+    children: 'INICIAR',
+    variant: 'tertiary',
+    icon: null,
   },
 };

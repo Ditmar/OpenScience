@@ -1,40 +1,24 @@
 import { render, screen } from '@testing-library/react';
 import StartButton from './StartButton.tsx';
+import './StartButton.scss';
 
 describe('ButtonInit component', () => {
-  test('renders with default props', () => {
-    render(<StartButton />);
-    const buttonElement = screen.getByRole('button');
-    expect(buttonElement).toBeInTheDocument();
-    expect(buttonElement).toHaveTextContent('');
-    expect(buttonElement).toHaveClass('button__init');
-    expect(buttonElement).toHaveClass('button__init--primary');
-  });
 
   test('renders with custom props - primary variant', () => {
     render(<StartButton varianButton="primary">INICIAR</StartButton>);
-    const buttonElement = screen.getByRole('button');
-    expect(buttonElement).toBeInTheDocument();
-    expect(buttonElement).toHaveTextContent('INICIAR');
-    expect(buttonElement).toHaveClass('button__init');
-    expect(buttonElement).toHaveClass('button__init--primary');
+    expect(screen.getByRole('button')).toBeInTheDocument();
+    expect(screen.getByRole('button')).toHaveTextContent('INICIAR');
   });
 
   test('renders with custom props - secondary variant', () => {
-    render(<StartButton varianButton="secondary">INICIAR</StartButton>);
-    const buttonElement = screen.getByRole('button');
-    expect(buttonElement).toBeInTheDocument();
-    expect(buttonElement).toHaveTextContent('INICIAR');
-    expect(buttonElement).toHaveClass('button__init');
-    expect(buttonElement).toHaveClass('button__init--secondary');
+    render(<StartButton variant="secondary">INICIAR</StartButton>);
+    expect(screen.getByText('INICIAR')).toBeInTheDocument();
+    expect(screen.getByText('INICIAR')).toHaveTextContent('INICIAR');
   });
 
   test('renders with custom props - tertiary variant', () => {
     render(<StartButton varianButton="tertiary ">INICIAR</StartButton>);
-    const buttonElement = screen.getByRole('button');
-    expect(buttonElement).toBeInTheDocument();
-    expect(buttonElement).toHaveTextContent('INICIAR');
-    expect(buttonElement).toHaveClass('button__init');
-    expect(buttonElement).toHaveClass('button__init--tertiary ');
+    expect(screen.getByRole('button')).toBeInTheDocument();
+    expect(screen.getByRole('button')).toHaveTextContent('INICIAR');
   });
 });

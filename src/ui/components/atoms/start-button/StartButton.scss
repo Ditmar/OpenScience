@@ -1,52 +1,52 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 
-.button__init {
+.start__button {
+  align-items: center;
   border: none;
-  color: $ads-tertiary-main;
-  
-  
-  .button__icon--before {
-    content: '';
-    display: inline-block;
-    
-  }
-  
+  color: $ads-color-main;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 2px;
+ // transition: background-color 0.3s ease;
 
   &--primary {
-    background-color: $ads-primary-main;
-    font-family: Montserrat, sans-serif;
+    background-color: $ads-primary-main; 
+   font-family: Montserrat, sans-serif;
+   font-size: 2.3rem;
+   font-weight: 300;
+   gap: 0.7rem;
+   height: 1.375rem;
+   margin-left: 2px;
+   width: 6.938rem;
+
+   @include respond-to('small-mobile') {
+    font-size: 1.5rem;
+    font-weight: 300;
+    height: 2.5rem;
+    width: 9rem;
+  }
+
+  @include respond-to('large') {
     font-size: 2.5rem;
     font-weight: 300;
     height: 3.063rem;
-    margin-left: 1rem;
-    width: 5.125rem;
-
-    @include respond-to('small-mobile') {
-      font-size: 1.5rem;
-      font-weight: 300;
-      height: 2.5rem;
-      width: 9rem;
-    }
-
-    @include respond-to('large') {
-      font-size: 2.5rem;
-      font-weight: 300;
-      height: 3.063rem;
-      width: 22.625rem;
-    }
+    width: 22.625rem;
   }
 
-  &--secundary {
-    background-color: $ads-text-main;
+  }
+
+  &--secondary {
+    background-color:$ads-text-main; 
     font-family: Roboto, sans-serif;
-    font-size: 3rem;
+    font-size: 3.375rem;
     font-weight: $ads-font-size-first;
     height: 3.375rem;
     width: 19.5rem;
 
     @include respond-to('small-mobile') {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       font-weight: 300;
       height: 2.5rem;
       width: 9rem;
@@ -56,9 +56,10 @@
       font-family: Roboto, sans-serif;
       font-weight: $ads-font-size-first;
       height: 3.375rem;
-      width: 19.4rem;
+      width: 19.5rem;
     }
-  }
+
+   }
 
   &--tertiary {
     background-color: $ads-primary-main;
@@ -66,16 +67,29 @@
     font-family: Montserrat, sans-serif;
     font-size: 2.5rem;
     font-weight: 300;
-    height: 3.063rem;
-    width: 22.625rem;
+    height: 4.313rem;
+    width: 15.688rem;
+
+  }
+
+  .start__button-icon {
+    align-items: center;
+    display: flex;
+    height: 1.16rem;
+    width: 1.16rem;
+
+   
 
     @include respond-to('small-mobile') {
       font-size: 1.5rem;
       font-weight: 300;
-      height: 2.5rem;
-      width: 9rem;
+      height: 2.0rem;
+      width: 2.0rem;
     } 
-
   }
- 
+
+  &:hover {
+    background: $ads-secondary-main;
+  }
+  
 }

@@ -1,17 +1,15 @@
-import type { IProps } from './types/IProps';
 import './StartButton.scss';
+import { Icon } from '../../../utils/svg-icons/icons';
+import type { IProps } from './types/IProps';
 
 function StartButton(props: IProps) {
-  const { children, icon, varianButton = 'primary' } = props;
-  const button = `button__init--${varianButton}`;
+  const { children, icon, variant = 'primary' } = props;
+  
 
   return (
-    <button className={`button__init ${button}`}>
-      <span>{children}</span>
-      <span
-        className="button__icon--before"
-        dangerouslySetInnerHTML={{ __html: icon ?? '<div></div>' }}
-      />
+    <button className={`start__button start__button--${variant}`}>
+      <span className="start__button-text">{children}</span>
+      {icon && <Icon src={icon} className="start__button-icon" />}
     </button>
   );
 }
