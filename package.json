@@ -32,6 +32,7 @@
     "astrojs-service-worker": "2.0.0",
     "eslint-config-standard": "17.1.0",
     "express": "^4.19.2",
+    "glider-js": "^1.7.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.77.2",
