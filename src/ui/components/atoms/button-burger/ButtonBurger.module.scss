@@ -1,3 +1,4 @@
+/* styles/Button.module.css */
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 
@@ -10,18 +11,16 @@
   height: 41px;
   justify-content: center;
   width: 41px;
-
-  &:hover {
-    background: $ads-secondary-main;
-  }
-
-  &--secondary {
+  &.secondary {
     background: $ads-secondary-main;
     color: $ads-color-main;
 
     &:hover {
       background: $ads-warning-main;
     }
+  }
+  &:hover {
+    background: $ads-secondary-main;
   }
 
   @include respond-to('small') {
@@ -44,7 +43,6 @@
     width: 41px;
   }
 }
-
 .button-icon svg {
   align-items: center;
   display: flex;
