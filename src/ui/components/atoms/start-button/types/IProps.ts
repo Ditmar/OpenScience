@@ -1,5 +1,6 @@
 export interface IProps {
   children?: string;
-  varianButton?: 'primary' | 'secundary' | 'tertiary' | 'warning' | 'danger';
-  icon?: string;
+  variant?: 'primary' | 'secondary' | 'tertiary';
+  icon?: string | null;
+  onClick?: () => void;
 }
