@@ -1,0 +1,173 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.molecule-footer {
+  background-color: $ads-tertiary-main;
+  display: grid;
+  grid-template-areas: 'logo-section variables-section';
+
+  @include respond-to('small-mobile') {
+    display: grid;
+    grid-template-areas:
+      'logo-section'
+      'variables-section';
+  }
+
+  @include respond-to('small') {
+    display: grid;
+    grid-template-areas: 'logo-section variables-section';
+    width: 21rem;
+  }
+
+  @include respond-to('large-tablet') {
+    display: grid;
+    grid-template-areas: 'logo-section variables-section';
+  }
+
+  @include respond-to('large') {
+    display: grid;
+    grid-template-areas: 'logo-section variables-section';
+  }
+
+  @include respond-to('extra-large') {
+    display: grid;
+    grid-template-areas: 'logo-section variables-section';
+    width: 52.25rem;
+  }
+}
+
+.logo-section {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.variables-section {
+  align-items: center;
+  display: flex;
+
+  @include respond-to('small-mobile') {
+    justify-content: center;
+  }
+
+  @include respond-to('small') {
+    justify-content: left;
+  }
+
+  @include respond-to('large-tablet') {
+    justify-content: left;
+  }
+
+  @include respond-to('large') {
+    justify-content: left;
+  }
+
+  @include respond-to('extra-large') {
+    justify-content: left;
+  }
+}
+
+.section {
+  padding: 0.938rem;
+
+  @include respond-to('small-mobile') {
+    margin-left: 0;
+    margin-top: 1rem;
+    padding-left: 0;
+    padding-top: 0;
+    width: 7.5rem;
+  }
+
+  @include respond-to('small') {
+    margin-top: 0;
+    padding-left: 0.938rem;
+    width: 14rem;
+  }
+
+  @include respond-to('large-tablet') {
+    margin-top: 0;
+    padding-left: 0.938rem;
+    width: 14rem;
+  }
+
+  @include respond-to('large') {
+    margin-top: 0;
+    padding-left: 0.938rem;
+    width: 22rem;
+  }
+
+  @include respond-to('extra-large') {
+    padding-right: 10rem;
+    width: 12rem;
+  }
+}
+
+.section1 {
+  display: flex;
+  justify-content: left;
+
+  @include respond-to('small-mobile') {
+    display: contents;
+    justify-content: left;
+  }
+
+  @include respond-to('small') {
+    display: flex;
+    justify-content: left;
+  }
+
+  @include respond-to('large-tablet') {
+    display: flex;
+    justify-content: left;
+  }
+
+  @include respond-to('large') {
+    display: flex;
+    justify-content: left;
+  }
+
+  @include respond-to('extra-large') {
+    display: flex;
+    justify-content: left;
+
+    .volumenes {
+      padding-left: 10rem;
+    }
+  }
+}
+
+.section2 {
+  padding: 0.938rem;
+  width: 7.5rem;
+
+  @include respond-to('small-mobile') {
+    margin-right: 0;
+    padding-right: 0;
+    padding-top: 0;
+    width: 7.5rem;
+  }
+}
+
+.divider div {
+  background-color: $ads-text-main;
+
+  @include respond-to('small-mobile') {
+    background-color: transparent;
+  }
+
+  @include respond-to('small') {
+    background-color: $ads-text-main;
+  }
+
+  @include respond-to('large-tablet') {
+    background-color: $ads-text-main;
+  }
+
+  @include respond-to('large') {
+    background-color: $ads-text-main;
+  }
+
+  @include respond-to('extra-large') {
+    background-color: $ads-text-main;
+  }
+}
