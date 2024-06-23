@@ -1,73 +1,98 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
+@import '../../../../globals/fonts';
 
 .resources-and-page-footer {
-  align-items: center;
+  background-color: $ads-color-main;
   display: flex;
-  justify-content: space-between;
+  height: 7.813rem;
+  width: 50rem;
 
-  &__section {
-    align-items: center;
+  .resource-and-page-footer-left,
+  .resource-and-page-footer-rigth {
+    width: 24.375rem;
+  }
+
+  .resource-and-page-footer-lineone,
+  .resource-and-page-footer-linetwo {
+    background-color: $ads-text-main;
+    height: 100%;
+    width: 0.188rem;
+  }
+
+  .resource-and-page-footer-title {
+    color: $ads-text-main;
+    font-family: Montserrat, sans-serif;  
+    font-weight: 600;
+    margin-left: 0.625rem;
+    margin-top: 0.938rem;
+  }
+
+  .resource-and-page-footer-content {
     display: flex;
-    flex-direction: column;
+    font-family: Montserrat, sans-serif;  
+    font-weight: 300;
+    margin-left: 0.625rem;
+    margin-top: 0.938rem;
 
-    &--resources,
-    &--page {
-      height: 49px;
-      width: 178px;
-    }
-
-    &--resources-desktop {
-      color: $primary-color;
-      font: 600 24px/29.26px $font-family;
-    }
-
-    &--resources-mobile {
-      color: $primary-color;
-      font: 600 15px/18.29px $font-family;
-    }
-
-    &--page-desktop {
-      color: $primary-color;
-      font: 600 24px/29.26px $font-family;
-    }
-
-    &--page-mobile {
-      color: $primary-color;
-      font: 600 15px/18.29px $font-family;
-    }
-
-    &--articles,
-    &--volumes,
-    &--unipol {
-      font: 300 24px/29.26px $font-family;
-    }
-
-    &--articles-mobile,
-    &--volumes-mobile,
-    &--unipol-mobile {
-      font: 300 14px/17.07px $font-family;
+    .variables a {
+      text-decoration: none;
     }
   }
 
-  &__separator {
-    background-color: $primary-color;
+  @media screen and (width >= 320px) and (width <= 560px) {
+    width: 18.75rem;
+
+    .resource-and-page-footer-left,
+    .resource-and-page-footer-rigth {
+      color: $ads-text-main;
+      width: 8.75rem;
+    }
+
+    .resource-and-page-footer-lineone {
+      display: none;
+    }
+
+    .resource-and-page-footer-title {
+      color: $ads-text-main;
+      margin-left: 0.625rem;
+      margin-top: 0.625rem;
+    }
+
+    .resource-and-page-footer-content {
+      color: $ads-text-main;
+      display: block;
+
+      .variables {
+        margin-top: 0.938rem;
+      }
+    }
   }
 
-  &__separator--desktop {
-    height: 125px;
-    width: 4px;
-  }
+  @media screen and (width >= 414px) and (width <= 896px) {
+    width: 23.75rem;
 
-  &__separator--mobile {
-    height: 92px;
-    width: 3px;
-  }
-}
+    .resource-and-page-footer-left,
+    .resource-and-page-footer-rigth {
+      width: 11.25rem;
+    }
 
-@media (width <= 768px) {
-  .resources-and-page-footer {
-    align-items: flex-start;
-    flex-direction: column;
+    .resource-and-page-footer-lineone {
+      display: none;
+    }
+
+    .resource-and-page-footer-title {
+      color: $ads-text-main;
+      margin-left: 0.625rem;
+      margin-top: 0.625rem;
+    }
+
+    .resource-and-page-footer-content {
+      display: block;
+
+      .variables {
+        margin-top: 0.938rem;
+      }
+    }
   }
 }
