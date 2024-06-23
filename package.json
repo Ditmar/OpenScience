@@ -36,14 +36,12 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.77.2",
-    "styled-components": "^6.1.11",
     "svgo": "^3.3.2",
     "typescript": "5.4.5"
   },
   "devDependencies": {
     "@astrojs/ts-plugin": "1.4.0",
     "@babel/eslint-parser": "7.23.3",
-    "@babel/plugin-transform-react-jsx": "^7.24.7",
     "@babel/preset-react": "7.23.3",
     "@chromatic-com/storybook": "1.4.0",
     "@rollup/plugin-commonjs": "^25.0.8",
