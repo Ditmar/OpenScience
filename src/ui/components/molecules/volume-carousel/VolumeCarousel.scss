@@ -1,0 +1,162 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.carousel__container {
+  position: relative;
+}
+
+.carousel__prev,
+  .carousel__next {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: calc(50% - 20px);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.carousel__prev {
+  @include respond-to('small-mobile') {
+    left: -12px;
+  }
+
+  @include respond-to('small') {
+    left: 90px;
+  }
+
+  @include respond-to('medium') {
+    left: 65px
+  }
+}
+
+.carousel__next {
+  @include respond-to('small-mobile') {
+    right: -12px;
+  }
+
+  @include respond-to('small') {
+    right: 90px;
+  }
+
+  @include respond-to('medium') {
+    right: 65px;
+  }
+}
+
+.carousel__next svg,
+.carousel__prev svg {
+  @include respond-to('small-mobile') {
+    height: 25px;
+    width: 25px;
+  }
+
+  @include respond-to('medium') {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.carousel__list {
+  overflow: hidden;
+
+  @include respond-to('small-mobile') {
+    height: 160px;
+    width: 280px;
+  }
+
+  @include respond-to('medium') {
+    height: 304px;
+    width: 615px;
+  }
+
+  @include respond-to('large') {
+    height: 394px;
+    width: 820px;
+  }
+
+  @include respond-to('extra-large') {
+    height: 436px;
+    width: 900px;
+  }
+}
+
+.carousel__item {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 5px;
+  text-align: center;
+
+  @include respond-to('small-mobile') {
+    height: 160px;
+    min-width: 85px;
+  }
+
+  @include respond-to('medium') {
+    height: 304;
+    min-width: 204px;
+  }
+
+  @include respond-to('large') {
+    height: 394px;
+    min-width: 272px;
+  }
+
+  @include respond-to('extra-large') {
+    height: 436px;
+    min-width: 300px;
+  }
+}
+
+.thumbnail {
+  border: none;
+  margin: 0;
+
+  @include respond-to('small-mobile') {
+    height: 107px;
+    width: 68px;
+  }
+
+  @include respond-to('medium') {
+    height: 250px;
+    width: 163px;
+  }
+
+  @include respond-to('large') {
+    height: 332px;
+    width: 218px;
+  }
+
+  @include respond-to('extra-large') {
+    height: 365px;
+    width: 240px;
+  }
+}
+
+.labeldate {
+  font-size: 1.3rem;
+  margin: 0;
+
+  @include respond-to('small-mobile') {
+    font-size: 0.8rem;
+  }
+
+  @include respond-to('medium') {
+    font-size: 1.1rem;
+  }
+}
+
+.volumen {
+  font-size: 1.4rem;
+  margin: 0;
+
+  @include respond-to('small-mobile') {
+    font-size: 1rem;
+  }
+
+  @include respond-to('medium') {
+    font-size: 1.2rem;
+  }
+}
