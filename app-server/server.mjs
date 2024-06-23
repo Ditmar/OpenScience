@@ -11,9 +11,9 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 
-app.get('/systeminfo', async(req, res) => {
-  const path  = path.resolve('/app/commit.txt');
-  const hash = await fs.readFileSync(path, 'utf8');
+app.get('/systeminfo', (req, res) => {
+  const route  = path.resolve('/app/commit.txt');
+  const hash = fs.readFileSync(route, 'utf8');
 
   const commitHash = hash || 'unknown';
   res.json({ hashcommit: commitHash });
