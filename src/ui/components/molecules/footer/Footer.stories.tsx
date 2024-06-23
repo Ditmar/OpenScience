@@ -1,11 +1,11 @@
 import type { StoryObj, Meta } from '@storybook/react';
-import LogoLocationLinkfb from './LogoLocationLinkfb';
+import Footer from './Footer';
 import LogoFooter from '../../atoms/logo-footer/LogoFooter';
 import logo from '../../../../assets/icons/logo.svg?raw';
 
-const meta: Meta<typeof LogoLocationLinkfb> = {
-  title: 'ui/components/molecules/logo-location-linkfb',
-  component: LogoLocationLinkfb,
+const meta: Meta<typeof Footer> = {
+  title: 'ui/components/molecules/footer',
+  component: Footer,
 };
 
 export default meta;

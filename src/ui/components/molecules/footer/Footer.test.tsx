@@ -1,15 +1,15 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import LogoLocationLinkfb from './LogoLocationLinkfb';
+import Footer from './Footer';
 import LogoFooter from '../../atoms/logo-footer/LogoFooter';
 import logo from '../../../../assets/icons/logo.svg?raw';
 
-describe('LogoLocationLinkfb Component', () => {
+describe('Footer Component', () => {
   test('should render Logo Footer', () => {
     render(
-      <LogoLocationLinkfb>
+      <Footer>
         <LogoFooter color="primary" icon={logo} />
-      </LogoLocationLinkfb>,
+      </Footer>,
     );
 
     const logoFooter = screen.getByTestId('logo_icon');
