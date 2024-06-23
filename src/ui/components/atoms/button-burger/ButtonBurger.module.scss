@@ -11,6 +11,7 @@
   height: 41px;
   justify-content: center;
   width: 41px;
+
   &.secondary {
     background: $ads-secondary-main;
     color: $ads-color-main;
@@ -19,6 +20,7 @@
       background: $ads-warning-main;
     }
   }
+
   &:hover {
     background: $ads-secondary-main;
   }
@@ -42,7 +44,9 @@
     height: 41px;
     width: 41px;
   }
+
 }
+
 .button-icon svg {
   align-items: center;
   display: flex;
