@@ -20,15 +20,29 @@ const meta = {
     },
     alt: { control: 'text' },
   },
-} satisfies Meta<typeof Thumbnail>;
+} as Meta<typeof Thumbnail>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const VisualThumbnail: Story = {
+export const Thumbnail28: Story = {
   args: {
     pathImage: String(Rectangle28),
     alt: 'Rectangle28',
+  },
+};
+
+export const Thumbnail29: Story = {
+  args: {
+    pathImage: String(Rectangle29),
+    alt: 'Rectangle29',
+  },
+};
+
+export const Thumbnail30: Story = {
+  args: {
+    pathImage: String(Rectangle30),
+    alt: 'Rectangle30',
   },
 };
