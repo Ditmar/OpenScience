@@ -8,6 +8,7 @@ import LinkIcon from '../../../../assets/icons/share.svg?raw';
 import LabelFeaturedArticles from '../../atoms/label-featured-articles/LabelFeaturedArticles';
 import PointsDivider from '../../atoms/points-divider/PointsDivider';
 import LabelDate from '../../atoms/label-date/LabelDate';
+import AuthorLabel from '../../atoms/Author-Label/AuthorLabel';
 
 const meta: Meta<typeof FeaturedArticle> = {
   component: FeaturedArticle,
@@ -39,6 +40,7 @@ export const Primary: Story = {
           habitats.The"
           variant="default"
         />
+        <AuthorLabel variant="Marco Antonio Lopez" />
         <div className="buttons">
           <VariableButton icon={PdfIcon}>PDF</VariableButton>
           <VariableButton icon={LinkIcon}>Link</VariableButton>

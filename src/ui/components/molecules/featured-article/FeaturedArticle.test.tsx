@@ -9,6 +9,7 @@ import PdfIcon from '../../../../assets/icons/pdf.svg?raw';
 import LinkIcon from '../../../../assets/icons/share.svg?raw';
 import PointsDivider from '../../atoms/points-divider/PointsDivider';
 import LabelDate from '../../atoms/label-date/LabelDate';
+import AuthorLabel from '../../atoms/Author-Label/AuthorLabel';
 
 describe('FeaturedArticle Component', () => {
   test('should render', () => {
@@ -26,6 +27,7 @@ describe('FeaturedArticle Component', () => {
           habitats.The"
           variant="default"
         />
+        <AuthorLabel variant="Marco antonio lopez" />
         <div className="buttons">
           <VariableButton icon={PdfIcon}>PDF</VariableButton>
           <VariableButton icon={LinkIcon}>Link</VariableButton>
@@ -43,10 +45,12 @@ describe('FeaturedArticle Component', () => {
       /Spectral tuning of visual pigments often facilitates adaptation to new environments/i,
     );
     const labelDate = screen.getByText(/abril 15 | 2023/i);
+    const lavelElement = screen.getByText('Marco antonio lopez');
 
     expect(labelFeaturedArticles).toBeInTheDocument();
     expect(articleTitle).toBeInTheDocument();
     expect(articleDescription).toBeInTheDocument();
     expect(labelDate).toBeInTheDocument();
+    expect(lavelElement).toBeInTheDocument();
   });
 });
