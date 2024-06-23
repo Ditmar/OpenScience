@@ -5,18 +5,18 @@ import {
   LabelDate2,
   LabelDate3,
 } from 'ui/components/atoms/label-date/LabelDate.stories';
-import VolumeCarousel from './VolumeCarousel';
+import Volume from './Volume';
 
 import { Thumbnail28, Thumbnail29, Thumbnail30 } from '../../atoms/thumbnail/Thumbnail.stories';
 
-const meta: Meta<typeof VolumeCarousel> = {
+const meta: Meta<typeof Volume> = {
   title: 'ui/components/molecules/volume-carousel',
-  component: VolumeCarousel,
+  component: Volume,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof VolumeCarousel>;
+type Story = StoryObj<typeof Volume>;
 
 export const Primary: Story = {
   args: {

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import VolumeCarousel from './VolumeCarousel';
+import Volume from './Volume';
 
-describe('VolumeCarousel Component', () => {
+describe('Volume Component', () => {
   test('should render correctly with props', () => {
     const props = {
       pathImage: 'path/to/image.jpg',
@@ -13,7 +13,7 @@ describe('VolumeCarousel Component', () => {
     };
 
     render(
-      <VolumeCarousel
+      <Volume
         pathImage={props.pathImage}
         alt={props.alt}
         volumen={props.volumen}
