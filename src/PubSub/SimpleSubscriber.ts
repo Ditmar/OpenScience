@@ -1,8 +1,8 @@
-import type { Subscriber } from './Subscriber';
-import { Message } from './Message';
+import { Subscriber } from './Subscriber';
+import { SimpleBroker } from './SimpleBroker';
 
-export class SimpleSubscriber implements Subscriber {
-  receive(message: Message) {
-    console.log(`Received message: ${message.content}`);
+export class SimpleSubscriber<T> extends Subscriber<T> {
+  public constructor(broker: SimpleBroker<T>) {
+    super(broker);
   }
 }
