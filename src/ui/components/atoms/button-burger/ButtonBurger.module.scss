@@ -14,7 +14,11 @@
 
   &.secondary {
     background: $ads-secondary-main;
-    color: $ads-color-main;    
+    color: $ads-color-main;
+
+    &:hover {
+      background: $ads-warning-main;
+    }
   }
 
   &:hover {
