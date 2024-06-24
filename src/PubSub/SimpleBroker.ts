@@ -1,3 +1,3 @@
 import { Broker } from './Broker';
 
-export class SimpleBroker extends Broker {}
+export class SimpleBroker<T> extends Broker<T> {}
