@@ -3,7 +3,6 @@ import StartButton from './StartButton.tsx';
 import './StartButton.scss';
 
 describe('ButtonInit component', () => {
-
   test('renders with custom props - primary variant', () => {
     render(<StartButton varianButton="primary">INICIAR</StartButton>);
     expect(screen.getByRole('button')).toBeInTheDocument();
