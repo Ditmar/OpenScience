@@ -5,9 +5,9 @@
     background: $ads-background-main;
     display: flex;
     flex-direction: column;
-    height: 569px;    
+    height: 280px;    
     padding: 2.2rem;      
-    width: 412px; 
+    width: 206px; 
     
     &--secondary {
       position: sticky;      
@@ -15,7 +15,7 @@
   }
 
 .tags .tag{     
-  font-size: 48px;
+  font-size: $ads-font-size-second;
   margin: 0.5rem;
 
   &--secondary {
@@ -31,8 +31,8 @@
   align-items: center;
   background: transparent;
   display: flexbox;
-  height: 140px;
-  width: 310px;
+  height: 70px;
+  width: 155px;
 }
 
 .logo .logo-icon {  
