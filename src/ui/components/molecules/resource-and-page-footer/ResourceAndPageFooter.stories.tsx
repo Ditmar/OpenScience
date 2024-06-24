@@ -46,7 +46,7 @@ export const Colors: Story = {
   args: {
     children: (
       <>
-        <div className="resource-and-page-footer-lineone">|</div>
+        <div className="resource-and-page-footer-lineone" />
 
         <div className="resource-and-page-footer-left">
           <div className="resource-and-page-footer-title">
