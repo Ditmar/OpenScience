@@ -1,0 +1,118 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.side-panel {
+  background-color: $ads-color-main;
+  height: 449px;
+  padding-left: 25px;
+  padding-top: 35px;
+  width: 325px;
+
+  .logo {
+    height: 110px;
+    width: 225px;
+
+    .logo-icon svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .tags {
+    list-style-type: none;
+    margin-left: -30px;
+    margin-top: -5px;
+    width: 90%;
+
+    li::before {
+      content: '•';
+      font-size: 40px;
+    }
+
+    li:hover {
+      color: $ads-text-main;
+    }
+
+    .tag {
+      font-size: 36px;
+    }
+  }
+
+  @media (320px <= width <= 568px) {
+    background-color: $ads-color-main;
+    height: 130px;
+    padding-top: 5px;
+    width: 120px;
+
+    .logo {
+      height: 30px;
+      margin-left: 13px;
+      width: 55px;
+
+      .logo-icon svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .tags {
+      list-style-type: none;
+      margin-left: -30px;
+      margin-top: -10px;
+      width: 90%;
+
+      li::before {
+        content: '•';
+        font-size: 14px;
+      }
+
+      li:hover {
+        color: $ads-text-main;
+      }
+
+      .tag {
+        font-size: 14px;
+        padding: 0;
+      }
+    }
+  }
+
+  @media (414px <= width <= 896px) {
+    background-color: $ads-color-main;
+    height: 130px;
+    padding-top: 5px;
+    width: 120px;
+
+    .logo {
+      height: 30px;
+      margin-left: 13px;
+      width: 55px;
+
+      .logo-icon svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .tags {
+      list-style-type: none;
+      margin-left: -30px;
+      margin-top: -10px;
+      width: 90%;
+
+      li::before {
+        content: '•';
+        font-size: 14px;
+      }
+
+      li:hover {
+        color: $ads-text-main;
+      }
+
+      .tag {
+        font-size: 14px;
+        padding: 0;
+      }
+    }
+  }
+}
