@@ -4,7 +4,6 @@ import type { IProps } from './types/IProps';
 
 function StartButton(props: IProps) {
   const { children, icon, variant = 'primary' } = props;
-  
 
   return (
     <button className={`start__button start__button--${variant}`}>
