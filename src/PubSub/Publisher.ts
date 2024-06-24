@@ -1,10 +1,9 @@
-import { Broker } from './Broker';
-import { Message } from './Message';
+import type { Broker } from './Base';
 
-export class Publisher {
-  constructor(private broker: Broker) {}
+export class Publisher<T> {
+  constructor(private broker: Broker<T>) {}
 
-  publish(message: Message) {
-    this.broker.publish(message);
+  publish(topic: string, message: T): void {
+    this.broker.publish(topic, message);
   }
 }

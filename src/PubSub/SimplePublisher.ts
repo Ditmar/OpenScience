@@ -1,14 +1,12 @@
 import { Publisher } from './Publisher';
-import { Message } from './Message';
 import { SimpleBroker } from './SimpleBroker';
 
-export class SimplePublisher extends Publisher {
-  constructor(broker: SimpleBroker) {
+export class SimplePublisher<T> extends Publisher<T> {
+  public constructor(broker: SimpleBroker<T>) {
     super(broker);
   }
 
-  sendMessage(content: string) {
-    const message = new Message(content);
-    this.publish(message);
+  publish(topic: string, message: T): void {
+    super.publish(topic, message);
   }
 }
