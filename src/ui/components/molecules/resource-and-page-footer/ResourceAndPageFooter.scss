@@ -31,9 +31,13 @@
   .resource-and-page-footer-content {
     display: flex;
     font-family: Montserrat, sans-serif;  
-    font-weight: 300;
+    font-weight: 300px;
     margin-left: 0.625rem;
     margin-top: 0.938rem;
+
+    .variables {
+      width: 43.75rem;
+    }
 
     .variables a {
       text-decoration: none;
