@@ -1,0 +1,40 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/breakpoints';
+
+.share {
+    display: flex;
+    flex-direction: column;
+
+    .button__share{
+        height: 2.2rem;
+        width: 1.679rem;
+
+        @include respond-to('small') {
+            height: 2.2rem;
+            width: 1.679rem;
+          }
+        
+          @include respond-to('medium') {
+            height: 3.6rem;
+            width: 2.673rem;
+          }
+        
+          @include respond-to('large') {
+            height: 3.6rem;
+            width: 2.673rem;
+          }
+        
+          @include respond-to('extra-large') {
+            height: 3.6rem;
+            width: 2.673rem;
+          }
+    }
+
+    .button__icons svg {
+        display: flexbox;
+        height: 100%;
+        width: 100%;
+      }
+  }
+  
