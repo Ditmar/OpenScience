@@ -1,0 +1,61 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.volume-box {
+  align-items: center;
+  background-color: $ads-tertiary-main;
+  display: flex;
+  height: 2rem;
+  justify-content: center;
+  left: 50%;
+  padding: 0.5rem;
+  position: absolute;
+  top: 10%;
+  transform: translateX(-50%);
+  width: 11.75rem;
+
+  .content {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  &.custom-label-date-color {
+    .volumen {
+      font-size: 0.75rem;
+      text-transform: capitalize;
+    }
+
+    .labeldate,
+    .separator {
+      color: $ads-text-main;
+      font-family: Roboto, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 800;
+      line-height: 0.88rem;
+      opacity: 1;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $ads-text-main-hover;
+      }
+    }
+  }
+
+  @media (width >= 768px) {
+    height: 6.625rem;
+    width: 26.25rem;
+
+    .content {
+      .labeldate,
+      .separator,
+      .volumen {
+        font-size: 1.5rem;
+        line-height: 1.2rem;
+      }
+    }
+  }
+}
