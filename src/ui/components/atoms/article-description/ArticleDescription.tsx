@@ -1,23 +1,21 @@
 import React from 'react';
-import './ArticleDescription.scss';
+import styles from './ArticleDescription.module.scss';
 import type { IProps } from './types/IProps';
 
 function ArticleDescription({ article, variant }: IProps) {
-  const textStyleMap = {
-    bold: 'bold-text',
-    italic: 'italic-text',
-    underline: 'underline-text',
-    highlight: 'highlight-text',
+  const textStyleMap: Record<string, string> = {
+    bold: styles['bold-text'],
+    italic: styles['italic-text'],
+    underline: styles['underline-text'],
+    highlight: styles['highlight-text'],
+    default: styles['default-text'],
   };
 
-  let textStyle = 'default-class';
-  if (variant !== undefined && variant !== 'default') {
-    textStyle = textStyleMap[variant];
-  }
+  const textStyle = variant && textStyleMap[variant] ? textStyleMap[variant] : textStyleMap.default;
 
   return (
-    <div className="article-description">
-      <p className={`article-description__text ${textStyle}`}>{article}</p>
+    <div className={styles['article-description']}>
+      <p className={`${styles['article-description__text']} ${textStyle}`}>{article}</p>
     </div>
   );
 }

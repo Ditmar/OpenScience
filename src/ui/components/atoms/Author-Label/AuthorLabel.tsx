@@ -1,8 +1,10 @@
-import './styles.scss';
+import styles from './AuthorLabel.module.scss';
 import type { IProps } from './types/IProps';
 
-function AuthorLabel(props: IProps) {
-  const { variant } = props;
-  return <p className="author">{variant}</p>;
+function AuthorLabel({ variant }: IProps) {
+  const variantClass = styles[variant as keyof typeof styles];
+
+  return <p className={`${styles.author} ${variantClass}`}>{variant}</p>;
 }
+
 export default AuthorLabel;
