@@ -8,7 +8,11 @@ function ButtonLabel({ children, variant = 'primary', icon }: IProps) {
   return (
     <div className={styles.labelIcon__container}>
       {icon && (
-        <Icon data-testid="logo_icon" src={icon} className={`${styles.labelIcon__icon} ${colorFont}`} />
+        <Icon
+          data-testid="logo_icon"
+          src={icon}
+          className={`${styles.labelIcon__icon} ${colorFont}`}
+        />
       )}
       <span className={styles.labelIcon__label}>{children}</span>
     </div>
