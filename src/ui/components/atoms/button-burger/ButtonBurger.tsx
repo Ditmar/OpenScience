@@ -1,6 +1,6 @@
-import styles from './ButtonBurger.module.scss';
 import type { IProps } from './types/IProps';
 import { Icon } from '../../../utils/svg-icons/icons';
+import styles from './ButtonBurger.module.scss';
 
 function ButtonBurger({ icon, color, onClick }: IProps) {
   const colorFont = styles[color as keyof typeof styles];
