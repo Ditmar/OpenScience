@@ -14,4 +14,16 @@
   &:hover {
     color: $ads-text-main-hover;
   }
+
+  @include respond-to('small') {
+    font-size: 1rem;
+  }
+
+  @include respond-to('medium') {
+    font-size: $ads-font-size-sixth;
+  }
+
+  @include respond-to('large') {
+    font-size: 1rem;
+  }
 }
