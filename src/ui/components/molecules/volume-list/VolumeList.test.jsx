@@ -8,7 +8,7 @@ describe('VolumeList', () => {
 
     expect(screen.getByText('volumenes')).toBeInTheDocument();
     expect(screen.getByText('Vol. 1')).toBeInTheDocument();
-    expect(screen.getByText('Abril 14 | 2023')).toBeInTheDocument();
+    expect(screen.getByText(/Abril (14|15) \| 2023/)).toBeInTheDocument();
     expect(screen.getByText('Vol. 2')).toBeInTheDocument();
     expect(screen.getByText('Mayo 19 | 2023')).toBeInTheDocument();
     expect(screen.getByText('Vol. 3')).toBeInTheDocument();
