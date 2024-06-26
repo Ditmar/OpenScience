@@ -20,5 +20,4 @@ describe('VolumeList', () => {
     expect(screen.getByText('Vol. 6')).toBeInTheDocument();
     expect(screen.getByText(/Septiembre (9|10) \| 2023/)).toBeInTheDocument();
   });
-
 });
