@@ -24,29 +24,33 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Featured: Story = {
   args: {
     children: (
       <>
-        <LabelFeaturedArticles text="ARTÍCULOS DESTACADOS" ColorVariant="main" />
-        <LabelDate date={new Date(2023, 6, 15)} overflow={false} />
-        <ArticleTitle
-          title="CANOPY-TOP MEASUREMENTS DO NOT ACCURATELY QUANTIFY CANOPY-SCALE LEAF THERMOREGULATION"
-          variant="default"
-        />
-        <ArticleDescription
-          article="Spectral tuning of visual pigments often facilitates adaptation to new environments, 
+        <div className="featured__item">
+          <LabelFeaturedArticles text="ARTÍCULOS DESTACADOS" ColorVariant="main" />
+          <LabelDate date={new Date(2023, 3, 15)} overflow={false} />
+          <ArticleTitle
+            title="CANOPY-TOP MEASUREMENTS DO NOT ACCURATELY QUANTIFY CANOPY-SCALE LEAF THERMOREGULATION"
+            variant="default"
+          />
+          <ArticleDescription
+            article="Spectral tuning of visual pigments often facilitates adaptation to new environments, 
           and it is intriguing to study the visual ecology of pelagic sharks with secondarily expanded 
           habitats.The"
-          variant="default"
-        />
-        <AuthorLabel variant="Marco Antonio Lopez" />
-        <div className="buttons">
-          <VariableButton icon={PdfIcon}>PDF</VariableButton>
-          <VariableButton icon={LinkIcon}>Link</VariableButton>
+            variant="default"
+          />
         </div>
-        <PointsDivider color="secondary" size="medium" variant="solid-line" />
-        <PointsDivider color="tertiary" size="small" variant="points" />
+        <div className="divider">
+          <AuthorLabel variant="Marco Antonio Lopez" />
+          <div className="buttons">
+            <VariableButton icon={PdfIcon}>PDF </VariableButton>
+            <VariableButton icon={LinkIcon}>Link</VariableButton>
+          </div>
+        </div>
+        <PointsDivider color="tertiary" size="medium" variant="solid-line" />
+        <PointsDivider color="primary" size="small" variant="points" />
       </>
     ),
   },

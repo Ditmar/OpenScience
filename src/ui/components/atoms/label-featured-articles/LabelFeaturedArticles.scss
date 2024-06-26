@@ -1,0 +1,44 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.label-featured-articles__text {
+  background-color: $ads-background-main;
+  background-color: transparent;
+  font-family: Montserrat, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: $ads-letter-spacing;
+  line-height: 1.1;
+  padding: $ads-letter-spacing;
+  text-transform: uppercase;
+
+  @include respond-to('small') {
+    font-size: 1.5rem;
+    width: 7.5rem;
+  }
+
+  @include respond-to('medium') {
+    font-size: 1.8rem;
+    width: rem;
+  }
+
+  @include respond-to('large') {
+    font-size: 2rem;
+    width: 16rem;
+  }
+}
+
+.label-featured-articles--main .label-featured-articles__text {
+  background-color: $ads-background-main;
+  background-color: transparent;
+  color: $ads-secondary-main;
+  padding: $ads-letter-spacing;
+}
+
+.label-featured-articles--primary .label-featured-articles__text {
+  color: $ads-primary-main;
+}
+
+.label-featured-articles--secondary .label-featured-articles__text {
+  color: $ads-primary-main;
+}

@@ -4,9 +4,6 @@ import FeaturedArticle from './FeaturedArticle';
 import LabelFeaturedArticles from '../../atoms/label-featured-articles/LabelFeaturedArticles';
 import ArticleTitle from '../../atoms/article-title/ArticleTitle';
 import ArticleDescription from '../../atoms/article-description/ArticleDescription';
-import VariableButton from '../../atoms/variable-button/VariableButton';
-import PdfIcon from '../../../../assets/icons/pdf.svg?raw';
-import LinkIcon from '../../../../assets/icons/share.svg?raw';
 import PointsDivider from '../../atoms/points-divider/PointsDivider';
 import LabelDate from '../../atoms/label-date/LabelDate';
 import AuthorLabel from '../../atoms/Author-Label/AuthorLabel';
@@ -28,12 +25,8 @@ describe('FeaturedArticle Component', () => {
           variant="default"
         />
         <AuthorLabel variant="Marco antonio lopez" />
-        <div className="buttons">
-          <VariableButton icon={PdfIcon}>PDF</VariableButton>
-          <VariableButton icon={LinkIcon}>Link</VariableButton>
-        </div>
-        <PointsDivider color="secondary" size="medium" variant="solid-line" />
-        <PointsDivider color="tertiary" size="small" variant="points" />
+        <PointsDivider color="tertiary" size="medium" variant="solid-line" />
+        <PointsDivider color="primary" size="small" variant="points" />
       </FeaturedArticle>,
     );
 

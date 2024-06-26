@@ -1,25 +1,20 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 
-.variable__label {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+.featured-article-conteiner {
+  position: relative;
 }
 
-.button-icon {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  height: 3.5rem;
-  padding: 0.5rem;
-  width: 3rem;
-}
-
-.divider__label {
+.divider {
   align-items: center;
   display: flex;
-  gap: 10rem;
+  justify-content: space-between;
+  margin: 0;
+  width: 100%;
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+  }
 }
