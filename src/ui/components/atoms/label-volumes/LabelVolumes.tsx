@@ -1,12 +1,15 @@
+import React from 'react';
+import styles from './LabelVolumes.module.scss';
 import type { IProps } from './types/IProps';
-import './LabelVolumes.scss';
 
-function LabelVolumes(props: IProps) {
-  const { text, color = 'primary' } = props;
-  const colorText = `label-volumes__text--${color}`;
+function LabelVolumes({ text, color = 'primary' }: IProps) {
+  const colorText = styles[`label-volumes__text--${color}`];
 
   return (
-    <div className={`label-volumes__text ${colorText}`}>
+    <div
+      className={`${styles['label-volumes__text']} ${colorText}`}
+      data-testid="label-volumes-text"
+    >
       <span>{text}</span>
     </div>
   );
