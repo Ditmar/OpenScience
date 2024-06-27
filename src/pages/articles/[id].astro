@@ -1,0 +1,22 @@
+---
+import LabelRecentArticles from '../../components/label-recent-articles.astro';
+import ArticleDescription from '../../components/article-description.astro';
+
+const { id } = Astro.params;
+const postRes = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+const post = await postRes.json();
+---
+
+<div>
+  <LabelRecentArticles title="Artículo Detallado" />
+  <ArticleDescription
+    text="Lee el artículo completo y accede a información detallada sobre este tema específico."
+  />
+  <div class="container">
+    <article>
+      <h1>{post.title}</h1>
+      <p>{post.body}</p>
+      <a href="/">Volver al inicio</a>
+    </article>
+  </div>
+</div>
