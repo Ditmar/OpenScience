@@ -45,8 +45,8 @@ export const Featured: Story = {
         <div className="divider">
           <AuthorLabel variant="Marco Antonio Lopez" />
           <div className="buttons">
-            <VariableButton icon={PdfIcon}>PDF </VariableButton>
-            <VariableButton icon={LinkIcon}>Link</VariableButton>
+            <VariableButton icon={PdfIcon} />
+            <VariableButton icon={LinkIcon} />
           </div>
         </div>
         <PointsDivider color="tertiary" size="medium" variant="solid-line" />
