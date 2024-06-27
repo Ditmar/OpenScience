@@ -6,7 +6,7 @@ function ErrorMessage(props: IProps) {
   const isServerError = code === 500;
 
   return (
-    <div className={`${styles.errorMessage} ${isServerError ? styles.serverError : ''}`}>
+    <div className={`${styles['error-message']} ${isServerError ? styles['server-error'] : ''}`}>
       <h1>{code}</h1>
       <p className={styles.title}>{title}</p>
       <p className={styles.message}>{message}</p>
