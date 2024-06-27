@@ -9,7 +9,7 @@ import LabelDate from '../../atoms/label-date/LabelDate';
 import AuthorLabel from '../../atoms/Author-Label/AuthorLabel';
 
 describe('FeaturedArticle Component', () => {
-  test('should render', () => {
+  test('should render FeaturedArticle', () => {
     render(
       <FeaturedArticle variant="default" article="Test Article" date={new Date(2023, 3, 15)}>
         <LabelFeaturedArticles text="ARTÍCULOS DESTACADOS" ColorVariant="main" />

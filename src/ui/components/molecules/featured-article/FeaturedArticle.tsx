@@ -3,7 +3,7 @@ import './FeaturedArticle.scss';
 
 function FeaturedArticle(props: IProps) {
   const { children } = props;
-  return <div className="featured_article_conteiner">{children}</div>;
+  return <div className="featured-article">{children}</div>;
 }
 
 export default FeaturedArticle;
