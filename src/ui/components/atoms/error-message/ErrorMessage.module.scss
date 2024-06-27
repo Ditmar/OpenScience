@@ -1,9 +1,9 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 
-.error-message {
+.errorMessage {
   color: $ads-primary-main;
-  font-family: Inter, sans-serif;
+  font-family: Lato, sans-serif;
   padding: 15rem;
   text-align: center;
 
@@ -30,7 +30,7 @@
 
   h1 {
     color: $ads-primary-main;
-    font-family: Inter, sans-serif;
+    font-family: Lato, sans-serif;
     font-size: $ads-font-size-first;
     font-weight: $ads-font-weight-first;
     line-height: 7.261rem;
@@ -55,80 +55,79 @@
       line-height: 4rem;
     }
   }
+}
 
-  .title {
-    color: $ads-primary-main;
-    font-family: Inter, sans-serif;
+.title {
+  color: $ads-primary-main;
+  font-family: Lato, sans-serif;
+  font-size: $ads-font-size-quarter;
+  font-weight: $ads-font-weight-first;
+  line-height: 3.026rem;
+  margin: 0;
+  margin-bottom: 0.5rem;
+
+  @include respond-to('small-mobile') {
+    font-size: 2.5rem;
+  }
+
+  @include respond-to('medium') {
     font-size: $ads-font-size-quarter;
     font-weight: $ads-font-weight-first;
     line-height: 3.026rem;
-    margin: 0;
-    margin-bottom: 0.5rem;
-
-    @include respond-to('small-mobile') {
-      font-size: 2.5rem;
-    }
-
-    @include respond-to('medium') {
-      font-size: $ads-font-size-quarter;
-      font-weight: $ads-font-weight-first;
-      line-height: 3.026rem;
-    }
-  }
-
-  .message {
-    color: $ads-primary-main;
-    font-family: Inter, sans-serif;
-    font-size: $ads-font-size-fifth;
-    font-weight: $ads-font-weight-first;
-    line-height: 0.908rem;
-    margin: 0.1rem;
-
-    @include respond-to('small-mobile') {
-      font-size: 1rem;
-      line-height: 1.3rem;
-    }
-
-    @include respond-to('medium') {
-      font-size: $ads-font-size-fifth;
-      font-weight: $ads-font-weight-first;
-      line-height: 0.908rem;
-    }
-
-    @include respond-to('extra-large') {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
-  }
-
-  .a {
-    color: $ads-primary-main;
-    font-family: Inter, sans-serif;
-    font-size: $ads-font-size-fifth;
-    font-weight: $ads-font-weight-first;
-    line-height: 0.908rem;
-    margin: 0.1rem;
-    text-decoration: none;
-
-    @include respond-to('small') {
-      font-size: 1.25rem;
-    }
-
-    @include respond-to('medium') {
-      font-size: 1.5rem;
-    }
-
-    @include respond-to('large') {
-      font-size: 0.75rem;
-    }
-
-    @include respond-to('extra-large') {
-      font-size: 1rem;
-    }
   }
 }
 
-.server-error {
+.message {
+  color: $ads-primary-main;
+  font-family: Lato, sans-serif;
+  font-size: $ads-font-size-fifth;
+  font-weight: $ads-font-weight-first;
+  line-height: 0.908rem;
+  margin: 0.1rem;
+
+  @include respond-to('small-mobile') {
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+
+  @include respond-to('medium') {
+    font-size: $ads-font-size-fifth;
+    font-weight: $ads-font-weight-first;
+    line-height: 0.908rem;
+  }
+
+  @include respond-to('extra-large') {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+.link {
+  color: $ads-primary-main;
+  font-family: Lato, sans-serif;
+  font-size: $ads-font-size-fifth;
+  font-weight: $ads-font-weight-first;
+  line-height: 0.908rem;
+  margin: 0.1rem;
+
+  @include respond-to('small') {
+    font-size: 1.25rem;
+  }
+
+  @include respond-to('medium') {
+    font-size: 1.5rem;
+  }
+
+  @include respond-to('large') {
+    font-size: 0.75rem;
+  }
+
+  @include respond-to('extra-large') {
+    font-size: 2rem;
+  }
+}
+
+.serverError {
   @include respond-to('small-mobile') {
     padding: 0;
     padding-top: 12rem;
@@ -147,7 +146,7 @@
   }
 
   h1 {
-    font-family: Inter, sans-serif;
+    font-family: Lato, sans-serif;
     font-size: $ads-font-size-third;
     font-weight: $ads-font-weight-second;
     line-height: 9.682rem;
@@ -173,7 +172,7 @@
   }
 
   .title {
-    font-family: Inter, sans-serif;
+    font-family: Lato, sans-serif;
     font-size: $ads-font-size-quarter;
     font-weight: $ads-font-weight;
     line-height: 3.026rem;
@@ -191,7 +190,7 @@
   }
 
   .message {
-    font-family: Inter, sans-serif;
+    font-family: Lato, sans-serif;
     font-size: $ads-font-size-sixth;
     font-weight: $ads-font-weight-first;
     line-height: 1.134rem;
@@ -208,7 +207,7 @@
     }
 
     @include respond-to('extra-large') {
-      font-size: 1rem;
+      font-size: 2rem;
     }
   }
 }
