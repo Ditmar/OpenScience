@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Divider.module.scss'; // Importa los estilos como CSS Modules
+import styles from './Divider.module.scss';
 import type { IProps } from './types/IProps';
 
 function Divider(props: IProps) {
