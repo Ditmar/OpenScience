@@ -1,4 +1,4 @@
-import './ErrorMessage.scss';
+import styles from './ErrorMessage.module.scss';
 import type { IProps } from './types/IProps';
 
 function ErrorMessage(props: IProps) {
@@ -6,16 +6,19 @@ function ErrorMessage(props: IProps) {
   const isServerError = code === 500;
 
   return (
-    <div className={`error-message ${isServerError ? 'server-error' : ''}`}>
+    <div className={`${styles.errorMessage} ${isServerError ? styles.serverError : ''}`}>
       <h1>{code}</h1>
-      <p className="title">{title}</p>
-      <p className="message">{message}</p>
-      <p className="message">
+      <p className={styles.title}>{title}</p>
+      <p className={styles.message}>{message}</p>
+      <p className={styles.message}>
         {messageinit}
-        <a href={redirectTo}>{linkText}</a>
+        <a href={redirectTo} className={styles.a}>
+          {linkText}
+        </a>
         {messagefinish}
       </p>
     </div>
   );
 }
+
 export default ErrorMessage;
