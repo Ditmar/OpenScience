@@ -16,17 +16,19 @@
   @include respond-to('small') {
     display: grid;
     grid-template-areas: 'logo-section variables-section';
-    width: 21rem;
+    width: 37rem;
   }
 
   @include respond-to('large-tablet') {
     display: grid;
     grid-template-areas: 'logo-section variables-section';
+    width: 48rem;
   }
 
   @include respond-to('large') {
     display: grid;
     grid-template-areas: 'logo-section variables-section';
+    width: 52rem;
   }
 
   @include respond-to('extra-large') {
@@ -76,29 +78,49 @@
     padding-left: 0;
     padding-top: 0;
     width: 7.5rem;
+
+    span {
+      font-size: 0.938rem;
+    }
   }
 
   @include respond-to('small') {
     margin-top: 0;
     padding-left: 0.938rem;
     width: 14rem;
+
+    span {
+      font-size: 0.938rem;
+    }
   }
 
   @include respond-to('large-tablet') {
     margin-top: 0;
     padding-left: 0.938rem;
     width: 14rem;
+
+    span {
+      font-size: 0.938rem;
+    }
   }
 
   @include respond-to('large') {
     margin-top: 0;
     padding-left: 0.938rem;
-    width: 22rem;
+    width: 21.5rem;
+
+    span {
+      font-size: 1.5rem;
+    }
   }
 
   @include respond-to('extra-large') {
     padding-right: 10rem;
     width: 12rem;
+
+    span {
+      font-size: 1.5rem;
+    }
   }
 }
 
@@ -109,26 +131,46 @@
   @include respond-to('small-mobile') {
     display: contents;
     justify-content: left;
+
+    span {
+      font-size: 0.875rem;
+    }
   }
 
   @include respond-to('small') {
     display: flex;
     justify-content: left;
+
+    span {
+      font-size: 0.875rem;
+    }
   }
 
   @include respond-to('large-tablet') {
     display: flex;
     justify-content: left;
+
+    span {
+      font-size: 0.875rem;
+    }
   }
 
   @include respond-to('large') {
     display: flex;
     justify-content: left;
+
+    span {
+      font-size: 1.5rem;
+    }
   }
 
   @include respond-to('extra-large') {
     display: flex;
     justify-content: left;
+
+    span {
+      font-size: 1.5rem;
+    }
 
     .volumenes {
       padding-left: 10rem;
@@ -142,9 +184,32 @@
 
   @include respond-to('small-mobile') {
     margin-right: 0;
-    padding-right: 0;
     padding-top: 0;
     width: 7.5rem;
+
+    span {
+      font-size: 0.938rem;
+    }
+
+    .texto {
+      font-size: 0.875rem;
+    }
+  }
+
+  @include respond-to('large') {
+    width: 10rem;
+
+    span {
+      font-size: 1.5rem;
+    }
+  }
+
+  @include respond-to('extra-large') {
+    width: 10rem;
+
+    span {
+      font-size: 1.5rem;
+    }
   }
 }
 
