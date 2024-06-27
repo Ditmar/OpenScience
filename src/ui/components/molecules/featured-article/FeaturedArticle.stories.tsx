@@ -30,7 +30,7 @@ export const Featured: Story = {
       <>
         <div className="featured__item">
           <LabelFeaturedArticles text="ARTÍCULOS DESTACADOS" ColorVariant="main" />
-          <LabelDate date={new Date(2023, 3, 15)} overflow={false} />
+          <LabelDate date={new Date(2023, 3, 15)} />
           <ArticleTitle
             title="CANOPY-TOP MEASUREMENTS DO NOT ACCURATELY QUANTIFY CANOPY-SCALE LEAF THERMOREGULATION"
             variant="default"
