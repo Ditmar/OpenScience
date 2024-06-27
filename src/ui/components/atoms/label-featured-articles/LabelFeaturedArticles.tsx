@@ -1,22 +1,25 @@
-import './LabelFeaturedArticles.scss';
+import React from 'react';
+import styles from './LabelFeaturedArticles.module.scss';
 import type { IProps } from './types/IProps';
 
 function LabelFeaturedArticles({ text = 'artículos destacados', ColorVariant = 'main' }: IProps) {
-  let LabelColorClass = '';
-  let BackgroundColorClass = '';
+  let labelColorClass = '';
+  let backgroundColorClass = '';
 
   if (ColorVariant === 'main') {
-    LabelColorClass = 'label-featured-articles--main';
-    BackgroundColorClass = 'label-featured-articles--main-bg';
+    labelColorClass = styles['label-featured-articles--main'];
+    backgroundColorClass = styles['label-featured-articles--mainBg'];
   } else if (ColorVariant === 'primary') {
-    LabelColorClass = 'label-featured-articles--primary';
+    labelColorClass = styles['label-featured-articles--primary'];
   } else {
-    LabelColorClass = 'label-featured-articles--secondary';
+    labelColorClass = styles['label-featured-articles--secondary'];
   }
 
   return (
-    <div className={`label-featured-articles ${LabelColorClass} ${BackgroundColorClass}`}>
-      <span className="label-featured-articles__text">{text}</span>
+    <div
+      className={`${styles['label-featured-articles']} ${labelColorClass} ${backgroundColorClass}`}
+    >
+      <span className={styles['label-featured-articles__text']}>{text}</span>
     </div>
   );
 }

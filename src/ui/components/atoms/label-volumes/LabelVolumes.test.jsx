@@ -13,8 +13,8 @@ describe('LabelVolumes Component', () => {
   });
 
   test('Should apply the correct CSS class', () => {
-    const { container } = render(<LabelVolumes text="VOLÚMENES" />);
-    const labelElement = container.querySelector('.label-volumes__text');
+    render(<LabelVolumes text="VOLÚMENES" />);
+    const labelElement = screen.getByTestId('label-volumes-text');
     expect(labelElement).toBeInTheDocument();
     expect(labelElement).toHaveTextContent('VOLÚMENES');
   });
