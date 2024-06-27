@@ -1,7 +1,7 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 
-.errorMessage {
+.error-message {
   color: $ads-primary-main;
   font-family: Lato, sans-serif;
   padding: 15rem;
@@ -102,32 +102,7 @@
   }
 }
 
-.link {
-  color: $ads-primary-main;
-  font-family: Lato, sans-serif;
-  font-size: $ads-font-size-fifth;
-  font-weight: $ads-font-weight-first;
-  line-height: 0.908rem;
-  margin: 0.1rem;
-
-  @include respond-to('small') {
-    font-size: 1.25rem;
-  }
-
-  @include respond-to('medium') {
-    font-size: 1.5rem;
-  }
-
-  @include respond-to('large') {
-    font-size: 0.75rem;
-  }
-
-  @include respond-to('extra-large') {
-    font-size: 2rem;
-  }
-}
-
-.serverError {
+.server-error {
   @include respond-to('small-mobile') {
     padding: 0;
     padding-top: 12rem;

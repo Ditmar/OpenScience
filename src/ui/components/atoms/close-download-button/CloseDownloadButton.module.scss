@@ -6,62 +6,63 @@
   border: none;
   height: 3.5rem;
   padding: 1.3rem;
+  transition: background-color 0.3s ease;
   width: 3rem;
 
   @include respond-to('small') {
-    background: $ads-text-main;
     height: 3.5rem;
     width: 3rem;
   }
 
   @include respond-to('medium') {
-    background: $ads-text-main;
     height: 4.5rem;
     width: 4rem;
   }
 
   @include respond-to('large') {
-    background: $ads-text-main;
     height: 5.5rem;
     width: 5rem;
   }
 
   @include respond-to('extra-large') {
-    background: $ads-text-main;
     height: 6rem;
     width: 5.2rem;
   }
 
-  .button__icon svg {
-    display: flexbox;
+  &:hover {
+    background: linear-gradient(to bottom right, $ads-text-main, $ads-text-main-hover);
+  }
+
+  .button-icon {
+    display: flex;
     height: 100%;
     width: 100%;
+
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+
+    &--primary {
+      path {
+        fill: $ads-text-main;
+      }
+    }
+
+    &--secondary {
+      path {
+        fill: $ads-text-main;
+      }
+    }
   }
 
-  .button__icon #path {
-    display: flexbox;
-    fill: $ads-text-main;
-
-    @include respond-to('large') {
+  &:hover .button-icon path {
+    @include respond-to('small') {
       fill: $ads-text-main;
     }
 
-    @include respond-to('extra-large') {
+    @include respond-to('medium') {
       fill: $ads-text-main;
-    }
-  }
-
-  .close-download-button:hover {
-    background: $ads-text-main;
-
-    .button__icon #path {
-      @include respond-to('small') {
-        fill: $ads-text-main;
-      }
-
-      @include respond-to('medium') {
-        fill: $ads-text-main;
-      }
     }
   }
 }
