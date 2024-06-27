@@ -6,14 +6,14 @@
 }
 
 .carousel__prev,
-  .carousel__next {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: calc(50% - 20px);
-    transform: translateY(-50%);
-    z-index: 1;
+.carousel__next {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: calc(50% - 20px);
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
 .carousel__prev {
@@ -26,7 +26,7 @@
   }
 
   @include respond-to('medium') {
-    left: 65px
+    left: 65px;
   }
 }
 

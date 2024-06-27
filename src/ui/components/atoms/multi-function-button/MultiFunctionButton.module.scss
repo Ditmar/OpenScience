@@ -1,7 +1,7 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 
-.variable__button {
+.variable-button {
   background: $ads-background-main;
   border: none;
   height: 3.3rem;
@@ -37,12 +37,12 @@
   }
 }
 
-.button__icon {
+.button-icon {
   align-items: center;
   display: flex;
   justify-content: center;
 
-  .button__icon svg {
+  .button-icon svg {
     @include respond-to('small-mobile') {
       min-height: 2.2rem;
       min-width: 1.7rem;
@@ -60,7 +60,7 @@
   }
 }
 
-.button__icon g path {
+.button-icon g path {
   fill: $ads-primary-main;
 
   @include respond-to('medium') {
@@ -68,10 +68,10 @@
   }
 }
 
-.variable__button:hover {
+.variable-button:hover {
   background: $ads-text-main;
 
-  .button__icon g path {
+  .button-icon g path {
     @include respond-to('small-mobile') {
       fill: $ads-color-main;
     }
