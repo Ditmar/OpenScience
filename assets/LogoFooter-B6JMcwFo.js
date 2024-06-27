@@ -1,4 +1,4 @@
-import"./_variables-l0sNRNKZ.js";import{j as a}from"./jsx-runtime-_e34SzbC.js";import{I as M}from"./icons-CP78o3dy.js";import"./index-DVXBtNgz.js";import"./index-CYjD5YP1.js";const l=`<?xml version="1.0" standalone="no"?>
+import{j as c}from"./jsx-runtime-_e34SzbC.js";import{I as d}from"./icons-CP78o3dy.js";const s=`<?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -107,14 +107,4 @@ c104 -134 198 -244 207 -246 16 -3 17 19 17 282 0 278 -1 286 -20 286 -19 0
 -47 0 -80 -4 -80 -10z"/>
 </g>
 </svg>
-`;function i(m){const{icon:o,color:h}=m,z=`logo--${h}`;return a.jsx("div",{className:`logo ${z}`,children:o&&a.jsx(M,{"data-testid":"logo_icon",src:o,className:"logo-icon"})})}i.__docgenInfo={description:"",methods:[],displayName:"LogoFooter",props:{icon:{required:!1,tsType:{name:"string"},description:""},color:{required:!1,tsType:{name:"union",raw:"'primary' | 'secondary'",elements:[{name:"literal",value:"'primary'"},{name:"literal",value:"'secondary'"}]},description:""}}};const f={title:"ui/components/atoms/logo-footer",component:i},n={args:{icon:l,color:"primary"}},c={args:{icon:l,color:"secondary"}};var t,r,e;n.parameters={...n.parameters,docs:{...(t=n.parameters)==null?void 0:t.docs,source:{originalSource:`{
-  args: {
-    icon: logo,
-    color: 'primary'
-  }
-}`,...(e=(r=n.parameters)==null?void 0:r.docs)==null?void 0:e.source}}};var s,p,d;c.parameters={...c.parameters,docs:{...(s=c.parameters)==null?void 0:s.docs,source:{originalSource:`{
-  args: {
-    icon: logo,
-    color: 'secondary'
-  }
-}`,...(d=(p=c.parameters)==null?void 0:p.docs)==null?void 0:d.source}}};const x=["Primary","secundary"];export{n as Primary,x as __namedExportsOrder,f as default,c as secundary};
+`;function p(t){const{icon:n,color:a}=t,o=`logo--${a}`;return c.jsx("div",{className:`logo ${o}`,children:n&&c.jsx(d,{"data-testid":"logo_icon",src:n,className:"logo-icon"})})}p.__docgenInfo={description:"",methods:[],displayName:"LogoFooter",props:{icon:{required:!1,tsType:{name:"string"},description:""},color:{required:!1,tsType:{name:"union",raw:"'primary' | 'secondary'",elements:[{name:"literal",value:"'primary'"},{name:"literal",value:"'secondary'"}]},description:""}}};export{p as L,s as l};
