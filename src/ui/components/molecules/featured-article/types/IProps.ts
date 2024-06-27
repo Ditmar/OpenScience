@@ -6,22 +6,9 @@ export interface IProps {
   text?: string;
   icon?: string;
   size?: 'small' | 'medium' | 'large';
-  variant:
-    | 'default'
-    | 'primary'
-    | 'secondary '
-    | 'special'
-    | 'bold'
-    | 'italic'
-    | 'underline'
-    | 'highlight'
-    | 'solid-line'
-    | 'segmented-line'
-    | 'points'
-    | 'main';
+  variant: 'default' | 'primary' | 'secondary ' | 'solid-line' | 'points' | 'main';
   color?: 'primary' | 'secondary' | 'tertiary';
   ColorVariant?: 'main' | 'primary' | 'secondary';
   article: string;
   date: Date;
-  overflow?: boolean;
 }
