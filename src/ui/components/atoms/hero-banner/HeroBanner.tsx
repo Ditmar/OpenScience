@@ -1,14 +1,12 @@
-import './styles.scss';
+import styles from './HeroBanner.module.scss';
 import type { IProps } from './types/IProps';
 
-function HeroBanner(props: IProps) {
-  const { backgroundImage, alt, children, className } = props;
-
+function HeroBanner({ backgroundImage, alt, children, className }: IProps) {
   return (
-    <div className="hero-banner">
-      <img src={backgroundImage} alt={alt} />
-      <div className="overlay">
-        <div className={className}>{children}</div>
+    <div className={`${styles['hero-banner']} ${className || ''}`}>
+      <img src={backgroundImage} alt={alt} className={styles['hero-banner__img']} />
+      <div className={styles.overlay}>
+        <div className={styles['hero-banner__content']}>{children}</div>
       </div>
     </div>
   );
