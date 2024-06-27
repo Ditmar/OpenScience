@@ -11,11 +11,11 @@
   height: 4.5rem;
   width: 11.875rem;
 
-  &--primary {
+  &.primary {
     background-color: $ads-tertiary-main;
   }
 
-  &--secondary {
+  &.secondary {
     background-color: $ads-background-main;
   }
 }
