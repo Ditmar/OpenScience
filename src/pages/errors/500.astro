@@ -1,7 +1,15 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import ErrorMessage from '../../ui/components/atoms/error-message/ErrorMessage';
 ---
 
-<Layout title="Welcome to Astro."> Error 500 regrese mas tarde poblemas tecnicos </Layout>
+<Layout title="Welcome to Astro.">
+  <ErrorMessage
+    code={500}
+    title="Internal Server Error"
+    message="An internal server error has occurred."
+    redirectTo="/"
+  />
+</Layout>
 
 <style></style>
