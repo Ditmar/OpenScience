@@ -34,7 +34,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 1.25rem;
-  width: 11.125rem;
+  width: 8rem;
 
   @include respond-to('small-mobile') {
     margin-bottom: 0.8rem;

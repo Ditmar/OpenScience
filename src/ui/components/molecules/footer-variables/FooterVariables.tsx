@@ -29,7 +29,9 @@ function FooterVariables() {
         <DividerVariables />
         <div className="section2">
           <LabelResourcesPage text="PAGINA" />
-          <Variables text="UNIPOL.EDU.BO" colorVariant="primary" />
+          <div className="texto">
+            <Variables text="UNIPOL.EDU.BO" colorVariant="primary" />
+          </div>
         </div>
       </div>
     </div>
