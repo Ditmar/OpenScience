@@ -1,18 +1,19 @@
 import React from 'react';
-import './Thumbnail.scss';
+import styles from './Thumbnail.module.scss';
 import type { IProps } from './types/IProps';
 
 function Thumbnail(props: IProps) {
   const { pathImage, alt } = props;
 
   return (
-    <div className="thumbnail">
+    <div className={styles.thumbnail}>
       <img src={pathImage} alt={alt} />
-      <div className="overlay" aria-label="overlay">
+      <div className={styles.overlay} aria-label="overlay">
         {' '}
+        {/* Contenido del overlay */}
       </div>
     </div>
   );
 }
 
-export default Thumbnail;
+export default Thumbnail; // Exporta el componente por defecto
