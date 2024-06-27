@@ -1,4 +1,4 @@
-import{I as t,i as p,a as d}from"./icon-upload-primary-BRX9CiBl.js";import"./jsx-runtime-_e34SzbC.js";import"./index-DVXBtNgz.js";import"./icons-CP78o3dy.js";import"./index-CYjD5YP1.js";const g={title:"ui/components/atoms/icon-upload",component:t,argTypes:{onClick:{action:"click"}}},o={args:{children:"icon_upload_default",icon:p}},a={args:{children:"icon_upload_primary",icon:d}};var r,e,n;o.parameters={...o.parameters,docs:{...(r=o.parameters)==null?void 0:r.docs,source:{originalSource:`{
+import{I as t,i as p,a as d}from"./icon-upload-primary-BH5bAXDL.js";import"./jsx-runtime-_e34SzbC.js";import"./index-DVXBtNgz.js";import"./icons-CP78o3dy.js";import"./index-CYjD5YP1.js";const g={title:"ui/components/atoms/icon-upload",component:t,argTypes:{onClick:{action:"click"}}},o={args:{children:"icon_upload_default",icon:p}},a={args:{children:"icon_upload_primary",icon:d}};var r,e,n;o.parameters={...o.parameters,docs:{...(r=o.parameters)==null?void 0:r.docs,source:{originalSource:`{
   args: {
     children: 'icon_upload_default',
     icon: icon_upload_default
