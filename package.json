@@ -29,6 +29,7 @@
     "@types/react": "18.2.79",
     "@types/react-dom": "18.2.25",
     "astro": "4.6.3",
+    "astro-i18next": "^1.0.0-beta.21",
     "astrojs-service-worker": "2.0.0",
     "eslint-config-standard": "17.1.0",
     "express": "^4.19.2",

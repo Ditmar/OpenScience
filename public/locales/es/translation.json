@@ -1,0 +1,11 @@
+{
+    "page": {
+        "title": "Bienvenido a Astro!",
+        "description": "Bienvenido al sitio OPENSCIENCE, donde podrás descubrir artículos en el área de tecnología."
+    },
+    "error": {
+        "title": "Error",
+        "message500": "Error 500 regrese mas tarde poblemas tecnicos",
+        "message404": "404 pagina no encontrada"
+    }
+}
