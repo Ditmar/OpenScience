@@ -1,0 +1,11 @@
+---
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { t, changeLanguage } from "i18next";
+import Layout from "../../../layouts/Layout.astro";
+
+changeLanguage("en");
+---
+
+<Layout title="Astro"> {t('error.message404')} </Layout>
+
+<style></style>
