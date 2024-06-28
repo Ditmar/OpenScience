@@ -1,0 +1,112 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.panel {
+  background: $ads-background-main;
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  padding: 2.2rem;
+  width: 800px;
+
+  &--secondary {
+    position: sticky;
+    background-color: $ads-secondary-main;
+
+    .logo g {
+      fill: $ads-tertiary-main;
+    }
+
+    .button__label {
+      background-color: $ads-text-main-hover;
+    }
+  }
+}
+
+.logo {
+  align-items: center;
+  background: transparent;
+  display: flexbox;
+  margin-inline: auto;
+  width: 400px;
+  height: auto;
+}
+
+.logo .logo-icon {
+  & svg {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.Button__Google {
+  margin-inline: auto;
+  margin-bottom: 10px;
+}
+
+.Button__Facebook {
+  margin-inline: auto;
+}
+
+.button__label {
+  width: 400px;
+  height: auto;
+  border-radius: 20px;
+}
+
+.button__text {
+  font-size: $ads-font-size-quarter;
+}
+
+/* Pantalla grande (desktop) */
+@media (min-width: 1200px) {
+  .panel {
+    width: 800px;
+  }
+  .logo {
+    width: 400px;
+  }
+  .button__label {
+    width: 400px;
+  }
+}
+
+/* Pantalla mediana (tablet) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .panel {
+    width: 600px;
+  }
+  .logo {
+    width: 300px;
+  }
+  .button__label {
+    width: 300px;
+  }
+}
+
+/* Pantalla pequeña (mobile) */
+@media (max-width: 767px) {
+  .panel {
+    width: auto;
+    height: auto;
+    padding: 1.5rem;
+  }
+  .logo {
+    width: 200px;
+  }
+  .button__label {
+    width: 190px;
+    border-radius: 50px;
+  }
+  .button__text {
+    font-size: $ads-font-size-sixth;
+  }
+
+  .button__icon {
+    width: 20px;
+    height: 20px;
+    svg g{
+      fill: white;
+    }
+  }
+}
