@@ -18,16 +18,15 @@
 .logo {
   align-items: center;
   background: transparent;
-  display: flexbox;
   height: auto;
   margin-inline: auto;
   width: 400px;
-}
 
-.logo .logo-icon {
-  & svg {
-    height: 100%;
-    width: 100%;
+  .logo-icon {
+    svg {
+      height: 100%;
+      width: 100%;
+    }
   }
 }
 
@@ -44,16 +43,16 @@
   border-radius: 20px;
   height: auto;
   width: 500px;
-}
 
-.button__text {
-  font-size: $ads-font-size-second;
-  font-weight: $ads-font-weight-first;
-}
+  &__text {
+    font-size: $ads-font-size-second;
+    font-weight: $ads-font-weight-first;
+  }
 
-.button__icon {
-  height: 35px;
-  width: 37px;    
+  &__icon {
+    height: 35px;
+    width: 37px;
+  }
 }
 
 .panel--secondary .button__label {
@@ -64,60 +63,124 @@
   fill: $ads-tertiary-main;
 }
 
-/* Pantalla grande (desktop) */
-@media (width >= 1200px) {
+// Media queries usando las resoluciones definidas
+
+@include respond-to('small') {
   .panel {
-    width: 800px;
+    /* Estilos específicos para 'small' (480px) */
+    width: 400px;
   }
 
   .logo {
-    width: 400px;
+    margin-inline: auto;
+    width: 200px;
   }
 
   .button__label {
-    width: 400px;
+    /* Ajustes para 'small' */
+    border-radius: 50px;
+    width: 190px;
+
+    .button__text {
+      font-size: $ads-font-size-sixth;
+    }
+
+    .button__icon {
+      height: 20px;
+      width: 20px;
+    }
   }
 }
 
-/* Pantalla mediana (tablet) */
-@media (width >= 768px) and (width <= 1199px) {
+@include respond-to('small-mobile') {
   .panel {
-    width: 600px;
-  }
-
-  .logo {
-    width: 400px;
-  }
-
-  .button__label {
-    width: 400px;
-  }
-}
-
-/* Pantalla pequeña (mobile) */
-@media (width <= 767px) {
-  .panel {
-    height: auto;
+    /* Estilos específicos para 'small-mobile' (320px) */
     padding: 1.5rem;
     width: auto;
   }
 
   .logo {
+    margin-inline: auto;
     width: 200px;
   }
 
   .button__label {
+    /* Ajustes para 'small-mobile' */
     border-radius: 50px;
     width: 190px;
+
+    .button__text {
+      font-size: $ads-font-size-sixth;
+    }
+
+    .button__icon {
+      height: 20px;
+      width: 20px;
+    }
+  }
+}
+
+@include respond-to('medium') {
+  .panel {
+    width: 600px;
   }
 
-  .button__text {
-    font-size: $ads-font-size-sixth;
+  .logo {
+    margin-inline: auto;
+    width: 400px;
   }
 
-  .button__icon {
-    height: 20px;
-    width: 20px;    
+  .button__label {
+    border-radius: 20px;
+    width: 300px;    
+  }
+}
+
+@include respond-to('large-tablet') {
+  .panel {
+    width: 800px;
+  }
+
+  .logo {
+    margin-inline: auto;
+    width: 300px;
+  }
+
+  .button__label {
+    border-radius: 20px;
+    width: 500px;
+  }
+}
+
+@include respond-to('large') {
+  .panel {   
+    width: 800px;
+  }
+
+  .logo {
+    margin-inline: auto;
+    width: 300px;
+  }
+
+  .button__label {
+    border-radius: 10px;
+    width: 400px;    
+  }
+}
+
+@include respond-to('extra-large') {
+  .panel {
+    width: 800px;
+  }
+
+  .logo {
+    margin-inline: auto;
+    width: 400px;
+  }
+
+  .button__label {
+    border-radius: 10px;
+    width: 500px;
   }
 }
 
