@@ -2,23 +2,25 @@
 @import '../../../../globals/mixins';
 
 .thumbnail {
-  border: 2px solid transparent;
-  margin: 0 auto;
-  position: relative;
+  &__container {
+    border: 2px solid transparent;
+    margin: 0 auto;
+    position: relative;
 
-  @include respond-to('medium') {
-    width: 15rem;
+    @include respond-to('medium') {
+      width: 15rem;
+    }
+
+    @include respond-to('large') {
+      width: 20rem;
+    }
+
+    @include respond-to('extra-large') {
+      width: 20rem;
+    }
   }
 
-  @include respond-to('large') {
-    width: 20rem;
-  }
-
-  @include respond-to('extra-large') {
-    width: 20rem;
-  }
-
-  img {
+  &__image {
     border: 2px solid $ads-color-main;
     display: block;
     height: auto;
@@ -26,7 +28,7 @@
     width: 100%;
   }
 
-  .overlay {
+  &__overlay {
     background-color: transparent;
     box-sizing: border-box;
     height: 100%;
@@ -36,8 +38,8 @@
     width: 100%;
 
     &:hover {
-      background-color: $ads-primary-main; // Usando variable para el color de fondo
-      border: 2px solid $ads-primary-main; // Usando variable para el borde
+      background-color: $ads-primary-main;
+      border: 2px solid $ads-primary-main;
       opacity: 0.5;
     }
   }

@@ -1,32 +1,32 @@
 @import '../../../../../globals/variables';
 @import '../../../../../globals/mixins';
 
-.panel {    
-    background: $ads-background-main;
-    display: flex;
-    flex-direction: column;
-    height: 280px;    
-    padding: 2.2rem;      
-    width: 200px; 
-    
-    &--secondary {
-      position: sticky;      
-    }
-  }
+.panel {
+  background: $ads-background-main;
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+  padding: 2.2rem;
+  width: 200px;
 
-.tags .tag{     
+  &--secondary {
+    position: sticky;
+  }
+}
+
+.tags .tag {
   font-size: $ads-font-size-second;
   margin: 0.5rem;
 
   &--secondary {
-    background: $ads-secondary-main;      
-  } 
-} 
+    background: $ads-secondary-main;
+  }
+}
 
-.tag:hover {  
+.tag:hover {
   text-decoration: underline;
-} 
- 
+}
+
 .logo {
   align-items: center;
   background: transparent;
@@ -35,11 +35,9 @@
   width: 155px;
 }
 
-.logo .logo-icon {  
+.logo .logo-icon {
   & svg {
     height: 100%;
-    width: 100%;    
+    width: 100%;
   }
 }
-
-  

@@ -16,4 +16,4 @@ function Thumbnail(props: IProps) {
   );
 }
 
-export default Thumbnail; // Exporta el componente por defecto
+export default Thumbnail;
