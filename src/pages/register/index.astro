@@ -1,9 +1,12 @@
 ---
-import LabelRecentArticles from '../../components/label-recent-articles.astro';
-import ArticleDescription from '../../components/article-description.astro';
+import Layout from '../../layouts/Layout.astro';
+import ArticleTitle from '../../ui/components/atoms/article-title/ArticleTitle';
+import ArticleDescription from '../../ui/components/atoms/article-description/ArticleDescription';
 ---
 
-<LabelRecentArticles title="Registro" />
-<ArticleDescription
-  text="Crea una cuenta para unirte a la comunidad de Openscience y acceder a contenido exclusivo."
-/>
+<Layout title="Registro">
+  <ArticleTitle title="Registro" variant="secondary" />
+  <ArticleDescription
+    article="Crea una cuenta para unirte a la comunidad de Openscience y acceder a contenido exclusivo."
+  />
+</Layout>
