@@ -1,9 +1,12 @@
 ---
-import LabelRecentArticles from '../../components/label-recent-articles.astro';
-import ArticleDescription from '../../components/article-description.astro';
+import Layout from '../../layouts/Layout.astro';
+import ArticleTitle from '../../ui/components/atoms/article-title/ArticleTitle';
+import ArticleDescription from '../../ui/components/atoms/article-description/ArticleDescription';
 ---
 
-<LabelRecentArticles title="Iniciar Sesion" />
-<ArticleDescription
-  text="Ingresa con tus credenciales para acceder a tu cuenta y disfrutar de contenido personalizado."
-/>
+<Layout title="Iniciar Sesion">
+  <ArticleTitle title="Iniciar Sesion" variant="primary" />
+  <ArticleDescription
+    article="Ingresa con tus credenciales para acceder a tu cuenta y disfrutar de contenido personalizado."
+  />
+</Layout>

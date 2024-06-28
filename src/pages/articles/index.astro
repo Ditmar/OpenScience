@@ -1,9 +1,12 @@
 ---
-import LabelRecentArticles from '../../components/label-recent-articles.astro';
-import ArticleDescription from '../../components/article-description.astro';
+import Layout from '../../layouts/Layout.astro';
+import ArticleTitle from '../../ui/components/atoms/article-title/ArticleTitle';
+import ArticleDescription from '../../ui/components/atoms/article-description/ArticleDescription';
 ---
 
-<LabelRecentArticles title="Articulos Recientes" />
-<ArticleDescription
-  text="Explora nuestra colección completa de artículos científicos y descubre lo último en investigación."
-/>
+<Layout title="Articulos Recientes">
+  <ArticleTitle title="Articulos Recientes" variant="primary" />
+  <ArticleDescription
+    article="Explora nuestra colección completa de artículos científicos y descubre lo último en investigación."
+  />
+</Layout>

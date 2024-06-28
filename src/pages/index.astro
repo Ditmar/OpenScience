@@ -1,14 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import LabelRecentArticles from '../components/label-recent-articles.astro';
-import ArticleDescription from '../components/article-description.astro';
+import ArticleTitle from '../ui/components/atoms/article-title/ArticleTitle';
+import ArticleDescription from '../ui/components/atoms/article-description/ArticleDescription';
 ---
 
 <Layout title="Welcome to Astro.">
   <h1>OPENSCIENCE V 0.1.2</h1>
-  <LabelRecentArticles title="Home - Artículos Recientes" />
+  <ArticleTitle title="Home - Artículos Recientes" variant="primary" />
   <ArticleDescription
-    text="Bienvenido a la página principal de Openscience. Aquí encontrarás los artículos más recientes y destacados."
+    article="Bienvenido a la página principal de Openscience. Aquí encontrarás los artículos más recientes y destacados."
   />
 </Layout>
 <style></style>
