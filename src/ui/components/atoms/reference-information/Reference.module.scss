@@ -1,0 +1,126 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.container-text {
+  display: flex;
+  font-family: Lato, sans-serif;
+}
+
+.number {
+  font-family: Lato, sans-serif;
+  margin-right: 0.25rem;
+}
+
+.reference-apa-text {
+  font-family: Lato, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.52;
+  padding: 0.625rem;
+
+  &--primary,
+  &--secondary,
+  &--tertiary {
+    border: 0.0625rem solid transparent;
+  }
+
+  &--primary {
+    background: $ads-text-main;
+    color: $ads-color-main;
+
+    &:hover {
+      background-color: $ads-text-main;
+    }
+  }
+
+  &--secondary {
+    background: $ads-primary-main;
+    color: $ads-color-main;
+
+    &:hover {
+      background: $ads-primary-main;
+    }
+  }
+
+  &--tertiary {
+    background-color: $ads-background-desktop;
+    color: $ads-text-main-hover;
+
+    &:hover {
+      background: $ads-background-desktop;
+    }
+  }
+}
+
+.reference-apa-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  overflow-x: auto;
+
+  & a {
+    font-family: Lato, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.52;
+    padding: 0.625rem;
+    text-decoration: underline;
+
+    &.reference-apa-link--primary,
+    &.reference-apa-link--secondary {
+      color: $ads-color-main;
+    }
+
+    &.reference-apa-link--tertiary {
+      color: $ads-text-main-hover;
+    }
+  }
+}
+
+@include respond-to('small-mobile') {
+  .reference-apa-text {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .reference-apa-links {
+    margin-left: 0.7rem;
+  }
+
+  .reference-apa-links a {
+    font-size: 0.9rem;
+    padding: 0.02rem;
+  }
+}
+
+@include respond-to('medium') {
+  .reference-apa-text {
+    font-size: 1.2rem;
+    padding: 0.625rem;
+  }
+
+  .reference-apa-links {
+    margin-left: 0.6rem;
+  }
+
+  .reference-apa-links a {
+    font-size: 1.2rem;
+    padding: 0.1rem;
+  }
+}
+
+@include respond-to('large') {
+  .reference-apa-text {
+    font-size: 1.5rem;
+    padding: 0.75rem;
+  }
+
+  .reference-apa-links {
+    margin-left: 0.2rem;
+  }
+
+  .reference-apa-links a {
+    font-size: 1.5rem;
+    padding: 0.75rem;
+  }
+}
