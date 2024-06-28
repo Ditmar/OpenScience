@@ -5,8 +5,7 @@ import NetworkLogin from './network-login';
 const meta: Meta<typeof NetworkLogin> = {
   title: 'ui/components/molecules/network-login',
   component: NetworkLogin,
-  argTypes: {     
-  },
+  argTypes: {},
 };
 export default meta;
 

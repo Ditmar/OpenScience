@@ -10,16 +10,8 @@
   width: 800px;
 
   &--secondary {
-    position: sticky;
     background-color: $ads-secondary-main;
-
-    .logo g {
-      fill: $ads-tertiary-main;
-    }
-
-    .button__label {
-      background-color: $ads-text-main-hover;
-    }
+    position: sticky;
   }
 }
 
@@ -27,9 +19,9 @@
   align-items: center;
   background: transparent;
   display: flexbox;
+  height: auto;
   margin-inline: auto;
   width: 400px;
-  height: auto;
 }
 
 .logo .logo-icon {
@@ -39,74 +31,90 @@
   }
 }
 
-.Button__Google {
-  margin-inline: auto;
+.button-google {
   margin-bottom: 10px;
+  margin-inline: auto;
 }
 
-.Button__Facebook {
+.button-facebook {
   margin-inline: auto;
 }
 
 .button__label {
-  width: 400px;
-  height: auto;
   border-radius: 20px;
+  height: auto;
+  width: 400px;
 }
 
 .button__text {
   font-size: $ads-font-size-quarter;
 }
 
+.panel--secondary .button__label {
+  background-color: $ads-text-main-hover;
+}
+
+.panel--secondary .logo g {
+  fill: $ads-tertiary-main;
+}
+
 /* Pantalla grande (desktop) */
-@media (min-width: 1200px) {
+@media (width >= 1200px) {
   .panel {
     width: 800px;
   }
+
   .logo {
     width: 400px;
   }
+
   .button__label {
     width: 400px;
   }
 }
 
 /* Pantalla mediana (tablet) */
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (width >= 768px) and (width <= 1199px) {
   .panel {
     width: 600px;
   }
+
   .logo {
     width: 300px;
   }
+
   .button__label {
     width: 300px;
   }
 }
 
 /* Pantalla pequeña (mobile) */
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .panel {
-    width: auto;
     height: auto;
     padding: 1.5rem;
+    width: auto;
   }
+
   .logo {
     width: 200px;
   }
+
   .button__label {
-    width: 190px;
     border-radius: 50px;
+    width: 190px;
   }
+
   .button__text {
     font-size: $ads-font-size-sixth;
   }
 
   .button__icon {
-    width: 20px;
     height: 20px;
-    svg g{
-      fill: white;
-    }
+    width: 20px;    
   }
+}
+
+.button__icon svg g path {
+  fill: $ads-background-main;
 }
