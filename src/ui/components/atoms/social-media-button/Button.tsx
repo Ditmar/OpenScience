@@ -1,16 +1,16 @@
-import './Button.scss';
+import styles from './Button.module.scss';
 import { Icon } from '../../../utils/svg-icons/icons';
 import type { IProps } from './types/IProps';
 
 function SMButton(props: IProps) {
   const { children, icon, color } = props;
-  const colorFont = `button--${color as string}`;
+  const colorFont = styles[`button--${color as string}`];
   return (
-    <button className="button__label">
-      <div className={`button ${colorFont}`}>
-        {icon && <Icon src={icon} className="button__icon" />}
+    <button className={styles.button__label}>
+      <div className={`${styles.button} ${colorFont}`}>
+        {icon && <Icon src={icon} className={styles.button__icon} />}
       </div>
-      <span className="button__text">{children}</span>
+      <span className={styles.button__text}>{children}</span>
     </button>
   );
 }
