@@ -10,9 +10,9 @@ const publisher = new SimplePublisher<string>(broker);
 const subscriber = new SimpleSubscriber<string>(broker);
 
 const eventEmitter: EventEmitter<string> = {
-    callBack: (mensaje: string) => {
-        console.log(`Mensaje recibido: ${mensaje}`);
-    }
+  callBack: (mensaje: string) => {
+    console.log(`Mensaje recibido: ${mensaje}`);
+  },
 };
 
 subscriber.subscribe('tema-ejemplo', eventEmitter);
