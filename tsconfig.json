@@ -5,6 +5,7 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
+      "@PubSub/*": ["./PubSub/*"],
       "@icons": ["./ui/utils/svg-icons/icons"]
     },
     "jsx": "react-jsx",
