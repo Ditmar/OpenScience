@@ -43,11 +43,17 @@
 .button__label {
   border-radius: 20px;
   height: auto;
-  width: 400px;
+  width: 500px;
 }
 
 .button__text {
-  font-size: $ads-font-size-quarter;
+  font-size: $ads-font-size-second;
+  font-weight: $ads-font-weight-first;
+}
+
+.button__icon {
+  height: 35px;
+  width: 37px;    
 }
 
 .panel--secondary .button__label {
@@ -80,11 +86,11 @@
   }
 
   .logo {
-    width: 300px;
+    width: 400px;
   }
 
   .button__label {
-    width: 300px;
+    width: 400px;
   }
 }
 
