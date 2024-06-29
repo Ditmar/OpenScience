@@ -1,22 +1,28 @@
+// VolumeBox.test.tsx
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import VolumeBox from './VolumeBox';
+import LabelDate from '../../atoms/label-date/LabelDate';
+import LabelVol from '../../atoms/label-vol/LabelVol';
 
 describe('VolumeBox Component', () => {
-  test('should render LabelDate and LabelVol', () => {
+  test('should render LabelDate and LabelVol with correct format', () => {
     render(
-      <VolumeBox>
-        <p className="labeldate" data-iso="2024-06-20">
-          Junio 20. 2024{' '}
-        </p>
-        <p className="volumen">Vol. 1</p>
+      <VolumeBox className="custom-label-date-color">
+        <LabelDate date={new Date(2023, 3, 16)} />
+        <span className="separator">│</span>
+        <LabelVol volumen="Vol." id={1} />
+        <span className="separator">│</span>
+        <LabelVol volumen="Nu." id={1} />
       </VolumeBox>,
     );
 
-    const labelDate = screen.getByText(/Junio 20.*2024/);
+    const labelDate = screen.getByText(/Abril 16. 2023/);
     const labelVol = screen.getByText(/^Vol\. 1$/);
+    const labelNu = screen.getByText(/^Nu\. 1$/);
 
     expect(labelDate).toBeInTheDocument();
     expect(labelVol).toBeInTheDocument();
+    expect(labelNu).toBeInTheDocument();
   });
 });
