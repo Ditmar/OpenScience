@@ -2,13 +2,16 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { t, changeLanguage } from 'i18next';
 import Layout from '../../layouts/Layout.astro';
+import ArticleTitle from '../../ui/components/atoms/article-title/ArticleTitle';
+import ArticleDescription from '../../ui/components/atoms/article-description/ArticleDescription';
 
 changeLanguage('en');
 ---
 
 <Layout title={t('page.title')}>
   <h1>OPENSCIENCE V 0.1.2</h1>
-  <p>{t('page.description')}</p>
+  <ArticleTitle title={t('page.articletitle')} variant="primary" />
+  <ArticleDescription article={t('page.description')} />
 </Layout>
 
 <style></style>

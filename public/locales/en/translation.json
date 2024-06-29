@@ -1,11 +1,19 @@
 {
     "page": {
         "title": "Welcome to Astro!",
-        "description": "Welcome to the OPENSCIENCE site, where you can discover articles in the area of technology."
+        "articletitle": "Home - Recent Articles",
+        "description": "Welcome to Openscience home page. Here you will find the most recent and featured articles."
     },
-    "error": {
-        "title": "Error",
-        "message500": "Error 500 come back later technical problems",
-        "message404": "404 page not found"
+    "error500": {
+        "title": "Error 500",
+        "message500": "Internal Server Error",
+        "mainmessage": "An internal server error has occurred."
+    },
+    "error404": {
+        "title": "Error 404",
+        "message404": "Page not found",
+        "mainmessage": "The page you are looking for doesn´t or an other error occurred.",
+        "messageinit": "  Go back, or head over ",
+        "messagefinish": " to choose a new direction "
     }
 }
