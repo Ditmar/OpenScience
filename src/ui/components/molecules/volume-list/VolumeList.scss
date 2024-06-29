@@ -34,11 +34,12 @@
 }
 
 .volume-list-thumbnail {
+  display: flex;
   height: 14rem;
+  justify-content: center;
   overflow: hidden;
   width: 100%;
-  display: flex;
-  justify-content: center;
+
   img {
     object-fit: contain;
     width: 8rem;
@@ -46,6 +47,7 @@
     @include respond-to('medium') {
       width: 10.563rem;
     }
+
     @include respond-to('large') {
       width: 21.313rem;
     }
