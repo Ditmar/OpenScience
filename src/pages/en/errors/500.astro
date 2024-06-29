@@ -2,10 +2,19 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { t, changeLanguage } from 'i18next';
 import Layout from '../../../layouts/Layout.astro';
+import ErrorMessage from '../../../ui/components/atoms/error-message/ErrorMessage';
 
 changeLanguage('en');
 ---
 
-<Layout title={t('error.title')}> {t('error.message500')} </Layout>
+<Layout title={t('error500.title')}> Error 500 {t('error500.message500')} </Layout>
+<Layout title={t('error500.title')}>
+  <ErrorMessage
+    code={500}
+    title={t('error500.message500')}
+    message={t('error500.mainmessage')}
+    redirectTo="/"
+  />
+</Layout>
 
 <style></style>
