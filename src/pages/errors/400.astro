@@ -1,17 +1,23 @@
 ---
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { t, changeLanguage } from 'i18next';
 import Layout from '../../layouts/Layout.astro';
 import ErrorMessage from '../../ui/components/atoms/error-message/ErrorMessage';
+
+changeLanguage('es');
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title={t('error404.title')}> 404 {t('error404.message404')} </Layout>
+
+<Layout title={t('error404.title')}>
   <ErrorMessage
-    code={400}
-    title="Page not found"
-    message="The page you are looking for doesn´t or an other error occurred."
+    code={404}
+    title={t('error404.message404')}
+    message={t('error404.mainmessage')}
     redirectTo="/"
     linkText=" weebir.com "
-    messageinit=" Go back, or head over "
-    messagefinish=" to choose a new direction "
+    messageinit={t('error404.messageinit') ?? undefined}
+    messagefinish={t('error404.messagefinish') ?? undefined}
   />
 </Layout>
 <style></style>
