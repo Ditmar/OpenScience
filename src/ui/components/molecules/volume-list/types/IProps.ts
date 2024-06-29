@@ -1,5 +1,24 @@
 export interface IProps {
   id: number;
-  image: string;
-  date: string;
+  attributes: {
+    title: string;
+    date: string;
+    portrait: {
+      data: {
+        id: number;
+        attributes: {
+          url: string;
+        };
+      };
+    };
+    year_volume: {
+      data: {
+        id: number;
+        attributes: {
+          Year: string;
+          Volumes: string;
+        };
+      };
+    };
+  };
 }
