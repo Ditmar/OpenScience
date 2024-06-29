@@ -39,15 +39,15 @@
   width: 100%;
 
   img {
-    object-fit: contain;
+    object-fit: cover;
     width: 10.563rem;
 
-    @include respond-to('medium') {
+    @include respond-to('large') {
       width: 21.313rem;
     }
   }
 
-  @include respond-to('medium') {
+  @include respond-to('large') {
     height: 32.25rem;
   }
 }

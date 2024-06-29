@@ -7,25 +7,40 @@ import dataMock from './__mock__/datamock.json';
 import type { IProps } from './types/IProps';
 
 function VolumeList() {
-  const [volumes] = useState<IProps[]>(dataMock.volumes);
+  const [volumes] = useState<IProps[]>(dataMock.data);
 
   return (
     <div className="volume-list__container">
       <h1 className="volume-list__title">volumenes</h1>
       <div className="volume-list">
-        {volumes.map((volume) => (
-          <div key={volume.id} className="volume-list__item">
-            <div className="volume-list-thumbnail">
-              {/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions */}
-              <Thumbnail pathImage={String(volume.image)} alt={`Volume ${volume.id}`} />
+        {volumes.map(({ id, attributes }) => {
+          const {
+            date,
+            portrait: {
+              data: {
+                attributes: { url: portraitUrl },
+              },
+            },
+            year_volume: {
+              data: {
+                attributes: { Volumes },
+              },
+            },
+          } = attributes;
+
+          return (
+            <div key={id} className="volume-list__item">
+              <div className="volume-list-thumbnail">
+                <Thumbnail pathImage={portraitUrl} alt={`Volume ${Volumes}`} />
+              </div>
+              <LabelDate date={new Date(date)} />
+              <Volumen volumen="Vol." id={id} />
             </div>
-            <LabelDate date={new Date(volume.date)} />
-            {/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions */}
-            <Volumen volumen="Vol." id={volume.id} />
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
 }
+
 export default VolumeList;
