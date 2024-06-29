@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Tags.scss';
 import type { ITagsProps } from './types/IProps';
 
-function Tags({ labels, variant = 'default' }: ITagsProps) {
+function Tags({ labels, variant = 'default', to }: ITagsProps) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
@@ -18,7 +18,7 @@ function Tags({ labels, variant = 'default' }: ITagsProps) {
             setHoveredIndex(null);
           }}
         >
-          {label}
+          {to ? <a href={to}>{label}</a> : label}
         </li>
       ))}
     </ul>

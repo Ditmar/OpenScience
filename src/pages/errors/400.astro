@@ -1,7 +1,17 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import ErrorMessage from '../../ui/components/atoms/error-message/ErrorMessage';
 ---
 
-<Layout title="Welcome to Astro."> 404 pagina noencontrada </Layout>
-
+<Layout title="Welcome to Astro.">
+  <ErrorMessage
+    code={400}
+    title="Page not found"
+    message="The page you are looking for doesn´t or an other error occurred."
+    redirectTo="/"
+    linkText=" weebir.com "
+    messageinit=" Go back, or head over "
+    messagefinish=" to choose a new direction "
+  />
+</Layout>
 <style></style>

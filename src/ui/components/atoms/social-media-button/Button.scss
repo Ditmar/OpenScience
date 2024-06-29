@@ -4,7 +4,7 @@
 .button {
   align-items: center;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
 }
 
 .button__icon {
@@ -37,27 +37,27 @@
   }
 
   @include respond-to('small') {
-    height: 93px;  
+    height: 93px;
     width: 615px;
   }
 
   @include respond-to('medium') {
-    height: 93px; 
+    height: 93px;
     width: 615px;
   }
 
   @include respond-to('large') {
-    height: 93px; 
+    height: 93px;
     width: 615px;
   }
 
   @include respond-to('extra-large') {
-    height: 93px;   
+    height: 93px;
     width: 615px;
   }
 }
 
-.button__text {    
+.button__text {
   display: block;
   font-size: $ads-font-size-quarter;
   padding: 28%;

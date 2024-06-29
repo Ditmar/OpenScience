@@ -1,18 +1,16 @@
-import './LabelReferences.scss';
+import styles from './LabelReferences.module.scss';
 import type { IProps } from './types/IProps';
 
 function LabelReferences({ text = 'Referencias', colorVariant = 'primary' }: IProps) {
   const getColorClassName = () => {
-    return colorVariant === 'main' ? 'label-references--main' : 'label-references--primary';
-  };
-
-  const getBackgroundClassName = () => {
-    return colorVariant === 'main' ? 'label-references--main-bg' : '';
+    return colorVariant === 'main'
+      ? styles['label-references--main']
+      : styles['label-references--primary'];
   };
 
   return (
-    <div className={`label-references ${getColorClassName()} ${getBackgroundClassName()}`}>
-      <span className="label-references__text">{text}</span>
+    <div className={`${styles['label-references']} ${getColorClassName()}`}>
+      <span className={styles['label-references__text']}>{text}</span>
     </div>
   );
 }

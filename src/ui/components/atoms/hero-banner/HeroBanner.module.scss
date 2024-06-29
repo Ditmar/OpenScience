@@ -7,14 +7,17 @@ body {
   padding: 0;
 }
 
-.hero-banner img {
+.hero-banner {
+  position: relative;
+}
+
+.hero-banner__img {
   aspect-ratio: 16/9;
   background-attachment: fixed;
   background-size: cover;
   height: 266px;
   object-fit: cover;
   object-position: center;
-  position: relative;
   width: 100%;
 
   @include respond-to('small') {
@@ -55,6 +58,7 @@ body {
   top: 0;
   width: 100%;
 }
+
 // Example usage of the HeroBanner component
 // File Path: src/ui/components/atoms/hero-banner/index.js
 // Note: Remove this code once the component is fully implemented

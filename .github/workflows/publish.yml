@@ -67,7 +67,7 @@ jobs:
         run: yarn build
       - name: Build Docker image
         if: github.ref == 'refs/heads/main'
-        run: docker build -t ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }} .
+        run: docker build --build-arg WEB_APP=${{ env.GIT_COMMIT_HASH }} -t ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }} .
       - name: Push Docker image to Docker Hub
         if: github.ref == 'refs/heads/main'
         run: |

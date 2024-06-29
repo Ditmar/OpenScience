@@ -12,6 +12,9 @@ const meta = {
       control: 'radio',
       options: ['default', 'black', 'large-text'],
     },
+    to: {
+      control: 'text',
+    },
   },
 };
 
@@ -23,6 +26,7 @@ export const Default: Story = {
   args: {
     labels: ['Workings', 'Optimism', 'Meaning', 'Promoting'],
     variant: 'default',
+    to: '/default-path',
   },
 };
 
@@ -30,6 +34,7 @@ export const BlackTags: Story = {
   args: {
     labels: ['Workings', 'Optimism', 'Meaning', 'Promoting'],
     variant: 'black',
+    to: '/black-tags-path',
   },
 };
 
@@ -37,5 +42,6 @@ export const LargeTextTags: Story = {
   args: {
     labels: ['Workings', 'Optimism', 'Meaning', 'Promoting'],
     variant: 'large-text',
+    to: '/large-text-tags-path',
   },
 };
