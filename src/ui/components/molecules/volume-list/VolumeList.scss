@@ -1,7 +1,7 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 
-.volume-list__container{
+.volume-list__container {
   padding-left: 0;
   padding-right: 0;
 
@@ -13,11 +13,11 @@
 
 .volume-list {
   display: grid;
-  gap: 20px;
+  gap: 1.25rem;
   grid-template-columns: repeat(2, 1fr);
 
-  @include respond-to('medium') { 
-    column-gap: 70px ;
+  @include respond-to('medium') {
+    column-gap: 4.375rem;
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -34,17 +34,25 @@
 }
 
 .volume-list-thumbnail {
-  height: 16rem;
+  height: 14rem;
   overflow: hidden;
   width: 100%;
-
+  display: flex;
+  justify-content: center;
   img {
-    object-fit: cover;
-    width: 10.563rem;
+    object-fit: contain;
+    width: 8rem;
 
+    @include respond-to('medium') {
+      width: 10.563rem;
+    }
     @include respond-to('large') {
       width: 21.313rem;
     }
+  }
+
+  @include respond-to('medium') {
+    height: 16rem;
   }
 
   @include respond-to('large') {
@@ -66,5 +74,3 @@
     line-height: 4.876rem;
   }
 }
-
-
