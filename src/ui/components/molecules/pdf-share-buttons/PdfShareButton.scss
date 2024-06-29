@@ -1,0 +1,39 @@
+.pdf-share-buttons {
+  height: 300px;
+  width: 160px;
+
+  .share-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -200px;
+    margin-left: 80px;
+    padding-top: 10px;
+  }
+
+  .pdf-and-share {
+    padding-top: 200px;
+  }
+
+  @media (320px <= width <= 568px) {
+    .share-buttons {
+      margin-bottom: -145px;
+      margin-left: 45px;
+      padding-top: 10px;
+    }
+
+    .pdf-and-share {
+      padding-top: 145px;
+    }
+  }
+
+  @media (834px <= width <= 1112px) {
+    .share-buttons {
+      margin-bottom: -175px;
+      margin-left: 60px;
+    }
+
+    .pdf-and-share {
+      padding-top: 175px;
+    }
+  }
+}
