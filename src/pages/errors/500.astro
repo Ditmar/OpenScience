@@ -1,13 +1,18 @@
 ---
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { t, changeLanguage } from 'i18next';
 import Layout from '../../layouts/Layout.astro';
 import ErrorMessage from '../../ui/components/atoms/error-message/ErrorMessage';
+
+changeLanguage('es');
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title={t('error500.title')}> Error 500 {t('error500.message500')} </Layout>
+<Layout title={t('error500.title')}>
   <ErrorMessage
     code={500}
-    title="Internal Server Error"
-    message="An internal server error has occurred."
+    title={t('error500.message500')}
+    message={t('error500.mainmessage')}
     redirectTo="/"
   />
 </Layout>
