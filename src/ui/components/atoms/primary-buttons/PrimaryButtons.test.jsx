@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import PrimaryButtons from './PrimaryButtons.tsx';
+import styles from './PrimaryButtons.module.scss';
 
 describe('Testing VariableButton React Component', () => {
   test('should be rendere INICIAR SESION', () => {
@@ -14,11 +15,12 @@ describe('Testing VariableButton React Component', () => {
     expect(buttonElement).toBeInTheDocument();
   });
   test('should have correct styles class', () => {
-    render(<PrimaryButtons>INICiAR SESION</PrimaryButtons>);
+    render(<PrimaryButtons variant="primary">INICIAR SESION</PrimaryButtons>);
     const buttonElement = screen.getByRole('button');
     const labelElement = screen.getByText(/INICIAR SESION/i);
-    expect(buttonElement).toHaveClass('buttons-primary__button');
-    expect(labelElement).toHaveClass('buttons-primary__label');
+    expect(buttonElement).toHaveClass(styles['buttons-primary__button']);
+    expect(buttonElement).toHaveClass(styles['buttons-primary__button--primary']);
+    expect(labelElement).toHaveClass(styles['buttons-primary__label']);
   });
 
   const createMockFunction = () => {
