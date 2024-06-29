@@ -23,6 +23,10 @@
     width: 100%;
   }
 
+  .separator {
+    margin: 0 0.0001rem;
+  }
+
   &.custom-label-date-color {
     .volumen {
       font-size: 0.75rem;
@@ -30,7 +34,8 @@
     }
 
     .labeldate,
-    .separator {
+    .separator,
+    .custom-labeldate {
       color: $ads-text-main;
       font-family: Roboto, sans-serif;
       font-size: 0.75rem;
@@ -52,9 +57,14 @@
     .content {
       .labeldate,
       .separator,
-      .volumen {
+      .volumen,
+      .custom-labeldate {
         font-size: 1.5rem;
         line-height: 1.2rem;
+      }
+
+      .separator {
+        margin: 0 0.0001rem;
       }
     }
   }
