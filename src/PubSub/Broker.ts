@@ -9,7 +9,8 @@ export class Broker<T> implements IBroker<T> {
   }
 
   publish(topic: string, message: T): void {
-    if (this.subscribers[topic].length === 0) {
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    if (this.subscribers[topic] && this.subscribers[topic].length > 0) {
       this.subscribers[topic].forEach((event: EventEmitter<T>) => {
         event.callBack(message);
       });
@@ -17,7 +18,8 @@ export class Broker<T> implements IBroker<T> {
   }
 
   subscribe(topic: string, callback: EventEmitter<T>): void {
-    if (this.subscribers[topic].length === 0) {
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    if (!this.subscribers[topic]) {
       this.subscribers[topic] = [];
     }
     this.subscribers[topic].push(callback);
