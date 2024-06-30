@@ -21,9 +21,8 @@
 
   @include respond-to('small-mobile') {
     width: 10rem;
-    
   }
-  
+
   @include respond-to('medium') {
     width: 6rem;
   }
@@ -35,9 +34,6 @@
   @include respond-to('extra-large') {
     width: 10rem;
   }
-
-
-
 }
 
 .component__label {
@@ -49,17 +45,17 @@
   margin-left: 0.5rem;
   text-transform: uppercase;
 
-  @include respond-to('small-mobile'){
+  @include respond-to('small-mobile') {
     font-size: 0.7rem;
-    margin-left: 0.4rem; 
+    margin-left: 0.4rem;
   }
-  
+
   @include respond-to('medium') {
     font-size: 1rem;
     margin-left: 0.2rem;
   }
 
-  @include respond-to('large')  {
+  @include respond-to('large') {
     font-size: 1rem;
     margin-left: 0.3rem;
   }
@@ -68,9 +64,6 @@
     font-size: 1.1rem;
     margin-left: 0.4rem;
   }
-
-
-
 }
 
 .navbar__icon {
@@ -82,28 +75,20 @@
     height: 1.93rem;
     width: auto;
 
-    @include respond-to('small-mobile'){
+    @include respond-to('small-mobile') {
       height: 1.4rem;
-     
     }
 
     @include respond-to('medium') {
       height: 1.8rem;
-     
     }
 
     @include respond-to('large') {
       height: 2rem;
-      
     }
 
-    @include respond-to('extra-large'){
+    @include respond-to('extra-large') {
       height: 2rem;
-      
     }
-
-
-
-
   }
 }
