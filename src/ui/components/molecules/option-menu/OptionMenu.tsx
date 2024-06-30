@@ -10,8 +10,6 @@ import burger from '../../../../assets/icons/burger-menu.svg?raw';
 import type { IProps } from './types/IProps';
 
 function OptionMenu({ icon, onClick }: IProps) {
-  console.log('Rendering OptionMenu with icon:', icon);
-
   return (
     <div className="option-menu">
       <ButtonBurger icon={icon ?? burger} onClick={onClick} aria-label="Menu" />

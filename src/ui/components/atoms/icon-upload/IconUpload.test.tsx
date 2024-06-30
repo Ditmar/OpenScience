@@ -20,7 +20,6 @@ describe('Testing IconUpload Component', () => {
     let callCount = 0;
     const mockFunction = () => {
       callCount += 1;
-      console.log('It has been clicked');
     };
     mockFunction.callCount = () => callCount;
     return mockFunction;

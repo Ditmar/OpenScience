@@ -7,9 +7,6 @@ function PrimaryButtons(props: IProps) {
     styles[`buttons-primary__button--${variant}`]
   }`;
   const labelClass = styles['buttons-primary__label'];
-
-  console.log('Button class:', buttonClass);
-  console.log('Label class:', labelClass);
   return (
     <div>
       <button className={buttonClass} onClick={onClick}>
