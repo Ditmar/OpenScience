@@ -1,4 +1,4 @@
-import{P as y}from"./PrimaryButtons-CVj-t3cb.js";import"./jsx-runtime-_e34SzbC.js";import"./index-DVXBtNgz.js";const u={title:"ui/components/atoms/PrimaryButtons",component:y,argTypes:{onClick:{action:"click"},variant:{control:"select",options:["primary","secondary","tertiary"]}}},r={args:{children:"INICIAR SESION",variant:"primary"}},a={args:{children:"REGISTRARSE",variant:"secondary"}},e={args:{children:"REGISTRARSE",variant:"tertiary"}};var n,t,s;r.parameters={...r.parameters,docs:{...(n=r.parameters)==null?void 0:n.docs,source:{originalSource:`{
+import{P as y}from"./PrimaryButtons-8GUfX0p0.js";import"./jsx-runtime-_e34SzbC.js";import"./index-DVXBtNgz.js";const u={title:"ui/components/atoms/PrimaryButtons",component:y,argTypes:{onClick:{action:"click"},variant:{control:"select",options:["primary","secondary","tertiary"]}}},r={args:{children:"INICIAR SESION",variant:"primary"}},a={args:{children:"REGISTRARSE",variant:"secondary"}},e={args:{children:"REGISTRARSE",variant:"tertiary"}};var n,t,s;r.parameters={...r.parameters,docs:{...(n=r.parameters)==null?void 0:n.docs,source:{originalSource:`{
   args: {
     children: 'INICIAR SESION',
     variant: 'primary'
