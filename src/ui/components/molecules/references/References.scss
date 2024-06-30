@@ -1,0 +1,10 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.references {
+  background-color: $ads-background-desktop;
+
+  a {
+    color: $ads-text-main-hover;
+  }
+}
