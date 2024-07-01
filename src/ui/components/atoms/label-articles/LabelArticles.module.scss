@@ -1,0 +1,62 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.label {
+  background: $ads-background-main;
+
+  @include respond-to('small-mobile') {
+    font-size: 2.7rem;
+    padding: 0.5rem 2rem;
+  }
+
+  @include respond-to('small') {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+  }
+
+  @include respond-to('medium') {
+    font-size: 1.75rem;
+    padding: 0.625rem 1.25rem;
+  }
+
+  @include respond-to('large') {
+    font-size: 1.875rem;
+    padding: 0.625rem 1.25rem;
+  }
+}
+
+.label-articles__text {
+  color: $ads-text-main-alpha;
+  font-family: Montserrat, sans-serif;
+  font-size: 3rem;
+  font-weight: $ads-font-weight-second;
+  line-height: 3.516rem;
+
+  @include respond-to('small-mobile') {
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  @include respond-to('small') {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+  }
+
+  @include respond-to('medium') {
+    font-size: 1.75rem;
+    padding: 0.625rem 1.25rem;
+  }
+
+  @include respond-to('large') {
+    font-size: 1.875rem;
+    padding: 0.625rem 1.25rem;
+  }
+}
+
+.label--primary {
+  background-color: $ads-secondary-main;
+
+  .label-articles__text {
+    color: $ads-color-main;
+  }
+}
