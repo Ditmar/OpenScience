@@ -4,9 +4,9 @@
 .label-featured-articles {
   &__text {
     background-color: $ads-background-main;
-    display: inline-block;
+    background-color: transparent;
     font-family: Montserrat, sans-serif;
-    font-size: 1.875rem;
+    font-size: 2.25rem;
     font-weight: 800;
     letter-spacing: $ads-letter-spacing;
     line-height: 1.1;
@@ -14,13 +14,13 @@
     text-transform: uppercase;
 
     @include respond-to('small') {
-      font-size: 1rem;
+      font-size: 1.5rem;
       width: 7.5rem;
     }
 
     @include respond-to('medium') {
-      font-size: 1.6rem;
-      width: 12rem;
+      font-size: 1.8rem;
+      width: rem;
     }
 
     @include respond-to('large') {
@@ -31,6 +31,7 @@
 
   &--main .label-featured-articles__text {
     background-color: $ads-background-main;
+    background-color: transparent;
     color: $ads-secondary-main;
     padding: $ads-letter-spacing;
   }
