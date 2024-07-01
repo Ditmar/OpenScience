@@ -37,8 +37,15 @@ The FetchCache class provides a simple interface for fetching data from an API w
 ## Usage 
 
 ```
-const fetchCache = new FetchCache('http://openscience.peliscast.com:1337/api/articles', {});
-const data = await fetchCache.get();
-console.log(data);
+interface SomeTypeOfData {
+  title: string;
+  data: string;
+}
+```
+
+```
+const response = new FetchCache<SomeTypeOfData>('', {});
+const data = await response.get();
+console.log(data.title);
 
 ```
