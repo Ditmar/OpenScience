@@ -29,3 +29,16 @@ Both elements use responsive styles to ensure they look good on different screen
 
 - `.hero-banner img` defines the styles for the background image of the hero banner.
 - `.hero-banner__content` defines the styles for the content that overlays the image.
+
+# Fetch Cache.
+
+The FetchCache class provides a simple interface for fetching data from an API with built-in caching. This implementation uses node-fetch for making HTTP requests and node-cache for caching responses. This is particularly useful for reducing the number of API calls and improving performance by serving cached data when available.
+
+## Usage 
+
+```
+const fetchCache = new FetchCache('http://openscience.peliscast.com:1337/api/articles', {});
+const data = await fetchCache.get();
+console.log(data);
+
+```
