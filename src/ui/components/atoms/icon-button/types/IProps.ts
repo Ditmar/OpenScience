@@ -5,4 +5,5 @@ export interface IProps {
   variant?: string;
   icon?: string;
   color?: 'primary' | 'secondary';
+  onClick?: () => void;
 }
