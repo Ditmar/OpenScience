@@ -1,0 +1,53 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.container {
+  align-items: center;
+  background: transparent;
+  border: none;
+  height: 43.75rem;
+  justify-content: center;
+  position: relative;
+  width: 50rem;
+
+  @include respond-to('small') {
+    height: 13.125rem;
+    width: 15rem;
+  }
+
+  @include respond-to('medium') {
+    height: 26.25rem;
+    width: 30rem;
+  }
+
+  @include respond-to('large') {
+    height: 43.75rem;
+    width: 50rem;
+  }
+
+  @include respond-to('extra-large') {
+    height: 53.125rem;
+    width: 60rem;
+  }
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  .overlay {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    width: 99.2%;
+
+    &:hover {
+      background-color: $ads-primary-main;
+      border: 0.125rem solid $ads-primary-main;
+    }
+  }
+}
