@@ -1,0 +1,1 @@
+import{j as n}from"./jsx-runtime-DRTy3Uxn.js";import"./index-BBkUAzwr.js";function o({volumen:e,id:r}){return n.jsxs("p",{className:"volumen",children:[e," ",r]})}o.__docgenInfo={description:"",methods:[],displayName:"Volumen",props:{volumen:{required:!0,tsType:{name:"string"},description:""},id:{required:!0,tsType:{name:"number"},description:""}}};export{o as V};
