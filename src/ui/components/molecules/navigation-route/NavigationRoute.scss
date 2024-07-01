@@ -1,0 +1,62 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.volume-box {
+  align-items: center;
+  background-color: $ads-tertiary-main;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto, sans-serif;
+  font-size: 1.5rem;
+  height: 6.625rem;
+  justify-content: center;
+  position: absolute;
+  text-align: center;
+  width: 26.25rem;
+
+  @include respond-to('small-mobile') {
+    font-size: 0.625rem;
+    height: 3rem;
+    width: 10.875rem;
+  }
+
+  @include respond-to('medium') {
+    font-size: 1rem;
+  }
+
+  @include respond-to('large') {
+    font-size: 1.5rem;
+    height: 6.625rem;
+    width: 26.25rem;
+  }
+}
+
+.volume-box.primary {
+  background-color: $ads-tertiary-main;
+  color: $ads-text-main;
+}
+
+.volume-box.secondary {
+  background-color: $ads-primary-main;
+  color: $ads-color-main;
+}
+
+.volume-box.tertiary {
+  background-color: $ads-secondary-main;
+  color: $ads-color-main;
+}
+
+.nu-text {
+  @include respond-to('small-mobile') {
+    display: none;
+  }
+
+  @include respond-to('medium') {
+    display: inline;
+  }
+
+  @include respond-to('large') {
+    display: inline;
+  }
+}
