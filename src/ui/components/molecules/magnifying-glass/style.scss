@@ -90,7 +90,7 @@
   color: $ads-text-main-hover;
   font-family: Roboto, sans-serif;
   font-size: 0.5rem;
-  font-weight: 400;
+  font-weight: $ads-font-weight-first;
   line-height: 0.786rem;
   text-align: center;
 
@@ -106,38 +106,38 @@
   background-color: transparent;
   border: none;
   color: $ads-color-main;
-  font-size: 0.55rem;
-  height: 0.7rem;
-  margin-bottom: -17px;
+  font-size: $ads-font-size-primary;
+  height: 1.125rem;
+  margin-bottom: -0.8rem;
   margin-top: 1.125rem;
   outline: none;
-  width: 16.1rem;
+  width: 16rem;
 
   @include respond-to('small') {
-    font-size: 0.55rem;
-    height: 0.7rem;
-    margin-bottom: -1.063rem;
+    font-size: $ads-font-size-primary;
+    height: 1.125rem;
+    margin-bottom: -0.8rem;
     width: 24.9rem;
   }
 
   @include respond-to('medium') {
-    font-size: 1rem;
+    font-size: $ads-font-size-primary;
     height: 1rem;
-    margin-bottom: -0.938rem;
+    margin-bottom: -0.638rem;
     width: 39.6rem;
   }
 
   @include respond-to('large') {
-    font-size: 1rem;
+    font-size: $ads-font-size-primary;
     height: 1rem;
-    margin-bottom: -0.938rem;
+    margin-bottom: -0.638rem;
     width: 50rem;
   }
 
   @include respond-to('extra-large') {
-    font-size: 1rem;
+    font-size: $ads-font-size-primary;
     height: 1rem;
-    margin-bottom: -2.938rem;
+    margin-bottom: -2.7rem;
     margin-top: 3.125rem;
     width: 73rem;
   }
