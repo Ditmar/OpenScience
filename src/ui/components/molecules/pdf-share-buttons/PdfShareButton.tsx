@@ -14,13 +14,33 @@ function PdfShareButton() {
     <div className="pdf-share-buttons">
       {openIcons && (
         <div className="share-buttons">
-          <IconButton icon={Whatsapp} />
-          <IconButton icon={Facebook} />
-          <IconButton icon={Telegram} />
+          <IconButton
+            icon={Whatsapp}
+            onClick={() => {
+              console.log('share by whatsapp clicked');
+            }}
+          />
+          <IconButton
+            icon={Facebook}
+            onClick={() => {
+              console.log('share by facebook clicked');
+            }}
+          />
+          <IconButton
+            icon={Telegram}
+            onClick={() => {
+              console.log('share by telegram clicked');
+            }}
+          />
         </div>
       )}
       <div className="pdf-and-share">
-        <VariableButton icon={PdfIcon} />
+        <VariableButton
+          icon={PdfIcon}
+          onClick={() => {
+            console.log('open pdf clicked');
+          }}
+        />
         <VariableButton
           icon={LinkIcon}
           onClick={() => {
