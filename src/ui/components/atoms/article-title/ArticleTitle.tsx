@@ -19,4 +19,5 @@ function ArticleTitle({ title, variant }: IProps) {
     </div>
   );
 }
+
 export default ArticleTitle;
