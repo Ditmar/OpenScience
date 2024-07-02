@@ -18,7 +18,7 @@ function FooterVariables() {
         <div className="section">
           <LabelResourcesPage text="RECURSOS" />
           <div className="section1">
-            <div>
+            <div className="articulos">
               <Variables text="ARTÍCULOS" colorVariant="primary" />
             </div>
             <div className="volumenes">
@@ -26,7 +26,9 @@ function FooterVariables() {
             </div>
           </div>
         </div>
-        <DividerVariables />
+        <span className="section2__divider">
+          <DividerVariables />
+        </span>
         <div className="section2">
           <LabelResourcesPage text="PAGINA" />
           <div className="texto">

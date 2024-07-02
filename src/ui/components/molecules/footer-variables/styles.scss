@@ -8,33 +8,46 @@
 
   @include respond-to('small-mobile') {
     display: grid;
-    grid-template-areas:
-      'logo-section'
-      'variables-section';
+    grid-template-areas:'logo-section'
+                        'variables-section';
+    height: 14rem;
+    width: 100%;
   }
 
-  @include respond-to('small') {
+  @include respond-to('small-mobile-large') {
     display: grid;
     grid-template-areas: 'logo-section variables-section';
-    width: 37rem;
+    grid-template-columns: 30% 70%;
+    height: 5rem;
+    padding: 0.7rem;
+    width: 100%;
   }
 
-  @include respond-to('large-tablet') {
+  @include respond-to('medium'){
     display: grid;
     grid-template-areas: 'logo-section variables-section';
-    width: 48rem;
+    grid-template-columns: 30% 70%;
+    height: 7rem;
+    padding: 0.7rem;
+    width: 100%;
   }
 
   @include respond-to('large') {
     display: grid;
     grid-template-areas: 'logo-section variables-section';
-    width: 52rem;
+    grid-template-columns: 30% 70%;
+    height: 9rem;
+    padding: 0.7rem;
+    width: 100%;
   }
 
   @include respond-to('extra-large') {
     display: grid;
     grid-template-areas: 'logo-section variables-section';
-    width: 52.25rem;
+    grid-template-columns: 30% 70%;
+    height: 11rem;
+    padding: 1rem;
+    width: 100%;
   }
 }
 
@@ -42,6 +55,44 @@
   align-items: center;
   display: flex;
   justify-content: center;
+
+  @include respond-to('small-mobile'){
+    div{
+      display: flex;
+      height: 4rem;
+      padding-top: 0.5rem;
+      width: 11rem;
+    }
+  }
+
+  @include respond-to('small-mobile-large'){
+    div{
+      display: contents;
+      height: 4rem;
+      width: 12rem;
+    } 
+  }
+
+  @include respond-to('medium'){
+    div{
+      height: 5rem;
+      width: 13rem;
+    }
+  }
+
+  @include respond-to('large') {
+    div{
+      height: 8rem;
+      width: 18rem;
+    }
+  }
+
+  @include respond-to('extra-large') {
+    div{
+      height: 9rem;
+      width: 20rem;
+    }
+  }
 }
 
 .variables-section {
@@ -52,11 +103,12 @@
     justify-content: center;
   }
 
-  @include respond-to('small') {
+  @include respond-to('small-mobile-large') {
     justify-content: left;
+    margin-bottom: 0;
   }
 
-  @include respond-to('large-tablet') {
+  @include respond-to('medium'){
     justify-content: left;
   }
 
@@ -73,50 +125,49 @@
   padding: 0.938rem;
 
   @include respond-to('small-mobile') {
-    margin-left: 0;
-    margin-top: 1rem;
-    padding-left: 0;
-    padding-top: 0;
-    width: 7.5rem;
+    margin-right: 1rem;
+    padding-left: 1.2rem;
+    width: 6rem;
 
     span {
       font-size: 0.938rem;
     }
   }
 
-  @include respond-to('small') {
+  @include respond-to('small-mobile-large') {
     margin-top: 0;
     padding-left: 0.938rem;
-    width: 14rem;
+    width: 11rem;
 
     span {
-      font-size: 0.938rem;
+      font-size: 0.8rem;
     }
   }
 
-  @include respond-to('large-tablet') {
-    margin-top: 0;
-    padding-left: 0.938rem;
-    width: 14rem;
+  @include respond-to('medium'){
+    margin-right: 1rem;
+    padding-left: 1.2rem;
+    width: 18rem;
 
     span {
-      font-size: 0.938rem;
+      font-size: 1.2rem;
     }
   }
 
   @include respond-to('large') {
     margin-top: 0;
-    padding-left: 0.938rem;
-    width: 21.5rem;
+    padding-left: 1.2rem;
+    width: 24rem;
 
     span {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
     }
   }
 
   @include respond-to('extra-large') {
-    padding-right: 10rem;
-    width: 12rem;
+    padding-left: 1.5rem;
+    padding-right: 8rem;
+    width: 22rem;
 
     span {
       font-size: 1.5rem;
@@ -131,84 +182,190 @@
   @include respond-to('small-mobile') {
     display: contents;
     justify-content: left;
+    margin-left: 1rem;
 
     span {
       font-size: 0.875rem;
     }
-  }
 
-  @include respond-to('small') {
-    display: flex;
-    justify-content: left;
+    .articulos{
+      margin-left: 0.4rem;
+      padding-bottom: 0.9rem;
+    }
 
-    span {
-      font-size: 0.875rem;
+    .volumenes{
+      margin-left: 0.4rem;
     }
   }
 
-  @include respond-to('large-tablet') {
+  @include respond-to('small-mobile-large'){
     display: flex;
     justify-content: left;
+    margin-left: 0;
+    margin-top:-0.4rem;
+     
+    .articulos{
+      span {
+        font-size: 0.8rem;
+        margin-right: 1rem;
+      }
+    }
 
-    span {
-      font-size: 0.875rem;
+    .volumenes{
+      span {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  @include respond-to('medium'){
+    display: flex;
+    justify-content: left;
+    margin-left: 0;
+    margin-top: 0.9rem;
+     
+    .articulos{
+      span {
+        font-size: 1.1rem;
+        margin-right: 3rem;
+      }
+    }
+
+    .volumenes{
+      span {
+        font-size: 1.1rem;
+      }
     }
   }
 
   @include respond-to('large') {
     display: flex;
     justify-content: left;
+    margin-left: 0;
+    margin-top: 0.9rem;
+     
+    .articulos{
+      span {
+        font-size: 1.35rem;
+        margin-right: 5.5rem;
+      }
+    }
 
-    span {
-      font-size: 1.5rem;
+    .volumenes{
+      span {
+        font-size: 1.35rem;
+      }
     }
   }
 
   @include respond-to('extra-large') {
     display: flex;
     justify-content: left;
+    margin-left: 0;
+    margin-top: 0.9rem;
 
-    span {
-      font-size: 1.5rem;
+    .articulos{
+      span {
+        font-size: 1.5rem;
+      }
     }
 
-    .volumenes {
-      padding-left: 10rem;
+    .volumenes{
+      span {
+        font-size: 1.5rem;
+        padding-left: 15rem;
+      }
     }
   }
 }
 
 .section2 {
   padding: 0.938rem;
-  width: 7.5rem;
+  width: 6.8rem;
 
   @include respond-to('small-mobile') {
-    margin-right: 0;
     padding-top: 0;
-    width: 7.5rem;
+    width: 7rem;
 
-    span {
+    span{
       font-size: 0.938rem;
     }
 
     .texto {
-      font-size: 0.875rem;
+      span{
+        font-size: 0.875rem;
+      }
+
+      padding-bottom: 1rem;
+    }
+  }
+
+  @include respond-to('small-mobile-large'){
+    span{
+      font-size: 0.8rem;
+    }
+
+    padding-top: 1rem;
+    width: 5rem;
+
+    .texto {
+    margin-top: -0.4rem;
+
+      span{
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  @include respond-to('medium'){
+    span{
+      font-size: 1.2rem;
+    }
+
+    padding-left: 1rem;
+    padding-top: 1rem;
+    width: 5rem;
+
+    .texto {
+    margin-top: 1rem;
+
+      span{
+        font-size: 1.1rem;
+      }
     }
   }
 
   @include respond-to('large') {
-    width: 10rem;
+    span{
+      font-size: 1.4rem;
+    }
 
-    span {
-      font-size: 1.5rem;
+    padding-top: 1rem;
+    width: 8rem;
+
+    .texto {
+    margin-top: 1rem;
+
+      span{
+        font-size: 1.35rem;
+      }
     }
   }
 
   @include respond-to('extra-large') {
+    span{
+      font-size: 1.5rem;
+    }
+
+    padding-top: 1rem;
     width: 10rem;
 
-    span {
-      font-size: 1.5rem;
+    .texto {
+    margin-top: 1rem;
+
+      span{
+        font-size: 1.5rem;
+      }
     }
   }
 }
@@ -217,22 +374,55 @@
   background-color: $ads-text-main;
 
   @include respond-to('small-mobile') {
-    background-color: transparent;
+    width: 0;
   }
 
-  @include respond-to('small') {
-    background-color: $ads-text-main;
+  @include respond-to('small-mobile-large') {
+    height: 4rem;
+    width: 0.188rem;
   }
 
-  @include respond-to('large-tablet') {
-    background-color: $ads-text-main;
+  @include respond-to('medium'){
+    height: 5.5rem;
+    width: 0.25rem;
   }
 
   @include respond-to('large') {
-    background-color: $ads-text-main;
+    height:7rem;
+    width: 0.25rem;
   }
 
   @include respond-to('extra-large') {
-    background-color: $ads-text-main;
+    height:8rem;
+    width: 0.25rem;
+  }
+}
+
+.section2__divider div{
+  background-color:$ads-text-main;
+
+  @include respond-to('small-mobile') {
+    height: 5.75rem;
+    width: 0.188rem;
+  }
+
+  @include respond-to('small-mobile-large') {
+    height: 4rem;
+    width: 0.188rem;
+  }
+
+  @include respond-to('medium'){
+    height: 5.5rem;
+    width: 0.25rem;
+  }
+
+  @include respond-to('large') {
+    height:7rem;
+    width: 0.25rem;
+  }
+
+  @include respond-to('extra-large') {
+    height:8rem;
+    width: 0.25rem;
   }
 }
