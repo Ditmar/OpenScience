@@ -1,0 +1,83 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/fonts';
+
+.variables {
+  @include respond-to('extra-large') {
+    display: flex;
+    flex-direction: row;
+    font-size: 24px;
+    width: 16px;
+  }
+
+  @include respond-to('small') {
+    flex-direction: column;
+  }
+}
+
+.variables__articulos {
+  display: inline-block;
+  font-family: Montserrat, sans-serif;
+  margin-right: 49px;
+  position: relative;
+
+  @include respond-to('small') {
+    flex-direction: row;
+    font-size: 14px;
+  }
+
+  @include respond-to('medium') {
+    flex-direction: column;
+    font-size: 14px;
+  }
+
+  @include respond-to('large') {
+    font-size: 24px;
+  }
+
+  @include respond-to('extra-large') {
+    font-size: 24px;
+  }
+}
+
+.variables__articulos::before {
+  color: $ads-text-main-hover;
+  content: '•';
+  font-size: 1rem;
+  vertical-align: initial;
+
+  @include respond-to('small') {
+    flex-direction: column;
+    font-size: 1rem;
+    vertical-align: initial;
+  }
+
+  @include respond-to('medium') {
+    flex-direction: column;
+    font-size: 1rem;
+    vertical-align: initial;
+  }
+
+  @include respond-to('large') {
+    font-size: 1.5rem;
+    vertical-align: initial;
+  }
+
+  @include respond-to('extra-large') {
+    font-size: 1.5rem;
+    vertical-align: initial;
+  }
+}
+
+.variables--primary .variables__articulos {
+  color: $ads-text-main-hover;
+}
+
+.variables--main .variables__articulos {
+  color: $ads-primary-main;
+}
+
+.variables--secondary .variables__articulos {
+  color: $ads-danger-main;
+  text-decoration: none;
+}
