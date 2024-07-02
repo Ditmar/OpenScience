@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import LabelRecentsArticles from './LabelRecentsArticles';
+import styles from './LabelRecentsArticles.module.scss';
 
 describe('Recents Articles Component', () => {
   test('Should display the correct text', () => {
@@ -14,7 +15,7 @@ describe('Recents Articles Component', () => {
 
   test('Should apply the correct CSS class', () => {
     const { container } = render(<LabelRecentsArticles text="ARTICULOS MAS RECIENTES" />);
-    const labelElement = container.querySelector('.label-recents-articles');
+    const labelElement = container.querySelector(`.${styles['label-recents-articles']}`);
     expect(labelElement).toBeInTheDocument();
     expect(labelElement).toHaveTextContent('ARTICULOS MAS RECIENTES');
   });

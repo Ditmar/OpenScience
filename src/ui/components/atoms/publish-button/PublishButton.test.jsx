@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import PublishButton from './PublishButton.tsx';
+import styles from './PublishButton.module.scss';
 
 describe('Testing PublishButton React Component', () => {
   test('should be rendere PUBLICAR ARTICULO', () => {
@@ -12,8 +13,8 @@ describe('Testing PublishButton React Component', () => {
     render(<PublishButton>PUBLICAR ARTICULO</PublishButton>);
     const buttonElement = screen.getByRole('button');
     const labelElement = screen.getByText(/PUBLICAR ARTICULO/i);
-    expect(buttonElement).toHaveClass('button-publish__button');
-    expect(labelElement).toHaveClass('button-publish__label');
+    expect(buttonElement).toHaveClass(styles['button-publish__button']);
+    expect(labelElement).toHaveClass(styles['button-publish__label']);
   });
 
   const createMockFunction = () => {
