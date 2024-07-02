@@ -1,0 +1,54 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "attributes": {
+        "title": "clima",
+        "date": "2023-04-15",
+        "portrait": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "url": "https://firebasestorage.googleapis.com/v0/b/seminario-9c7a7.appspot.com/o/jinx.jpg?alt=media&token=0202a015-c2e3-45eb-82dd-a59bf3b7e1e3"
+            }
+          }
+        },
+        "year_volume": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "Year": "2024",
+              "Volumes": "2"
+            }
+          }
+        },
+        "alt": "Thumbnail for clima"
+      }
+    },
+    {
+      "id": 2,
+      "attributes": {
+        "title": "estadistica",
+        "date": "2023-05-20",
+        "portrait": {
+          "data": {
+            "id": 2,
+            "attributes": {
+              "url": "https://firebasestorage.googleapis.com/v0/b/seminario-9c7a7.appspot.com/o/jinx.jpg?alt=media&token=0202a015-c2e3-45eb-82dd-a59bf3b7e1e3"
+            }
+          }
+        },
+        "year_volume": {
+          "data": {
+            "id": 2,
+            "attributes": {
+              "Year": "2022",
+              "Volumes": "1"
+            }
+          }
+        },
+        "alt": "Thumbnail for estadistica"
+      }
+    }
+  ]
+}
