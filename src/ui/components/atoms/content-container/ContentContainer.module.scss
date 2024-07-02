@@ -2,7 +2,7 @@
 @import '../../../../globals/mixins';
 
 .container {
-  align-items: center;
+  align-items: flex-start;
   background: transparent;
   border: none;
   height: 43.75rem;
@@ -10,14 +10,16 @@
   position: relative;
   width: 50rem;
 
-  @include respond-to('small') {
-    height: 13.125rem;
-    width: 15rem;
+  @include respond-to('small-mobile') {
+    align-items: flex-start;
+    display: flex;
+    height: 15.125rem;
+    width: 17rem;
   }
 
   @include respond-to('medium') {
-    height: 26.25rem;
-    width: 30rem;
+    height: 34.25rem;
+    width: 38rem;
   }
 
   @include respond-to('large') {
@@ -36,12 +38,12 @@
   }
 
   .overlay {
-    align-items: center;
+    align-items: flex-start;
     display: flex;
     justify-content: center;
     left: 0;
     opacity: 0.3;
-    position: absolute;
+    position: relative;
     top: 0;
     width: 99.2%;
 
