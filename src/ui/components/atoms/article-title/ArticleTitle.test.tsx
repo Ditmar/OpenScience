@@ -26,4 +26,5 @@ describe('ArticleTitle', () => {
     expect(titleElement).toHaveClass(styles.articleTitle__text);
     expect(titleElement).toHaveClass(styles['articleTitle__text--secondary']);
   });
+
 });
