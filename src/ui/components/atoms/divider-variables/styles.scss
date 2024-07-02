@@ -1,0 +1,33 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.divider-bar {
+  background-color: $ads-text-main;
+  height: 7.813rem;
+  width: 0.25rem;
+
+  @include respond-to('small-mobile') {
+    height: 6em;
+    width: 0.25rem;
+  }
+
+  @include respond-to('small') {
+    height: 6rem;
+    width: 0.25rem;
+  }
+
+  @include respond-to('large-tablet') {
+    height: 6rem;
+    width: 0.25rem;
+  }
+
+  @include respond-to('large') {
+    height: 6rem;
+    width: 0.25rem;
+  }
+
+  @include respond-to('extra-large') {
+    height: 7.813rem;
+    width: 0.25rem;
+  }
+}
