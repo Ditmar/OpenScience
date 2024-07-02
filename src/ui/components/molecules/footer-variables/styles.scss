@@ -11,7 +11,8 @@
     grid-template-areas:'logo-section'
                         'variables-section';
     height: 14rem;
-    width: 100%;
+    justify-content: center;
+    width: 100%; 
   }
 
   @include respond-to('small-mobile-large') {
@@ -19,7 +20,7 @@
     grid-template-areas: 'logo-section variables-section';
     grid-template-columns: 30% 70%;
     height: 5rem;
-    padding: 0.7rem;
+    padding: 1rem;
     width: 100%;
   }
 
@@ -28,7 +29,7 @@
     grid-template-areas: 'logo-section variables-section';
     grid-template-columns: 30% 70%;
     height: 7rem;
-    padding: 0.7rem;
+    padding: 1rem;
     width: 100%;
   }
 
@@ -37,7 +38,7 @@
     grid-template-areas: 'logo-section variables-section';
     grid-template-columns: 30% 70%;
     height: 9rem;
-    padding: 0.7rem;
+    padding: 1rem;
     width: 100%;
   }
 
@@ -54,45 +55,23 @@
 .logo-section {
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: center;  
 
   @include respond-to('small-mobile'){
     div{
-      display: flex;
-      height: 4rem;
-      padding-top: 0.5rem;
-      width: 11rem;
+      height: 4.875rem;
+      margin-bottom: -3rem;
+      width: 11.875rem;
     }
+    
   }
 
   @include respond-to('small-mobile-large'){
     div{
       display: contents;
-      height: 4rem;
-      width: 12rem;
-    } 
-  }
-
-  @include respond-to('medium'){
-    div{
-      height: 5rem;
-      width: 13rem;
     }
   }
 
-  @include respond-to('large') {
-    div{
-      height: 8rem;
-      width: 18rem;
-    }
-  }
-
-  @include respond-to('extra-large') {
-    div{
-      height: 9rem;
-      width: 20rem;
-    }
-  }
 }
 
 .variables-section {
@@ -106,10 +85,14 @@
   @include respond-to('small-mobile-large') {
     justify-content: left;
     margin-bottom: 0;
+    margin-left: -2rem;
+    margin-right: 2rem;
   }
 
   @include respond-to('medium'){
     justify-content: left;
+    margin-left: -3.5rem;
+    margin-right: 7rem;
   }
 
   @include respond-to('large') {
@@ -118,6 +101,8 @@
 
   @include respond-to('extra-large') {
     justify-content: left;
+    margin-left: -3rem;
+    margin-right: 12rem;
   }
 }
 
@@ -125,8 +110,9 @@
   padding: 0.938rem;
 
   @include respond-to('small-mobile') {
+    margin-left: 1rem;
     margin-right: 1rem;
-    padding-left: 1.2rem;
+    padding-left: 1rem;
     width: 6rem;
 
     span {
@@ -135,8 +121,8 @@
   }
 
   @include respond-to('small-mobile-large') {
+    margin-left: -2.5rem;
     margin-top: 0;
-    padding-left: 0.938rem;
     width: 11rem;
 
     span {
@@ -147,7 +133,7 @@
   @include respond-to('medium'){
     margin-right: 1rem;
     padding-left: 1.2rem;
-    width: 18rem;
+    width: 20rem;
 
     span {
       font-size: 1.2rem;
@@ -166,8 +152,8 @@
 
   @include respond-to('extra-large') {
     padding-left: 1.5rem;
-    padding-right: 8rem;
-    width: 22rem;
+    padding-right: 25rem;
+    width: 30rem;
 
     span {
       font-size: 1.5rem;
@@ -182,7 +168,6 @@
   @include respond-to('small-mobile') {
     display: contents;
     justify-content: left;
-    margin-left: 1rem;
 
     span {
       font-size: 0.875rem;
@@ -281,11 +266,12 @@
 
 .section2 {
   padding: 0.938rem;
-  width: 6.8rem;
+  width: 6rem;
 
   @include respond-to('small-mobile') {
+    padding-left: 0.7rem;
     padding-top: 0;
-    width: 7rem;
+    width: 8rem;
 
     span{
       font-size: 0.938rem;

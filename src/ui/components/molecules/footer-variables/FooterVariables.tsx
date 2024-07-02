@@ -9,7 +9,7 @@ function FooterVariables() {
   return (
     <div className="molecule-footer">
       <div className="logo-section">
-        <LogoFooter icon={logo} color="primary" />
+        <LogoFooter icon={logo} color="secondary" />
       </div>
       <div className="variables-section">
         <span className="divider">
