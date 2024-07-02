@@ -23,11 +23,15 @@ function HomePage() {
         <div className="featured-articles-column">
           {dataMock.data.slice(0, 2).map(({ id, attributes }) => (
             <React.Fragment key={id}>
-              <FeaturedArticle>
+              <FeaturedArticle
+                variant="default"
+                article={attributes.title}
+                date={new Date(attributes.date)} // Asegúrate de que attributes.date sea un string válido en formato de fecha
+              >
                 <div className="featured-article__content">
                   <div className="featured-article__text">
                     <LabelFeaturedArticles text="ARTÍCULOS DESTACADOS" ColorVariant="main" />
-                    <LabelDate date={new Date(attributes.date)} />
+                    <LabelDate date={new Date(attributes.date)} /> {/* Igualmente aquí */}
                     <ArticleTitle title={attributes.title} variant="default" />
                     <ArticleDescription
                       article="Spectral study the visual ecology of pelagic sharks with secondarily expanded habitats."
