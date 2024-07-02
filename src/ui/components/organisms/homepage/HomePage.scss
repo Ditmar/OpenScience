@@ -1,0 +1,63 @@
+@import '../../../../globals/breakpoints';
+@import '../../../../globals/variables';
+
+.home-page {
+  .featured-articles-container {
+    align-items: stretch;
+    display: flex;
+    gap: 20px;
+  }
+
+  .featured-articles-column {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .image {
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .thumbnail-column {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .featured-article__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 10px;
+  }
+
+  .featured-article__text {
+    flex: 1;
+  }
+
+  .divider {
+    align-items: center;
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  @media (max-width: map-get($ads-breakpoints-scales, 'medium')) {
+    .featured-articles-container {
+      flex-direction: column;
+    }
+
+    .thumbnail-column {
+      order: -1;
+    }
+  }
+}
