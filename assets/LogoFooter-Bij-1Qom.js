@@ -1,4 +1,4 @@
-import{j as c}from"./jsx-runtime-DRTy3Uxn.js";import{I as d}from"./icons-DNNtq2Yd.js";const s=`<?xml version="1.0" standalone="no"?>
+import{j as t}from"./jsx-runtime-DRTy3Uxn.js";import"./index-BBkUAzwr.js";import{I as d}from"./icons-DNNtq2Yd.js";const z=`<?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -107,4 +107,4 @@ c104 -134 198 -244 207 -246 16 -3 17 19 17 282 0 278 -1 286 -20 286 -19 0
 -47 0 -80 -4 -80 -10z"/>
 </g>
 </svg>
-`;function p(t){const{icon:n,color:a}=t,o=`logo--${a}`;return c.jsx("div",{className:`logo ${o}`,children:n&&c.jsx(d,{"data-testid":"logo_icon",src:n,className:"logo-icon"})})}p.__docgenInfo={description:"",methods:[],displayName:"LogoFooter",props:{icon:{required:!1,tsType:{name:"string"},description:""},color:{required:!1,tsType:{name:"union",raw:"'primary' | 'secondary'",elements:[{name:"literal",value:"'primary'"},{name:"literal",value:"'secondary'"}]},description:""}}};export{p as L,s as l};
+`,e="_logo_15v83_1",l="_primary_15v83_11",p="_secondary_15v83_14",n={"logo-icon":"_logo-icon_15v83_1",logo:e,primary:l,secondary:p};function s({icon:c,color:o}){const a=o==="secondary"?n["logo--secondary"]:"";return t.jsx("div",{className:`${n.logo} ${a}`,children:c&&t.jsx(d,{"data-testid":"logo_icon",src:c,className:n["logo-icon"]})})}s.__docgenInfo={description:"",methods:[],displayName:"LogoFooter",props:{icon:{required:!1,tsType:{name:"string"},description:""},color:{required:!1,tsType:{name:"union",raw:"'primary' | 'secondary'",elements:[{name:"literal",value:"'primary'"},{name:"literal",value:"'secondary'"}]},description:""}}};export{s as L,z as l};
