@@ -20,11 +20,11 @@ function ButtonsPdfShare({ onClick }: IProps) {
   };
 
   return (
-    <div className="pdf-share-button" data-testid="pdf-share-button">
+    <div className="button-pdf-share" data-testid="pdf-share-button">
       <VariableButton icon={PdfIcon} />
       <div className="share-container">
         <VariableButton icon={LinkIcon} onClick={toggleShare} />
-        <div className="share-buttons">
+        <div className="share-button">
           {isShareOpen && <IconButton icon={WhatsappIcon} />}
           {isShareOpen && <IconButton icon={FacebookIcon} />}
           {isShareOpen && <IconButton icon={TelegramIcon} />}

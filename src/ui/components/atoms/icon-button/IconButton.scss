@@ -14,8 +14,8 @@
   }
 
   @include respond-to('medium') {
-    height: 3.5rem;
-    width: 3.5rem;
+    height: 3rem;
+    width: 2.5rem;
   }
 
   @include respond-to('large') {
