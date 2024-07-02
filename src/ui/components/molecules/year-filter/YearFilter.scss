@@ -1,0 +1,67 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/breakpoints';
+
+.year-filter {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 35px;
+  padding-left: 1.25rem;
+}
+
+.header {
+  margin-bottom: 1rem;
+}
+
+h2 {
+  background-color: $ads-color-main;
+  color: $ads-text-main-alpha;
+  margin-bottom: -1.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.years-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.year-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin-left: 13px;
+  padding: 10px;
+
+  @include respond-to('extra-large') {
+    grid-template-columns: repeat(11, 1fr);
+  }
+
+  @include respond-to('medium') {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+.year-button {
+  background: $ads-color-main;
+  border: 1px solid $ads-color-main;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 0.25rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s;
+  
+  &:hover {
+    border: 0.2rem solid $ads-color-hover;
+    //background: #e0e0e0;
+  }
+
+  &.selected {
+    background-color: $ads-primary-main;
+    color: $ads-color-main;
+    font-weight: bold;
+  }
+}
+
