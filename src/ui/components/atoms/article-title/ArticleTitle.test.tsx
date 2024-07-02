@@ -5,7 +5,7 @@ import styles from './ArticleTitle.module.scss';
 describe('ArticleTitle', () => {
   test('title of an article', () => {
     const mockTitle = 'New title of an article';
-    render(<ArticleTitle title={mockTitle} />);
+    render(<ArticleTitle title={mockTitle} variant="default" />);
     expect(screen.getByText(mockTitle)).toBeInTheDocument();
   });
 
@@ -14,8 +14,8 @@ describe('ArticleTitle', () => {
     render(<ArticleTitle title={mockTitle} variant="primary" />);
 
     const titleElement = screen.getByText(mockTitle);
-    expect(titleElement).toHaveClass(styles.titleText);
-    expect(titleElement).toHaveClass(styles.primaryText);
+    expect(titleElement).toHaveClass(styles.articleTitle__text);
+    expect(titleElement).toHaveClass(styles['articleTitle__text--primary']);
   });
 
   test('title three of an article', () => {
@@ -23,7 +23,7 @@ describe('ArticleTitle', () => {
     render(<ArticleTitle title={mockTitle} variant="secondary" />);
 
     const titleElement = screen.getByText(mockTitle);
-    expect(titleElement).toHaveClass(styles.titleText);
-    expect(titleElement).toHaveClass(styles.secondaryText);
+    expect(titleElement).toHaveClass(styles.articleTitle__text);
+    expect(titleElement).toHaveClass(styles['articleTitle__text--secondary']);
   });
 });

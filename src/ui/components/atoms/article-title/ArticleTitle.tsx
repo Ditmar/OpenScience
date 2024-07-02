@@ -3,14 +3,11 @@ import type { IProps } from './types/IProps';
 
 function ArticleTitle({ title, variant }: IProps) {
   const getTextStyle = () => {
-    if (variant === 'default') {
-      return styles.defaultText;
-    }
     if (variant === 'primary') {
-      return styles.primaryText;
+      return styles['articleTitle__text--primary'];
     }
     if (variant === 'secondary') {
-      return styles.secondaryText;
+      return styles['articleTitle__text--secondary'];
     }
     return '';
   };
@@ -18,9 +15,8 @@ function ArticleTitle({ title, variant }: IProps) {
   const textStyle = getTextStyle();
   return (
     <div className={styles.articleTitle}>
-      <p className={`${styles.titleText} ${textStyle}`}>{title}</p>
+      <p className={`${styles.articleTitle__text} ${textStyle}`}>{title}</p>
     </div>
   );
 }
-
 export default ArticleTitle;
