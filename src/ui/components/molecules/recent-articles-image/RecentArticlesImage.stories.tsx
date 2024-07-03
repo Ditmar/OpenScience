@@ -31,7 +31,7 @@ export const Articles: Story = {
     children: (
       <>
         <div className="featured__item">
-          <LabelRecentsArticles text="ARTICULOS MAS RECIENTES" variant="primary" />
+          <LabelRecentsArticles text="ARTICULOS MAS RECIENTES" color="primary" />
           <LabelDate date={new Date(2023, 3, 15)} />
           <ArticleTitle
             title="CANOPY-TOP MEASUREMENTS DO NOT ACCURATELY QUANTIFY CANOPY-SCALE LEAF THERMOREGULATION"
