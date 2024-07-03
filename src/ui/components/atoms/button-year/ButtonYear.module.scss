@@ -1,0 +1,44 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/fonts';
+
+.button-year {
+  align-items: center;
+  background-color: $ads-color-main;
+  border: none;
+  color: $ads-color-main;
+  display: flex;
+  height: 0.937rem;
+  justify-content: center;
+  margin-left: 0.5rem;
+  text-transform: uppercase;
+  width: 3.625rem;
+
+  .button-year-label {
+    align-items: center;
+    color: $ads-text-main;
+    display: flex;
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    font-size: 0.732rem;
+    font-weight: $ads-font-weight;
+    justify-content: center;
+  }
+
+  @include respond-to('small') {
+    height: 2.437rem;
+    text-transform: capitalize;
+    width: 8.3125rem;
+
+    .button-year-label {
+      color: $ads-text-main;
+      font-family: Lato, Arial, Helvetica, sans-serif;
+      font-size: 2.25rem;
+      font-weight: $ads-font-weight;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.6;
+  }
+}

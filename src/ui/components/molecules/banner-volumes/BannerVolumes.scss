@@ -1,0 +1,67 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.layout {
+  position: relative;
+}
+
+.button-search {
+  background: transparent;
+  border: none;
+}
+
+.search-bar {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  right: 2rem;
+  top: 2.2rem;
+  z-index: 2;
+
+  @include respond-to('small') {
+    margin-right: 3rem;
+    right: 0;
+  }
+}
+
+.logo-container {
+  background-color: $ads-primary-main;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+
+  @include respond-to('small') {
+    background-color: transparent;
+  }
+}
+
+.hero-banner-container {
+  position: relative;
+}
+
+.navbar-container {
+  display: none;
+
+  @include respond-to('small') {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-around;
+  }
+}
+
+.year-list-container {
+  margin-top: -13rem;
+  padding-left: 0;
+  padding-right: 0;
+  position: absolute;
+  width: 100%;
+
+  @include respond-to('small') {
+    margin-top: -12rem;
+  }
+}
+
+.year-list-container-hidden {
+  display: none;
+}

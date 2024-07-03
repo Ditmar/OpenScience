@@ -1,0 +1,22 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Rectangle12 from '../../ui/components/atoms/hero-banner/__mock__/imgs/Rectangle12.png';
+import BannerVolumes from '../../ui/components/molecules/banner-volumes/BannerVolumes';
+import dataMock from '../../ui/components/molecules/year-list/__mock__/datamock.json';
+import LogoSvg from '../../assets/icons/logo.svg';
+import type { ApiResponse } from './utils/fetchData';
+import { fetchData } from './utils/fetchData';
+
+const data: ApiResponse = (await fetchData()) || dataMock;
+---
+
+<Layout title="Volúmenes">
+  <BannerVolumes
+    data={data.data}
+    yearText="año"
+    textSearch="Buscar"
+    backgroundImage={Rectangle12.src}
+    logo={LogoSvg.src}
+    client:load
+  />
+</Layout>

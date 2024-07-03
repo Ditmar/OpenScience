@@ -1,0 +1,35 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/fonts';
+
+.year {
+  background-color: transparent;
+  border: none;
+  border-radius: 0.2rem;
+  color: $ads-color-main;
+  height: 1.2rem;
+  text-transform: uppercase;
+  width: 2.5rem;
+
+  .year-label {
+    color: $ads-color-main;
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+
+  @include respond-to('small') {
+    height: 2rem;
+    text-transform: capitalize;
+    width: 4rem;
+
+    .year-label {
+      font-size: 1.15rem;
+    }
+  }
+
+  &:hover {
+    background-color: $ads-background-color-black;
+    cursor: pointer;
+  }
+}
