@@ -4,7 +4,7 @@ import location from '../../../../assets/icons/location.svg?raw';
 import Location from './Location';
 
 const meta = {
-  title: 'ui/components/atoms/location-variable',
+  title: 'ui/components/molecules/location-variable',
   component: Location,
   argTypes: {
     variant: {
