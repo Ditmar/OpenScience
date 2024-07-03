@@ -14,8 +14,8 @@ describe('ArticleTitle', () => {
     render(<ArticleTitle title={mockTitle} variant="primary" />);
 
     const titleElement = screen.getByText(mockTitle);
-    expect(titleElement).toHaveClass(styles.articleTitle__text);
-    expect(titleElement).toHaveClass(styles['articleTitle__text--primary']);
+    expect(titleElement).toHaveClass(styles['article-title__text']);
+    expect(titleElement).toHaveClass(styles['article-title__text--primary']);
   });
 
   test('title three of an article', () => {
@@ -23,7 +23,7 @@ describe('ArticleTitle', () => {
     render(<ArticleTitle title={mockTitle} variant="secondary" />);
 
     const titleElement = screen.getByText(mockTitle);
-    expect(titleElement).toHaveClass(styles.articleTitle__text);
-    expect(titleElement).toHaveClass(styles['articleTitle__text--secondary']);
+    expect(titleElement).toHaveClass(styles['article-title__text']);
+    expect(titleElement).toHaveClass(styles['article-title__text--secondary']);
   });
 });
