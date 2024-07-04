@@ -1,29 +1,8 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 
-.article {
-background-color: $ads-background-main;
-    margin: 0;
-
-    @include respond-to('small-mobile'){
-        padding: 0.5rem;
-    }
-
-    @include respond-to('small-mobile-large'){
-        padding: 1.5rem;
-    }
-
-    @include respond-to('medium'){
-        padding: 3rem;
-    }
-
-    @include respond-to('large') {
-        padding: 4rem;
-    }
-
-    @include respond-to('extra-large'){
-        padding: 5rem;
-    }
+.article{
+    margin-top: 1rem;
 }
 
 .date p{
@@ -52,7 +31,7 @@ background-color: $ads-background-main;
     @include respond-to('small-mobile'){
         font-size: 0.8rem;
         line-height: 0.9rem;
-        margin-top: -0.5rem;
+        margin-top: 0.5rem;
         padding-left: 0;
     }
 
@@ -203,61 +182,3 @@ background-color: $ads-background-main;
         }
     }
 }
-
-.articulos span{
-    text-align: left;
-
-    @include respond-to('small-mobile'){
-        font-size: 1.1rem;
-        margin-left:-3rem;
-    }
-
-    @include respond-to('small-mobile-large'){
-        font-size: 1.4rem;
-        margin-left:-2rem;
-    }
-
-    @include respond-to('medium'){
-        font-size: 1.7rem;
-        margin-left:-2.5rem;
-    }
-
-    @include respond-to('large'){
-        font-size: 2.2rem;
-        margin-left:-2.5rem;
-    }
-
-    @include respond-to('extra-large'){
-        font-size: 4.2rem;
-        margin-left: -2.5rem;
-    }
-}
-
-.volumes{
-    margin-top: 1rem;
-    text-align: center;
-
-    span{
-        @include respond-to('small-mobile'){
-            font-size: 1.1rem;
-        }
-
-        @include respond-to('small-mobile-large'){
-            font-size: 1.2rem;
-        }
-
-        @include respond-to('medium'){
-            font-size: 1.5rem;
-        }
-
-        @include respond-to('large'){
-            font-size: 2rem;
-            margin-left:-2.5rem;
-        }
-
-        @include respond-to('extra-large'){
-            font-size: 2.8rem; 
-        }
-    }
-}
-
