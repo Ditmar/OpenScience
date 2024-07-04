@@ -2,6 +2,16 @@
 import Layout from '../../layouts/Layout.astro';
 import ArticleTitle from '../../ui/components/atoms/article-title/ArticleTitle';
 import ArticleDescription from '../../ui/components/atoms/article-description/ArticleDescription';
+
+async function getData() {
+  const API_ROUTE = Astro.locals.API_END_POINT;
+  const data = await Astro.locals.collections(`${API_ROUTE}/api/volumes`);
+  return data;
+}
+
+const collections = await getData();
+const articles = collections.data;
+console.log(articles);
 ---
 
 <Layout title="Articulos Recientes">
