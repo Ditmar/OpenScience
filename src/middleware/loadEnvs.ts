@@ -1,6 +1,20 @@
 // eslint-disable-next-line import/no-unresolved
 import { defineMiddleware } from 'astro:middleware';
-import type { Locals } from '../types/locals';
+import type { Locals, ArticlesApiResponse } from '../types/locals';
+
+import FetchCache from '../fetch/fetch';
+
+async function fetchData(API_ROUTE: string) {
+  const fetcher = new FetchCache<ArticlesApiResponse>(API_ROUTE, {});
+
+  try {
+    const response = await fetcher.get();
+    return response;
+  } catch (error) {
+    console.error('Error fetching articles:', error);
+    return null;
+  }
+}
 
 export const loadEnvs = defineMiddleware((context, next) => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -13,6 +27,9 @@ export const loadEnvs = defineMiddleware((context, next) => {
     API_BASE_ROUTE: import.meta.env.API_BASE_ROUTE,
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     DOMAIN: import.meta.env.DOMAIN,
-  } as Locals;
+    collections: (API_ROUTE: string) => {
+      return fetchData(API_ROUTE);
+    },
+  } as unknown as Locals;
   return next();
 });
