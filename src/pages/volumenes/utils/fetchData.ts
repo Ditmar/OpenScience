@@ -1,6 +1,5 @@
 import FetchCache from '../../../fetch/fetch';
 
-const API_URL = 'http://openscience.peliscast.com:1337/api/year-volumes';
 export interface ApiResponse {
   data: {
     id: number;
@@ -11,8 +10,8 @@ export interface ApiResponse {
   }[];
 }
 
-export async function fetchData() {
-  const fetcher = new FetchCache<ApiResponse>(API_URL, {});
+export async function fetchData(API_ENDPOINT: string) {
+  const fetcher = new FetchCache<ApiResponse>(`${API_ENDPOINT}/api/year-volumes`, {});
 
   try {
     const response = await fetcher.get();

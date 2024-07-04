@@ -7,7 +7,8 @@ import LogoSvg from '../../assets/icons/logo.svg';
 import type { ApiResponse } from './utils/fetchData';
 import { fetchData } from './utils/fetchData';
 
-const data: ApiResponse = (await fetchData()) || dataMock;
+const localsData = Astro.locals;
+const data: ApiResponse = (await fetchData(localsData?.API_END_POINT)) || dataMock;
 ---
 
 <Layout title="Volúmenes">
