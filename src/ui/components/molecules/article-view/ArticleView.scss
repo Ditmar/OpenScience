@@ -1,0 +1,59 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/breakpoints';
+
+.article {
+  display: flex;
+}
+
+.image-section {
+  img {
+    width: 100%;
+  }
+}
+
+.article-section {
+  display: flex;
+  flex-direction: column;
+  width: 68.688;
+
+  p {
+    margin: 2px;
+  }
+}
+
+.date-section {
+  align-items: center;
+  display: flex;
+}
+
+.mobile-option {
+  display: none;
+}
+
+.desktop-option {
+  display: block;
+  padding: 5px;
+}
+
+.desktop-divider {
+  display: block;
+
+  hr {
+    width: 100%;
+  }
+}
+
+@media (max-width: map-get($ads-breakpoints-scales, 'medium')) {
+  .desktop-divider {
+    display: none;
+  }
+
+  .desktop-option {
+    display: none;
+  }
+
+  .mobile-option {
+    display: flex;
+  }
+}
