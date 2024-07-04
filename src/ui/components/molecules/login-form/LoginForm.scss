@@ -1,0 +1,30 @@
+@import '../../../../globals/mixins';
+@import '../../../../globals/variables';
+
+.login__form{
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 10%);
+    margin: 0 auto;
+    padding: 2rem;
+    width: 60%;
+
+    input{
+        width: 90%;
+    }
+    
+.login__button{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 2rem;
+    width: 50%;
+
+    button{
+        font-size: $ads-size-main;
+        font-weight: bold;
+        height: 3rem;
+        width: 100%;
+    }
+}
+}
