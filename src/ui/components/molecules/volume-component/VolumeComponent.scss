@@ -1,0 +1,23 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.volume-component {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 1rem 0;
+  padding: 1rem;
+
+  &.default {
+    background-color: $ads-tertiary-main;
+  }
+
+  &.primary {
+    background-color: $ads-secondary-main;
+    color: $ads-tertiary-main;
+  }
+
+  &.secondary {
+    background-color: $ads-text-main;
+    color: $ads-tertiary-main;
+  }
+}
