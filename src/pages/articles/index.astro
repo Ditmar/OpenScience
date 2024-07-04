@@ -5,12 +5,12 @@ import ArticleDescription from '../../ui/components/atoms/article-description/Ar
 
 async function getData() {
   const API_ROUTE = Astro.locals.API_END_POINT;
-  const data = await Astro.locals.collections(`${API_ROUTE}/api/volumes`);
+  const data = Astro.locals.collections(`${API_ROUTE}/api/articles`);
   return data;
 }
 
 const collections = await getData();
-const articles = collections.data;
+const articles = collections?.data;
 console.log(articles);
 ---
 

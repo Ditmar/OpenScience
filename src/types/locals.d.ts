@@ -17,5 +17,5 @@ export interface Locals {
   API_KEY: string;
   API_BASE_ROUTE: string;
   DOMAIN: string;
-  collections: () => ArticlesApiResponse[];
+  collections: (API_ROUTE: string) => Promise<ArticlesApiResponse>;
 }
