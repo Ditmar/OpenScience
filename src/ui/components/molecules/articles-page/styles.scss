@@ -1,0 +1,263 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.article {
+background-color: $ads-background-main;
+    margin: 0;
+
+    @include respond-to('small-mobile'){
+        padding: 0.5rem;
+    }
+
+    @include respond-to('small-mobile-large'){
+        padding: 1.5rem;
+    }
+
+    @include respond-to('medium'){
+        padding: 3rem;
+    }
+
+    @include respond-to('large') {
+        padding: 4rem;
+    }
+
+    @include respond-to('extra-large'){
+        padding: 5rem;
+    }
+}
+
+.date p{
+    @include respond-to('small-mobile'){
+        font-size: 0.7rem;
+    }
+
+    @include respond-to('small-mobile-large'){
+        font-size: 0.75rem;
+    }
+
+    @include respond-to('medium'){
+        font-size: 1rem;
+    }
+
+    @include respond-to('large') {
+        font-size: 1.2rem;
+    }
+
+    @include respond-to('extra-large'){
+        font-size: 1.5rem;
+    } 
+}
+
+.article-title p {
+    @include respond-to('small-mobile'){
+        font-size: 0.8rem;
+        line-height: 0.9rem;
+        margin-top: -0.5rem;
+        padding-left: 0;
+    }
+
+    @include respond-to('small-mobile-large'){
+        font-size: 0.875rem;
+        line-height: 1.1rem;
+    }
+
+    @include respond-to('medium'){
+        font-size: 1.2rem;
+        line-height: 1.3rem;
+    }
+
+    @include respond-to('large'){
+        font-size: 1.3rem;
+        line-height: 1.5rem;
+    }
+
+    @include respond-to('extra-large'){
+        font-size: 2.5rem;
+        line-height: 3.492rem;
+    }
+}
+
+.article-description p{
+    @include respond-to('small-mobile'){
+        font-size: 0.7rem;
+        line-height: 0.75rem;
+        margin-top: -0.5rem;
+    }
+
+    @include respond-to('small-mobile-large'){
+        font-size: 0.75rem;
+        line-height: 0.85rem;
+    }
+
+    @include respond-to('medium'){
+        font-size: 0.85rem;
+        line-height: 1rem;
+    }
+
+    @include respond-to('large'){
+        font-size: 0.95rem;
+        line-height: 1.2rem;
+    }
+
+    @include respond-to('extra-large'){
+        font-size: 2.25rem;
+        line-height: 3.06rem;
+    }
+
+}
+
+.divider {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    width: 100%;
+
+    .autor{
+        @include respond-to('small-mobile'){
+            margin-top: -1rem;
+
+            p{
+                font-size: 0.625rem;
+            }
+        }
+
+        @include respond-to('small-mobile-large'){
+            margin-top: -1.5rem;
+
+            p{
+                font-size: 0.7rem;
+            }
+        }
+
+        @include respond-to('medium'){
+            margin-top: -2rem;
+
+            p{
+                font-size: 0.75rem;
+            }
+        }
+
+        @include respond-to('large'){
+            margin-top: -3rem;
+
+            p{
+                font-size: 0.85rem;
+            }
+        }
+
+        @include respond-to('extra-large'){
+            margin-bottom: 2rem;
+
+            p{
+                font-size: 1.5rem;
+            }
+        }
+    }
+  
+    .buttons {
+        display: flex;
+        gap: 1rem;
+        margin-left: auto;
+        padding-top: 2rem;
+
+        @include respond-to('small-mobile'){
+            margin-bottom: -1rem;
+            padding-top: 0;
+
+            button{
+                height: 4rem;
+                width: 2rem;
+            }
+        }
+
+        @include respond-to('small-mobile-large'){
+            margin-bottom: -1rem;
+            margin-top: -1rem;
+
+            button{
+                height: 4.5rem;
+                width: 2.25rem;
+            }
+        }
+
+        @include respond-to('medium'){
+            button{
+                height: 5rem;
+                width: 2.5rem;
+            }
+        }
+
+        @include respond-to('large'){
+            button{
+                height: 6rem;
+                width: 3rem;
+            }
+        }
+
+        @include respond-to('extra-large'){
+            button{
+                height: 7.875rem;
+                width: 3.75rem;
+            }
+        }
+    }
+}
+
+.articulos span{
+    text-align: left;
+
+    @include respond-to('small-mobile'){
+        font-size: 1.1rem;
+        margin-left:-3rem;
+    }
+
+    @include respond-to('small-mobile-large'){
+        font-size: 1.4rem;
+        margin-left:-2rem;
+    }
+
+    @include respond-to('medium'){
+        font-size: 1.7rem;
+        margin-left:-2.5rem;
+    }
+
+    @include respond-to('large'){
+        font-size: 2.2rem;
+        margin-left:-2.5rem;
+    }
+
+    @include respond-to('extra-large'){
+        font-size: 4.2rem;
+        margin-left: -2.5rem;
+    }
+}
+
+.volumes{
+    margin-top: 1rem;
+    text-align: center;
+
+    span{
+        @include respond-to('small-mobile'){
+            font-size: 1.1rem;
+        }
+
+        @include respond-to('small-mobile-large'){
+            font-size: 1.2rem;
+        }
+
+        @include respond-to('medium'){
+            font-size: 1.5rem;
+        }
+
+        @include respond-to('large'){
+            font-size: 2rem;
+            margin-left:-2.5rem;
+        }
+
+        @include respond-to('extra-large'){
+            font-size: 2.8rem; 
+        }
+    }
+}
+
