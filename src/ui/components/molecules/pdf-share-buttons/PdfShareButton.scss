@@ -1,8 +1,9 @@
 .pdf-share-buttons {
-  height: 18.75rem;
-  width: 12.5rem;
   display: flex;
   flex-direction: column;
+  height: 18.75rem;
+  width: 12.5rem;
+
   .share-buttons {
     display: flex;
     flex-direction: column;
@@ -11,29 +12,31 @@
   }
 
   .pdf-and-share {
-    padding-top: 12.5rem;
     margin-left: 1.25rem;
+    padding-top: 12.5rem;
   }
 
   @media (320px <= width <= 568px) {
     height: 10.938rem;
     width: 7.5rem;
+
     .share-buttons {
       display: flex;
       flex-direction: column;
       height: 0.063rem;
       margin-left: 3.75rem;
     }
-  
+
     .pdf-and-share {
-      padding-top: 7.813rem;
       margin-left: 0.938rem;
+      padding-top: 7.813rem;
     }
   }
 
   @media (833px <= width <= 1112px) {
     height: 12.5rem;
     width: 7.5rem;
+
     .share-buttons {
       display: flex;
       flex-direction: column;
