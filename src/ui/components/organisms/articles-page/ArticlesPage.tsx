@@ -28,27 +28,43 @@ function ArticlesPage() {
       <div className="volumes">
         <LabelVolumes text="VOLÚMENES" color="tertiary" />
       </div>
-      <div>
+      <div className="volume-carousel">
         <VolumeCarousel leftIcon={LeftArrow} rightIcon={RightArrow}>
           <div className="carousel__item">
             <Thumbnail pathImage={String(Rectangle27)} alt="Rectangle27" />
-            <LabelDate date={new Date(2023, 3, 15)} />
-            <Volumen volumen="Vol." id={1} />
+            <div className="date">
+              <LabelDate date={new Date(2023, 3, 15)} />
+            </div>
+            <div className="vol">
+              <Volumen volumen="Vol." id={1} />
+            </div>
           </div>
           <div className="carousel__item">
             <Thumbnail pathImage={String(Rectangle28)} alt="Rectangle28" />
-            <LabelDate date={new Date(2023, 3, 15)} />
-            <Volumen volumen="Vol." id={2} />
+            <div className="date">
+              <LabelDate date={new Date(2023, 3, 15)} />
+            </div>
+            <div className="vol">
+              <Volumen volumen="Vol." id={2} />
+            </div>
           </div>
           <div className="carousel__item">
             <Thumbnail pathImage={String(Rectangle29)} alt="Rectangle29" />
-            <LabelDate date={new Date(2023, 3, 15)} />
-            <Volumen volumen="Vol." id={3} />
+            <div className="date">
+              <LabelDate date={new Date(2023, 3, 15)} />
+            </div>
+            <div className="vol">
+              <Volumen volumen="Vol." id={3} />
+            </div>
           </div>
           <div className="carousel__item">
             <Thumbnail pathImage={String(Rectangle30)} alt="Rectangle30" />
-            <LabelDate date={new Date(2024, 5, 23)} />
-            <Volumen volumen="Vol." id={4} />
+            <div className="date">
+              <LabelDate date={new Date(2024, 5, 23)} />
+            </div>
+            <div className="vol">
+              <Volumen volumen="Vol." id={4} />
+            </div>
           </div>
         </VolumeCarousel>
       </div>
