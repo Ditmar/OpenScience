@@ -8,11 +8,12 @@
 
   @include respond-to('small-mobile') {
     display: grid;
-    grid-template-areas:'logo-section'
-                        'variables-section';
+    grid-template-areas:
+      'logo-section'
+      'variables-section';
     height: 14rem;
     justify-content: center;
-    width: 100%; 
+    width: 100%;
   }
 
   @include respond-to('small-mobile-large') {
@@ -24,7 +25,7 @@
     width: 100%;
   }
 
-  @include respond-to('medium'){
+  @include respond-to('medium') {
     display: grid;
     grid-template-areas: 'logo-section variables-section';
     grid-template-columns: 30% 70%;
@@ -55,23 +56,21 @@
 .logo-section {
   align-items: center;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
 
-  @include respond-to('small-mobile'){
-    div{
+  @include respond-to('small-mobile') {
+    div {
       height: 4.875rem;
       margin-bottom: -3rem;
       width: 11.875rem;
     }
-    
   }
 
-  @include respond-to('small-mobile-large'){
-    div{
+  @include respond-to('small-mobile-large') {
+    div {
       display: contents;
     }
   }
-
 }
 
 .variables-section {
@@ -89,7 +88,7 @@
     margin-right: 2rem;
   }
 
-  @include respond-to('medium'){
+  @include respond-to('medium') {
     justify-content: left;
     margin-left: -3.5rem;
     margin-right: 7rem;
@@ -130,7 +129,7 @@
     }
   }
 
-  @include respond-to('medium'){
+  @include respond-to('medium') {
     margin-right: 1rem;
     padding-left: 1.2rem;
     width: 20rem;
@@ -173,50 +172,50 @@
       font-size: 0.875rem;
     }
 
-    .articulos{
+    .articulos {
       margin-left: 0.4rem;
       padding-bottom: 0.9rem;
     }
 
-    .volumenes{
+    .volumenes {
       margin-left: 0.4rem;
     }
   }
 
-  @include respond-to('small-mobile-large'){
+  @include respond-to('small-mobile-large') {
     display: flex;
     justify-content: left;
     margin-left: 0;
-    margin-top:-0.4rem;
-     
-    .articulos{
+    margin-top: -0.4rem;
+
+    .articulos {
       span {
         font-size: 0.8rem;
         margin-right: 1rem;
       }
     }
 
-    .volumenes{
+    .volumenes {
       span {
         font-size: 0.8rem;
       }
     }
   }
 
-  @include respond-to('medium'){
+  @include respond-to('medium') {
     display: flex;
     justify-content: left;
     margin-left: 0;
     margin-top: 0.9rem;
-     
-    .articulos{
+
+    .articulos {
       span {
         font-size: 1.1rem;
         margin-right: 3rem;
       }
     }
 
-    .volumenes{
+    .volumenes {
       span {
         font-size: 1.1rem;
       }
@@ -228,15 +227,15 @@
     justify-content: left;
     margin-left: 0;
     margin-top: 0.9rem;
-     
-    .articulos{
+
+    .articulos {
       span {
         font-size: 1.35rem;
         margin-right: 5.5rem;
       }
     }
 
-    .volumenes{
+    .volumenes {
       span {
         font-size: 1.35rem;
       }
@@ -249,13 +248,13 @@
     margin-left: 0;
     margin-top: 0.9rem;
 
-    .articulos{
+    .articulos {
       span {
         font-size: 1.5rem;
       }
     }
 
-    .volumenes{
+    .volumenes {
       span {
         font-size: 1.5rem;
         padding-left: 15rem;
@@ -273,12 +272,12 @@
     padding-top: 0;
     width: 8rem;
 
-    span{
+    span {
       font-size: 0.938rem;
     }
 
     .texto {
-      span{
+      span {
         font-size: 0.875rem;
       }
 
@@ -286,8 +285,8 @@
     }
   }
 
-  @include respond-to('small-mobile-large'){
-    span{
+  @include respond-to('small-mobile-large') {
+    span {
       font-size: 0.8rem;
     }
 
@@ -295,16 +294,16 @@
     width: 5rem;
 
     .texto {
-    margin-top: -0.4rem;
+      margin-top: -0.4rem;
 
-      span{
+      span {
         font-size: 0.8rem;
       }
     }
   }
 
-  @include respond-to('medium'){
-    span{
+  @include respond-to('medium') {
+    span {
       font-size: 1.2rem;
     }
 
@@ -313,16 +312,16 @@
     width: 5rem;
 
     .texto {
-    margin-top: 1rem;
+      margin-top: 1rem;
 
-      span{
+      span {
         font-size: 1.1rem;
       }
     }
   }
 
   @include respond-to('large') {
-    span{
+    span {
       font-size: 1.4rem;
     }
 
@@ -330,16 +329,16 @@
     width: 8rem;
 
     .texto {
-    margin-top: 1rem;
+      margin-top: 1rem;
 
-      span{
+      span {
         font-size: 1.35rem;
       }
     }
   }
 
   @include respond-to('extra-large') {
-    span{
+    span {
       font-size: 1.5rem;
     }
 
@@ -347,9 +346,9 @@
     width: 10rem;
 
     .texto {
-    margin-top: 1rem;
+      margin-top: 1rem;
 
-      span{
+      span {
         font-size: 1.5rem;
       }
     }
@@ -368,24 +367,24 @@
     width: 0.188rem;
   }
 
-  @include respond-to('medium'){
+  @include respond-to('medium') {
     height: 5.5rem;
     width: 0.25rem;
   }
 
   @include respond-to('large') {
-    height:7rem;
+    height: 7rem;
     width: 0.25rem;
   }
 
   @include respond-to('extra-large') {
-    height:8rem;
+    height: 8rem;
     width: 0.25rem;
   }
 }
 
-.section2__divider div{
-  background-color:$ads-text-main;
+.section2__divider div {
+  background-color: $ads-text-main;
 
   @include respond-to('small-mobile') {
     height: 5.75rem;
@@ -397,18 +396,18 @@
     width: 0.188rem;
   }
 
-  @include respond-to('medium'){
+  @include respond-to('medium') {
     height: 5.5rem;
     width: 0.25rem;
   }
 
   @include respond-to('large') {
-    height:7rem;
+    height: 7rem;
     width: 0.25rem;
   }
 
   @include respond-to('extra-large') {
-    height:8rem;
+    height: 8rem;
     width: 0.25rem;
   }
 }
