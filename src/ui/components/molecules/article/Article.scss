@@ -10,6 +10,7 @@
     grid-template-columns: 85% 15%;
   }
 }
+
 .article {
   display: flex;
 }
@@ -26,28 +27,27 @@
   width: 68.688;
 
   .author {
+    align-items: center;
     display: flex;
     justify-content: left;
-    align-items: center;
+
     .mobile{
       display: none;
     }
+
     p {
       font-size: 0.925rem;
     }
   }
 
-  p {
-    margin: 2px;
-  }
 
   .volume-box {
-    position: relative;
-    transform: none;
-    top: auto;
-    left: auto;
-    width: auto;
     height: auto;
+    left: auto;
+    position: relative;
+    top: auto;
+    transform: none;
+    width: auto;
 
     .content {
       justify-content: left;
@@ -55,7 +55,7 @@
 
     p,
     span {
-      color: #02322c;
+      color: $ads-text-main;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 1.3rem;
       font-weight: 700;
@@ -76,9 +76,10 @@
 .desktop-option {
   display: block;
   padding: 5px;
+
   @include respond-to('large') {
-    margin-top: 14.5rem;
     margin-left: 5rem;
+    margin-top: 14.5rem;
   }
 
   .option-menu {
@@ -106,11 +107,12 @@
     .author {
       .vertical-separator {
         background-color: $ads-text-secondary;
-        width: 1px;
         height: 0.925rem;
         margin-left: 4px;
         margin-right: 4px;
+        width: 1px;
       }
+
       .mobile{
         display: flex;
       }
@@ -127,24 +129,24 @@
 
   .mobile-option {
     display: flex;
-    width: 100%;
-    margin-top: 20px;
     margin-bottom: 20px;
+    margin-top: 20px;
+    width: 100%;
+
     .option-menu {
-      display: flex;
-      justify-content: left;
       align-items: center;
+      display: flex;
+      height: auto;
+      justify-content: left;
       width: 100%;
 
       .option-menu__items {
-        margin: 0;
-        height: auto;
-        width: auto;
-        flex-grow: 1;
         background-color: $ads-background-main;
+        flex-grow: 1;
+        height: auto;
+        margin: 0;
+        width: auto;
       }
-
-      height: auto;
 
       button {
         height: 3.4rem;

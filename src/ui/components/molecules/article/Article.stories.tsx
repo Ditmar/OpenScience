@@ -24,15 +24,12 @@ type Story = StoryObj<typeof meta>;
 export const ArticleStory: Story = {
   args: {
     children: (
-      <>
-      <div className='body'>
+      <div className="body">
         <div className="article-section">
           <LabelDate date={new Date(2020, 6, 19)} />
           <ArticleTitle title="CANOPY-TOP MEASUREMENTS DO NOT ACCURATELY QUANTIFY CANOPY-SCALE LEAF THERMOREGULATION" />
-          <div className='author'>
+          <div className="author">
             <AuthorLabel variant="Marco Antonio Lopez" />
-            
-
           </div>
           <VolumeBox>
             <LabelDate date={new Date(2023, 3, 16)} />
@@ -79,10 +76,9 @@ export const ArticleStory: Story = {
           />
         </div>
         <div className="desktop-option">
-            <OptionMenu />
+          <OptionMenu />
         </div>
       </div>
-      </>
     ),
   },
 };
