@@ -11,6 +11,7 @@ import Imagen from './__mock__/Rectangle 86.png';
 import Article from './Article';
 import OptionMenu from '../option-menu/OptionMenu';
 import './Article.scss';
+import VolumeBox from '../volume-box/VolumeBox';
 
 const meta: Meta<typeof Article> = {
   component: Article,
@@ -24,17 +25,22 @@ export const ArticleStory: Story = {
   args: {
     children: (
       <>
+      <div className='body'>
         <div className="article-section">
           <LabelDate date={new Date(2020, 6, 19)} />
           <ArticleTitle title="CANOPY-TOP MEASUREMENTS DO NOT ACCURATELY QUANTIFY CANOPY-SCALE LEAF THERMOREGULATION" />
-          <AuthorLabel variant="Marco Antonio Lopez" />
-          <div className="date-section">
+          <div className='author'>
+            <AuthorLabel variant="Marco Antonio Lopez" />
+            
+
+          </div>
+          <VolumeBox>
             <LabelDate date={new Date(2023, 3, 16)} />
             <span className="separator">│</span>
             <LabelVol volumen="Vol." id={1} />
             <span className="separator">│</span>
             <LabelVol volumen="Nu." id={1} />
-          </div>
+          </VolumeBox>
           <div className="mobile-option">
             <OptionMenu />
           </div>
@@ -73,8 +79,9 @@ export const ArticleStory: Story = {
           />
         </div>
         <div className="desktop-option">
-          <OptionMenu />
+            <OptionMenu />
         </div>
+      </div>
       </>
     ),
   },

@@ -2,6 +2,14 @@
 @import '../../../../globals/mixins';
 @import '../../../../globals/breakpoints';
 
+
+.body{
+  @include respond-to('large') {
+    display: grid;
+    grid-template-areas: 'article-section desktop-option';
+    grid-template-columns: 85% 15%;
+  }
+}
 .article {
   display: flex;
 }
@@ -17,8 +25,42 @@
   flex-direction: column;
   width: 68.688;
 
+  .author {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    .mobile{
+      display: none;
+    }
+    p {
+      font-size: 0.925rem;
+    }
+  }
+
   p {
     margin: 2px;
+  }
+
+  .volume-box {
+    position: relative;
+    transform: none;
+    top: auto;
+    left: auto;
+    width: auto;
+    height: auto;
+
+    .content {
+      justify-content: left;
+    }
+
+    p,
+    span {
+      color: #02322c;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      width: fit-content;
+    }
   }
 }
 
@@ -34,6 +76,17 @@
 .desktop-option {
   display: block;
   padding: 5px;
+  @include respond-to('large') {
+    margin-top: 14.5rem;
+    margin-left: 5rem;
+  }
+
+  .option-menu {
+    button {
+      height: 64px;
+      width: 64px;
+    }
+  }
 }
 
 .desktop-divider {
@@ -45,6 +98,25 @@
 }
 
 @media (max-width: map-get($ads-breakpoints-scales, 'medium')) {
+  .article {
+    .volume-box {
+      display: none;
+    }
+
+    .author {
+      .vertical-separator {
+        background-color: $ads-text-secondary;
+        width: 1px;
+        height: 0.925rem;
+        margin-left: 4px;
+        margin-right: 4px;
+      }
+      .mobile{
+        display: flex;
+      }
+    }
+  }
+
   .desktop-divider {
     display: none;
   }
@@ -55,5 +127,29 @@
 
   .mobile-option {
     display: flex;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    .option-menu {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      width: 100%;
+
+      .option-menu__items {
+        margin: 0;
+        height: auto;
+        width: auto;
+        flex-grow: 1;
+        background-color: $ads-background-main;
+      }
+
+      height: auto;
+
+      button {
+        height: 3.4rem;
+        width: 3.4rem;
+      }
+    }
   }
 }
