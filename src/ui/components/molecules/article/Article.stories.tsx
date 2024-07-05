@@ -27,17 +27,21 @@ export const ArticleStory: Story = {
       <div className="body">
         <div className="article-section">
           <LabelDate date={new Date(2020, 6, 19)} />
-          <ArticleTitle title="CANOPY-TOP MEASUREMENTS DO NOT ACCURATELY QUANTIFY CANOPY-SCALE LEAF THERMOREGULATION" />
+          <div className="title">
+            <ArticleTitle title="CANOPY-TOP MEASUREMENTS DO NOT ACCURATELY QUANTIFY CANOPY-SCALE LEAF THERMOREGULATION" />
+          </div>
           <div className="author">
             <AuthorLabel variant="Marco Antonio Lopez" />
           </div>
-          <VolumeBox>
-            <LabelDate date={new Date(2023, 3, 16)} />
-            <span className="separator">│</span>
-            <LabelVol volumen="Vol." id={1} />
-            <span className="separator">│</span>
-            <LabelVol volumen="Nu." id={1} />
-          </VolumeBox>
+          <div className="volumen-box">
+            <VolumeBox>
+              <LabelDate date={new Date(2023, 3, 16)} />
+              <span className="separator">│</span>
+              <LabelVol volumen="Vol." id={1} />
+              <span className="separator">│</span>
+              <LabelVol volumen="Nu." id={1} />
+            </VolumeBox>
+          </div>
           <div className="mobile-option">
             <OptionMenu />
           </div>

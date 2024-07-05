@@ -8,6 +8,14 @@
     display: grid;
     grid-template-areas: 'article-section desktop-option';
     grid-template-columns: 85% 15%;
+  
+  }
+
+  @include respond-to('medium') {
+    display: grid;
+    grid-template-areas: 'article-section desktop-option';
+    grid-template-columns: 85% 15%;
+  
   }
 }
 
@@ -26,11 +34,23 @@
   flex-direction: column;
   width: 68.688;
 
+.title{
+  margin-top: -2rem;
+}
+
+.volumen-box{
+  margin-top: -1rem;
+
+}
+
   .author {
     align-items: center;
     display: flex;
     justify-content: left;
+    margin-top: -2rem;
 
+
+    
     .mobile{
       display: none;
     }
@@ -39,6 +59,7 @@
       font-size: 0.925rem;
     }
   }
+
 
 
   .volume-box {
@@ -78,6 +99,11 @@
   padding: 5px;
 
   @include respond-to('large') {
+    margin-left: 5rem;
+    margin-top: 14.5rem;
+  }
+
+  @include respond-to('medium') {
     margin-left: 5rem;
     margin-top: 14.5rem;
   }
