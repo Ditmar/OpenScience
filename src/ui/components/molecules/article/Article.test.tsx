@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Article from './Article';
 import { Default } from './Article.stories';
+import { formatDate } from '../../atoms/label-date/utils/dateFormatter';
 
 describe('Article Component', () => {
   const renderArticle = () => {
@@ -18,7 +19,8 @@ describe('Article Component', () => {
 
   it('renders the publication date', () => {
     renderArticle();
-    const date = screen.getByText(/April 16, 2023/);
+    const formattedDate = formatDate(new Date(2023, 3, 15));
+    const date = screen.getByText(formattedDate);
     expect(date).toBeInTheDocument();
   });
 
