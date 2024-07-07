@@ -135,15 +135,37 @@
     flex-direction: column;
     text-align: center;
 
+    @include respond-to('small-mobile'){
+      margin-left: -1.8rem;
+      margin-right: -1.5rem;
+    }
+
+    @include respond-to('small-mobile-large'){
+      margin-left: -2rem;
+      margin-right: -1.2rem;
+    }
+
+    @include respond-to('medium'){
+      margin: 0;
+    }
+
+    @include respond-to('large'){
+      margin: 0;
+    }
+
+    @include respond-to('extra-large'){
+      margin: 0;
+    }
+    
     img{
       @include respond-to('small-mobile'){
-        height: 7.5rem;
-        width: 5.5rem;
+        height: 8rem;
+        width: 5.2rem;
       }
 
       @include respond-to('small-mobile-large'){
-        height: 7rem;
-        width: 5.2rem;
+        height: 8rem;
+        width: 5.5rem;
       }
 
       @include respond-to('medium'){
