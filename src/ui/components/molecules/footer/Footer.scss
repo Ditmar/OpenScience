@@ -1,0 +1,103 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.logo-location-linkfb {
+  display: flex;
+  height: 6.25rem;
+
+  .logo {
+    height: 100%;
+    width: 20%;
+
+    .logo-icon svg {
+      height: 80%;
+      width: 100%;
+    }
+  }
+
+  .resources-page {
+    align-items: center;
+    border: 0.063rem, dashed;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 50%;
+  }
+
+  .variable-link {
+    border: 0.063rem, dashed;
+    height: 40%;
+    margin-left: 0.313rem;
+    margin-top: 3.75rem;
+    text-align: center;
+    width: 30%;
+  }
+
+  @media (320px <= width <= 568px) {
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+    .logo {
+      height: 30%;
+      width: 60%;
+
+      .logo-icon svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .resources-page {
+      border: 0.063rem, dashed;
+      height: 6.25rem;
+      width: 90%;
+    }
+
+    .variable-link {
+      border: 0.063rem, dashed;
+      font-size: 0.625rem;
+      height: 12%;
+      margin-left: 5.625rem;
+      margin-top: 0.625rem;
+      width: 60%;
+    }
+  }
+
+  @media (414px <= width <= 896px) {
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+    .logo {
+      height: 30%;
+      width: 60%;
+
+      .logo-icon svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .resources-page {
+      border: 1px, dashed;
+      height: 6.25rem;
+      width: 90%;
+    }
+
+    .variable-link {
+      border: 1px, dashed;
+      font-size: 0.625rem;
+      height: 12%;
+      margin-left: 7.188rem;
+      margin-top: 0.625rem;
+      width: 60%;
+    }
+  }
+}
