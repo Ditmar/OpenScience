@@ -165,7 +165,7 @@
     .date p{
       @include respond-to('small-mobile'){
         font-size: 0.6rem;
-        margin-top: 0rem;
+        margin-top: 0;
       }
 
       @include respond-to('small-mobile-large'){
@@ -188,6 +188,7 @@
     .vol{
       @include respond-to('small-mobile'){
         margin-top: -1.5rem;
+
         p{
           font-size: 0.7rem;
         }
