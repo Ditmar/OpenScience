@@ -1,51 +1,19 @@
 .pdf-share-buttons {
+  align-items: center;
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 13rem;
+}
+
+.share {
+  position: relative;
+}
+
+.share-buttons {
+  bottom: 100%;
   display: flex;
   flex-direction: column;
-  height: 18.75rem;
-  width: 12.5rem;
-
-  .share-buttons {
-    display: flex;
-    flex-direction: column;
-    height: 0.063rem;
-    margin-left: 6.25rem;
-  }
-
-  .pdf-and-share {
-    margin-left: 1.25rem;
-    padding-top: 12.5rem;
-  }
-
-  @media (320px <= width <= 568px) {
-    height: 10.938rem;
-    width: 7.5rem;
-
-    .share-buttons {
-      display: flex;
-      flex-direction: column;
-      height: 0.063rem;
-      margin-left: 3.75rem;
-    }
-
-    .pdf-and-share {
-      margin-left: 0.938rem;
-      padding-top: 7.813rem;
-    }
-  }
-
-  @media (833px <= width <= 1112px) {
-    height: 12.5rem;
-    width: 7.5rem;
-
-    .share-buttons {
-      display: flex;
-      flex-direction: column;
-      height: 0.063rem;
-      margin-left: 3.125rem;
-    }
-
-    .pdf-and-share {
-      padding-top: 9.375rem;
-    }
-  }
+  gap: 0;
+  left: 0;
+  position: absolute;
 }
