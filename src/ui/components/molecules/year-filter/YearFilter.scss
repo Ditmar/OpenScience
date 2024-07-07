@@ -20,6 +20,7 @@ h2 {
   background-color: $ads-color-main;
   color: $ads-text-main-alpha;
   cursor: pointer;
+  font-family: Roboto, sans-serif;
   margin-bottom: -1.25rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -34,6 +35,7 @@ h2 {
     margin-bottom: -2rem;
     
   }
+ 
 }
 
 .years-wrapper {
@@ -76,10 +78,8 @@ h2 {
   }
 
   &.selected {
-    background-color: $ads-text-main;
     color: $ads-color-main;
     font-weight: bold;
-    
   }
 
   @include respond-to('small-mobile') {
