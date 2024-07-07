@@ -1,4 +1,4 @@
-import{A as i}from"./AuthorLabel-CRuMgVfc.js";import"./jsx-runtime-DRTy3Uxn.js";import"./index-BBkUAzwr.js";const d={title:"ui/components/atoms/author-label",component:i,argTypes:{onClick:{action:"click"}}},r={args:{variant:"Marco Antonio Lopez"}},a={args:{variant:"jk Rolling"}};var o,e,n;r.parameters={...r.parameters,docs:{...(o=r.parameters)==null?void 0:o.docs,source:{originalSource:`{
+import{A as i}from"./AuthorLabel-CV9wumH1.js";import"./jsx-runtime-DRTy3Uxn.js";import"./index-BBkUAzwr.js";const d={title:"ui/components/atoms/author-label",component:i,argTypes:{onClick:{action:"click"}}},r={args:{variant:"Marco Antonio Lopez"}},a={args:{variant:"jk Rolling"}};var o,e,n;r.parameters={...r.parameters,docs:{...(o=r.parameters)==null?void 0:o.docs,source:{originalSource:`{
   args: {
     variant: 'Marco Antonio Lopez'
   }
