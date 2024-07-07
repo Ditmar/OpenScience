@@ -1,0 +1,51 @@
+@import '../../../../globals/fonts';
+@import '../../../../globals/mixins';
+@import '../../../../globals/variables';
+
+.option-search {
+  align-items: center;
+  justify-content: space-between;
+  left: 1rem;
+  padding: 0.625rem 1.875rem; 
+  position: relative;
+  right: 1rem;
+  top: 1rem;
+
+  &__items {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    left: 15rem;
+    position: absolute;
+    right: 15rem;
+  }
+
+  .navbar {
+    @include respond-to('small-mobile') {
+      height: 3rem;
+      width: 2rem;
+    }
+
+    @include respond-to('medium') {
+      width: 7rem;
+    }
+
+    @include respond-to('large') {
+      width: 8rem;
+    }
+
+    @include respond-to('extra-large') {
+      width: 10rem;
+    }
+  }
+
+  .option-magnifying-glass {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: 1.875rem; 
+    justify-content: center;
+    position: relative;
+    width: 1.875rem; 
+  }  
+}
