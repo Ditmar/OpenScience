@@ -1,1 +1,0 @@
-import{j as i}from"./jsx-runtime-DRTy3Uxn.js";function r(e){const{children:t}=e;return i.jsx("div",{className:"article-publish",children:t})}r.__docgenInfo={description:"",methods:[],displayName:"ArticlePublish",props:{children:{required:!0,tsType:{name:"ReactReactNode",raw:"React.ReactNode"},description:""}}};export{r as A};
