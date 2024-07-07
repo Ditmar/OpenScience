@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import './BannerVolumes.scss';
 import HeroBanner from '../../atoms/hero-banner/HeroBanner';
 import NavBar from '../../atoms/navbar/Navbar';
@@ -13,27 +13,22 @@ import type { IProps, IData } from './types/IProps';
 
 function BannerVolumes({ data, yearText, textSearch, backgroundImage, logo }: IProps) {
   const [dataYears] = useState<IData[]>(data);
-  const [hiddenYear, setHiddenYear] = useState<boolean>(false);
+  const [showMore, setShowMore] = useState<boolean>(false);
+
+  const handleMoreClick = useCallback(() => {
+    setShowMore((prevShowMore) => !prevShowMore);
+  }, []);
   return (
     <div className="layout">
-      <div className="search-bar">
-        <button
-          className="button-search"
-          onClick={() => {
-            setHiddenYear(!hiddenYear);
-          }}
-        >
-          <MagnifyingGlass icon={magnifyingglass} variant="solid">
-            {textSearch}
-          </MagnifyingGlass>
-        </button>
+      <div className="logo-container">
+        <Logo src={logo} alt="Logotipo de la empresa" variant="primary">
+          .
+        </Logo>
+        <div className="search-bar">
+          <MagnifyingGlass onClick={handleMoreClick} icon={magnifyingglass} variant="solid" />
+        </div>
       </div>
       <div className="hero-banner-container">
-        <div className="logo-container">
-          <Logo src={logo} alt="Logotipo de la empresa" variant="primary">
-            .
-          </Logo>
-        </div>
         <HeroBanner backgroundImage={backgroundImage} alt="Rectangle6" className="hola">
           <div className="navbar-container">
             <NavBar icon={ArticlesIcon}>Artículos</NavBar>
@@ -42,8 +37,19 @@ function BannerVolumes({ data, yearText, textSearch, backgroundImage, logo }: IP
           </div>
         </HeroBanner>
       </div>
-      <div className={!hiddenYear ? 'year-list-container' : 'year-list-container-hidden'}>
+      <div className={!showMore ? 'year-list-container' : 'year-list-container-hidden'}>
         <YearList data={dataYears} buttonText={yearText} />
+      </div>
+      <div className="search-input-list-container">
+        {showMore && <input className="label__glass" />}
+        {showMore && <hr className="divider--solid" />}
+        {showMore && (
+          <button className="button1">
+            <span data-testid="button__glass1" className="button__label--glass">
+              {textSearch}
+            </span>
+          </button>
+        )}
       </div>
     </div>
   );
