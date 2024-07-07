@@ -6,7 +6,7 @@
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 10%);
     margin: 0 auto;
     padding: 2rem;
-    width: 60%;
+    width: 50%;
 
     input{
         width: 90%;
@@ -18,11 +18,12 @@
     justify-content: center;
     margin: auto;
     margin-top: 2rem;
-    width: 100%;
+    width: 85%;
 
     button{
-        height: 3rem;
-        font-size: 1.5rem;
+        font-size: $ads-size-main;
+        font-weight: bold;
+        height: 2.5rem;
         width: 100%;
     }
 }
