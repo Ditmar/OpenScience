@@ -18,12 +18,11 @@
     justify-content: center;
     margin: auto;
     margin-top: 2rem;
-    width: 50%;
+    width: 100%;
 
     button{
-        font-size: $ads-size-main;
-        font-weight: bold;
         height: 3rem;
+        font-size: 1.5rem;
         width: 100%;
     }
 }

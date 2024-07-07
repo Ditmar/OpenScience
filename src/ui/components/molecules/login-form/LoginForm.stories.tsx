@@ -29,7 +29,7 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     isValid: true,
-    variant: 'primary',
+    variant: 'cuerte',
     children: 'CONTINUAR',
   },
 };

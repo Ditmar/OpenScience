@@ -1,6 +1,10 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 
+.start__button-container {
+  display: flex;
+  justify-content: center;
+
 .start__button {
   align-items: center;
   border: none;
@@ -25,7 +29,7 @@
       font-size: 1.5rem;
       font-weight: 300;
       height: 2.5rem;
-      width: 9rem;
+      width: 10.5rem;
     }
 
     @include respond-to('large') {
@@ -90,7 +94,35 @@
     }
   }
 
+  &--cuerte {
+    background-color: $ads-primary-main;
+    font-family: Montserrat, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    gap: 0.7rem;
+    height: 4.313rem;
+    width: 15.688rem;
+
+    @include respond-to('small-mobile') {
+      font-size: 1.5rem;
+      font-weight: 300;
+      height: 2.5rem;
+      width: 12rem;
+    }
+
+    @include respond-to('large') {
+      font-size: 2.5rem;
+      font-weight: 300;
+      height: 3.063rem;
+      width: 22.625rem;
+    }
+  }
+  .start__button-icon svg {
+    height: 80%;
+    width: 80%;
+  }  
   &:hover {
     background: $ads-secondary-main;
   }
+}
 }
