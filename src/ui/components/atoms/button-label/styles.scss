@@ -39,11 +39,11 @@
     }
 
     &--secondary {
-      background-color: $ads-text-secondary;
+      background-color:  $ads-color-main;
     }
 
     &--tertiary {
-      background-color: $ads-warning-main;
+      background-color:  $ads-color-main;
     }
   }
 }
