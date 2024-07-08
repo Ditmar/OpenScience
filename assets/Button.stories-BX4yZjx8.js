@@ -1,4 +1,4 @@
-import{S as i,g as m,f as p}from"./google-BA7jBemT.js";import"./jsx-runtime-DRTy3Uxn.js";import"./index-BBkUAzwr.js";import"./icons-DNNtq2Yd.js";import"./index-YMbfICiA.js";const S={title:"ui/components/atoms/social-media-button",component:i,argTypes:{onClick:{action:"click"}}},o={args:{children:"Google",icon:m}},r={args:{children:"Facebook",icon:p}};var e,a,c;o.parameters={...o.parameters,docs:{...(e=o.parameters)==null?void 0:e.docs,source:{originalSource:`{
+import{S as i,g as m,f as p}from"./google-CRdW7DGw.js";import"./jsx-runtime-DRTy3Uxn.js";import"./index-BBkUAzwr.js";import"./icons-DNNtq2Yd.js";import"./index-YMbfICiA.js";const S={title:"ui/components/atoms/social-media-button",component:i,argTypes:{onClick:{action:"click"}}},o={args:{children:"Google",icon:m}},r={args:{children:"Facebook",icon:p}};var e,a,c;o.parameters={...o.parameters,docs:{...(e=o.parameters)==null?void 0:e.docs,source:{originalSource:`{
   args: {
     children: 'Google',
     icon: Google
