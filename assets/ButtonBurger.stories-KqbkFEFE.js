@@ -1,4 +1,4 @@
-import{B as m,m as i}from"./burger-menu-d8bEBrtv.js";import"./jsx-runtime-DRTy3Uxn.js";import"./index-BBkUAzwr.js";import"./icons-DNNtq2Yd.js";import"./index-YMbfICiA.js";const l={title:"ui/components/atoms/button-burger",component:m,argTypes:{onClick:{action:"click"}}},r={args:{variant:"main",color:"primary",icon:i}},o={args:{variant:"secondary",color:"secondary",icon:i}};var a,n,e;r.parameters={...r.parameters,docs:{...(a=r.parameters)==null?void 0:a.docs,source:{originalSource:`{
+import{B as m,m as i}from"./burger-menu-6S6AFAEE.js";import"./jsx-runtime-DRTy3Uxn.js";import"./index-BBkUAzwr.js";import"./icons-DNNtq2Yd.js";import"./index-YMbfICiA.js";const l={title:"ui/components/atoms/button-burger",component:m,argTypes:{onClick:{action:"click"}}},r={args:{variant:"main",color:"primary",icon:i}},o={args:{variant:"secondary",color:"secondary",icon:i}};var a,n,e;r.parameters={...r.parameters,docs:{...(a=r.parameters)==null?void 0:a.docs,source:{originalSource:`{
   args: {
     variant: 'main',
     color: 'primary',
