@@ -5,11 +5,7 @@ import styles from './ButtonBurger.module.scss';
 function ButtonBurger({ icon, color, onClick }: IProps) {
   const colorClass = styles[color as keyof typeof styles] || '';
   return (
-    <button
-      className={`${styles.buttonBurger} ${colorClass}`}
-      aria-label="Menu"
-      onClick={onClick}
-    >
+    <button className={`${styles.buttonBurger} ${colorClass}`} aria-label="Menu" onClick={onClick}>
       {icon && <Icon data-testid="button-icon" src={icon} className={styles.buttonIcon} />}
     </button>
   );
