@@ -5,6 +5,7 @@ import styles from './InputText.module.scss';
 import useForm from '../../../utils/hooks/useForm';
 
 function InputText({ label, type, name, placeholder, isValid, eyeIcon, onChangeValue }: IProps) {
+  
   const [typeDate, setTypeData] = useState(type);
   const { form, handlerChangeForm } = useForm({ value: '' });
 
