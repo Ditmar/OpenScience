@@ -1,0 +1,102 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/fonts';
+
+.resources-and-page-footer {
+  background-color: $ads-color-main;
+  display: flex;
+  height: 7.813rem;
+  width: 50rem;
+
+  .resource-and-page-footer-left,
+  .resource-and-page-footer-rigth {
+    width: 24.375rem;
+  }
+
+  .resource-and-page-footer-lineone,
+  .resource-and-page-footer-linetwo {
+    background-color: $ads-text-main;
+    height: 100%;
+    width: 0.188rem;
+  }
+
+  .resource-and-page-footer-title {
+    color: $ads-text-main;
+    font-family: Montserrat, sans-serif;  
+    font-weight: 600;
+    margin-left: 0.625rem;
+    margin-top: 0.938rem;
+  }
+
+  .resource-and-page-footer-content {
+    display: flex;
+    font-family: Montserrat, sans-serif;  
+    font-weight: 300px;
+    margin-left: 0.625rem;
+    margin-top: 0.938rem;
+
+    .variables {
+      width: 43.75rem;
+    }
+
+    .variables a {
+      text-decoration: none;
+    }
+  }
+
+  @media screen and (width >= 320px) and (width <= 560px) {
+    width: 18.75rem;
+
+    .resource-and-page-footer-left,
+    .resource-and-page-footer-rigth {
+      color: $ads-text-main;
+      width: 8.75rem;
+    }
+
+    .resource-and-page-footer-lineone {
+      display: none;
+    }
+
+    .resource-and-page-footer-title {
+      color: $ads-text-main;
+      margin-left: 0.625rem;
+      margin-top: 0.625rem;
+    }
+
+    .resource-and-page-footer-content {
+      color: $ads-text-main;
+      display: block;
+
+      .variables {
+        margin-top: 0.938rem;
+      }
+    }
+  }
+
+  @media screen and (width >= 414px) and (width <= 896px) {
+    width: 23.75rem;
+
+    .resource-and-page-footer-left,
+    .resource-and-page-footer-rigth {
+      width: 11.25rem;
+    }
+
+    .resource-and-page-footer-lineone {
+      display: none;
+    }
+
+    .resource-and-page-footer-title {
+      color: $ads-text-main;
+      margin-left: 0.625rem;
+      margin-top: 0.625rem;
+    }
+
+    .resource-and-page-footer-content {
+      display: block;
+
+      .variables {
+        margin-top: 0.938rem;
+      }
+    }
+  }
+}
