@@ -1,0 +1,80 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/breakpoints';
+
+.article {
+  display: flex;
+}
+
+.image-section {
+  img {
+    width: 100%;
+  }
+
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.article-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  p {
+    margin: 0.125rem;
+  }
+}
+
+.date-section {
+  align-items: center;
+  display: flex;
+  margin-top: 1rem;
+
+  .labeldate,
+  .separator,
+  .volumen {
+    color: $ads-text-main;
+    font-family: Roboto, sans-serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+}
+
+.mobile-option {
+  display: none;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.desktop-option {
+  display: block;
+  padding: 0.313rem;
+}
+
+.desktop-divider {
+  display: block;
+
+  hr {
+    background-color: $ads-secondary-main;
+    height: 0.25rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: map-get($ads-breakpoints-scales, 'medium')) {
+  .desktop-divider {
+    display: none;
+  }
+
+  .desktop-option {
+    display: none;
+  }
+
+  .mobile-option {
+    display: flex;
+  }
+
+  .date-section {
+    display: none;
+  }
+}
