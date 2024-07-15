@@ -1,0 +1,184 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/breakpoints';
+
+
+.body{
+  @include respond-to('large') {
+    display: grid;
+    grid-template-areas: 'article-section desktop-option';
+    grid-template-columns: 85% 15%;
+  
+  }
+
+  @include respond-to('medium') {
+    display: grid;
+    grid-template-areas: 'article-section desktop-option';
+    grid-template-columns: 85% 15%;
+  
+  }
+}
+
+.article {
+  display: flex;
+}
+
+.image-section {
+  img {
+    width: 100%;
+  }
+}
+
+.article-section {
+  display: flex;
+  flex-direction: column;
+  width: 68.688;
+
+.title{
+  margin-top: -2rem;
+}
+
+.volumen-box{
+  margin-top: -1rem;
+
+}
+
+  .author {
+    align-items: center;
+    display: flex;
+    justify-content: left;
+    margin-top: -2rem;
+
+
+    
+    .mobile{
+      display: none;
+    }
+
+    p {
+      font-size: 0.925rem;
+    }
+  }
+
+
+
+  .volume-box {
+    height: auto;
+    left: auto;
+    position: relative;
+    top: auto;
+    transform: none;
+    width: auto;
+    
+
+    .content {
+      justify-content: left;
+    }
+
+    p,
+    span {
+      color: $ads-text-main;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      width: fit-content;
+    }
+  }
+}
+
+.date-section {
+  align-items: center;
+  display: flex;
+}
+
+.mobile-option {
+  display: none;
+}
+
+.desktop-option {
+  display: block;
+  padding: 5px;
+
+  @include respond-to('large') {
+    margin-left: 5rem;
+    margin-top: 14.5rem;
+  }
+
+  @include respond-to('medium') {
+    margin-left: 5rem;
+    margin-top: 14.5rem;
+  }
+
+  .option-menu {
+    button {
+      height: 64px;
+      width: 64px;
+    }
+  }
+}
+
+.desktop-divider {
+  display: block;
+
+  hr {
+    width: 100%;
+  }
+}
+
+@media (max-width: map-get($ads-breakpoints-scales, 'medium')) {
+  .article {
+    .volume-box {
+      display: none;
+    }
+
+    .author {
+      .vertical-separator {
+        background-color: $ads-text-secondary;
+        height: 0.925rem;
+        margin-left: 4px;
+        margin-right: 4px;
+        width: 1px;
+      }
+
+      .mobile{
+        display: flex;
+      }
+    }
+  }
+
+  .desktop-divider {
+    display: none;
+  }
+
+  .desktop-option {
+    display: none;
+  }
+
+  .mobile-option {
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 100%;
+
+    .option-menu {
+      align-items: center;
+      display: flex;
+      height: auto;
+      justify-content: left;
+      width: 100%;
+
+      .option-menu__items {
+        background-color: $ads-background-main;
+        flex-grow: 1;
+        height: auto;
+        margin: 0;
+        width: auto;
+      }
+
+      button {
+        height: 3.4rem;
+        width: 3.4rem;
+      }
+    }
+  }
+}
