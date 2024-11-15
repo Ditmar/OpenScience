@@ -126,7 +126,6 @@ jobs:
         run: docker image prune -a -f
 
       - name: Set output variables
-        id: set_outputs
         run: |
           echo "GIT_COMMIT_HASH=${{ env.GIT_COMMIT_HASH }}" >> $GITHUB_OUTPUT
           echo "DOCKER_HUB_REPO=${{ env.DOCKER_HUB_REPO }}" >> $GITHUB_OUTPUT
