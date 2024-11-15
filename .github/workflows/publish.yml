@@ -65,8 +65,6 @@ jobs:
         run: |
           docker tag ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }} ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
           docker push ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
-      - name: Remove local Docker image
-        run: docker rmi ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
       - name: Trigger CD Workflow
         uses: actions/github-script@v6
         with:
@@ -78,7 +76,7 @@ jobs:
             });
             const workflow = workflows.workflows.find(wf => wf.name === 'Deploy to AWS EC2');
             if (workflow) {
-              await github.actions.createWorkflowDispatch({
+              await github.rest.actions.createWorkflowDispatch({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 workflow_id: workflow.id,
