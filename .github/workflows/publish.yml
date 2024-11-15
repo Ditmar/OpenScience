@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '>=18.19 <=18.21'
+          node-version: '18.21'
           cache: 'yarn'
 
       - name: Install specific Yarn version
@@ -84,7 +84,7 @@ jobs:
                 workflow_id: workflow.id,
                 ref: 'main',
                 inputs: {
-                  WEB_APP: '${{ env.GIT_COMMIT_HASH }}', # O lo que necesites como input
+                  WEB_APP: '${{ env.GIT_COMMIT_HASH }}',
                   STRAPI_APP: '${{ env.GIT_COMMIT_HASH }}',
                   ENV: 'DEV'
                 }
