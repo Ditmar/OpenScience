@@ -15,7 +15,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.21'
+          node-version: '>=18.19 <=18.21'
           cache: 'yarn'
 
       - name: Install specific Yarn version
