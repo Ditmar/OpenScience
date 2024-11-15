@@ -76,3 +76,27 @@ jobs:
       - name: Remove local Docker image
         if: github.ref == 'refs/heads/main'
         run: docker rmi ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
+      - name: Trigger CD Workflow
+        if: github.ref == 'refs/heads/main' && success()
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { data: workflows } = await github.actions.listRepoWorkflows({
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+            const workflow = workflows.workflows.find(wf => wf.name === 'Deploy to AWS EC2');
+            if (workflow) {
+              await github.actions.createWorkflowDispatch({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                workflow_id: workflow.id,
+                ref: 'main',
+                inputs: {
+                  WEB_APP: '${{ env.GIT_COMMIT_HASH }}', # O lo que necesites como input
+                  STRAPI_APP: '${{ env.GIT_COMMIT_HASH }}',
+                  ENV: 'DEV'
+                }
+              });
+            }
