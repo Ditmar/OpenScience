@@ -82,7 +82,7 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 workflow_id: workflow.id,
-                ref: 'main',
+                ref: ref,
                 inputs: {
                   WEB_APP: 'cf01c4e',
                   STRAPI_APP: 'a443bfc',
