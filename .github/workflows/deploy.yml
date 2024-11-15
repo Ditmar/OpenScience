@@ -1,33 +1,19 @@
 name: Deploy to AWS EC2
 
 on:
-  push:
-    branches:
-      - '**'
-  workflow_dispatch:
-    inputs:
-      WEB_APP:
-        description: "WEBAPP image tag (seven first characters)"
-        required: true
-        default: ""
-      STRAPI_APP:
-        description: "STRAPI image tag (seven first characters)"
-        required: true
-        default: ""
-      ENV:
-        description: "Environment to deploy to (DEV or PROD)"
-        required: true
-        default: "DEV"
-        type: choice
-        options:
-          - DEV
-          - PROD
+  repository_dispatch:
+    types: [deploy]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
+      - name: Debug Inputs
+        run: |
+          echo "Event Payload: ${{ toJson(github.event.client_payload) }}"
+          echo "WEB_APP: ${{ github.event.client_payload.WEB_APP }}"
+          echo "STRAPI_APP: ${{ github.event.client_payload.STRAPI_APP }}"
+          echo "ENV: ${{ github.event.client_payload.ENV }}"
       - name: Checkout code
         uses: actions/checkout@v2
 

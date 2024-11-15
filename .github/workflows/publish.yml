@@ -65,31 +65,22 @@ jobs:
       #   run: |
       #     docker tag ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }} ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
       #     docker push ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
-      - name: Trigger CD Workflow
+      - name: Trigger CD Workflow via Repository Dispatch
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.PAT_TOKEN }}
           script: |
-            const { data: workflows } = await github.rest.actions.listRepoWorkflows({
+            const ref = context.ref.replace('refs/heads/', '');
+            console.log('Using ref:', ref);
+
+            await github.rest.repos.createDispatchEvent({
               owner: context.repo.owner,
-              repo: context.repo.repo
+              repo: context.repo.repo,
+              event_type: 'deploy',
+              client_payload: {
+                WEB_APP: 'cf01c4e',
+                STRAPI_APP: 'a443bfc',
+                ENV: 'DEV'
+              }
             });
-            console.log('Available Workflows:', workflows.workflows.map(wf => wf.name));
-            const workflow = workflows.workflows.find(wf => wf.name === 'Deploy to AWS EC2');
-            if (workflow) {
-              console.log('Found workflow:', workflow.name);
-              const ref = context.ref.replace('refs/heads/', '');
-              await github.rest.actions.createWorkflowDispatch({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                workflow_id: workflow.id,
-                ref: ref,
-                inputs: {
-                  WEB_APP: 'cf01c4e',
-                  STRAPI_APP: 'a443bfc',
-                  ENV: 'DEV'
-                }
-              });
-            } else {
-              console.log('Workflow not found');
-            }
+            console.log('Dispatched repository event for deployment.');
