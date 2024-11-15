@@ -74,7 +74,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo
             });
-            console.log('Available Workflows:', data.workflows.map(wf => wf.name));
+            console.log('Available Workflows:', workflows.workflows.map(wf => wf.name));
             const workflow = workflows.workflows.find(wf => wf.name === 'Deploy to AWS EC2');
             if (workflow) {
               console.log('Found workflow:', workflow.name);
