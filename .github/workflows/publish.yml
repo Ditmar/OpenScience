@@ -6,7 +6,9 @@ on:
       - '**'
 
 jobs:
-  build:
+
+  quality-checks:
+    name: Quality Checks
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -25,6 +27,7 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+
       - name: Run lint
         run: yarn lint
 
@@ -33,6 +36,28 @@ jobs:
 
       - name: Run test
         run: yarn test
+
+  build-storybook:
+    name: Build and Deploy Storybook
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '>=18.19 <=18.21'
+          cache: 'yarn'
+
+      - name: Install specific Yarn version
+        run: |
+          corepack enable
+          corepack prepare yarn@1.22.22 --activate
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
       - name: Build Storybook
         run: yarn build-storybook
 
@@ -43,30 +68,77 @@ jobs:
           publish_dir: ./storybook-static
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-      - name: clean storybook folder
+
+      - name: Clean storybook folder
         run: rm -rf ./storybook-static
-      - name: Login in DockerHub
+
+  build-and-push-docker-image:
+    name: Build and Push Docker Image
+    runs-on: ubuntu-latest
+    needs: quality-checks
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '>=18.19 <=18.21'
+          cache: 'yarn'
+
+      - name: Install specific Yarn version
+        run: |
+          corepack enable
+          corepack prepare yarn@1.22.22 --activate
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build project
+        run: yarn build
+
+      - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Setup envirronments variables
-        run: | 
+
+      - name: Setup environment variables
+        run: |
           echo "DOCKER_HUB_REPO=openscience" >> $GITHUB_ENV
           echo "DOCKER_USER_NAME=ditmar" >> $GITHUB_ENV
-      - name: Get shour commit hash
+
+      - name: Get short commit hash
         id: vars
         run: echo "GIT_COMMIT_HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
-      - name: build project
-        run: yarn build
-      - name: Build Docker image
-        run: docker build --build-arg WEB_APP=${{ env.GIT_COMMIT_HASH }} -t ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }} .
-      - name: Push Docker image to Docker Hub
-        run: |
-          docker tag ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }} ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
-          docker push ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
 
-      - name: Trigger CD Workflow via Repository Dispatch
+      - name: Build Docker image
+        run: docker build --build-arg WEB_APP=${{ env.GIT_COMMIT_HASH }} -t ${{ env.DOCKER_USER_NAME }}/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }} .
+
+      - name: Push Docker image to Docker Hub
+        run: docker push ${{ env.DOCKER_USER_NAME }}/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
+
+      - name: Clean up
+        run: docker image prune -a -f
+
+      - name: Set output variables
+        run: |
+          echo "GIT_COMMIT_HASH=${{ env.GIT_COMMIT_HASH }}" >> $GITHUB_OUTPUT
+          echo "DOCKER_HUB_REPO=${{ env.DOCKER_HUB_REPO }}" >> $GITHUB_OUTPUT
+          echo "DOCKER_USER_NAME=${{ env.DOCKER_USER_NAME }}" >> $GITHUB_OUTPUT
+
+  deploy-to-ec2:
+    name: Deploy to EC2
+    runs-on: ubuntu-latest
+    needs: build-and-push-docker-image
+    steps:
+      - name: Set up variables from previous job
+        run: |
+          echo "GIT_COMMIT_HASH=${{ needs.build-and-push-docker-image.outputs.GIT_COMMIT_HASH }}" >> $GITHUB_ENV
+          echo "DOCKER_HUB_REPO=${{ needs.build-and-push-docker-image.outputs.DOCKER_HUB_REPO }}" >> $GITHUB_ENV
+          echo "DOCKER_USER_NAME=${{ needs.build-and-push-docker-image.outputs.DOCKER_USER_NAME }}" >> $GITHUB_ENV
+
+      - name: Trigger SSH Connection
         uses: appleboy/ssh-action@v0.1.5
         with:
           host: ${{ secrets.AWS_SSH_HOST }}
@@ -76,17 +148,6 @@ jobs:
           script: |
             echo "SSH connection successful"
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Debug Inputs
-        run: |
-          echo "github.event.inputs: ${{ toJson(github.event.inputs) }}"
       - name: Set environment variables
         run: |
           echo "STRAPI_APP=a443bfc" >> $GITHUB_ENV
@@ -144,6 +205,4 @@ jobs:
             export DATABASE_PASSWORD=${{ env.DATABASE_PASSWORD }}
             docker-compose -f deploy.yml down
             docker-compose -f deploy.yml up -d
-
-      - name: Clean up
-        run: docker image prune -a -f
+            
