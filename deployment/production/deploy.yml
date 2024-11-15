@@ -1,0 +1,64 @@
+version: "3.0"
+networks:
+  service-net:
+services:
+  strapi:
+    image: "ditmar/openscience-strapi:${STRAPI_APP}"
+    networks:
+      - service-net
+    labels:
+      - "traefik.enable=true"
+    ports:
+      - "1337:1337"
+    environment:
+      - NODE_ENV=production
+      - APP_KEYS=O/gLZDV0HZOz7i7k0LeDGg==,v0Awz6h/KgWCcGaCvK8BFQ==,Nlymi8OjzaAxVn/SwfrKMQ==,9A6JTTBeWlu97L4p9mf/3Q==
+      - API_TOKEN_SALT=SLKpvVBYKFYQPhG8i+8CNA==
+      - ADMIN_JWT_SECRET=F4FzU1Ut7CLFyAPrxVffsw==
+      - TRANSFER_TOKEN_SALT=u8HVzYYynUiGyn3qsf+GqA==
+      - JWT_SECRET=zdgfvkLbay1bDyCPol7KOg==
+      - DATABASE_CLIENT=postgres
+      - DATABASE_HOST=postgres
+      - DATABASE_PORT=5432
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_USERNAME=${DATABASE_USERNAME}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE_SSL=false
+      - PUBLIC_URL=http://openscience.orbitone.cc:1337
+      - STRAPI_ADMIN_BACKEND_URL=http://openscience.orbitone.cc:1337
+      - HOST=0.0.0.0
+    volumes:
+      - ./config:/opt/app/config
+      - ./src:/opt/app/src
+      - ./package.json:/opt/package.json
+      - ./yarn.lock:/opt/yarn.lock
+      - ./.env:/opt/app/.env
+      - /home/ubuntu/files:/app/public/uploads
+
+    restart: always
+  webapp:
+    image: "ditmar/openscience:${WEB_APP}"
+    networks:
+      - service-net
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    ports:
+      - "80:3000"
+    restart: always
+  postgres:
+    image: postgres:13
+    networks:
+      - service-net
+    container_name: my_postgres
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
