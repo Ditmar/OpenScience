@@ -76,6 +76,7 @@ jobs:
             });
             const workflow = workflows.workflows.find(wf => wf.name === 'Deploy to AWS EC2');
             if (workflow) {
+              console.log('Found workflow:', workflow.name);
               await github.rest.actions.createWorkflowDispatch({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
@@ -87,4 +88,6 @@ jobs:
                   ENV: 'DEV'
                 }
               });
+            } else {
+              console.log('Workflow not found');
             }
