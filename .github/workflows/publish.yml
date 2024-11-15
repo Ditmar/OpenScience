@@ -85,7 +85,7 @@ jobs:
                 ref: 'main',
                 inputs: {
                   WEB_APP: '${{ env.GIT_COMMIT_HASH }}',
-                  STRAPI_APP: '${{ env.GIT_COMMIT_HASH }}',
+                  STRAPI_APP: 'a443bfc',
                   ENV: 'DEV'
                 }
               });
