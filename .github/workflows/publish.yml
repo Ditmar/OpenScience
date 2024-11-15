@@ -40,6 +40,7 @@ jobs:
   build-storybook:
     name: Build and Deploy Storybook
     runs-on: ubuntu-latest
+    needs: quality-checks
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -75,7 +76,7 @@ jobs:
   build-and-push-docker-image:
     name: Build and Push Docker Image
     runs-on: ubuntu-latest
-    needs: quality-checks
+    needs: build-storybook
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -118,14 +119,9 @@ jobs:
       - name: Push Docker image to Docker Hub
         run: docker push ${{ env.DOCKER_USER_NAME }}/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
 
-      - name: Clean up
-        run: docker image prune -a -f
-
       - name: Set output variables
-        run: |
-          echo "GIT_COMMIT_HASH=${{ env.GIT_COMMIT_HASH }}" >> $GITHUB_OUTPUT
-          echo "DOCKER_HUB_REPO=${{ env.DOCKER_HUB_REPO }}" >> $GITHUB_OUTPUT
-          echo "DOCKER_USER_NAME=${{ env.DOCKER_USER_NAME }}" >> $GITHUB_OUTPUT
+        outputs:
+          GIT_COMMIT_HASH: ${{ env.GIT_COMMIT_HASH}}
 
   deploy-to-ec2:
     name: Deploy to EC2
@@ -135,8 +131,6 @@ jobs:
       - name: Set up variables from previous job
         run: |
           echo "GIT_COMMIT_HASH=${{ needs.build-and-push-docker-image.outputs.GIT_COMMIT_HASH }}" >> $GITHUB_ENV
-          echo "DOCKER_HUB_REPO=${{ needs.build-and-push-docker-image.outputs.DOCKER_HUB_REPO }}" >> $GITHUB_ENV
-          echo "DOCKER_USER_NAME=${{ needs.build-and-push-docker-image.outputs.DOCKER_USER_NAME }}" >> $GITHUB_ENV
 
       - name: Trigger SSH Connection
         uses: appleboy/ssh-action@v0.1.5
@@ -205,4 +199,3 @@ jobs:
             export DATABASE_PASSWORD=${{ env.DATABASE_PASSWORD }}
             docker-compose -f deploy.yml down
             docker-compose -f deploy.yml up -d
-            
