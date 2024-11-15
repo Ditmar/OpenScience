@@ -6,14 +6,16 @@ on:
       - '**'
 
 jobs:
-  build:
+
+  quality-checks:
+    name: Quality Checks
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '>=18.19 <=18.21'
           cache: 'yarn'
@@ -25,8 +27,7 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-      - name: List installed packages
-        run: yarn list
+
       - name: Run lint
         run: yarn lint
 
@@ -35,44 +36,178 @@ jobs:
 
       - name: Run test
         run: yarn test
+
+  build-storybook:
+    name: Build and Deploy Storybook
+    runs-on: ubuntu-latest
+    needs: quality-checks
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '>=18.19 <=18.21'
+          cache: 'yarn'
+
+      - name: Install specific Yarn version
+        run: |
+          corepack enable
+          corepack prepare yarn@1.22.22 --activate
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
       - name: Build Storybook
-        if: github.ref == 'refs/heads/main'
         run: yarn build-storybook
 
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./storybook-static
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-      - name: clean storybook folder
-        if: github.ref == 'refs/heads/main'
+
+      - name: Clean storybook folder
         run: rm -rf ./storybook-static
-      - name: Login in DockerHub
-        if: github.ref == 'refs/heads/main'
+
+  build-and-push-docker-image:
+    name: Build and Push Docker Image
+    runs-on: ubuntu-latest
+    needs: build-storybook
+    outputs:
+      GIT_COMMIT_HASH: ${{ steps.set_outputs.outputs.GIT_COMMIT_HASH }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '>=18.19 <=18.21'
+          cache: 'yarn'
+
+      - name: Install specific Yarn version
+        run: |
+          corepack enable
+          corepack prepare yarn@1.22.22 --activate
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build project
+        run: yarn build
+
+      - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Setup envirronments variables
-        run: | 
+
+      - name: Setup environment variables
+        run: |
           echo "DOCKER_HUB_REPO=openscience" >> $GITHUB_ENV
           echo "DOCKER_USER_NAME=ditmar" >> $GITHUB_ENV
-      - name: Get shour commit hash
-        id: vars
+
+      - name: Get short commit hash
+        id: get_commit_hash
         run: echo "GIT_COMMIT_HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
-      - name: build project
-        run: yarn build
+
       - name: Build Docker image
-        if: github.ref == 'refs/heads/main'
-        run: docker build --build-arg WEB_APP=${{ env.GIT_COMMIT_HASH }} -t ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }} .
+        run: docker build --build-arg WEB_APP=${{ env.GIT_COMMIT_HASH }} -t ${{ env.DOCKER_USER_NAME }}/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }} .
+
       - name: Push Docker image to Docker Hub
-        if: github.ref == 'refs/heads/main'
+        run: docker push ${{ env.DOCKER_USER_NAME }}/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
+
+      - name: Clean up
+        run: docker image prune -a -f
+
+      - id: set_outputs
+        run: echo "GIT_COMMIT_HASH=${{ env.GIT_COMMIT_HASH }}" >> $GITHUB_OUTPUT
+
+  deploy-to-ec2:
+    name: Deploy to EC2
+    runs-on: ubuntu-latest
+    needs: build-and-push-docker-image
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Set up variables from previous job
         run: |
-          docker tag ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }} ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
-          docker push ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
-      - name: Remove local Docker image
-        if: github.ref == 'refs/heads/main'
-        run: docker rmi ditmar/${{ env.DOCKER_HUB_REPO }}:${{ env.GIT_COMMIT_HASH }}
+          echo "GIT_COMMIT_HASH=${{ needs.build-and-push-docker-image.outputs.GIT_COMMIT_HASH }}" >> $GITHUB_ENV
+
+      - name: Verify received variables
+        run: |
+          echo "GIT_COMMIT_HASH=${{ env.GIT_COMMIT_HASH }}"
+          echo "DOCKER_HUB_REPO=${{ env.DOCKER_HUB_REPO }}"
+          echo "DOCKER_USER_NAME=${{ env.DOCKER_USER_NAME }}"
+
+      - name: Trigger SSH Connection
+        uses: appleboy/ssh-action@v0.1.5
+        with:
+          host: ${{ secrets.AWS_SSH_HOST }}
+          username: ${{ secrets.AWS_SSH_USER }}
+          key: ${{ secrets.AWS_SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            echo "SSH connection successful"
+
+      - name: Set environment variables
+        run: |
+          echo "STRAPI_APP=a443bfc" >> $GITHUB_ENV
+          echo "WEB_APP=${{ env.GIT_COMMIT_HASH }}" >> $GITHUB_ENV
+          echo "ENV=DEV" >> $GITHUB_ENV
+          if [ "${{ github.event.inputs.ENV }}" = "PROD" ]; then
+            echo "NODE_ENV=production" >> $GITHUB_ENV
+            echo "DEPLOY_FILE=deployment/production/deploy.yml" >> $GITHUB_ENV
+            echo "DATABASE_NAME=${{ secrets.DATABASE_NAME_PROD }}" >> $GITHUB_ENV
+            echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME_PROD }}" >> $GITHUB_ENV
+            echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD_PROD }}" >> $GITHUB_ENV
+          else
+            echo "NODE_ENV=development" >> $GITHUB_ENV
+            echo "DEPLOY_FILE=deployment/development/deploy.yml" >> $GITHUB_ENV
+            echo "DATABASE_NAME=${{ secrets.DATABASE_NAME_DEV }}" >> $GITHUB_ENV
+            echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME_DEV }}" >> $GITHUB_ENV
+            echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD_DEV }}" >> $GITHUB_ENV
+          fi
+
+      - name: Verify environment variables
+        run: |
+          echo "STRAPI_APP=${{ env.STRAPI_APP }}"
+          echo "WEB_APP=${{ env.WEB_APP }}"
+          echo "ENV=${{ env.ENV }}"
+          echo "NODE_ENV=${{ env.NODE_ENV }}"
+          echo "DEPLOY_FILE=${{ env.DEPLOY_FILE }}"
+          echo "DATABASE_NAME=${{ env.DATABASE_NAME }}"
+          echo "DATABASE_USERNAME=${{ env.DATABASE_USERNAME }}"
+          echo "DATABASE_PASSWORD=${{ env.DATABASE_PASSWORD }}"
+
+      - name: Copy Docker Compose file to EC2
+        uses: appleboy/scp-action@v0.1.3
+        with:
+          source: ${{ env.DEPLOY_FILE }}
+          target: "/home/${{ secrets.AWS_SSH_USER }}/deploy"
+          host: ${{ secrets.AWS_SSH_HOST }}
+          username: ${{ secrets.AWS_SSH_USER }}
+          key: ${{ secrets.AWS_SSH_PRIVATE_KEY }}
+          port: 22
+
+      - name: Deploy with Docker Compose on EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.AWS_SSH_HOST }}
+          username: ${{ secrets.AWS_SSH_USER }}
+          key: ${{ secrets.AWS_SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /home/${{ secrets.AWS_SSH_USER }}/deploy/deployment/${{ env.NODE_ENV }}/
+            export STRAPI_APP=${{ env.STRAPI_APP }}
+            export WEB_APP=${{ env.WEB_APP }}
+            export NODE_ENV=${{ env.NODE_ENV }}
+            export DATABASE_NAME=${{ env.DATABASE_NAME }}
+            export DATABASE_USERNAME=${{ env.DATABASE_USERNAME }}
+            export DATABASE_PASSWORD=${{ env.DATABASE_PASSWORD }}
+            docker-compose -f deploy.yml down
+            docker-compose -f deploy.yml up -d
