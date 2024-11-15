@@ -159,7 +159,7 @@ jobs:
           echo "STRAPI_APP=a443bfc" >> $GITHUB_ENV
           echo "WEB_APP=${{ env.GIT_COMMIT_HASH }}" >> $GITHUB_ENV
           echo "ENV=DEV" >> $GITHUB_ENV
-          if [ "${{ github.event.inputs.ENV }}" = "PROD" ]; then
+          if [ "${{ github.ref_name }}" = "main" ]; then
             echo "NODE_ENV=production" >> $GITHUB_ENV
             echo "DEPLOY_FILE=deployment/production/deploy.yml" >> $GITHUB_ENV
             echo "DATABASE_NAME=${{ secrets.DATABASE_NAME_PROD }}" >> $GITHUB_ENV
@@ -188,21 +188,21 @@ jobs:
         uses: appleboy/scp-action@v0.1.3
         with:
           source: ${{ env.DEPLOY_FILE }}
-          target: "/home/${{ secrets.AWS_SSH_USER }}/deploy"
-          host: ${{ secrets.AWS_SSH_HOST }}
-          username: ${{ secrets.AWS_SSH_USER }}
-          key: ${{ secrets.AWS_SSH_PRIVATE_KEY }}
+          target: "/home/${{ github.ref_name == 'main' && secrets.AWS_SSH_USER_PROD || secrets.AWS_SSH_USER }}/deploy"
+          host: ${{ github.ref_name == 'main' && secrets.AWS_SSH_HOST_PROD || secrets.AWS_SSH_HOST }}
+          username: ${{ github.ref_name == 'main' && secrets.AWS_SSH_USER_PROD || secrets.AWS_SSH_USER }}
+          key: ${{ github.ref_name == 'main' && secrets.AWS_SSH_PRIVATE_KEY_PROD || secrets.AWS_SSH_PRIVATE_KEY }}
           port: 22
 
       - name: Deploy with Docker Compose on EC2
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.AWS_SSH_HOST }}
-          username: ${{ secrets.AWS_SSH_USER }}
-          key: ${{ secrets.AWS_SSH_PRIVATE_KEY }}
+          host: ${{ github.ref_name == 'main' && secrets.AWS_SSH_HOST_PROD || secrets.AWS_SSH_HOST }}
+          username: ${{ github.ref_name == 'main' && secrets.AWS_SSH_USER_PROD || secrets.AWS_SSH_USER }}
+          key: ${{ github.ref_name == 'main' && secrets.AWS_SSH_PRIVATE_KEY_PROD || secrets.AWS_SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            cd /home/${{ secrets.AWS_SSH_USER }}/deploy/deployment/${{ env.NODE_ENV }}/
+            cd /home/${{ github.ref_name == 'main' && secrets.AWS_SSH_USER_PROD || secrets.AWS_SSH_USER }}/deploy/deployment/${{ env.NODE_ENV }}/
             export STRAPI_APP=${{ env.STRAPI_APP }}
             export WEB_APP=${{ env.WEB_APP }}
             export NODE_ENV=${{ env.NODE_ENV }}
