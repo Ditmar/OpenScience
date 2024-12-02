@@ -1,0 +1,223 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.layout {
+  position: relative;
+}
+
+.search-bar {
+  align-items: center;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  right: 2rem;
+  top: 1.5rem;
+  z-index: 2;
+
+  @include respond-to('medium') {
+    margin-right: 3rem;
+    right: 0;
+    top: 2.2rem;
+  }
+}
+
+.logo-container {
+  background-color: $ads-primary-main;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+
+  @include respond-to('medium') {
+    background-color: transparent;
+    position: absolute;
+
+  }
+}
+
+.hero-banner-container {
+  display: none;
+  position: absolute;
+
+  @include respond-to('small-mobile') {
+    display: block;
+    position: relative; 
+
+
+  }
+}
+
+.navbar-container {
+  display: none;
+  width: 80%;
+
+
+  @include respond-to('medium') {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-around;
+  }
+
+  @include respond-to('large') { 
+    display: flex;
+    gap: 2rem;
+    justify-content: space-around;
+  }
+
+}
+
+.year-list-container {
+  margin-top: -16rem;
+  padding-left: 0;
+  padding-right: 0;
+  position: absolute;
+  width: 100%;
+
+  @include respond-to('small') {
+    margin-top: -7rem;
+  }
+
+  @include respond-to('medium') {
+    margin-top: -11rem;
+  }
+
+} 
+
+.search-input-list-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -12rem;
+  position: absolute;
+  width: 100%;
+
+  @include respond-to('small') {
+    margin-top: -7rem;
+  }
+
+  @include respond-to('medium') {
+    margin-top: -13rem;
+  }
+}
+
+.year-list-container-hidden {
+  display: none;
+}
+
+ .label__glass {
+  background-color: transparent;
+  border: none;
+  color: $ads-color-main;
+  font-size: $ads-font-size-primary;
+  height: 1.125rem;
+  margin-bottom: -0.8rem;
+  margin-top: 1.125rem;
+  outline: none;
+  width: 16rem;
+
+  @include respond-to('small') {
+    font-size: $ads-font-size-primary;
+    height: 1.125rem;
+    margin-bottom: -0.8rem;
+    width: 24.9rem;
+  }
+
+  @include respond-to('medium') {
+    font-size: $ads-font-size-primary;
+    height: 1rem;
+    margin-bottom: -0.638rem;
+    width: 39.6rem;
+  }
+
+  @include respond-to('large') {
+    font-size: $ads-font-size-primary;
+    height: 1rem;
+    margin-bottom: -0.638rem;
+    width: 50rem;
+  }
+
+  @include respond-to('extra-large') {
+    font-size: $ads-font-size-primary;
+    height: 1rem;
+    margin-bottom: -2.7rem;
+    margin-top: 3.125rem;
+    width: 73rem;
+  }
+} 
+
+.divider--solid {
+  background-color: $ads-color-main;
+  border: none;
+  height: 0.125rem;
+  margin-bottom: 0.313rem;
+  margin-top: 1.125rem;
+  width: 16.375rem;
+
+  @include respond-to('small') {
+    height: 0.125rem;
+    width: 25.125rem;
+  }
+
+  @include respond-to('medium') {
+    height: 0.625rem;
+    margin-bottom: 0.625rem;
+    width: 40rem;
+  }
+
+  @include respond-to('large') {
+    height: 0.625rem;
+    margin-bottom: 0.625rem;
+    width: 50.375rem;
+  }
+
+  @include respond-to('extra-large') {
+    height: 0.625rem;
+    margin-bottom: 0.625rem;
+    margin-top: 3.125rem;
+    width: 73.375rem;
+  }
+}
+
+.button1 {
+  background-color: $ads-color-main;
+  border: none;
+  border-radius: 0.125rem;
+  display: flex;
+  height: 0.875rem;
+  justify-content: center;
+  width: 3.625rem;
+
+  @include respond-to('medium') {
+    height: 3.063rem;
+    justify-content: center;
+    width: 10.313rem;
+  }
+
+  @include respond-to('extra-large') {
+    height: 3.063rem;
+    justify-content: center;
+    width: 10.313rem;
+  }
+}
+
+.button1:hover {
+  background: $ads-secondary-main;
+}
+
+.button__label--glass {
+  color: $ads-text-main-hover;
+  font-family: Roboto, sans-serif;
+  font-size: 0.5rem;
+  font-weight: $ads-font-weight-first;
+  line-height: 0.786rem;
+  text-align: center;
+
+  @include respond-to('medium') {
+    font-size: 2.25rem;
+    font-weight: 500;
+    line-height: 3rem;
+    text-align: center;
+  }
+}
