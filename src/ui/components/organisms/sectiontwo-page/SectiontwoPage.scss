@@ -5,7 +5,7 @@
   background-color: $ads-background-main;
   display: grid;
   grid-template-areas: 'featured-article image';
-  grid-template-columns: 75% 25%;
+  grid-template-columns: 62% 38%;
   padding: 1rem;
 
   @include respond-to('small-mobile') {
@@ -19,18 +19,19 @@
   }
 
   @include respond-to('small-mobile-large') {
-    grid-template-areas: 'featured-article image';
-    grid-template-columns: 65% 35%;
+    grid-template-areas: 'image' 'featured-article';
+    grid-template-columns: 100%;
+    padding: 0.5rem;
   }
 
   @include respond-to('medium') {
     grid-template-areas: 'featured-article image';
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 62% 38%;
   }
 
   @include respond-to('large') {
     grid-template-areas: 'featured-article image';
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 62% 38%;
   }
 }
 
@@ -42,23 +43,28 @@
     width: 17rem;
 
     @include respond-to('small-mobile') {
-      width: 12rem;
+      height: 30rem;
+      width: 18rem;
     }
 
     @include respond-to('small-mobile-large') {
-      width: 10rem;
+      height: 30rem;
+      width: 18rem;
     }
 
     @include respond-to('medium') {
-      width: 13.5rem;
+      height: 30rem;
+      width: 18rem;
     }
 
     @include respond-to('large') {
-      width: 15rem;
+      height: 50rem;
+      width: 25rem;
     }
 
     @include respond-to('extra-large') {
-      width: 17rem;
+      height: 50rem;
+      width: 29rem;
     }
   }
 }
