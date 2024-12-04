@@ -79,11 +79,6 @@
       width: 2.5rem;
     }
 
-    @include respond-to('large') {
-      margin-bottom: -1rem;
-      width: 3rem;
-    }
-
     @include respond-to('extra-large') {
       margin-bottom: 0.5rem;
       width: 4rem;
@@ -96,20 +91,6 @@
 
   .points-divider span {
     background-color: $ads-primary-main;
-  }
-}
-
-.divider {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-  width: 100%;
-
-  .buttons {
-    display: flex;
-    gap: 10px;
-    margin-left: auto;
   }
 }
 
