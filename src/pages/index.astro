@@ -6,7 +6,7 @@ import { t, changeLanguage } from 'i18next';
 import Layout from '../layouts/Layout.astro';
 import ArticleTitle from '../ui/components/atoms/article-title/ArticleTitle';
 import ArticleDescription from '../ui/components/atoms/article-description/ArticleDescription';
-import { seoConfig } from '../config/seo-config,mock';
+import { seoConfig } from '../config/seo-config.mock';
 
 changeLanguage('es');
 const { title, description, openGraph } = {
@@ -16,7 +16,7 @@ const { title, description, openGraph } = {
     basic: {
       title: seoConfig.title,
       type: 'website',
-      image: seoConfig.openGraph.images[0]?.url, // Verifica si la imagen existe
+      image: seoConfig.openGraph.images[0]?.url,
       url: seoConfig.openGraph.url,
     },
   },
