@@ -15,6 +15,8 @@ import LinkIcon from '../../../../assets/icons/share.svg?raw';
 
 import './SectiontwoPage.scss';
 
+import data from './__mock__/section.json';
+
 const meta: Meta<typeof SectiontwoPage> = {
   component: SectiontwoPage,
   title: 'ui/components/organisms/sectiontwo-page',
@@ -40,54 +42,29 @@ export const SectionTwo: Story = {
     backgroundImageMobile: String(secctiontwoone),
     children: (
       <>
-        <div className="featured__item">
-          <LabelRecentsArticles text="ARTICULOS MAS RECIENTES" color="primary" />
-          <LabelDate date={new Date(2023, 3, 15)} />
-          <ArticleTitle
-            title="CANOPY-TOP MEASUREMENTS DO NOT ACCURATELY QUANTIFY CANOPY-SCALE LEAF THERMOREGULATION"
-            variant="default"
-          />
-          <ArticleDescription
-            article="Spectral tuning of visual pigments often facilitates adaptation to new environments,
-             and it is intriguing to study the visual ecology of pelagic sharks with secondarily expanded habitats. The"
-            variant="default"
-          />
-        </div>
-        <div className="divider">
-          <AuthorLabel variant="Marco Antonio Lopez" />
-          <div className="buttons">
-            <VariableButton icon={PdfIcon} />
-            <VariableButton icon={LinkIcon} />
+        {data.featuredItems.map((item) => (
+          <div key={item.id} className="section-two__item">
+            <div className="featured__item">
+              <LabelRecentsArticles text={item.recentArticlesText} color="primary" />
+              <LabelDate date={new Date(item.date)} />
+              <ArticleTitle title={item.title} variant="default" />
+              <ArticleDescription article={item.description} variant="default" />
+            </div>
+            <div className="divider-author">
+              <div className="divider">
+                <AuthorLabel variant={item.author} />
+                <div className="buttons">
+                  <VariableButton icon={PdfIcon} />
+                  <VariableButton icon={LinkIcon} />
+                </div>
+              </div>
+            </div>
+            <PointsDivider color="tertiary" size="medium" variant="solid-line" />
+            <div className="points-divider">
+              <PointsDivider color="tertiary" size="small" variant="points" />
+            </div>
           </div>
-        </div>
-        <PointsDivider color="tertiary" size="medium" variant="solid-line" />
-        <div className="points-divider">
-          <PointsDivider color="tertiary" size="small" variant="points" />
-        </div>
-        <div className="featured__item">
-          <LabelRecentsArticles text="ARTICULOS MAS RECIENTES" color="primary" />
-          <LabelDate date={new Date(2023, 3, 15)} />
-          <ArticleTitle
-            title="CANOPY-TOP MEASUREMENTS DO NOT ACCURATELY QUANTIFY CANOPY-SCALE LEAF THERMOREGULATION"
-            variant="default"
-          />
-          <ArticleDescription
-            article="Spectral tuning of visual pigments often facilitates adaptation to new environments,
-             and it is intriguing to study the visual ecology of pelagic sharks with secondarily expanded habitats. The"
-            variant="default"
-          />
-        </div>
-        <div className="divider">
-          <AuthorLabel variant="Marco Antonio Lopez" />
-          <div className="buttons">
-            <VariableButton icon={PdfIcon} />
-            <VariableButton icon={LinkIcon} />
-          </div>
-        </div>
-        <PointsDivider color="tertiary" size="medium" variant="solid-line" />
-        <div className="points-divider">
-          <PointsDivider color="tertiary" size="small" variant="points" />
-        </div>
+        ))}
       </>
     ),
   },

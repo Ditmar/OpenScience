@@ -1,18 +1,18 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
+@import '../../../../globals/breakpoints';
 
 .volume-box {
   align-items: center;
   background-color: $ads-tertiary-main;
-  display: flex;
-  height: 2rem;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  display: inline-flex;
+  height: auto;
   justify-content: center;
-  left: 50%;
+  margin: 0 auto;
   padding: 0.5rem;
-  position: absolute;
-  top: 10%;
-  transform: translateX(-50%);
-  width: 11.75rem;
+  position: relative;
 
   .content {
     align-items: center;
@@ -20,11 +20,11 @@
     justify-content: center;
     text-align: center;
     white-space: nowrap;
-    width: 100%;
+    width: auto;
   }
 
   .separator {
-    margin: 0 0.0001rem;
+    margin: 0 0.5rem;
   }
 
   &.custom-label-date-color {
@@ -50,9 +50,8 @@
     }
   }
 
-  @media (width >= 768px) {
-    height: 6.625rem;
-    width: 26.25rem;
+  @include respond-to('medium'){
+    min-width: 26.25rem;
 
     .content {
       .labeldate,
@@ -61,10 +60,6 @@
       .custom-labeldate {
         font-size: 1.5rem;
         line-height: 1.2rem;
-      }
-
-      .separator {
-        margin: 0 0.0001rem;
       }
     }
   }

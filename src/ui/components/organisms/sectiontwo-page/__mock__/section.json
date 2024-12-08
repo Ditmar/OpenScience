@@ -1,0 +1,20 @@
+{
+  "featuredItems": [
+    {
+      "id": "item1",
+      "recentArticlesText": "ARTICULOS MAS RECIENTES",
+      "date": "2023-04-15",
+      "title": "CANOPY-TOP MEASUREMENTS DO NOT ACCURATELY QUANTIFY CANOPY-SCALE LEAF THERMOREGULATION",
+      "description": "Spectral tuning of visual pigments often facilitates adaptation to new environments, and it is intriguing to study the visual ecology of pelagic sharks with secondarily expanded habitats.",
+      "author": "Marco Antonio Lopez"
+    },
+    {
+      "id": "item2",
+      "recentArticlesText": "ARTICULOS MAS RECIENTES",
+      "date": "2023-04-15",
+      "title": "CANOPY-TOP MEASUREMENTS DO NOT ACCURATELY QUANTIFY CANOPY-SCALE LEAF THERMOREGULATION",
+      "description": "Spectral tuning of visual pigments often facilitates adaptation to new environments, and it is intriguing to study the visual ecology of pelagic sharks with secondarily expanded habitats.",
+      "author": "Marco Antonio Lopez"
+    }
+  ]
+}

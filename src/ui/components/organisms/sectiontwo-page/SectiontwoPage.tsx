@@ -28,6 +28,7 @@ function SectiontwoPage({ backgroundImageDesktop, backgroundImageMobile, childre
       mediaQuery.removeEventListener('change', updateImage);
     };
   }, [backgroundImageDesktop, backgroundImageMobile]);
+
   return (
     <div className="body">
       <div className="featured-article">{children}</div>
