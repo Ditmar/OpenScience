@@ -32,7 +32,7 @@
 
 .carousel__next {
   @include respond-to('small-mobile') {
-    right: -0.80rem;
+    right: -0.8rem;
   }
 
   @include respond-to('small') {
@@ -112,49 +112,49 @@
   .thumbnail img {
     border: none;
     margin: 0;
-  
+
     @include respond-to('small-mobile') {
       height: 6.69rem;
       width: 4.25rem;
     }
-  
+
     @include respond-to('medium') {
       height: 15.63rem;
       width: 10.19rem;
     }
-  
+
     @include respond-to('large') {
       height: 20.75rem;
       width: 13.63rem;
     }
-  
+
     @include respond-to('extra-large') {
       height: 21.81rem;
       width: 15rem;
     }
-  }  
+  }
 
   .labeldate p {
     font-size: 1.3rem;
     margin: 0;
-  
+
     @include respond-to('small-mobile') {
       font-size: 0.8rem;
     }
-  
+
     @include respond-to('medium') {
       font-size: 1.1rem;
     }
   }
-  
+
   .volume p {
     font-size: 1.4rem;
     margin: 0;
-  
+
     @include respond-to('small-mobile') {
       font-size: 1rem;
     }
-  
+
     @include respond-to('medium') {
       font-size: 1.2rem;
     }
