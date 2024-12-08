@@ -12,7 +12,7 @@ import StartIcon from '../../../../assets/icons/start.svg?raw';
 import VolumesIcon from '../../../../assets/icons/volumes.svg?raw';
 import type { IProps } from './types/IProps';
 
-function BannerVolumes({ textSearch, backgroundImage, logo }: IProps) {
+function HeaderBanner({ textSearch, backgroundImage, logo }: IProps) {
   const [showMore, setShowMore] = useState<boolean>(false);
 
   const handleMoreClick = useCallback(() => {
@@ -61,4 +61,4 @@ function BannerVolumes({ textSearch, backgroundImage, logo }: IProps) {
   );
 }
 
-export default BannerVolumes;
+export default HeaderBanner;

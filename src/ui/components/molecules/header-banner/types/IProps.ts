@@ -8,8 +8,6 @@ export interface IData {
   attributes: IAttributes;
 }
 export interface IProps {
-  data: IData[];
-  yearText: string;
   textSearch: string;
   backgroundImage: string;
   logo: string;
