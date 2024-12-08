@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import SectiontwoPage from './SectiontwoPage';
-import secctiontwo from './__mock__/secctiontwo.svg';
-import secctiontwoone from './__mock__/secctiontwoone.svg';
+import secctiontwo from "./__mock__/secctiontwo.svg";
+import secctiontwoone from "./__mock__/secctiontwoone.svg";
 
 import ArticleDescription from '../../atoms/article-description/ArticleDescription';
 import ArticleTitle from '../../atoms/article-title/ArticleTitle';
