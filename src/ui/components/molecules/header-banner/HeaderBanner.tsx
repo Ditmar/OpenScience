@@ -19,6 +19,7 @@ function HeaderBanner({ textSearch, backgroundImage, logo }: IProps) {
     setShowMore((prevShowMore) => !prevShowMore);
   }, []);
 
+  
   return (
     <div className="layout">
       <div className="logo-container">
