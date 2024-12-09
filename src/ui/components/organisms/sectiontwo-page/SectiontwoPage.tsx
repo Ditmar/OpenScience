@@ -20,6 +20,7 @@ function SectiontwoPage({ backgroundImageDesktop, backgroundImageMobile, childre
       }
     };
 
+    
     updateImage(mediaQuery);
 
     mediaQuery.addEventListener('change', updateImage);
