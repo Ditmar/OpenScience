@@ -3,9 +3,38 @@
 import { SEO } from 'astro-seo';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { t, changeLanguage } from 'i18next';
-import Layout from '../layouts/Layout.astro';
-import ArticleTitle from '../ui/components/atoms/article-title/ArticleTitle';
+import VolumeCarousel from 'ui/components/molecules/volume-carousel/VolumeCarousel';
+import VolumeBox from 'ui/components/molecules/volume-box/VolumeBox';
+import VariableButton from 'ui/components/atoms/variable-button/VariableButton';
+import PointsDivider from 'ui/components/atoms/points-divider/PointsDivider';
+import AuthorLabel from 'ui/components/atoms/Author-Label/AuthorLabel';
+import IconUpload from 'ui/components/atoms/icon-upload/IconUpload';
+import PublishButton from 'ui/components/atoms/publish-button/PublishButton';
+import Rectangle27 from 'ui/components/atoms/thumbnail/__mock__/imgs/Rectangle27.png';
+import Rectangle28 from 'ui/components/atoms/thumbnail/__mock__/imgs/Rectangle28.png';
+import Rectangle29 from 'ui/components/atoms/thumbnail/__mock__/imgs/Rectangle29.png';
+import Rectangle30 from 'ui/components/atoms/thumbnail/__mock__/imgs/Rectangle30.png';
+import SectiontwoPage from 'ui/components/organisms/sectiontwo-page/SectiontwoPage';
+import Thumbnail from 'ui/components/atoms/thumbnail/Thumbnail';
+import ArticlePublish from 'ui/components/molecules/article-publish/ArticlePublish';
+import LabelDate from 'ui/components/atoms/label-date/LabelDate';
+import LabelVol from 'ui/components/atoms/label-vol/LabelVol';
+import LabelRecentsArticles from 'ui/components/atoms/label-recent-articles/LabelRecentsArticles';
 import ArticleDescription from '../ui/components/atoms/article-description/ArticleDescription';
+import ArticleTitle from '../ui/components/atoms/article-title/ArticleTitle';
+import HeaderBanner from '../ui/components/molecules/header-banner/HeaderBanner';
+import Layout from '../layouts/Layout.astro';
+import LeftArrow from '../assets/icons/left-arrow.svg?raw';
+import LinkIcon from '../assets/icons/share.svg?raw';
+import LogoSvg from '../assets/icons/logo.svg';
+import PdfIcon from '../assets/icons/pdf.svg?raw';
+import Rectangle12 from '../ui/components/atoms/hero-banner/__mock__/imgs/Rectangle12.png';
+import RightArrow from '../assets/icons/right-arrow.svg?raw';
+import secctiontwo from '../ui/components/organisms/sectiontwo-page/__mock__/secctiontwo.svg';
+import secctiontwoone from '../ui/components/organisms/sectiontwo-page/__mock__/secctiontwoone.svg';
+import styles from '../ui/components/molecules/volume-carousel/VolumeCarousel.module.scss';
+import iconUploadPrimary from '../assets/icons/icon-upload-primary.svg?raw';
+import data from '../ui/components/organisms/sectiontwo-page/__mock__/section.json';
 import { seoConfig } from '../config/seo-config.mock';
 
 changeLanguage('es');
@@ -24,10 +53,104 @@ const { title, description, openGraph } = {
 ---
 
 <Layout title={t('page.title')}>
-  <h1>OPENSCIENCE V 3.1.0</h1>
-  <ArticleTitle title={t('page.articletitle')} variant="primary" />
-  <ArticleDescription article={t('page.description')} />
-  <SEO title={title} description={description} openGraph={openGraph} />
+  <div class="backgroud-Homepage">
+    <HeaderBanner textSearch="Buscar" backgroundImage={Rectangle12.src} logo={LogoSvg.src} />
+
+    <div class="volumBox">
+      <VolumeBox className="custom-label-date-color">
+        <LabelDate date={new Date(2023, 3, 16)} />
+        <span class="separator">│</span>
+        <LabelVol volumen="Vol." id={1} />
+        <span class="separator">│</span>
+        <LabelVol volumen="Nu." id={1} />
+      </VolumeBox>
+    </div>
+
+    <SectiontwoPage
+      backgroundImageDesktop={secctiontwo.src}
+      backgroundImageMobile={secctiontwoone.src}
+    >
+      {
+        data.featuredItems.map((item) => (
+          <div>
+            <LabelRecentsArticles text={item.recentArticlesText} color="primary" />
+            <LabelDate date={new Date(item.date)} />
+            <ArticleTitle title={item.title} variant="default" />
+            <ArticleDescription article={item.description} variant="default" />
+            <div class="divider">
+              <AuthorLabel variant={item.author} />
+              <div class="buttons">
+                <VariableButton icon={PdfIcon} />
+                <VariableButton icon={LinkIcon} />
+              </div>
+            </div>
+            <PointsDivider color="tertiary" size="medium" variant="solid-line" />
+            <div class="points-divider">
+              <PointsDivider color="tertiary" size="small" variant="points" />
+            </div>
+          </div>
+        ))
+      }
+    </SectiontwoPage>
+
+    <div class="spacingdown spacedup">
+      <ArticlePublish>
+        <PublishButton variant="primary">PUBLICAR ARTICULO</PublishButton>
+        <IconUpload icon={iconUploadPrimary} />
+      </ArticlePublish>
+    </div>
+
+    <div class="spaceright spacceleft">
+      <VolumeCarousel rightIcon={RightArrow} leftIcon={LeftArrow}>
+        {
+          [Rectangle27, Rectangle28, Rectangle29, Rectangle30].map((image, index) => (
+            <div class={styles.carousel__item}>
+              <div class={styles.thumbnail}>
+                <Thumbnail pathImage={String(image.src)} alt={`Rectangle${String(27 + index)}`} />
+              </div>
+              <div class={styles.labeldate}>
+                <LabelDate date={new Date(2023, 3 + index, 15 + index)} />
+              </div>
+              <div class={styles.volume}>
+                <LabelVol volumen="Vol." id={1 + index} />
+              </div>
+            </div>
+          ))
+        }
+      </VolumeCarousel>
+    </div>
+  </div>
 </Layout>
 
-<style></style>
+<style>
+  .backgroud-Homepage {
+    background-color: #f5f5f5;
+  }
+
+  .divider {
+    display: flex;
+  }
+
+  .spacingdown {
+    margin-bottom: 2rem;
+  }
+
+  .spacedup {
+    margin-top: 2rem;
+  }
+
+  .spaceright {
+    margin-right: 1rem;
+  }
+
+  .spaceleft {
+    margin-left: 1rem;
+  }
+
+  .volumBox {
+    display: flex;
+    justify-content: center;
+    margin-top: -1rem;
+  }
+</style>
+

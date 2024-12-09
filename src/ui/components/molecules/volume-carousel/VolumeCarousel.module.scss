@@ -2,83 +2,10 @@
 @import '../../../../globals/mixins';
 
 .carousel__container {
-  position: relative;
-}
-
-.carousel__prev,
-.carousel__next {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  top: calc(50% - 1.25rem);
-  transform: translateY(-50%);
-  z-index: 1;
-}
-
-.carousel__prev {
-  @include respond-to('small-mobile') {
-    left: -0.75rem;
-  }
-
-  @include respond-to('small') {
-    left: 5.63rem;
-  }
-
-  @include respond-to('medium') {
-    left: 4.06rem;
-  }
-}
-
-.carousel__next {
-  @include respond-to('small-mobile') {
-    right: -0.80rem;
-  }
-
-  @include respond-to('small') {
-    right: 5.63rem;
-  }
-
-  @include respond-to('medium') {
-    right: 4.06rem;
-  }
-}
-
-.carousel__next svg,
-.carousel__prev svg {
-  @include respond-to('small-mobile') {
-    height: 1.56rem;
-    width: 1.57rem;
-  }
-
-  @include respond-to('medium') {
-    height: 2.5rem;
-    width: 2.6rem;
-  }
-}
-
-.carousel__list {
+  display: flex;
+  justify-content: center;
   overflow: hidden;
-
-  @include respond-to('small-mobile') {
-    height: 10rem;
-    width: 17.5rem;
-  }
-
-  @include respond-to('medium') {
-    height: 19rem;
-    width: 38.44rem;
-  }
-
-  @include respond-to('large') {
-    height: 24.63rem;
-    width: 51.25rem;
-  }
-
-  @include respond-to('extra-large') {
-    height: 27.25rem;
-    width: 56.25rem;
-  }
+  position: relative;
 }
 
 .carousel__item {
@@ -109,54 +36,142 @@
     min-width: 18.75rem;
   }
 
-  .thumbnail img {
-    border: none;
-    margin: 0;
-  
-    @include respond-to('small-mobile') {
-      height: 6.69rem;
-      width: 4.25rem;
-    }
-  
-    @include respond-to('medium') {
-      height: 15.63rem;
-      width: 10.19rem;
-    }
-  
-    @include respond-to('large') {
-      height: 20.75rem;
-      width: 13.63rem;
-    }
-  
-    @include respond-to('extra-large') {
-      height: 21.81rem;
-      width: 15rem;
-    }
-  }  
-
   .labeldate p {
     font-size: 1.3rem;
     margin: 0;
-  
+
     @include respond-to('small-mobile') {
       font-size: 0.8rem;
     }
-  
+
     @include respond-to('medium') {
       font-size: 1.1rem;
     }
   }
-  
+
+  .thumbnail img {
+    border: none;
+    margin: 0;
+
+    @include respond-to('small-mobile') {
+      height: 6.69rem;
+      width: 4.25rem;
+    }
+
+    @include respond-to('medium') {
+      height: 15.63rem;
+      width: 10.19rem;
+    }
+
+    @include respond-to('large') {
+      height: 20.75rem;
+      width: 13.63rem;
+    }
+
+    @include respond-to('extra-large') {
+      height: 21.81rem;
+      width: 15rem;
+    }
+  }
+
   .volume p {
     font-size: 1.4rem;
     margin: 0;
-  
+
     @include respond-to('small-mobile') {
       font-size: 1rem;
     }
-  
+
     @include respond-to('medium') {
       font-size: 1.2rem;
     }
+  }
+}
+
+.carousel__list {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  overflow: hidden;
+  padding: 0 1rem;
+
+  @include respond-to('small-mobile') {
+    height: 10rem;
+    width: 17.5rem;
+  }
+
+  @include respond-to('medium') {
+    height: 19rem;
+    width: 38.44rem;
+  }
+
+  @include respond-to('large') {
+    height: 24.63rem;
+    width: 51.25rem;
+  }
+
+  @include respond-to('extra-large') {
+    height: 27.25rem;
+    width: 56.25rem;
+  }
+}
+
+.carousel__next {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: 2.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  z-index: 1;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+
+  @include respond-to('small-mobile') {
+    right: -0.8rem;
+  }
+
+  @include respond-to('small') {
+    right: 5.63rem;
+  }
+
+  @include respond-to('medium') {
+    right: 4.06rem;
+  }
+}
+
+.carousel__prev {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: 2.5rem;
+  left: 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  z-index: 1;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+
+  @include respond-to('small-mobile') {
+    left: -0.75rem;
+  }
+
+  @include respond-to('small') {
+    left: 5.63rem;
+  }
+
+  @include respond-to('medium') {
+    left: 4.06rem;
   }
 }
