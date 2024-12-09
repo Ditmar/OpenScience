@@ -24,7 +24,7 @@ export const Carousel: Story = {
   args: {
     leftIcon: LeftArrow,
     children: (
-      <>
+      <div className={styles.carousel__list}>
         {[Rectangle27, Rectangle28, Rectangle29, Rectangle30].map((image, index) => (
           <div className={styles.carousel__item}>
             <div className={styles.thumbnail}>
@@ -38,7 +38,7 @@ export const Carousel: Story = {
             </div>
           </div>
         ))}
-      </>
+      </div>
     ),
     rightIcon: RightArrow,
   },
