@@ -54,6 +54,7 @@ const { title, description, openGraph } = {
 
 <Layout title={t('page.title')}>
   <div class="backgroud-Homepage">
+    <SEO title={title} description={description} openGraph={openGraph} />
     <HeaderBanner textSearch="Buscar" backgroundImage={Rectangle12.src} logo={LogoSvg.src} />
 
     <div class="volumBox">
@@ -153,4 +154,3 @@ const { title, description, openGraph } = {
     margin-top: -1rem;
   }
 </style>
-
