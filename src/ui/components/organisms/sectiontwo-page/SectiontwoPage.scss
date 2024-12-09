@@ -1,0 +1,147 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.body {
+  background-color: $ads-background-main;
+  display: grid;
+  grid-template-areas: 'featured-article image';
+  grid-template-columns: 62% 38%;
+  padding: 1rem;
+
+  @include respond-to('small-mobile') {
+    grid-template-areas: 'image' 'featured-article';
+    grid-template-columns: 100%;
+    padding: 0.5rem;
+
+    .image {
+      grid-area: image;
+    }
+  }
+
+  @include respond-to('small-mobile-large') {
+    grid-template-areas: 'image' 'featured-article';
+    grid-template-columns: 100%;
+    padding: 0.5rem;
+  }
+
+  @include respond-to('medium') {
+    grid-template-areas: 'featured-article image';
+    grid-template-columns: 62% 38%;
+  }
+
+  @include respond-to('large') {
+    grid-template-areas: 'featured-article image';
+    grid-template-columns: 62% 38%;
+  }
+}
+
+.image {
+  margin: 1rem;
+  text-align: center;
+
+  img {
+    width: 17rem;
+
+    @include respond-to('small-mobile') {
+      height: 30rem;
+      width: 18rem;
+    }
+
+    @include respond-to('small-mobile-large') {
+      height: 30rem;
+      width: 18rem;
+    }
+
+    @include respond-to('medium') {
+      height: 30rem;
+      width: 18rem;
+    }
+
+    @include respond-to('large') {
+      height: 50rem;
+      width: 25rem;
+    }
+
+    @include respond-to('extra-large') {
+      height: 50rem;
+      width: 29rem;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+
+  button {
+    @include respond-to('small-mobile') {
+      width: 2.5rem;
+    }
+
+    @include respond-to('extra-large') {
+      margin-bottom: 0.5rem;
+      width: 4rem;
+    }
+  }
+}
+
+.featured-article {
+  position: relative;
+
+  .points-divider span {
+    background-color: $ads-primary-main;
+  }
+}
+
+.featured__item {
+  @include respond-to('small-mobile-large') {
+    p {
+      font-size: 0.7rem;
+      line-height: 0.8rem;
+      margin-top: -0.2rem;
+    }
+
+    span {
+      font-size: 1rem;
+      margin-left: -1rem;
+    }
+  }
+
+  @include respond-to('medium') {
+    p {
+      font-size: 1.3rem;
+      line-height: 1.4rem;
+    }
+
+    span {
+      font-size: 1.6rem;
+    }
+  }
+
+  @include respond-to('large') {
+    p {
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+    }
+
+    span {
+      font-size: 2rem;
+    }
+
+    @include respond-to('extra-large') {
+      p {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+
+      span {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+.divider-author{
+  display: flex;
+}
