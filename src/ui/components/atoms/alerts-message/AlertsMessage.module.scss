@@ -1,0 +1,38 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+
+.label-alerts{
+    width: 80%;
+    height: 80%;
+}
+.alerts__text {  
+  font-weight: $ads-font-weight-first;
+  
+  padding: 0.5rem;
+  width: 100%;
+  
+  @include respond-to('small') {
+    font-size: 1rem;
+    width: 7.5rem;
+  }
+
+  @include respond-to('medium') {
+    font-size: 1rem;
+    width: 7.5rem;
+  }
+
+  @include respond-to('large') {
+    font-size: 2rem;
+    width: 16rem;
+  }
+
+  @include respond-to('extra-large') {
+    font-size: 2rem;
+    width: 16rem;
+  }
+}
+
+.label-references--primary .label-alerts__text {
+    background: $ads-alerts-primary;
+}
