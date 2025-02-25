@@ -6,9 +6,9 @@ function Alerts(props: IProps) {
 
   return (
     <div className={styles['label-alerts']}>
-        <label htmlFor="label" className={`label ${variant ? `label--${variant}` : 'test'}`}>
-          <span className={styles['alerts__text']}>This is a {children} alert--check it out!</span>
-        </label>
+      <label htmlFor="label" className={`label ${variant ? `label--${variant}` : 'test'}`}>
+        <span className={styles.alerts__text}>This is a {children} alert--check it out!</span>
+      </label>
     </div>
   );
 }
