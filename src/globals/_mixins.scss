@@ -1,5 +1,5 @@
 @import 'breakpoints';
-
+@import 'variables';
 @mixin respond-to($breakpoint) {
   @if map-has-key($ads-breakpoints-scales, $breakpoint) {
     @media (min-width: map-get($ads-breakpoints-scales, $breakpoint)) {
@@ -10,4 +10,8 @@
   @else {
     @warn "It has not been found: #{$breakpoint}.";
   }
+}
+
+@mixin grid-item($columnItem) {
+
 }
