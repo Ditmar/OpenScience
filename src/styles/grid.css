@@ -1,15 +1,15 @@
 .container {
-    max-width: 1392px;
     margin-left: auto;
     margin-right: auto;
+    max-width: 1392px;
     padding-left: 24px;
     padding-right: 24px;
   }
   
   .grid {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
     gap: 24px;
+    grid-template-columns: repeat(12, 1fr);
   }
   
   [class^="col-"] {
@@ -29,7 +29,7 @@
   .col-11 { grid-column: span 11; }
   .col-12 { grid-column: span 12; }
   
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     .grid {
       grid-template-columns: repeat(2, 1fr);
     }
