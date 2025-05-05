@@ -1,14 +1,12 @@
 module.exports = {
-    content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}'],
-    theme: {
-      extend: {
-        spacing: {
-          '-1px': '-1px',
-          '0.5px': '0.5px',
-        },
+  content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}'],
+  theme: {
+    extend: {
+      spacing: {
+        '-1px': '-1px',
+        '0.5px': '0.5px',
       },
     },
-    plugins: [],
-  };
-
-/*En Tailwind, los valores personalizados deben usarse entre corchetes [valor].*/
+  },
+plugins: [],
+};
