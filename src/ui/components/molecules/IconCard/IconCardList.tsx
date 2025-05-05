@@ -32,5 +32,6 @@ const IconCardList: React.FC<IconCardListProps> = ({ items, onSelect, className 
   );
 };
 
-export { IconCardList };
+export default IconCardList;
+
 
