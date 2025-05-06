@@ -127,87 +127,87 @@ jobs:
       - id: set_outputs
         run: echo "GIT_COMMIT_HASH=${{ env.GIT_COMMIT_HASH }}" >> $GITHUB_OUTPUT
 
-  deploy-to-ec2:
-    name: Deploy to EC2
-    runs-on: ubuntu-latest
-    needs: build-and-push-docker-image
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Set up variables from previous job
-        run: |
-          echo "GIT_COMMIT_HASH=${{ needs.build-and-push-docker-image.outputs.GIT_COMMIT_HASH }}" >> $GITHUB_ENV
+  # deploy-to-ec2:
+  #   name: Deploy to EC2
+  #   runs-on: ubuntu-latest
+  #   needs: build-and-push-docker-image
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v3
+  #     - name: Set up variables from previous job
+  #       run: |
+  #         echo "GIT_COMMIT_HASH=${{ needs.build-and-push-docker-image.outputs.GIT_COMMIT_HASH }}" >> $GITHUB_ENV
 
-      - name: Verify received variables
-        run: |
-          echo "GIT_COMMIT_HASH=${{ env.GIT_COMMIT_HASH }}"
-          echo "DOCKER_HUB_REPO=${{ env.DOCKER_HUB_REPO }}"
-          echo "DOCKER_USER_NAME=${{ env.DOCKER_USER_NAME }}"
+  #     - name: Verify received variables
+  #       run: |
+  #         echo "GIT_COMMIT_HASH=${{ env.GIT_COMMIT_HASH }}"
+  #         echo "DOCKER_HUB_REPO=${{ env.DOCKER_HUB_REPO }}"
+  #         echo "DOCKER_USER_NAME=${{ env.DOCKER_USER_NAME }}"
 
-      - name: Trigger SSH Connection
-        uses: appleboy/ssh-action@v0.1.5
-        with:
-          host: ${{ secrets.AWS_SSH_HOST }}
-          username: ${{ secrets.AWS_SSH_USER }}
-          key: ${{ secrets.AWS_SSH_PRIVATE_KEY }}
-          port: 22
-          script: |
-            echo "SSH connection successful"
+  #     - name: Trigger SSH Connection
+  #       uses: appleboy/ssh-action@v0.1.5
+  #       with:
+  #         host: ${{ secrets.AWS_SSH_HOST }}
+  #         username: ${{ secrets.AWS_SSH_USER }}
+  #         key: ${{ secrets.AWS_SSH_PRIVATE_KEY }}
+  #         port: 22
+  #         script: |
+  #           echo "SSH connection successful"
 
-      - name: Set environment variables
-        run: |
-          echo "STRAPI_APP=a443bfc" >> $GITHUB_ENV
-          echo "WEB_APP=${{ env.GIT_COMMIT_HASH }}" >> $GITHUB_ENV
-          echo "ENV=DEV" >> $GITHUB_ENV
-          if [ "${{ github.event.inputs.ENV }}" = "PROD" ]; then
-            echo "NODE_ENV=production" >> $GITHUB_ENV
-            echo "DEPLOY_FILE=deployment/production/deploy.yml" >> $GITHUB_ENV
-            echo "DATABASE_NAME=${{ secrets.DATABASE_NAME_PROD }}" >> $GITHUB_ENV
-            echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME_PROD }}" >> $GITHUB_ENV
-            echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD_PROD }}" >> $GITHUB_ENV
-          else
-            echo "NODE_ENV=development" >> $GITHUB_ENV
-            echo "DEPLOY_FILE=deployment/development/deploy.yml" >> $GITHUB_ENV
-            echo "DATABASE_NAME=${{ secrets.DATABASE_NAME_DEV }}" >> $GITHUB_ENV
-            echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME_DEV }}" >> $GITHUB_ENV
-            echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD_DEV }}" >> $GITHUB_ENV
-          fi
+  #     - name: Set environment variables
+  #       run: |
+  #         echo "STRAPI_APP=a443bfc" >> $GITHUB_ENV
+  #         echo "WEB_APP=${{ env.GIT_COMMIT_HASH }}" >> $GITHUB_ENV
+  #         echo "ENV=DEV" >> $GITHUB_ENV
+  #         if [ "${{ github.event.inputs.ENV }}" = "PROD" ]; then
+  #           echo "NODE_ENV=production" >> $GITHUB_ENV
+  #           echo "DEPLOY_FILE=deployment/production/deploy.yml" >> $GITHUB_ENV
+  #           echo "DATABASE_NAME=${{ secrets.DATABASE_NAME_PROD }}" >> $GITHUB_ENV
+  #           echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME_PROD }}" >> $GITHUB_ENV
+  #           echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD_PROD }}" >> $GITHUB_ENV
+  #         else
+  #           echo "NODE_ENV=development" >> $GITHUB_ENV
+  #           echo "DEPLOY_FILE=deployment/development/deploy.yml" >> $GITHUB_ENV
+  #           echo "DATABASE_NAME=${{ secrets.DATABASE_NAME_DEV }}" >> $GITHUB_ENV
+  #           echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME_DEV }}" >> $GITHUB_ENV
+  #           echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD_DEV }}" >> $GITHUB_ENV
+  #         fi
 
-      - name: Verify environment variables
-        run: |
-          echo "STRAPI_APP=${{ env.STRAPI_APP }}"
-          echo "WEB_APP=${{ env.WEB_APP }}"
-          echo "ENV=${{ env.ENV }}"
-          echo "NODE_ENV=${{ env.NODE_ENV }}"
-          echo "DEPLOY_FILE=${{ env.DEPLOY_FILE }}"
-          echo "DATABASE_NAME=${{ env.DATABASE_NAME }}"
-          echo "DATABASE_USERNAME=${{ env.DATABASE_USERNAME }}"
-          echo "DATABASE_PASSWORD=${{ env.DATABASE_PASSWORD }}"
+  #     - name: Verify environment variables
+  #       run: |
+  #         echo "STRAPI_APP=${{ env.STRAPI_APP }}"
+  #         echo "WEB_APP=${{ env.WEB_APP }}"
+  #         echo "ENV=${{ env.ENV }}"
+  #         echo "NODE_ENV=${{ env.NODE_ENV }}"
+  #         echo "DEPLOY_FILE=${{ env.DEPLOY_FILE }}"
+  #         echo "DATABASE_NAME=${{ env.DATABASE_NAME }}"
+  #         echo "DATABASE_USERNAME=${{ env.DATABASE_USERNAME }}"
+  #         echo "DATABASE_PASSWORD=${{ env.DATABASE_PASSWORD }}"
 
-      - name: Copy Docker Compose file to EC2
-        uses: appleboy/scp-action@v0.1.3
-        with:
-          source: ${{ env.DEPLOY_FILE }}
-          target: "/home/${{ github.ref_name == 'main' && secrets.AWS_SSH_USER_PROD || secrets.AWS_SSH_USER }}/deploy"
-          host: ${{ github.ref_name == 'main' && secrets.AWS_SSH_HOST_PROD || secrets.AWS_SSH_HOST }}
-          username: ${{ github.ref_name == 'main' && secrets.AWS_SSH_USER_PROD || secrets.AWS_SSH_USER }}
-          key: ${{ github.ref_name == 'main' && secrets.AWS_SSH_PRIVATE_KEY_PROD || secrets.AWS_SSH_PRIVATE_KEY }}
-          port: 22
+  #     - name: Copy Docker Compose file to EC2
+  #       uses: appleboy/scp-action@v0.1.3
+  #       with:
+  #         source: ${{ env.DEPLOY_FILE }}
+  #         target: "/home/${{ github.ref_name == 'main' && secrets.AWS_SSH_USER_PROD || secrets.AWS_SSH_USER }}/deploy"
+  #         host: ${{ github.ref_name == 'main' && secrets.AWS_SSH_HOST_PROD || secrets.AWS_SSH_HOST }}
+  #         username: ${{ github.ref_name == 'main' && secrets.AWS_SSH_USER_PROD || secrets.AWS_SSH_USER }}
+  #         key: ${{ github.ref_name == 'main' && secrets.AWS_SSH_PRIVATE_KEY_PROD || secrets.AWS_SSH_PRIVATE_KEY }}
+  #         port: 22
 
-      - name: Deploy with Docker Compose on EC2
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ github.ref_name == 'main' && secrets.AWS_SSH_HOST_PROD || secrets.AWS_SSH_HOST }}
-          username: ${{ github.ref_name == 'main' && secrets.AWS_SSH_USER_PROD || secrets.AWS_SSH_USER }}
-          key: ${{ github.ref_name == 'main' && secrets.AWS_SSH_PRIVATE_KEY_PROD || secrets.AWS_SSH_PRIVATE_KEY }}
-          port: 22
-          script: |
-            cd /home/${{ github.ref_name == 'main' && secrets.AWS_SSH_USER_PROD || secrets.AWS_SSH_USER }}/deploy/deployment/${{ env.NODE_ENV }}/
-            export STRAPI_APP=${{ env.STRAPI_APP }}
-            export WEB_APP=${{ env.WEB_APP }}
-            export NODE_ENV=${{ env.NODE_ENV }}
-            export DATABASE_NAME=${{ env.DATABASE_NAME }}
-            export DATABASE_USERNAME=${{ env.DATABASE_USERNAME }}
-            export DATABASE_PASSWORD=${{ env.DATABASE_PASSWORD }}
-            docker-compose -f deploy.yml down
-            docker-compose -f deploy.yml up -d
+  #     - name: Deploy with Docker Compose on EC2
+  #       uses: appleboy/ssh-action@master
+  #       with:
+  #         host: ${{ github.ref_name == 'main' && secrets.AWS_SSH_HOST_PROD || secrets.AWS_SSH_HOST }}
+  #         username: ${{ github.ref_name == 'main' && secrets.AWS_SSH_USER_PROD || secrets.AWS_SSH_USER }}
+  #         key: ${{ github.ref_name == 'main' && secrets.AWS_SSH_PRIVATE_KEY_PROD || secrets.AWS_SSH_PRIVATE_KEY }}
+  #         port: 22
+  #         script: |
+  #           cd /home/${{ github.ref_name == 'main' && secrets.AWS_SSH_USER_PROD || secrets.AWS_SSH_USER }}/deploy/deployment/${{ env.NODE_ENV }}/
+  #           export STRAPI_APP=${{ env.STRAPI_APP }}
+  #           export WEB_APP=${{ env.WEB_APP }}
+  #           export NODE_ENV=${{ env.NODE_ENV }}
+  #           export DATABASE_NAME=${{ env.DATABASE_NAME }}
+  #           export DATABASE_USERNAME=${{ env.DATABASE_USERNAME }}
+  #           export DATABASE_PASSWORD=${{ env.DATABASE_PASSWORD }}
+  #           docker-compose -f deploy.yml down
+  #           docker-compose -f deploy.yml up -d
