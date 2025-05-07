@@ -1,6 +1,7 @@
 {
   "name": "opensicence",
   "version": "0.1.2",
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -16,7 +17,8 @@
     "build-storybook": "storybook build",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "build:tokens": "bun run style-dictionary build --config src/style-library/tokens/style-dictionary.config.ts"
   },
   "engines": {
     "node": ">=18.19 <=18.21",
@@ -26,6 +28,12 @@
     "@astrojs/check": "0.5.10",
     "@astrojs/node": "8.2.5",
     "@astrojs/react": "3.3.0",
+    "@emotion/css": "^11.13.5",
+    "@emotion/react": "^11.14.0",
+    "@emotion/server": "^11.11.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.1.0",
+    "@mui/material": "^7.1.0",
     "@types/react": "18.2.79",
     "@types/react-dom": "18.2.25",
     "astro": "4.6.3",
@@ -93,6 +101,7 @@
     "prettier-plugin-astro": "0.13.0",
     "prettier-plugin-svelte": "3.1.2",
     "storybook": "8.1.3",
+    "style-dictionary": "^4.4.0",
     "stylelint": "16.2.1",
     "stylelint-config-standard": "36.0.0",
     "stylelint-declaration-strict-value": "1.10.4",
