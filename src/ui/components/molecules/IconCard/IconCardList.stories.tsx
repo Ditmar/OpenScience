@@ -1,37 +1,41 @@
 import React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
-import IconCardList from './IconCardList'; 
-import { IconCardListProps } from './IconCardList.types';
+import type { Meta, StoryObj } from '@storybook/react';
+import IconCardList from './IconCardList';
+import type { IconCardItem } from './IconCardList.types';
+
+const items: IconCardItem[] = [
+  {
+    id: '1',
+    title: 'Opción 1',
+    subtitle: 'Subtítulo 1',
+    description: 'Descripción de la opción 1',
+    selected: false,
+  },
+  {
+    id: '2',
+    title: 'Opción 2',
+    subtitle: 'Subtítulo 2',
+    description: 'Descripción de la opción 2',
+    selected: true,
+  },
+];
 
 const meta: Meta<typeof IconCardList> = {
-  title: 'Molecules/IconCardList',
+  title: 'Components/IconCardList',
   component: IconCardList,
+  tags: ['autodocs'],
 };
 
 export default meta;
 
-const Template: StoryFn<typeof IconCardList> = (args) => <IconCardList {...args} />;
+type Story = StoryObj<typeof IconCardList>;
 
-export const Default = Template.bind({});
-Default.args = {
-  items: [
-    {
-      id: '1',
-      title: 'Opción A',
-      subtitle: 'Subtítulo A',
-      description: 'Descripción larga sobre la opción A',
-      selected: false,
-      icon: <span>🧪</span>,
+export const Default: Story = {
+  args: {
+    items,
+    onSelect: (id, selected) => {
+      console.log(`Item con id ${id} fue ${selected ? 'seleccionado' : 'deseleccionado'}`);
     },
-    {
-      id: '2',
-      title: 'Opción B',
-      subtitle: 'Subtítulo B',
-      description: 'Más detalles de la opción B',
-      selected: true,
-      icon: <span>📚</span>,
-    },
-  ],
-  onSelect: (id: string, selected: boolean) =>
-    console.log(`Seleccionado ${id}: ${selected}`),
+  },
 };
+
