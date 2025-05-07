@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import type { Meta, StoryObj } from '@storybook/react'; 
 import IconCardList from './IconCardList';
 import { CheckCircle, Zap, Heart, Star } from 'lucide-react';
@@ -108,3 +109,28 @@ export const LongText: Story = {
 
 =======
 >>>>>>> 7165a9a (refactor: translate tests to English and improve IconCardList logic)
+=======
+import IconCardList from './IconCardList'; // Asegúrate de que la ruta sea correcta
+import type { IconCardItem } from './IconCardList.types'; // Importación de tipo
+
+// Aquí defines el array de objetos de ejemplo para items
+const items: IconCardItem[] = [
+  { id: '1', title: 'Item 1', description: 'Descripción 1' },
+  { id: '2', title: 'Item 2', description: 'Descripción 2' },
+  { id: '3', title: 'Item 3', description: 'Descripción 3', selected: true }
+];
+
+export default {
+  title: 'Components/IconCardList',
+  component: IconCardList,
+};
+
+export const Default = () => (
+  <IconCardList 
+    items={items}  // Aquí pasas los items
+    onSelect={(id, selected) => console.log(id, selected)}  // Función de ejemplo
+  />
+);
+
+
+>>>>>>> 5e66056 (chore: update IconCardList stories)
