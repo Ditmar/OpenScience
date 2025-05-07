@@ -34,4 +34,3 @@ describe('IconCardList', () => {
     expect(onSelect).toHaveBeenCalledWith('1', true);
   });
 });
-

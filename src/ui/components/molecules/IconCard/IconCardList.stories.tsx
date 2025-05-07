@@ -11,6 +11,7 @@ const meta: Meta<typeof IconCardList> = {
     onItemSelect: { action: 'onItemSelect' },
   },
 };
+<<<<<<< HEAD
 
 export default meta;
 
@@ -105,3 +106,5 @@ export const LongText: Story = {
 };
 
 
+=======
+>>>>>>> 7165a9a (refactor: translate tests to English and improve IconCardList logic)

@@ -1,20 +1,19 @@
 .button-pdf-share {
-    align-items: center;
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 13rem; 
-  }
-  
-  .share-container {
-    position: relative;
-  }
-  
-  .share-button {
-    bottom: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    left: 0;
-    position: absolute;
-    
-  }
+  align-items: center;
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 13rem;
+}
+
+.share-container {
+  position: relative;
+}
+
+.share-button {
+  bottom: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  left: 0;
+  position: absolute;
+}

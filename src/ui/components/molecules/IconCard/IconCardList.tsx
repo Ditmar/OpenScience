@@ -6,7 +6,7 @@ import { IconCardListProps } from './IconCardList.types';
 const IconCardList: React.FC<IconCardListProps> = ({ items, onSelect, className = '' }) => {
   return (
     <div className={`${styles.container} ${className}`}>
-      {items.map(item => (
+      {items.map((item) => (
         <label
           key={item.id}
           className={`${styles.card} ${item.selected ? styles.cardSelected : ''}`}
@@ -33,5 +33,3 @@ const IconCardList: React.FC<IconCardListProps> = ({ items, onSelect, className 
 };
 
 export default IconCardList;
-
-

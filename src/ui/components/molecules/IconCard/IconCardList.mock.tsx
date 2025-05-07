@@ -24,4 +24,3 @@ export const mockIconCardListProps: IconCardListProps = {
     console.log(`Seleccionado ${id}: ${selected}`);
   },
 };
-
