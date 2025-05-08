@@ -3,21 +3,21 @@
 
 .container {
   margin: 0 auto;
-  max-width: $ads-gridForge-container-size;
-  padding: 0 $ads-gridForge-margin;
+  max-width: $ads-gridforge-container-size;
+  padding: 0 $ads-gridforge-margin;
   width: 100%;
 }
 
 .auto-grid {
   display: grid;
-  gap: $ads-gridForge-gutter;
+  gap: $ads-gridforge-gutter;
   grid-template-columns: repeat(12, 1fr);
 }
 
 .grid-item {
   background-color: $ads-grid-item-bg;
   border: 1px solid #66686b;
-  color: $text-color; // Asegúrate de que esta variable esté definida
+  color: $text-color;
   font-weight: bold;
   min-height: 50px;
   padding: $ads-grid-item-padding;
