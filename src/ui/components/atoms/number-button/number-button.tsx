@@ -11,27 +11,32 @@ interface NumberButtonProps {
   onClick?: () => void;
 }
 
-const NumberButton: React.FC<NumberButtonProps> = ({
+function NumberButton({
   number,
-  selected = false,
-  disabled = false,
-  variant = 'filled',
+  selected,
+  disabled,
+  variant,
   onClick,
-}) => {
+}: NumberButtonProps) {
+  const finalSelected = selected ?? false;
+  const finalDisabled = disabled ?? false;
+  const finalVariant = variant ?? 'filled';
+
   const classNames = [
     'number-button',
-    `number-button--${variant}`,
-    selected ? 'number-button--selected' : '',
-    disabled ? 'number-button--disabled' : '',
+    `number-button--${finalVariant}`,
+    finalSelected ? 'number-button--selected' : '',
+    finalDisabled ? 'number-button--disabled' : '',
   ]
     .filter(Boolean)
     .join(' ');
 
   return (
-    <button className={classNames} onClick={onClick} disabled={disabled}>
+    <button className={classNames} onClick={onClick} disabled={finalDisabled}>
       {number}
     </button>
   );
-};
+}
 
 export default NumberButton;
+
