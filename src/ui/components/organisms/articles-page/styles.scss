@@ -4,248 +4,248 @@
 .main-page {
   background-color: $ads-background-main;
 
-  @include respond-to('small-mobile'){
-    margin-top:-0.7rem;
+  @include respond-to('small-mobile') {
+    margin-top: -0.7rem;
     padding-bottom: 2rem;
     padding-left: 0.7rem;
     padding-right: 0.7rem;
   }
 
-  @include respond-to('small-mobile-large'){
-      margin-top:-0.3rem;
-      padding-bottom: 3rem;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
+  @include respond-to('small-mobile-large') {
+    margin-top: -0.3rem;
+    padding-bottom: 3rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
-  @include respond-to('medium'){
-      padding-left: 3rem;
-      padding-right: 3rem;
-      padding-top: 0.5rem;
+  @include respond-to('medium') {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 0.5rem;
   }
 
   @include respond-to('large') {
-      padding-left: 4rem;
-      padding-right: 4rem;
-      padding-top: 1rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 1rem;
   }
 
-  @include respond-to('extra-large'){
-      padding-left: 5rem;
-      padding-right: 5rem;
-      padding-top: 3rem;
+  @include respond-to('extra-large') {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 3rem;
   }
 }
 
-  .articles span{
-    text-align: left;
+.articles span {
+  text-align: left;
 
-    @include respond-to('small-mobile'){
+  @include respond-to('small-mobile') {
+    font-size: 1.1rem;
+    margin-left: -3rem;
+  }
+
+  @include respond-to('small-mobile-large') {
+    font-size: 1.4rem;
+    margin-left: -2rem;
+  }
+
+  @include respond-to('medium') {
+    font-size: 1.7rem;
+    margin-left: -2.5rem;
+  }
+
+  @include respond-to('large') {
+    font-size: 2.2rem;
+    margin-left: -2.5rem;
+  }
+
+  @include respond-to('extra-large') {
+    font-size: 4.2rem;
+    margin-left: -2.5rem;
+  }
+}
+
+.articles-page {
+  @include respond-to('small-mobile') {
+    margin-top: -1.5rem;
+  }
+
+  @include respond-to('small-mobile') {
+    margin-top: -1.3rem;
+  }
+
+  @include respond-to('medium') {
+    margin-top: -0.9rem;
+  }
+
+  @include respond-to('large') {
+    margin-top: -0.5rem;
+  }
+
+  @include respond-to('extra-large') {
+    margin-top: 2rem;
+  }
+}
+
+.volumes {
+  text-align: center;
+
+  span {
+    @include respond-to('small-mobile') {
       font-size: 1.1rem;
-      margin-left:-3rem;
     }
 
-    @include respond-to('small-mobile-large'){
-      font-size: 1.4rem;
-      margin-left:-2rem;
+    @include respond-to('small-mobile-large') {
+      font-size: 1.2rem;
     }
 
-    @include respond-to('medium'){
-      font-size: 1.7rem;
-      margin-left:-2.5rem;
+    @include respond-to('medium') {
+      font-size: 1.5rem;
     }
 
-    @include respond-to('large'){
-      font-size: 2.2rem;
-      margin-left:-2.5rem;
-    }
-
-    @include respond-to('extra-large'){
-      font-size: 4.2rem;
+    @include respond-to('large') {
+      font-size: 2rem;
       margin-left: -2.5rem;
     }
+
+    @include respond-to('extra-large') {
+      font-size: 2.8rem;
+    }
+  }
+}
+
+.volume-carousel {
+  @include respond-to('medium') {
+    padding-top: 1rem;
   }
 
-  .articles-page{
-    @include respond-to('small-mobile'){
+  @include respond-to('large') {
+    padding-top: 1.2rem;
+  }
+
+  @include respond-to('extra-large') {
+    padding-top: 1.5rem;
+  }
+}
+
+.carousel__item {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  @include respond-to('small-mobile') {
+    margin-left: -1.8rem;
+    margin-right: -1.5rem;
+  }
+
+  @include respond-to('small-mobile-large') {
+    margin-left: -2rem;
+    margin-right: -1.2rem;
+  }
+
+  @include respond-to('medium') {
+    margin: 0;
+  }
+
+  @include respond-to('large') {
+    margin: 0;
+  }
+
+  @include respond-to('extra-large') {
+    margin: 0;
+  }
+
+  img {
+    @include respond-to('small-mobile') {
+      height: 8rem;
+      width: 5.2rem;
+    }
+
+    @include respond-to('small-mobile-large') {
+      height: 8rem;
+      width: 5.5rem;
+    }
+
+    @include respond-to('medium') {
+      height: 15rem;
+      width: 10.5rem;
+    }
+
+    @include respond-to('large') {
+      height: 19rem;
+      width: 13rem;
+    }
+
+    @include respond-to('extra-large') {
+      height: 23rem;
+      width: 17rem;
+    }
+  }
+
+  .date p {
+    @include respond-to('small-mobile') {
+      font-size: 0.6rem;
+      margin-top: 0;
+    }
+
+    @include respond-to('small-mobile-large') {
+      font-size: 0.6rem;
+    }
+
+    @include respond-to('medium') {
+      font-size: 1rem;
+    }
+
+    @include respond-to('large') {
+      font-size: 1.4rem;
+    }
+
+    @include respond-to('extra-large') {
+      font-size: 1.6rem;
+    }
+  }
+
+  .vol {
+    @include respond-to('small-mobile') {
       margin-top: -1.5rem;
-    }
 
-    @include respond-to('small-mobile'){
-      margin-top: -1.3rem;
-    }
-
-    @include respond-to('medium'){
-      margin-top: -0.9rem;
-    }
-
-    @include respond-to('large'){
-      margin-top: -0.5rem;
-    }
-
-    @include respond-to('extra-large'){
-      margin-top: 2rem;
-    }
-  }
-
-  .volumes{
-    text-align: center;
-
-    span{
-      @include respond-to('small-mobile'){
-        font-size: 1.1rem;
+      p {
+        font-size: 0.7rem;
       }
+    }
 
-      @include respond-to('small-mobile-large'){
+    @include respond-to('small-mobile-large') {
+      margin-top: -1.5rem;
+
+      p {
+        font-size: 0.7rem;
+      }
+    }
+
+    @include respond-to('medium') {
+      margin-top: -2.5rem;
+
+      p {
         font-size: 1.2rem;
       }
+    }
 
-      @include respond-to('medium'){
-        font-size: 1.5rem;
+    @include respond-to('large') {
+      margin-top: -3rem;
+
+      p {
+        font-size: 1.7rem;
       }
+    }
 
-      @include respond-to('large'){
+    @include respond-to('extra-large') {
+      margin-top: -4.2rem;
+
+      p {
         font-size: 2rem;
-        margin-left:-2.5rem;
-      }
-
-      @include respond-to('extra-large'){
-        font-size: 2.8rem; 
       }
     }
   }
-
-  .volume-carousel{
-    @include respond-to('medium'){
-      padding-top: 1rem;
-    }
-
-    @include respond-to('large'){
-      padding-top: 1.2rem;
-    }
-
-    @include respond-to('extra-large'){
-      padding-top: 1.5rem;
-    }
-  }
-
-  .carousel__item {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-
-    @include respond-to('small-mobile'){
-      margin-left: -1.8rem;
-      margin-right: -1.5rem;
-    }
-
-    @include respond-to('small-mobile-large'){
-      margin-left: -2rem;
-      margin-right: -1.2rem;
-    }
-
-    @include respond-to('medium'){
-      margin: 0;
-    }
-
-    @include respond-to('large'){
-      margin: 0;
-    }
-
-    @include respond-to('extra-large'){
-      margin: 0;
-    }
-    
-    img{
-      @include respond-to('small-mobile'){
-        height: 8rem;
-        width: 5.2rem;
-      }
-
-      @include respond-to('small-mobile-large'){
-        height: 8rem;
-        width: 5.5rem;
-      }
-
-      @include respond-to('medium'){
-        height: 15rem;
-        width: 10.5rem;
-      }
-
-      @include respond-to('large'){
-        height: 19rem;
-        width: 13rem;
-      }
-
-      @include respond-to('extra-large'){
-        height: 23rem;
-        width: 17rem;
-      }
-    }
-
-    .date p{
-      @include respond-to('small-mobile'){
-        font-size: 0.6rem;
-        margin-top: 0;
-      }
-
-      @include respond-to('small-mobile-large'){
-        font-size: 0.6rem;
-      }
-
-      @include respond-to('medium'){
-        font-size: 1rem;
-      }
-
-      @include respond-to('large'){
-        font-size: 1.4rem;
-      }
-
-      @include respond-to('extra-large'){
-        font-size: 1.6rem;
-      }
-    }
-
-    .vol{
-      @include respond-to('small-mobile'){
-        margin-top: -1.5rem;
-
-        p{
-          font-size: 0.7rem;
-        }
-      }
-
-      @include respond-to('small-mobile-large'){
-        margin-top: -1.5rem;
-
-        p{
-          font-size: 0.7rem;
-        }
-      }
-
-      @include respond-to('medium'){
-        margin-top: -2.5rem;
-
-        p{
-          font-size: 1.2rem;
-        }
-      }
-
-      @include respond-to('large'){
-        margin-top: -3rem;
-
-        p{
-          font-size: 1.7rem;
-        }
-      }
-
-      @include respond-to('extra-large'){
-        margin-top: -4.2rem;
-
-        p{
-          font-size: 2rem;
-        }
-      }
-    }
-  }
+}
