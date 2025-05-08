@@ -1,76 +1,94 @@
-@import '../../../../globals/variables';
-@import '../../../../globals/mixins';
-@import '../../../../globals/fonts';
 @import '../../../../globals/breakpoints';
+@import '../../../../globals/fonts';
+@import '../../../../globals/mixins';
+@import '../../../../globals/variables';
 
 .ol-bullet {
+  background-color: $ads-primary-main;
   display: inline-block;
-  background-color: #7a44ff;
   margin: 0.5rem;
 
   &--active {
-    background-color: #7a44ff;
-    box-shadow: 0 0 0 5px rgba(122, 68, 255, 0.25);
+    background-color: $ads-primary-main;
+    box-shadow: 0 0 0 5px rgb(7 147 191 / 25%);
   }
 
-  &--square {
-    border-radius: 0;
+  &--circle {
+    border-radius: 50%;
   }
 
   &--rounded {
     border-radius: 0.5rem;
   }
 
-  &--circle {
-    border-radius: 999px;
+  &--square {
+    border-radius: 0;
   }
 
   &--sm {
-    width: 0.5rem;
     height: 0.5rem;
+    width: 0.5rem;
   }
 
   &--md {
-    width: 0.75rem;
     height: 0.75rem;
+    width: 0.75rem;
   }
 
   &--lg {
-    width: 1rem;
     height: 1rem;
+    width: 1rem;
   }
 
-  @each $breakpoint, $value in $ads-breakpoints-scales {
-    @include respond-to($breakpoint) {
-      &--sm {
-        $size: if(
-          $breakpoint == 'small-mobile',
-          0.5rem,
-          if($breakpoint == 'medium', 1rem, if($breakpoint == 'large', 1.5rem, 2rem))
-        );
-        width: $size;
-        height: $size;
-      }
-
-      &--md {
-        $size: if(
-          $breakpoint == 'small-mobile',
-          0.75rem,
-          if($breakpoint == 'medium', 1.5rem, if($breakpoint == 'large', 2.25rem, 3rem))
-        );
-        width: $size;
-        height: $size;
-      }
-
-      &--lg {
-        $size: if(
-          $breakpoint == 'small-mobile',
-          1rem,
-          if($breakpoint == 'medium', 2rem, if($breakpoint == 'large', 3rem, 4rem))
-        );
-        width: $size;
-        height: $size;
-      }
+  @include respond-to('small') {
+    &--sm {
+      height: 0.5rem;
+      width: 0.5rem;
+    }
+  
+    &--md {
+      height: 0.75rem;
+      width: 0.75rem;
+    }
+  
+    &--lg {
+      height: 1rem;
+      width: 1rem;
+    }
+  }
+  
+  @include respond-to('medium') {
+    &--sm {
+      height: 1rem;
+      width: 1rem;
+    }
+  
+    &--md {
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+  
+    &--lg {
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+  
+  @include respond-to('large') {
+    &--sm {
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+  
+    &--md {
+      height: 2.25rem;
+      width: 2.25rem;
+    }
+  
+    &--lg {
+      height: 3rem;
+      width: 3rem;
     }
   }
 }
+  

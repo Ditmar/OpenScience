@@ -26,6 +26,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+// Variaciones Inactivas
 export const SquareSm = { args: { shape: 'square', size: 'sm', active: false } } satisfies Story;
 export const SquareSmActive = {
   args: { shape: 'square', size: 'sm', active: true },
