@@ -1,12 +1,11 @@
 import { defineMiddleware } from 'astro:middleware';
 import createEmotionCache from 'style-library/createEmotionCache';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import createEmotionServer from '@emotion/server/create-instance';
 
 export const onRequest = defineMiddleware(async (context, next) => {
   const cache = createEmotionCache();
   const emotionCache = createEmotionServer(cache);
-
+  // @ts-expect-error
   context.locals.emotionCache = cache;
 
   const response = await next();

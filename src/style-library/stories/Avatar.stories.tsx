@@ -2,33 +2,35 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar } from '@mui/material';
 import App from 'style-library/core/MuiApp';
+import { ModeSwitcher } from 'style-library/themes/ModeSwitcher';
 
 const meta: Meta<typeof Avatar> = {
-  title: 'MUI/Avatar',
-  component: Avatar,
-  argTypes: {
-    variant: {
-      control: { type: 'select' },
-      options: ['circle', 'rounded', 'square'],
+    title: 'MUI/Avatar',
+    component: Avatar,
+    argTypes: {
+        variant: {
+            control: { type: 'select' },
+            options: ['circle', 'rounded', 'square'],
+        },
+        color: {
+            control: { type: 'select' },
+            options: ['default', 'inherit', 'primary', 'secondary'],
+        },
     },
-    color: {
-      control: { type: 'select' },
-      options: ['default', 'inherit', 'primary', 'secondary'],
+    parameters: {
+        layout: 'centered',
     },
-  },
-  parameters: {
-    layout: 'centered',
-  },
-  decorators: [
-    (Story) => (
-        <App>
-            <div style={{ padding: '20px' }}>
-                <Story />
-            </div>
-        </App>
-    )
+    decorators: [
+        (Story) => (
+            <App>
+                <ModeSwitcher />
+                <div style={{ padding: '20px' }}>
+                    <Story />
+                </div>
+            </App>
+        )
 
-  ]
+    ]
 };
 
 export default meta;

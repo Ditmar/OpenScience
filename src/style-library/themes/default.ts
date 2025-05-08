@@ -1,151 +1,57 @@
-import { alpha, createTheme, darken } from "@mui/material";
+// theme/lightTheme.js
+import { createTheme } from '@mui/material/styles';
+import tokens from './tokens/tokens.json';
 
-const themeColors = {
-    primary: "#8C7CF0",
-    secondary: "#9EA4C1",
-    success: "#57CA22",
-    warning: "#FFA319",
-    error: "#FF1943",
-    info: "#33C2FF",
-    black: "#CBCCD2",
-    white: "#111633",
-    primaryAlt: "#111633",
-    trueWhite: "#ffffff",
-};
-
-export const defaultTheme = createTheme({
-    palette: {
-        mode: "light",
-        primary: {
-            main: themeColors.primary,
-            contrastText: themeColors.white,
-        },
-        secondary: {
-            main: themeColors.secondary,
-            contrastText: themeColors.white,
-        },
-        success: {
-            main: themeColors.success,
-            contrastText: themeColors.white,
-        },
-        warning: {
-            main: themeColors.warning,
-            contrastText: themeColors.white,
-        },
-        error: {
-            main: themeColors.error,
-            contrastText: themeColors.white,
-        },
-        info: {
-            main: themeColors.info,
-            contrastText: themeColors.white,
-        },
-        background: {
-            default: '#070C27',
-            paper: '#070C27',
-        },
+export const lightTheme = createTheme({
+  palette: {
+    mode: 'light',
+    primary: {
+      main: tokens.colors.primary_main,
     },
-    typography: {
-        fontFamily: "Poppins, sans-serif",
-        fontSize: 14,
-        h1: {
-            fontSize: "2.5rem",
-            fontWeight: 600,
-            lineHeight: 1.2,
-            color: themeColors.black,
-        },
-        h2: {
-            fontSize: "2rem",
-            fontWeight: 600,
-            lineHeight: 1.2,
-            color: themeColors.black,
-        },
-        h3: {
-            fontSize: "1.75rem",
-            fontWeight: 600,
-            lineHeight: 1.2,
-            color: themeColors.black,
-        },
-        h4: {
-            fontSize: "1.5rem",
-            fontWeight: 600,
-            lineHeight: 1.2,
-            color: themeColors.black,
-        },
-        h5: {
-            fontSize: "1.25rem",
-            fontWeight: 600,
-            lineHeight: 1.2,
-            color: themeColors.black,
-        },
-        h6: {
-            fontSize: "1rem",
-            fontWeight: 600,
-            lineHeight: 1.2,
-            color: themeColors.black,
-        },
-        body1: {
-            fontSize: "1rem",
-            fontWeight: 400,
-            lineHeight: 1.5,
-            color: themeColors.black,
-        },
-        body2: {
-            fontSize: "0.875rem",
-            fontWeight: 400,
-            lineHeight: 1.5,
-            color: themeColors.black,
-        },
+    secondary: {
+      main: tokens.colors.secondary_main,
     },
-    components: {
-        MuiButton: {
-            styleOverrides: {
-                root: {
-                    textTransform: "none",
-                    borderRadius: 8,
-                    padding: "8px 16px",
-                    fontWeight: 600,
-                },
-                containedPrimary: {
-                    backgroundColor: themeColors.primary,
-                    color: themeColors.white,
-                    "&:hover": {
-                        backgroundColor: darken(themeColors.primary, 0.1),
-                    },
-                },
-                containedSecondary: {
-                    backgroundColor: themeColors.secondary,
-                    color: themeColors.white,
-                    "&:hover": {
-                        backgroundColor: darken(themeColors.secondary, 0.1),
-                    },
-                },
-            },
-        },
-        MuiCard: {
-            styleOverrides: {
-                root: {
-                    borderRadius: 16,
-                    boxShadow:
-                        "0px 4px 20px rgba(0, 0, 0, 0.1), 0px 2px 10px rgba(0, 0, 0, 0.05)",
-                },
-            },
-        },
-        MuiTypography: {
-            styleOverrides: {
-                h1: {
-                    fontSize: "2.5rem",
-                    fontWeight: 600,
-                },
-                h2: {
-                    fontSize: "2rem",
-                    fontWeight: 600,
-                },
-                h3: {
-                    fontSize: "1.75rem",
-                    fontWeight: 600,
-                },
-            },
-        },
+    error: {
+      main: tokens.colors.danger_main,
     },
-})
+    warning: {
+      main: tokens.colors.warning_main,
+    },
+    background: {
+      default: tokens.colors.background_main,
+      paper: tokens.colors.main,
+    },
+    text: {
+      primary: tokens.colors['text_main-alpha'],
+      secondary: tokens.colors.text_secondary,
+    },
+  },
+  typography: {
+    fontFamily: '"Lato", "Roboto", "Montserrat", sans-serif',
+    fontSize: 16,
+    h1: {
+      fontSize: tokens.typography.fontSizes.first,
+      fontWeight: tokens.typography.fontWeights.first,
+    },
+    h2: {
+      fontSize: tokens.typography.fontSizes.quarter,
+      fontWeight: tokens.typography.fontWeights.bold,
+    },
+    h3: {
+      fontSize: tokens.typography.fontSizes.second,
+      fontWeight: tokens.typography.fontWeights.second,
+    },
+    body1: {
+      fontSize: tokens.typography.fontSizes.primary,
+      fontWeight: tokens.typography.fontWeights.bold,
+    },
+    body2: {
+      fontSize: tokens.typography.fontSizes.sixth,
+      color: tokens.colors.text_input,
+    },
+  },
+  spacing: 8,
+  shape: {
+    borderRadius: 4,
+  },
+});

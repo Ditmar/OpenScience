@@ -1,7 +1,6 @@
 {
   "name": "opensicence",
   "version": "0.1.2",
-  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

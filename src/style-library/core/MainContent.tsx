@@ -1,5 +1,5 @@
 import { Box, Container, Typography, Button, Card, CardContent, Grid } from '@mui/material';
-import { ThemeSwitcher } from './ThemeSwitcher';
+import { ModeSwitcher } from 'style-library/themes/ModeSwitcher';
 
 function MainContent() {
   return (
@@ -14,7 +14,7 @@ function MainContent() {
         </Typography>
 
         <Card sx={{ mb: 4 }}>
-          <ThemeSwitcher />
+          <ModeSwitcher />
         </Card>
 
         <Grid container spacing={3} sx={{ mt: 3 }}>

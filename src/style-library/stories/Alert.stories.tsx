@@ -2,33 +2,35 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Alert } from '@mui/material';
 import App from 'style-library/core/MuiApp';
+import { ModeSwitcher } from 'style-library/themes/ModeSwitcher';
 
 const meta: Meta<typeof Alert> = {
-  title: 'MUI/Alert',
-  component: Alert,
-  argTypes: {
-    variant: {
-      control: { type: 'select' },
-      options: ['filled', 'outlined', 'standard'],
+    title: 'MUI/Alert',
+    component: Alert,
+    argTypes: {
+        variant: {
+            control: { type: 'select' },
+            options: ['filled', 'outlined', 'standard'],
+        },
+        severity: {
+            control: { type: 'select' },
+            options: ['success', 'info', 'warning', 'error'],
+        },
     },
-    severity: {
-      control: { type: 'select' },
-      options: ['success', 'info', 'warning', 'error'],
+    parameters: {
+        layout: 'centered',
     },
-  },
-  parameters: {
-    layout: 'centered',
-  },
-  decorators: [
-    (Story) => (
-        <App>
-            <div style={{ padding: '20px' }}>
-                <Story />
-            </div>
-        </App>
-    )
+    decorators: [
+        (Story) => (
+            <App>
+                <ModeSwitcher />
+                <div style={{ padding: '20px' }}>
+                    <Story />
+                </div>
+            </App>
+        )
 
-  ]
+    ]
 };
 
 export default meta;
@@ -36,11 +38,11 @@ type Story = StoryObj<typeof Alert>;
 
 
 export const Default: Story = {
-  args: {
-    variant: 'filled',
-    severity: 'success',
-    children: 'This is a success alert!',
-  },
+    args: {
+        variant: 'filled',
+        severity: 'success',
+        children: 'This is a success alert!',
+    },
 };
 
 export const Outlined: Story = {

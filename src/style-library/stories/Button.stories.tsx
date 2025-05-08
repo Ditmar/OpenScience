@@ -1,7 +1,8 @@
 // src/components/Button.stories.tsx
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@mui/material';
+import { Button, Card } from '@mui/material';
 import App from 'style-library/core/MuiApp';
+import { ModeSwitcher } from 'style-library/themes/ModeSwitcher';
 
 const meta: Meta<typeof Button> = {
   title: 'MUI/Button',
@@ -26,11 +27,12 @@ const meta: Meta<typeof Button> = {
   },
   decorators: [
     (Story) => (
-        <App>
-            <div style={{ padding: '20px' }}>
-                <Story />
-            </div>
-        </App>
+      <App>
+        <ModeSwitcher />
+        <div style={{ padding: '20px' }}>
+          <Story />
+        </div>
+      </App>
     )
 
   ]

@@ -1,19 +1,18 @@
-// src/components/common/App.jsx
 import React from 'react';
-import { CacheProvider } from '@emotion/react';
+import { CacheProvider, type EmotionCache } from '@emotion/react';
 import { ThemeProvider } from '../providers/ThemeProvider';
 import createEmotionCache from '../createEmotionCache';
 
-// Client-side cache, shared for the whole session
 const clientSideEmotionCache = createEmotionCache();
 
 interface AppProps {
   children: React.ReactNode;
+  emotionCache?: EmotionCache;
 }
 
-export default function App({ children }: AppProps) {
+export default function App({ children, emotionCache }: AppProps) {
   return (
-    <CacheProvider value={clientSideEmotionCache}>
+    <CacheProvider value={emotionCache ?? clientSideEmotionCache}>
       <ThemeProvider>{children}</ThemeProvider>
     </CacheProvider>
   );
