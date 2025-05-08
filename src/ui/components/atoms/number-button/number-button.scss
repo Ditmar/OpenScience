@@ -1,0 +1,61 @@
+@import 'variables';
+
+.number-button {
+  width: $button-size;
+  height: $button-size;
+  border-radius: $button-border-radius;
+  font-size: $font-size-small;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &--filled {
+    background-color: $primary-color;
+    color: $on-primary-color;
+    border: none;
+
+    &:hover {
+      background-color: $primary-color-hover; 
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+
+    &:hover {
+      background-color: $primary-color-hover; 
+    }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    color: $primary-color;
+    border: none;
+
+    &:hover {
+      background-color: $primary-color-hover; 
+    }
+  }
+
+  &--selected {
+    background-color: $primary-color-selected;
+    color: $on-primary-color;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+@media (max-width: 600px) {
+  .number-button {
+    width: $button-size-small;
+    height: $button-size-small;
+    font-size: $font-size-xsmall;
+  }
+}
