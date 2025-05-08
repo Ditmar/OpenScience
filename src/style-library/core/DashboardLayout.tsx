@@ -15,6 +15,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import Toolbar from '@mui/material/Toolbar';
+import MainContent from './MainContent';
 
 interface NavigationItem {
   kind?: 'header' | 'divider';
@@ -129,6 +130,7 @@ export default function DashboardLayoutBasic() {
       <Box component="main" sx={{ flexGrow: 1 }}>
         <Toolbar />
       </Box>
+      <MainContent />
     </Box>
   );
 }

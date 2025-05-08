@@ -18,7 +18,7 @@
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest",
-    "build:tokens": "bun run style-dictionary build --config src/style-library/tokens/style-dictionary.config.ts"
+    "build:tokens": "node  ./scripts/tokenizer.mjs"
   },
   "engines": {
     "node": ">=18.19 <=18.21",
@@ -101,13 +101,13 @@
     "prettier-plugin-astro": "0.13.0",
     "prettier-plugin-svelte": "3.1.2",
     "storybook": "8.1.3",
-    "style-dictionary": "^4.4.0",
     "stylelint": "16.2.1",
     "stylelint-config-standard": "36.0.0",
     "stylelint-declaration-strict-value": "1.10.4",
     "stylelint-order": "6.0.4",
     "stylelint-scss": "6.2.1",
     "svelte": "4.2.9",
+    "ts-node": "^10.9.2",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "1.6.0"
   }

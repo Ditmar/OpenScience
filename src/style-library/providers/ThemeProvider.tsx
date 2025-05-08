@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
 import { ThemeProvider as MUIThemeProvider, CssBaseline } from '@mui/material';
-import { themeCreator } from '../themes/base';
+import { defaultTheme } from '../themes/default';
 
 interface ThemeProviderProps {
   children: React.ReactNode;
@@ -22,7 +22,7 @@ export const useTheme = () => {
 };
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const [themeName, setThemeName] = useState('NebulaFighterTheme');
+  const [themeName, setThemeName] = useState('light');
   const toggleTheme = (newThemeName: string) => {
     setThemeName(newThemeName);
   };
@@ -33,7 +33,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   return (
     // <StylesProvider injectFirst>
     <ThemeContext.Provider value={themeContextValue}>
-      <MUIThemeProvider theme={themeCreator(themeName)}>
+      <MUIThemeProvider theme={themeName === 'dark' ? defaultTheme : defaultTheme}>
         <CssBaseline />
         {children}
       </MUIThemeProvider>
