@@ -1,150 +1,121 @@
 :root {
-  /* === Base === */
   --gradient-base-linear: linear-gradient(to right, #4154FF, #E545FF);
   --gradient-base-radial: radial-gradient(circle, #4154FF, #E545FF);
   --gradient-base-angular: conic-gradient(from 0deg, #4154FF, #E545FF);
   --gradient-base-diamond: repeating-conic-gradient(from 45deg, #6E4AFF, #E545FF);
-
-  /* === Neutral === */
-
-  /* White */
-  --color-neutral-white-900: #FFF;
-
-  /* Black */
+  --color-neutral-white-900: #fff;
   --color-neutral-black-900: #000;
-  --color-neutral-black-800: #1A1A1A;
+  --color-neutral-black-800: #1a1a1a;
   --color-neutral-black-700: #333;
-  --color-neutral-black-600: #4D4D4D;
+  --color-neutral-black-600: #4d4d4d;
   --color-neutral-black-500: #666;
   --color-neutral-black-400: #808080;
   --color-neutral-black-300: #999;
-  --color-neutral-black-200: #B3B3B3;
-  --color-neutral-black-100: #CCC;
-  --color-neutral-black-50: #E6E6E6;
-  --color-neutral-black-25: #F2F2F2;
-
-  /* Gray Strong [Dark Mode] */
-  --color-neutral-gray-strong-25: #BCC3E3;
-  --color-neutral-gray-strong-50: #9DA6CB;
-  --color-neutral-gray-strong-100: #8791B7;
-  --color-neutral-gray-strong-200: #6A749C;
+  --color-neutral-black-200: #b3b3b3;
+  --color-neutral-black-100: #ccc;
+  --color-neutral-black-50: #e6e6e6;
+  --color-neutral-black-25: #f2f2f2;
+  --color-neutral-gray-strong-25: #bcc3e3;
+  --color-neutral-gray-strong-50: #9da6cb;
+  --color-neutral-gray-strong-100: #8791b7;
+  --color-neutral-gray-strong-200: #6a749c;
   --color-neutral-gray-strong-300: #475175;
   --color-neutral-gray-strong-400: #384162;
-  --color-neutral-gray-strong-500: #2F3757;
-  --color-neutral-gray-strong-600: #242A46;
-  --color-neutral-gray-strong-700: #1B2037;
-  --color-neutral-gray-strong-800: #151A2D;
-  --color-neutral-gray-strong-900: #0E1223;
-
-  /* Gray Soft */
-  --color-neutral-gray-soft-25: #FAFAFA;
-  --color-neutral-gray-soft-50: #F0F1F3;
-  --color-neutral-gray-soft-100: #E0E2E7;
-  --color-neutral-gray-soft-200: #C2C6CE;
-  --color-neutral-gray-soft-300: #A3A9B6;
-  --color-neutral-gray-soft-400: #858D9D;
+  --color-neutral-gray-strong-500: #2f3757;
+  --color-neutral-gray-strong-600: #242a46;
+  --color-neutral-gray-strong-700: #1b2037;
+  --color-neutral-gray-strong-800: #151a2d;
+  --color-neutral-gray-strong-900: #0e1223;
+  --color-neutral-gray-soft-25: #fafafa;
+  --color-neutral-gray-soft-50: #f0f1f3;
+  --color-neutral-gray-soft-100: #e0e2e7;
+  --color-neutral-gray-soft-200: #c2c6ce;
+  --color-neutral-gray-soft-300: #a3a9b6;
+  --color-neutral-gray-soft-400: #858d9d;
   --color-neutral-gray-soft-500: #667085;
-  --color-neutral-gray-soft-600: #59647A;
-  --color-neutral-gray-soft-700: #525D73;
-  --color-neutral-gray-soft-800: #4A556C;
-  --color-neutral-gray-soft-900: #404A60;
-
-  /* === Brand === */
-
-  /* Primary */
-  --color-brand-primary-25: #F8F5FF;
-  --color-brand-primary-50: #F2EDFF;
-  --color-brand-primary-100: #E4DAFF;
-  --color-brand-primary-200: #CAB4FF;
-  --color-brand-primary-300: #AF8FFF;
-  --color-brand-primary-400: #9569FF;
-  --color-brand-primary-500: #7A44FF;
-  --color-brand-primary-600: #6236CC;
+  --color-neutral-gray-soft-600: #59647a;
+  --color-neutral-gray-soft-700: #525d73;
+  --color-neutral-gray-soft-800: #4a556c;
+  --color-neutral-gray-soft-900: #404a60;
+  --color-brand-primary-25: #f8f5ff;
+  --color-brand-primary-50: #f2edff;
+  --color-brand-primary-100: #e4daff;
+  --color-brand-primary-200: #cab4ff;
+  --color-brand-primary-300: #af8fff;
+  --color-brand-primary-400: #9569ff;
+  --color-brand-primary-500: #7a44ff;
+  --color-brand-primary-600: #6236cc;
   --color-brand-primary-700: #492999;
-  --color-brand-primary-800: #301C66;
-  --color-brand-primary-900: #180E33;
-
-  /* Secondary */
-  --color-brand-secondary-25: #F8F5FF;
-  --color-brand-secondary-50: #F2EDFF;
-  --color-brand-secondary-100: #E4DAFF;
-  --color-brand-secondary-200: #CAB4FF;
-  --color-brand-secondary-300: #AF8FFF;
-  --color-brand-secondary-400: #9569FF;
-  --color-brand-secondary-500: #7A44FF;
-  --color-brand-secondary-600: #6236CC;
+  --color-brand-primary-800: #301c66;
+  --color-brand-primary-900: #180e33;
+  --color-brand-secondary-25: #f8f5ff;
+  --color-brand-secondary-50: #f2edff;
+  --color-brand-secondary-100: #e4daff;
+  --color-brand-secondary-200: #cab4ff;
+  --color-brand-secondary-300: #af8fff;
+  --color-brand-secondary-400: #9569ff;
+  --color-brand-secondary-500: #7a44ff;
+  --color-brand-secondary-600: #6236cc;
   --color-brand-secondary-700: #492999;
-  --color-brand-secondary-800: #301C66;
-  --color-brand-secondary-900: #180E33;
-
-  /* Tertiary */
-  --color-brand-tertiary-25: #F5F9FF;
-  --color-brand-tertiary-50: #ECF5FF;
-  --color-brand-tertiary-100: #D7EAFF;
-  --color-brand-tertiary-200: #B0D4FF;
-  --color-brand-tertiary-300: #88BFFF;
-  --color-brand-tertiary-400: #61AAFF;
-  --color-brand-tertiary-500: #3994FF;
-  --color-brand-tertiary-600: #1873DE;
-  --color-brand-tertiary-700: #0053B5;
-  --color-brand-tertiary-800: #00418E;
-  --color-brand-tertiary-900: #002A5C;
-
-  /* === Feedback === */
-
-  /* Positive */
-  --color-feedback-positive-25: #F4FCF7;
-  --color-feedback-positive-50: #E9FAF0;
-  --color-feedback-positive-100: #D3F4E0;
-  --color-feedback-positive-200: #A7E9C1;
-  --color-feedback-positive-300: #7BDFA3;
-  --color-feedback-positive-400: #4FD484;
-  --color-feedback-positive-500: #23C965;
-  --color-feedback-positive-600: #08B94E;
-  --color-feedback-positive-700: #02983E;
-  --color-feedback-positive-800: #00732E;
-  --color-feedback-positive-900: #00481D;
-
-  /* Negative */
-  --color-feedback-negative-25: #FFF8F7;
-  --color-feedback-negative-50: #FFF1F0;
-  --color-feedback-negative-100: #FFE2E0;
-  --color-feedback-negative-200: #FFC6C2;
-  --color-feedback-negative-300: #FFA9A3;
-  --color-feedback-negative-400: #FF8D85;
-  --color-feedback-negative-500: #FF554A;
-  --color-feedback-negative-600: #EA483D;
-  --color-feedback-negative-700: #D7392E;
-  --color-feedback-negative-800: #C8271C;
-  --color-feedback-negative-900: #B71409;
-
-  /* Warning */
-  --color-feedback-warning-25: #FFFCF6;
-  --color-feedback-warning-50: #FFF9ED;
-  --color-feedback-warning-100: #FFF3DB;
-  --color-feedback-warning-200: #FFE6B7;
-  --color-feedback-warning-300: #FFDA92;
-  --color-feedback-warning-400: #FFCD6E;
-  --color-feedback-warning-500: #FFC14A;
-  --color-feedback-warning-600: #EBA622;
-  --color-feedback-warning-700: #D18A02;
-  --color-feedback-warning-800: #9F6800;
-  --color-feedback-warning-900: #5A3B00;
-
-  /* === Gradient === */
-  --gradient-lavender-bloom: linear-gradient(to right, #6E4AFF, #CCBFFF);
-  --gradient-coral-peach: linear-gradient(to right, #8E9FF5, #E3E8FD);
-  --gradient-serene-sky: linear-gradient(to right, #F47CB4, #FEE2CC);
-  --gradient-ocean-turquoise: linear-gradient(to right, #1B5DE0, #36CCC2);
-  --gradient-sunset-gold: linear-gradient(to right, #FF880B, #FFD8B0);
-  --gradient-orchid-twilight: linear-gradient(to right, #C165DD, #5C27FE);
-  --gradient-emerald-jade: linear-gradient(to right, #2AFEB7, #08C792);
-  --gradient-sapphire-azure: linear-gradient(to right, #658DF5, #1153FC);
-  --gradient-aqua-amethyst: linear-gradient(to right, #1DE5E2, #B588F7);
-  --gradient-mint-lemonade: linear-gradient(to right, #3FCAB2, #FBEB8E);
-  --gradient-fiery-lavender: linear-gradient(to right, #FE3A0A, #F0C8F4);
-  --gradient-violet-rose: linear-gradient(to right, #9627FC, #FBC4D2);
-  --gradient-pink-blossom: linear-gradient(to right, #FF5886, #FFB6FC);
-  --gradient-sky-magenta: linear-gradient(to right, #8CD7F7, #F674F9);
-  --gradient-neon-lime: linear-gradient(to right, #A9FFDB, #17D970);
+  --color-brand-secondary-800: #301c66;
+  --color-brand-secondary-900: #180e33;
+  --color-brand-tertiary-25: #f5f9ff;
+  --color-brand-tertiary-50: #ecf5ff;
+  --color-brand-tertiary-100: #d7eaff;
+  --color-brand-tertiary-200: #b0d4ff;
+  --color-brand-tertiary-300: #88bfff;
+  --color-brand-tertiary-400: #61aaff;
+  --color-brand-tertiary-500: #3994ff;
+  --color-brand-tertiary-600: #1873de;
+  --color-brand-tertiary-700: #0053b5;
+  --color-brand-tertiary-800: #00418e;
+  --color-brand-tertiary-900: #002a5c;
+  --color-feedback-positive-25: #f4fcf7;
+  --color-feedback-positive-50: #e9faf0;
+  --color-feedback-positive-100: #d3f4e0;
+  --color-feedback-positive-200: #a7e9c1;
+  --color-feedback-positive-300: #7bdfa3;
+  --color-feedback-positive-400: #4fd484;
+  --color-feedback-positive-500: #23c965;
+  --color-feedback-positive-600: #08b94e;
+  --color-feedback-positive-700: #02983e;
+  --color-feedback-positive-800: #00732e;
+  --color-feedback-positive-900: #00481d;
+  --color-feedback-negative-25: #fff8f7;
+  --color-feedback-negative-50: #fff1f0;
+  --color-feedback-negative-100: #ffe2e0;
+  --color-feedback-negative-200: #ffc6c2;
+  --color-feedback-negative-300: #ffa9a3;
+  --color-feedback-negative-400: #ff8d85;
+  --color-feedback-negative-500: #ff554a;
+  --color-feedback-negative-600: #ea483d;
+  --color-feedback-negative-700: #d7392e;
+  --color-feedback-negative-800: #c8271c;
+  --color-feedback-negative-900: #b71409;
+  --color-feedback-warning-25: #fffdf6;
+  --color-feedback-warning-50: #fff9ed;
+  --color-feedback-warning-100: #fff3db;
+  --color-feedback-warning-200: #ffe6b7;
+  --color-feedback-warning-300: #ffda92;
+  --color-feedback-warning-400: #ffcd6e;
+  --color-feedback-warning-500: #ffc14a;
+  --color-feedback-warning-600: #eba622;
+  --color-feedback-warning-700: #d18a02;
+  --color-feedback-warning-800: #9f6800;
+  --color-feedback-warning-900: #5a3b00;
+  --gradient-lavender-bloom: linear-gradient(to right, #6e4aff, #ccbfff);
+  --gradient-coral-peach: linear-gradient(to right, #8e9ff5, #e3e8fd);
+  --gradient-serene-sky: linear-gradient(to right, #f47cb4, #fee2cc);
+  --gradient-ocean-turquoise: linear-gradient(to right, #1b5de0, #36ccc2);
+  --gradient-sunset-gold: linear-gradient(to right, #ff880b, #ffd8b0);
+  --gradient-orchid-twilight: linear-gradient(to right, #c165dd, #5c27fe);
+  --gradient-emerald-jade: linear-gradient(to right, #2afeb7, #08c792);
+  --gradient-sapphire-azure: linear-gradient(to right, #658df5, #1153fc);
+  --gradient-aqua-amethyst: linear-gradient(to right, #1de5e2, #b588f7);
+  --gradient-mint-lemonade: linear-gradient(to right, #3fcab2, #fbeb8e);
+  --gradient-fiery-lavender: linear-gradient(to right, #fe3a0a, #f0c8f4);
+  --gradient-violet-rose: linear-gradient(to right, #9627fc, #fbc4d2);
+  --gradient-pink-blossom: linear-gradient(to right, #ff5886, #ffb6fc);
+  --gradient-sky-magenta: linear-gradient(to right, #8cd7f7, #f674f9);
+  --gradient-neon-lime: linear-gradient(to right, #a9ffdb, #17d970);
 }
