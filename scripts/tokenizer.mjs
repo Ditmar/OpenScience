@@ -10,27 +10,27 @@ function handleError(error) {
     ██║     ██║  ██║██║  ██║╚██████╔╝██║  ██║
     ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝
     
-    ¡Fallo en la generación de tokens del sistema de diseño!
+    ¡Design system token generation failed!!
   
-    🕵️‍♂️ Causa: ${error.message}
+    🕵️‍♂️ Cause: ${error.message}
     
-    📂 Directorio afectado: ${error.path || 'No especificado'}
+    📂 Affected directory: ${error.path || 'Not specified'}
     
-    🚦 Acciones requeridas:
-    1. Verificar archivos SCSS en src/globals/
-    2. Validar sintaxis de variables
-    3. Revisar conexión con repositorio
+    🚦 Required actions:
+    1. Verify SCSS files in src/globals/
+    2. Validate variable syntax
+    3. Check repository connection
     
-    ℹ Soporte técnico: equipo-diseno@tuempresa.com
+    ℹ Technical support:
     `);
 
   process.exit(1);
 }
 
 function showSuccess(savePath) {
-  console.log('\n\x1b[32m╔══════════════════════════════════════╗');
-  console.log('║    🎉  TOKENS CREADOS CORRECTAMENTE  ║');
-  console.log('╚══════════════════════════════════════╝\x1b[0m');
+  console.log('\n\x1b[32m╔═════════════════════════════════════╗');
+  console.log('║    🎉  CORRECTLY CREATED TOKENS     ║');
+  console.log('╚═════════════════════════════════════╝\x1b[0m');
   console.log(`
   ███████╗██╗   ██╗ ██████╗ ██████╗███████╗███████╗███████╗
   ██╔════╝██║   ██║██╔════╝██╔════╝██╔════╝██╔════╝██╔════╝
@@ -39,22 +39,19 @@ function showSuccess(savePath) {
   ███████║╚██████╔╝╚██████╗╚██████╗███████╗███████║███████║
   ╚══════╝ ╚═════╝  ╚═════╝ ╚═════╝╚══════╝╚══════╝╚══════╝
   
-  ¡Tokens generados exitosamente! 🎨✨
+  ¡Tokens generated successfully! 🎨✨
 
-  📂 Directorio: ${savePath}
-  🕒 Hora: ${new Date().toLocaleTimeString()}
+  📂 Directory: ${savePath}
+  🕒 Hour: ${new Date().toLocaleTimeString()}
   
-  Archivos creados:
-  ✔ tokens.json - Definiciones completas
-  ✔ tokens.ts - Tipos para TypeScript
+  Files created:
+  ✔ tokens.json - Complete definitions
+  ✔ tokens.ts - Types for TypeScript
   
-  ¡Sistema de diseño listo para implementar! 🚀
+  ¡Ready-to-implement design system! 🚀
   `);
 }
 
-/**
- * Extrae tokens de diseño de contenido SCSS
- */
 function extractScssTokens(scssContent) {
   const tokens = {
     breakpoints: {},
@@ -68,7 +65,6 @@ function extractScssTokens(scssContent) {
     spacing: {},
   };
 
-  // Extraer breakpoints
   const breakpointRegex = /\$ads-breakpoints-scales:\s*\(([^)]+)\)/s;
   const breakpointMatch = scssContent.match(breakpointRegex);
   if (breakpointMatch) {
@@ -83,19 +79,16 @@ function extractScssTokens(scssContent) {
     });
   }
 
-  // Extraer colores
   const colorRegex = /\$ads-(?!breakpoints-scales)(?:color-)?([a-z-]+):\s*([^;]+);/g;
   const colorMatches = scssContent.matchAll(colorRegex);
 
   Array.from(colorMatches).forEach((colorMatch) => {
-    // eslint-disable-next-line no-unused-vars
     const name = colorMatch[1];
     const value = colorMatch[2];
     const nameFormatted = name.replaceAll('-', '_');
     tokens.colors[nameFormatted] = value.trim();
   });
 
-  // Extraer tipografía
   const fontRegex = /@font-face\s*{([^}]+)}/g;
   const fontMatches = scssContent.matchAll(fontRegex);
   if (!fontMatches) {
@@ -119,45 +112,36 @@ function extractScssTokens(scssContent) {
     }
   });
 
-  // Extraer tamaños de fuente
   const fontSizeRegex = /\$ads-font-size-([a-z]+):\s*([^;]+);/g;
   const fontSizeMatches = scssContent.matchAll(fontSizeRegex);
 
   Array.from(fontSizeMatches).forEach((fontSizeMatch) => {
-    // eslint-disable-next-line no-unused-vars
     const name = fontSizeMatch[1];
     const value = fontSizeMatch[2];
-    console.log(value);
 
     tokens.typography.fontSizes[name] = value.trim();
   });
 
-  // Extraer pesos de fuente
   const fontWeightRegex = /\$ads-font-weight(?:-)?([a-z]*):\s*([^;]+);/g;
   const fontWeightMatches = scssContent.matchAll(fontWeightRegex);
   Array.from(fontWeightMatches).forEach((fontWeightMatch) => {
-    // eslint-disable-next-line no-unused-vars
     const name = fontWeightMatch[1];
     const value = fontWeightMatch[2];
     const key = name || 'default';
     tokens.typography.fontWeights[key] = value.trim();
   });
 
-  // Extraer line heights
   const lineHeightRegex = /\$ads-line-height-([a-z]+):\s*([^;]+);/g;
   const lineHeightMatches = scssContent.matchAll(lineHeightRegex);
   Array.from(lineHeightMatches).forEach((lineHeightMatch) => {
-    // eslint-disable-next-line no-unused-vars
     const name = lineHeightMatch[1];
     const value = lineHeightMatch[2];
     tokens.typography.lineHeights[name] = value.trim();
   });
 
-  // Extraer spacing
   const spacingRegex = /\$ads-(padding|margin|spacing)-([a-z]+):\s*([^;]+);/g;
   const spacingMatches = scssContent.matchAll(spacingRegex);
   Array.from(spacingMatches).forEach((spacingMatch) => {
-    // eslint-disable-next-line no-unused-vars
     const type = spacingMatch[1];
     const name = spacingMatch[2];
     const value = spacingMatch[3];
@@ -167,16 +151,12 @@ function extractScssTokens(scssContent) {
   return tokens;
 }
 
-/**
- * Construye los tokens a partir de archivos SCSS
- */
 async function buildTokens() {
   try {
     const currentDir = process.cwd();
     const scssDirectory = join(currentDir, 'src', 'globals');
     const savePath = join(currentDir, 'src', 'style-library', 'themes', 'tokens');
 
-    // Leer y combinar todos los archivos SCSS
     const files = readdirSync(scssDirectory).filter((file) => file.endsWith('.scss'));
 
     let tokens = {};
@@ -192,11 +172,9 @@ async function buildTokens() {
       mkdirSync(savePath, { recursive: true });
     }
 
-    // Generar archivo JSON
     const jsonOutputPath = join(savePath, 'tokens.json');
     writeFileSync(jsonOutputPath, JSON.stringify(tokens, null, 2));
 
-    // Generar archivo TypeScript
     const tsOutputPath = join(savePath, 'tokens.ts');
     const tsContent = `/**
  * @generated Automatically by the buildTokens function. Do not edit manually.
@@ -227,5 +205,4 @@ export default tokens;
   }
 }
 
-// Ejecutar la generación de tokens
 buildTokens();

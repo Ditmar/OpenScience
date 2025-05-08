@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build --logLevel warn",
+    "build": "astro check && astro build --logLevel warn && yarn build:tokens",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "npx eslint .",
@@ -17,7 +17,7 @@
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest",
-    "build:tokens": "node  ./scripts/tokenizer.mjs"
+    "build:tokens": "node ./scripts/tokenizer.mjs"
   },
   "engines": {
     "node": ">=18.19 <=18.21",
@@ -27,13 +27,13 @@
     "@astrojs/check": "0.5.10",
     "@astrojs/node": "8.2.5",
     "@astrojs/react": "3.3.0",
-    "@emotion/cache": "^11.14.0",
-    "@emotion/css": "^11.13.5",
-    "@emotion/react": "^11.14.0",
-    "@emotion/server": "^11.11.0",
-    "@emotion/styled": "^11.14.0",
-    "@mui/icons-material": "^7.1.0",
-    "@mui/material": "^7.1.0",
+    "@emotion/cache": "11.14.0",
+    "@emotion/css": "11.13.5",
+    "@emotion/react": "11.14.0",
+    "@emotion/server": "11.11.0",
+    "@emotion/styled": "11.14.0",
+    "@mui/icons-material": "7.1.0",
+    "@mui/material": "7.1.0",
     "@types/react": "18.2.79",
     "@types/react-dom": "18.2.25",
     "astro": "4.6.3",
@@ -107,7 +107,7 @@
     "stylelint-order": "6.0.4",
     "stylelint-scss": "6.2.1",
     "svelte": "4.2.9",
-    "ts-node": "^10.9.2",
+    "ts-node": "10.9.2",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "1.6.0"
   }

@@ -7,28 +7,12 @@ interface ThemeProviderProps {
   children: React.ReactNode;
 }
 
-interface ThemeContextProps {
+export interface ThemeContextProps {
   mode: string;
   setMode: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
-
-export function useThemeMode() {
-  const context = React.useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useThemeMode must be used within a ThemeProvider');
-  }
-  return context;
-}
-
-export const useTheme = () => {
-  const context = React.useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
-};
+export const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
   const [mode, setMode] = useState('light');

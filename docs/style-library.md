@@ -1,22 +1,22 @@
-# 📘 Guía de Uso del Sistema de Temas (MUI)
+# 📘 Theme System Usage Guide (MUI)
 
-Esta guía describe cómo modificar el tema de la aplicación y reutilizar el proveedor de temas (`ThemeProvider`) en otras aplicaciones. El sistema está construido con **Material-UI (MUI)** y utiliza un **contexto de React** para manejar el estado del tema (claro u oscuro).
+This guide explains how to customize the application's theme and reuse the `ThemeProvider` in other React applications. The system is built with **Material-UI (MUI)** and uses a **React context** to manage theme state (light or dark).
 
 ---
 
-## ✅ 1. Modificar los Temas
+## ✅ 1. Modifying Themes
 
-Los temas predeterminados se encuentran en la carpeta `src/style-library/themes`. Ahí puedes editar el aspecto visual de la aplicación.
+The default themes are located in the `src/style-library/themes` directory. You can edit the visual appearance of the app there.
 
-### 🔧 Archivos de tema
+### 🔧 Theme Files
 
-* `src/style-library/themes/default.ts` → Tema claro
-* `src/style-library/themes/dark.ts` → Tema oscuro
+* `src/style-library/themes/default.ts` → Light theme
+* `src/style-library/themes/dark.ts` → Dark theme
 
-### ✏️ Cómo personalizar un tema
+### ✏️ How to Customize a Theme
 
-1. Abre el archivo correspondiente (`default.ts` o `dark.ts`).
-2. Modifica propiedades como colores, tipografía, espaciado, etc.
+1. Open the corresponding file (`default.ts` or `dark.ts`).
+2. Modify properties like colors, typography, spacing, etc.
 
 ```ts
 // src/style-library/themes/default.ts
@@ -25,59 +25,59 @@ import { createTheme } from '@mui/material/styles';
 export const lightTheme = createTheme({
   palette: {
     primary: {
-      main: '#0793bf', // Color principal
+      main: '#0793bf', // Primary color
     },
     background: {
-      default: '#f5f5f5', // Color de fondo
+      default: '#f5f5f5', // Background color
     },
   },
   typography: {
-    fontFamily: 'Lato, Roboto, sans-serif', // Fuente
+    fontFamily: 'Lato, Roboto, sans-serif', // Font family
   },
 });
 ```
 
-3. Guarda los cambios.
+3. Save your changes.
 
 ---
 
-## 🌓 2. Cambiar entre Tema Claro y Oscuro
+## 🌓 2. Switching Between Light and Dark Themes
 
-Para permitir al usuario alternar entre modos claro y oscuro, utiliza el componente `ModeSwitcher`.
+To allow users to toggle between light and dark modes, use the `ModeSwitcher` component.
 
-### 📥 Instrucciones
+### 📥 Instructions
 
-1. **Importa el componente:**
+1. **Import the component:**
 
 ```ts
 import { ModeSwitcher } from 'src/components/ModeSwitcher';
 ```
 
-2. **Agrega el switcher a tu UI:**
+2. **Add the switcher to your UI:**
 
 ```tsx
 <ModeSwitcher />
 ```
 
-Este componente muestra un interruptor para cambiar dinámicamente el tema.
+This component renders a toggle for dynamic theme switching.
 
 ---
 
-## ♻️ 3. Reutilizar el `ThemeProvider` en Otras Aplicaciones
+## ♻️ 3. Reusing the `ThemeProvider` in Other Applications
 
-Puedes integrar el proveedor de temas en cualquier proyecto React.
+You can integrate the theme provider in any React project.
 
-### 🔁 Pasos para reutilizarlo
+### 🔁 Steps to Reuse
 
-1. **Copia el archivo** `ThemeProvider.tsx` a tu nueva aplicación.
+1. **Copy the `ThemeProvider.tsx` file** to your new application.
 
-2. **Instala las dependencias necesarias:**
+2. **Install the required dependencies:**
 
 ```bash
 npm install @mui/material @emotion/react @emotion/styled
 ```
 
-3. **Envuelve tu aplicación con el `ThemeProvider`:**
+3. **Wrap your app with the `ThemeProvider`:**
 
 ```tsx
 import React from 'react';
@@ -93,7 +93,7 @@ ReactDOM.render(
 );
 ```
 
-4. **(Opcional) Usa el `ModeSwitcher`:**
+4. **(Optional) Use the `ModeSwitcher`:**
 
 ```tsx
 import React from 'react';
@@ -104,9 +104,9 @@ function ExampleComponent() {
 
   return (
     <div>
-      <p>Tema actual: {mode}</p>
+      <p>Current theme: {mode}</p>
       <button onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}>
-        Cambiar Tema
+        Switch Theme
       </button>
     </div>
   );
@@ -115,13 +115,13 @@ function ExampleComponent() {
 
 ---
 
-## 🎨 4. Personalización Avanzada
+## 🎨 4. Advanced Customization
 
-Para una configuración más específica, puedes crear y añadir nuevos temas.
+For more specific configurations, you can create and add new themes.
 
-### 🧱 Crear un nuevo tema
+### 🧱 Creating a New Theme
 
-1. Crea un archivo (por ejemplo: `customTheme.ts`) dentro de la carpeta `themes`.
+1. Create a new file (e.g. `customTheme.ts`) in the `themes` folder.
 
 ```ts
 // src/style-library/themes/customTheme.ts
@@ -139,9 +139,9 @@ export const customTheme = createTheme({
 });
 ```
 
-### 🧩 Extender el `ThemeProvider`
+### 🧩 Extending the `ThemeProvider`
 
-Modifica el `ThemeProvider` para incluir el nuevo tema:
+Update the `ThemeProvider` logic to support the new theme:
 
 ```ts
 const theme = useMemo(() => {
@@ -156,4 +156,49 @@ const theme = useMemo(() => {
       return lightTheme;
   }
 }, [mode]);
+```
+
+
+## **🔗 5. Using Theme System in Astro**
+
+To use the theme system in an Astro project, follow these steps:
+
+1. **load `emotioncache`:**
+   
+  ```ts
+  ---
+  // @ts-ignore
+  const { emotionCache } = Astro.locals;
+  ---
+  ```
+
+2. **Import the `MuiApp` component:**
+
+```tsx
+import App from '../core/MuiApp';
+```
+
+3. **Final Integration:**
+
+```ts
+---
+import App from '../core/MuiApp';
+
+// @ts-ignore
+const { emotionCache } = Astro.locals;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OpenScience</title>
+    <!-- No se necesita incluir los estilos aquí, el middleware se encarga de eso -->
+  </head>
+  <body>
+    <App emotionCache={emotionCache}>
+      <!-- here goes the content of your page -->
+    </App>
+  </body>
+</html>
 ```

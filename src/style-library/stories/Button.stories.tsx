@@ -2,7 +2,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button, Card } from '@mui/material';
 import App from 'style-library/core/MuiApp';
-import { ModeSwitcher } from 'style-library/themes/ModeSwitcher';
+import { ModeSwitcher } from '../core/ThemeSwitcher';
 
 const meta: Meta<typeof Button> = {
   title: 'MUI/Button',

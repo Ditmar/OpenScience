@@ -2,7 +2,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar } from '@mui/material';
 import App from 'style-library/core/MuiApp';
-import { ModeSwitcher } from 'style-library/themes/ModeSwitcher';
+import { ModeSwitcher } from '../core/ThemeSwitcher';
 
 const meta: Meta<typeof Avatar> = {
     title: 'MUI/Avatar',

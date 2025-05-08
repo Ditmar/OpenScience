@@ -1,5 +1,5 @@
 import { Select, MenuItem } from '@mui/material';
-import { useThemeMode } from '../providers/ThemeProvider';
+import { useThemeMode } from '../providers/useThemeProvider';
 
 export function ModeSwitcher() {
   const { mode, setMode } = useThemeMode();

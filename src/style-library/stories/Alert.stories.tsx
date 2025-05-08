@@ -2,7 +2,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Alert } from '@mui/material';
 import App from 'style-library/core/MuiApp';
-import { ModeSwitcher } from 'style-library/themes/ModeSwitcher';
+import { ModeSwitcher } from '../core/ThemeSwitcher';
 
 const meta: Meta<typeof Alert> = {
     title: 'MUI/Alert',
@@ -75,10 +75,10 @@ export const CustomIcon: Story = {
         severity: 'success',
         children: 'This is a success alert with a custom icon!',
         iconMapping: {
-            success: <span>🌟</span>, // Custom icon for success severity
-            info: <span>ℹ️</span>, // Custom icon for info severity
-            warning: <span>⚠️</span>, // Custom icon for warning severity
-            error: <span>❌</span>, // Custom icon for error severity
+            success: <span>🌟</span>,
+            info: <span>ℹ️</span>,
+            warning: <span>⚠️</span>,
+            error: <span>❌</span>,
         }
     },
     parameters: {
