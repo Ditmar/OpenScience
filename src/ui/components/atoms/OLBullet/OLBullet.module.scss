@@ -1,0 +1,71 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/fonts';
+@import '../../../../globals/breakpoints';
+
+.ol-bullet {
+  display: inline-block;
+  background-color: #7A44FF;
+  margin: 0.5rem;
+
+  &--active {
+    background-color: #7A44FF;
+    box-shadow: 0 0 0 5px rgba(122, 68, 255, 0.25);
+  }
+
+  &--square {
+    border-radius: 0;
+  }
+
+  &--rounded {
+    border-radius: 0.5rem;
+  }
+
+  &--circle {
+    border-radius: 999px;
+  }
+
+  &--sm {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+
+  &--md {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  &--lg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  @each $breakpoint, $value in $ads-breakpoints-scales {
+    @include respond-to($breakpoint) {
+      &--sm {
+        $size: if($breakpoint == 'small-mobile', 0.5rem,
+              if($breakpoint == 'medium', 1rem,
+              if($breakpoint == 'large', 1.5rem, 2rem)));
+        width: $size;
+        height: $size;
+      }
+
+      &--md {
+        $size: if($breakpoint == 'small-mobile', 0.75rem,
+              if($breakpoint == 'medium', 1.5rem,
+              if($breakpoint == 'large', 2.25rem, 3rem)));
+        width: $size;
+        height: $size;
+      }
+
+      &--lg {
+        $size: if($breakpoint == 'small-mobile', 1rem,
+              if($breakpoint == 'medium', 2rem,
+              if($breakpoint == 'large', 3rem, 4rem)));
+        width: $size;
+        height: $size;
+      }
+    }
+  }
+}
+
