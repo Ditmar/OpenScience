@@ -1,11 +1,11 @@
-// src/ui/components/molecules/IconCard/IconCardList.mock.ts
+import { vi } from 'vitest';
 import type { IconCardListProps } from './IconCardList.types';
 
 export const mockIconCardListProps: IconCardListProps = {
   items: [
     {
       id: '1',
-      title: 'Opción A',
+      title: 'Option A',
       subtitle: 'Sub A',
       description: 'Desc A',
       selected: false,
@@ -13,14 +13,17 @@ export const mockIconCardListProps: IconCardListProps = {
     },
     {
       id: '2',
-      title: 'Opción B',
+      title: 'Option B',
       subtitle: 'Sub B',
       description: 'Desc B',
       selected: true,
       icon: <span>📚</span>,
     },
   ],
-  onSelect: (id: string, selected: boolean) => {
-    console.log(`Seleccionado ${id}: ${selected}`);
-  },
+  onSelect: vi.fn((id: string, selected: boolean) => {
+    // console.log removed
+  }),
 };
+
+
+

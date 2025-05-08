@@ -1,5 +1,6 @@
 import React from 'react';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import type { Meta, StoryObj } from '@storybook/react'; 
 import IconCardList from './IconCardList';
 import { CheckCircle, Zap, Heart, Star } from 'lucide-react';
@@ -112,12 +113,15 @@ export const LongText: Story = {
 =======
 import IconCardList from './IconCardList'; // Asegúrate de que la ruta sea correcta
 import type { IconCardItem } from './IconCardList.types'; // Importación de tipo
+=======
+import IconCardList from './IconCardList';
+import type { IconCardItem } from './IconCardList.types';
+>>>>>>> 0975de3 (Fixes requested in PR #277 for IconCardList component)
 
-// Aquí defines el array de objetos de ejemplo para items
 const items: IconCardItem[] = [
-  { id: '1', title: 'Item 1', description: 'Descripción 1' },
-  { id: '2', title: 'Item 2', description: 'Descripción 2' },
-  { id: '3', title: 'Item 3', description: 'Descripción 3', selected: true }
+  { id: '1', title: 'Item 1', description: 'Description 1' },
+  { id: '2', title: 'Item 2', description: 'Description 2' },
+  { id: '3', title: 'Item 3', description: 'Description 3', selected: true }
 ];
 
 export default {
@@ -125,12 +129,18 @@ export default {
   component: IconCardList,
 };
 
-export const Default = () => (
-  <IconCardList 
-    items={items}  // Aquí pasas los items
-    onSelect={(id, selected) => console.log(id, selected)}  // Función de ejemplo
-  />
-);
+function Default() {
+  return (
+    <IconCardList 
+      items={items}
+      onSelect={(id, selected) => {
+        // console.log removed
+      }}
+    />
+  );
+}
+
+export { Default };
 
 
 >>>>>>> 5e66056 (chore: update IconCardList stories)
