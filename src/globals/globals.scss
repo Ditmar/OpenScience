@@ -1,4 +1,5 @@
 :root {
+
   /* === Base === */
   --gradient-base-linear: linear-gradient(to right, #4154FF, #E545FF);
   --gradient-base-radial: radial-gradient(circle, #4154FF, #E545FF);
@@ -6,19 +7,20 @@
   --gradient-base-diamond: repeating-conic-gradient(from 45deg, #6E4AFF, #E545FF);
 
   /* === Neutral === */
+
   /* White */
-  --color-neutral-white-900: #FFFFFF;
+  --color-neutral-white-900: #FFF;
 
   /* Black */
-  --color-neutral-black-900: #000000;
+  --color-neutral-black-900: #000;
   --color-neutral-black-800: #1A1A1A;
-  --color-neutral-black-700: #333333;
+  --color-neutral-black-700: #333;
   --color-neutral-black-600: #4D4D4D;
-  --color-neutral-black-500: #666666;
+  --color-neutral-black-500: #666;
   --color-neutral-black-400: #808080;
-  --color-neutral-black-300: #999999;
+  --color-neutral-black-300: #999;
   --color-neutral-black-200: #B3B3B3;
-  --color-neutral-black-100: #CCCCCC;
+  --color-neutral-black-100: #CCC;
   --color-neutral-black-50: #E6E6E6;
   --color-neutral-black-25: #F2F2F2;
 
@@ -49,6 +51,7 @@
   --color-neutral-gray-soft-900: #404A60;
 
   /* === Brand === */
+
   /* Primary */
   --color-brand-primary-25: #F8F5FF;
   --color-brand-primary-50: #F2EDFF;
@@ -89,6 +92,7 @@
   --color-brand-tertiary-900: #002A5C;
 
   /* === Feedback === */
+
   /* Positive */
   --color-feedback-positive-25: #F4FCF7;
   --color-feedback-positive-50: #E9FAF0;
