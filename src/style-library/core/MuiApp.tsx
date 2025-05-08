@@ -10,10 +10,16 @@ interface AppProps {
   emotionCache?: EmotionCache;
 }
 
-export default function App({ children, emotionCache }: AppProps) {
+function App({ children, emotionCache = clientSideEmotionCache }: AppProps) {
   return (
-    <CacheProvider value={emotionCache ?? clientSideEmotionCache}>
+    <CacheProvider value={emotionCache}>
       <ThemeProvider>{children}</ThemeProvider>
     </CacheProvider>
   );
 }
+
+App.defaultProps = {
+  emotionCache: clientSideEmotionCache,
+};
+
+export default App;

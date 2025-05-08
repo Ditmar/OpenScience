@@ -27,6 +27,7 @@
     "@astrojs/check": "0.5.10",
     "@astrojs/node": "8.2.5",
     "@astrojs/react": "3.3.0",
+    "@emotion/cache": "^11.14.0",
     "@emotion/css": "^11.13.5",
     "@emotion/react": "^11.14.0",
     "@emotion/server": "^11.11.0",

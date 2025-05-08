@@ -34,8 +34,16 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   const [mode, setMode] = useState('light');
 
   const theme = useMemo(() => (mode === 'light' ? lightTheme : darkTheme), [mode]);
+
+  const contextValue = useMemo(
+    () => ({
+      mode,
+      setMode,
+    }),
+    [mode],
+  );
   return (
-    <ThemeContext.Provider value={{ mode, setMode }}>
+    <ThemeContext.Provider value={contextValue}>
       <MUIThemeProvider theme={theme}>
         <CssBaseline />
         {children}

@@ -22,7 +22,7 @@ export const lightTheme = createTheme({
       paper: tokens.colors.main,
     },
     text: {
-      primary: tokens.colors['text_main-alpha'],
+      primary: tokens.colors.text_main_alpha,
       secondary: tokens.colors.text_secondary,
     },
   },

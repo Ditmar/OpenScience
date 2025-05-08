@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// eslint-disable-next-line import/no-unresolved
 import { defineMiddleware } from 'astro:middleware';
 import createEmotionCache from 'style-library/createEmotionCache';
 import createEmotionServer from '@emotion/server/create-instance';
@@ -12,10 +14,10 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
   if (response.headers.get('content-type')?.includes('text/html')) {
     const html = await response.text();
-    const { html: extractedHtml, styles } = emotionCache.extractCriticalToChunks(html);
+    const htmlChubks = emotionCache.extractCriticalToChunks(html);
 
     // Insertar los estilos críticos en el HTML
-    const stylesString = styles
+    const stylesString = htmlChubks.styles
       .map((style) => {
         return `<style data-emotion="${style.key} ${style.ids.join(' ')}">${style.css}</style>`;
       })
