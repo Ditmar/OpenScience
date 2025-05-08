@@ -5,11 +5,11 @@
 
 .ol-bullet {
   display: inline-block;
-  background-color: #7A44FF;
+  background-color: #7a44ff;
   margin: 0.5rem;
 
   &--active {
-    background-color: #7A44FF;
+    background-color: #7a44ff;
     box-shadow: 0 0 0 5px rgba(122, 68, 255, 0.25);
   }
 
@@ -43,29 +43,34 @@
   @each $breakpoint, $value in $ads-breakpoints-scales {
     @include respond-to($breakpoint) {
       &--sm {
-        $size: if($breakpoint == 'small-mobile', 0.5rem,
-              if($breakpoint == 'medium', 1rem,
-              if($breakpoint == 'large', 1.5rem, 2rem)));
+        $size: if(
+          $breakpoint == 'small-mobile',
+          0.5rem,
+          if($breakpoint == 'medium', 1rem, if($breakpoint == 'large', 1.5rem, 2rem))
+        );
         width: $size;
         height: $size;
       }
 
       &--md {
-        $size: if($breakpoint == 'small-mobile', 0.75rem,
-              if($breakpoint == 'medium', 1.5rem,
-              if($breakpoint == 'large', 2.25rem, 3rem)));
+        $size: if(
+          $breakpoint == 'small-mobile',
+          0.75rem,
+          if($breakpoint == 'medium', 1.5rem, if($breakpoint == 'large', 2.25rem, 3rem))
+        );
         width: $size;
         height: $size;
       }
 
       &--lg {
-        $size: if($breakpoint == 'small-mobile', 1rem,
-              if($breakpoint == 'medium', 2rem,
-              if($breakpoint == 'large', 3rem, 4rem)));
+        $size: if(
+          $breakpoint == 'small-mobile',
+          1rem,
+          if($breakpoint == 'medium', 2rem, if($breakpoint == 'large', 3rem, 4rem))
+        );
         width: $size;
         height: $size;
       }
     }
   }
 }
-
