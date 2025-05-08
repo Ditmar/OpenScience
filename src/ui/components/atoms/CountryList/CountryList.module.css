@@ -1,0 +1,102 @@
+/* 🔹 Contenedor principal */
+.container {
+  position:relative;
+  top: 1px; /* ✅ Posición exacta */
+  left: 552px;
+  width: 366px;
+  background: white;
+  border: 1px solid #ccc; /* ✅ Borde suave */
+  border-radius: 8px; /* ✅ Esquinas redondeadas */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* ✅ Sombra */
+}
+
+/* 🔹 Botón de selección dentro del cuadro */
+.selectButton {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+/* 🔹 Menú desplegable */
+.dropdown {
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  max-height: 314px;
+  overflow-y: auto;
+}
+
+/* 🔹 Lista de países */
+.list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* 🔹 Cada país con sombreado */
+.listItem {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.listItem:hover {
+  background-color: #F0E6FF; /* ✅ Sombreado al pasar el mouse */
+}
+
+/* 🔹 Bandera */
+.flag {
+  width: 15px;
+  height: 15px;
+  margin-right: 12px;
+  border-radius:8px ;
+  left:8.41px;
+}
+
+/* 🔹 Nombre del país */
+.countryName {
+  flex: 1;
+  font-weight: bold;
+  margin-right: 1px;
+  font-family: poppins;
+  size: none;
+  width: 273px;
+  height: 27px;
+  letter-spacing:0% ;
+}
+
+/* 🔹 Código de país */
+.dialCode {
+  color: #6B7280;
+}
+
+/* 🔹 Scrollbar con color exacto */
+.scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: #F8F5FF;
+  border-radius: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #9B5AFF;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #7A44FF;
+}
+
