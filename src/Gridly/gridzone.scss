@@ -2,26 +2,26 @@
 @import '../globals/variables';
 
 .container {
-  width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
+  max-width: $ads-gridForge-container-size;
+  padding: 0 $ads-gridForge-margin;
+  width: 100%;
 }
 
 .auto-grid {
   display: grid;
+  gap: $ads-gridForge-gutter;
   grid-template-columns: repeat(12, 1fr);
-  gap: 15px; 
 }
 
 .grid-item {
-  background-color: rgba(0, 123, 255, 0.1);
+  background-color: $ads-grid-item-bg;
   border: 1px solid #66686b;
-  padding: 20px;
-  text-align: center;
+  color: $text-color; // Asegúrate de que esta variable esté definida
   font-weight: bold;
-  color: #333;
-  min-height: 50px; 
+  min-height: 50px;
+  padding: $ads-grid-item-padding;
+  text-align: center;
 }
 
 @mixin grid-columns {
@@ -34,7 +34,7 @@
 
 @include grid-columns;
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
   .col-lg-1 { grid-column: span 1; }
   .col-lg-2 { grid-column: span 2; }
   .col-lg-3 { grid-column: span 3; }
