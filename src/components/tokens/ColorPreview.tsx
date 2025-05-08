@@ -3,25 +3,32 @@ import { theme } from '../../globals/theme';
 
 type FlatColorTokens = Record<string, string>;
 
-const flattenTokens = (obj: any, prefix = ''): FlatColorTokens => {
-  return Object.entries(obj).reduce((acc, [key, value]) => {
+function flattenTokens(obj: Record<string, unknown>, prefix = ''): FlatColorTokens {
+  return Object.entries(obj).reduce<FlatColorTokens>((acc, [key, value]) => {
     const newKey = prefix ? `${prefix}.${key}` : key;
 
     if (typeof value === 'string') {
       acc[newKey] = value;
     } else if (typeof value === 'object' && value !== null) {
-      Object.assign(acc, flattenTokens(value, newKey));
+      Object.assign(acc, flattenTokens(value as Record<string, unknown>, newKey));
     }
 
     return acc;
-  }, {} as FlatColorTokens);
-};
+  }, {});
+}
 
-export const ColorPreview: React.FC = () => {
+export function ColorPreview() {
   const flatColors = flattenTokens(theme.colors);
 
   return (
-    <div data-testid="color-preview-container" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+    <div
+      data-testid="color-preview-container"
+      style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: '1rem',
+      }}
+    >
       {Object.entries(flatColors).map(([label, color]) => (
         <div
           key={label}
@@ -44,4 +51,4 @@ export const ColorPreview: React.FC = () => {
       ))}
     </div>
   );
-};
+}
