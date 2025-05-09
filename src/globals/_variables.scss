@@ -1,18 +1,30 @@
 $ads-primary-main: #0793bf;
+$ads-primary-light: #63a4ff;
+$ads-primary-dark: #004ba0;
+$ads-primary-contrast-text: #fff;
+
 $ads-secondary-main: #004369;
+$ads-secondary-light: #5c7a8b;
+$ads-secondary-dark: #002c3d;
+$ads-secondary-contrast-text: #fff;
+
 $ads-tertiary-main: #fff;
+
 $ads-danger-main: #dc3545;
 $ads-warning-main: #ffc107;
+
 $ads-text-main: #02322c;
 $ads-text-secondary: #6c757d;
-$ads-text-main-hover: #000;
+$ads-text-main-hover: #01695a; 
+
 $ads-background-main: #f5f5f5;
 $ads-color-main: #fff;
+$ads-background-desktop: rgb(217 217 217 / 40%);
+$ads-background-color-black: rgb(0 0 0 / 30%);
+
+$ads-text-input: #a6a6a6;
+
 $ads-size-main: 1.3rem;
-$ads-text-main-alpha: rgb(2 50 44 / 85%);
-$ads-font-weight-bold: 700;
-$ads-letter-spacing: 0.0625rem;
-$ads-font-weight: 700;
 $ads-font-size-primary: 1rem;
 $ads-font-size-first: 6rem;
 $ads-font-size-third: 8rem;
@@ -20,10 +32,9 @@ $ads-font-size-second: 1.75rem;
 $ads-font-size-quarter: 2.5rem;
 $ads-font-size-fifth: 0.75rem;
 $ads-font-size-sixth: 0.938rem;
+$ads-font-weight-bold: 700;
 $ads-font-weight-first: 400;
 $ads-font-weight-second: 800;
+$ads-letter-spacing: 0.0625rem;
 $ads-line-height-default: 1.3;
 $ads-padding-large: 2rem;
-$ads-background-desktop: rgb(217 217 217 / 40%);
-$ads-background-color-black: rgb(0 0 0 / 30%);
-$ads-text-input: #a6a6a6;
