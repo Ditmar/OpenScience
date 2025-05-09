@@ -1,8 +1,16 @@
 @import "../../../../globals/variables";
 
 .container {
+    box-sizing: border-box;
     color: $ads-text-main-hover;
+    font-family: Poppins, Arial, sans-serif;
     width: 22rem;
+
+    @media (width <= 600px) {
+        min-width: 0;
+        padding: 1rem;
+        width: 100%;
+    }
 }
 
 .header {
@@ -12,23 +20,22 @@
     margin-bottom: .5rem;
 }
 
-.labelWrapper {
+.label-wrapper {
     align-items: center;
     display: flex;
     gap: .3rem;
 }
 
-.labelIcon {
+.label-icon {
     height: 1rem;
     width: 1rem;
-    
+
     path {
-        fill: currentColor;
+        fill: currentcolor;
     }
 }
 
-
-.closeButton {
+.close-button {
     background: none;
     border: none;
     cursor: pointer;
@@ -39,42 +46,58 @@
     }
 }
 
-.closeIconURl {
+.close-icon-url {
     height: 1rem;
     width: 1rem;
+
     path {
-        fill: currentColor;
+        fill: currentcolor;
     }
 }
 
-.inputContainer {
+.input-container {
     align-items: center;
     border: 1px solid;
+    box-sizing: border-box;
     display: flex;
     transition: all 0.2s ease;
     width: 100%;
+
+    @media (width <= 600px) {
+        flex-direction: column;
+        padding: 0.5rem 0.2rem;
+    }
 }
 
-.inputWrapper {
+.input-wrapper {
     align-items: center;
     display: flex;
     padding-left: 1rem;
     padding-right: 0.2rem;
     width: 100%;
+
+    @media (width <= 600px) {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
 }
 
-.planetIcon {
+.planet-icon {
     height: 1rem;
     margin-right: 0.2rem;
     width: 1.1rem;
 
     path {
-        fill: currentColor;
+        fill: currentcolor;
     }
 }
 
 .protocol {
     font-size: .3rem;
+
+    @media (width <= 600px) {
+        font-size: .7rem;
+    }
 }
 
 .divider {
@@ -85,6 +108,7 @@
 .input {
     background: transparent;
     border: none;
+    font-family: inherit;
     outline: none;
 
     &:disabled {
@@ -93,7 +117,7 @@
     }
 }
 
-.copyButton {
+.copy-button {
     align-items: center;
     border: none;
     cursor: pointer;
@@ -112,6 +136,11 @@
         cursor: not-allowed;
         opacity: 0.6;
     }
+
+    @media (width <= 600px) {
+        font-size: .8rem;
+        padding: .4rem 0.6rem;
+    }
 }
 
 .footer {
@@ -119,81 +148,173 @@
     display: flex;
     justify-content: space-between;
     margin-top: 8px;
+
+    @media (width <= 600px) {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }
 
-.hintText {
+.hint-text {
     align-items: center;
     display: flex;
     font-size: .8rem;
     gap: .5rem;
+
+    @media (width <= 600px) {
+        font-size: .7rem;
+    }
 }
 
-.infoIcon {
+.info-icon {
     height: 1rem;
     width: 1rem;
 
     path {
-        fill: currentColor;
+        fill: currentcolor;
     }
 }
 
-.standaloneInfoIcon {
+.standalone-info-icon {
     height: 1rem;
     width: 1rem;
 
     path {
-        fill: $ads-text-main-hover
+        fill: $ads-text-main-hover;
     }
+}
+
+.icon-planet {
+    height: 1rem;
+    width: 1rem;
+
+    path {
+        fill: currentcolor;
+    }
+}
+
+.copy-icon {
+    height: 1rem;
+    width: 1rem;
 }
 
 .variant--default {
-    .inputContainer {
+    .input-container {
         border-color: $ads-text-main-hover;
     }
 
-    .copyButton {
+    .copy-button {
         background: $ads-default-main;
         color: $ads-background-main;
     }
 }
 
 .variant--focus {
-    .inputContainer {
+    .input-container {
         border-color: $ads-default-main;
         box-shadow: 0 0 0 .1rem $ads-default-blur-main;
     }
 
-    .copyButton {
+    .copy-button {
         background: $ads-default-main;
         color: $ads-background-main;
     }
 }
 
 .variant--error {
-
-    .inputContainer {
+    .input-container {
         border-color: $ads-error-main;
     }
 
-    .copyButton {
+    .copy-button {
         background: $ads-error-main;
-        color: white;
+        color: $ads-background-main;
     }
 
-    .hintText {
+    .hint-text {
         color: $ads-error-main;
     }
 }
 
-.inputGroup {
+.variant--disabled {
+    color: $ads-disabled-main;
+
+    .input-container {
+        border-color: $ads-disabled-main;
+    }
+
+    .copy-button {
+        background: $ads-disabled-main;
+        color: $ads-background-main;
+    }
+
+    .input {
+        color: $ads-disabled-main;
+    }
+
+    .planet-icon {
+        color: $ads-disabled-main;
+    }
+
+    .close-icon-url {
+        color: $ads-disabled-main;
+    }
+}
+
+.size--small {
+    .input-container {
+        height: 2.4rem;
+    }
+
+    .input,
+    .hint-text,
+    .label-text,
+    .protocol,
+    .copy-button {
+        font-size: .8rem;
+    }
+}
+
+.size--medium {
+    .input-container {
+        height: 40px;
+    }
+
+    .input,
+    .protocol,
+    .label-text,
+    .hint-text,
+    .copy-button {
+        font-size: .85rem;
+    }
+}
+
+.size--large {
+    .input-container {
+        height: 2.6rem;
+    }
+
+    .input,
+    .protocol,
+    .label-text,
+    .hint-text,
+    .copy-button {
+        font-size: .9rem;
+    }
+}
+
+.input-group {
     align-items: center;
     display: flex;
     flex-grow: 1;
     position: relative;
+
     &:disabled {
         cursor: not-allowed;
     }
-    .inputIcon {
+
+    .input-icon {
         height: 1rem;
         left: 0.2rem;
         position: absolute;
@@ -201,7 +322,7 @@
         z-index: 2;
 
         path {
-            fill: currentColor;
+            fill: currentcolor;
         }
     }
 
@@ -219,113 +340,32 @@
     }
 }
 
-.Iconplanet {
-    height: 1rem;
-    width: 1rem;
-    path {
-        fill: currentColor;
-    }
-}
-
-.copyIcon {
-    height: 1rem;
-    width: 1rem;
-}
-
-.variant--disabled {
-    color: $ads-disabled-main;
-
-    .inputContainer {
-        border-color: $ads-disabled-main;
-    }
-
-    .copyButton {
-        background: $ads-disabled-main;
-        color: $ads-background-main;
-    }
-
-    .input {
-        color: $ads-disabled-main;
-    }
-
-    .planetIcon {
-        color: $ads-disabled-main;
-    }
-
-    .closeIconURl{
-        color: $ads-disabled-main;
-    }
-}
-
-.size--small {
-    .inputContainer {
-        height: 2.4rem;
-    }
-
-    .input,
-    .hintText,
-    .labelText,
-    .protocol,
-    .copyButton {
-        font-size: .8rem;
-    }
-}
-
-.size--medium {
-    .inputContainer {
-        height: 40px;
-    }
-
-    .input,
-    .protocol,
-    .labelText,
-    .hintText,
-    .copyButton {
-        font-size: .85rem;
-    }
-}
-
-.size--large {
-    .inputContainer {
-        height: 2.6rem;
-    }
-
-    .input,
-    .protocol,
-    .labelText,
-    .hintText,
-    .copyButton {
-        font-size: .9rem;
-    }
-
-}
-
 .radius--none {
-    .inputContainer {
+    .input-container {
         border-radius: 0;
     }
 
-    .copyButton {
+    .copy-button {
         border-radius: 0;
     }
 }
 
 .radius--small {
-    .inputContainer {
+    .input-container {
         border-radius: .3rem;
     }
 
-    .copyButton {
+    .copy-button {
         border-radius: 5%;
     }
 }
 
 .radius--full {
-    .inputContainer {
+    .input-container {
         border-radius: 40rem;
     }
 
-    .copyButton {
+    .copy-button {
         border-radius: 5rem;
     }
 }
