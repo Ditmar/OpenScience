@@ -1,7 +1,7 @@
 // src/components/Button.stories.tsx
 import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar } from '@mui/material';
-import App from 'style-library/core/MuiApp';
+import App from 'style-library/core/ThemeProvider';
 import { ModeSwitcher } from '../core/ThemeSwitcher';
 
 const meta: Meta<typeof Avatar> = {
