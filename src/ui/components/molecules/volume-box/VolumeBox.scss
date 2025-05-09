@@ -50,7 +50,7 @@
     }
   }
 
-  @include respond-to('medium'){
+  @include respond-to('medium') {
     min-width: 26.25rem;
 
     .content {
