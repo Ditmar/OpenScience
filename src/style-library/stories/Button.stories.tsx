@@ -33,9 +33,8 @@ const meta: Meta<typeof Button> = {
           <Story />
         </div>
       </App>
-    )
-
-  ]
+    ),
+  ],
 };
 
 export default meta;
