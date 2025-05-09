@@ -8,7 +8,6 @@ describe('TypographyParagraph', () => {
 
     const paragraph = screen.getByText('Test paragraph');
     expect(paragraph).toBeInTheDocument();
-    // Verificamos que el elemento tenga la clase base
     expect(paragraph.className).toContain('typography-paragraph');
   });
 
@@ -31,13 +30,10 @@ describe('TypographyParagraph', () => {
       },
     );
 
-    // El componente parece manejar los valores inválidos de manera diferente
-    // a lo que esperábamos inicialmente
     test('should handle invalid size prop', () => {
       render(<TypographyParagraph text="Test paragraph" size="invalid-size" />);
 
       const paragraph = screen.getByText('Test paragraph');
-      // Solo verificamos que el componente se renderice correctamente
       expect(paragraph).toBeInTheDocument();
     });
   });
@@ -108,8 +104,6 @@ describe('TypographyParagraph', () => {
       render(<TypographyParagraph text="Test paragraph" italic={false} />);
 
       const paragraph = screen.getByText('Test paragraph');
-      // Aquí podemos seguir usando esta expectativa porque la clase 'italic' no debería
-      // estar presente cuando italic={false}
       expect(paragraph.className).not.toContain('italic');
     });
   });
