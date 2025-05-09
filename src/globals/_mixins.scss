@@ -8,6 +8,6 @@
   }
 
   @else {
-    @warn "It has not been found: #{$breakpoint}.";
+    @warn "It has not been found: '#{$breakpoint}'.";
   }
 }
