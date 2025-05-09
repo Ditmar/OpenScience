@@ -1,0 +1,331 @@
+@import "../../../../globals/variables";
+
+.container {
+    color: $ads-text-main-hover;
+    width: 22rem;
+}
+
+.header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+.labelWrapper {
+    align-items: center;
+    display: flex;
+    gap: .3rem;
+}
+
+.labelIcon {
+    height: 1rem;
+    width: 1rem;
+    
+    path {
+        fill: currentColor;
+    }
+}
+
+
+.closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.closeIconURl {
+    height: 1rem;
+    width: 1rem;
+    path {
+        fill: currentColor;
+    }
+}
+
+.inputContainer {
+    align-items: center;
+    border: 1px solid;
+    display: flex;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.inputWrapper {
+    align-items: center;
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 0.2rem;
+    width: 100%;
+}
+
+.planetIcon {
+    height: 1rem;
+    margin-right: 0.2rem;
+    width: 1.1rem;
+
+    path {
+        fill: currentColor;
+    }
+}
+
+.protocol {
+    font-size: .3rem;
+}
+
+.divider {
+    color: $ads-disabled-main;
+    margin: 0 .4rem;
+}
+
+.input {
+    background: transparent;
+    border: none;
+    outline: none;
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
+}
+
+.copyButton {
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    font-size: .3rem;
+    font-weight: 500;
+    gap: .2rem;
+    padding: .55rem 1rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+        opacity: 0.9;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+}
+
+.footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.hintText {
+    align-items: center;
+    display: flex;
+    font-size: .8rem;
+    gap: .5rem;
+}
+
+.infoIcon {
+    height: 1rem;
+    width: 1rem;
+
+    path {
+        fill: currentColor;
+    }
+}
+
+.standaloneInfoIcon {
+    height: 1rem;
+    width: 1rem;
+
+    path {
+        fill: $ads-text-main-hover
+    }
+}
+
+.variant--default {
+    .inputContainer {
+        border-color: $ads-text-main-hover;
+    }
+
+    .copyButton {
+        background: $ads-default-main;
+        color: $ads-background-main;
+    }
+}
+
+.variant--focus {
+    .inputContainer {
+        border-color: $ads-default-main;
+        box-shadow: 0 0 0 .1rem $ads-default-blur-main;
+    }
+
+    .copyButton {
+        background: $ads-default-main;
+        color: $ads-background-main;
+    }
+}
+
+.variant--error {
+
+    .inputContainer {
+        border-color: $ads-error-main;
+    }
+
+    .copyButton {
+        background: $ads-error-main;
+        color: white;
+    }
+
+    .hintText {
+        color: $ads-error-main;
+    }
+}
+
+.inputGroup {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+    &:disabled {
+        cursor: not-allowed;
+    }
+    .inputIcon {
+        height: 1rem;
+        left: 0.2rem;
+        position: absolute;
+        width: 1rem;
+        z-index: 2;
+
+        path {
+            fill: currentColor;
+        }
+    }
+
+    .input {
+        border: none;
+        color: $ads-text-main-hover;
+        outline: none;
+        padding-left: 1.7rem;
+        padding-right: 1.5rem;
+        width: 100%;
+
+        &:disabled {
+            cursor: not-allowed;
+        }
+    }
+}
+
+.Iconplanet {
+    height: 1rem;
+    width: 1rem;
+    path {
+        fill: currentColor;
+    }
+}
+
+.copyIcon {
+    height: 1rem;
+    width: 1rem;
+}
+
+.variant--disabled {
+    color: $ads-disabled-main;
+
+    .inputContainer {
+        border-color: $ads-disabled-main;
+    }
+
+    .copyButton {
+        background: $ads-disabled-main;
+        color: $ads-background-main;
+    }
+
+    .input {
+        color: $ads-disabled-main;
+    }
+
+    .planetIcon {
+        color: $ads-disabled-main;
+    }
+
+    .closeIconURl{
+        color: $ads-disabled-main;
+    }
+}
+
+.size--small {
+    .inputContainer {
+        height: 2.4rem;
+    }
+
+    .input,
+    .hintText,
+    .labelText,
+    .protocol,
+    .copyButton {
+        font-size: .8rem;
+    }
+}
+
+.size--medium {
+    .inputContainer {
+        height: 40px;
+    }
+
+    .input,
+    .protocol,
+    .labelText,
+    .hintText,
+    .copyButton {
+        font-size: .85rem;
+    }
+}
+
+.size--large {
+    .inputContainer {
+        height: 2.6rem;
+    }
+
+    .input,
+    .protocol,
+    .labelText,
+    .hintText,
+    .copyButton {
+        font-size: .9rem;
+    }
+
+}
+
+.radius--none {
+    .inputContainer {
+        border-radius: 0;
+    }
+
+    .copyButton {
+        border-radius: 0;
+    }
+}
+
+.radius--small {
+    .inputContainer {
+        border-radius: .3rem;
+    }
+
+    .copyButton {
+        border-radius: 5%;
+    }
+}
+
+.radius--full {
+    .inputContainer {
+        border-radius: 40rem;
+    }
+
+    .copyButton {
+        border-radius: 5rem;
+    }
+}
