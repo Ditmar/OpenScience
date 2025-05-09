@@ -3,16 +3,18 @@ import { CacheProvider, type EmotionCache } from '@emotion/react';
 import { ThemeProvider } from '../providers/ThemeProvider';
 import createEmotionCache from '../createEmotionCache';
 
-const clientSideEmotionCache = createEmotionCache();
-
 interface AppProps {
   children: React.ReactNode;
   emotionCache?: EmotionCache;
 }
 
-function ThemeWrapper({ children, emotionCache = clientSideEmotionCache }: AppProps) {
+function ThemeWrapper({ children, emotionCache }: AppProps) {
+  let emotion = emotionCache;
+  if (typeof window !== 'undefined') {
+    emotion = createEmotionCache();
+  }
   return (
-    <CacheProvider value={emotionCache}>
+    <CacheProvider value={emotion}>
       <ThemeProvider>{children}</ThemeProvider>
     </CacheProvider>
   );
