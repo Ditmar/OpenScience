@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <line x1="18" y1="6" x2="6" y2="18"/>
   <line x1="6" y1="6" x2="18" y2="18"/>
 </svg>
+=======
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 0C4.02975 0 0 4.02975 0 9C0 13.9703 4.02975 18 9 18C13.9703 18 18 13.9703 18 9C18 4.02975 13.9703 0 9 0ZM9 1.5C10.7985 1.5 12.4508 2.13675 13.7438 3.19575L9 7.9395L4.25625 3.19575C5.55 2.13675 7.20225 1.5 9 1.5ZM1.5 9C1.5 7.2015 2.13675 5.54925 3.19575 4.25625L7.9395 9L3.19575 13.7438C2.13675 12.45 1.5 10.7978 1.5 9ZM9 16.5C7.2015 16.5 5.54925 15.8632 4.25625 14.8043L9 10.0605L13.7438 14.8043C12.45 15.8632 10.7978 16.5 9 16.5ZM14.8043 13.7438L10.0605 9L14.8043 4.25625C15.8632 5.55 16.5 7.20225 16.5 9C16.5 10.7978 15.8632 12.4508 14.8043 13.7438Z" fill="#151A2D"/>
+</svg>
+>>>>>>> b0441147 (feat(URLinput): implement URL input component with prefix, action button, icons, states, and accessibility)
