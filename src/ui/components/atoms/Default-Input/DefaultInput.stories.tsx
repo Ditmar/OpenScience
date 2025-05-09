@@ -39,7 +39,7 @@ function InputTriad({
   disabled,
   className,
 }: InputTriadProps) {
-  const baseClass = className ?? ''; // Usando nullish coalescing (??) en lugar de ||
+  const baseClass = className ?? '';
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', width: '330px' }}>
       <DefaultInput
@@ -87,6 +87,8 @@ InputTriad.defaultProps = {
   className: '',
 };
 
+// Todas las historias ahora tienen hint="Hint Text"
+
 export const Default: Story = {
   render: () => <InputTriad label="Email Address" placeholder="Input Text" hint="Hint Text" />,
 };
@@ -96,7 +98,9 @@ export const WithHint: Story = {
 };
 
 export const WithError: Story = {
-  render: () => <InputTriad label="Email Address" placeholder="Input Text" error="Hint Text" />,
+  render: () => (
+    <InputTriad label="Email Address" placeholder="Input Text" error="Hint Text" hint="Hint Text" />
+  ),
 };
 
 export const Disabled: Story = {
