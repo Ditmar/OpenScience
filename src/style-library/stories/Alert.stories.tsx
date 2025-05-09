@@ -1,7 +1,7 @@
 // src/components/Button.stories.tsx
 import type { Meta, StoryObj } from '@storybook/react';
 import { Alert } from '@mui/material';
-import App from 'style-library/core/MuiApp';
+import ThemeProvider from 'style-library/core/ThemeProvider';
 import { ModeSwitcher } from '../core/ThemeSwitcher';
 
 const meta: Meta<typeof Alert> = {
@@ -22,12 +22,12 @@ const meta: Meta<typeof Alert> = {
     },
     decorators: [
         (Story) => (
-            <App>
+            <ThemeProvider>
                 <ModeSwitcher />
                 <div style={{ padding: '20px' }}>
                     <Story />
                 </div>
-            </App>
+            </ThemeProvider>
         )
 
     ]
