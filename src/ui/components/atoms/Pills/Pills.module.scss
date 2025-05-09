@@ -37,7 +37,6 @@
     border-radius: 9999px;
   }
 
-  // Border Soft
   &--border-soft-neutral-light {
     border: 2px solid $ads-stroke-dark-soft;
   }
@@ -219,7 +218,7 @@
   }
 
   &--soft-feedback-warning {
-    background-color: $ads-warning-soft;
+    background-color: $ads-color-warning-soft;
     color: $ads-color-warning;
   }
 

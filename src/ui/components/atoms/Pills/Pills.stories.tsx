@@ -83,7 +83,7 @@ export const PillPrimary: Story = {
 
 export const PillSecondary: Story = {
   args: {
-    text: '101',
+    text: '100',
     color: 'brand-secondary',
     variant: 'filled',
     size: 'sm',
@@ -94,7 +94,7 @@ export const PillSecondary: Story = {
 
 export const PillTertiary: Story = {
   args: {
-    text: '101',
+    text: '100',
     color: 'brand-tertiary',
     variant: 'filled',
     size: 'sm',
@@ -105,7 +105,7 @@ export const PillTertiary: Story = {
 
 export const PillPositive: Story = {
   args: {
-    text: '101',
+    text: '100',
     color: 'feedback-positive',
     variant: 'filled',
     size: 'sm',
@@ -116,7 +116,7 @@ export const PillPositive: Story = {
 
 export const PillNegative: Story = {
   args: {
-    text: '101',
+    text: '100',
     color: 'feedback-negative',
     variant: 'filled',
     size: 'sm',
@@ -127,7 +127,7 @@ export const PillNegative: Story = {
 
 export const PillWarning: Story = {
   args: {
-    text: '101',
+    text: '100',
     color: 'feedback-warning',
     variant: 'filled',
     size: 'sm',
@@ -138,7 +138,7 @@ export const PillWarning: Story = {
 
 export const PillDisabled: Story = {
   args: {
-    text: '101',
+    text: '100',
     color: 'read-only-disabled',
     variant: 'filled',
     size: 'sm',

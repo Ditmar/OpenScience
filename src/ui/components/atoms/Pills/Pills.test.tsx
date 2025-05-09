@@ -56,7 +56,7 @@ describe('Testing Pill React Component', () => {
     render(
       <Pill text="Etiqueta" color="neutral-dark" variant="filled" size="md" icon={iconText} />,
     );
-    
+
     const iconElement = screen.getByTestId('custom-icon');
     expect(iconElement).toBeInTheDocument();
   });
