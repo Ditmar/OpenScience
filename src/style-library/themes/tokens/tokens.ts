@@ -1,7 +1,4 @@
-/**
- * @generated Automatically by the buildTokens function. Do not edit manually.
- * @see scripts/tokenizer.mjs
- */
+// src/style-library/tokens/tokens.ts
 export interface DesignTokens {
   breakpoints?: Record<string, string>;
   colors?: Record<string, string>;
@@ -27,6 +24,9 @@ const tokens: DesignTokens = {
   },
   colors: {
     primary_main: '#0793bf',
+    primary_light: '#63a4ff',
+    primary_dark: '#004ba0',
+    primary_contrastText: '#fff',
     secondary_main: '#004369',
     tertiary_main: '#fff',
     danger_main: '#dc3545',
