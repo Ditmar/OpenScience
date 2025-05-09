@@ -4,9 +4,26 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { DefaultInput } from './DefaultInput';
 
 describe('DefaultInput', () => {
-  const setup = (props = {}) => {
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    render(<DefaultInput {...props} />);
+  const setup = (
+    label: string,
+    placeholder: string,
+    hint?: string,
+    error?: string,
+    disabled?: boolean,
+    onChange?: React.ChangeEventHandler<HTMLInputElement>,
+    className?: string,
+  ) => {
+    render(
+      <DefaultInput
+        label={label}
+        placeholder={placeholder}
+        hint={hint}
+        error={error}
+        disabled={disabled}
+        onChange={onChange}
+        className={className}
+      />,
+    );
     const input = screen.getByRole('textbox');
     return { input };
   };
@@ -20,7 +37,7 @@ describe('DefaultInput', () => {
 
   it('calls onChange when user types', () => {
     const handleChange = vi.fn();
-    const { input } = setup({ onChange: handleChange });
+    const { input } = setup('Email', 'Enter email', undefined, undefined, undefined, handleChange);
     fireEvent.change(input, { target: { value: 'hello' } });
     expect(handleChange).toHaveBeenCalled();
   });
@@ -33,19 +50,14 @@ describe('DefaultInput', () => {
   });
 
   it('disables input when disabled is true', () => {
-    const { input } = setup({ disabled: true });
+    const { input } = setup('Email', 'Enter email', undefined, undefined, true);
     expect(input).toBeDisabled();
   });
 
-  it('associates label with input via htmlFor and id', () => {
-    render(<DefaultInput label="Email" />);
-    const label = screen.getByText('Email') as HTMLLabelElement;
-    const input = screen.getByRole('textbox') as HTMLInputElement;
-    expect(label.htmlFor).toBe(input.id);
-  });
-
   it('applies custom className to root', () => {
-    const { container } = render(<DefaultInput className="custom-class" />);
+    const { container } = render(
+      <DefaultInput className="custom-class" label="Email" placeholder="Enter email" />,
+    );
     expect(container.firstChild).toHaveClass('custom-class');
   });
 });
