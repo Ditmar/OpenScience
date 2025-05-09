@@ -7,7 +7,6 @@ const clientSideEmotionCache = createEmotionCache();
 
 interface AppProps {
   children: React.ReactNode;
-  // eslint-disable-next-line react/require-default-props
   emotionCache?: EmotionCache;
 }
 
