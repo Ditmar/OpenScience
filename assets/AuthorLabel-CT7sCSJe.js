@@ -1,0 +1,1 @@
+import{j as r}from"./jsx-runtime-DRTy3Uxn.js";const e="_author_pb0tf_73",s={author:e};function a({variant:t}){const o=s[t];return r.jsx("p",{className:`${s.author} ${o}`,children:t})}a.__docgenInfo={description:"",methods:[],displayName:"AuthorLabel",props:{variant:{required:!1,tsType:{name:"string"},description:""}}};export{a as A};

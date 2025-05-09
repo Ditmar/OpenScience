@@ -1,0 +1,6 @@
+import{Y as s}from"./YearList-CdTCkGm9.js";import"./jsx-runtime-DRTy3Uxn.js";import"./index-BBkUAzwr.js";import"./ButtonYear-CMb368Xw.js";import"./Year-D1NCPWQY.js";const o=[{id:1,attributes:{Year:"2023",Volumes:"1"}},{id:2,attributes:{Year:"2024",Volumes:"2"}},{id:3,attributes:{Year:"2025",Volumes:"1"}},{id:4,attributes:{Year:"2026",Volumes:"2"}},{id:5,attributes:{Year:"2027",Volumes:"1"}},{id:6,attributes:{Year:"2028",Volumes:"2"}},{id:7,attributes:{Year:"2029",Volumes:"1"}},{id:8,attributes:{Year:"2030",Volumes:"2"}},{id:9,attributes:{Year:"2031",Volumes:"1"}},{id:10,attributes:{Year:"2032",Volumes:"2"}},{id:11,attributes:{Year:"2033",Volumes:"1"}},{id:12,attributes:{Year:"2034",Volumes:"2"}},{id:13,attributes:{Year:"2035",Volumes:"1"}},{id:14,attributes:{Year:"2036",Volumes:"2"}},{id:15,attributes:{Year:"2037",Volumes:"1"}},{id:16,attributes:{Year:"2038",Volumes:"2"}}],i={data:o},n={title:"ui/components/molecules/year-list",component:s},t={args:{data:i.data,buttonText:"año"}};var e,a,r;t.parameters={...t.parameters,docs:{...(e=t.parameters)==null?void 0:e.docs,source:{originalSource:`{
+  args: {
+    data: dataMock.data,
+    buttonText: 'año'
+  }
+}`,...(r=(a=t.parameters)==null?void 0:a.docs)==null?void 0:r.source}}};const Y=["Default"];export{t as Default,Y as __namedExportsOrder,n as default};
