@@ -1,0 +1,171 @@
+@import '../../../../globals/mixins';
+@import '../../../../globals/variables';
+
+.icon-text-stat {
+    align-items: flex-start;
+    cursor: pointer;
+    display: flex;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+  
+    &__checkbox {
+        height: 1.5rem;
+        margin-right: 1.5rem;
+        width: 1.5rem;
+    }
+  
+    &__icon {
+        align-items: center;
+        border-radius: 50%;
+        display: flex;
+        height: 3rem;
+        justify-content: center;
+        margin-right: 1rem;
+        transition: all 0.2s ease;
+        width: 3rem;
+        
+    }
+  
+    &__text {
+      color: $ads-icontextstat-color-text;
+      flex: 1;
+      font-family: sans-serif;
+      font-weight: 300;
+
+      &.small {
+        font-size: $ads-icontextstat-fontsize-smalltext;
+      }
+    
+      &.medium {
+        font-size: $ads-icontextstat-fontsize-mediumtext;
+      }
+    
+      &.large {
+        font-size: $ads-icontextstat-fontsize-largetext;
+      }
+    }
+  
+    &__title {
+      color: $ads-icontextstat-color-title;
+      font-weight: 500;
+      margin: 0;
+      margin-bottom: 1rem;
+
+      &.small {
+        font-size: $ads-icontextstat-fontsize-smalltitle;
+      }
+    
+      &.medium {
+        font-size: $ads-icontextstat-fontsize-mediumtitle;
+      }
+    
+      &.large {
+        font-size: $ads-icontextstat-fontsize-largetitle;
+      }
+    }
+  
+    &__main {
+        margin-bottom: 1rem;
+    }
+
+    &__sub {
+        margin-bottom: 1rem;
+    }
+
+    &.secondary {
+      .icon-text-stat__icon {
+        background-color: $ads-secondary-twenty-five;
+      }
+    }
+    
+    &.tertiary {
+      .icon-text-stat__icon {
+        background-color: $ads-tertiary-twenty-five;
+      }
+    }
+    
+    &.warning {
+      .icon-text-stat__icon {
+        background-color: $ads-warning-twenty-five;
+      }
+    }
+    
+    &.success {
+      .icon-text-stat__icon {
+        background-color: $ads-success-twenty-five;
+      }
+    }
+    
+    &.error {
+      .icon-text-stat__icon {
+        background-color: $ads-danger-twenty-five;
+      }
+    }
+    
+    &.primary {
+      .icon-text-stat__icon {
+        background-color: $ads-primary-twenty-five;
+      }
+    }
+
+    &.secondary:hover {
+      background-color: $ads-secondary-twenty-five;
+    
+      .icon-text-stat__icon {
+        background-color: $ads-secondary-main;
+      }
+    }
+    
+    &.tertiary:hover {
+      background-color: $ads-tertiary-twenty-five;
+    
+      .icon-text-stat__icon {
+        background-color: $ads-tertiary-main;
+      }
+    }
+    
+    &.warning:hover {
+      background-color: $ads-warning-twenty-five;
+    
+      .icon-text-stat__icon {
+        background-color: $ads-warning-main;
+      }
+    }
+    
+    &.success:hover {
+      background-color: $ads-success-twenty-five;
+    
+      .icon-text-stat__icon {
+        background-color: $ads-success-main;
+      }
+    }
+    
+    &.error:hover {
+      background-color: $ads-danger-twenty-five;
+    
+      .icon-text-stat__icon {
+        background-color: $ads-danger-main;
+      }
+    }
+    
+    &.primary:hover {
+      background-color: $ads-primary-twenty-five;
+    
+      .icon-text-stat__icon {
+        background-color: $ads-primary-main;
+      }
+    }
+
+    &.sharp {
+      border-radius: 0;
+    }
+
+    &.soft {
+      border-radius: 0.5rem;
+    }
+    
+    @include respond-to('medium') {
+      width: 34.625rem;
+    }
+  }
+  
