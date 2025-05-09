@@ -20,7 +20,7 @@
     "build:tokens": "node ./scripts/tokenizer.mjs"
   },
   "engines": {
-    "node": ">=18.19 <=18.21",
+    "node": ">=20.13 <=22",
     "yarn": ">=1.22.21 <=1.22.22"
   },
   "dependencies": {
