@@ -34,19 +34,19 @@ function URLInput(props: IProps) {
   return (
     <div className={containerClasses}>
       <div className={styles.header}>
-        <div className={styles['label-wrapper']}>
-          <Icon src={PlanetIcon} className={styles['label-icon']} />
-          <span className={styles['label-text']}>{label}</span>
+        <div className={styles.labelWrapper}>
+          <Icon src={PlanetIcon} className={styles.labelIcon} />
+          <span className={styles.labelText}>{label}</span>
         </div>
-        <Icon src={CloseIcon} className={styles['close-icon-url']} />
+        <Icon src={CloseIcon} className={styles.closeIconURl} />
       </div>
-      <div className={styles['input-container']}>
-        <div className={styles['input-wrapper']}>
-          <Icon src={PlanetIcon} className={styles['planet-icon']} />
+      <div className={styles.inputContainer}>
+        <div className={styles.inputWrapper}>
+          <Icon src={PlanetIcon} className={styles.planetIcon} />
           <span className={styles.protocol}>https://</span>
           <span className={styles.divider}>|</span>
-          <div className={styles['input-group']}>
-            <Icon src={PlanetIcon} className={styles['input-icon']} />
+          <div className={styles.inputGroup}>
+            <Icon src={PlanetIcon} className={styles.inputIcon} />
             <input
               type="text"
               value={value}
@@ -60,17 +60,17 @@ function URLInput(props: IProps) {
           </div>
 
           <button
-            className={styles['copy-button']}
+            className={styles.copyButton}
             onClick={onCopyClick}
             disabled={variant === 'disabled'}
           >
-            <Icon src={CopyIcon} className={styles['copy-icon']} />
+            <Icon src={CopyIcon} className={styles.copyIcon} />
             <span>Copy</span>
           </button>
 
           {showCloseIcon && (
-            <button aria-label="Cerrar" className={styles['close-button']} onClick={onCloseClick}>
-              <Icon src={CloseIcon} className={styles['close-icon-url']} />
+            <button aria-label="Cerrar" className={styles.closeButton} onClick={onCloseClick}>
+              <Icon src={CloseIcon} className={styles.closeIcon} />
             </button>
           )}
         </div>
@@ -78,12 +78,12 @@ function URLInput(props: IProps) {
 
       <div className={styles.footer}>
         {showHintText && (
-          <div className={styles['hint-text']}>
-            <Icon src={InfoIcon} className={styles['info-icon']} />
-            <span className={styles['hint-text']}>{hintText}</span>
+          <div className={styles.hintText}>
+            <Icon src={InfoIcon} className={styles.infoIcon} />
+            <span className={styles.hintText}>{hintText}</span>
           </div>
         )}
-        <Icon src={InfoIcon} className={styles['standalone-info-icon']} />
+        <Icon src={InfoIcon} className={styles.standaloneInfoIcon} />
       </div>
     </div>
   );
