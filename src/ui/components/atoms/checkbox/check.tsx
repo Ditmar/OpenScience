@@ -13,14 +13,16 @@ interface CheckboxProps {
   className?: string;
 }
 
-const Check: React.FC<CheckboxProps> = ({
+
+
+  function Check({
   checked = false,
   onChange,
   disabled = false,
   variant = 'default',
   shape = 'square',
   className = '',
-}) => {
+}: CheckboxProps): JSX.Element {
   const handleChange = () => {
     if (!disabled) {
       onChange(!checked);
