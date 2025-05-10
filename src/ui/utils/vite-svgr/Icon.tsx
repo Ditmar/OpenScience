@@ -1,4 +1,4 @@
-import { useDynamic } from './useDynamic';
+import { useDynamic } from '../hooks/useDynamic';
 import type { IconProps } from './types/IProps';
 import { Loader } from './Loader';
 

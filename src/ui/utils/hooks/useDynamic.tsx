@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import type { FunctionComponent } from 'react';
-import type { IconName } from './types/IProps';
+import type { IconName } from '../vite-svgr/types/IProps';
 
 export function useDynamic(iconName: IconName) {
   const [DynamicComponent, setDynamicComponent] = useState<FunctionComponent<

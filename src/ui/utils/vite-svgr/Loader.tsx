@@ -1,9 +1,9 @@
 import { Box, CircularProgress } from '@mui/material';
-import App from '../../../style-library/core/MuiApp';
+import ThemeWrapper from '../../../style-library/core/ThemeProvider';
 
 export function Loader() {
   return (
-    <App>
+    <ThemeWrapper>
       <Box className="loader">
         <svg width={0} height={0}>
           <defs>
@@ -15,6 +15,6 @@ export function Loader() {
         </svg>
         <CircularProgress sx={{ 'svg circle': { stroke: 'url(#my_gradient)' } }} />
       </Box>
-    </App>
+    </ThemeWrapper>
   );
 }

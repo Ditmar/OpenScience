@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Icon } from './Icon';
-import type { IconName } from './types/IProps';
+import { Icon } from '../../../utils/vite-svgr/Icon';
+import type { IconName } from '../../../utils/vite-svgr/types/IProps';
 
 const meta: Meta<typeof Icon> = {
   title: 'Design System/Icons/SVG Icons',
@@ -181,35 +181,11 @@ export const Default: Story = {
     iconName: 'article',
   },
 };
-export const Large: Story = {
-  args: {
-    color: 'blue',
-    stroke: 'green',
-    className: 'custom-class',
-    iconName: 'article',
-  },
-};
-
-// Tipo para el componente SVG
 
 // Historias individuales
 export const LogoIcon: Story = {
   args: {
     color: '#0073e6',
     iconName: 'logo',
-  },
-};
-
-export const Arrow: Story = {
-  args: {
-    color: '#333333',
-    iconName: 'right-arrow',
-  },
-};
-
-export const User: Story = {
-  args: {
-    color: '#555555',
-    iconName: 'downloads',
   },
 };
