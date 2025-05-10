@@ -1,0 +1,49 @@
+@import '../../../../globals/typography.scss';
+
+.heading {
+  margin: 0;
+  padding: 0;
+}
+
+.h1 {
+  font-size: $heading-h1-font-size;
+  line-height: $heading-h1-line-height;
+}
+
+.h2 {
+  font-size: $heading-h2-font-size;
+  line-height: $heading-h2-line-height;
+}
+
+.h3 {
+  font-size: $heading-h3-font-size;
+  line-height: $heading-h3-line-height;
+}
+
+.regular {
+  font-weight: $font-weight-regular;
+}
+
+.medium {
+  font-weight: $font-weight-medium;
+}
+
+.semibold {
+  font-weight: $font-weight-semibold;
+}
+
+.sans {
+  font-family: $font-family-sans;
+}
+
+.serif {
+  font-family: $font-family-serif;
+}
+
+.italic {
+  font-family: $font-family-italic;
+}
+
+.monospace {
+  font-family: $font-family-monospace;
+}
