@@ -1,0 +1,62 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/fonts';
+
+.ol-item {
+  align-items: center;
+  background-color: $ads-background-fillprimary;
+  border-radius: 0;
+  color: $ads-color-main;
+  display: flex;
+  font-family: Poppins, sans-serif;
+  justify-content: center;
+  letter-spacing: 0%;
+  line-height: 100%;
+  text-align: center;
+
+  &--square {
+    border-radius: 0;
+  }
+
+  &--rounded {
+    border-radius: 4px;
+  }
+
+  &--circle {
+    border-radius: 50%;
+  }
+
+  &--sm {
+    align-items: center;
+    display: flex;
+    font-size: 16px;
+    height: 42px;
+    justify-content: center;
+    width: 42px;
+  }
+
+  &--md {
+    align-items: center;
+    display: flex;
+    font-size: 18px;
+    height: 44px;
+    justify-content: center;
+    width: 44px;
+  }
+
+  &--lg {
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+    height: 48px;
+    justify-content: center;
+    width: 48px;
+  }
+
+  &--stroked {
+    border: 4px solid $ads-stroke-primary;
+  }
+
+  &--active {
+    background-color: $ads-active-color;
+  }
+}
