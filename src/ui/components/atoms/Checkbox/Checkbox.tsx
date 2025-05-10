@@ -2,13 +2,14 @@ import React from 'react';
 import styles from './Checkbox.module.scss';
 import type { IProps } from './types/Iprops';
 
-const Checkbox: React.FC<IProps> = ({
+
+function Checkbox({
   checked,
   onChange,
   disabled = false,
   variant = 'default',
   shape = 'square',
-}) => {
+}: IProps): React.ReactElement {
   const handleToggle = () => {
     if (!disabled) onChange(!checked);
   };
@@ -20,13 +21,15 @@ const Checkbox: React.FC<IProps> = ({
     }
   };
 
-  const classNames = [
-    styles.checkbox,
-    styles[variant],
-    styles[shape],
-    checked ? styles.checked : '',
-    disabled ? styles.disabled : '',
-  ].join(' ').trim();
+ const classNames = [
+  styles.checkbox,
+  styles[variant],
+  styles[shape],
+  checked ? styles.checked : '',
+  disabled ? styles.disabled : '',
+]
+  .join(' ')
+  .trim();
 
   return (
     <div
@@ -41,7 +44,6 @@ const Checkbox: React.FC<IProps> = ({
       {checked && <span className={styles.checkmark}>✓</span>}
     </div>
   );
-};
+}
 
 export default Checkbox;
-

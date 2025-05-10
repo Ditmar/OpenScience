@@ -12,8 +12,9 @@ export default meta;
 
 type Story = StoryObj<typeof Checkbox>;
 
-const renderWithState = (args: IProps) => {
-  const [checked, setChecked] = useState(args.checked ?? false);
+
+const RenderWithState = (args: IProps) => {
+  const [checked, setChecked] = useState(args.checked);
   return <Checkbox {...args} checked={checked} onChange={setChecked} />;
 };
 
@@ -22,7 +23,7 @@ export const DefaultSquare: Story = {
     variant: 'default',
     shape: 'square',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const SuccessSquare: Story = {
@@ -30,7 +31,7 @@ export const SuccessSquare: Story = {
     variant: 'success',
     shape: 'square',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const InfoSquare: Story = {
@@ -38,7 +39,7 @@ export const InfoSquare: Story = {
     variant: 'info',
     shape: 'square',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const WarningSquare: Story = {
@@ -46,7 +47,7 @@ export const WarningSquare: Story = {
     variant: 'warning',
     shape: 'square',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const PrimarySquare: Story = {
@@ -54,7 +55,7 @@ export const PrimarySquare: Story = {
     variant: 'primary',
     shape: 'square',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const SecondarySquare: Story = {
@@ -62,7 +63,7 @@ export const SecondarySquare: Story = {
     variant: 'secondary',
     shape: 'square',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const TertiarySquare: Story = {
@@ -70,7 +71,7 @@ export const TertiarySquare: Story = {
     variant: 'tertiary',
     shape: 'square',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const TextMainSquare: Story = {
@@ -78,7 +79,7 @@ export const TextMainSquare: Story = {
     variant: 'text-main',
     shape: 'square',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const TextSecondarySquare: Story = {
@@ -86,7 +87,7 @@ export const TextSecondarySquare: Story = {
     variant: 'text-secondary',
     shape: 'square',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const TextMainHoverSquare: Story = {
@@ -94,7 +95,7 @@ export const TextMainHoverSquare: Story = {
     variant: 'text-main-hover',
     shape: 'square',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const BackgroundMainSquare: Story = {
@@ -102,7 +103,7 @@ export const BackgroundMainSquare: Story = {
     variant: 'background-main',
     shape: 'square',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const ColorMainSquare: Story = {
@@ -110,7 +111,7 @@ export const ColorMainSquare: Story = {
     variant: 'color-main',
     shape: 'square',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const TextMainAlphaSquare: Story = {
@@ -118,7 +119,7 @@ export const TextMainAlphaSquare: Story = {
     variant: 'text-main-alpha',
     shape: 'square',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const BackgroundDesktopSquare: Story = {
@@ -126,7 +127,7 @@ export const BackgroundDesktopSquare: Story = {
     variant: 'background-desktop',
     shape: 'square',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const TextInputSquare: Story = {
@@ -134,7 +135,7 @@ export const TextInputSquare: Story = {
     variant: 'text-input',
     shape: 'square',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const DisabledSquare: Story = {
@@ -143,7 +144,7 @@ export const DisabledSquare: Story = {
     shape: 'square',
     disabled: true,
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const DefaultCircle: Story = {
@@ -151,7 +152,7 @@ export const DefaultCircle: Story = {
     variant: 'default',
     shape: 'circle',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const SuccessCircle: Story = {
@@ -159,7 +160,7 @@ export const SuccessCircle: Story = {
     variant: 'success',
     shape: 'circle',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const InfoCircle: Story = {
@@ -167,7 +168,7 @@ export const InfoCircle: Story = {
     variant: 'info',
     shape: 'circle',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const WarningCircle: Story = {
@@ -175,7 +176,7 @@ export const WarningCircle: Story = {
     variant: 'warning',
     shape: 'circle',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const DangerCircle: Story = {
@@ -183,7 +184,7 @@ export const DangerCircle: Story = {
     variant: 'danger',
     shape: 'circle',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const PrimaryCircle: Story = {
@@ -191,7 +192,7 @@ export const PrimaryCircle: Story = {
     variant: 'primary',
     shape: 'circle',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const SecondaryCircle: Story = {
@@ -199,7 +200,7 @@ export const SecondaryCircle: Story = {
     variant: 'secondary',
     shape: 'circle',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const TertiaryCircle: Story = {
@@ -207,7 +208,7 @@ export const TertiaryCircle: Story = {
     variant: 'tertiary',
     shape: 'circle',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const TextMainCircle: Story = {
@@ -215,7 +216,7 @@ export const TextMainCircle: Story = {
     variant: 'text-main',
     shape: 'circle',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const TextSecondaryCircle: Story = {
@@ -223,7 +224,7 @@ export const TextSecondaryCircle: Story = {
     variant: 'text-secondary',
     shape: 'circle',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const TextMainHoverCircle: Story = {
@@ -231,7 +232,7 @@ export const TextMainHoverCircle: Story = {
     variant: 'text-main-hover',
     shape: 'circle',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const BackgroundMainCircle: Story = {
@@ -239,7 +240,7 @@ export const BackgroundMainCircle: Story = {
     variant: 'background-main',
     shape: 'circle',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const ColorMainCircle: Story = {
@@ -247,7 +248,7 @@ export const ColorMainCircle: Story = {
     variant: 'color-main',
     shape: 'circle',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const TextMainAlphaCircle: Story = {
@@ -255,7 +256,7 @@ export const TextMainAlphaCircle: Story = {
     variant: 'text-main-alpha',
     shape: 'circle',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const BackgroundDesktopCircle: Story = {
@@ -263,7 +264,7 @@ export const BackgroundDesktopCircle: Story = {
     variant: 'background-desktop',
     shape: 'circle',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const TextInputCircle: Story = {
@@ -271,7 +272,7 @@ export const TextInputCircle: Story = {
     variant: 'text-input',
     shape: 'circle',
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
 
 export const DisabledCircle: Story = {
@@ -280,5 +281,5 @@ export const DisabledCircle: Story = {
     shape: 'circle',
     disabled: true,
   },
-  render: renderWithState,
+  render: RenderWithState,
 };
