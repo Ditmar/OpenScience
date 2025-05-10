@@ -10,7 +10,9 @@ test('llama a onChange con el nuevo valor', () => {
 
 test('no cambia si está deshabilitado', () => {
   const handleChange = jest.fn();
-  const { getByRole } = render(<Check checked={false} disabled onChange={handleChange} />);
+  const { getByRole } = render(
+    <Check checked={false} disabled onChange={handleChange} />
+  );
   fireEvent.click(getByRole('checkbox'));
   expect(handleChange).not.toHaveBeenCalled();
 });
