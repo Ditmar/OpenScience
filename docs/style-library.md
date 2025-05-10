@@ -130,7 +130,10 @@ import { createTheme } from '@mui/material/styles';
 export const customTheme = createTheme({
   palette: {
     primary: {
-      main: '#ff5722',
+      main: $ads-button-main$,
+      light: $ads-button-light,
+      dark: $ads-button-dark,
+      contrastText: $ads-contrastext
     },
     background: {
       default: '#ffffff',
