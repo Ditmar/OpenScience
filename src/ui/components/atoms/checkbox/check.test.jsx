@@ -1,6 +1,5 @@
-import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import Check from './check';
+import Check from './check.tsx';
 
 describe('Check component', () => {
   const mockOnChange = jest.fn();
