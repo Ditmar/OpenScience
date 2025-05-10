@@ -3,40 +3,40 @@
 @import '../../../../globals/fonts';
 
 .button-number {
-  $button-number-padding: 15px;
-  $button-number-color: $ads-primary-main;
-  $button-number-font-size: $ads-font-size-primary;
-  
-  padding: $button-number-padding;
-  display: flex;
-  justify-content: center;
+  $ads-button-number-padding: 15px;
+  $ads-button-number-color: $ads-primary-main;
+  $ads-button-font-size: $ads-font-size-primary;
+
   align-items: center;
-  cursor: pointer;
   border: none;
+  cursor: pointer;
+  display: flex;
   gap: 4px;
+  justify-content: center;
+  padding: $ads-button-number-padding;
 
   &--filled {
     &:hover:not(:disabled) {
-      background-color: lighten($button-number-color, 10%);
+      opacity: 0.5;
     }
 
+    background-color: $ads-button-number-color;
     color: $ads-color-main;
-    background-color: $button-number-color;
   }
 
   &--outline {
     &:hover:not(:disabled) {
-      background-color: $button-number-color;
+      background-color: $ads-button-number-color;
       color: $ads-color-main;
     }
 
-    border: 1px solid $button-number-color;
-    color: $button-number-color;
+    border: 1px solid $ads-button-number-color;
+    color: $ads-button-number-color;
   }
 
   &--ghost {
     &:hover:not(:disabled) {
-      background-color: $button-number-color;
+      background-color: $ads-button-number-color;
       color: $ads-color-main;
     }
 
@@ -52,27 +52,28 @@
   }
 
   &--small {
-    $button-number-font-size: $ads-font-size-fifth;
-    font-size: $button-number-font-size;
+    $ads-button-font-size: $ads-font-size-fifth;
+
+    font-size: $ads-button-font-size;
   }
 
   &--medium {
-    font-size: $button-number-font-size;
+    font-size: $ads-button-font-size;
   }
 
   &--large {
-    font-size: $button-number-font-size;
+    font-size: $ads-button-font-size;
   }
 
   &--inactive {
+    background-color: $ads-text-secondary;
+    border: none;
+    color: $ads-color-main;
     cursor: not-allowed;
     opacity: 0.5;
-    background-color: $ads-text-secondary;
-    color: $ads-color-main;
-    border: none;
   }
 
   .button-number__icon {
-    font-size: $button-number-font-size;
+    font-size: $ads-button-font-size;
   }
 }
