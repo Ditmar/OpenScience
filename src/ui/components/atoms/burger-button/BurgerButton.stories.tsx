@@ -22,9 +22,7 @@ export const Primary: Story = {
     icon: IconBurger,
     variant: 'main',
     color: 'primary',
-    onClick: () => {
-      console.log('Button clicked');
-    },
+    onClick: () => {},
   },
 };
 
@@ -32,8 +30,6 @@ export const Secondary: Story = {
   args: {
     variant: 'secondary',
     icon: Burger,
-    onClick: () => {
-      console.log('Button clicked');
-    },
+    onClick: () => {},
   },
 };

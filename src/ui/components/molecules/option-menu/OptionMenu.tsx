@@ -14,40 +14,16 @@ function OptionMenu({ icon, onClick }: IProps) {
     <div className="option-menu">
       <ButtonBurger icon={icon ?? burger} onClick={onClick} aria-label="Menu" />
       <div className="option-menu__items" role="menu">
-        <MultiFunctionButton
-          icon={Pdf}
-          onClick={() => {
-            console.log('Pdf clicked');
-          }}
-          color="primary"
-        >
+        <MultiFunctionButton icon={Pdf} onClick={() => {}} color="primary">
           Pdf
         </MultiFunctionButton>
-        <MultiFunctionButton
-          icon={Share}
-          onClick={() => {
-            console.log('Share clicked');
-          }}
-          color="primary"
-        >
+        <MultiFunctionButton icon={Share} onClick={() => {}} color="primary">
           Share
         </MultiFunctionButton>
-        <MultiFunctionButton
-          icon={Media}
-          onClick={() => {
-            console.log('Media clicked');
-          }}
-          color="primary"
-        >
+        <MultiFunctionButton icon={Media} onClick={() => {}} color="primary">
           Media
         </MultiFunctionButton>
-        <MultiFunctionButton
-          icon={Reference}
-          onClick={() => {
-            console.log('Reference clicked');
-          }}
-          color="primary"
-        >
+        <MultiFunctionButton icon={Reference} onClick={() => {}} color="primary">
           Reference
         </MultiFunctionButton>
       </div>

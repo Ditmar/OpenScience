@@ -17,7 +17,6 @@ export async function fetchData(API_ENDPOINT: string) {
     const response = await fetcher.get();
     return response;
   } catch (error) {
-    console.error('Error fetching data:', error);
     return null;
   }
 }

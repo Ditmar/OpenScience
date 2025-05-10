@@ -3,8 +3,6 @@ import './styles.scss';
 import Rectangle29 from '../../atoms/thumbnail/__mock__/imgs/Rectangle29.png';
 import Thumbnail from '../../atoms/thumbnail/Thumbnail';
 
-console.log('Rectangle29:', Rectangle29);
-
 function RecentArticlesImage(props: IProps) {
   const { children } = props;
   return (
