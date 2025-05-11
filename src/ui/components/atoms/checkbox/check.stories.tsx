@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react-vite'; // o '@storybook/react-webpack5'
+import type { StoryObj, Meta } from '@storybook/react';
 import Check from './check';
 
 type CheckboxVariant = 'default' | 'success' | 'info' | 'warning' | 'danger';
@@ -30,17 +30,23 @@ const meta: Meta<typeof Check> = {
 
 export default meta;
 
-const Template = (args: CheckboxProps) => {
-  const [checked, setChecked] = useState<boolean>(args.checked);
+function Template(props: CheckboxProps): JSX.Element {
+  const { checked: initialChecked, onChange, disabled, variant, className } = props;
+  const [checked, setChecked] = useState<boolean>(initialChecked);
 
   return (
     <Check
-      {...args}
       checked={checked}
-      onChange={(value: boolean) => setChecked(value)}
+      onChange={(value: boolean) => {
+        setChecked(value);
+        onChange(value);
+      }}
+      disabled={disabled}
+      variant={variant}
+      className={className}
     />
   );
-};
+}
 
 export const Default: StoryObj = {
   render: () => <Template checked={false} onChange={() => {}} />,
@@ -51,33 +57,25 @@ export const Checked: StoryObj = {
 };
 
 export const Disabled: StoryObj = {
-  render: () => <Template checked={false} onChange={() => {}} disabled />,
+  render: () => <Template checked={false} onChange={() => {}} disabled={true} />,
 };
 
 export const CheckedDisabled: StoryObj = {
-  render: () => <Template checked={true} onChange={() => {}} disabled />,
+  render: () => <Template checked={true} onChange={() => {}} disabled={true} />,
 };
 
 export const SuccessVariant: StoryObj = {
-  render: () => (
-    <Template checked={true} onChange={() => {}} variant="success" />
-  ),
+  render: () => <Template checked={true} onChange={() => {}} variant="success" />,
 };
 
 export const InfoVariant: StoryObj = {
-  render: () => (
-    <Template checked={true} onChange={() => {}} variant="info" />
-  ),
+  render: () => <Template checked={true} onChange={() => {}} variant="info" />,
 };
 
 export const WarningVariant: StoryObj = {
-  render: () => (
-    <Template checked={true} onChange={() => {}} variant="warning" />
-  ),
+  render: () => <Template checked={true} onChange={() => {}} variant="warning" />,
 };
 
 export const DangerVariant: StoryObj = {
-  render: () => (
-    <Template checked={true} onChange={() => {}} variant="danger" />
-  ),
+  render: () => <Template checked={true} onChange={() => {}} variant="danger" />,
 };
