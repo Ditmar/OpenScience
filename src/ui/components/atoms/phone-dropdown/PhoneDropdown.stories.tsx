@@ -14,22 +14,34 @@ const countries: ICountry[] = [
   { code: 'AD', name: 'Andorra', flag: '🇦🇩', dialCode: '+376' },
 ];
 
-export const Default = () => <PhoneDropdown countries={countries} />;
+export function Default() {
+  return <PhoneDropdown countries={countries} />;
+}
 
-export const ErrorState = () => (
-  <PhoneDropdown error helperText="Invalid phone number" />
-);
+export function ErrorState() {
+  return <PhoneDropdown error helperText="Invalid phone number" />;
+}
 
-export const Disabled = () => <PhoneDropdown disabled />;
+export function Disabled() {
+  return <PhoneDropdown disabled />;
+}
 
-export const WithHelperText = () => (
-  <PhoneDropdown helperText="Include area code" />
-);
+export function WithHelperText() {
+  return <PhoneDropdown helperText="Include area code" />;
+}
 
-export const Small = () => <PhoneDropdown size="small" />;
+export function Small() {
+  return <PhoneDropdown size="small" />;
+}
 
-export const Large = () => <PhoneDropdown size="large" />;
+export function Large() {
+  return <PhoneDropdown size="large" />;
+}
 
-export const Rounded = () => <PhoneDropdown border="rounded" />;
+export function Rounded() {
+  return <PhoneDropdown border="rounded" />;
+}
 
-export const Straight = () => <PhoneDropdown border="straight" />;
+export function Straight() {
+  return <PhoneDropdown border="straight" />;
+}
