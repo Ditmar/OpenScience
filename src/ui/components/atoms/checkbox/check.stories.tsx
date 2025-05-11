@@ -53,29 +53,29 @@ export const Default: StoryObj = {
 };
 
 export const Checked: StoryObj = {
-  render: () => <Template checked={true} onChange={() => {}} />,
+  render: () => <Template checked onChange={() => {}} />,
 };
 
 export const Disabled: StoryObj = {
-  render: () => <Template checked={false} onChange={() => {}} disabled={true} />,
+  render: () => <Template checked={false} onChange={() => {}} disabled />,
 };
 
 export const CheckedDisabled: StoryObj = {
-  render: () => <Template checked={true} onChange={() => {}} disabled={true} />,
+  render: () => <Template checked onChange={() => {}} disabled />,
 };
 
 export const SuccessVariant: StoryObj = {
-  render: () => <Template checked={true} onChange={() => {}} variant="success" />,
+  render: () => <Template checked onChange={() => {}} variant="success" />,
 };
 
 export const InfoVariant: StoryObj = {
-  render: () => <Template checked={true} onChange={() => {}} variant="info" />,
+  render: () => <Template checked onChange={() => {}} variant="info" />,
 };
 
 export const WarningVariant: StoryObj = {
-  render: () => <Template checked={true} onChange={() => {}} variant="warning" />,
+  render: () => <Template checked onChange={() => {}} variant="warning" />,
 };
 
 export const DangerVariant: StoryObj = {
-  render: () => <Template checked={true} onChange={() => {}} variant="danger" />,
+  render: () => <Template checked onChange={() => {}} variant="danger" />,
 };
