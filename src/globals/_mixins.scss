@@ -1,5 +1,6 @@
 @import 'breakpoints';
 
+
 @mixin respond-to($breakpoint) {
   @if map-has-key($ads-breakpoints-scales, $breakpoint) {
     @media (min-width: map-get($ads-breakpoints-scales, $breakpoint)) {

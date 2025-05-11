@@ -1,14 +1,14 @@
-// Variables de color usando el patrón kebab-case
-$white-color: #fff;
-$current-color: currentcolor;
-$gray-500-color: #6b7280;
-$emerald-500-color: #10b981;
-$blue-500-color: #3b82f6;
-$amber-500-color: #f59e0b;
-$red-500-color: #ef4444;
-$gray-200-color: #e5e7eb;
-$gray-300-color: #d1d5db;
-$indigo-400-color: #818cf8;
+// Variables de color usando patrón BEM modificado
+$check-white: #fff;
+$check-current: currentcolor;
+$check-gray-500: #6b7280;
+$check-emerald-500: #10b981;
+$check-blue-500: #3b82f6;
+$check-amber-500: #f59e0b;
+$check-red-500: #ef4444;
+$check-gray-200: #e5e7eb;
+$check-gray-300: #d1d5db;
+$check-indigo-400: #818cf8;
 
 .check {
   cursor: pointer;
@@ -18,7 +18,7 @@ $indigo-400-color: #818cf8;
 
   &__box {
     align-items: center;
-    background-color: $white-color;
+    background-color: $check-white;
     display: flex;
     height: 20px;
     justify-content: center;
@@ -68,27 +68,27 @@ $indigo-400-color: #818cf8;
   }
 
   &__box--default {
-    border-color: $gray-500-color;
+    border-color: $check-gray-500;
   }
 
   &__box--success {
-    border-color: $emerald-500-color;
+    border-color: $check-emerald-500;
   }
 
   &__box--info {
-    border-color: $blue-500-color;
+    border-color: $check-blue-500;
   }
 
   &__box--warning {
-    border-color: $amber-500-color;
+    border-color: $check-amber-500;
   }
 
   &__box--danger {
-    border-color: $red-500-color;
+    border-color: $check-red-500;
   }
 
   &__mark {
-    color: $current-color;
+    color: $check-current;
     height: 12px;
     width: 12px;
 
@@ -99,35 +99,35 @@ $indigo-400-color: #818cf8;
   }
 
   .check__input:checked + .check__box {
-    background-color: $current-color;
+    background-color: $check-current;
 
     .check__mark {
-      color: $white-color;
+      color: $check-white;
     }
   }
 
   .check__input:checked + .check__box--default {
-    color: $gray-500-color;
+    color: $check-gray-500;
   }
 
   .check__input:checked + .check__box--success {
-    color: $emerald-500-color;
+    color: $check-emerald-500;
   }
 
   .check__input:checked + .check__box--info {
-    color: $blue-500-color;
+    color: $check-blue-500;
   }
 
   .check__input:checked + .check__box--warning {
-    color: $amber-500-color;
+    color: $check-amber-500;
   }
 
   .check__input:checked + .check__box--danger {
-    color: $red-500-color;
+    color: $check-red-500;
   }
 
   .check__input:disabled + .check__box {
-    background-color: $gray-200-color;
-    border-color: $gray-300-color;
+    background-color: $check-gray-200;
+    border-color: $check-gray-300;
   }
 }
