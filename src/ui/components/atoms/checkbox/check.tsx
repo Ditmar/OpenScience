@@ -13,9 +13,7 @@ interface CheckboxProps {
   className?: string;
 }
 
-
-
-  function Check({
+function Check({
   checked = false,
   onChange,
   disabled = false,
@@ -74,6 +72,6 @@ interface CheckboxProps {
       </span>
     </div>
   );
-};
+}
 
 export default Check;
