@@ -1,8 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { PhoneDropdown } from './PhoneDropdown';
-import type { IProps, ICountry } from './types/IProps';
+import type { ICountry } from './types/IProps';
 import '@testing-library/jest-dom';
-import { act } from 'react-dom/test-utils';
 import styles from './PhoneDropdown.module.scss';
 
 const countries: ICountry[] = [
@@ -13,7 +12,6 @@ const countries: ICountry[] = [
 ];
 
 describe('PhoneDropdown Component', () => {
-
   it('should render the label and placeholder correctly', () => {
     render(<PhoneDropdown label="Phone" placeholder="Enter phone number" countries={countries} />);
     expect(screen.getByText('Phone')).toBeInTheDocument();
@@ -21,8 +19,10 @@ describe('PhoneDropdown Component', () => {
   });
 
   it('should update selected country and phone number on interaction', () => {
-    const mockOnChangeCalls: any[] = [];
-    const mockOnChange = (...args: any[]) => mockOnChangeCalls.push(args);
+    const mockOnChangeCalls: [string, string][] = [];
+    const mockOnChange = (dialCode: string, phone: string) => {
+      mockOnChangeCalls.push([dialCode, phone]);
+    };
 
     render(<PhoneDropdown onChange={mockOnChange} countries={countries} />);
 
@@ -32,7 +32,9 @@ describe('PhoneDropdown Component', () => {
 
     expect(mockOnChangeCalls).toContainEqual(['+355', '']);
 
-    fireEvent.change(screen.getByPlaceholderText('Phone Number'), { target: { value: '123456789' } });
+    fireEvent.change(screen.getByPlaceholderText('Phone Number'), {
+      target: { value: '123456789' },
+    });
 
     expect(mockOnChangeCalls).toContainEqual(['+355', '123456789']);
   });

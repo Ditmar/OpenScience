@@ -1,9 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import '../../../../globals/variables';
+
+.container {
+  border: 1px solid #ccc;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.dropdown {
+  background-color: $ads-background-main;
+  box-shadow: 0 0 8px rgb(0 0 0 / 15%);
+  left: 0;
+  margin-top: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 999;
+}
 
 .wrapper {
-  font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
+  font-family: Poppins, sans-serif;
   position: relative;
   width: 371px;
 
@@ -34,8 +55,8 @@
   }
 
   &.disabled {
-    pointer-events: none;
     opacity: 0.6;
+    pointer-events: none;
   }
 }
 
@@ -44,26 +65,19 @@
   margin-bottom: 0.25rem;
 }
 
-.container {
-  display: flex;
-  width: 100%;
-  border: 1px solid #ccc;
-  overflow: hidden;
-}
-
-.dropdownButton {
-  display: flex;
+.dropdown-button {
   align-items: center;
+  background-color: $ads-background-main;
+  border-right: 1px solid #ccc;
+  color: $ads-text-main-hover;
+  cursor: pointer;
+  display: flex;
   gap: 0.5rem;
   padding: 0.5rem;
-  background-color: white;
-  color: black;
-  cursor: pointer;
   white-space: nowrap;
-  border-right: 1px solid #ccc;
 }
 
-.dropdownArrow {
+.dropdown-arrow {
   font-size: 0.45rem;
 }
 
@@ -71,58 +85,46 @@
   font-weight: bold;
 }
 
-.iconPlaceholder {
-  width: 1rem;
-  height: 1rem;
+.icon-place-holder {
   display: inline-block;
+  height: 1rem;
+  width: 1rem;
 }
 
 .input {
-  flex: 1;
+  background-color: $ads-background-main;
   border: none;
+  flex: 1;
   outline: none;
   padding: 0.5rem;
 }
 
-.helperText {
-  margin-top: 0.25rem;
+.helper-text {
+  color: $ads-text-secondary;
   font-size: 0.875rem;
-  color: #888;
+  margin-top: 0.25rem;
 }
 
-.dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: white;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-  z-index: 999;
-  max-height: 300px;
-  overflow-y: auto;
-  width: 100%;
-  margin-top: 4px;
-}
-
-.dropdownTitle {
-  padding: 0.75rem;
-  font-weight: bold;
+.dropdown-title {
   border-bottom: 1px solid #eee;
+  font-weight: bold;
+  padding: 0.75rem;
 }
 
-.dropdownItem {
-  display: flex;
+.dropdown-item {
   align-items: center;
+  cursor: pointer;
+  display: flex;
   gap: 0.5rem;
   padding: 0.5rem 0.75rem;
-  cursor: pointer;
 
   &:hover {
-    background-color: #f2f2f2;
+    background-color: $ads-background-main;
   }
 }
 
 .flag {
-  width: 20px;
   height: 14px;
   object-fit: cover;
+  width: 20px;
 }

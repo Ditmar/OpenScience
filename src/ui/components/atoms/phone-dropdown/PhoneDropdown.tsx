@@ -9,7 +9,7 @@ const defaultCountries: ICountry[] = [
   { code: 'AD', name: 'Andorra', flag: '🇦🇩', dialCode: '+376' },
 ];
 
-export const PhoneDropdown: React.FC<IProps> = ({
+export function PhoneDropdown({
   label = 'Phone Number',
   value = '',
   onChange,
@@ -22,9 +22,9 @@ export const PhoneDropdown: React.FC<IProps> = ({
   defaultCountry = 'AR',
   size = 'medium',
   border = 'rounded',
-}) => {
+}: IProps) {
   const [selectedCountry, setSelectedCountry] = useState<ICountry>(
-    countries.find((c) => c.code === defaultCountry) || countries[0]
+    countries.find((c) => c.code === defaultCountry) ?? countries[0],
   );
   const [phoneNumber, setPhoneNumber] = useState(value);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -65,26 +65,39 @@ export const PhoneDropdown: React.FC<IProps> = ({
 
   return (
     <div className={wrapperClass} ref={wrapperRef}>
-      {label && <label className={styles.label}>{label}</label>}
+      {label && (
+        <label className={styles.label} htmlFor="phone-input">
+          {label}
+        </label>
+      )}
 
       <div className={styles.container}>
-
         <div
           role="button"
+          tabIndex={0}
           className={[
-            styles.dropdownButton,
+            styles['dropdown-button'],
             disabled ? styles.disabled : '',
             error ? styles.error : '',
           ].join(' ')}
-          onClick={() => !disabled && setDropdownOpen((prev) => !prev)}
+          onClick={() => {
+            if (!disabled) {
+              setDropdownOpen((prev) => !prev);
+            }
+          }}
+          onKeyDown={(e) => {
+            if (!disabled && (e.key === 'Enter' || e.key === ' ')) {
+              setDropdownOpen((prev) => !prev);
+            }
+          }}
         >
-
           <span>{selectedCountry.flag}</span>
           <span className={styles.code}>({selectedCountry.dialCode})</span>
-          <span className={styles.dropdownArrow}>▼</span>
+          <span className={styles['dropdown-arrow']}>▼</span>
         </div>
 
         <input
+          id="phone-input"
           className={styles.input}
           type="tel"
           value={phoneNumber}
@@ -94,16 +107,25 @@ export const PhoneDropdown: React.FC<IProps> = ({
         />
       </div>
 
-      {helperText && <small className={styles.helperText}>{helperText}</small>}
+      {helperText && <small className={styles['helper-text']}>{helperText}</small>}
 
       {dropdownOpen && (
         <div className={styles.dropdown}>
-          <div className={styles.dropdownTitle}>Select Country</div>
+          <div className={styles['dropdown-title']}>Select Country</div>
           {countries.map((country) => (
             <div
               key={country.code}
-              className={styles.dropdownItem}
-              onClick={() => handleSelect(country)}
+              className={styles['dropdown-item']}
+              role="button"
+              tabIndex={0}
+              onClick={() => {
+                handleSelect(country);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  handleSelect(country);
+                }
+              }}
             >
               <span className={styles.flag}>{country.flag}</span>
               <span>
@@ -115,6 +137,6 @@ export const PhoneDropdown: React.FC<IProps> = ({
       )}
     </div>
   );
-};
+}
 
 export default PhoneDropdown;
