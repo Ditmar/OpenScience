@@ -67,5 +67,4 @@ function Check({
     </label>
   );
 }
-
 export default Check;
