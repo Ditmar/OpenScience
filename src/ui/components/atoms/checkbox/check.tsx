@@ -27,7 +27,7 @@ function Check({
     }
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === ' ' || e.key === 'Enter') {
       e.preventDefault();
       handleChange();
@@ -35,22 +35,16 @@ function Check({
   };
 
   return (
-    <div
-      className={`check ${className} ${disabled ? 'disabled' : ''} check--${shape}`}
-      onClick={handleChange}
-      onKeyDown={handleKeyDown}
-      tabIndex={disabled ? undefined : 0}
-      role="checkbox"
-      aria-checked={checked}
-      aria-disabled={disabled}
-    >
+    <label className={`check ${className} ${disabled ? 'disabled' : ''} check--${shape}`}>
       <input
         type="checkbox"
         checked={checked}
-        onChange={() => {}}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
         disabled={disabled}
         className="check__input"
-        tabIndex={-1}
+        aria-checked={checked}
+        aria-disabled={disabled}
       />
       <span className={`check__box check__box--${variant} check__box--${shape}`}>
         {checked && (
@@ -70,7 +64,7 @@ function Check({
           </svg>
         )}
       </span>
-    </div>
+    </label>
   );
 }
 
