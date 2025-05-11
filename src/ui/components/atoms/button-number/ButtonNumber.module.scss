@@ -3,9 +3,10 @@
 @import '../../../../globals/fonts';
 
 .button-number {
-  $ads-button-number-padding: 15px;
+  $ads-button-number-padding: 12px;
   $ads-button-number-color: $ads-primary-main;
   $ads-button-font-size: $ads-font-size-primary;
+  $ads-button-size: 48px;
 
   align-items: center;
   border: none;
@@ -14,6 +15,11 @@
   gap: 4px;
   justify-content: center;
   padding: $ads-button-number-padding;
+  line-height: normal;
+  font-weight: $ads-font-weight-first;
+  min-width: $ads-button-size;
+  min-height: $ads-button-size;
+  font-family: poppins, sans-serif;
 
   &--filled {
     &:hover:not(:disabled) {
@@ -44,15 +50,16 @@
   }
 
   &--rounded {
-    border-radius: 20%;
+    border-radius: 8px;
   }
 
   &--circle {
-    border-radius: 50%;
+    border-radius: 9999px;
   }
 
   &--small {
     $ads-button-font-size: $ads-font-size-fifth;
+    $ads-button-size: 32px;
 
     font-size: $ads-button-font-size;
   }
@@ -62,6 +69,7 @@
   }
 
   &--large {
+    $ads-button-size: 64px;
     font-size: $ads-button-font-size;
   }
 
