@@ -1,13 +1,5 @@
-$white: #fff;
-$currentColor: currentcolor;
-$gray500: #6b7280;
-$emerald500: #10b981;
-$blue500: #3b82f6;
-$amber500: #f59e0b;
-$red500: #ef4444;
-$gray200: #e5e7eb;
-$gray300: #d1d5db;
-$indigo400: #818cf8;
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
 
 .check {
   cursor: pointer;
@@ -17,7 +9,7 @@ $indigo400: #818cf8;
 
   &__box {
     align-items: center;
-    background-color: $white;
+    background-color: $ads-white;
     display: flex;
     height: 20px;
     justify-content: center;
@@ -67,27 +59,27 @@ $indigo400: #818cf8;
   }
 
   &__box--default {
-    border-color: $gray500;
+    border-color: $ads-gray-500;
   }
 
   &__box--success {
-    border-color: $emerald500;
+    border-color: $ads-emerald-500;
   }
 
   &__box--info {
-    border-color: $blue500;
+    border-color: $ads-blue-500;
   }
 
   &__box--warning {
-    border-color: $amber500;
+    border-color: $ads-amber-500;
   }
 
   &__box--danger {
-    border-color: $red500;
+    border-color: $ads-red-500;
   }
 
   &__mark {
-    color: $currentColor;
+    color: $ads-current-color;
     height: 12px;
     width: 12px;
 
@@ -98,35 +90,35 @@ $indigo400: #818cf8;
   }
 
   .check__input:checked + .check__box {
-    background-color: $currentColor;
+    background-color: $ads-current-color;
 
     .check__mark {
-      color: $white;
+      color: $ads-white;
     }
   }
 
   .check__input:checked + .check__box--default {
-    color: $gray500;
+    color: $ads-gray-500;
   }
 
   .check__input:checked + .check__box--success {
-    color: $emerald500;
+    color: $ads-emerald-500;
   }
 
   .check__input:checked + .check__box--info {
-    color: $blue500;
+    color: $ads-blue-500;
   }
 
   .check__input:checked + .check__box--warning {
-    color: $amber500;
+    color: $ads-amber-500;
   }
 
   .check__input:checked + .check__box--danger {
-    color: $red500;
+    color: $ads-red-500;
   }
 
   .check__input:disabled + .check__box {
-    background-color: $gray200;
-    border-color: $gray300;
+    background-color: $ads-gray-200;
+    border-color: $ads-gray-300;
   }
 }
