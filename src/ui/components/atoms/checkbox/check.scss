@@ -1,20 +1,38 @@
+// Variables de color
+$color-white: #fff;
+$color-current: currentcolor;
+$color-gray-500: #6b7280;
+$color-emerald-500: #10b981;
+$color-blue-500: #3b82f6;
+$color-amber-500: #f59e0b;
+$color-red-500: #ef4444;
+$color-gray-200: #e5e7eb;
+$color-gray-300: #d1d5db;
+$color-indigo-400: #818cf8;
+
 .check {
   cursor: pointer;
   display: inline-flex;
   outline: none;
   position: relative;
 
-  &.disabled {
-    cursor: not-allowed;
-    opacity: 0.6;
-  }
+  &__box {
+    align-items: center;
+    background-color: $color-white;
+    display: flex;
+    height: 20px;
+    justify-content: center;
+    transition: all 0.15s ease-out;
+    width: 20px;
 
-  &:active:not(.disabled) {
-    .check__box {
-      box-shadow:
-        0 0 0 2px rgb(99 102 241 / 30%),
-        0 0 10px rgb(99 102 241 / 20%);
-      filter: brightness(1.1);
+    &--square {
+      border: 2px solid;
+      border-radius: 3px;
+    }
+
+    &--circle {
+      border: 2px solid;
+      border-radius: 50%;
     }
   }
 
@@ -35,48 +53,42 @@
     }
   }
 
-  &__box {
-    align-items: center;
-    background-color: #fff;
-    display: flex;
-    height: 20px;
-    justify-content: center;
-    transition: all 0.15s ease-out;
-    width: 20px;
-
-    &--square {
-      border: 2px solid;
-      border-radius: 3px;
+  &:active:not(.disabled) {
+    .check__box {
+      box-shadow:
+        0 0 0 2px rgb(99 102 241 / 30%),
+        0 0 10px rgb(99 102 241 / 20%);
+      filter: brightness(1.1);
     }
+  }
 
-    &--circle {
-      border: 2px solid;
-      border-radius: 50%;
-    }
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
   }
 
   &__box--default {
-    border-color: #6b7280;
+    border-color: $color-gray-500;
   }
 
   &__box--success {
-    border-color: #10b981;
+    border-color: $color-emerald-500;
   }
 
   &__box--info {
-    border-color: #3b82f6;
+    border-color: $color-blue-500;
   }
 
   &__box--warning {
-    border-color: #f59e0b;
+    border-color: $color-amber-500;
   }
 
   &__box--danger {
-    border-color: #ef4444;
+    border-color: $color-red-500;
   }
 
   &__mark {
-    color: currentcolor;
+    color: $color-current;
     height: 12px;
     width: 12px;
 
@@ -87,35 +99,35 @@
   }
 
   .check__input:checked + .check__box {
-    background-color: currentcolor;
+    background-color: $color-current;
 
     .check__mark {
-      color: #fff;
+      color: $color-white;
     }
   }
 
   .check__input:checked + .check__box--default {
-    color: #6b7280;
+    color: $color-gray-500;
   }
 
   .check__input:checked + .check__box--success {
-    color: #10b981;
+    color: $color-emerald-500;
   }
 
   .check__input:checked + .check__box--info {
-    color: #3b82f6;
+    color: $color-blue-500;
   }
 
   .check__input:checked + .check__box--warning {
-    color: #f59e0b;
+    color: $color-amber-500;
   }
 
   .check__input:checked + .check__box--danger {
-    color: #ef4444;
+    color: $color-red-500;
   }
 
   .check__input:disabled + .check__box {
-    background-color: #e5e7eb;
-    border-color: #d1d5db;
+    background-color: $color-gray-200;
+    border-color: $color-gray-300;
   }
 }
