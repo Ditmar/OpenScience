@@ -11,6 +11,7 @@ interface CheckboxProps {
   variant?: CheckboxVariant;
   shape?: CheckboxShape;
   className?: string;
+  id?: string;
 }
 
 function Check({
@@ -20,6 +21,7 @@ function Check({
   variant = 'default',
   shape = 'square',
   className = '',
+  id = 'checkbox-input',
 }: CheckboxProps): JSX.Element {
   const handleChange = () => {
     if (!disabled) {
@@ -35,8 +37,12 @@ function Check({
   };
 
   return (
-    <label className={`check ${className} ${disabled ? 'disabled' : ''} check--${shape}`}>
+    <label
+      htmlFor={id}
+      className={`check ${className} ${disabled ? 'disabled' : ''} check--${shape}`}
+    >
       <input
+        id={id}
         type="checkbox"
         checked={checked}
         onChange={handleChange}
@@ -67,4 +73,5 @@ function Check({
     </label>
   );
 }
+
 export default Check;

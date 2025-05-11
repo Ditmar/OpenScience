@@ -89,8 +89,6 @@ export const DangerVariant: StoryObj = {
   render: () => <Template checked onChange={() => {}} variant="danger" />,
 };
 
-// Nuevas variantes para shape
-
 export const CircleShape: StoryObj = {
   render: () => <Template checked onChange={() => {}} shape="circle" />,
 };
