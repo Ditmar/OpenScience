@@ -3,12 +3,14 @@ import type { StoryObj, Meta } from '@storybook/react';
 import Check from './check';
 
 type CheckboxVariant = 'default' | 'success' | 'info' | 'warning' | 'danger';
+type CheckboxShape = 'circle' | 'square';
 
 interface CheckboxProps {
   checked: boolean;
   onChange: (value: boolean) => void;
   disabled?: boolean;
   variant?: CheckboxVariant;
+  shape?: CheckboxShape;
   className?: string;
 }
 
@@ -22,6 +24,12 @@ const meta: Meta<typeof Check> = {
         options: ['default', 'success', 'info', 'warning', 'danger'],
       },
     },
+    shape: {
+      control: {
+        type: 'select',
+        options: ['circle', 'square'],
+      },
+    },
     disabled: {
       control: 'boolean',
     },
@@ -31,7 +39,7 @@ const meta: Meta<typeof Check> = {
 export default meta;
 
 function Template(props: CheckboxProps): JSX.Element {
-  const { checked: initialChecked, onChange, disabled, variant, className } = props;
+  const { checked: initialChecked, onChange, disabled, variant, shape, className } = props;
   const [checked, setChecked] = useState<boolean>(initialChecked);
 
   return (
@@ -43,6 +51,7 @@ function Template(props: CheckboxProps): JSX.Element {
       }}
       disabled={disabled}
       variant={variant}
+      shape={shape}
       className={className}
     />
   );
@@ -78,4 +87,14 @@ export const WarningVariant: StoryObj = {
 
 export const DangerVariant: StoryObj = {
   render: () => <Template checked onChange={() => {}} variant="danger" />,
+};
+
+// Nuevas variantes para shape
+
+export const CircleShape: StoryObj = {
+  render: () => <Template checked onChange={() => {}} shape="circle" />,
+};
+
+export const SquareShape: StoryObj = {
+  render: () => <Template checked onChange={() => {}} shape="square" />,
 };

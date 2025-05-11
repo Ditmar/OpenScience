@@ -6,7 +6,7 @@
 
   &:active:not(.disabled) {
     .check__box {
-      box-shadow: 
+      box-shadow:
         0 0 0 2px rgba(99, 102, 241, 0.3),
         0 0 10px rgba(99, 102, 241, 0.2);
       filter: brightness(1.1);
@@ -29,7 +29,7 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
-    
+
     &:focus-visible + .check__box {
       box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
     }
