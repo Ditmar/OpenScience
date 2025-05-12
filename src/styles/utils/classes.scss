@@ -1,16 +1,17 @@
 
-@use '../tokens/border-radius' as *;
+@use '../tokens/border-radius' as radius;
 
-.radius-none { border-radius: $radius-none; }
-.radius-xsm { border-radius: $radius-xsm; }
-.radius-sm { border-radius: $radius-sm; }
-.radius-sm-2x { border-radius: $radius-sm-2x; }
-.radius-sm-3x { border-radius: $radius-sm-3x; }
-.radius-sm-4x { border-radius: $radius-sm-4x; }
-.radius-md { border-radius: $radius-md; }
-.radius-md-2x { border-radius: $radius-md-2x; }
-.radius-md-3x { border-radius: $radius-md-3x; }
-.radius-md-lg { border-radius: $radius-md-lg; }
-.radius-md-lg-2x { border-radius: $radius-md-lg-2x; }
-.radius-md-lg-3x { border-radius: $radius-md-lg-3x; }
-.radius-infinity { border-radius: $radius-infinity; }
+.radius-none { border-radius: radius.$ads-radius-none; }
+.radius-xsm { border-radius: radius.$ads-radius-xsm; }
+.radius-sm { border-radius: radius.$ads-radius-sm; }
+.radius-sm-2x { border-radius: radius.$ads-radius-sm-extra; }
+.radius-sm-3x { border-radius: radius.$ads-radius-sm-plus; }
+.radius-sm-4x { border-radius: radius.$ads-radius-sm-max; }
+.radius-md { border-radius: radius.$ads-radius-md; }
+.radius-md-2x { border-radius: radius.$ads-radius-md-extra; }
+.radius-md-3x { border-radius: radius.$ads-radius-md-plus; }
+.radius-md-lg { border-radius: radius.$ads-radius-lg; }
+.radius-md-lg-2x { border-radius: radius.$ads-radius-lg-extra; }
+.radius-md-lg-3x { border-radius: radius.$ads-radius-lg-max; }
+.radius-infinity { border-radius: radius.$ads-radius-full; }
+
