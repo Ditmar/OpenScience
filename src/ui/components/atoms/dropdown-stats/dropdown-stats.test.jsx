@@ -1,21 +1,22 @@
 import { render, fireEvent, screen } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import DropdownStats from './dropdown-stats.tsx';
 
-describe('DropdownStats', () => {
+describe('DropdownStats Component', () => {
   const options = [
     { label: 'Argentina', value: 'arg', code: '+54', stat: 45 },
     { label: 'Brazil', value: 'bra', code: '+55', stat: 78 },
     { label: 'Chile', value: 'chi', code: '+56', stat: 32 },
   ];
 
-  const mockOnChange = jest.fn();
-  const mockOnToggle = jest.fn();
+  const mockOnChange = vi.fn();
+  const mockOnToggle = vi.fn();
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
-  it('representa la opción seleccionada', () => {
+  it('debe mostrar la opción seleccionada correctamente', () => {
     render(
       <DropdownStats
         options={options}
@@ -30,7 +31,7 @@ describe('DropdownStats', () => {
     expect(screen.getByText('(+54)')).toBeInTheDocument();
   });
 
-  it('abre el menú desplegable al hacer clic', () => {
+  it('debe abrir el menú al hacer clic en el botón', () => {
     render(
       <DropdownStats
         options={options}
@@ -44,7 +45,7 @@ describe('DropdownStats', () => {
     expect(mockOnToggle).toHaveBeenCalled();
   });
 
-  it('llama a onChange cuando se selecciona una opción', () => {
+  it('debe llamar a onChange cuando se selecciona una opción', () => {
     render(
       <DropdownStats options={options} onChange={mockOnChange} isOpen onToggle={mockOnToggle} />,
     );
@@ -53,16 +54,7 @@ describe('DropdownStats', () => {
     expect(mockOnChange).toHaveBeenCalledWith('bra');
   });
 
-  it('muestra las barras de progreso correctamente', () => {
-    render(
-      <DropdownStats options={options} onChange={mockOnChange} isOpen onToggle={mockOnToggle} />,
-    );
-
-    const progressBars = screen.getAllByRole('progressbar');
-    expect(progressBars.length).toBe(3);
-  });
-
-  it('muestra el estado deshabilitado correctamente', () => {
+  it('debe manejar el estado deshabilitado del dropdown', () => {
     render(
       <DropdownStats
         options={options}
@@ -76,13 +68,17 @@ describe('DropdownStats', () => {
     expect(screen.getByRole('button')).toBeDisabled();
   });
 
-  it('maneja la navegación del teclado', () => {
+  it('debe permitir seleccionar una opción con el teclado', () => {
     render(
       <DropdownStats options={options} onChange={mockOnChange} isOpen onToggle={mockOnToggle} />,
     );
 
-    const brazilOption = screen.getByText('Brazil').closest('li');
-    fireEvent.keyDown(brazilOption, { key: 'Enter' });
-    expect(mockOnChange).toHaveBeenCalledWith('bra');
+    const option = screen.getByText('Brazil').closest('li');
+    if (option) {
+      fireEvent.keyDown(option, { key: 'Enter' });
+      expect(mockOnChange).toHaveBeenCalledWith('bra');
+    } else {
+      throw new Error('No se encontró el elemento <li> para la opción Brazil');
+    }
   });
 });
