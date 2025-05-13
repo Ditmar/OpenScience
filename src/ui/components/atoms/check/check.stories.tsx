@@ -38,7 +38,9 @@ const Template: StoryObj<CheckboxProps> = {
 
     const handleChange = (value: boolean) => {
       setChecked(value);
-      args.onChange?.(value);
+      if (args.onChange) {
+        args.onChange(value);
+      }
     };
 
     return (
@@ -58,6 +60,7 @@ export const Default = {
   ...Template,
   args: {
     checked: false,
+    onChange: () => {},
   },
 };
 
@@ -65,6 +68,7 @@ export const Checked = {
   ...Template,
   args: {
     checked: true,
+    onChange: () => {},
   },
 };
 
@@ -73,6 +77,7 @@ export const Disabled = {
   args: {
     checked: false,
     disabled: true,
+    onChange: () => {},
   },
 };
 
@@ -81,6 +86,7 @@ export const CheckedDisabled = {
   args: {
     checked: true,
     disabled: true,
+    onChange: () => {},
   },
 };
 
@@ -89,6 +95,7 @@ export const SuccessVariant = {
   args: {
     checked: true,
     variant: 'success',
+    onChange: () => {},
   },
 };
 
@@ -97,6 +104,7 @@ export const InfoVariant = {
   args: {
     checked: true,
     variant: 'info',
+    onChange: () => {},
   },
 };
 
@@ -105,6 +113,7 @@ export const WarningVariant = {
   args: {
     checked: true,
     variant: 'warning',
+    onChange: () => {},
   },
 };
 
@@ -113,5 +122,6 @@ export const DangerVariant = {
   args: {
     checked: true,
     variant: 'danger',
+    onChange: () => {},
   },
 };
