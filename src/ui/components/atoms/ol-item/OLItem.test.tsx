@@ -56,14 +56,14 @@ describe('OLItem', () => {
   });
 
   describe('Active states', () => {
-    it('you must apply the "ol-item-active" class when active={true}', () => {
-      const { container } = setup({ active: true });
-      expect(container.firstChild).toHaveClass(styles['ol-item--active']);
-    });
-
     it('you should not apply the "ol-item-active" class when active={false}', () => {
       const { container } = setup({ active: false });
       expect(container.firstChild).not.toHaveClass(styles['ol-item--active']);
+    });
+
+    it('you must apply the "ol-item-active" class when active={true}', () => {
+      const { container } = setup({ active: true });
+      expect(container.firstChild).toHaveClass(styles['ol-item--active']);
     });
   });
 
