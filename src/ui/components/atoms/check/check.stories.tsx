@@ -38,9 +38,7 @@ const Template: StoryObj<CheckboxProps> = {
 
     const handleChange = (value: boolean) => {
       setChecked(value);
-      if (args.onChange) {
-        args.onChange(value);
-      }
+      args.onChange(value);
     };
 
     return (
