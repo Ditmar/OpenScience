@@ -19,14 +19,6 @@
   &--primary {
     color: $ads-primary-main;
   }
-  &--secondary {
-    color: $ads-text-main;
-  }
-  &--disabled {
-    color: $ads-danger-main;
-    cursor: not-allowed;
-  }
-
 
   &:active {
     background: rgba($ads-primary-main, 0.2);
@@ -38,98 +30,99 @@
   }
 
   &--small {
-     
-      font-size: 14px;
-      height: 24px;
-      width: 146px; 
-      padding: 0 12px;
-      
+    font-size: 14px;
+    height: 24px;
+    width: 146px;
   }
 
   &--medium {
     font-size: 16px;
     height: 27px;
-    width: 161px; 
-    padding: 0 20px;
-    
+    width: 161px;
   }
 
   &--large {
     font-size: 20px;
     height: 30px;
-    width: 180px; 
-    padding: 0 28px;
-   
+    width: 180px;
   }
 }
 
 .ghost-button__icon {
-   display: inline-flex;
-  justify-content: center;
   align-items: center;
-  fill: $ads-primary-main; 
+  display: inline-flex;
+  fill: $ads-primary-main;
+  justify-content: center;
   margin: 0 4px;
 }
+
 .ghost-button--small .ghost-button__icon {
-  width: 18px;
   height: 18px;
+  width: 18px;
 }
 
 .ghost-button--medium .ghost-button__icon {
-  width: 20px;
   height: 20px;
+  width: 20px;
 }
 
 .ghost-button--large .ghost-button__icon {
-  width: 24px;
   height: 24px;
+  width: 24px;
 }
+
 .ghost-button--dark {
-color: $ads-text-main; 
+  color: $ads-text-main;
 }
 
 .ghost-button__icon--dark {
-  fill: $ads-text-main; 
-}
-.ghost-button--violetaintenso {
-color: $ads-violetaintenso-main;
+  fill: $ads-text-main;
 }
 
-.ghost-button__icon--violetaintenso {
-  fill: $ads-violetaintenso-main;
-}
-.ghost-button--violeta {
-color: $ads-violeta-main;
+.ghost-button--intenseviolet {
+  color: $ads-stroke-primary;
 }
 
-.ghost-button__icon--violeta {
-  fill: $ads-violeta-main;
+.ghost-button__icon--intenseviolet {
+  fill: $ads-stroke-primary;
 }
+
+.ghost-button--violet {
+  color: $ads-stroke-secondary;
+}
+
+.ghost-button__icon--violet {
+  fill: $ads-stroke-secondary;
+}
+
 .ghost-button--teritary {
-color: $ads-claroo-main;
+  color: $ads-stroke-disabled;
 }
 
 .ghost-button__icon--teritary {
-  fill: $ads-claroo-main;
-}
-.ghost-button--verde {
-color: $ads-verde-main;
+  fill: $ads-stroke-disabled;
 }
 
-.ghost-button__icon--verde {
-  fill: $ads-verde-main;
-}
-.ghost-button--rojo {
-color: $ads-danger-main;
+.ghost-button--green {
+  color: $ads-stroke-positive;
 }
 
-.ghost-button__icon--rojo {
+.ghost-button__icon--green {
+  fill: $ads-stroke-positive;
+}
+
+.ghost-button--red {
+  color: $ads-danger-main;
+}
+
+.ghost-button__icon--red {
   fill: $ads-danger-main;
 }
-.ghost-button--amarillo {
-color: $ads-warning-main;
+
+.ghost-button--yellow {
+  color: $ads-warning-main;
 }
 
-.ghost-button__icon--amarillo {
+.ghost-button__icon--yellow {
   fill: $ads-warning-main;
 }

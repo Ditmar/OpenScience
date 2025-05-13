@@ -1,48 +1,41 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import GhostButton from './ghost-button';
 
-describe('Testing for GhostButton component', () => {
-  it('GhostButton is rendering', () => {
+describe('Testing GhostButton React Component', () => {
+  test('should render the GhostButton with primary variant', () => {
     render(<GhostButton ghostbutton="Ghost button" variant="primary" />);
-    screen.getByTestId('ghost-button');
+    const buttonElement = screen.getByTestId('ghost-button');
+    expect(buttonElement).toBeInTheDocument();
   });
 
-  it('GhostButton has the correct label', () => {
+  test('should render the GhostButton with the correct label', () => {
     render(<GhostButton ghostbutton="Ghost button" variant="primary" />);
-    screen.getByText('Ghost button');
+    const buttonElement = screen.getByText('Ghost button');
+    expect(buttonElement).toBeInTheDocument();
   });
 
-  it('GhostButton renders small size', () => {
+  test('should render the GhostButton with small size', () => {
     render(<GhostButton ghostbutton="Small Button" variant="primary" size="small" />);
-    screen.getByText('Small Button');
+    const buttonElement = screen.getByText('Small Button');
+    expect(buttonElement.className).toMatch(/small/);
   });
 
-  it('GhostButton renders medium size', () => {
+  test('should render the GhostButton with medium size', () => {
     render(<GhostButton ghostbutton="Medium Button" variant="primary" size="medium" />);
-    screen.getByText('Medium Button');
+    const buttonElement = screen.getByText('Medium Button');
+    expect(buttonElement.className).toMatch(/medium/);
   });
 
-  it('GhostButton renders large size', () => {
+  test('should render the GhostButton with large size', () => {
     render(<GhostButton ghostbutton="Large Button" variant="primary" size="large" />);
-    screen.getByText('Large Button');
+    const buttonElement = screen.getByText('Large Button');
+    expect(buttonElement.className).toMatch(/large/);
   });
 
-  it('GhostButton renders as disabled', () => {
-    render(<GhostButton ghostbutton="Disabled Button" variant="primary" disabled />);
-    const button = screen.getByText('Disabled Button');
-    fireEvent.click(button);
-  });
-
-/* it('Should fire onClick event', () => {
-    const handleClick = vi.fn();
-    render(<GhostButton ghostbutton="Ghost button" variant="primary" onClick={handleClick} />);
-    const button = screen.getByText('Ghost button');
-    fireEvent.click(button);
-  });*/
-
-  it('Should be focused when focus event is fired', () => {
+  test('should focus the GhostButton when focus event is fired', () => {
     render(<GhostButton ghostbutton="Ghost button" variant="primary" />);
-    const button = screen.getByText('Ghost button');
-    fireEvent.focus(button);
+    const buttonElement = screen.getByText('Ghost button');
+    buttonElement.focus();
+    expect(buttonElement).toHaveFocus();
   });
 });
