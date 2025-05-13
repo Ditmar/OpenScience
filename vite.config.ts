@@ -7,14 +7,16 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/setupTests.ts',
-
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
     },
-
     deps: {
-      inline: ['@testing-library/jest-dom'],
+      inline: [
+        '@testing-library/jest-dom',
+        '@testing-library/react',
+        '@testing-library/user-event'
+      ],
     },
   },
 });
