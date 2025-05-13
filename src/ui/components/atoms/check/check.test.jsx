@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, fireEvent, screen } from '@testing-library/react';
-import Check from './check';
+import Check from './check.tsx';
 
 describe('Check component', () => {
   const mockOnChange = vi.fn();

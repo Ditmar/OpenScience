@@ -13,14 +13,14 @@ interface CheckboxProps {
   className?: string;
 }
 
-const Check: React.FC<CheckboxProps> = ({
+function Check({
   checked = false,
   onChange,
   disabled = false,
   variant = 'default',
   shape = 'square',
   className = '',
-}) => {
+}: CheckboxProps): JSX.Element {
   const handleChange = () => {
     if (!disabled) {
       onChange(!checked);
@@ -39,7 +39,7 @@ const Check: React.FC<CheckboxProps> = ({
       className={`check ${className} ${disabled ? 'disabled' : ''} check--${shape}`}
       onClick={handleChange}
       onKeyDown={handleKeyDown}
-      tabIndex={disabled ? undefined : 0}
+      tabIndex={disabled ? -1 : 0}
       role="checkbox"
       aria-checked={checked}
       aria-disabled={disabled}
@@ -52,6 +52,7 @@ const Check: React.FC<CheckboxProps> = ({
         disabled={disabled}
         className="check__input"
         tabIndex={-1}
+        aria-hidden="true"
       />
       <span className={`check__box check__box--${variant} check__box--${shape}`}>
         {checked && (
@@ -74,6 +75,6 @@ const Check: React.FC<CheckboxProps> = ({
       </span>
     </div>
   );
-};
+}
 
 export default Check;
