@@ -1,23 +1,23 @@
-@import "@/globals/variables";
+@import '../globals/variables';
 
 .container {
-  width: 100%;
-  max-width: $ads-gridMobile-container-size;
-  margin: 0 auto;
-  padding: 0 $ads-gridMobile-margin;
   box-sizing: border-box;
+  margin: 0 auto;
+  max-width: $ads-gridmobile-container-size;
+  padding: 0 $ads-gridmobile-margin;
+  width: 100%;
 }
 
 .auto-grid {
   display: grid;
-  grid-template-columns: repeat($ads-gridMobile-columns, 1fr);
-  gap: $ads-gridMobile-gutter;
+  gap: $ads-gridmobile-gutter;
+  grid-template-columns: repeat($ads-gridmobile-columns, 1fr);
 }
 
 .grid-item {
-  background-color: #ccc;
-  text-align: center;
-  padding: 12px 0;
+  background-color: $ads-gridmobile-item-bg;
   border: 1px solid #999;
   font-size: 14px;
+  padding: 12px 0;
+  text-align: center;
 }
