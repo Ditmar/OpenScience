@@ -41,6 +41,7 @@
     "astro-seo": "0.8.4",
     "astro-sitemap": "1.0.0",
     "astrojs-service-worker": "2.0.0",
+    "classnames": "^2.5.1",
     "eslint-config-standard": "17.1.0",
     "express": "^4.19.2",
     "glider-js": "^1.7.9",

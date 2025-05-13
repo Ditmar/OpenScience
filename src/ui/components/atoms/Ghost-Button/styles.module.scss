@@ -1,0 +1,135 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.ghost-button {
+  align-items: center;
+  background: transparent;
+  border: 2px $ads-primary-main;
+  box-sizing: border-box;
+  color: $ads-primary-main;
+  cursor: pointer;
+  display: inline-flex;
+  height: 24px;
+  justify-content: center;
+  padding: 0 20px;
+  transition:
+    background 0.2s,
+    border 0.2s;
+
+  &--primary {
+    color: $ads-primary-main;
+  }
+  &--secondary {
+    color: $ads-text-main;
+  }
+  &--disabled {
+    color: $ads-danger-main;
+    cursor: not-allowed;
+  }
+
+
+  &:active {
+    background: rgba($ads-primary-main, 0.2);
+  }
+
+  &:focus {
+    border: 2px solid $ads-primary-main;
+    outline: none;
+  }
+
+  &--small {
+     
+      font-size: 14px;
+      height: 24px;
+      width: 146px; 
+      padding: 0 12px;
+      
+  }
+
+  &--medium {
+    font-size: 16px;
+    height: 27px;
+    width: 161px; 
+    padding: 0 20px;
+    
+  }
+
+  &--large {
+    font-size: 20px;
+    height: 30px;
+    width: 180px; 
+    padding: 0 28px;
+   
+  }
+}
+
+.ghost-button__icon {
+   display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  fill: $ads-primary-main; 
+  margin: 0 4px;
+}
+.ghost-button--small .ghost-button__icon {
+  width: 18px;
+  height: 18px;
+}
+
+.ghost-button--medium .ghost-button__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.ghost-button--large .ghost-button__icon {
+  width: 24px;
+  height: 24px;
+}
+.ghost-button--dark {
+color: $ads-text-main; 
+}
+
+.ghost-button__icon--dark {
+  fill: $ads-text-main; 
+}
+.ghost-button--violetaintenso {
+color: $ads-violetaintenso-main;
+}
+
+.ghost-button__icon--violetaintenso {
+  fill: $ads-violetaintenso-main;
+}
+.ghost-button--violeta {
+color: $ads-violeta-main;
+}
+
+.ghost-button__icon--violeta {
+  fill: $ads-violeta-main;
+}
+.ghost-button--teritary {
+color: $ads-claroo-main;
+}
+
+.ghost-button__icon--teritary {
+  fill: $ads-claroo-main;
+}
+.ghost-button--verde {
+color: $ads-verde-main;
+}
+
+.ghost-button__icon--verde {
+  fill: $ads-verde-main;
+}
+.ghost-button--rojo {
+color: $ads-danger-main;
+}
+
+.ghost-button__icon--rojo {
+  fill: $ads-danger-main;
+}
+.ghost-button--amarillo {
+color: $ads-warning-main;
+}
+
+.ghost-button__icon--amarillo {
+  fill: $ads-warning-main;
+}
