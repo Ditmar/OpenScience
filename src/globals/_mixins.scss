@@ -1,6 +1,4 @@
-
 @import 'breakpoints';
-
 
 @mixin respond-to($breakpoint) {
   @if map-has-key($ads-breakpoints-scales, $breakpoint) {

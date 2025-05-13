@@ -9,7 +9,7 @@
 
   &__box {
     align-items: center;
-    background-color: $ads-white;
+    background-color: $ads-tertiary-main;
     display: flex;
     height: 20px;
     justify-content: center;
@@ -59,27 +59,27 @@
   }
 
   &__box--default {
-    border-color: $ads-gray-500;
+    border-color: $ads-text-secondary;
   }
 
   &__box--success {
-    border-color: $ads-emerald-500;
+    border-color: $ads-primary-main;
   }
 
   &__box--info {
-    border-color: $ads-blue-500;
+    border-color: $ads-secondary-main;
   }
 
   &__box--warning {
-    border-color: $ads-amber-500;
+    border-color: $ads-warning-main;
   }
 
   &__box--danger {
-    border-color: $ads-red-500;
+    border-color: $ads-danger-main;
   }
 
   &__mark {
-    color: $ads-current-color;
+    color: $ads-text-main; // Replaced currentcolor with text color variable
     height: 12px;
     width: 12px;
 
@@ -90,35 +90,40 @@
   }
 
   .check__input:checked + .check__box {
-    background-color: $ads-current-color;
+    background-color: $ads-primary-main; // Replaced currentcolor with primary color
 
     .check__mark {
-      color: $ads-white;
+      color: $ads-color-main;
     }
   }
 
   .check__input:checked + .check__box--default {
-    color: $ads-gray-500;
+    background-color: $ads-text-secondary; // Added specific background color
+    color: $ads-text-secondary;
   }
 
   .check__input:checked + .check__box--success {
-    color: $ads-emerald-500;
+    background-color: $ads-primary-main;
+    color: $ads-primary-main;
   }
 
   .check__input:checked + .check__box--info {
-    color: $ads-blue-500;
+    background-color: $ads-secondary-main;
+    color: $ads-secondary-main;
   }
 
   .check__input:checked + .check__box--warning {
-    color: $ads-amber-500;
+    background-color: $ads-warning-main;
+    color: $ads-warning-main;
   }
 
   .check__input:checked + .check__box--danger {
-    color: $ads-red-500;
+    background-color: $ads-danger-main;
+    color: $ads-danger-main;
   }
 
   .check__input:disabled + .check__box {
-    background-color: $ads-gray-200;
-    border-color: $ads-gray-300;
+    background-color: $ads-background-main;
+    border-color: $ads-text-input;
   }
 }

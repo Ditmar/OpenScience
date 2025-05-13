@@ -11,25 +11,23 @@ interface CheckboxProps {
   variant?: CheckboxVariant;
   shape?: CheckboxShape;
   className?: string;
-  id?: string;
 }
 
-function Check({
+const Check: React.FC<CheckboxProps> = ({
   checked = false,
   onChange,
   disabled = false,
   variant = 'default',
   shape = 'square',
   className = '',
-  id = 'checkbox-input',
-}: CheckboxProps): JSX.Element {
+}) => {
   const handleChange = () => {
     if (!disabled) {
       onChange(!checked);
     }
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === ' ' || e.key === 'Enter') {
       e.preventDefault();
       handleChange();
@@ -37,20 +35,23 @@ function Check({
   };
 
   return (
-    <label
-      htmlFor={id}
+    <div
       className={`check ${className} ${disabled ? 'disabled' : ''} check--${shape}`}
+      onClick={handleChange}
+      onKeyDown={handleKeyDown}
+      tabIndex={disabled ? undefined : 0}
+      role="checkbox"
+      aria-checked={checked}
+      aria-disabled={disabled}
+      data-testid="checkbox"
     >
       <input
-        id={id}
         type="checkbox"
         checked={checked}
-        onChange={handleChange}
-        onKeyDown={handleKeyDown}
+        onChange={() => {}}
         disabled={disabled}
         className="check__input"
-        aria-checked={checked}
-        aria-disabled={disabled}
+        tabIndex={-1}
       />
       <span className={`check__box check__box--${variant} check__box--${shape}`}>
         {checked && (
@@ -59,6 +60,7 @@ function Check({
             viewBox="0 0 12 10"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            data-testid="checkmark"
           >
             <path
               d="M1 5L4.5 8.5L11 1"
@@ -70,8 +72,8 @@ function Check({
           </svg>
         )}
       </span>
-    </label>
+    </div>
   );
-}
+};
 
 export default Check;
