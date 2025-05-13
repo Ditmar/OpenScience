@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react'; // o '@storybook/react-webpack5'
+import type { Meta, StoryObj } from '@storybook/react';
 import Check from './check';
 
 type CheckboxVariant = 'default' | 'success' | 'info' | 'warning' | 'danger';
+type CheckboxShape = 'circle' | 'square';
 
 interface CheckboxProps {
   checked: boolean;
   onChange: (value: boolean) => void;
   disabled?: boolean;
   variant?: CheckboxVariant;
+  shape?: CheckboxShape;
   className?: string;
 }
 
@@ -31,16 +33,22 @@ const meta: Meta<typeof Check> = {
 export default meta;
 
 const Template: StoryObj<CheckboxProps> = {
-  render: (args) => {
+  render: function Render(args) {
     const [checked, setChecked] = useState(args.checked || false);
+
+    const handleChange = (value: boolean) => {
+      setChecked(value);
+      args.onChange?.(value);
+    };
 
     return (
       <Check
-        {...args}
         checked={checked}
-        onChange={(value) => {
-          setChecked(value);
-        }}
+        onChange={handleChange}
+        disabled={args.disabled}
+        variant={args.variant}
+        shape={args.shape}
+        className={args.className}
       />
     );
   },
