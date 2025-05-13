@@ -22,4 +22,8 @@ export interface TextCardStatProps {
   isDisabled?: boolean;
 
   className?: string;
+
+  badgeText?: string;
+
+  content?: string;
 }
