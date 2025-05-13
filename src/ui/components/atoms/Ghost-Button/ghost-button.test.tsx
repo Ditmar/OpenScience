@@ -33,13 +33,6 @@ describe('Testing for GhostButton component', () => {
     fireEvent.click(button);
   });
 
-/* it('Should fire onClick event', () => {
-    const handleClick = vi.fn();
-    render(<GhostButton ghostbutton="Ghost button" variant="primary" onClick={handleClick} />);
-    const button = screen.getByText('Ghost button');
-    fireEvent.click(button);
-  });*/
-
   it('Should be focused when focus event is fired', () => {
     render(<GhostButton ghostbutton="Ghost button" variant="primary" />);
     const button = screen.getByText('Ghost button');

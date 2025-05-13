@@ -19,12 +19,11 @@ function GhostButton({
       [styles.secondary]: variant === 'secondary',
       [styles['ghost-button--dark']]: variant === 'dark',
       [styles['ghost-button--violetaintenso']]: variant === 'violetaintenso',
-       [styles['ghost-button--violeta']]: variant === 'violeta',
-       [styles['ghost-button--teritary']]: variant === 'teritary',
-       [styles['ghost-button--verde']]: variant === 'verde',
-       [styles['ghost-button--rojo']]: variant === 'rojo',
-       [styles['ghost-button--amarillo']]: variant === 'amarillo',
-
+      [styles['ghost-button--violeta']]: variant === 'violeta',
+      [styles['ghost-button--teritary']]: variant === 'teritary',
+      [styles['ghost-button--verde']]: variant === 'verde',
+      [styles['ghost-button--rojo']]: variant === 'rojo',
+      [styles['ghost-button--amarillo']]: variant === 'amarillo',
     },
     {
       [styles.small]: size === 'small',
@@ -43,15 +42,18 @@ function GhostButton({
       onClick={!disabled ? onClick : undefined}
       disabled={disabled}
       tabIndex={disabled ? -1 : 0}
-      
     >
-      
-         <span className={styles['ghost-button__icon']} dangerouslySetInnerHTML={{ __html: Circlex }} />
-       &nbsp;
+      <span
+        className={styles['ghost-button__icon']}
+        dangerouslySetInnerHTML={{ __html: Circlex }}
+      />
+      &nbsp;
       {ghostbutton}
       &nbsp;
-        <span className={styles['ghost-button__icon']} dangerouslySetInnerHTML={{ __html: Circlex }} />
-
+      <span
+        className={styles['ghost-button__icon']}
+        dangerouslySetInnerHTML={{ __html: Circlex }}
+      />
     </button>
   );
 }
