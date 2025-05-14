@@ -1,3 +1,4 @@
+// badge.stories.tsx
 import type { Meta, StoryObj } from '@storybook/react';
 import Badge from './badge';
 
@@ -31,18 +32,25 @@ const meta: Meta<typeof Badge> = {
 export default meta;
 type Story = StoryObj<typeof Badge>;
 
+// Función para reemplazar alert() con un console log (puedes modificarlo según tus necesidades)
+const handleClose = (message: string) => {
+  return () => {
+    console.log(message);
+  };
+};
+
 export const FullExample: Story = {
   args: {
     variant: 'filled',
     color: 'custom',
-    customColor: '#6b7280', // Gris oscuro
+    customColor: '#6b7280',
     shape: 'rounded',
     size: 'md',
     image: 'https://i.pravatar.cc/24',
     leftCount: 100,
     rightCount: 100,
     children: 'Badge Text',
-    onClose: () => alert('Badge closed'),
+    onClose: handleClose('Badge closed'),
   },
 };
 
@@ -52,7 +60,7 @@ export const NeutralFilled: Story = {
     color: 'neutral',
     shape: 'default',
     children: 'Neutral',
-    onClose: () => alert('Close'),
+    onClose: handleClose('Close'),
   },
 };
 
@@ -73,7 +81,7 @@ export const VioletSoftRounded: Story = {
     color: 'violet',
     shape: 'rounded',
     children: 'Violet',
-    onClose: () => alert('Close'),
+    onClose: handleClose('Close'),
   },
 };
 
@@ -129,7 +137,7 @@ export const WithImage: Story = {
     color: 'neutral',
     children: 'User',
     image: 'https://i.pravatar.cc/24',
-    onClose: () => alert('Image badge closed'),
+    onClose: handleClose('Image badge closed'),
   },
 };
 
@@ -148,7 +156,7 @@ export const LongText: Story = {
     color: 'blue',
     children: 'This is a very long badge text that should be truncated',
     shape: 'default',
-    onClose: () => alert('Closed'),
+    onClose: handleClose('Closed'),
   },
 };
 
@@ -159,6 +167,6 @@ export const SmallSize: Story = {
     color: 'gray',
     leftCount: 1,
     rightCount: 2,
-    onClose: () => alert('Small closed'),
+    onClose: handleClose('Small closed'),
   },
 };

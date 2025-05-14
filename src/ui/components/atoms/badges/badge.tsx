@@ -15,7 +15,7 @@ interface BadgeProps {
   onClose?: () => void;
 }
 
-const Badge: React.FC<BadgeProps> = ({
+function Badge({
   variant,
   color,
   customColor,
@@ -27,7 +27,7 @@ const Badge: React.FC<BadgeProps> = ({
   leftCount,
   rightCount,
   onClose,
-}) => {
+}: BadgeProps) {
   const baseClass = 'badge';
   const variantClass = `badge--${variant}`;
   const colorClass = `badge--${color}`;
@@ -48,27 +48,21 @@ const Badge: React.FC<BadgeProps> = ({
       className={[baseClass, variantClass, colorClass, shapeClass, sizeClass].join(' ')}
       style={customStyle}
     >
-      {/* Botón cerrar izquierdo */}
       {onClose && (
         <button className="badge__close-button" onClick={onClose}>
           ✕
         </button>
       )}
 
-      {/* Imagen o ícono */}
       {image && <img src={image} alt="avatar" className="badge__image" />}
       {icon && <span className="badge__icon">{icon}</span>}
 
-      {/* Contador izquierdo */}
       {leftCount !== undefined && <span className="badge__counter">{leftCount}</span>}
 
-      {/* Contenido */}
       <span className="badge__content">{children}</span>
 
-      {/* Contador derecho */}
       {rightCount !== undefined && <span className="badge__counter">{rightCount}</span>}
 
-      {/* Botón cerrar derecho */}
       {onClose && (
         <button className="badge__close-button" onClick={onClose}>
           ✕
@@ -76,6 +70,16 @@ const Badge: React.FC<BadgeProps> = ({
       )}
     </span>
   );
+}
+
+Badge.defaultProps = {
+  customColor: undefined,
+  icon: undefined,
+  image: undefined,
+  children: undefined,
+  leftCount: undefined,
+  rightCount: undefined,
+  onClose: undefined,
 };
 
 export default Badge;
