@@ -1,0 +1,91 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.badge {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  display: inline-flex;
+  font-size: $ads-font-size-primary;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+
+  &--sm {
+    font-size: $ads-font-size-fifth;
+    padding: 0.125rem 0.375rem;
+  }
+
+  &--md {
+    font-size: $ads-font-size-primary;
+    padding: 0.25rem 0.5rem;
+  }
+
+  &--rounded {
+    border-radius: 9999px;
+  }
+
+  &--filled {
+    background-color: $ads-background-main; // era #e2e8f0
+    color: $ads-text-main; // era #1f2937
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 1px solid currentcolor;
+  }
+
+  &--soft {
+    background-color: $ads-background-color-black;
+    color: $ads-text-main;
+  }
+
+  &--neutral {
+    background-color: $ads-tertiary-main;
+    color: $ads-text-main;
+  }
+
+  &--gray {
+    background-color: $ads-text-input;
+    color: $ads-text-main;
+  }
+
+  &--violet {
+    background-color: $ads-text-violet;
+    color: $ads-color-main;
+  }
+
+  &--blue {
+    background-color: $ads-text-blue;
+    color: $ads-color-main;
+  }
+
+  &--custom {
+    // estilo personalizado definido dinámicamente o desde props
+  }
+
+  &__icon,
+  &__image,
+  &__counter {
+    margin: 0 0.25rem;
+  }
+
+  &__image {
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+  }
+
+  &__close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: $ads-font-size-primary;
+    margin-left: 0.25rem;
+  }
+
+  &__content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
