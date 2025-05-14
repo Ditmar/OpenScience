@@ -1,6 +1,9 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 
+$ads-color-violet: #9a4aff;
+$ads-color-blue: #180bd4;
+
 .badge {
   align-items: center;
   border: 1px solid transparent;
@@ -25,8 +28,8 @@
   }
 
   &--filled {
-    background-color: $ads-background-main; // era #e2e8f0
-    color: $ads-text-main; // era #1f2937
+    background-color: $ads-background-main;
+    color: $ads-text-main;
   }
 
   &--outline {
@@ -50,12 +53,12 @@
   }
 
   &--violet {
-    background-color: $ads-text-violet;
+    background-color: $ads-color-violet;
     color: $ads-color-main;
   }
 
   &--blue {
-    background-color: $ads-text-blue;
+    background-color: $ads-secondary-main;
     color: $ads-color-main;
   }
 
