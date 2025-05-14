@@ -9,14 +9,12 @@ function GhostButton({
   size = 'medium',
   disabled = false,
   onClick,
-  withIcon = false,
 }: GhostButtonProps) {
   const buttonClass = classNames(
     styles['ghost-button'],
     styles[`ghost-button--${size}`],
     {
       [styles.primary]: variant === 'primary',
-      [styles.secondary]: variant === 'secondary',
       [styles['ghost-button--dark']]: variant === 'dark',
       [styles['ghost-button--violetaintenso']]: variant === 'violetaintenso',
       [styles['ghost-button--violeta']]: variant === 'violeta',

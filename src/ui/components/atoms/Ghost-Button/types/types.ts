@@ -2,7 +2,6 @@ export interface GhostButtonProps {
   ghostbutton: string;
   variant:
     | 'primary'
-    | 'secondary'
     | 'dark'
     | 'violetaintenso'
     | 'violeta'

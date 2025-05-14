@@ -13,7 +13,7 @@ const meta: Meta<typeof GhostButton> = {
     variant: {
       control: {
         type: 'select',
-        options: ['primary', 'secondary'],
+        options: ['primary'],
       },
     },
     size: {
@@ -277,14 +277,4 @@ export const BrandTeritaryLargeDefaul: Story = {
     disabled: false,
   },
   storyName: 'teritary Small Button',
-};
-
-export const Disabled: Story = {
-  args: {
-    ghostbutton: 'Disabled_Button',
-    variant: 'primary',
-    size: 'medium',
-    disabled: true,
-  },
-  storyName: 'ui-components-atoms-ghostbutton--disabled',
 };
