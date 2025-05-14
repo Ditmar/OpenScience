@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import IconTextStat from './IconTextStat';
 
 const meta: Meta<typeof IconTextStat> = {
@@ -17,7 +18,7 @@ export const Primary: Story = {
     variant: 'primary',
     size: 'small',
     border: 'sharp',
-    icon: <span />,
+    icon: <HighlightOffIcon />,
     children: <input type="checkbox" aria-label="checkbox" />,
   },
 };
@@ -30,7 +31,7 @@ export const Secondary: Story = {
     variant: 'secondary',
     size: 'small',
     border: 'sharp',
-    icon: <span />,
+    icon: <HighlightOffIcon />,
     children: <input type="checkbox" aria-label="checkbox" />,
   },
 };
@@ -42,7 +43,7 @@ export const Tertiary: Story = {
     variant: 'tertiary',
     size: 'small',
     border: 'sharp',
-    icon: <span />,
+    icon: <HighlightOffIcon />,
     children: <input type="checkbox" aria-label="checkbox" />,
   },
 };
@@ -54,7 +55,7 @@ export const Success: Story = {
     variant: 'success',
     size: 'small',
     border: 'sharp',
-    icon: <span />,
+    icon: <HighlightOffIcon />,
     children: <input type="checkbox" aria-label="checkbox" />,
   },
 };
@@ -66,7 +67,7 @@ export const Warning: Story = {
     variant: 'warning',
     size: 'small',
     border: 'sharp',
-    icon: <span />,
+    icon: <HighlightOffIcon />,
     children: <input type="checkbox" aria-label="checkbox" />,
   },
 };
@@ -78,7 +79,7 @@ export const Error: Story = {
     variant: 'error',
     size: 'small',
     border: 'sharp',
-    icon: <span />,
+    icon: <HighlightOffIcon />,
     children: <input type="checkbox" aria-label="checkbox" />,
   },
 };
@@ -90,7 +91,7 @@ export const Small: Story = {
     variant: 'primary',
     size: 'small',
     border: 'sharp',
-    icon: <span />,
+    icon: <HighlightOffIcon />,
     children: <input type="checkbox" aria-label="checkbox" />,
   },
 };
@@ -102,7 +103,7 @@ export const Medium: Story = {
     variant: 'primary',
     size: 'medium',
     border: 'sharp',
-    icon: <span />,
+    icon: <HighlightOffIcon />,
     children: <input type="checkbox" aria-label="checkbox" />,
   },
 };
@@ -114,7 +115,7 @@ export const Large: Story = {
     variant: 'primary',
     size: 'large',
     border: 'sharp',
-    icon: <span />,
+    icon: <HighlightOffIcon />,
     children: <input type="checkbox" aria-label="checkbox" />,
   },
 };
@@ -126,7 +127,7 @@ export const Sharp: Story = {
     variant: 'primary',
     size: 'small',
     border: 'sharp',
-    icon: <span />,
+    icon: <HighlightOffIcon />,
     children: <input type="checkbox" aria-label="checkbox" />,
   },
 };
@@ -138,7 +139,7 @@ export const Soft: Story = {
     variant: 'primary',
     size: 'small',
     border: 'soft',
-    icon: <span />,
+    icon: <HighlightOffIcon />,
     children: <input type="checkbox" aria-label="checkbox" />,
   },
 };
@@ -151,7 +152,7 @@ export const SecondaryInformation: Story = {
     variant: 'primary',
     size: 'small',
     border: 'sharp',
-    icon: <span />,
+    icon: <HighlightOffIcon />,
     description: 'This is a description.',
     children: <input type="checkbox" aria-label="checkbox" />,
   },

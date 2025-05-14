@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import { render, screen } from '@testing-library/react';
 import { vi } from 'vitest';
 import IconTextStat from './IconTextStat';
@@ -7,13 +6,13 @@ import type { IProps } from './types/IProps';
 vi.mock('./IconTextStat.module.scss', () => ({
   default: {
     'icon-text-stat': 'icon-text-stat',
-    'icon-text-stat__checkbox': 'icon-text-stat__checkbox',
-    'icon-text-stat__icon': 'icon-text-stat__icon',
-    'icon-text-stat__text': 'icon-text-stat__text',
-    'icon-text-stat__title': 'icon-text-stat__title',
-    'icon-text-stat__main': 'icon-text-stat__main',
-    'icon-text-stat__sub': 'icon-text-stat__sub',
-    'icon-text-stat__desc': 'icon-text-stat__desc',
+    'icon-text-stat-checkbox': 'icon-text-stat-checkbox',
+    'icon-text-stat-icon': 'icon-text-stat-icon',
+    'icon-text-stat-text': 'icon-text-stat-text',
+    'icon-text-stat-title': 'icon-text-stat-title',
+    'icon-text-stat-main-value': 'icon-text-stat-main-value',
+    'icon-text-stat-sub-value': 'icon-text-stat-sub-value',
+    'icon-text-stat-description': 'icon-text-stat-description',
     secondary: 'secondary',
     tertiary: 'tertiary',
     warning: 'warning',
@@ -29,76 +28,109 @@ vi.mock('./IconTextStat.module.scss', () => ({
 }));
 
 describe('IconTextStat Component', () => {
-  const mockIcon = <svg data-testid="mock-icon" />;
+  const icon = <svg data-testid="mock-icon" />;
 
-  const defaultProps: IProps = {
-    title: 'Test Title',
-    mainValue: 'Main Value',
+  const props: IProps = {
+    title: 'Usuarios Activos',
+    mainValue: '150',
+    subValue: 'Comparado con el mes pasado',
+    variant: 'success',
+    size: 'medium',
+    border: 'sharp',
+    icon,
+    description: 'Subió 10% desde abril',
+    onClick: vi.fn(),
+    className: 'custom-class',
   };
 
   test('renders with minimum required props', () => {
-    render(<IconTextStat {...defaultProps} />);
+    render(<IconTextStat title={props.title} mainValue={props.mainValue} />);
 
-    expect(screen.getByText('Test Title')).toBeInTheDocument();
-    expect(screen.getByText('Main Value')).toBeInTheDocument();
+    expect(screen.getByText('Usuarios Activos')).toBeInTheDocument();
+    expect(screen.getByText('150')).toBeInTheDocument();
   });
 
   test('renders with all props', () => {
-    const fullProps: IProps = {
-      ...defaultProps,
-      subValue: 'Sub Value',
-      variant: 'primary',
-      size: 'large',
-      border: 'sharp',
-      icon: mockIcon,
-      description: 'Test Description',
-      className: 'custom-class',
-    };
+    render(
+      <IconTextStat
+        title={props.title}
+        mainValue={props.mainValue}
+        subValue={props.subValue}
+        variant={props.variant}
+        size={props.size}
+        border={props.border}
+        icon={props.icon}
+        description={props.description}
+        onClick={props.onClick}
+        className={props.className}
+      />,
+    );
 
-    render(<IconTextStat {...fullProps} />);
-
-    expect(screen.getByText('Test Title')).toBeInTheDocument();
-    expect(screen.getByText('Main Value')).toBeInTheDocument();
-    expect(screen.getByText('Sub Value')).toBeInTheDocument();
-    expect(screen.getByText('Test Description')).toBeInTheDocument();
+    expect(screen.getByText('Usuarios Activos')).toBeInTheDocument();
+    expect(screen.getByText('150')).toBeInTheDocument();
+    expect(screen.getByText('Comparado con el mes pasado')).toBeInTheDocument();
+    expect(screen.getByText('Subió 10% desde abril')).toBeInTheDocument();
     expect(screen.getByTestId('mock-icon')).toBeInTheDocument();
   });
 
   test('renders with child components', () => {
     render(
-      <IconTextStat {...defaultProps}>
+      <IconTextStat
+        title={props.title}
+        mainValue={props.mainValue}
+        subValue={props.subValue}
+        variant={props.variant}
+        size={props.size}
+        border={props.border}
+        icon={props.icon}
+        description={props.description}
+        onClick={props.onClick}
+        className={props.className}
+      >
         <input type="checkbox" data-testid="checkbox-input" />
       </IconTextStat>,
     );
 
-    expect(screen.getByText('Test Title')).toBeInTheDocument();
-    expect(screen.getByText('Main Value')).toBeInTheDocument();
+    expect(screen.getByText('Usuarios Activos')).toBeInTheDocument();
+    expect(screen.getByText('150')).toBeInTheDocument();
     expect(screen.getByTestId('checkbox-input')).toBeInTheDocument();
   });
 
   test('applies variant class correctly', () => {
-    const { container } = render(<IconTextStat {...defaultProps} variant="secondary" />);
+    const { container } = render(
+      <IconTextStat title={props.title} mainValue={props.mainValue} variant="secondary" />,
+    );
 
     const rootElement = container.firstChild;
     expect(rootElement).toHaveClass('secondary');
   });
 
   test('applies size class correctly', () => {
-    const { container } = render(<IconTextStat {...defaultProps} size="small" />);
+    const { container } = render(
+      <IconTextStat title={props.title} mainValue={props.mainValue} size="small" />,
+    );
 
     const rootElement = container.firstChild;
     expect(rootElement).toHaveClass('small');
   });
 
   test('applies border class correctly', () => {
-    const { container } = render(<IconTextStat {...defaultProps} border="sharp" />);
+    const { container } = render(
+      <IconTextStat title={props.title} mainValue={props.mainValue} border="sharp" />,
+    );
 
     const rootElement = container.firstChild;
     expect(rootElement).toHaveClass('sharp');
   });
 
   test('applies custom className', () => {
-    const { container } = render(<IconTextStat {...defaultProps} className="test-custom-class" />);
+    const { container } = render(
+      <IconTextStat
+        title={props.title}
+        mainValue={props.mainValue}
+        className="test-custom-class"
+      />,
+    );
 
     const rootElement = container.firstChild;
     expect(rootElement).toHaveClass('test-custom-class');

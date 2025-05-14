@@ -24,19 +24,19 @@ function IconTextStat(props: IProps) {
         ${border ? style[border] : ''} 
         ${className ?? ''}`}
     >
-      {children && <div className={style[`icon-text-stat__checkbox`]}>{children}</div>}
+      {children && <div className={style[`icon-text-stat-checkbox`]}>{children}</div>}
 
       {icon && (
-        <div className={`${style[`icon-text-stat__icon`]} ${variant ? style[variant] : ''}`}>
+        <div className={`${style[`icon-text-stat-icon`]} ${variant ? style[variant] : ''}`}>
           {icon}
         </div>
       )}
 
-      <div className={`${style[`icon-text-stat__text`]} ${size ? style[size] : ''}`}>
-        <h4 className={`${style[`icon-text-stat__title`]} ${size ? style[size] : ''}`}>{title}</h4>
-        <div className={style[`icon-text-stat__main`]}>{mainValue}</div>
-        {subValue && <div className={style[`icon-text-stat__sub`]}>{subValue}</div>}
-        {description && <div className={style[`icon-text-stat__desc`]}>{description}</div>}
+      <div className={`${style[`icon-text-stat-text`]} ${size ? style[size] : ''}`}>
+        <h4 className={`${style[`icon-text-stat-title`]} ${size ? style[size] : ''}`}>{title}</h4>
+        <div className={style[`icon-text-stat-main-value`]}>{mainValue}</div>
+        {subValue && <div className={style[`icon-text-stat-sub-value`]}>{subValue}</div>}
+        {description && <div className={style[`icon-text-stat-description`]}>{description}</div>}
       </div>
     </div>
   );
