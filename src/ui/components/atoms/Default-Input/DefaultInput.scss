@@ -30,7 +30,7 @@
     transition: all 0.15s ease;
 
     &:hover:not(.disabled) {
-      border-color: #9ca3af; // puedes cambiar a var(--hover-color) si tienes uno definido
+      border-color: #9ca3af;
     }
 
     &:focus-within:not(.disabled) {
