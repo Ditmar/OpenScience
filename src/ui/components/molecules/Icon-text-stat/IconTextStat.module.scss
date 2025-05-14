@@ -3,18 +3,40 @@
 
 .icon-text-stat {
     align-items: flex-start;
-    cursor: pointer;
     display: flex;
     padding: 1.5rem;
     transition: all 0.2s ease;
   
-    &__checkbox {
+    &-checkbox {
         height: 1.5rem;
         margin-right: 1.5rem;
         width: 1.5rem;
+
+        input[type="checkbox"] {
+            appearance: none;
+            border: 2px solid $ads-default-icon-dark;
+            border-radius: 5px;
+            cursor: pointer;
+            height: 1.5rem;
+            position: relative;
+            width: 1.5rem;
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: $ads-default-icon-dark;
+        }
+
+        input[type="checkbox"]:checked::after {        
+          color: $ads-color-main;
+          content: '✔';  
+          font-size: 16px;
+          left: 3px;
+          position: absolute;
+          top: -2px;
+        }
     }
   
-    &__icon {
+    &-icon {
         align-items: center;
         border-radius: 50%;
         display: flex;
@@ -26,7 +48,7 @@
         
     }
   
-    &__text {
+    &-text {
       color: $ads-icontextstat-color-text;
       flex: 1;
       font-family: sans-serif;
@@ -45,7 +67,7 @@
       }
     }
   
-    &__title {
+    &-title {
       color: $ads-icontextstat-color-title;
       font-weight: 500;
       margin: 0;
@@ -63,96 +85,105 @@
         font-size: $ads-icontextstat-fontsize-largetitle;
       }
     }
-  
-    &__main {
-        margin-bottom: 1rem;
-    }
 
-    &__sub {
+    &-sub-value {
         margin-bottom: 1rem;
+        margin-top: 1rem;
     }
 
     &.secondary {
-      .icon-text-stat__icon {
+      .icon-text-stat-icon {
         background-color: $ads-secondary-twenty-five;
+        color: $ads-secondary-main;
       }
     }
     
     &.tertiary {
-      .icon-text-stat__icon {
+      .icon-text-stat-icon {
         background-color: $ads-tertiary-twenty-five;
+        color: $ads-tertiary-main;
       }
     }
     
     &.warning {
-      .icon-text-stat__icon {
+      .icon-text-stat-icon {
         background-color: $ads-warning-twenty-five;
+        color: $ads-warning-main;
       }
     }
     
     &.success {
-      .icon-text-stat__icon {
+      .icon-text-stat-icon {
         background-color: $ads-success-twenty-five;
+        color: $ads-success-main;
       }
     }
     
     &.error {
-      .icon-text-stat__icon {
+      .icon-text-stat-icon {
         background-color: $ads-danger-twenty-five;
+        color: $ads-danger-main;
       }
     }
     
     &.primary {
-      .icon-text-stat__icon {
+      .icon-text-stat-icon {
         background-color: $ads-primary-twenty-five;
+        color: $ads-primary-main;
       }
     }
 
     &.secondary:hover {
       background-color: $ads-secondary-twenty-five;
     
-      .icon-text-stat__icon {
+      .icon-text-stat-icon {
         background-color: $ads-secondary-main;
+        color: $ads-color-main;
       }
     }
     
     &.tertiary:hover {
       background-color: $ads-tertiary-twenty-five;
     
-      .icon-text-stat__icon {
+      .icon-text-stat-icon {
         background-color: $ads-tertiary-main;
+        color: $ads-color-main;
       }
     }
     
     &.warning:hover {
       background-color: $ads-warning-twenty-five;
     
-      .icon-text-stat__icon {
+      .icon-text-stat-icon {
         background-color: $ads-warning-main;
+        color: $ads-color-main;
       }
     }
     
     &.success:hover {
       background-color: $ads-success-twenty-five;
     
-      .icon-text-stat__icon {
+      .icon-text-stat-icon {
         background-color: $ads-success-main;
+        color: $ads-color-main;
       }
     }
     
     &.error:hover {
       background-color: $ads-danger-twenty-five;
     
-      .icon-text-stat__icon {
+      .icon-text-stat-icon {
         background-color: $ads-danger-main;
+        color: $ads-color-main;
       }
     }
     
     &.primary:hover {
       background-color: $ads-primary-twenty-five;
     
-      .icon-text-stat__icon {
+      .icon-text-stat-icon {
         background-color: $ads-primary-main;
+        color: $ads-color-main;
       }
     }
 
