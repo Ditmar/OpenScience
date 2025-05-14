@@ -5,13 +5,9 @@
     @media (min-width: map-get($ads-breakpoints-scales, $breakpoint)) {
       @content;
     }
-<<<<<<< HEAD
   }
 
  @else {
-=======
-  } @else {
->>>>>>> 1430cad (DefaultInput)
     @warn "It has not been found: #{$breakpoint}.";
   }
 }
