@@ -1,0 +1,25 @@
+@use '../shadows/ShadowsDemo.tsx' as *;
+@mixin shadow($name, $value) {
+  .shadow-#{$name} {
+    box-shadow: $value;
+  }
+}
+@include shadow(xs, $ads-shadow-xs);
+@include shadow(sm, $ads-shadow-sm);
+@include shadow(md, $ads-shadow-md);
+@include shadow(lg, $ads-shadow-lg);
+@include shadow(xl, $ads-shadow-xl);
+@include shadow(3xl, $ads-shadow-3xl);
+.shadow-demo {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 500;
+  color: #333;
+  transition: box-shadow 0.3s ease;
+}
