@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-import IconTextStat from './IconTextStat';
+import IconTextStat from './icon-text-stat';
 
 const meta: Meta<typeof IconTextStat> = {
-  title: 'ui/components/molecules/Icon-text-stat',
+  title: 'library/component/atoms/icon-text-stat',
   component: IconTextStat,
 };
 

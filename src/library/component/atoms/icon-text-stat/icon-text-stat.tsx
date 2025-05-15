@@ -1,5 +1,5 @@
 import type { IProps } from './types/IProps';
-import style from './IconTextStat.module.scss';
+import style from './icon-text-stat.module.scss';
 
 function IconTextStat(props: IProps) {
   const {
