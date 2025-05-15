@@ -15,10 +15,15 @@ function MainInput(props: IProps) {
   return (
     <div className={styles['main-input-wrapper']}>
       <label htmlFor={inputId} className={styles.label}>
+        {leftIcon && <span className={styles['icon-left']}>{leftIcon}</span>}
         {label}
+        {hint && !error && (
+          <span className={`${styles.tooltip}`} data-tooltip={hint}>
+            ℹ️
+          </span>
+        )}
       </label>
       <div className={containerClass}>
-        {leftIcon && <div className={styles['icon-left']}>{leftIcon}</div>}
         <input
           id={inputId}
           type="text"
@@ -30,7 +35,7 @@ function MainInput(props: IProps) {
           aria-describedby={hint ?? error ? `${inputId}-hint` : undefined}
           aria-invalid={!!error}
         />
-        {rightIcon && <div className={styles['icon-right']}>{rightIcon}</div>}
+        {rightIcon && <span className={`${styles['icon-right']} ${!disabled ? 'clickable' : ''}`}>{rightIcon}</span>}
       </div>
       {(hint ?? error) && (
         <p id={`${inputId}-hint`} className={error ? styles['error-message'] : styles.hint}>

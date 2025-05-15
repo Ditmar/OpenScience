@@ -2,61 +2,118 @@
 @import '../../../../globals/mixins';
 @import '../../../../globals/breakpoints';
 
-.error {
-  border-color: $ads-danger-main;
+.main-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; // más espacio que antes para mejorar visual
+
+  width: 100%;
+  max-width: 400px; // o lo que requieras
 }
 
-.error-message {
-  color: $ads-danger-main;
-  font-size: 0.75rem;
+.label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: $ads-text-main;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.hint {
-  color: $ads-text-secondary;
-  font-size: 0.75rem;
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: $ads-color-main;
+  border: 1.5px solid $ads-background-main;
+  border-radius: 8px;
+  padding: 10px 14px;
+  transition: border-color 0.25s ease;
+
+  &:focus-within {
+    border-color: $ads-primary-main;
+    box-shadow: 0 0 5px rgba(7, 147, 191, 0.5);
+  }
+
+  &.error {
+    border-color: $ads-danger-main;
+  }
+
+  &.disabled {
+    background-color: $ads-background-main;
+    cursor: not-allowed;
+  }
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: $ads-text-main-hover;
+  background: transparent;
+
+  &::placeholder {
+    color: $ads-text-secondary;
+  }
+
+  &:disabled {
+    color: $ads-text-secondary;
+    cursor: not-allowed;
+  }
 }
 
 .icon-left,
 .icon-right {
-  color: $ads-text-secondary;
-  font-size: 0.875rem;
-}
-
-.input {
-  background: transparent;
-  border: none;
-  color: $ads-text-main-hover;
-  flex: 1;
-  font-size: 0.875rem;
-  outline: none;
-}
-
-.input-container {
-  align-items: center;
-  background-color: $ads-color-main;
-  border: 1px solid $ads-background-main;
-  border-radius: 12px;
   display: flex;
-  padding: 8px 12px;
-  transition: border 0.2s;
+  align-items: center;
+  color: $ads-text-secondary;
+  font-size: 1.25rem;
+  cursor: default;
 
-  &:focus-within {
-    border-color: $ads-primary-main;
+  &.clickable {
+    cursor: pointer;
   }
 }
 
-.label {
-  font-size: 0.875rem;
-  font-weight: 500;
+// Hint y error message
+.hint {
+  font-size: 0.8rem;
+  color: $ads-text-secondary;
+  margin-left: 4px;
 }
 
-.main-input-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+.error-message {
+  font-size: 0.8rem;
+  color: $ads-danger-main;
+  margin-left: 4px;
 }
 
-.disabled {
-  background-color: $ads-background-main;
-  cursor: not-allowed;
+/* Tooltip sencillo estilo burbuja */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  color: $ads-text-secondary;
+  cursor: help;
+
+  &::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $ads-text-main;
+    color: white;
+    padding: 6px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    font-size: 0.75rem;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
 }
