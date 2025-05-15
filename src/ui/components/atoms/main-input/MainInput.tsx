@@ -6,6 +6,7 @@ function MainInput(props: IProps) {
   const { label, placeholder, value, onChange, leftIcon, rightIcon, hint, error, disabled } = props;
 
   const inputId = `input-${label.replace(/\s+/g, '-').toLowerCase()}`;
+
   const containerClass = [
     styles['input-container'],
     error ? styles.error : '',
@@ -18,7 +19,7 @@ function MainInput(props: IProps) {
         {leftIcon && <span className={styles['icon-left']}>{leftIcon}</span>}
         {label}
         {hint && !error && (
-          <span className={`${styles.tooltip}`} data-tooltip={hint}>
+          <span className={styles.tooltip} data-tooltip={hint}>
             ℹ️
           </span>
         )}
@@ -35,7 +36,11 @@ function MainInput(props: IProps) {
           aria-describedby={hint ?? error ? `${inputId}-hint` : undefined}
           aria-invalid={!!error}
         />
-        {rightIcon && <span className={`${styles['icon-right']} ${!disabled ? 'clickable' : ''}`}>{rightIcon}</span>}
+        {rightIcon && (
+          <span className={`${styles['icon-right']} ${!disabled ? 'clickable' : ''}`}>
+            {rightIcon}
+          </span>
+        )}
       </div>
       {(hint ?? error) && (
         <p id={`${inputId}-hint`} className={error ? styles['error-message'] : styles.hint}>

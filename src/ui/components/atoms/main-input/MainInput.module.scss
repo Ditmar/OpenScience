@@ -2,56 +2,13 @@
 @import '../../../../globals/mixins';
 @import '../../../../globals/breakpoints';
 
-.main-input-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 8px; // más espacio que antes para mejorar visual
-
-  width: 100%;
-  max-width: 400px; // o lo que requieras
-}
-
-.label {
-  font-size: 1rem;
-  font-weight: 600;
-  color: $ads-text-main;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.input-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  background-color: $ads-color-main;
-  border: 1.5px solid $ads-background-main;
-  border-radius: 8px;
-  padding: 10px 14px;
-  transition: border-color 0.25s ease;
-
-  &:focus-within {
-    border-color: $ads-primary-main;
-    box-shadow: 0 0 5px rgba(7, 147, 191, 0.5);
-  }
-
-  &.error {
-    border-color: $ads-danger-main;
-  }
-
-  &.disabled {
-    background-color: $ads-background-main;
-    cursor: not-allowed;
-  }
-}
-
 .input {
-  flex: 1;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  color: $ads-text-main-hover;
   background: transparent;
+  border: none;
+  color: $ads-text-main-hover;
+  flex: 1;
+  font-size: 1rem;
+  outline: none;
 
   &::placeholder {
     color: $ads-text-secondary;
@@ -63,54 +20,94 @@
   }
 }
 
+.input-container {
+  align-items: center;
+  background-color: $ads-color-main;
+  border: 1.5px solid $ads-background-main;
+  border-radius: 8px;
+  display: flex;
+  padding: 10px 14px;
+  position: relative;
+  transition: border-color 0.25s ease;
+
+  &:focus-within {
+    border-color: $ads-primary-main;
+    box-shadow: 0 0 5px rgb(7 147 191 / 50%);
+  }
+
+  &.disabled {
+    background-color: $ads-background-main;
+    cursor: not-allowed;
+  }
+
+  &.error {
+    border-color: $ads-danger-main;
+  }
+}
+
 .icon-left,
 .icon-right {
-  display: flex;
   align-items: center;
   color: $ads-text-secondary;
-  font-size: 1.25rem;
   cursor: default;
+  display: flex;
+  font-size: 1.25rem;
 
   &.clickable {
     cursor: pointer;
   }
 }
 
-// Hint y error message
-.hint {
-  font-size: 0.8rem;
-  color: $ads-text-secondary;
-  margin-left: 4px;
+.label {
+  align-items: center;
+  color: $ads-text-main;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 600;
+  gap: 6px;
+}
+
+.main-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; 
+  max-width: 400px; 
+  width: 100%;
 }
 
 .error-message {
-  font-size: 0.8rem;
   color: $ads-danger-main;
+  font-size: 0.8rem;
   margin-left: 4px;
 }
 
-/* Tooltip sencillo estilo burbuja */
+.hint {
+  color: $ads-text-secondary;
+  font-size: 0.8rem;
+  margin-left: 4px;
+}
+
 .tooltip {
-  position: relative;
-  display: inline-block;
   color: $ads-text-secondary;
   cursor: help;
+  display: inline-block;
+  position: relative;
 
   &::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 120%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: $ads-text-main;
-    color: white;
-    padding: 6px 8px;
+    background-color: $ads-color-main;
     border-radius: 4px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.25s ease;
+    bottom: 120%;
+    color: $ads-color-main;
+    content: attr(data-tooltip);
     font-size: 0.75rem;
+    left: 50%;
+    opacity: 0;
+    padding: 6px 8px;
+    pointer-events: none;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: opacity 0.25s ease;
+    white-space: nowrap;
   }
 
   &:hover::after {
