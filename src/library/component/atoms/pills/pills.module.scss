@@ -1,0 +1,254 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+.pill {
+  align-items: center;
+  display: inline-flex;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  justify-content: center;
+  letter-spacing: 0;
+  padding: 2px 8px;
+  position: absolute;
+  text-align: center;
+
+  &--sm {
+    font-size: 14px;
+    height: 25px;
+    left: 124px;
+    top: 124px;
+    width: 39px; 
+  }
+
+  &--md {
+    font-size: 16px;
+    height: 28px;
+    left: 124px;
+    top: 173px;
+    width: 42px; 
+  }
+
+  &--lg {
+    font-size: 18px;
+    height: 31px;
+    left: 124px;
+    top: 225px;
+    width: 45px;
+  }
+
+  &--r-none {
+    border-radius: 0;
+  }
+
+  &--r-md {
+    border-radius: 5px;
+  }
+
+  &--r-full {
+    border-radius: 9999px;
+  }
+
+  &--border-soft-neutral-light {
+    border: 1px solid $ads-stroke-dark-soft;
+  }
+
+  &--border-soft-brand-primary {
+    border: 1px solid $ads-stroke-primary-soft;
+  }
+
+  &--border-soft-brand-secondary {
+    border: 1px solid $ads-stroke-secondary-soft;
+  }
+
+  &--border-soft-brand-tertiary {
+    border: 1px solid $ads-stroke-tertiary-soft;
+  }
+
+  &--border-soft-feedback-positive {
+    border: 1px solid $ads-stroke-positive-soft;
+  }
+
+  &--border-soft-feedback-negative {
+    border: 1px solid $ads-stroke-negative-soft;
+  }
+
+  &--border-soft-feedback-warning {
+    border: 1px solid $ads-stroke-warning-soft;
+  }
+
+  &--border-strong-neutral-light {
+    border: 1px solid $ads-stroke-dark;
+  }
+
+  &--border-strong-brand-primary {
+    border: 1px solid $ads-stroke-primary;
+  }
+
+  &--border-strong-brand-secondary {
+    border: 1px solid $ads-stroke-secondary;
+  }
+
+  &--border-strong-brand-tertiary {
+    border: 1px solid $ads-stroke-tertiary;
+  }
+
+  &--border-strong-feedback-positive {
+    border: 1px solid $ads-stroke-positive;
+  }
+
+  &--border-strong-feedback-negative {
+    border: 1px solid $ads-stroke-negative;
+  }
+
+  &--border-strong-feedback-warning {
+    border: 1px solid $ads-stroke-warning;
+  }
+
+  &--border-strong-read-only-disabled {
+    border: 1px solid $ads-stroke-disabled;
+  }
+
+  &--shadow {
+    box-shadow: 0 2px 4px #00000029;
+  }
+
+  &--filled-neutral-dark {
+    background-color: $ads-stroke-dark;
+    color: $ads-color-light;
+  }
+
+  &--filled-neutral-light {
+    background-color: $ads-color-light;
+    color: $ads-color-dark;
+  }
+
+  &--filled-brand-primary {
+    background-color: $ads-color-primary;
+    color: $ads-color-light;
+  }
+
+  &--filled-brand-secondary {
+    background-color: $ads-color-secondary;
+    color: $ads-color-light;
+  }
+
+  &--filled-brand-tertiary {
+    background-color: $ads-color-tertiary;
+    color: $ads-color-light;
+  }
+
+  &--filled-feedback-positive {
+    background-color: $ads-color-positive;
+    color: $ads-color-light;
+  }
+
+  &--filled-feedback-negative {
+    background-color: $ads-color-negative;
+    color: $ads-color-light;
+  }
+
+  &--filled-feedback-warning {
+    background-color: $ads-color-warning;
+    color: $ads-color-light;
+  }
+
+  &--filled-read-only-disabled {
+    background-color: $ads-color-disabled;
+    color: $ads-stroke-disabled;
+  }
+
+  &--outline-neutral-light {
+    background-color: transparent;
+  }
+
+  &--outline-brand-primary {
+    background-color: transparent;
+    color: $ads-color-primary;
+  }
+
+  &--outline-brand-secondary {
+    background-color: transparent;
+    color: $ads-color-secondary;
+  }
+
+  &--outline-brand-tertiary {
+    background-color: transparent;
+    color: $ads-color-tertiary;
+  }
+
+  &--outline-feedback-positive {
+    background-color: transparent;
+    color: $ads-color-positive;
+  }
+
+  &--outline-feedback-negative {
+    background-color: transparent;
+    color: $ads-color-negative;
+  }
+
+  &--outline-feedback-warning {
+    background-color: transparent;
+    color: $ads-color-warning;
+  }
+
+  &--soft-neutral-dark {
+    background-color: $ads-color-dark-soft;
+    color: $ads-color-dark;
+  }
+
+  &--soft-neutral-light {
+    background-color: $ads-color-dark-soft;
+    color: $ads-color-dark;
+  }
+
+  &--soft-brand-primary {
+    background-color: $ads-color-primary-soft;
+    color: $ads-color-primary;
+  }
+
+  &--soft-brand-secondary {
+    background-color: $ads-color-secondary-soft;
+    color: $ads-color-secondary;
+  }
+
+  &--soft-brand-tertiary {
+    background-color: $ads-color-tertiary-soft;
+    color: $ads-color-tertiary;
+  }
+
+  &--soft-feedback-positive {
+    background-color: $ads-color-positive-soft;
+    color: $ads-color-positive;
+  }
+
+  &--soft-feedback-negative {
+    background-color: $ads-color-negative-soft;
+    color: $ads-color-negative;
+  }
+
+  &--soft-feedback-warning {
+    background-color: $ads-color-warning-soft;
+    color: $ads-color-warning;
+  }
+
+  
+
+  &__icon {
+    align-items: center;
+    display: inline-flex;
+    margin-right: 0.4rem;
+
+    svg {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    span {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
