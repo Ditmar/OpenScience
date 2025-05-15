@@ -1,1 +1,0 @@
-import{j as r}from"./jsx-runtime-DRTy3Uxn.js";import{T as t}from"./ThemeProvider-CO_8jAeo.js";import"./index-BBkUAzwr.js";import"./DefaultPropsProvider-Cch_k1qx.js";const e=(o,p)=>r.jsx(t,{children:r.jsx(o,{})}),n=[e];export{n as decorators};
