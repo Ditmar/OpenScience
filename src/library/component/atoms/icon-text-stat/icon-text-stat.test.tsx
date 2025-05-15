@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { vi } from 'vitest';
-import IconTextStat from './IconTextStat';
+import IconTextStat from './icon-text-stat';
 import type { IProps } from './types/IProps';
 
-vi.mock('./IconTextStat.module.scss', () => ({
+vi.mock('./icon-text-stat.module.scss', () => ({
   default: {
     'icon-text-stat': 'icon-text-stat',
     'icon-text-stat-checkbox': 'icon-text-stat-checkbox',
