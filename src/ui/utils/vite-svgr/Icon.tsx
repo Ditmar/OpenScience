@@ -1,9 +1,9 @@
-import { useDynamic } from '../hooks/useDynamic';
+import { useDynamicIcon } from '../hooks/useDynamicIcon';
 import type { IconProps } from './types/IProps';
 import { Loader } from './Loader';
 
 export function Icon({ iconName, ...props }: IconProps) {
-  const [DynamicComponent] = useDynamic(iconName);
+  const [DynamicComponent] = useDynamicIcon(iconName);
 
   return (
     <div>
