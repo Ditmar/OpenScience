@@ -1,4 +1,4 @@
-import{r as R}from"./index-BBkUAzwr.js";import{g as j,a as w,s as y,m as P,c as N,b as U,d as E}from"./ThemeSwitcher-BfPdl6c-.js";import{j as f}from"./jsx-runtime-DRTy3Uxn.js";import{k as S,c as $,a as n,u as F}from"./ThemeProvider-Bzc8B3h2.js";function I(e){return j("MuiCircularProgress",e)}w("MuiCircularProgress",["root","determinate","indeterminate","colorPrimary","colorSecondary","svg","circle","circleDeterminate","circleIndeterminate","circleDisableShrink"]);const t=44,g=S`
+import{r as R}from"./index-BBkUAzwr.js";import{g as j,a as w,s as y,m as P,c as N,b as U,d as E}from"./createSimplePaletteValueFilter-IhlURDkD.js";import{j as f}from"./jsx-runtime-DRTy3Uxn.js";import{k as S,c as $,a as n,u as F}from"./ThemeProvider-BbKWoKkp.js";function I(e){return j("MuiCircularProgress",e)}w("MuiCircularProgress",["root","determinate","indeterminate","colorPrimary","colorSecondary","svg","circle","circleDeterminate","circleIndeterminate","circleDisableShrink"]);const t=44,g=S`
   0% {
     transform: rotate(0deg);
   }
