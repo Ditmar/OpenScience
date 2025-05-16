@@ -1,0 +1,85 @@
+@import '../../../../globals/_variables';
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 15px;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.box {
+  height: 90px;
+  width: 300px;
+}
+
+.label {
+  font-family: Roboto, sans-serif;
+  margin-top: 0.5rem;
+}
+
+.gradient-lavender-bloom {
+  background: $ads-gradient-lavender-bloom;
+}
+
+.gradient-coral-peach {
+  background: $ads-gradient-coral-peach;
+}
+
+.gradient-serene-sky {
+  background: $ads-gradient-serene-sky;
+}
+
+.gradient-ocean-turquoise {
+  background: $ads-gradient-ocean-turquoise;
+}
+
+.gradient-sunset-gold {
+  background: $ads-gradient-sunset-gold;
+}
+
+.gradient-orchid-twilight {
+  background: $ads-gradient-orchid-twilight;
+}
+
+.gradient-emerald-jade {
+  background: $ads-gradient-emerald-jade;
+}
+
+.gradient-sapphire-azure {
+  background: $ads-gradient-sapphire-azure;
+}
+
+.gradient-aqua-amethyst {
+  background: $ads-gradient-aqua-amethyst;
+}
+
+.gradient-mint-lemonade {
+  background: $ads-gradient-mint-lemonade;
+}
+
+.gradient-fiery-lavender {
+  background: $ads-gradient-fiery-lavender;
+}
+
+.gradient-violet-rose {
+  background: $ads-gradient-violet-rose;
+}
+
+.gradient-pink-blossom {
+  background: $ads-gradient-pink-blossom;
+}
+
+.gradient-sky-magenta {
+  background: $ads-gradient-sky-magenta;
+}
+
+.gradient-neon-lime {
+  background: $ads-gradient-neon-lime;
+}
