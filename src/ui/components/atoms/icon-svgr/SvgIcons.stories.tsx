@@ -6,11 +6,11 @@ const meta: Meta<typeof Icon> = {
   title: 'Design System/Icons/SVG Icons',
   component: Icon,
   parameters: {
-    componentSubtitle: 'Biblioteca de iconos SVG para la aplicación',
+    componentSubtitle: 'SVG icons library for the app',
     docs: {
       description: {
         component:
-          'Iconos SVG cargados dinámicamente que se pueden personalizar en tamaño, color y otros atributos.',
+          'Dynamically loaded SVG icons that can be customized in size, color, and other attributes.',
       },
     },
     backgrounds: {
@@ -33,49 +33,49 @@ const meta: Meta<typeof Icon> = {
   argTypes: {
     width: {
       control: { type: 'range', min: 16, max: 200, step: 4 },
-      description: 'Tamaño del icono en píxeles',
+      description: 'Icon size width in pixels',
       table: {
-        category: 'Dimensiones',
+        category: 'Dimensions',
         defaultValue: { summary: '24' },
       },
     },
     height: {
       control: { type: 'range', min: 16, max: 200, step: 4 },
-      description: 'Tamaño del icono en píxeles',
+      description: 'Icon size height in pixels',
       table: {
-        category: 'Dimensiones',
+        category: 'Dimensions',
         defaultValue: { summary: '24' },
       },
     },
     color: {
       control: 'color',
-      description: 'Color del icono (shorthand para fill o stroke según el icono)',
+      description: 'Icon color (shorthand for fill or stroke depending on the icon)',
       table: {
-        category: 'Apariencia',
+        category: 'Appearance',
         defaultValue: { summary: 'currentColor' },
       },
     },
     stroke: {
       control: 'color',
-      description: 'Color del trazo (si aplica)',
+      description: 'Stroke color (if applicable)',
       table: {
-        category: 'Apariencia',
+        category: 'Appearance',
       },
     },
     strokeWidth: {
       control: { type: 'range', min: 0, max: 5, step: 0.5 },
-      description: 'Grosor del trazo (si aplica)',
+      description: 'Stroke width (if applicable)',
       defaultValue: 1,
       table: {
-        category: 'Apariencia',
+        category: 'Appearance',
       },
     },
     className: {
       control: 'text',
-      description: 'Clase CSS personalizada para el icono',
+      description: 'Custom CSS class for the icon',
       defaultValue: '',
       table: {
-        category: 'Estilos',
+        category: 'Styles',
       },
     },
     iconName: {
@@ -116,32 +116,31 @@ const meta: Meta<typeof Icon> = {
           'whatsapp' as IconName,
         ],
       },
-      description: 'Nombre del icono SVG a mostrar',
+      description: 'Name of the SVG icon to display',
       table: {
-        category: 'Contenido',
+        category: 'Content',
         type: { summary: 'string' },
       },
       defaultValue: 'article',
     },
     fill: {
       control: 'color',
-      description: 'Color de relleno del icono (si aplica)',
+      description: 'Fill color of the icon (if applicable)',
       defaultValue: 'currentColor',
       table: {
-        category: 'Apariencia',
+        category: 'Appearance',
         type: { summary: 'string' },
       },
     },
     opacity: {
       control: { type: 'range', min: 0, max: 1, step: 0.1 },
-      description: 'Opacidad del icono',
+      description: 'Icon opacity (0 to 1)',
       defaultValue: 1,
       table: {
-        category: 'Apariencia',
+        category: 'Appearance',
       },
     },
   },
-  // Valores por defecto para todos los stories
   args: {
     width: 32,
     height: 32,
@@ -151,7 +150,6 @@ const meta: Meta<typeof Icon> = {
     opacity: 1,
     role: 'img',
   },
-  // Decorador para mostrar mejor los iconos
   decorators: [
     (Story) => (
       <div
@@ -182,7 +180,6 @@ export const Default: Story = {
   },
 };
 
-// Historias individuales
 export const LogoIcon: Story = {
   args: {
     color: '#0073e6',

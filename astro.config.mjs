@@ -29,7 +29,6 @@ export default defineConfig({
             className: 'w-full h-full',
             fill: 'currentColor',
             role: 'img',
-            'data-testid': 'icon',
           },
           svgoConfig: {
             plugins: [

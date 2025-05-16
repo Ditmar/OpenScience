@@ -2775,7 +2775,7 @@
     pump "^3.0.0"
     tar-fs "^2.1.1"
 
-"@newhighsco/storybook-addon-svgr@^2.0.59":
+"@newhighsco/storybook-addon-svgr@2.0.59":
   version "2.0.59"
   resolved "https://registry.yarnpkg.com/@newhighsco/storybook-addon-svgr/-/storybook-addon-svgr-2.0.59.tgz#2ebadbf5537eae1967b64908354f37e4f7948f03"
   integrity sha512-Zky9kz5VEcoA+Uew9tX6TCSiuURKmUaGbU8ApiGl94ivezsahFERqL1em8t/bw3Tsq31SqzeywG9H87LlN2y7w==
@@ -13295,7 +13295,7 @@ vite-node@1.6.0:
     picocolors "^1.0.0"
     vite "^5.0.0"
 
-vite-plugin-svgr@^4.3.0:
+vite-plugin-svgr@4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/vite-plugin-svgr/-/vite-plugin-svgr-4.3.0.tgz#742f16f11375996306c696ec323e4d23f6005075"
   integrity sha512-Jy9qLB2/PyWklpYy0xk0UU3TlU0t2UMpJXZvf+hWII1lAmRHrOUKi11Uw8N3rxoNk7atZNYO3pR3vI1f7oi+6w==
