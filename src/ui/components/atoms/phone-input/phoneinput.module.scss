@@ -1,0 +1,185 @@
+// phoneinput.module.scss
+.container {
+  display: flex;
+  flex-direction: column;
+  font-family: inherit;
+  width: 100%;
+  gap: 4px;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.label-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.label-text {
+  font-size: 0.875rem;
+}
+
+/* CLOSE BUTTON */
+.close-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.close-icon-url {
+  width: 14px;
+  height: 14px;
+}
+
+/* INPUT CONTAINER */
+.input-container {
+  display: flex;
+  border: 1px solid #ccc;
+  transition: border 0.2s ease;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 4px 8px;
+  gap: 6px;
+}
+
+.planet-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.protocol {
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+}
+
+.divider {
+  color: #ccc;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 4px;
+}
+
+.input-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: inherit;
+  background: transparent;
+}
+
+/* COPY BUTTON */
+.copy-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  padding: 2px 4px;
+}
+
+.copy-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* FOOTER */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hint-text {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.hint-text.error {
+  color: #ff5a5f;
+}
+
+.info-icon,
+.standalone-info-icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* VARIANTS */
+.variant--default .input-container {
+  border: 1px solid #ccc;
+}
+
+.variant--focus .input-container {
+  border: 1px solid #4b5fff;
+  box-shadow: 0 0 0 1px #4b5fff;
+}
+
+.variant--error .input-container {
+  border: 1px solid #ff5a5f;
+}
+
+.variant--disabled .input-container {
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* SIZES */
+.size--small .input {
+  font-size: 0.875rem;
+}
+
+.size--medium .input {
+  font-size: 1rem;
+}
+
+.size--large .input {
+  font-size: 1.125rem;
+}
+
+/* BORDER RADIUS */
+.radius--none {
+  border-radius: 0;
+}
+
+.radius--small {
+  border-radius: 6px;
+}
+
+.radius--full {
+  border-radius: 9999px;
+}
