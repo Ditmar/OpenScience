@@ -1,28 +1,30 @@
-// phoneinput.module.scss
+
+@import '../../global/scss/_variables';
+
 .container {
   display: flex;
   flex-direction: column;
   font-family: inherit;
-  width: 100%;
   gap: 4px;
+  width: 100%;
 }
 
 /* HEADER */
 .header {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .label-wrapper {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 4px;
 }
 
 .label-icon {
-  width: 16px;
   height: 16px;
+  width: 16px;
 }
 
 .label-text {
@@ -38,37 +40,37 @@
 }
 
 .close-icon-url {
-  width: 14px;
   height: 14px;
+  width: 14px;
 }
 
 /* INPUT CONTAINER */
 .input-container {
-  display: flex;
   border: 1px solid #ccc;
+  display: flex;
   transition: border 0.2s ease;
 }
 
 .input-wrapper {
-  display: flex;
   align-items: center;
-  width: 100%;
-  padding: 4px 8px;
+  display: flex;
   gap: 6px;
+  padding: 4px 8px;
+  width: 100%;
 }
 
 .planet-icon {
-  width: 16px;
   height: 16px;
+  width: 16px;
 }
 
 .protocol {
+  appearance: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
-  border: none;
-  background: transparent;
-  appearance: none;
-  cursor: pointer;
 }
 
 .divider {
@@ -76,55 +78,54 @@
 }
 
 .input-group {
-  display: flex;
   align-items: center;
+  display: flex;
   flex: 1;
   gap: 4px;
 }
 
 .input-icon {
-  width: 16px;
   height: 16px;
+  width: 16px;
 }
 
 .input {
+  background: transparent;
   border: none;
-  outline: none;
   flex: 1;
   font-size: inherit;
-  background: transparent;
+  outline: none;
 }
 
 /* COPY BUTTON */
 .copy-button {
-  display: flex;
   align-items: center;
-  gap: 4px;
   background: transparent;
   border: none;
   cursor: pointer;
+  display: flex;
   font-size: 0.875rem;
+  gap: 4px;
   padding: 2px 4px;
 }
 
 .copy-icon {
-  width: 16px;
   height: 16px;
+  width: 16px;
 }
 
 /* FOOTER */
 .footer {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
 }
 
 .hint-text {
-  display: flex;
   align-items: center;
-  gap: 4px;
+  display: flex;
   font-size: 0.75rem;
-  color: #666;
+  gap: 4px;
 }
 
 .hint-text.error {
@@ -133,8 +134,8 @@
 
 .info-icon,
 .standalone-info-icon {
-  width: 14px;
   height: 14px;
+  width: 14px;
 }
 
 /* VARIANTS */
@@ -152,8 +153,8 @@
 }
 
 .variant--disabled .input-container {
-  border: 1px solid #ccc;
   background-color: #f5f5f5;
+  border: 1px solid #ccc;
   opacity: 0.6;
   pointer-events: none;
 }
