@@ -1,0 +1,105 @@
+@import '../globals/variables';
+@import '../globals/breakpoints';
+
+@mixin respond-to-xs {
+  @media (width <= 576px) {
+    @content;
+  }
+}
+
+@mixin respond-to-sm {
+  @media (width <= 768px) {
+    @content;
+  }
+}
+
+@mixin respond-to-md {
+  @media (width <= 992px) {
+    @content;
+  }
+}
+
+@mixin respond-to-lg {
+  @media (width <= 1200px) {
+    @content;
+  }
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  padding: 0;
+  width: 100%;
+}
+
+.auto-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(12, minmax(78px, 1fr));
+}
+
+.grid-item {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: transparent;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  min-height: 50px;
+  padding: 12px;
+  text-align: center;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    grid-column: span $i;
+  }
+}
+
+@include respond-to-lg {
+  @for $i from 1 through 12 {
+    .col-lg-#{$i} {
+      grid-column: span $i !important;
+    }
+  }
+}
+
+@include respond-to-md {
+  @for $i from 1 through 12 {
+    .col-md-#{$i} {
+      grid-column: span $i !important;
+    }
+  }
+}
+
+@include respond-to-sm {
+  @for $i from 1 through 12 {
+    .col-sm-#{$i} {
+      grid-column: span $i !important;
+    }
+  }
+}
+
+@include respond-to-xs {
+  @for $i from 1 through 12 {
+    .col-xs-#{$i} {
+      grid-column: span $i !important;
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .container {
+    max-width: 398px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .auto-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+}
