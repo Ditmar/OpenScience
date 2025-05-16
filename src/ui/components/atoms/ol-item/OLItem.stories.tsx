@@ -119,7 +119,7 @@ export const AllVariants: Story = {
         ))}
       </div>
 
-      <div style={{ display: 'flex', gap: '3rem' }}>
+      <div style={{ display: 'flex', gap: '3.5rem' }}>
         {shapes.map((shape) => (
           <div
             key={`active-${shape}`}
