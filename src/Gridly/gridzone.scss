@@ -4,8 +4,11 @@
 
 @mixin respond-to($breakpoint) {
   $value: map-get($ads_breakpoints_scales, $breakpoint);
+
   @if $value {
+
     @media (max-width: $value) {
+
       @content;
     }
   }
@@ -48,7 +51,9 @@
 
 
 @each $bp_name, $bp_value in $ads_breakpoints_scales {
+  
   @include respond-to($bp_name) {
+    
     @for $i from 1 through 12 {
       .col-#{$bp_name}-#{$i} {
         grid-column: span $i !important;
