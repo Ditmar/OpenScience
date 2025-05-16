@@ -2,7 +2,7 @@
 @import '../globals/variables';
 
 @mixin respond-to($breakpoint) {
-  $value: map-get($ads-breakpoints-scales, $breakpoint);
+  $value: map-get($ads_breakpoints_scales, $breakpoint);
   @if $value {
     @media (max-width: $value) {
       @content;
@@ -11,31 +11,30 @@
 }
 
 .container {
-  margin: 0 auto;
-  max-width: $ads-gridforge-container-size;
-  padding: 0 0;
-  width: 100%;
-  margin: 0 $ads-gridforge-margin;
   box-sizing: border-box;
+  margin: 0 $ads-gridforge-margin;
+  max-width: $ads-gridforge-container-size;
+  padding: 0;
+  width: 100%;
 }
 
 .auto-grid {
   display: grid;
   gap: $ads-gridforge-gutter;
   grid-template-columns: repeat(12, 1fr);
-  gap: 24px;
-} 
+}
+
 .grid-item {
+  align-items: center;
   background-color: $ads-grid-item-bg;
   border: none;
   color: transparent;
+  display: flex;
   font-weight: bold;
+  justify-content: center;
   min-height: 50px;
   padding: $ads-grid-item-padding;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Clases base: col-1 a col-12 */
@@ -46,7 +45,7 @@
 }
 
 /* Generar clases responsivas dinámicamente */
-@each $bp-name, $bp-value in $ads-breakpoints-scales {
+@each $bp-name, $bp-value in $ads_breakpoints_scales {
   @include respond-to($bp-name) {
     @for $i from 1 through 12 {
       .col-#{$bp-name}-#{$i} {
