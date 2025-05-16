@@ -1,8 +1,4 @@
-/* Variables */
-$color-border: #ccc;
-$color-error: #ff5a5f;
-$color-background-disabled: #f5f5f5;
-$color-focus: #4b5fff;
+@import '../../src/globals/variables';
 
 .container {
   display: flex;
