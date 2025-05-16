@@ -1,6 +1,7 @@
 @import '../globals/breakpoints';
 @import '../globals/variables';
 
+
 @mixin respond-to($breakpoint) {
   $value: map-get($ads_breakpoints_scales, $breakpoint);
   @if $value {
@@ -38,11 +39,13 @@
   text-align: center;
 }
 
+
 @for $i from 1 through 12 {
   .col-#{$i} {
     grid-column: span $i;
   }
 }
+
 
 @each $bp_name, $bp_value in $ads_breakpoints_scales {
   @include respond-to($bp_name) {
