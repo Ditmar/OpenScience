@@ -1,0 +1,26 @@
+import{j as r}from"./jsx-runtime-BTJTZTIL.js";import{I as v}from"./icons-CVVufTdu.js";import"./index-ChsGqxH_.js";import"./index-CQJd15Kt.js";import"./_commonjsHelpers-D6-XlEtG.js";import"./_commonjs-dynamic-modules-TDtrdbi3.js";const t={"close-download-button":"_close-download-button_rzrex_1","button-icon":"_button-icon_rzrex_36","button-icon--primary":"_button-icon--primary_rzrex_45","button-icon--secondary":"_button-icon--secondary_rzrex_48"};function w(g){const{icon:s,onClick:h,color:_}=g,f=t[_];return r.jsx("button",{className:`${t["close-download-button"]} ${f}`,"aria-label":"Abrir",onClick:h,children:s&&r.jsx(v,{"data-testid":"button-icon",src:s,className:t.buttonIcon})})}w.__docgenInfo={description:"",methods:[],displayName:"CloseDownloadButton",props:{children:{required:!1,tsType:{name:"ReactReactNode",raw:"React.ReactNode"},description:""},icon:{required:!1,tsType:{name:"string"},description:""},color:{required:!1,tsType:{name:"union",raw:"'primary' | 'secondary'",elements:[{name:"literal",value:"'primary'"},{name:"literal",value:"'secondary'"}]},description:""},onClick:{required:!1,tsType:{name:"signature",type:"function",raw:"() => void",signature:{arguments:[],return:{name:"void"}}},description:""}}};const x=`<svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.72196 10C5.19098 8.36495 2.65955 6.7299 0 5.01177C2.6232 3.31545 5.18735 1.6579 7.75149 0C7.83418 0.0533133 7.91732 0.106627 8 0.159939C6.94827 1.53846 5.93424 2.93499 4.82571 4.28616C4.40139 4.80336 4.3873 5.17483 4.81299 5.69584C5.92061 7.0529 6.93645 8.45323 7.9891 9.83625C7.90005 9.8906 7.81101 9.9453 7.72196 10Z" fill="#FCFCFC"/>
+</svg>
+`,y=`<svg width="80" height="85" viewBox="0 0 80 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M71.2298 75.3502C71.2298 74.8934 71.2298 74.5487 71.2298 74.2025C71.2298 66.4822 71.2234 58.762 71.2346 51.0434C71.2378 48.6084 72.8184 46.7985 75.1252 46.526C77.4896 46.2471 79.6698 47.9527 79.9407 50.3188C80.0064 50.9007 79.9968 51.4922 79.9968 52.0789C80 61.1345 79.9984 70.1901 80 79.2456C80 82.41 78.2703 84.1445 75.0963 84.1445C51.6166 84.1445 28.1353 84.1445 4.65562 84.1445C1.88557 84.1445 0.0244463 82.3876 0.0180342 79.6335C-0.00761443 70.0971 -0.00280532 60.5606 0.0132251 51.0241C0.0164311 48.8264 1.32291 47.14 3.30266 46.6286C5.16058 46.1493 7.22048 46.9156 8.11177 48.6324C8.53497 49.4451 8.74337 50.4583 8.74978 51.3832C8.79947 59.0489 8.78986 66.7163 8.761 74.382C8.7578 75.1675 8.9197 75.4176 9.7629 75.416C29.958 75.3903 50.1514 75.3967 70.3465 75.3951C70.6078 75.3951 70.8691 75.3695 71.2298 75.3502Z" fill="white"/>
+<path d="M35.3199 53.697C35.3199 52.8122 35.3151 52.1549 35.3199 51.4977C35.4337 36.4596 35.5475 21.4215 35.6645 6.38337C35.6709 5.5562 35.6565 4.72262 35.7463 3.90347C35.9996 1.57906 37.9873 -0.118555 40.2492 0.00648239C42.6009 0.137931 44.4267 1.97982 44.4251 4.34591C44.4203 9.15342 44.3562 13.9609 44.3209 18.7684C44.2472 28.7041 44.1783 38.6397 44.1045 48.5753C44.0933 50.071 44.0725 51.565 44.0612 53.0606C44.0612 53.2626 44.0885 53.4646 44.1141 53.8365C45.4142 52.5909 46.6037 51.4544 47.7899 50.3146C51.9883 46.2814 56.1674 42.2273 60.393 38.2229C62.8152 35.9274 66.6769 36.9757 67.597 40.1449C68.0972 41.8682 67.6323 43.3799 66.3579 44.6094C62.0153 48.8013 57.655 52.9741 53.3027 57.1564C49.7793 60.542 46.2494 63.9228 42.7387 67.3229C40.9385 69.0654 38.2486 69.0942 36.4885 67.3196C28.9478 59.7164 21.4183 52.1004 13.8728 44.502C12.5792 43.1987 12.0197 41.7079 12.5327 39.9157C12.9879 38.3255 14.054 37.2883 15.665 36.9084C17.3626 36.5077 18.8022 37.011 20.0317 38.2598C24.4336 42.7323 28.858 47.1855 33.2744 51.6451C33.8932 52.2703 34.5167 52.8907 35.3199 53.6954V53.697Z" fill="white"/>
+</svg>
+`,b=`<svg width="24" height="24" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.50624 6L7.45937 1.63651C7.6279 1.48807 7.62411 1.25065 7.45092 1.10623C7.27772 0.9618 7.00076 0.965055 6.83229 1.11349L1.58227 5.7385C1.41702 5.88405 1.41702 6.11595 1.58227 6.2615L6.83229 10.8865C7.00076 11.035 7.27772 11.0382 7.45092 10.8938C7.62411 10.7494 7.6279 10.5119 7.45937 10.3635L2.50624 6Z" fill="white"/>
+</svg>
+`,k={title:"ui/components/atoms/close-download-button",component:w,argTypes:{onClick:{action:"click"}}},o={args:{children:"close",icon:x}},e={args:{children:"close_simple",icon:b}},n={args:{children:"downloads",icon:y}};var a,i,c;o.parameters={...o.parameters,docs:{...(a=o.parameters)==null?void 0:a.docs,source:{originalSource:`{
+  args: {
+    children: 'close',
+    icon: close
+  }
+}`,...(c=(i=o.parameters)==null?void 0:i.docs)==null?void 0:c.source}}};var l,d,C;e.parameters={...e.parameters,docs:{...(l=e.parameters)==null?void 0:l.docs,source:{originalSource:`{
+  args: {
+    children: 'close_simple',
+    icon: close_simple
+  }
+}`,...(C=(d=e.parameters)==null?void 0:d.docs)==null?void 0:C.source}}};var p,m,u;n.parameters={...n.parameters,docs:{...(p=n.parameters)==null?void 0:p.docs,source:{originalSource:`{
+  args: {
+    children: 'downloads',
+    icon: downloads
+  }
+}`,...(u=(m=n.parameters)==null?void 0:m.docs)==null?void 0:u.source}}};const q=["CloseButton","CloseSimpleButton","DownloadButton"];export{o as CloseButton,e as CloseSimpleButton,n as DownloadButton,q as __namedExportsOrder,k as default};
