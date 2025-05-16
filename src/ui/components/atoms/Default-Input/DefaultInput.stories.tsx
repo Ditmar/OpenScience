@@ -5,108 +5,126 @@ import { DefaultInput } from './DefaultInput';
 const meta: Meta<typeof DefaultInput> = {
   title: 'Components/DefaultInput',
   component: DefaultInput,
-  argTypes: {
-    type: {
-      control: { type: 'select' },
-      options: ['text', 'email', 'password', 'number'],
-    },
-    disabled: { control: 'boolean' },
-  },
 };
 
 export default meta;
 
 type Story = StoryObj<typeof DefaultInput>;
 
-interface InputTriadProps {
-  label?: string;
-  placeholder?: string;
-  hint?: string;
-  error?: string;
-  value?: string;
-  type?: string;
-  disabled?: boolean;
-  className?: string;
+function VariantContainer({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '3px',
+        width: '330px',
+        marginBottom: '16px',
+      }}
+    >
+      {children}
+    </div>
+  );
 }
 
-function InputTriad({
+const createVariants = ({
   label,
   placeholder,
   hint,
   error,
   value,
-  type,
   disabled,
-  className,
-}: InputTriadProps) {
-  const baseClass = className ?? '';
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', width: '330px' }}>
-      <DefaultInput
-        label={label}
-        placeholder={placeholder}
-        hint={hint}
-        error={error}
-        value={value}
-        type={type}
-        disabled={disabled}
-        className={`${baseClass} sharp-corners`}
-      />
-      <DefaultInput
-        label={label}
-        placeholder={placeholder}
-        hint={hint}
-        error={error}
-        value={value}
-        type={type}
-        disabled={disabled}
-        className={`${baseClass} rounded-corners`}
-      />
-      <DefaultInput
-        label={label}
-        placeholder={placeholder}
-        hint={hint}
-        error={error}
-        value={value}
-        type={type}
-        disabled={disabled}
-        className={`${baseClass} pill-shape`}
-      />
-    </div>
-  );
-}
-
-InputTriad.defaultProps = {
-  label: '',
-  placeholder: '',
-  hint: '',
-  error: '',
-  value: '',
-  type: 'text',
-  disabled: false,
-  className: '',
-};
-
-// Todas las historias ahora tienen hint="Hint Text"
+}: React.ComponentProps<typeof DefaultInput>) => (
+  <>
+    <DefaultInput
+      label={label}
+      placeholder={placeholder}
+      hint={hint}
+      error={error}
+      value={value}
+      disabled={disabled}
+      className="sharp-corners"
+    />
+    <DefaultInput
+      label={label}
+      placeholder={placeholder}
+      hint={hint}
+      error={error}
+      value={value}
+      disabled={disabled}
+      className="rounded-corners"
+    />
+    <DefaultInput
+      label={label}
+      placeholder={placeholder}
+      hint={hint}
+      error={error}
+      value={value}
+      disabled={disabled}
+      className="pill-shape"
+    />
+  </>
+);
 
 export const Default: Story = {
-  render: () => <InputTriad label="Email Address" placeholder="Input Text" hint="Hint Text" />,
-};
-
-export const WithHint: Story = {
-  render: () => <InputTriad label="Email Address" placeholder="Input Text" hint="Hint Text" />,
-};
-
-export const WithError: Story = {
   render: () => (
-    <InputTriad label="Email Address" placeholder="Input Text" error="Hint Text" hint="Hint Text" />
+    <VariantContainer>
+      {createVariants({
+        label: 'Email Address',
+        placeholder: 'Input Text',
+        hint: 'Hint Text',
+      })}
+    </VariantContainer>
+  ),
+};
+
+export const Focus: Story = {
+  parameters: { pseudo: { focus: true } },
+  render: () => (
+    <VariantContainer>
+      {createVariants({
+        label: 'Email Address',
+        placeholder: 'Input Text',
+        hint: 'Hint Text',
+      })}
+    </VariantContainer>
+  ),
+};
+
+export const Filled: Story = {
+  render: () => (
+    <VariantContainer>
+      {createVariants({
+        label: 'Email Address',
+        value: 'Input Text',
+        placeholder: 'Input Text',
+        hint: 'Hint Text',
+      })}
+    </VariantContainer>
+  ),
+};
+
+export const Error: Story = {
+  render: () => (
+    <VariantContainer>
+      {createVariants({
+        label: 'Email Address',
+        placeholder: 'Input Text',
+        error: 'Hint Text',
+      })}
+    </VariantContainer>
   ),
 };
 
 export const Disabled: Story = {
-  render: () => <InputTriad label="Email Address" value="Input Text" disabled hint="Hint Text" />,
-};
-
-export const WithIcons: Story = {
-  render: () => <InputTriad label="Email Address" placeholder="Input Text" hint="Hint Text" />,
+  render: () => (
+    <VariantContainer>
+      {createVariants({
+        label: 'Email Address',
+        placeholder: 'Input Text',
+        disabled: true,
+        hint: 'Hint Text',
+      })}
+    </VariantContainer>
+  ),
 };
