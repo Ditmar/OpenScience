@@ -14,5 +14,3 @@ function GridMobile({ children }: Props) {
 }
 
 export default GridMobile;
-
-
