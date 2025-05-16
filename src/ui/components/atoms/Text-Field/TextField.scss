@@ -8,27 +8,27 @@
 
   font-family: Inter, system-ui, sans-serif;
   font-size: 14px;
-  width: 330px;
   margin-bottom: 24px;
+  width: 330px;
 
   &__label {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 21px;
+    color: var(--text-color);
+    display: flex;
     font-size: 14px;
     font-weight: 500;
-    color: var(--text-color);
+    height: 21px;
+    justify-content: space-between;
     margin-bottom: 4px;
   }
 
   &__container {
-  display: block;
   background: white;
   border: 1px solid var(--border-color);
   border-radius: 6px;
+  display: block;
+  min-height: 123px;
   padding: 0;
-  min-height: 123px; // ✅ corregido
   transition: all 0.15s ease;
 
   &:hover:not(.disabled) {
@@ -52,20 +52,20 @@
 }
 
 &__field {
-  width: 100%;
-  height: 100%;
   background: transparent;
   border: none;
-  resize: none;
+  color: var(--text-color);
   font-size: 20px;
   font-weight: 400;
+  height: 100%;
   line-height: 1.5;
-  color: var(--text-color);
-  padding: 12px;  
+  min-height: 123px;  
   outline: none;
-  vertical-align: top;
+  padding: 12px;
+  resize: none;
   text-align: left;
-  min-height: 123px;
+  vertical-align: top;
+  width: 100%;
 
   &:disabled {
     color: var(--hint-color);
@@ -79,14 +79,14 @@
 }
 
   &__icon {
-    display: flex;
     align-items: center;
     color: var(--hint-color);
+    display: flex;
     padding: 0 8px;
 
     svg {
-      width: 20px;
       height: 20px;
+      width: 20px;
     }
 
     &.left {
@@ -99,12 +99,12 @@
   }
 
   &__message {
-    display: flex;
     align-items: center;
-    height: 21px;
-    font-size: 13px;
-    margin-top: 8px;
     color: var(--hint-color);
+    display: flex;
+    font-size: 13px;
+    height: 21px;
+    margin-top: 8px;
 
     &.error {
       color: var(--error-color);
