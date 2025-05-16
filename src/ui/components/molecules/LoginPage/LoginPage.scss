@@ -12,7 +12,7 @@
   width: 800px;
 
   &--secondary {
-    background-color: $ads-text-secondary; 
+    background-color: $ads-text-secondary;
     position: sticky;
   }
 }
@@ -23,7 +23,7 @@
   height: auto;
   margin-inline: auto;
   width: 400px;
-  
+
   .logo-icon {
     svg {
       height: 100%;
@@ -205,7 +205,7 @@
 
   .button-start .button__label {
     border-radius: 20px;
-    width: 300px;    
+    width: 300px;
   }
 
   /* stylelint-disable */
@@ -247,7 +247,7 @@
 }
 
 @include respond-to('large') {
-  .page {   
+  .page {
     width: 800px;
   }
 
@@ -257,7 +257,7 @@
 
   .button-start .button__label {
     border-radius: 10px;
-    width: 400px;    
+    width: 400px;
   }
 
   .start__button-icon {
