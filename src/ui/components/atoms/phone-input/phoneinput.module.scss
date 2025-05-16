@@ -1,4 +1,4 @@
-@import '../../global/scss/_variables';
+@import '../../global/_variables.scss';
 
 .container {
   display: flex;
@@ -45,7 +45,7 @@
 
 /* INPUT CONTAINER */
 .input-container {
-  border: 1px solid $color-border;
+  border: 1px solid $colorBorder;
   display: flex;
   transition: border 0.2s ease;
 }
@@ -73,7 +73,7 @@
 }
 
 .divider {
-  color: $color-border;
+  color: $colorBorder;
 }
 
 .input-group {
@@ -128,7 +128,7 @@
 }
 
 .hint-text.error {
-  color: $color-error;
+  color: $colorError;
 }
 
 .info-icon,
@@ -139,21 +139,21 @@
 
 /* VARIANTS */
 .variant--default .input-container {
-  border: 1px solid $color-border;
+  border: 1px solid $colorBorder;
 }
 
 .variant--focus .input-container {
-  border: 1px solid $color-focus;
-  box-shadow: 0 0 0 1px $color-focus;
+  border: 1px solid $colorFocus;
+  box-shadow: 0 0 0 1px $colorFocus;
 }
 
 .variant--error .input-container {
-  border: 1px solid $color-error;
+  border: 1px solid $colorError;
 }
 
 .variant--disabled .input-container {
-  background-color: $color-background-disabled;
-  border: 1px solid $color-border;
+  background-color: $colorBackgroundDisabled;
+  border: 1px solid $colorBorder;
   opacity: 0.6;
   pointer-events: none;
 }
