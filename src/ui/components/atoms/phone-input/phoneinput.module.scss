@@ -46,7 +46,7 @@
 
 /* INPUT CONTAINER */
 .input-container {
-  border: 1px solid $color-border;
+  border: 1px solid $ads-color-border;
   display: flex;
   transition: border 0.2s ease;
 }
@@ -74,7 +74,7 @@
 }
 
 .divider {
-  color: $color-border;
+  color: $ads-color-border;
 }
 
 .input-group {
@@ -129,7 +129,7 @@
 }
 
 .hint-text.error {
-  color: $color-error;
+  color: $ads-color-error;
 }
 
 .info-icon,
@@ -140,21 +140,21 @@
 
 /* VARIANTS */
 .variant--default .input-container {
-  border: 1px solid $color-border;
+  border: 1px solid $ads-color-border;
 }
 
 .variant--focus .input-container {
-  border: 1px solid $color-focus;
-  box-shadow: 0 0 0 1px $color-focus;
+  border: 1px solid $ads-color-focus;
+  box-shadow: 0 0 0 1px $ads-color-focus;
 }
 
 .variant--error .input-container {
-  border: 1px solid $color-error;
+  border: 1px solid $ads-color-error;
 }
 
 .variant--disabled .input-container {
-  background-color: $color-background-disabled;
-  border: 1px solid $color-border;
+  background-color: $ads-color-background-disabled;
+  border: 1px solid $ads-color-border;
   opacity: 0.6;
   pointer-events: none;
 }
