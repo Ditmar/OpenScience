@@ -3,30 +3,34 @@
 
 
 @mixin respond-to-xs {
-  @media (max-width: 576px) {
+  @media (width <= 576px) {
     @content;
   }
 }
+
 @mixin respond-to-sm {
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     @content;
   }
 }
+
 @mixin respond-to-md {
-  @media (max-width: 992px) {
+  @media (width <= 992px) {
     @content;
   }
 }
+
 @mixin respond-to-lg {
-  @media (max-width: 1200px) {
+  @media (width <= 1200px) {
     @content;
   }
 }
 
 .container {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 1200px;
-  padding: 0 0;
+  padding: 0;
   width: 100%;
 }
 
@@ -37,16 +41,16 @@
 }
 
 .grid-item {
+  align-items: center;
   background-color: transparent;
   border: none;
   color: gray;
+  display: flex;
   font-weight: bold;
+  justify-content: center;
   min-height: 50px;
   padding: 12px;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 @for $i from 1 through 12 {
