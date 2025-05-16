@@ -1,4 +1,4 @@
-@use '../shadows/ShadowsDemo.tsx' as *;
+@use '../globals/variables' as *;
 @mixin shadow($name, $value) {
   .shadow-#{$name} {
     box-shadow: $value;

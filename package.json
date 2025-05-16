@@ -28,29 +28,41 @@
     "@astrojs/node": "8.2.5",
     "@astrojs/react": "3.3.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "@emotion/cache": "11.14.0",
+=======
+    "@emotion/cache": "^11.14.0",
+>>>>>>> 582e4e5 (arreglando problemas)
     "@emotion/css": "11.13.5",
-    "@emotion/react": "11.14.0",
-    "@emotion/server": "11.11.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/server": "^11.11.0",
     "@emotion/styled": "11.14.0",
     "@mui/icons-material": "7.1.0",
+<<<<<<< HEAD
     "@mui/material": "7.1.0",
     "@types/react": "18.2.79",
     "@types/react-dom": "18.2.25",
 >>>>>>> 77f2374 (Feature/frontend 278 (#288))
+=======
+    "@mui/material": "^7.1.0",
+    "@mui/system": "^7.1.0",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
+>>>>>>> 582e4e5 (arreglando problemas)
     "astro": "4.6.3",
     "astro-i18next": "^1.0.0-beta.21",
     "astro-seo": "0.8.4",
     "astro-sitemap": "1.0.0",
     "astrojs-service-worker": "2.0.0",
+    "eslint": "8",
     "eslint-config-standard": "17.1.0",
     "express": "^4.19.2",
     "glider-js": "^1.7.9",
     "node-cache": "^5.1.2",
     "node-fetch": "^3.3.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "sass": "^1.77.2",
     "svgo": "^3.3.2",
     "typescript": "5.4.5"
@@ -79,7 +91,6 @@
     "@typescript-eslint/parser": "7.9.0",
     "@vitest/coverage-v8": "1.6.0",
     "dotenv": "^16.4.5",
-    "eslint": "8.56.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-config-airbnb-typescript": "18.0.0",
