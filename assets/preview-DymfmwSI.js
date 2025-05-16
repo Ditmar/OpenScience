@@ -1,1 +1,0 @@
-import{j as r}from"./jsx-runtime-BlDnFLNC.js";import{T as t}from"./ThemeProvider--mW1tKS8.js";import"./index-Cu9bd8lq.js";import"./emotion-use-insertion-effect-with-fallbacks.browser.esm-B89909lT.js";const e=(o,p)=>r.jsx(t,{children:r.jsx(o,{})}),n=[e];export{n as decorators};
