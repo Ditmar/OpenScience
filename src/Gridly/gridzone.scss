@@ -12,43 +12,42 @@
 
 .container {
   box-sizing: border-box;
-  margin: 0 $ads-gridforge-margin;
-  max-width: $ads-gridforge-container-size;
+  margin: 0 auto;
+  margin: 0 $ads_gridforge_margin;
+  max-width: $ads_gridforge_container_size;
   padding: 0;
   width: 100%;
 }
 
 .auto-grid {
   display: grid;
-  gap: $ads-gridforge-gutter;
+  gap: 24px;
   grid-template-columns: repeat(12, 1fr);
 }
 
 .grid-item {
   align-items: center;
-  background-color: $ads-grid-item-bg;
+  background-color: $ads_grid_item_bg;
   border: none;
   color: transparent;
   display: flex;
   font-weight: bold;
   justify-content: center;
   min-height: 50px;
-  padding: $ads-grid-item-padding;
+  padding: $ads_grid_item_padding;
   text-align: center;
 }
 
-/* Clases base: col-1 a col-12 */
 @for $i from 1 through 12 {
   .col-#{$i} {
     grid-column: span $i;
   }
 }
 
-/* Generar clases responsivas dinámicamente */
-@each $bp-name, $bp-value in $ads_breakpoints_scales {
-  @include respond-to($bp-name) {
+@each $bp_name, $bp_value in $ads_breakpoints_scales {
+  @include respond-to($bp_name) {
     @for $i from 1 through 12 {
-      .col-#{$bp-name}-#{$i} {
+      .col-#{$bp_name}-#{$i} {
         grid-column: span $i !important;
       }
     }
