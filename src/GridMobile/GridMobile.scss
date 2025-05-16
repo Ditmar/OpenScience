@@ -1,0 +1,23 @@
+@import '../globals/variables';
+
+.container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: $ads-gridmobile-container-size;
+  padding: 0 $ads-gridmobile-margin;
+  width: 100%;
+}
+
+.auto-grid {
+  display: grid;
+  gap: $ads-gridmobile-gutter;
+  grid-template-columns: repeat($ads-gridmobile-columns, 1fr);
+}
+
+.grid-item {
+  background-color: $ads-gridmobile-item-bg;
+  border: 1px solid #999;
+  font-size: 14px;
+  padding: 12px 0;
+  text-align: center;
+}
