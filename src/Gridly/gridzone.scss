@@ -2,46 +2,52 @@
 @import '../globals/variables';
 
 
-@mixin respond-to($breakpoint) {
-  $value: map-get($ads_breakpoints_scales, $breakpoint);
-
-  @if $value {
-
-    @media (max-width: $value) {
-
-      @content;
-    }
+@mixin respond-to-xs {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+@mixin respond-to-sm {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+@mixin respond-to-md {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+@mixin respond-to-lg {
+  @media (max-width: 1200px) {
+    @content;
   }
 }
 
 .container {
-  box-sizing: border-box;
   margin: 0 auto;
-  margin: 0 $ads_gridforge_margin;
-  max-width: $ads_gridforge_container_size;
-  padding: 0;
+  max-width: 1200px;
+  padding: 0 0;
   width: 100%;
 }
 
 .auto-grid {
   display: grid;
   gap: 24px;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, minmax(78px, 1fr));
 }
 
 .grid-item {
-  align-items: center;
-  background-color: $ads_grid_item_bg;
+  background-color: transparent;
   border: none;
-  color: transparent;
-  display: flex;
+  color: gray;
   font-weight: bold;
-  justify-content: center;
   min-height: 50px;
-  padding: $ads_grid_item_padding;
+  padding: 12px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 
 @for $i from 1 through 12 {
   .col-#{$i} {
@@ -49,15 +55,34 @@
   }
 }
 
+@include respond-to-lg {
+  @for $i from 1 through 12 {
+    .col-lg-#{$i} {
+      grid-column: span $i !important;
+    }
+  }
+}
 
-@each $bp_name, $bp_value in $ads_breakpoints_scales {
-  
-  @include respond-to($bp_name) {
-    
-    @for $i from 1 through 12 {
-      .col-#{$bp_name}-#{$i} {
-        grid-column: span $i !important;
-      }
+@include respond-to-md {
+  @for $i from 1 through 12 {
+    .col-md-#{$i} {
+      grid-column: span $i !important;
+    }
+  }
+}
+
+@include respond-to-sm {
+  @for $i from 1 through 12 {
+    .col-sm-#{$i} {
+      grid-column: span $i !important;
+    }
+  }
+}
+
+@include respond-to-xs {
+  @for $i from 1 through 12 {
+    .col-xs-#{$i} {
+      grid-column: span $i !important;
     }
   }
 }
