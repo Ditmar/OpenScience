@@ -1,5 +1,5 @@
 
-@use '../tokens/border-radius' as radius;
+@use '../styles/tokens/border-radius.scss' as radius;
 
 .radius-none { border-radius: radius.$ads-radius-none; }
 .radius-xsm { border-radius: radius.$ads-radius-xsm; }

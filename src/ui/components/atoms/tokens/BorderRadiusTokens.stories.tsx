@@ -1,4 +1,4 @@
-import '../../../styles/main.scss';
+import 'globals/main.scss';
 
 const tokens = [
   'none',
