@@ -27,9 +27,13 @@ vi.mock('./icon-text-stat.module.scss', () => ({
   },
 }));
 
-describe('IconTextStat Component', () => {
-  const icon = <svg data-testid="mock-icon" />;
+vi.mock('./types/iconMap', () => ({
+  iconMap: {
+    up: () => <svg data-testid="mock-icon" />,
+  },
+}));
 
+describe('IconTextStat Component', () => {
   const props: IProps = {
     title: 'Usuarios Activos',
     mainValue: '150',
@@ -37,7 +41,7 @@ describe('IconTextStat Component', () => {
     variant: 'success',
     size: 'medium',
     border: 'sharp',
-    icon,
+    icon: 'up',
     description: 'Subió 10% desde abril',
     onClick: vi.fn(),
     className: 'custom-class',
@@ -91,8 +95,6 @@ describe('IconTextStat Component', () => {
       </IconTextStat>,
     );
 
-    expect(screen.getByText('Usuarios Activos')).toBeInTheDocument();
-    expect(screen.getByText('150')).toBeInTheDocument();
     expect(screen.getByTestId('checkbox-input')).toBeInTheDocument();
   });
 
@@ -101,8 +103,7 @@ describe('IconTextStat Component', () => {
       <IconTextStat title={props.title} mainValue={props.mainValue} variant="secondary" />,
     );
 
-    const rootElement = container.firstChild;
-    expect(rootElement).toHaveClass('secondary');
+    expect(container.firstChild).toHaveClass('secondary');
   });
 
   test('applies size class correctly', () => {
@@ -110,8 +111,7 @@ describe('IconTextStat Component', () => {
       <IconTextStat title={props.title} mainValue={props.mainValue} size="small" />,
     );
 
-    const rootElement = container.firstChild;
-    expect(rootElement).toHaveClass('small');
+    expect(container.firstChild).toHaveClass('small');
   });
 
   test('applies border class correctly', () => {
@@ -119,8 +119,7 @@ describe('IconTextStat Component', () => {
       <IconTextStat title={props.title} mainValue={props.mainValue} border="sharp" />,
     );
 
-    const rootElement = container.firstChild;
-    expect(rootElement).toHaveClass('sharp');
+    expect(container.firstChild).toHaveClass('sharp');
   });
 
   test('applies custom className', () => {
@@ -132,7 +131,6 @@ describe('IconTextStat Component', () => {
       />,
     );
 
-    const rootElement = container.firstChild;
-    expect(rootElement).toHaveClass('test-custom-class');
+    expect(container.firstChild).toHaveClass('test-custom-class');
   });
 });

@@ -1,5 +1,6 @@
 import type { IProps } from './types/IProps';
 import style from './icon-text-stat.module.scss';
+import { iconMap } from './types/iconMap';
 
 function IconTextStat(props: IProps) {
   const {
@@ -15,6 +16,8 @@ function IconTextStat(props: IProps) {
     children,
   } = props;
 
+  const IconComponent = icon ? iconMap[icon] : null;
+
   return (
     <div
       className={`
@@ -26,9 +29,9 @@ function IconTextStat(props: IProps) {
     >
       {children && <div className={style[`icon-text-stat-checkbox`]}>{children}</div>}
 
-      {icon && (
-        <div className={`${style[`icon-text-stat-icon`]} ${variant ? style[variant] : ''}`}>
-          {icon}
+      {IconComponent && (
+        <div className={`${style['icon-text-stat-icon']} ${variant ? style[variant] : ''}`}>
+          <IconComponent />
         </div>
       )}
 
