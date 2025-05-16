@@ -1,11 +1,11 @@
+// src/components/phone-input/phoneinput.module.scss
 @import '../../../../globals/variables';
-
 
 .container {
   display: flex;
   flex-direction: column;
-  font-family: inherit;
-  gap: 4px;
+  gap: 8px;
+  max-width: 320px;
   width: 100%;
 }
 

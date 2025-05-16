@@ -98,7 +98,6 @@ function PhoneInput(props: IProps) {
             aria-label="Copy phone number"
           >
             <Icon src={CopyIcon} className={styles['copy-icon']} />
-            <span>Copy</span>
           </button>
         </div>
       </div>
