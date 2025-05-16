@@ -16,5 +16,3 @@ function GridMobile(): JSX.Element {
 }
 
 export default GridMobile;
-
-
