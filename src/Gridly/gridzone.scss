@@ -1,51 +1,57 @@
 @import '../globals/breakpoints';
 @import '../globals/variables';
 
+@mixin respond-to($breakpoint) {
+  $value: map-get($ads-breakpoints-scales, $breakpoint);
+  @if $value {
+    @media (max-width: $value) {
+      @content;
+    }
+  }
+}
+
 .container {
   margin: 0 auto;
   max-width: $ads-gridforge-container-size;
-  padding: 0 $ads-gridforge-margin;
+  padding: 0 0;
   width: 100%;
+  margin: 0 $ads-gridforge-margin;
+  box-sizing: border-box;
 }
 
 .auto-grid {
   display: grid;
   gap: $ads-gridforge-gutter;
   grid-template-columns: repeat(12, 1fr);
-}
-
+  gap: 24px;
+} 
 .grid-item {
   background-color: $ads-grid-item-bg;
-  border: 1px solid #66686b;
-  color: $text-color;
+  border: none;
+  color: transparent;
   font-weight: bold;
   min-height: 50px;
   padding: $ads-grid-item-padding;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@mixin grid-columns {
-  @for $i from 1 through 12 {
-    .col-#{$i} {
-      grid-column: span $i;
-    }
+/* Clases base: col-1 a col-12 */
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    grid-column: span $i;
   }
 }
 
-@include grid-columns;
-
-@media (width <= 1200px) {
-  .col-lg-1 { grid-column: span 1; }
-  .col-lg-2 { grid-column: span 2; }
-  .col-lg-3 { grid-column: span 3; }
-  .col-lg-4 { grid-column: span 4; }
-  .col-lg-5 { grid-column: span 5; }
-  .col-lg-6 { grid-column: span 6; }
-  .col-lg-7 { grid-column: span 7; }
-  .col-lg-8 { grid-column: span 8; }
-  .col-lg-9 { grid-column: span 9; }
-  .col-lg-10 { grid-column: span 10; }
-  .col-lg-11 { grid-column: span 11; }
-  .col-lg-12 { grid-column: span 12; }
+/* Generar clases responsivas dinámicamente */
+@each $bp-name, $bp-value in $ads-breakpoints-scales {
+  @include respond-to($bp-name) {
+    @for $i from 1 through 12 {
+      .col-#{$bp-name}-#{$i} {
+        grid-column: span $i !important;
+      }
+    }
+  }
 }
-
