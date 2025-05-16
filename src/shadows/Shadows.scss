@@ -14,15 +14,15 @@
 @include shadow(3xl, $ads-shadow-3xl);
 
 .shadow-demo {
-  width: 100%;
-  padding: 1rem 1.5rem;
-  background-color: $ads-white;
-  border-radius: 0.5rem;
-  border: 1px solid #e0e0e0;
-  display: flex;
   align-items: center;
-  justify-content: flex-start;
-  font-weight: 500;
+  background-color: $ads-white;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
   color: $ads-black;
+  display: flex;
+  font-weight: 500;
+  justify-content: flex-start;
+  padding: 1rem 1.5rem;
   transition: box-shadow 0.3s ease;
+  width: 100%;
 }
