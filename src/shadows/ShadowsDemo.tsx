@@ -12,9 +12,7 @@ function ShadowsDemo() {
           className={`shadow-demo shadow-${level}`}
           style={{ marginBottom: '1.5rem' }}
         >
-          <p style={{ margin: 0, fontSize: '1rem' }}>
-            Sombra {level.toUpperCase()}
-          </p>
+          <p style={{ margin: 0, fontSize: '1rem' }}>Sombra {level.toUpperCase()}</p>
         </div>
       ))}
     </div>
