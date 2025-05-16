@@ -3,7 +3,7 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import IconTextStat from './icon-text-stat';
 
 const meta: Meta<typeof IconTextStat> = {
-  title: 'library/components/atoms/icon-text-stat',
+  title: 'library/components/molecules/icon-text-stat',
   component: IconTextStat,
 };
 
