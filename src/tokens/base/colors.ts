@@ -65,9 +65,9 @@ export const colors = {
     purpleToPink: 'linear-gradient(90deg, #6245FF 0%, #E5DFFF 100%)',
     blueToGreen: 'linear-gradient(90deg, #3B82F6 0%, #10B981 100%)',
     orangeToYellow: 'linear-gradient(90deg, #F97316 0%, #FACC15 100%)',
+    violetRose: 'linear-gradient(to right, #9627FC, #FBC4D2)',
+    pinkBlossom: 'linear-gradient(to right, #FF5886, #FFB6FC)',
+    skyMagenta: 'linear-gradient(to right, #8CD7F7, #F674F9)',
+    neonLime: 'linear-gradient(to right, #A9FFDB, #17D970)',
   },
 };
-/*
-import { colors } from '../tokens/base/colors';
-<div style={{ background: colors.base.gradientBase2 }}>fondo gradiente</div>
-*/
