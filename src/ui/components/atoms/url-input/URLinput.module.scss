@@ -1,19 +1,21 @@
 @import "../../../../globals/variables";
+@import '../../../../globals/fonts';
+@import '../../../../globals/mixins';
+@import '../../../../globals/breakpoints';
 
 .container {
     box-sizing: border-box;
     color: $ads-text-main-hover;
-    font-family: Poppins, Arial, sans-serif;
+    font-family: Poppins-Light, sans-serif;
     width: 22rem;
 
-    @media (width <= 600px) {
+    @include respond-to('extra-large') {
         min-width: 0;
-        padding: 1rem;
-        width: 100%;
+        width: 27%;
     }
 }
 
-.header {   
+.header {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -23,6 +25,7 @@
 .label-wrapper {
     align-items: center;
     display: flex;
+    font-weight: $ads-font-weight-third;
     gap: .3rem;
 }
 
@@ -62,30 +65,20 @@
     display: flex;
     transition: all 0.2s ease;
     width: 100%;
-
-    @media (width <= 600px) {
-        flex-direction: column;
-        padding: 0.5rem 0.2rem;
-    }
 }
 
 .input-wrapper {
     align-items: center;
     display: flex;
     padding-left: 1rem;
-    padding-right: 0.2rem;
+    padding-right: 0.15rem;
     width: 100%;
-
-    @media (width <= 600px) {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-    }
 }
 
 .planet-icon {
-    height: 1rem;
-    margin-right: 0.2rem;
-    width: 1.1rem;
+    height: 0.9rem;
+    margin-right: 0.5rem;
+    width: 1.3rem;
 
     path {
         fill: currentcolor;
@@ -94,26 +87,26 @@
 
 .protocol {
     font-size: .3rem;
-
-    @media (width <= 600px) {
-        font-size: .7rem;
-    }
+    font-weight: $ads-font-weight-first;
 }
 
 .divider {
-    color: $ads-disabled-main;
     margin: 0 .4rem;
 }
 
 .input {
     background: transparent;
     border: none;
-    font-family: inherit;
+    font-family: Poppins-Light, sans-serif;
     outline: none;
 
     &:disabled {
         cursor: not-allowed;
         opacity: 0.7;
+    }
+
+    path {
+        fill: currentcolor;
     }
 }
 
@@ -136,35 +129,21 @@
         cursor: not-allowed;
         opacity: 0.6;
     }
-
-    @media (width <= 600px) {
-        font-size: .8rem;
-        padding: .4rem 0.6rem;
-    }
 }
 
 .footer {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    margin-top: 8px;
-
-    @media (width <= 600px) {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
+    margin-top: .5rem;
 }
 
 .hint-text {
     align-items: center;
     display: flex;
     font-size: .8rem;
+    font-weight: $ads-font-weight-first;
     gap: .5rem;
-
-    @media (width <= 600px) {
-        font-size: .7rem;
-    }
 }
 
 .info-icon {
@@ -234,6 +213,7 @@
 
     .hint-text {
         color: $ads-error-main;
+        font-family: Poppins-Light, sans-serif;
     }
 }
 
@@ -257,6 +237,10 @@
         color: $ads-disabled-main;
     }
 
+    .protocol {
+        color: $ads-disabled-main;
+    }
+    
     .close-icon-url {
         color: $ads-disabled-main;
     }
@@ -328,7 +312,6 @@
 
     .input {
         border: none;
-        color: $ads-text-main-hover;
         outline: none;
         padding-left: 1.7rem;
         padding-right: 1.5rem;
@@ -356,7 +339,7 @@
     }
 
     .copy-button {
-        border-radius: 5%;
+        border-radius: .3rem;
     }
 }
 
