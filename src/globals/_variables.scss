@@ -1,3 +1,5 @@
+$ads-color-black: #000;
+
 $ads-primary-main: #0793bf;
 $ads-secondary-main: #004369;
 $ads-tertiary-main: #fff;
@@ -54,3 +56,10 @@ $ads-gradient-violet-rose: linear-gradient(45deg, #9627fc 0%, #fbc4d2 100%);
 $ads-gradient-pink-blossom: linear-gradient(45deg, #ff5886 0%, #ffb6fc 100%);
 $ads-gradient-sky-magenta: linear-gradient(45deg, #8cd7f7 0%, #f674f9 100%);
 $ads-gradient-neon-lime: linear-gradient(45deg, #a9ffdb 0%, #17d970 100%);
+
+$ads-shadow-xs: color-mix(in srgb, black 7.5%, transparent);
+$ads-shadow-sm: color-mix(in srgb, black 10%, transparent);
+$ads-shadow-md: color-mix(in srgb, black 15%, transparent);
+$ads-shadow-lg: color-mix(in srgb, black 20%, transparent);
+$ads-shadow-xl: color-mix(in srgb, black 25%, transparent);
+$ads-shadow-xxxl: color-mix(in srgb, black 30%, transparent);
