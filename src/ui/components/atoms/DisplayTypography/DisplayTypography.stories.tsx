@@ -36,7 +36,7 @@ type Story = StoryObj<typeof meta>;
 
 export const DisplayXL: Story = {
   args: {
-    text: 'Display 0123456',
+    text: 'Display 0123',
     size: 'display-xl',
     weight: 'medium',
     color: 'dark',
