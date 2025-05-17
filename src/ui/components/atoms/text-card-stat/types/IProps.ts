@@ -1,0 +1,29 @@
+export interface TextCardStatProps {
+  label: string;
+
+  badgeColor?: string;
+
+  badgeNumber?: number;
+
+  badgeAvatarUrl?: string;
+
+  title: string;
+
+  description: string;
+
+  variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'info';
+
+  size?: 'small' | 'medium' | 'large';
+
+  onClick?: () => void;
+
+  elevation?: number;
+
+  isDisabled?: boolean;
+
+  className?: string;
+
+  badgeText?: string;
+
+  content?: string;
+}
