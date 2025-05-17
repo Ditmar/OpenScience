@@ -1,0 +1,28 @@
+@use '../globals/variables' as *;
+
+@mixin shadow($name, $value) {
+  .shadow-#{$name} {
+    box-shadow: $value;
+  }
+}
+
+@include shadow(xs, $ads-shadow-xs);
+@include shadow(sm, $ads-shadow-sm);
+@include shadow(md, $ads-shadow-md);
+@include shadow(lg, $ads-shadow-lg);
+@include shadow(xl, $ads-shadow-xl);
+@include shadow(3xl, $ads-shadow-3xl);
+
+.shadow-demo {
+  align-items: center;
+  background-color: $ads-white;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  color: $ads-black;
+  display: flex;
+  font-weight: 500;
+  justify-content: flex-start;
+  padding: 1rem 1.5rem;
+  transition: box-shadow 0.3s ease;
+  width: 100%;
+}
