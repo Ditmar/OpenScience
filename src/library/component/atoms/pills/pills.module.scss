@@ -1,0 +1,268 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/fonts';
+
+.pill {
+  align-items: center;
+  display: inline-flex;
+  font-family:Poppins-Light , sans-serif;
+  font-weight: 400;
+  justify-content: center;
+  letter-spacing: 0;
+  padding: 0.125rem 0.5rem;
+  text-align: center;
+
+  &--sm {
+    font-size: 0.875rem;
+    height: 1.5625rem;
+    left: 7.75rem;
+    top: 7.75rem;
+    width: auto;
+  }
+
+  &--md {
+    font-size: 1rem;
+    height: 1.75rem;
+    left: 7.75rem;
+    top: 10.8125rem;
+    width: auto;
+  }
+
+  &--lg {
+    font-size: 1.125rem;
+    height: 1.9375rem;
+    left: 7.75rem;
+    top: 14.0625rem;
+    width: auto;
+  }
+
+  &--r-none {
+    border-radius: 0;
+  }
+
+  &--r-md {
+    border-radius: 0.3125rem; 
+  }
+
+  &--r-full {
+    border-radius: 624.938rem;
+  }
+
+  &--border-soft-neutral-light {
+    border: 0.063rem solid $ads-stroke-dark-soft;
+  }
+
+  &--border-soft-brand-primary {
+    border: 0.063rem solid $ads-stroke-primary-soft;
+  }
+
+  &--border-soft-brand-secondary {
+    border: 0.063rem solid $ads-stroke-secondary-soft;
+  }
+
+  &--border-soft-brand-tertiary {
+    border: 0.063rem solid $ads-stroke-tertiary-soft;
+  }
+
+  &--border-soft-feedback-positive {
+    border: 0.063rem solid $ads-stroke-positive-soft;
+  }
+
+  &--border-soft-feedback-negative {
+    border: 0.063rem solid $ads-stroke-negative-soft;
+  }
+
+  &--border-soft-feedback-warning {
+    border: 0.063rem solid $ads-stroke-warning-soft;
+  }
+
+  &--border-strong-neutral-light {
+    border: 0.063rem solid $ads-stroke-dark;
+  }
+
+  &--border-strong-brand-primary {
+    border: 0.063rem solid $ads-stroke-primary;
+  }
+
+  &--border-strong-brand-secondary {
+    border: 0.063rem solid $ads-stroke-secondary;
+  }
+
+  &--border-strong-brand-tertiary {
+    border: 0.063rem solid $ads-stroke-tertiary;
+  }
+
+  &--border-strong-feedback-positive {
+    border: 0.063rem solid $ads-stroke-positive;
+  }
+
+  &--border-strong-feedback-negative {
+    border: 0.063rem solid $ads-stroke-negative;
+  }
+
+  &--border-strong-feedback-warning {
+    border: 0.063rem solid $ads-stroke-warning;
+  }
+
+  &--border-strong-read-only-disabled {
+    border: 0.063rem solid $ads-stroke-disabled;
+  }
+
+  &--shadow {
+    box-shadow: 0 0.125rem 0.25rem #00000029;
+  }
+
+  &--filled-neutral-dark {
+    background-color: $ads-stroke-dark;
+    color: $ads-color-light;
+  }
+
+  &--filled-neutral-light {
+    background-color: $ads-color-light;
+    color: $ads-color-dark;
+  }
+
+  &--filled-brand-primary {
+    background-color: $ads-color-primary;
+    color: $ads-color-light;
+  }
+
+  &--filled-brand-secondary {
+    background-color: $ads-color-secondary;
+    color: $ads-color-light;
+  }
+
+  &--filled-brand-tertiary {
+    background-color: $ads-color-tertiary;
+    color: $ads-color-light;
+  }
+
+  &--filled-feedback-positive {
+    background-color: $ads-color-positive;
+    color: $ads-color-light;
+  }
+
+  &--filled-feedback-negative {
+    background-color: $ads-color-negative;
+    color: $ads-color-light;
+  }
+
+  &--filled-feedback-warning {
+    background-color: $ads-color-warning;
+    color: $ads-color-light;
+  }
+
+  &--filled-read-only-disabled {
+    background-color: $ads-color-disabled;
+    color: $ads-stroke-disabled;
+  }
+
+  &--outline-neutral-light {
+    background-color: transparent;
+  }
+
+  &--outline-brand-primary {
+    background-color: transparent;
+    color: $ads-color-primary;
+  }
+
+  &--outline-brand-secondary {
+    background-color: transparent;
+    color: $ads-color-secondary;
+  }
+
+  &--outline-brand-tertiary {
+    background-color: transparent;
+    color: $ads-color-tertiary;
+  }
+
+  &--outline-feedback-positive {
+    background-color: transparent;
+    color: $ads-color-positive;
+  }
+
+  &--outline-feedback-negative {
+    background-color: transparent;
+    color: $ads-color-negative;
+  }
+
+  &--outline-feedback-warning {
+    background-color: transparent;
+    color: $ads-color-warning;
+  }
+
+  &--soft-neutral-dark {
+    background-color: $ads-color-dark-soft;
+    color: $ads-color-dark;
+  }
+
+  &--soft-neutral-light {
+    background-color: $ads-color-dark-soft;
+    color: $ads-color-dark;
+  }
+
+  &--soft-brand-primary {
+    background-color: $ads-color-primary-soft;
+    color: $ads-color-primary;
+  }
+
+  &--soft-brand-secondary {
+    background-color: $ads-color-secondary-soft;
+    color: $ads-color-secondary;
+  }
+
+  &--soft-brand-tertiary {
+    background-color: $ads-color-tertiary-soft;
+    color: $ads-color-tertiary;
+  }
+
+  &--soft-feedback-positive {
+    background-color: $ads-color-positive-soft;
+    color: $ads-color-positive;
+  }
+
+  &--soft-feedback-negative {
+    background-color: $ads-color-negative-soft;
+    color: $ads-color-negative;
+  }
+
+  &--soft-feedback-warning {
+    background-color: $ads-color-warning-soft;
+    color: $ads-color-warning;
+  }
+
+
+ &__icon {
+    align-items: center;
+    display: inline-flex;
+    height: 1em;
+    justify-content: center;
+    margin-right: 0.375rem;
+    width: 1em;
+
+    svg,span {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &--icon-left {
+    & > .pill__icon { 
+      margin-left: 0;
+      margin-right: 0.375rem; 
+    }
+  }
+
+  &--icon-right {
+    & > .pill__icon {
+      margin-left: 0.375rem;
+      margin-right: 0;
+    }
+
+     & > span:not(.pill__icon) {
+      order: 1;
+    }
+  }
+
+}
