@@ -1,0 +1,99 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/fonts';
+
+.button-number {
+  $ads-button-number-padding: 12px;
+  $ads-button-number-color: #9a4aff;
+  $ads-button-font-size: 18px;
+  $ads-button-size: 51px;
+
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  font-family: poppins, sans-serif;
+  font-size: $ads-button-font-size;
+  font-weight: $ads-font-weight-first;
+  gap: 4px;
+  justify-content: center;
+  line-height: normal;
+  min-height: $ads-button-size;
+  min-width: $ads-button-size;
+  padding: $ads-button-number-padding;
+
+  &--filled {
+    &:hover:not(:disabled) {
+      opacity: 0.5;
+    }
+
+    background-color: $ads-button-number-color;
+    color: $ads-color-main;
+  }
+
+  &--outline {
+    &:hover:not(:disabled) {
+      background-color: $ads-button-number-color;
+      color: $ads-color-main;
+    }
+
+    border: 1px solid $ads-button-number-color;
+    color: $ads-button-number-color;
+  }
+
+  &--ghost {
+    &:hover:not(:disabled) {
+      background-color: $ads-button-number-color;
+      color: $ads-color-main;
+    }
+
+    color: $ads-button-number-color;
+  }
+
+  &--small {
+    $ads-button-font-size: $ads-font-size-primary;
+    $ads-button-size: 48px;
+
+    font-size: $ads-button-font-size;
+    min-height: $ads-button-size;
+    min-width: $ads-button-size;
+  }
+
+  &--medium {
+    $ads-button-size: 51px;
+    $ads-button-font-size: 18px;
+
+    font-size: $ads-button-font-size;
+    min-height: $ads-button-size;
+    min-width: $ads-button-size;
+  }
+
+  &--large {
+    $ads-button-size: 54px;
+    $ads-button-font-size: 20px;
+
+    font-size: $ads-button-font-size;
+    min-height: $ads-button-size;
+    min-width: $ads-button-size;
+  }
+
+  &--rounded {
+    border-radius: 8px;
+  }
+
+  &--circle {
+    border-radius: 9999px;
+  }
+
+  &--inactive {
+    background-color: $ads-text-secondary;
+    border: none;
+    color: $ads-color-main;
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .button-number__icon {
+    font-size: $ads-button-font-size;
+  }
+}
