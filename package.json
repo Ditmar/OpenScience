@@ -58,6 +58,7 @@
     "@babel/eslint-parser": "7.23.3",
     "@babel/preset-react": "7.23.3",
     "@chromatic-com/storybook": "1.4.0",
+    "@newhighsco/storybook-addon-svgr": "2.0.59",
     "@rollup/plugin-commonjs": "^25.0.8",
     "@storybook/addon-essentials": "8.1.3",
     "@storybook/addon-interactions": "8.1.3",
@@ -109,6 +110,7 @@
     "stylelint-scss": "6.2.1",
     "svelte": "4.2.9",
     "ts-node": "10.9.2",
+    "vite-plugin-svgr": "4.3.0",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "1.6.0"
   }

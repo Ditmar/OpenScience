@@ -1,0 +1,86 @@
+@import '../../../../globals/_variables.scss';
+@import '../../../../globals/fonts';
+
+.typography-paragraph {
+    &.extra-large {
+        font-size: $ads-paragraph-xl;
+        line-height: $ads-paragraph-xl-height;
+    }
+
+    &.large {
+        font-size: $ads-paragraph-lg;
+        line-height: $ads-paragraph-lg-height;
+    }
+
+    &.medium-size {  
+        font-size: $ads-paragraph-md;
+        line-height: $ads-paragraph-md-height;
+    }
+
+    &.small {
+        font-size: $ads-paragraph-sm;
+        line-height: $ads-paragraph-sm-height;
+    }
+
+    &.extra-small {
+        font-size: $ads-paragraph-xs;
+        line-height: $ads-paragraph-xs-height;
+    }
+    
+    &.none-line {
+        text-decoration: none;
+    }
+
+    &.underline {
+        text-decoration: underline;
+    }
+
+    &.line-through {
+        text-decoration: line-through;
+    }
+
+    &.white {
+        background-color: $ads-paragraph-color-dark;
+        color: $ads-paragraph-color-light;
+    }
+
+    &.dark {
+        color: $ads-paragraph-color-dark;
+    }
+
+    &.light {
+        font-family: Poppins-Light, sans-serif;
+    }
+
+    &.regular {
+        font-family: Poppins-Regular, sans-serif;
+    }
+
+    &.medium {
+        font-family: Poppins-Medium, sans-serif;
+    }
+
+    &.semi-bold {
+        font-family: Poppins-Semi-Bolt, sans-serif;
+    }
+
+    &.bold {
+        font-family: Poppins-Bolt, sans-serif;
+    }
+
+    &.straight {
+        font-family: Poppins-Light, sans-serif;
+        font-family: Poopins-Regular, sans-serif;
+        font-family: Poppins-Medium, sans-serif;
+        font-family: Poppins-SemiBolt, sans-serif;
+        font-family: Poppins-Bolt, sans-serif;
+    }
+
+    &.italic {
+        font-family: Poppins-LightItalic, sans-serif;
+        font-family: Poppins-RegularItalic, sans-serif;
+        font-family: Poppins-MediumItalic, sans-serif;
+        font-family: Poppins-SemiBoltItalic, sans-serif;
+        font-family: Poppins-BoltItalic, sans-serif;
+    }
+}
