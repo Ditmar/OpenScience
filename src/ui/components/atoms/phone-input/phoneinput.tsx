@@ -1,4 +1,4 @@
-// phoneinput.tsx
+
 import React, { useState } from 'react';
 import styles from './phoneinput.module.scss';
 import type { IProps } from './types/IProps';
