@@ -22,7 +22,6 @@ const meta: Meta<IProps> = {
 };
 
 export default meta;
-
 type Story = StoryObj<IProps>;
 
 export const Weight: Story = {
@@ -40,7 +39,6 @@ export const Weight: Story = {
     />
   ),
 };
-
 export const Style: Story = {
   args: {
     Styles: 'sans',

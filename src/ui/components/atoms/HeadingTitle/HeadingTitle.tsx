@@ -7,7 +7,6 @@ function HeadingTitle({ text, Styles = 'monospace', Weight = 'medium', Level = '
   } ${styles[`heading-title--weight-${Weight}`]}`;
 
   const HeadingTag = Level as keyof JSX.IntrinsicElements;
-
   return <HeadingTag className={headingClass}>{text}</HeadingTag>;
 }
 

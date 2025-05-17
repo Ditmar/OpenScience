@@ -7,19 +7,16 @@ describe('HeadingTitle Component', () => {
     const title = screen.getByRole('heading', { level: 2 });
     expect(title.textContent).toBe('Editing Title version');
   });
-
   test('renders h1', () => {
     render(<HeadingTitle text="Primary Heading" Level="h1" />);
     const title = screen.getByRole('heading', { level: 1 });
     expect(title.textContent).toBe('Primary Heading');
   });
-
   test('renders h2', () => {
     render(<HeadingTitle text="Secondary Heading" Level="h2" />);
     const header = screen.getByRole('heading', { level: 2 });
     expect(header.textContent).toBe('Secondary Heading');
   });
-
   test('renders h3', () => {
     render(<HeadingTitle text="Tertiary Heading" Level="h3" />);
     const title = screen.getByRole('heading', { level: 3 });
