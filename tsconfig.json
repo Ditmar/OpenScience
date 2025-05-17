@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig ",
+  "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Astro Project",
   "extends": "./style-guide/tsconfig/base.json",
   "compilerOptions": {
@@ -10,7 +10,6 @@
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "types": [], 
     "plugins": [
       {
         "name": "@astrojs/ts-plugin"
