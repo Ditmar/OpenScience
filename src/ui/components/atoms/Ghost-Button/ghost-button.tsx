@@ -1,7 +1,8 @@
 import classNames from 'classnames';
 import styles from './styles.module.scss';
 import type { GhostButtonProps } from './types/types';
-import Circlex from '../../../../assets/icons/Circlex.svg?raw';
+import { Icon } from '../../../utils/svg-icons/icons';
+import Circlex from '../../../../assets/icons/circle-quarters.svg?raw';
 
 function GhostButton({
   ghostbutton,
@@ -16,12 +17,12 @@ function GhostButton({
     {
       [styles.primary]: variant === 'primary',
       [styles['ghost-button--dark']]: variant === 'dark',
-      [styles['ghost-button--violetaintenso']]: variant === 'violetaintenso',
-      [styles['ghost-button--violeta']]: variant === 'violeta',
+      [styles['ghost-button--intenseviolet']]: variant === 'intenseviolet',
+      [styles['ghost-button--violet']]: variant === 'violet',
       [styles['ghost-button--teritary']]: variant === 'teritary',
-      [styles['ghost-button--verde']]: variant === 'verde',
-      [styles['ghost-button--rojo']]: variant === 'rojo',
-      [styles['ghost-button--amarillo']]: variant === 'amarillo',
+      [styles['ghost-button--green']]: variant === 'green',
+      [styles['ghost-button--red']]: variant === 'red',
+      [styles['ghost-button--yellow']]: variant === 'yellow',
     },
     {
       [styles.small]: size === 'small',
@@ -41,17 +42,11 @@ function GhostButton({
       disabled={disabled}
       tabIndex={disabled ? -1 : 0}
     >
-      <span
-        className={styles['ghost-button__icon']}
-        dangerouslySetInnerHTML={{ __html: Circlex }}
-      />
+      <Icon src={Circlex} className={styles['ghost-button__icon']} size="24px" />
       &nbsp;
       {ghostbutton}
       &nbsp;
-      <span
-        className={styles['ghost-button__icon']}
-        dangerouslySetInnerHTML={{ __html: Circlex }}
-      />
+      <Icon src={Circlex} className={styles['ghost-button__icon']} size="24px" />
     </button>
   );
 }

@@ -110,145 +110,145 @@ export const NeutalDarkLargeDefaul: Story = {
 export const BrandPrimarySmallDefaul: Story = {
   args: {
     ghostbutton: 'Button_text',
-    variant: 'violetaintenso',
+    variant: 'intenseviolet',
     size: 'small',
     disabled: false,
   },
-  storyName: 'violetaintenso Small Button',
+  storyName: 'intenseviolet Small Button',
 };
 
 export const BrandPrimaryMediumDefaul: Story = {
   args: {
     ghostbutton: 'Button_text',
-    variant: 'violetaintenso',
+    variant: 'intenseviolet',
     size: 'medium',
     disabled: false,
   },
-  storyName: 'violetaintenso Small Button',
+  storyName: 'intenseviolet Small Button',
 };
 
 export const BrandPrimaryLargeDefaul: Story = {
   args: {
     ghostbutton: 'Button_text',
-    variant: 'violetaintenso',
+    variant: 'intenseviolet',
     size: 'large',
     disabled: false,
   },
-  storyName: 'violetaintenso Small Button',
+  storyName: 'intenseviolet Small Button',
 };
 export const BrandSecondarySmallDefaul: Story = {
   args: {
     ghostbutton: 'Button_text',
-    variant: 'violeta',
+    variant: 'violet',
     size: 'small',
     disabled: false,
   },
-  storyName: 'violeta Small Button',
+  storyName: 'violet Small Button',
 };
 
 export const BrandSecondaryMediumDefaul: Story = {
   args: {
     ghostbutton: 'Button_text',
-    variant: 'violeta',
+    variant: 'violet',
     size: 'medium',
     disabled: false,
   },
-  storyName: 'violeta Small Button',
+  storyName: 'violet Small Button',
 };
 
 export const BrandSecondaryLargeDefaul: Story = {
   args: {
     ghostbutton: 'Button_text',
-    variant: 'violeta',
+    variant: 'violet',
     size: 'large',
     disabled: false,
   },
-  storyName: 'violeta Small Button',
+  storyName: 'violet Small Button',
 };
 export const FeedbackPositiveSmallDefaul: Story = {
   args: {
     ghostbutton: 'Button_text',
-    variant: 'verde',
+    variant: 'green',
     size: 'small',
     disabled: false,
   },
-  storyName: 'verde Small Button',
+  storyName: 'green Small Button',
 };
 
 export const FeedbackPositiveMediumDefaul: Story = {
   args: {
     ghostbutton: 'Button_text',
-    variant: 'verde',
+    variant: 'green',
     size: 'medium',
     disabled: false,
   },
-  storyName: 'verde Small Button',
+  storyName: 'green Small Button',
 };
 export const FeedbackPositiveLargeDefaul: Story = {
   args: {
     ghostbutton: 'Button_text',
-    variant: 'verde',
+    variant: 'green',
     size: 'large',
     disabled: false,
   },
-  storyName: 'verde Small Button',
+  storyName: 'green Small Button',
 };
 
 export const FeedbackNegativeSmallDefaul: Story = {
   args: {
     ghostbutton: 'Button_text',
-    variant: 'rojo',
+    variant: 'red',
     size: 'small',
     disabled: false,
   },
-  storyName: 'rojo Small Button',
+  storyName: 'red Small Button',
 };
 
 export const FeedbackNegativeyMediumDefaul: Story = {
   args: {
     ghostbutton: 'Button_text',
-    variant: 'rojo',
+    variant: 'red',
     size: 'medium',
     disabled: false,
   },
-  storyName: 'rojo Small Button',
+  storyName: 'red Small Button',
 };
 export const FeedbackNegativeLargeDefaul: Story = {
   args: {
     ghostbutton: 'Button_text',
-    variant: 'rojo',
+    variant: 'red',
     size: 'large',
     disabled: false,
   },
-  storyName: 'rojo Small Button',
+  storyName: 'red Small Button',
 };
 export const FeedbackWarningSmallDefaul: Story = {
   args: {
     ghostbutton: 'Button_text',
-    variant: 'amarillo',
+    variant: 'yellow',
     size: 'small',
     disabled: false,
   },
-  storyName: 'amarillo Small Button',
+  storyName: 'yellow Small Button',
 };
 
 export const FeedbackWarningyMediumDefaul: Story = {
   args: {
     ghostbutton: 'Button_text',
-    variant: 'amarillo',
+    variant: 'yellow',
     size: 'medium',
     disabled: false,
   },
-  storyName: 'amarillo Small Button',
+  storyName: 'yellow Small Button',
 };
 export const FeedbackWarningLargeDefaul: Story = {
   args: {
     ghostbutton: 'Button_text',
-    variant: 'amarillo',
+    variant: 'yellow',
     size: 'large',
     disabled: false,
   },
-  storyName: 'amarillo   Small Button',
+  storyName: 'yellow Small Button',
 };
 export const BrandTeritarySmallDefaul: Story = {
   args: {

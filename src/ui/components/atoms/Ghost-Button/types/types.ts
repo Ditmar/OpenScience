@@ -3,12 +3,12 @@ export interface GhostButtonProps {
   variant:
     | 'primary'
     | 'dark'
-    | 'violetaintenso'
-    | 'violeta'
+    | 'intenseviolet'
+    | 'violet'
     | 'teritary'
-    | 'verde'
-    | 'rojo'
-    | 'amarillo';
+    | 'green'
+    | 'red'
+    | 'yellow';
   size?: 'small' | 'medium' | 'large';
   disabled?: boolean;
   onClick?: () => void;
