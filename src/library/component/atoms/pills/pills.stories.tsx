@@ -55,7 +55,6 @@ export const PillDark: Story = {
     variant: 'filled',
     size: 'sm',
     rounded: 'r_none',
-    icon: undefined,
   },
 };
 

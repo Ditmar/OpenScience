@@ -25,8 +25,6 @@ describe('Testing Pill React Component', () => {
     );
     const pillElement = screen.getByText(/Cantidad/i);
 
-    console.log('Clases del pill:', pillElement.className);
-
     expect(hasClassContaining(pillElement, 'pill')).toBe(true);
     expect(hasClassContaining(pillElement, 'pill--md')).toBe(true);
     expect(hasClassContaining(pillElement, 'pill--filled-read-only-disabled')).toBe(true);
@@ -45,25 +43,25 @@ describe('Testing Pill React Component', () => {
     expect(pillElement.className).not.toMatch(/pill--r_full/);
   });
 
-  test('should include icon text when provided', () => {
-    // TODO: Replace the `icon` text prop with an SVG component using `useDynamic` and `Icon.tsx`.
-    /* const svgPath = '/icons/bell.svg'; 
-      render(
-      <Pill
-        text="Etiqueta"
-        color="neutral-dark"
-        variant="filled"
-        size="md"
-        icon={svgPath} <------
-      /> */
-
-    const iconText = '🔔';
+  // TODO: Replace the `icon` text prop with an SVG component using `useDynamic` and `Icon.tsx`.
+  /* 
+        const svgPath = 'Icon';
+        render(
+          <Pill
+          text="Etiqueta"
+          color="neutral-dark"
+          variant="filled"
+          size="md"
+          icon={svgPath} 
+          />); */
+  test('should include icon element when provided', () => {
+    const mockIcon = <svg data-testid="custom-icon" />;
     render(
-      <Pill text="Etiqueta" color="neutral-dark" variant="filled" size="md" icon={iconText} />,
+      <Pill text="Etiqueta" color="neutral-dark" variant="filled" size="md" icon={mockIcon} />,
     );
 
-    const iconElement = screen.getByTestId('custom-icon');
-    expect(iconElement).toBeInTheDocument();
+    const iconElements = screen.getAllByTestId('custom-icon');
+    expect(iconElements.length).toBeGreaterThan(0);
   });
 
   test('should have role and aria-label when provided', () => {

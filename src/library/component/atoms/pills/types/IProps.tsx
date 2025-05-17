@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 export interface IProps {
   text: string;
   color?:
@@ -13,8 +15,9 @@ export interface IProps {
   variant?: 'filled' | 'outline' | 'soft';
   size?: 'sm' | 'md' | 'lg';
   rounded?: 'r_none' | 'r_md' | 'r_full';
-  icon?: string;
   ariaLabel?: string;
   shadow?: boolean;
   stroke?: 'border-soft' | 'border-strong';
+  icon?: string | ReactNode;
+  iconPosition?: 'left' | 'right';
 }
