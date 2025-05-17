@@ -1,6 +1,8 @@
 import * as React from 'react';
 import './Shadows.scss';
+
 const shadowLevels = ['xs', 'sm', 'md', 'lg', 'xl', '3xl'];
+
 function ShadowsDemo() {
   return (
     <div style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto' }}>
@@ -16,4 +18,5 @@ function ShadowsDemo() {
     </div>
   );
 }
+
 export default ShadowsDemo;
