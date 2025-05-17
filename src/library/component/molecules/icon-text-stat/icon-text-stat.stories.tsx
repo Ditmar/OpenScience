@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import IconTextStat from './icon-text-stat';
 
 const meta: Meta<typeof IconTextStat> = {
-  title: 'library/components/molecules/icon-text-stat',
+  title: 'library/component/molecules/icon-text-stat',
   component: IconTextStat,
 };
 
