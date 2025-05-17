@@ -35,14 +35,14 @@ vi.mock('./types/iconMap', () => ({
 
 describe('IconTextStat Component', () => {
   const props: IProps = {
-    title: 'Usuarios Activos',
+    title: 'Active Users',
     mainValue: '150',
-    subValue: 'Comparado con el mes pasado',
+    subValue: 'Compared to last month',
     variant: 'success',
     size: 'medium',
     border: 'sharp',
     icon: 'up',
-    description: 'Subió 10% desde abril',
+    description: 'It rose 10% since April',
     onClick: vi.fn(),
     className: 'custom-class',
   };
@@ -50,7 +50,7 @@ describe('IconTextStat Component', () => {
   test('renders with minimum required props', () => {
     render(<IconTextStat title={props.title} mainValue={props.mainValue} />);
 
-    expect(screen.getByText('Usuarios Activos')).toBeInTheDocument();
+    expect(screen.getByText('Active Users')).toBeInTheDocument();
     expect(screen.getByText('150')).toBeInTheDocument();
   });
 
@@ -70,10 +70,10 @@ describe('IconTextStat Component', () => {
       />,
     );
 
-    expect(screen.getByText('Usuarios Activos')).toBeInTheDocument();
+    expect(screen.getByText('Active Users')).toBeInTheDocument();
     expect(screen.getByText('150')).toBeInTheDocument();
-    expect(screen.getByText('Comparado con el mes pasado')).toBeInTheDocument();
-    expect(screen.getByText('Subió 10% desde abril')).toBeInTheDocument();
+    expect(screen.getByText('Compared to last month')).toBeInTheDocument();
+    expect(screen.getByText('It rose 10% since April')).toBeInTheDocument();
     expect(screen.getByTestId('mock-icon')).toBeInTheDocument();
   });
 
