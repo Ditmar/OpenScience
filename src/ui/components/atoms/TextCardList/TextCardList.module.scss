@@ -1,0 +1,107 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/fonts';
+@import '../../../../globals/breakpoints';
+
+.card-list__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: $ads-padding-large;
+
+  @include respond-to('small') {
+    flex-direction: column;
+  }
+
+  @include respond-to('medium') {
+    flex-direction: row;
+  }
+
+  @include respond-to('large') {
+    flex-direction: row;
+  }
+}
+
+.card {
+  align-items: flex-start;
+  background-color: $ads-tertiary-main;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  padding: $ads-padding-large;
+  position: relative;
+  transition: border-color 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    border-color: $ads-secondary-main;
+    box-shadow: 0 2px 8px;
+  }
+
+  @include respond-to('small') {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  @include respond-to('medium') {
+    width: 48%;
+  }
+
+  @include respond-to('large') {
+    width: 48%;
+  }
+}
+
+.selected {
+  background-color: $ads-primary-main;
+  border-color: $ads-primary-main; 
+}
+
+.card__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  font-size: $ads-font-size-primary;
+  font-weight: $ads-font-weight-bold;
+  margin: 0;
+}
+
+.description {
+  color: $ads-text-secondary;
+  font-size: $ads-font-size-fifth;
+  margin: 0;
+}
+
+.checkbox {
+  margin-right: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.tag {
+  border-radius: 4px;
+  color: $ads-color-main;
+  display: inline-block;
+  font-size: $ads-font-size-fifth;
+  font-weight: $ads-font-weight-bold;
+  padding: 0.2rem 0.5rem;
+  width: fit-content;
+}
+
+.variant-default {
+  border-color: $ads-text-main; 
+}
+
+.variant-info {
+  background-color: $ads-warning-main;
+  border-color: $ads-danger-main;
+}
+
+.variant-warning {
+  background-color: $ads-warning-main;
+  border-color: $ads-warning-main;
+}
+
