@@ -1,0 +1,60 @@
+@import '../../../../globals/variables.scss';
+@import '../../../../globals/typography.scss';
+
+.heading-title {
+  color: $ads-text-main;
+  letter-spacing: $ads-letter-spacing;
+  margin: 0;
+  padding: 0;
+}
+
+.heading-title__text {
+  font-style: normal;
+  text-transform: none;
+}
+
+.heading-title--h1 {
+  font-size: $ads-font-size-headingone;
+  line-height: $ads-line-height-headingone;
+  margin-bottom: 1rem;
+}
+
+.heading-title--h2 {
+  font-size: $ads-font-size-headingtwo;
+  line-height: $ads-line-height-headingtwo;
+  margin-bottom: 0.75rem;
+}
+
+.heading-title--h3 {
+  font-size: $ads-font-size-headingthree;
+  line-height: $ads-line-height-headingthree;
+  margin-bottom: 0.5rem;
+}
+
+.heading-title--weight-regular {
+  font-weight: $ads-font-weight-regular;
+}
+
+.heading-title--weight-medium {
+  font-weight: $ads-font-weight-medium;
+}
+
+.heading-title--weight-semi-bold {
+  font-weight: $ads-font-weight-semibold;
+}
+
+.heading-title--heading-style-sans {
+  font-family: $ads-font-family-sans;
+}
+
+.heading-title--heading-style-serif {
+  font-family: $ads-font-family-serif;
+}
+
+.heading-title--heading-style-italic {
+  font-family: $ads-font-family-italic;
+}
+
+.heading-title--heading-style-monospace {
+  font-family: $ads-font-family-monospace;
+}
