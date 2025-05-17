@@ -67,60 +67,6 @@
     transition: all 0.25s cubic-bezier(0.17, 0.67, 0.43, 0.98);
   }
 
-  &--small {
-    --thumb-offset: 2px;
-    --thumb-position: 18px;
-    --thumb-size: 16px;
-
-    height: 20px;
-    width: 40px;
-
-    .toggle__track {
-      border-radius: 10px;
-    }
-
-    .toggle__thumb {
-      height: var(--thumb-size);
-      width: var(--thumb-size);
-    }
-  }
-
-  &--medium {
-    --thumb-offset: 2px;
-    --thumb-position: 22px;
-    --thumb-size: 20px;
-
-    height: 24px;
-    width: 48px;
-
-    .toggle__track {
-      border-radius: 12px;
-    }
-
-    .toggle__thumb {
-      height: var(--thumb-size);
-      width: var(--thumb-size);
-    }
-  }
-
-  &--large {
-    --thumb-offset: 2px;
-    --thumb-position: 26px;
-    --thumb-size: 24px;
-
-    height: 28px;
-    width: 56px;
-
-    .toggle__track {
-      border-radius: 14px;
-    }
-
-    .toggle__thumb {
-      height: var(--thumb-size);
-      width: var(--thumb-size);
-    }
-  }
-
   &--checked {
     .toggle__thumb {
       background-color: var(--toggle-thumb-active);
@@ -182,6 +128,60 @@
   &--dark {
     --toggle-bg: var(--toggle-dark-bg);
     --toggle-thumb-active: var(--toggle-dark-thumb);
+  }
+
+  &--small {
+    --thumb-offset: 2px;
+    --thumb-position: 18px;
+    --thumb-size: 16px;
+
+    height: 20px;
+    width: 40px;
+
+    .toggle__track {
+      border-radius: 10px;
+    }
+
+    .toggle__thumb {
+      height: var(--thumb-size);
+      width: var(--thumb-size);
+    }
+  }
+
+  &--medium {
+    --thumb-offset: 2px;
+    --thumb-position: 22px;
+    --thumb-size: 20px;
+
+    height: 24px;
+    width: 48px;
+
+    .toggle__track {
+      border-radius: 12px;
+    }
+
+    .toggle__thumb {
+      height: var(--thumb-size);
+      width: var(--thumb-size);
+    }
+  }
+
+  &--large {
+    --thumb-offset: 2px;
+    --thumb-position: 26px;
+    --thumb-size: 24px;
+
+    height: 28px;
+    width: 56px;
+
+    .toggle__track {
+      border-radius: 14px;
+    }
+
+    .toggle__thumb {
+      height: var(--thumb-size);
+      width: var(--thumb-size);
+    }
   }
 
   &:hover:not(&--disabled) {

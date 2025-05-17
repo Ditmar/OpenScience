@@ -1,0 +1,535 @@
+[33mcommit 2bcd5ab80a7c0ba1f9833e6ee840d860ac22352d[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/toggle-component[m[33m, [m[1;31morigin/feature/toggle-component[m[33m)[m
+Author: A-Lopez-Seminario <alvinneil2468@gmail.com>
+Date:   Tue May 13 00:23:02 2025 -0400
+
+    docs: subiendo nuevos cambios y correcciones
+
+[33mcommit e4ca3a89f3936bacc3d281b252a5dc71da97c430[m
+Author: A-Lopez-Seminario <alvinneil2468@gmail.com>
+Date:   Mon May 12 22:47:11 2025 -0400
+
+    Fix: errores corregidos
+
+[33mcommit 18ba327ef25a6227fa59cab5513b10baaf9bb44a[m
+Author: A-Lopez-Seminario <alvinneil2468@gmail.com>
+Date:   Fri May 9 16:37:43 2025 -0400
+
+    test: add Toggle component
+
+[33mcommit 77f237490700c5722722a7ce87d0b172aad9b231[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Kevin Alexis Rodríguez Condori <101363038+KEVIN-117@users.noreply.github.com>
+Date:   Thu May 8 22:51:38 2025 -0400
+
+    Feature/frontend 278 (#288)
+    
+    * feat: setup MUI integration using SSR
+    
+    * feat: setup MUI integration using SSR
+    
+    * feat: setup full cofig for MUI using SSR
+    
+    * feat: fixed all eslint bugs
+    
+    * fix: solved everything mentioned in the feedback
+    
+    * fix: solved everything mentioned in the feedback
+    
+    ---------
+    
+    Co-authored-by: KEVIN-117 <krodriguez17@gmail.com>
+
+[33mcommit 9908ee6cfcc444860e195cb60aa0ae57015db430[m[33m ([m[1;31morigin/feature/FRONTEND-264[m[33m, [m[1;31morigin/feature/FRONTEND-261[m[33m, [m[1;31morigin/feature/FRONTEND-244[m[33m, [m[1;31morigin/feature/FRONTEND-240[m[33m, [m[1;31morigin/232[m[33m)[m
+Author: Ditmar <ditmarcastro@gmail.com>
+Date:   Mon May 5 23:44:44 2025 -0400
+
+    feat: remove cd pipeline
+
+[33mcommit 6e87f891204d374df0322bc181a5503818730680[m[33m ([m[1;31morigin/feature/FRONTEND_-_225[m[33m, [m[1;31morigin/feature/FRONTEND-258[m[33m, [m[1;31morigin/feature/FRONTEND-249[m[33m, [m[1;31morigin/feature/FRONTEND-248[m[33m, [m[1;31morigin/feature/FRONTEND-238[m[33m)[m
+Author: elvisrodrigo <90120699+ELVISrodrigo123@users.noreply.github.com>
+Date:   Sun Dec 8 22:27:04 2024 -0400
+
+    feature/SEM-187 (#221)
+    
+    * feature/SEM-187
+    
+    * feature/SEM-187
+    
+    * feature/SEM-187
+    
+    * feature/SEM-187
+    
+    * feature/SEM-187
+
+[33mcommit 4a188c8dd6b169cc59b31b2e52e9358336c7a3f5[m
+Author: Jhaz <162767267+kymer591@users.noreply.github.com>
+Date:   Sun Dec 8 21:08:56 2024 -0400
+
+    feature/SEM-201: astro-seo (#218)
+    
+    * feat: astro-seo implemented
+    
+    * feat: astro-seo finished
+
+[33mcommit 9b2100c56c469e09e68f116c52b5277c4616d1ec[m
+Author: Jota-M <135767425+Jota-M@users.noreply.github.com>
+Date:   Sun Dec 8 20:33:54 2024 -0400
+
+    Feature (#217)
+    
+    * added to molecule for banner article
+    
+    * added to molecule for banner article
+    
+    * added to molecule for banner article
+    
+    * added to molecule for banner article
+
+[33mcommit 6c3cf04e987ed69a0a64130ba010edfdd0d1f248[m
+Author: Ditmar <spyatorio@gmail.com>
+Date:   Wed Nov 20 09:37:55 2024 -0400
+
+    feat: bump version (#182)
+
+[33mcommit fb8343954be43fc7f72f9765dccb7e4be8182c7e[m
+Author: Ditmar <spyatorio@gmail.com>
+Date:   Sat Nov 16 10:21:51 2024 -0400
+
+    feat: bump version (#181)
+
+[33mcommit 2589a880e7d3c44d7124c92044935f70df3a3116[m
+Author: Ditmar <spyatorio@gmail.com>
+Date:   Fri Nov 15 11:58:27 2024 -0400
+
+    feat: ci new process (#180)
+    
+    Co-authored-by: Ditmar <ditmarcastro@gmail.com>
+
+[33mcommit 4cc116ced49ea69b81ed7d1fb99f07cbd5513aec[m
+Author: Ditmar <spyatorio@gmail.com>
+Date:   Fri Nov 15 02:56:07 2024 -0400
+
+    feat: push ci (#178)
+    
+    * feat: push ci
+    
+    * feat: added few settings
+    
+    * feat: added few settings
+    
+    * feat: added few settings
+    
+    * feat: added few settings
+    
+    * feat: added few settings
+    
+    * feat: added few settings
+    
+    * feat: added few settings
+    
+    * feat: added few settings
+    
+    * feat: added few settings
+    
+    * feat: added few settings
+    
+    * feat: added few settings
+    
+    * feat: added few settings
+    
+    * feat: added few settings
+    
+    * feat: added few settings
+    
+    * feat: added few settings
+    
+    * feat: added few settings
+    
+    * feat: added few settings
+    
+    * feat: added few settings
+    
+    * feat: added few settings
+    
+    * feat: added publish
+    
+    * feat: added publish
+    
+    * faet: refactor pipeline
+    
+    * feat: added outputs
+    
+    * feat: added outputs
+    
+    * feat: added outputs
+    
+    * feat: added outputs
+    
+    * feat: added outputs
+    
+    * feat: added outputs
+    
+    * feat: fix
+    
+    ---------
+    
+    Co-authored-by: Ditmar <ditmarcastro@gmail.com>
+
+[33mcommit ba75fa2194772950c4233151efb1acb7e9669c18[m[33m ([m[1;31morigin/next[m[33m, [m[1;31morigin/feature/177[m[33m)[m
+Author: Rocio Oquendo <oquendoramirezrocio@gmail.com>
+Date:   Sun Jul 7 09:08:32 2024 -0400
+
+    fix: rebase
+
+[33mcommit 849ccb7cfd2bb65420fa124183ec7bc054db45a2[m
+Author: Rocio Oquendo <oquendoramirezrocio@gmail.com>
+Date:   Sat Jul 6 21:28:50 2024 -0400
+
+    fix: stylos corrections
+
+[33mcommit 23ac27b418ab34e3d4c2f2803f874324e51956c6[m
+Author: Rocio Oquendo <oquendoramirezrocio@gmail.com>
+Date:   Sat Jul 6 21:20:11 2024 -0400
+
+    fix: stylos corrections
+
+[33mcommit a73e9d344a0752b01b1dce75653e0e29f42df247[m
+Author: Rocio Oquendo <oquendoramirezrocio@gmail.com>
+Date:   Thu Jul 4 23:03:06 2024 -0400
+
+    fix: modifying styles in small-mobile and large-mobile view carousel variable
+
+[33mcommit b5ff2895f5662dc1fcc8f7f7f7af31c87e74a32c[m
+Author: Rocio Oquendo <oquendoramirezrocio@gmail.com>
+Date:   Thu Jul 4 10:40:20 2024 -0400
+
+    fix: added articles molecule,  articles page organisms and deleted articles page molecule [SEM-406]
+
+[33mcommit 1138d63691f9e21239a577f94657777037afa3e9[m
+Author: Rocio Oquendo <oquendoramirezrocio@gmail.com>
+Date:   Wed Jul 3 22:16:08 2024 -0400
+
+    feat: added articles page [SEM-406]
+
+[33mcommit e312ccfa48f623873d894a053f9b85811eba5eed[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Mon Jul 8 17:23:40 2024 -0400
+
+    fix lint
+
+[33mcommit dc2e51e8b90f19791c14b6c5ea17be141b0c86e5[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Mon Jul 8 17:19:38 2024 -0400
+
+    fix
+
+[33mcommit 59aa606e7dbe44fe39da1664daa27b64166d2aa7[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Wed Jun 26 20:05:59 2024 -0400
+
+    fixing component 068 to maintain its shape
+
+[33mcommit 532865dd99eb348b8374f1b115329e3452ce197f[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Wed Jun 26 19:26:24 2024 -0400
+
+    fix details
+
+[33mcommit 7c8a4f4f7ba7859060dba732cdb0baba0c7e09a8[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Wed Jun 26 19:19:45 2024 -0400
+
+    refactoring the styles of the components 067 and 068
+
+[33mcommit d843424296304e7aab7fde87633dccf172450e5c[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Sat Jun 22 19:04:06 2024 -0400
+
+    adding botons
+
+[33mcommit 488d1e30f4da4ef2353581dc549e2390a0e0d30d[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Sat Jun 22 17:39:07 2024 -0400
+
+    changes
+
+[33mcommit d981d92517044028a402e6fda59945110a2bb302[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Fri Jun 21 23:53:10 2024 -0400
+
+    fix prettier version
+
+[33mcommit d293651e257952da344f6d8fc1d4e6b9e1e7aeb2[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Fri Jun 21 19:57:29 2024 -0400
+
+    fix lint
+
+[33mcommit ecdc484f2d76e310c28d4f39de3054c09b47958f[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Fri Jun 21 23:48:03 2024 -0400
+
+    fix prettier version
+
+[33mcommit b5f9da157fc8c36b168f41cd6344205f82be11d8[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Fri Jun 21 19:57:29 2024 -0400
+
+    fix lint
+
+[33mcommit 0be9acad2ccaa6a34f66cceabff55080fa8ca091[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Sat Jun 22 14:46:29 2024 -0400
+
+    details
+
+[33mcommit 77337c4d02797b21284869a115bd92e96b74760c[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Fri Jun 21 23:53:10 2024 -0400
+
+    fix prettier version
+
+[33mcommit 45e52ea4f7986ae4c5ea9fe5a0584d3483b80ba0[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Fri Jun 21 19:57:29 2024 -0400
+
+    fix lint
+
+[33mcommit 5c3abc38b6d27d69a9faba451cbbf46e7d7e8aa9[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Fri Jun 21 23:48:03 2024 -0400
+
+    fix prettier version
+
+[33mcommit b86a0604abcd3a3b577dd604d58c5b34fa8d42f9[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Fri Jun 21 23:09:56 2024 -0400
+
+    add some fix
+
+[33mcommit c345ca863e3b9541b32e71bc591f4a862856c734[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Fri Jun 21 19:57:29 2024 -0400
+
+    fix lint
+
+[33mcommit 9270e6d878df1a119a4bdfe6dfa8635b90542ea3[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Fri Jun 21 17:02:19 2024 -0400
+
+    adding LogoGoogleFacebook some things to fix
+
+[33mcommit 85c615871acd2e564c25e4b5d922c073407d0e45[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Mon Jul 8 09:23:01 2024 -0400
+
+    fix
+
+[33mcommit fe3ce6beb4d0ad55f9ea40cf597becc3545e8f4a[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Mon Jul 8 09:15:45 2024 -0400
+
+    fix
+
+[33mcommit 6e02fefe9c4ab7f4bcd63a605173429b840ef520[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Sun Jul 7 11:34:17 2024 -0400
+
+    ticket 308, fix the styles
+
+[33mcommit f1d78fc800d3dac622118a0bacb5f066e64f1a90[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Sun Jul 7 11:30:04 2024 -0400
+
+    ticket 308, fix the styles
+
+[33mcommit 148913693211795cf5d76377d5cd0f5869dda5fa[m
+Author: DanielaAlejandraMamanisilva <danielaalejandramamanisilva@gmail.com>
+Date:   Fri Jun 28 12:50:27 2024 -0400
+
+    ticket 308, fix the styles
+
+[33mcommit ae6e6f3a4f064ffc80c15a2d6ba2fb037abc94c9[m
+Author: Gualberto Colque <gualbertocolque4@gmail.com.com>
+Date:   Fri Jul 5 15:41:21 2024 -0400
+
+    refactor to sem 073 waiting for sem 071 to be added to main
+
+[33mcommit 0b3bf998730abe1959d7cfd30ce3351104d2807c[m
+Author: Fernando-MV7 <huviel.fer@gmail.com>
+Date:   Thu Jul 4 21:15:11 2024 -0400
+
+    fix: rebase [SEM-005]
+
+[33mcommit 491c9fe2841d5dfcc196438d577fd568d113c009[m
+Author: Fernando-MV7 <huviel.fer@gmail.com>
+Date:   Wed Jul 3 18:17:51 2024 -0400
+
+    fixing the yarn build [SEM-005]
+
+[33mcommit 6491e189e8f61287369381c226daac2463f15c3b[m
+Author: Fernando-MV7 <huviel.fer@gmail.com>
+Date:   Wed Jul 3 17:35:11 2024 -0400
+
+    feat: added Recent articles and image [SEM-005]
+
+[33mcommit c50aa6310d0706127c7448be12717d34828a6e50[m
+Author: MoreliaFloresZota <moreliana.27.09.2000@gmail.com>
+Date:   Sun Jul 7 18:27:08 2024 -0400
+
+    feat: added changes fix molecule component Pdf/Share Buttons SEM[033]
+
+[33mcommit 04aaefb9250f44eaa8794aa609f80ebca4174ba4[m
+Author: morelia <moreliana.27.09.2000@gmail.com>
+Date:   Fri Jul 5 12:36:28 2024 -0400
+
+    feat: fix molecule component Pdf/Share Buttons SEM[033]
+
+[33mcommit a8a3ab7be17c927c69462650229566343a62d8d8[m
+Author: morelia <moreliana.27.09.2000@gmail.com>
+Date:   Fri Jul 5 12:29:40 2024 -0400
+
+    feat: added fix molecule component Pdf/Share Buttons SEM[033]
+
+[33mcommit cb41c60207503fbe95d5eed6febe900245289404[m
+Author: dtapiaparisaca <dtapiaparisaca@gmail.com>
+Date:   Sun Jul 7 03:08:19 2024 -0400
+
+    feature: fixed the responsive designe and fix glass magnify [SEM-405]
+
+[33mcommit b314197ad4e8bf74fa05114a86d9870def6911ad[m
+Author: dtapiaparisaca <dtapiaparisaca@gmail.com>
+Date:   Thu Jul 4 00:46:55 2024 -0400
+
+    feature: fix endpoint in env [SEM-405]
+
+[33mcommit 23df0c1cb2bd86597b00d0d5c8df4ad79b6a15ef[m
+Author: dtapiaparisaca <dtapiaparisaca@gmail.com>
+Date:   Wed Jul 3 19:26:20 2024 -0400
+
+    feature: added route volumenes and request to strapi with fetch cache[SEM-405]
+
+[33mcommit 6cd64d5144c5b68f4b504a498dd808cd74fd7e66[m
+Author: EdwinMiranda1 <darkalister23@gmail.com>
+Date:   Mon Jul 1 23:29:52 2024 -0400
+
+    fix: fixed Styles buttons
+
+[33mcommit d5431d7ab07effb58420bee0d98b35905f089de4[m
+Author: EdwinMiranda1 <darkalister23@gmail.com>
+Date:   Mon Jul 1 21:03:57 2024 -0400
+
+    feat: added molecule component PdfShareButtons
+
+[33mcommit 4b98c8670bbcf862fe0cc361dc744c00607827c0[m
+Author: Camila Delgado <camiladelgado.1321@gmail.com>
+Date:   Wed Jul 3 00:28:27 2024 -0400
+
+    feat: added refactor for SEM-003, SEM-008 and SEM-030
+
+[33mcommit b7a38dd89b1396feb81b8cba978bfdbb93789e3c[m
+Author: Estefani <yuditheylb0@gmail.com>
+Date:   Tue Jul 2 01:31:37 2024 -0400
+
+    modified burger button [SEM-077]
+
+[33mcommit ca6beb11d1bffa4c31e6d2314581d469d3e707bd[m
+Author: davidcm1011 <dacidclasses@gmail.com>
+Date:   Tue Jul 2 17:21:16 2024 -0400
+
+    feat: isolar styles of components SEM-040 and SEM-042  [SEM-]
+
+[33mcommit 8fa1a90c2ddd60e4723c6c925f81a16801aed4f7[m
+Author: Jose_Fernandez <joigfema@gmail.com>
+Date:   Tue Jul 2 12:02:19 2024 -0400
+
+    feature: fix test2
+
+[33mcommit 90ec4173b5c2767ed0333f2ed9a66eb3d15eee14[m
+Author: Jose_Fernandez <joigfema@gmail.com>
+Date:   Tue Jul 2 11:52:29 2024 -0400
+
+    feature: fix test
+
+[33mcommit 57677a293670d7ef8a01f66522b62b5fca43f570[m
+Author: Jose_Fernandez <joigfema@gmail.com>
+Date:   Tue Jul 2 11:38:48 2024 -0400
+
+    feature: first commit
+
+[33mcommit 6924d1e365b08436f9cc34e4a79e9b64c666025c[m
+Author: AimeAla <usera3463@gmail.com>
+Date:   Thu Jul 4 12:53:03 2024 -0400
+
+    feature: fixed error of data type
+
+[33mcommit 8515f7130af53d86760408c4cc37101a1fc779e5[m
+Author: AimeAla <usera3463@gmail.com>
+Date:   Thu Jul 4 12:28:42 2024 -0400
+
+    feature added config for requests to API int Astro.locals.collections
+
+[33mcommit 520db9da26c67ed9267034085f1c2aea4427ae37[m
+Author: FernandaMar <fernanda.martinez5010@gmail.com>
+Date:   Wed Jul 3 01:10:43 2024 -0400
+
+    feat: uploading refactor[SEM-311] corrected complet
+
+[33mcommit ef82761ccdd1ac3af3993a823bf83665a98744ca[m
+Author: FernandaMar <fernanda.martinez5010@gmail.com>
+Date:   Tue Jul 2 00:04:39 2024 -0400
+
+    feat: uploading refactor[SEM-311] corrected 2.
+
+[33mcommit b1cc51551da71bb499bc7dba7485708cc373505c[m
+Author: FernandaMar <fernanda.martinez5010@gmail.com>
+Date:   Mon Jul 1 23:15:56 2024 -0400
+
+    feat: uploading refactor[SEM-311] corrected 2
+
+[33mcommit fecee6388156e8122f0917465b9f19028d4c5ab4[m
+Author: FernandaMar <fernanda.martinez5010@gmail.com>
+Date:   Mon Jul 1 22:56:37 2024 -0400
+
+    feat: uploading refactor[SEM-311] corrected
+
+[33mcommit 1cae0ecb6f235259ab87343da18fdf92e5a11ca9[m
+Author: FernandaMar <fernanda.martinez5010@gmail.com>
+Date:   Mon Jul 1 17:59:29 2024 -0400
+
+    feat: added refactor[SEM-311] -> (SEM-054 and SEM-055)
+
+[33mcommit 1700b8f44a77c3797a76339783b612bf0ddc8207[m
+Author: jose <armandoleonbit25@gmail.com>
+Date:   Wed Jul 3 10:08:46 2024 -0400
+
+    Feat:fix location component [SEM-051]
+
+[33mcommit 37fc5d03e8ed6f3dbe000891fb64414683985268[m
+Author: jose <armandoleonbit25@gmail.com>
+Date:   Mon Jul 1 23:23:01 2024 -0400
+
+    Feat:fix location component [SEM-051]
+
+[33mcommit ecb0544bcadc3b26708a6dbf067763999dd4a0fc[m
+Author: jose <armandoleonbit25@gmail.com>
+Date:   Thu Jun 27 13:00:08 2024 -0400
+
+    Feat: fix component location-variable [SEM-051]
+
+[33mcommit 01381c0a3eddc4fcd6cce36745ff67cf1ea4f0e6[m
+Author: jose <armandoleonbit25@gmail.com>
+Date:   Thu Jun 27 12:55:57 2024 -0400
+
+    Feat: fix component location-variable [SEM-051]
+
+[33mcommit 5fee8dd59d34a02aa3a43088cce10180b5fa351c[m
+Author: jose <armandoleonbit25@gmail.com>
+Date:   Thu Jun 27 12:26:42 2024 -0400
+
+    Feat: new component location-variable [SEM-051]
+
+[33mcommit 05bdf09d69184ca2988d345bb985d9ab49175b2e[m
+Author: jose <armandoleonbit25@gmail.com>
+Date:   Wed Jun 26 10:32:21 2024 -0400
+
+    Feat: new component location-variable [SEM-051]

@@ -13,14 +13,10 @@ function Toggle({
   'data-testid': testId = 'toggle',
 }: IToggleProps): JSX.Element {
   const toggleRef = useRef<HTMLButtonElement>(null);
-  
+
   const handleToggle = () => {
-    if (onChange) {
-      onChange(!checked);
-      if (toggleRef.current) {
-        toggleRef.current.focus();
-      }
-    }
+    onChange(!checked);
+    toggleRef.current?.focus();
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {

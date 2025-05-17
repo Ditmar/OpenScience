@@ -113,21 +113,31 @@ function ToggleVariantsGrid() {
             boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
           }}
         >
-          <div style={{ fontWeight: 'bold', marginBottom: '8px', fontSize: '1rem' }}>
+          <div
+            id={`variant-${variant}`}
+            style={{
+              fontWeight: 'bold',
+              marginBottom: '8px',
+              fontSize: '1rem',
+            }}
+          >
             {variant.charAt(0).toUpperCase() + variant.slice(1)}
           </div>
-          <label htmlFor={`toggle-variant-${variant}`} style={{ display: 'inline-block' }}>
-            <Toggle
-              id={`toggle-variant-${variant}`}
-              variant={variant}
-              checked={states[variant]}
-              onChange={(value) => {
-                setStates((prev) => ({ ...prev, [variant]: value }));
-              }}
-              aria-label={`${variant} toggle`}
-            />
-          </label>
-          <div style={{ fontSize: '0.85rem', color: '#666', marginTop: '8px' }}>
+          <Toggle
+            aria-labelledby={`variant-${variant}`}
+            variant={variant}
+            checked={states[variant]}
+            onChange={(value) => {
+              setStates((prev) => ({ ...prev, [variant]: value }));
+            }}
+          />
+          <div
+            style={{
+              fontSize: '0.85rem',
+              color: '#666',
+              marginTop: '8px',
+            }}
+          >
             {states[variant] ? 'Activado' : 'Desactivado'}
           </div>
         </div>
@@ -420,149 +430,151 @@ export const TogglesByVariantAndState: Story = {
   },
 };
 
-export const InteractiveDemo: Story = {
-  render: () => {
-    const [activeVariant, setActiveVariant] = useState<ToggleVariant>('primary');
-    const [checked, setChecked] = useState(true);
-    const [size, setSize] = useState<ToggleSize>('medium');
-    const [disabled, setDisabled] = useState(false);
+function InteractiveToggleDemo() {
+  const [activeVariant, setActiveVariant] = useState<ToggleVariant>('primary');
+  const [checked, setChecked] = useState(true);
+  const [size, setSize] = useState<ToggleSize>('medium');
+  const [disabled, setDisabled] = useState(false);
 
-    return (
+  return (
+    <div
+      style={{
+        padding: '32px',
+        maxWidth: '600px',
+        backgroundColor: '#f9f9f9',
+        borderRadius: '12px',
+        boxShadow: '0 2px 10px rgba(0,0,0,0.05)',
+      }}
+    >
+      <h2 style={{ marginBottom: '24px', fontSize: '1.5rem' }}>Panel de control interactivo</h2>
       <div
         style={{
-          padding: '32px',
-          maxWidth: '600px',
-          backgroundColor: '#f9f9f9',
-          borderRadius: '12px',
-          boxShadow: '0 2px 10px rgba(0,0,0,0.05)',
+          marginBottom: '32px',
+          padding: '24px',
+          display: 'flex',
+          justifyContent: 'center',
+          backgroundColor: '#fff',
+          borderRadius: '8px',
+          boxShadow: 'inset 0 1px 4px rgba(0,0,0,0.05)',
         }}
       >
-        <h2 style={{ marginBottom: '24px', fontSize: '1.5rem' }}>Panel de control interactivo</h2>
-        <div
-          style={{
-            marginBottom: '32px',
-            padding: '24px',
-            display: 'flex',
-            justifyContent: 'center',
-            backgroundColor: '#fff',
-            borderRadius: '8px',
-            boxShadow: 'inset 0 1px 4px rgba(0,0,0,0.05)',
-          }}
-        >
-          <Toggle
-            variant={activeVariant}
-            size={size}
-            checked={checked}
-            disabled={disabled}
-            onChange={setChecked}
-            aria-label="Interactive demo toggle"
-          />
+        <Toggle
+          variant={activeVariant}
+          size={size}
+          checked={checked}
+          disabled={disabled}
+          onChange={setChecked}
+          aria-label="Interactive demo toggle"
+        />
+      </div>
+      <div style={{ display: 'grid', gap: '24px' }}>
+        <div>
+          <h3 style={{ marginBottom: '12px', fontSize: '1.2rem' }}>Variante</h3>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(90px, 1fr))',
+              gap: '8px',
+            }}
+          >
+            {variants.map((variant) => (
+              <button
+                key={variant}
+                onClick={() => {
+                  setActiveVariant(variant);
+                }}
+                style={{
+                  padding: '8px',
+                  border: variant === activeVariant ? '2px solid #007bff' : '1px solid #ccc',
+                  borderRadius: '6px',
+                  background: variant === activeVariant ? '#e6f2ff' : 'white',
+                  cursor: 'pointer',
+                  fontWeight: variant === activeVariant ? 'bold' : 'normal',
+                }}
+                aria-label={`Set ${variant} variant`}
+              >
+                {variant}
+              </button>
+            ))}
+          </div>
         </div>
-        <div style={{ display: 'grid', gap: '24px' }}>
-          <div>
-            <h3 style={{ marginBottom: '12px', fontSize: '1.2rem' }}>Variante</h3>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(90px, 1fr))',
-                gap: '8px',
-              }}
-            >
-              {variants.map((variant) => (
-                <button
-                  key={variant}
-                  onClick={() => {
-                    setActiveVariant(variant);
-                  }}
-                  style={{
-                    padding: '8px',
-                    border: variant === activeVariant ? '2px solid #007bff' : '1px solid #ccc',
-                    borderRadius: '6px',
-                    background: variant === activeVariant ? '#e6f2ff' : 'white',
-                    cursor: 'pointer',
-                    fontWeight: variant === activeVariant ? 'bold' : 'normal',
-                  }}
-                  aria-label={`Set ${variant} variant`}
-                >
-                  {variant}
-                </button>
-              ))}
-            </div>
+        <div>
+          <h3 style={{ marginBottom: '12px', fontSize: '1.2rem' }}>Tamaño</h3>
+          <div style={{ display: 'flex', gap: '12px' }}>
+            {sizes.map((s) => (
+              <button
+                key={s}
+                onClick={() => {
+                  setSize(s);
+                }}
+                style={{
+                  padding: '8px 16px',
+                  border: s === size ? '2px solid #007bff' : '1px solid #ccc',
+                  borderRadius: '6px',
+                  background: s === size ? '#e6f2ff' : 'white',
+                  cursor: 'pointer',
+                  fontWeight: s === size ? 'bold' : 'normal',
+                  flex: 1,
+                }}
+                aria-label={`Set ${s} size`}
+              >
+                {s}
+              </button>
+            ))}
           </div>
-          <div>
-            <h3 style={{ marginBottom: '12px', fontSize: '1.2rem' }}>Tamaño</h3>
-            <div style={{ display: 'flex', gap: '12px' }}>
-              {sizes.map((s) => (
-                <button
-                  key={s}
-                  onClick={() => {
-                    setSize(s);
-                  }}
-                  style={{
-                    padding: '8px 16px',
-                    border: s === size ? '2px solid #007bff' : '1px solid #ccc',
-                    borderRadius: '6px',
-                    background: s === size ? '#e6f2ff' : 'white',
-                    cursor: 'pointer',
-                    fontWeight: s === size ? 'bold' : 'normal',
-                    flex: 1,
-                  }}
-                  aria-label={`Set ${s} size`}
-                >
-                  {s}
-                </button>
-              ))}
-            </div>
-          </div>
+        </div>
 
-          <div>
-            <h3 style={{ marginBottom: '12px', fontSize: '1.2rem' }}>Estado</h3>
-            <div
-              style={{
-                display: 'flex',
-                gap: '24px',
-                alignItems: 'center',
-                backgroundColor: '#fff',
-                padding: '16px',
-                borderRadius: '6px',
-              }}
+        <div>
+          <h3 style={{ marginBottom: '12px', fontSize: '1.2rem' }}>Estado</h3>
+          <div
+            style={{
+              display: 'flex',
+              gap: '24px',
+              alignItems: 'center',
+              backgroundColor: '#fff',
+              padding: '16px',
+              borderRadius: '6px',
+            }}
+          >
+            <label
+              htmlFor="disabled-toggle"
+              style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}
             >
-              <label
-                htmlFor="disabled-toggle"
-                style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}
-              >
-                <input
-                  id="disabled-toggle"
-                  type="checkbox"
-                  checked={disabled}
-                  onChange={(e) => {
-                    setDisabled(e.target.checked);
-                  }}
-                  aria-checked={disabled}
-                />
-                Deshabilitado
-              </label>
-              <label
-                htmlFor="checked-toggle"
-                style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}
-              >
-                <input
-                  id="checked-toggle"
-                  type="checkbox"
-                  checked={checked}
-                  onChange={(e) => {
-                    setChecked(e.target.checked);
-                  }}
-                  aria-checked={checked}
-                />
-                Activado
-              </label>
-            </div>
+              <input
+                id="disabled-toggle"
+                type="checkbox"
+                checked={disabled}
+                onChange={(e) => {
+                  setDisabled(e.target.checked);
+                }}
+                aria-checked={disabled}
+              />
+              Deshabilitado
+            </label>
+            <label
+              htmlFor="checked-toggle"
+              style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}
+            >
+              <input
+                id="checked-toggle"
+                type="checkbox"
+                checked={checked}
+                onChange={(e) => {
+                  setChecked(e.target.checked);
+                }}
+                aria-checked={checked}
+              />
+              Activado
+            </label>
           </div>
         </div>
       </div>
-    );
-  },
+    </div>
+  );
+}
+
+export const InteractiveDemo: Story = {
+  render: () => <InteractiveToggleDemo />,
   parameters: {
     docs: {
       description: {

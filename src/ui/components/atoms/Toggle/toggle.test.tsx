@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import Toggle from './toggle';
-import '@testing-library/jest-dom/extend-expect';
 import '@testing-library/jest-dom';
-import '@testing-library/jest-dom/vitest';
+import { vi } from 'vitest';
+import Toggle from './toggle';
+
 describe('Toggle Component', () => {
   test('renders with default props', () => {
     render(<Toggle checked={false} onChange={() => {}} />);
@@ -11,14 +11,14 @@ describe('Toggle Component', () => {
   });
 
   test('toggles when clicked', () => {
-    const handleChange = jest.fn();
+    const handleChange = vi.fn();
     render(<Toggle checked={false} onChange={handleChange} />);
     fireEvent.click(screen.getByRole('switch'));
     expect(handleChange).toHaveBeenCalledWith(true);
   });
 
   test('handles keyboard events', () => {
-    const handleChange = jest.fn();
+    const handleChange = vi.fn();
     render(<Toggle checked={false} onChange={handleChange} />);
     const toggle = screen.getByRole('switch');
     fireEvent.keyDown(toggle, { key: ' ' });
@@ -30,7 +30,7 @@ describe('Toggle Component', () => {
     render(<Toggle checked variant="default" onChange={() => {}} />);
     const toggleElement = screen.getByRole('switch');
     expect(toggleElement).toBeInTheDocument();
-    expect(toggleElement).toHaveClass('toggle--default');
+    expect(toggleElement.className).toMatch(/toggle--default/);
   });
 
   test('shows disabled state', () => {

@@ -25,7 +25,6 @@ export interface IToggleProps {
     padding: number;
     circleSize: number;
   };
-  // Nuevas propiedades añadidas
   id?: string;
   'aria-label'?: string;
   'aria-labelledby'?: string;
