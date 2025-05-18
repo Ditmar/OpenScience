@@ -9,4 +9,3 @@ export interface CheckboxProps {
   shape?: CheckboxShape;
   className?: string;
 }
-

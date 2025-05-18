@@ -12,7 +12,7 @@ function Check({
   className = '',
 }: CheckboxProps): JSX.Element {
   const handleChange = () => {
-    if (!disabled && onChange) {
+    if (!disabled) {
       onChange(!checked);
     }
   };
@@ -26,7 +26,9 @@ function Check({
 
   return (
     <div
-      className={`check ${className} ${disabled ? 'disabled' : ''} check--${variant} check--${shape}`}
+      className={`check ${className} ${
+        disabled ? 'disabled' : ''
+      } check--${variant} check--${shape}`}
       onClick={handleChange}
       onKeyDown={handleKeyDown}
       tabIndex={disabled ? -1 : 0}
