@@ -1,6 +1,6 @@
-@import "../../../../globals/variables";
-@import '../../../../globals/fonts';
+@import '../../../../globals/variables';
 @import '../../../../globals/mixins';
+@import '../../../../globals/fonts';
 @import '../../../../globals/breakpoints';
 
 .container {
@@ -184,65 +184,66 @@
     }
 
     .copy-button {
-        background: $ads-default-main;
+        background: $ads-color-primary;
         color: $ads-background-main;
     }
 }
 
 .variant--focus {
     .input-container {
-        border-color: $ads-default-main;
-        box-shadow: 0 0 0 .1rem $ads-default-blur-main;
+        border-color: $ads-color-primary;
+        box-shadow: 0 0 0 .1rem $ads-color-brand-primary-100
+;
     }
 
     .copy-button {
-        background: $ads-default-main;
+        background: $ads-color-primary;
         color: $ads-background-main;
     }
 }
 
 .variant--error {
     .input-container {
-        border-color: $ads-error-main;
+        border-color: $ads-color-negative;
     }
 
     .copy-button {
-        background: $ads-error-main;
+        background: $ads-color-negative;
         color: $ads-background-main;
     }
 
     .hint-text {
-        color: $ads-error-main;
+        color: $ads-color-negative;
         font-family: Poppins-Light, sans-serif;
     }
 }
 
 .variant--disabled {
-    color: $ads-disabled-main;
+    color: $ads-color-gray-strong-25;
 
     .input-container {
-        border-color: $ads-disabled-main;
+        border-color: $ads-color-gray-strong-25;
     }
 
     .copy-button {
-        background: $ads-disabled-main;
+        background: $ads-color-gray-strong-25;
         color: $ads-background-main;
     }
 
     .input {
-        color: $ads-disabled-main;
+        color: $ads-color-gray-strong-25;
     }
 
     .planet-icon {
-        color: $ads-disabled-main;
+        color: $ads-color-gray-strong-25;
     }
 
     .protocol {
-        color: $ads-disabled-main;
+        color: $ads-color-gray-strong-25;
     }
-    
+
     .close-icon-url {
-        color: $ads-disabled-main;
+        color: $ads-color-gray-strong-25;
     }
 }
 
