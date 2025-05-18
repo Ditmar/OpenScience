@@ -1,0 +1,128 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.ghost-button {
+  align-items: center;
+  background: transparent;
+  border: 2px $ads-primary-main;
+  box-sizing: border-box;
+  color: $ads-primary-main;
+  cursor: pointer;
+  display: inline-flex;
+  height: 24px;
+  justify-content: center;
+  padding: 0 20px;
+  transition:
+    background 0.2s,
+    border 0.2s;
+
+  &--primary {
+    color: $ads-primary-main;
+  }
+
+  &:active {
+    background: rgba($ads-primary-main, 0.2);
+  }
+
+  &:focus {
+    border: 2px solid $ads-primary-main;
+    outline: none;
+  }
+
+  &--small {
+    font-size: 14px;
+    height: 24px;
+    width: 146px;
+  }
+
+  &--medium {
+    font-size: 16px;
+    height: 27px;
+    width: 161px;
+  }
+
+  &--large {
+    font-size: 20px;
+    height: 30px;
+    width: 180px;
+  }
+}
+
+.ghost-button__icon {
+  align-items: center;
+  display: inline-flex;
+  fill: $ads-primary-main;
+  justify-content: center;
+  margin: 0 4px;
+}
+
+.ghost-button--small .ghost-button__icon {
+  height: 18px;
+  width: 18px;
+}
+
+.ghost-button--medium .ghost-button__icon {
+  height: 20px;
+  width: 20px;
+}
+
+.ghost-button--large .ghost-button__icon {
+  height: 24px;
+  width: 24px;
+}
+
+.ghost-button--dark {
+  color: $ads-text-main;
+}
+
+.ghost-button__icon--dark {
+  fill: $ads-text-main;
+}
+
+.ghost-button--intenseviolet {
+  color: $ads-stroke-primary;
+}
+
+.ghost-button__icon--intenseviolet {
+  fill: $ads-stroke-primary;
+}
+
+.ghost-button--violet {
+  color: $ads-stroke-secondary;
+}
+
+.ghost-button__icon--violet {
+  fill: $ads-stroke-secondary;
+}
+
+.ghost-button--teritary {
+  color: $ads-stroke-disabled;
+}
+
+.ghost-button__icon--teritary {
+  fill: $ads-stroke-disabled;
+}
+
+.ghost-button--green {
+  color: $ads-stroke-positive;
+}
+
+.ghost-button__icon--green {
+  fill: $ads-stroke-positive;
+}
+
+.ghost-button--red {
+  color: $ads-danger-main;
+}
+
+.ghost-button__icon--red {
+  fill: $ads-danger-main;
+}
+
+.ghost-button--yellow {
+  color: $ads-warning-main;
+}
+
+.ghost-button__icon--yellow {
+  fill: $ads-warning-main;
+}

@@ -19,7 +19,8 @@ const config: StorybookConfig = {
   },
   async viteFinal(config, { configType }) {
     return mergeConfig(config, {
-      plugins: [tsconfigPaths(),
+      plugins: [
+        tsconfigPaths(),
         svgr({
           svgrOptions: {
             icon: true,
