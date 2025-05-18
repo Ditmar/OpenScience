@@ -90,7 +90,7 @@
   }
 }
 
-@media (max-width: 430px) {
+@media (width <= 430px) {
   .container {
     max-width: 398px;
     padding-left: 16px;
@@ -99,7 +99,7 @@
 
   .auto-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
