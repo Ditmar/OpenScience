@@ -1,13 +1,12 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
-
+@import '../../../../globals/globals.scss';
 $ads-color-violet: #9a4aff;
 $ads-color-blue: #180bd4;
 
 .badge {
   align-items: center;
   border: 1px solid transparent;
-  border-radius: 4px;
   display: inline-flex;
   font-size: $ads-font-size-primary;
   gap: 0.25rem;
@@ -24,7 +23,7 @@ $ads-color-blue: #180bd4;
   }
 
   &--rounded {
-    border-radius: 9999px;
+    border-radius: 8px;
   }
 
   &--filled {
@@ -43,12 +42,12 @@ $ads-color-blue: #180bd4;
   }
 
   &--neutral {
-    background-color: $ads-tertiary-main;
+    background-color: --color-neutral-gray-strong-800;
     color: $ads-text-main;
   }
 
   &--gray {
-    background-color: $ads-text-input;
+    background-color: red;
     color: $ads-text-main;
   }
 
