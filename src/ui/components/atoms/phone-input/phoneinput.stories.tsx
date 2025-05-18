@@ -1,4 +1,3 @@
-//
 import type { StoryObj, Meta } from '@storybook/react';
 import PhoneInput from './phoneinput';
 
