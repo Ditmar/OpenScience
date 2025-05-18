@@ -1,3 +1,5 @@
+$ads-color-black: #000;
+
 $ads-primary-main: #0793bf;
 $ads-secondary-main: #004369;
 $ads-tertiary-main: #fff;
@@ -223,3 +225,10 @@ $ads-color-border: #ccc;
 $ads-color-error: #ff5a5f;
 $ads-color-background-disabled: #f5f5f5;
 $ads-color-focus: #4b5fff;
+
+$ads-shadow-xs: color-mix(in srgb, black 7.5%, transparent);
+$ads-shadow-sm: color-mix(in srgb, black 10%, transparent);
+$ads-shadow-md: color-mix(in srgb, black 15%, transparent);
+$ads-shadow-lg: color-mix(in srgb, black 20%, transparent);
+$ads-shadow-xl: color-mix(in srgb, black 25%, transparent);
+$ads-shadow-xxxl: color-mix(in srgb, black 30%, transparent);
