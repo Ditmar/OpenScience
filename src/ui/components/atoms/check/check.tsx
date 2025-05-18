@@ -1,17 +1,7 @@
 import React from 'react';
 import './check.scss';
-
-type CheckboxVariant = 'default' | 'success' | 'info' | 'warning' | 'danger';
-type CheckboxShape = 'circle' | 'square';
-
-interface CheckboxProps {
-  checked: boolean;
-  onChange: (value: boolean) => void;
-  disabled?: boolean;
-  variant?: CheckboxVariant;
-  shape?: CheckboxShape;
-  className?: string;
-}
+import Icon from './Icon';
+import type { CheckboxProps } from './types/IProps';
 
 function Check({
   checked = false,
@@ -22,13 +12,13 @@ function Check({
   className = '',
 }: CheckboxProps): JSX.Element {
   const handleChange = () => {
-    if (!disabled) {
+    if (!disabled && onChange) {
       onChange(!checked);
     }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === ' ' || e.key === 'Enter') {
+    if ((e.key === ' ' || e.key === 'Enter') && !disabled) {
       e.preventDefault();
       handleChange();
     }
@@ -36,7 +26,7 @@ function Check({
 
   return (
     <div
-      className={`check ${className} ${disabled ? 'disabled' : ''} check--${shape}`}
+      className={`check ${className} ${disabled ? 'disabled' : ''} check--${variant} check--${shape}`}
       onClick={handleChange}
       onKeyDown={handleKeyDown}
       tabIndex={disabled ? -1 : 0}
@@ -56,21 +46,11 @@ function Check({
       />
       <span className={`check__box check__box--${variant} check__box--${shape}`}>
         {checked && (
-          <svg
-            className={`check__mark check__mark--${shape}`}
-            viewBox="0 0 12 10"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+          <Icon
+            name="check"
+            className={`check__mark check__mark--${variant} check__mark--${shape}`}
             data-testid="checkmark"
-          >
-            <path
-              d="M1 5L4.5 8.5L11 1"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          />
         )}
       </span>
     </div>
