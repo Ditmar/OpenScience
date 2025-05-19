@@ -26,9 +26,7 @@ function Badge({
   const getIconColor = () => {
     if (variant === 'filled') {
       return color === 'neutral' || color === 'gray' ? 'black' : 'white';
-    }
-
-    if (variant === 'outline' || variant === 'soft') {
+    }else{
       if (customColor) return 'currentColor';
 
       const outlineSoftColors = ['violet', 'blue'];
@@ -39,7 +37,6 @@ function Badge({
       return 'black';
     }
 
-    return 'currentColor';
   };
 
   const iconColor = getIconColor();
