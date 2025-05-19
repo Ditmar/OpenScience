@@ -71,7 +71,6 @@ function Badge({
     </span>
   );
 }
-
 Badge.defaultProps = {
   customColor: undefined,
   icon: undefined,

@@ -31,7 +31,7 @@ const meta: Meta<typeof Badge> = {
 export default meta;
 type Story = StoryObj<typeof Badge>;
 
-// Función para reemplazar alert() con un console log (puedes modificarlo según tus necesidades)
+
 const handleClose = (message: string) => {
   return () => {
     console.log(message);

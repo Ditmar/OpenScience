@@ -1,8 +1,6 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
-@import '../../../../globals/globals.scss';
-$ads-color-violet: #9a4aff;
-$ads-color-blue: #180bd4;
+@import '../../../../globals/globals';
 
 .badge {
   align-items: center;
@@ -40,24 +38,24 @@ $ads-color-blue: #180bd4;
     background-color: $ads-background-color-black;
     color: $ads-text-main;
   }
-
+//colours of componets
   &--neutral {
-    background-color: --color-neutral-gray-strong-800;
+    background-color: var(--color-neutral-white-900);
     color: $ads-text-main;
   }
 
   &--gray {
-    background-color: red;
-    color: $ads-text-main;
+    background-color: var(--color-neutral-gray-strong-800);
+    color: $ads-color-main;
   }
 
   &--violet {
-    background-color: $ads-color-violet;
+    background-color: $ads-color-secondary;
     color: $ads-color-main;
   }
 
   &--blue {
-    background-color: $ads-secondary-main;
+    background-color: var(--color-brand-primary-500);
     color: $ads-color-main;
   }
 
