@@ -7,22 +7,22 @@ interface IconProps {
   style?: React.CSSProperties;
 }
 
-export const IconCircleQuarters: React.FC<IconProps> = ({ className, style }) => {
+export function IconCircleQuarters({ className, style }: IconProps) {
   return (
     <CircleQuarters
       className={className}
       style={style}
-      fill="currentColor" // Esto permite heredar el color del contexto
+      fill="currentColor" 
     />
   );
-};
+}
 
-export const IconClose: React.FC<IconProps> = ({ className, style }) => {
+export function IconClose({ className, style }: IconProps) {
   return (
     <Close
       className={className}
       style={style}
-      fill="currentColor" // Esto permite heredar el color del contexto
+      fill="currentColor" 
     />
   );
-};
+}

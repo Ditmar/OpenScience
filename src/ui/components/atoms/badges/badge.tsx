@@ -28,11 +28,8 @@ function Badge({
       return color === 'neutral' || color === 'gray' ? 'black' : 'white';
     }
     if (variant === 'outline' || variant === 'soft') {
-      return customColor
-        ? 'currentColor'
-        : color === 'violet' || color === 'blue'
-          ? 'currentColor'
-          : 'black';
+      if (customColor) return 'currentColor';
+      return color === 'violet' || color === 'blue' ? 'currentColor' : 'black';
     }
     return 'currentColor';
   };
@@ -55,7 +52,11 @@ function Badge({
       style={customStyle}
     >
       {onClose && (
-        <button className="badge__close-button" onClick={onClose}>
+        <button 
+          className="badge__close-button" 
+          onClick={onClose}
+          aria-label="Close badge"
+        >
           <IconCircleQuarters style={iconStyle} />
         </button>
       )}
@@ -74,7 +75,11 @@ function Badge({
       )}
 
       {onClose && (
-        <button className="badge__close-button" onClick={onClose}>
+        <button 
+          className="badge__close-button" 
+          onClick={onClose}
+          aria-label="Close badge"
+        >
           <IconClose style={iconStyle} />
         </button>
       )}

@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface BadgeProps {
   variant: 'filled' | 'outline' | 'soft';
   color: 'neutral' | 'gray' | 'violet' | 'blue' | 'custom';
