@@ -1,184 +1,177 @@
+/* stylelint-disable no-descending-specificity */
 @use 'sass:math';
+
 @import '../../../../globals/mixins';
 
 // Variables
-$text-field-border-radius: 4px;
-$text-field-transition: all 0.2s ease-in-out;
+$textFieldBorderRadius: 4px;
+$textFieldTransition: all 0.2s ease-in-out;
 
 // Colors
-$text-field-border-color: #c4c4c4;
-$text-field-border-color-focus: #2563eb;
-$text-field-border-color-error: #dc2626;
-$text-field-bg-color: #ffffff;
-$text-field-bg-color-disabled: #f3f4f6;
-$text-field-text-color: #1f2937;
-$text-field-text-color-disabled: #9ca3af;
-$text-field-label-color: #4b5563;
-$text-field-placeholder-color: #9ca3af;
-$text-field-helper-text-color: #6b7280;
-$text-field-error-color: #dc2626;
+$textFieldBorderColor: #c4c4c4;
+$textFieldBorderColorFocus: #2563eb;
+$textFieldBorderColorError: #dc2626;
+$textFieldBgColor: #fff;
+$textFieldBgColorDisabled: #f3f4f6;
+$textFieldTextColor: #1f2937;
+$textFieldTextColorDisabled: #9ca3af;
+$textFieldLabelColor: #4b5563;
+$textFieldPlaceholderColor: #9ca3af;
+$textFieldHelperTextColor: #6b7280;
+$textFieldErrorColor: #dc2626;
 
 // Font sizes
-$text-field-font-sm: 0.875rem;
-$text-field-font-md: 1rem;
-$text-field-font-lg: 1.125rem;
+$textFieldFontSm: 0.875rem;
+$textFieldFontMd: 1rem;
+$textFieldFontLg: 1.125rem;
 
 // Spacing
-$text-field-spacing-xs: 0.25rem;
-$text-field-spacing-sm: 0.5rem;
-$text-field-spacing-md: 0.75rem;
-$text-field-spacing-lg: 1rem;
+$textFieldSpacingXs: 0.25rem;
+$textFieldSpacingSm: 0.5rem;
+$textFieldSpacingMd: 0.75rem;
+$textFieldSpacingLg: 1rem;
 
 .text-field {
   display: flex;
   flex-direction: column;
-  width: 100%;
   font-family: inherit;
-  margin-bottom: $text-field-spacing-md;
+  margin-bottom: $textFieldSpacingMd;
+  width: 100%;
+
   @include respond-to('tablet') {
     width: 50%;
   }
 
-  // Label styling
   &__label {
+    color: $textFieldLabelColor;
     display: block;
-    margin-bottom: $text-field-spacing-xs;
-    font-size: $text-field-font-sm;
+    font-size: $textFieldFontSm;
     font-weight: 500;
-    color: $text-field-label-color;
-    transition: $text-field-transition;
+    margin-bottom: $textFieldSpacingXs;
+    transition: $textFieldTransition;
   }
 
-  // Input container which allows for icon positioning
   &__input-container {
-    position: relative;
-    display: flex;
     align-items: center;
+    display: flex;
+    position: relative;
   }
 
-  // Main input styling
   &__input {
-    width: 100%;
-    border: 1px solid $text-field-border-color;
-    border-radius: $text-field-border-radius;
-    background-color: $text-field-bg-color;
-    color: $text-field-text-color;
-    font-size: $text-field-font-md;
-    line-height: 5.5;
-    transition: $text-field-transition;
     appearance: none;
-    padding: $text-field-spacing-sm $text-field-spacing-md;
-    
+    background-color: $textFieldBgColor;
+    border: 1px solid $textFieldBorderColor;
+    border-radius: $textFieldBorderRadius;
+    color: $textFieldTextColor;
+    font-size: $textFieldFontMd;
+    line-height: 5.5;
+    padding: $textFieldSpacingSm $textFieldSpacingMd;
+    transition: $textFieldTransition;
+    width: 100%;
+
     &::placeholder {
-      color: $text-field-placeholder-color;
+      color: $textFieldPlaceholderColor;
     }
 
     &:focus {
+      box-shadow: 0 0 0 2px rgba($textFieldBorderColorFocus, 0.2);
       outline: none;
-      box-shadow: 0 0 0 2px rgba(darken($text-field-border-color-focus, 10%), 0.2);
     }
   }
 
-  // Helper text styling
   &__helper-text {
-    margin-top: $text-field-spacing-xs;
-    font-size: $text-field-font-sm;
-    color: $text-field-helper-text-color;
-    transition: $text-field-transition;
-    
+    color: $textFieldHelperTextColor;
+    font-size: $textFieldFontSm;
+    margin-top: $textFieldSpacingXs;
+    transition: $textFieldTransition;
+
     &--error {
-      color: $text-field-error-color;
+      color: $textFieldErrorColor;
     }
   }
 
-  // Icon styling
   &__icon {
-    position: absolute;
-    display: flex;
     align-items: center;
+    color: $textFieldTextColor;
+    display: flex;
     justify-content: center;
-    color: $text-field-text-color;
     pointer-events: none;
-    
+    position: absolute;
+
     &--left {
-      left: $text-field-spacing-sm;
+      left: $textFieldSpacingSm;
     }
-    
+
     &--right {
-      right: $text-field-spacing-sm;
+      right: $textFieldSpacingSm;
     }
   }
 
-  // Sizes
   &--small {
     .text-field__input {
-      padding: $text-field-spacing-xs $text-field-spacing-sm;
-      font-size: $text-field-font-sm;
+      font-size: $textFieldFontSm;
+      padding: $textFieldSpacingXs $textFieldSpacingSm;
     }
-    
+
     .text-field__label {
-      font-size: $text-field-font-sm;
+      font-size: $textFieldFontSm;
     }
   }
-
-  //&--medium {
-  //}
 
   &--large {
     .text-field__input {
-      padding: $text-field-spacing-md $text-field-spacing-lg;
-      font-size: $text-field-font-lg;
+      font-size: $textFieldFontLg;
+      padding: $textFieldSpacingMd $textFieldSpacingLg;
     }
-    
+
     .text-field__label {
-      font-size: $text-field-font-md;
+      font-size: $textFieldFontMd;
     }
   }
 
-  // States
   &--focused {
     .text-field__label {
-      color: $text-field-border-color-focus;
+      color: $textFieldBorderColorFocus;
     }
-    
+
     .text-field__input {
-      border-color: $text-field-border-color-focus;
+      border-color: $textFieldBorderColorFocus;
     }
   }
 
   &--error {
     .text-field__input {
-      border-color: $text-field-error-color;
+      border-color: $textFieldErrorColor;
     }
-    
+
     &.text-field--focused .text-field__input {
-      box-shadow: 0 0 0 2px rgba($text-field-error-color, 0.2);
+      box-shadow: 0 0 0 2px rgba($textFieldErrorColor, 0.2);
     }
   }
 
   &--disabled {
-    opacity: 0.7;
     cursor: not-allowed;
-    
+    opacity: 0.7;
+
     .text-field__input {
-      background-color: $text-field-bg-color-disabled;
-      color: $text-field-text-color-disabled;
-      border-color: $text-field-border-color;
-      pointer-events: none;
+      background-color: $textFieldBgColorDisabled;
+      border-color: $textFieldBorderColor;
+      color: $textFieldTextColorDisabled;
       height: 100px;
+      pointer-events: none;
     }
   }
 
-  // With icons adjustments
   &--with-left-icon {
     .text-field__input {
-      padding-left: calc($text-field-spacing-md * 2 + 16px); // Adjust based on icon size
+      padding-left: calc($textFieldSpacingMd * 2 + 16px);
     }
   }
 
   &--with-right-icon {
     .text-field__input {
-      padding-right: calc($text-field-spacing-md * 2 + 16px); // Adjust based on icon size
+      padding-right: calc($textFieldSpacingMd * 2 + 16px);
     }
   }
 }
+/* stylelint-enable no-descending-specificity */
