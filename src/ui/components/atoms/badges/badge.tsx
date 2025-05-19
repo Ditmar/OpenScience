@@ -20,7 +20,7 @@ function Badge({
   const baseClass = 'badge';
   const variantClass = `badge--${variant}`;
   const colorClass = `badge--${color}`;
-  const shapeClass = shape === 'rounded' ? 'badge--rounded' : '';
+  const shapeClass = shape === 'rounded' && 'badge--rounded';
   const sizeClass = `badge--${size}`;
 
   const getIconColor = () => {
