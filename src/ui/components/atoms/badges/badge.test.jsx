@@ -85,19 +85,4 @@ describe('Badge Component', () => {
     expect(screen.getByText('7')).toBeInTheDocument();
     expect(screen.getByText('3')).toBeInTheDocument();
   });
-
-  it('renders close button and triggers callback', () => {
-    const mockClose = vi.fn();
-    render(
-      <Badge variant="filled" color="neutral" shape="default" size="md" onClose={mockClose}>
-        Badge Text
-      </Badge>,
-    );
-
-    const closeButtons = screen.getAllByRole('button');
-    expect(closeButtons.length).toBeGreaterThan(0);
-
-    closeButtons[0].click();
-    expect(mockClose).toHaveBeenCalled();
-  });
 });

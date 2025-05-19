@@ -31,7 +31,6 @@ const meta: Meta<typeof Badge> = {
 export default meta;
 type Story = StoryObj<typeof Badge>;
 
-
 const handleClose = (message: string) => {
   return () => {
     console.log(message);

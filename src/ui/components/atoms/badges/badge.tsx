@@ -1,19 +1,8 @@
 import React from 'react';
 import './badge.scss';
-
-interface BadgeProps {
-  variant: 'filled' | 'outline' | 'soft';
-  color: 'neutral' | 'gray' | 'violet' | 'blue' | 'custom';
-  customColor?: string;
-  icon?: React.ReactNode;
-  image?: string;
-  shape: 'default' | 'rounded';
-  size: 'sm' | 'md';
-  children?: React.ReactNode;
-  leftCount?: number;
-  rightCount?: number;
-  onClose?: () => void;
-}
+import Pill from '../../../../library/component/atoms/pills/pills';
+import { IconCircleQuarters, IconClose } from './Icon';
+import type { BadgeProps } from './types/IProps';
 
 function Badge({
   variant,
@@ -34,6 +23,23 @@ function Badge({
   const shapeClass = shape === 'rounded' ? 'badge--rounded' : '';
   const sizeClass = `badge--${size}`;
 
+  const getIconColor = () => {
+    if (variant === 'filled') {
+      return color === 'neutral' || color === 'gray' ? 'black' : 'white';
+    }
+    if (variant === 'outline' || variant === 'soft') {
+      return customColor
+        ? 'currentColor'
+        : color === 'violet' || color === 'blue'
+          ? 'currentColor'
+          : 'black';
+    }
+    return 'currentColor';
+  };
+
+  const iconColor = getIconColor();
+  const iconStyle = { color: iconColor };
+
   const customStyle =
     color === 'custom'
       ? {
@@ -50,27 +56,32 @@ function Badge({
     >
       {onClose && (
         <button className="badge__close-button" onClick={onClose}>
-          ✕
+          <IconCircleQuarters style={iconStyle} />
         </button>
       )}
 
       {image && <img src={image} alt="avatar" className="badge__image" />}
       {icon && <span className="badge__icon">{icon}</span>}
 
-      {leftCount !== undefined && <span className="badge__counter">{leftCount}</span>}
+      {leftCount !== undefined && (
+        <Pill text={String(leftCount)} variant="filled" color="neutral-light" size="sm" />
+      )}
 
       <span className="badge__content">{children}</span>
 
-      {rightCount !== undefined && <span className="badge__counter">{rightCount}</span>}
+      {rightCount !== undefined && (
+        <Pill text={String(rightCount)} color="neutral-light" variant="filled" size="sm" />
+      )}
 
       {onClose && (
         <button className="badge__close-button" onClick={onClose}>
-          ✕
+          <IconClose style={iconStyle} />
         </button>
       )}
     </span>
   );
 }
+
 Badge.defaultProps = {
   customColor: undefined,
   icon: undefined,
