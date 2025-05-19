@@ -1,21 +1,14 @@
-.default-input {
-  --border-color: #d1d5db;
-  --error-border-color: #ffe2e0;
-  --disabled-color: #bcc3e3;
-  --disabled-border-color: #9da6cb;
-  --focus-color: #7a44ff;
-  --error-color: #ef4444;
-  --text-color: #000;
-  --hint-color: #6b7280;
-  --disabled-opacity: 0.7;
+@import '../../../../globals/variables';
 
+.default-input {
   font-family: Inter, system-ui, sans-serif;
   font-size: 14px;
   margin-bottom: 24px;
-  width: 330px;
+  width: 100%;
+  max-width: 330px;
 
   &__label {
-    color: var(--text-color);
+    color: $ads-input-text-color;
     display: block;
     font-size: 14px;
     font-weight: normal;
@@ -25,46 +18,46 @@
   &__container {
     align-items: center;
     background: white;
-    border: 1px solid var(--border-color);
+    border: 1px solid $ads-input-border-color;
     border-radius: 6px;
     display: flex;
     height: 42px;
     transition: all 0.15s ease;
 
     &:not(.disabled, .error) {
-      border-color: var(--border-color);
+      border-color: $ads-input-border-color;
     }
 
     &:focus-within:not(.disabled) {
-      border-color: var(--focus-color);
-      box-shadow: 0 0 0 2px rgb(122 68 255 / 25%);
+      border-color: $ads-input-focus-color;
+      box-shadow: 0 0 0 2px rgba($ads-input-focus-color, 0.25); // se puede personalizar
     }
 
     &.filled:not(.disabled, .error) {
-      border-color: var(--border-color);
+      border-color: $ads-input-border-color;
     }
 
     &.filled.error:not(.disabled) {
-      border-color: var(--error-border-color);
+      border-color: $ads-input-error-border-color;
       box-shadow: none;
     }
 
     &.error:not(.filled) {
-      border-color: var(--error-color);
+      border-color: $ads-input-error-color;
     }
 
     &.disabled {
-      background: var(--disabled-color);
-      border-color: var(--disabled-border-color);
+      background: $ads-input-disabled-color;
+      border-color: $ads-input-disabled-border-color;
       cursor: not-allowed;
-      opacity: var(--disabled-opacity);
+      opacity: $ads-input-disabled-opacity;
     }
   }
 
   &__field {
     background: transparent;
     border: none;
-    color: var(--text-color);
+    color: $ads-input-text-color;
     flex: 1;
     font-size: 14px;
     height: 100%;
@@ -73,12 +66,12 @@
     width: 100%;
 
     &:disabled {
-      color: var(--hint-color);
+      color: $ads-input-hint-color;
       cursor: not-allowed;
     }
 
     &::placeholder {
-      color: var(--hint-color);
+      color: $ads-input-hint-color;
       opacity: 1;
     }
   }
@@ -88,27 +81,27 @@
   }
 
   &__message {
-    color: var(--hint-color);
+    color: $ads-input-hint-color;
     font-size: 13px;
     font-weight: normal;
     line-height: 1.3;
     margin-top: 8px;
 
     &.error {
-      color: var(--error-color);
+      color: $ads-input-error-color;
       font-weight: normal;
     }
   }
 }
 
 .default-input.sharp-corners .default-input__container {
-  border-radius: 0;
+  border-radius: 0rem;
 }
 
 .default-input.rounded-corners .default-input__container {
-  border-radius: 6px;
+  border-radius: 0.3rem;
 }
 
 .default-input.pill-shape .default-input__container {
-  border-radius: 50px;
+  border-radius: 1.3rem;
 }
