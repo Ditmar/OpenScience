@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { TextField } from './TextField';
-import { Icon } from '../../../utils/svg-icons/icons';
+import { Icon } from '../../../../ui/utils/vite-svgr/Icon';
 
 const meta: Meta<typeof TextField> = {
   title: 'Components/Form/TextField',
