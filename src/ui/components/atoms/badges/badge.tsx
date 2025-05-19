@@ -26,17 +26,16 @@ function Badge({
   const getIconColor = () => {
     if (variant === 'filled') {
       return color === 'neutral' || color === 'gray' ? 'black' : 'white';
-    }else{
-      if (customColor) return 'currentColor';
-
-      const outlineSoftColors = ['violet', 'blue'];
-      if (outlineSoftColors.includes(color)) {
-        return 'currentColor';
-      }
-
-      return 'black';
     }
 
+    if (customColor) return 'currentColor';
+
+    const outlineSoftColors = ['violet', 'blue'];
+    if (outlineSoftColors.includes(color)) {
+      return 'currentColor';
+    }
+
+    return 'black';
   };
 
   const iconColor = getIconColor();
