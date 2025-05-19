@@ -48,7 +48,9 @@ function Badge({
 
   return (
     <span
-      className={[baseClass, variantClass, colorClass, shapeClass, sizeClass].join(' ')}
+      className={[baseClass, variantClass, colorClass, shapeClass, sizeClass]
+        .filter(Boolean)
+        .join(' ')}
       style={customStyle}
     >
       {onClose && (
