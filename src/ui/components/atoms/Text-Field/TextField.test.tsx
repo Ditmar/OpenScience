@@ -1,63 +1,123 @@
 import React from 'react';
-import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { TextField } from './TextField';
 
-describe('TextField', () => {
-  const setup = (
-    label: string,
-    placeholder: string,
-    hint?: string,
-    error?: string,
-    disabled?: boolean,
-    onChange?: React.ChangeEventHandler<HTMLInputElement>,
-    className?: string,
-  ) => {
-    render(
-      <TextField
-        label={label}
-        placeholder={placeholder}
-        hint={hint}
-        error={error}
-        disabled={disabled}
-        onChange={onChange}
-        className={className}
-      />,
-    );
-    const input = screen.getByRole('textbox');
-    return { input };
-  };
+describe('TextField Component', () => {
+  // Render tests
+  describe('Rendering', () => {
+    test('renders TextField with label', () => {
+      render(<TextField label="Email" value="" onChange={() => {}} />);
 
-  it('renders with label, placeholder, and hint', () => {
-    render(<TextField label="Email" placeholder="Enter email" hint="We won't spam you" />);
-    expect(screen.getByText('Email')).toBeInTheDocument();
-    expect(screen.getByPlaceholderText('Enter email')).toBeInTheDocument();
-    expect(screen.getByText("We won't spam you")).toBeInTheDocument();
+      expect(screen.getByText('Email')).toBeInTheDocument();
+    });
+
+    test('renders TextField with placeholder', () => {
+      render(<TextField placeholder="Enter your email" value="" onChange={() => {}} />);
+
+      expect(screen.getByPlaceholderText('Enter your email')).toBeInTheDocument();
+    });
+
+    test('renders TextField with helper text', () => {
+      render(<TextField helperText="Please enter a valid email" value="" onChange={() => {}} />);
+
+      expect(screen.getByText('Please enter a valid email')).toBeInTheDocument();
+    });
+
+    test('renders TextField with error state', () => {
+      render(<TextField error helperText="Email is required" value="" onChange={() => {}} />);
+
+      const input = screen.getByRole('textbox');
+      const helperText = screen.getByText('Email is required');
+
+      expect(input).toHaveAttribute('aria-invalid', 'true');
+      expect(helperText).toHaveClass('text-field__helper-text--error');
+    });
+
+    test('renders TextField in disabled state', () => {
+      render(<TextField disabled value="disabled@example.com" onChange={() => {}} />);
+
+      const input = screen.getByRole('textbox');
+      expect(input).toBeDisabled();
+    });
   });
 
-  it('calls onChange when user types', () => {
-    const handleChange = vi.fn();
-    const { input } = setup('Email', 'Enter email', undefined, undefined, undefined, handleChange);
-    fireEvent.change(input, { target: { value: 'hello' } });
-    expect(handleChange).toHaveBeenCalled();
+  // Interaction tests
+  describe('Interactions', () => {
+    test('calls onChange when input value changes', () => {
+      const handleChange = jest.fn();
+
+      render(<TextField value="" onChange={handleChange} />);
+
+      const input = screen.getByRole('textbox');
+      fireEvent.change(input, { target: { value: 'test@example.com' } });
+
+      expect(handleChange).toHaveBeenCalledWith('test@example.com');
+    });
+
+    test('toggles focus state when input is focused and blurred', async () => {
+      const { container } = render(<TextField value="" onChange={() => {}} />);
+
+      const input = screen.getByRole('textbox');
+
+      // Initial state should not have focused class
+      expect(container.querySelector('.text-field--focused')).not.toBeInTheDocument();
+
+      // Focus the input
+      fireEvent.focus(input);
+      expect(container.querySelector('.text-field--focused')).toBeInTheDocument();
+
+      // Blur the input
+      fireEvent.blur(input);
+      expect(container.querySelector('.text-field--focused')).not.toBeInTheDocument();
+    });
   });
 
-  it('displays error message and sets aria-invalid', () => {
-    render(<TextField label="Email" placeholder="Email" error="Invalid email" />);
-    const input = screen.getByPlaceholderText('Email');
-    expect(input).toHaveAttribute('aria-invalid', 'true');
-    expect(screen.getByText('Invalid email')).toBeInTheDocument();
-  });
+  // Props tests
+  describe('Props', () => {
+    test('applies different size classes based on size prop', () => {
+      const { rerender, container } = render(
+        <TextField size="small" value="" onChange={() => {}} />,
+      );
 
-  it('disables input when disabled is true', () => {
-    const { input } = setup('Email', 'Enter email', undefined, undefined, true);
-    expect(input).toBeDisabled();
-  });
+      expect(container.querySelector('.text-field--small')).toBeInTheDocument();
 
-  it('applies custom className to root', () => {
-    const { container } = render(
-      <TextField className="custom-class" label="Email" placeholder="Enter email" />,
-    );
-    expect(container.firstChild).toHaveClass('custom-class');
+      rerender(<TextField size="large" value="" onChange={() => {}} />);
+
+      expect(container.querySelector('.text-field--large')).toBeInTheDocument();
+    });
+
+    test('applies the correct input type', () => {
+      const { rerender } = render(<TextField type="password" value="" onChange={() => {}} />);
+
+      expect(screen.getByRole('textbox')).toHaveAttribute('type', 'password');
+
+      rerender(<TextField type="email" value="" onChange={() => {}} />);
+
+      expect(screen.getByRole('textbox')).toHaveAttribute('type', 'email');
+    });
+
+    test('renders with left and right icons', () => {
+      const { container } = render(
+        <TextField
+          leftIcon={<span data-testid="left-icon">L</span>}
+          rightIcon={<span data-testid="right-icon">R</span>}
+          value=""
+          onChange={() => {}}
+        />,
+      );
+
+      expect(screen.getByTestId('left-icon')).toBeInTheDocument();
+      expect(screen.getByTestId('right-icon')).toBeInTheDocument();
+      expect(container.querySelector('.text-field--with-left-icon')).toBeInTheDocument();
+      expect(container.querySelector('.text-field--with-right-icon')).toBeInTheDocument();
+    });
+
+    test('applies additional className from props', () => {
+      const { container } = render(
+        <TextField className="custom-class" value="" onChange={() => {}} />,
+      );
+
+      expect(container.querySelector('.text-field.custom-class')).toBeInTheDocument();
+    });
   });
 });

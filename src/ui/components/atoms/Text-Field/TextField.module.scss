@@ -1,0 +1,184 @@
+@use 'sass:math';
+@import '../../../../globals/mixins';
+
+// Variables
+$text-field-border-radius: 4px;
+$text-field-transition: all 0.2s ease-in-out;
+
+// Colors
+$text-field-border-color: #c4c4c4;
+$text-field-border-color-focus: #2563eb;
+$text-field-border-color-error: #dc2626;
+$text-field-bg-color: #ffffff;
+$text-field-bg-color-disabled: #f3f4f6;
+$text-field-text-color: #1f2937;
+$text-field-text-color-disabled: #9ca3af;
+$text-field-label-color: #4b5563;
+$text-field-placeholder-color: #9ca3af;
+$text-field-helper-text-color: #6b7280;
+$text-field-error-color: #dc2626;
+
+// Font sizes
+$text-field-font-sm: 0.875rem;
+$text-field-font-md: 1rem;
+$text-field-font-lg: 1.125rem;
+
+// Spacing
+$text-field-spacing-xs: 0.25rem;
+$text-field-spacing-sm: 0.5rem;
+$text-field-spacing-md: 0.75rem;
+$text-field-spacing-lg: 1rem;
+
+.text-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: inherit;
+  margin-bottom: $text-field-spacing-md;
+  @include respond-to('tablet') {
+    width: 50%;
+  }
+
+  // Label styling
+  &__label {
+    display: block;
+    margin-bottom: $text-field-spacing-xs;
+    font-size: $text-field-font-sm;
+    font-weight: 500;
+    color: $text-field-label-color;
+    transition: $text-field-transition;
+  }
+
+  // Input container which allows for icon positioning
+  &__input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  // Main input styling
+  &__input {
+    width: 100%;
+    border: 1px solid $text-field-border-color;
+    border-radius: $text-field-border-radius;
+    background-color: $text-field-bg-color;
+    color: $text-field-text-color;
+    font-size: $text-field-font-md;
+    line-height: 5.5;
+    transition: $text-field-transition;
+    appearance: none;
+    padding: $text-field-spacing-sm $text-field-spacing-md;
+    
+    &::placeholder {
+      color: $text-field-placeholder-color;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(darken($text-field-border-color-focus, 10%), 0.2);
+    }
+  }
+
+  // Helper text styling
+  &__helper-text {
+    margin-top: $text-field-spacing-xs;
+    font-size: $text-field-font-sm;
+    color: $text-field-helper-text-color;
+    transition: $text-field-transition;
+    
+    &--error {
+      color: $text-field-error-color;
+    }
+  }
+
+  // Icon styling
+  &__icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-field-text-color;
+    pointer-events: none;
+    
+    &--left {
+      left: $text-field-spacing-sm;
+    }
+    
+    &--right {
+      right: $text-field-spacing-sm;
+    }
+  }
+
+  // Sizes
+  &--small {
+    .text-field__input {
+      padding: $text-field-spacing-xs $text-field-spacing-sm;
+      font-size: $text-field-font-sm;
+    }
+    
+    .text-field__label {
+      font-size: $text-field-font-sm;
+    }
+  }
+
+  //&--medium {
+  //}
+
+  &--large {
+    .text-field__input {
+      padding: $text-field-spacing-md $text-field-spacing-lg;
+      font-size: $text-field-font-lg;
+    }
+    
+    .text-field__label {
+      font-size: $text-field-font-md;
+    }
+  }
+
+  // States
+  &--focused {
+    .text-field__label {
+      color: $text-field-border-color-focus;
+    }
+    
+    .text-field__input {
+      border-color: $text-field-border-color-focus;
+    }
+  }
+
+  &--error {
+    .text-field__input {
+      border-color: $text-field-error-color;
+    }
+    
+    &.text-field--focused .text-field__input {
+      box-shadow: 0 0 0 2px rgba($text-field-error-color, 0.2);
+    }
+  }
+
+  &--disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    
+    .text-field__input {
+      background-color: $text-field-bg-color-disabled;
+      color: $text-field-text-color-disabled;
+      border-color: $text-field-border-color;
+      pointer-events: none;
+      height: 100px;
+    }
+  }
+
+  // With icons adjustments
+  &--with-left-icon {
+    .text-field__input {
+      padding-left: calc($text-field-spacing-md * 2 + 16px); // Adjust based on icon size
+    }
+  }
+
+  &--with-right-icon {
+    .text-field__input {
+      padding-right: calc($text-field-spacing-md * 2 + 16px); // Adjust based on icon size
+    }
+  }
+}
