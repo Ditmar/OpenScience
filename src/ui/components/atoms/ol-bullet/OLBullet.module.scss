@@ -45,50 +45,49 @@
       height: 0.5rem;
       width: 0.5rem;
     }
-  
+    
     &--md {
       height: 0.75rem;
       width: 0.75rem;
     }
-  
+    
     &--lg {
       height: 1rem;
       width: 1rem;
     }
   }
-  
+
   @include respond-to('medium') {
     &--sm {
       height: 1rem;
       width: 1rem;
     }
-  
+
     &--md {
       height: 1.5rem;
       width: 1.5rem;
     }
-  
+
     &--lg {
       height: 2rem;
       width: 2rem;
     }
   }
-  
+
   @include respond-to('large') {
     &--sm {
       height: 1.5rem;
       width: 1.5rem;
     }
-  
+
     &--md {
       height: 2.25rem;
       width: 2.25rem;
     }
-  
+
     &--lg {
       height: 3rem;
       width: 3rem;
     }
   }
 }
-  

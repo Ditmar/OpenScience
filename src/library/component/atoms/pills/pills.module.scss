@@ -5,7 +5,7 @@
 .pill {
   align-items: center;
   display: inline-flex;
-  font-family:Poppins-Light , sans-serif;
+  font-family: Poppins-Light, sans-serif;
   font-weight: 400;
   justify-content: center;
   letter-spacing: 0;
@@ -41,7 +41,7 @@
   }
 
   &--r-md {
-    border-radius: 0.3125rem; 
+    border-radius: 0.3125rem;
   }
 
   &--r-full {
@@ -231,16 +231,16 @@
     color: $ads-color-warning;
   }
 
-
- &__icon {
+  &__icon {
     align-items: center;
     display: inline-flex;
     height: 1em;
     justify-content: center;
     margin-right: 0.375rem;
     width: 1em;
-
-    svg,span {
+    
+    svg,
+    span {
       display: block;
       height: 100%;
       width: 100%;
@@ -248,9 +248,9 @@
   }
 
   &--icon-left {
-    & > .pill__icon { 
+    & > .pill__icon {
       margin-left: 0;
-      margin-right: 0.375rem; 
+      margin-right: 0.375rem;
     }
   }
 
@@ -260,9 +260,8 @@
       margin-right: 0;
     }
 
-     & > span:not(.pill__icon) {
+    & > span:not(.pill__icon) {
       order: 1;
     }
   }
-
 }
