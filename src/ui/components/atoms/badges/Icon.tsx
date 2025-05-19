@@ -8,21 +8,9 @@ interface IconProps {
 }
 
 export function IconCircleQuarters({ className, style }: IconProps) {
-  return (
-    <CircleQuarters
-      className={className}
-      style={style}
-      fill="currentColor" 
-    />
-  );
+  return <CircleQuarters className={className} style={style} fill="currentColor" />;
 }
 
 export function IconClose({ className, style }: IconProps) {
-  return (
-    <Close
-      className={className}
-      style={style}
-      fill="currentColor" 
-    />
-  );
+  return <Close className={className} style={style} fill="currentColor" />;
 }

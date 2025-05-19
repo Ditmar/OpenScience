@@ -52,11 +52,7 @@ function Badge({
       style={customStyle}
     >
       {onClose && (
-        <button 
-          className="badge__close-button" 
-          onClick={onClose}
-          aria-label="Close badge"
-        >
+        <button className="badge__close-button" onClick={onClose} aria-label="Close badge">
           <IconCircleQuarters style={iconStyle} />
         </button>
       )}
@@ -75,11 +71,7 @@ function Badge({
       )}
 
       {onClose && (
-        <button 
-          className="badge__close-button" 
-          onClick={onClose}
-          aria-label="Close badge"
-        >
+        <button className="badge__close-button" onClick={onClose} aria-label="Close badge">
           <IconClose style={iconStyle} />
         </button>
       )}
