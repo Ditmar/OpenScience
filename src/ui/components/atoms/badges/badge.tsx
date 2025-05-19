@@ -20,7 +20,7 @@ function Badge({
   const baseClass = 'badge';
   const variantClass = `badge--${variant}`;
   const colorClass = `badge--${color}`;
-  const shapeClass = shape === 'rounded' ? 'badge--rounded' : '';
+  const shapeClass = shape === 'rounded' ? 'badge--rounded' : undefined;
   const sizeClass = `badge--${size}`;
 
   const getIconColor = () => {
@@ -48,12 +48,12 @@ function Badge({
 
   return (
     <span
-      className={[baseClass, variantClass, colorClass, shapeClass, sizeClass].join(' ')}
+      className={[baseClass, variantClass, colorClass, shapeClass, sizeClass].filter(Boolean).join(' ')}
       style={customStyle}
     >
       {onClose && (
         <button className="badge__close-button" onClick={onClose} aria-label="Close badge">
-          <IconCircleQuarters style={iconStyle} />
+          <IconClose style={iconStyle} />
         </button>
       )}
 
@@ -68,12 +68,6 @@ function Badge({
 
       {rightCount !== undefined && (
         <Pill text={String(rightCount)} color="neutral-light" variant="filled" size="sm" />
-      )}
-
-      {onClose && (
-        <button className="badge__close-button" onClick={onClose} aria-label="Close badge">
-          <IconClose style={iconStyle} />
-        </button>
       )}
     </span>
   );
