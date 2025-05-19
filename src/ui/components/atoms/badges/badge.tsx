@@ -27,10 +27,18 @@ function Badge({
     if (variant === 'filled') {
       return color === 'neutral' || color === 'gray' ? 'black' : 'white';
     }
+
     if (variant === 'outline' || variant === 'soft') {
       if (customColor) return 'currentColor';
-      return color === 'violet' || color === 'blue' ? 'currentColor' : 'black';
+
+      const outlineSoftColors = ['violet', 'blue'];
+      if (outlineSoftColors.includes(color)) {
+        return 'currentColor';
+      }
+
+      return 'black';
     }
+
     return 'currentColor';
   };
 
