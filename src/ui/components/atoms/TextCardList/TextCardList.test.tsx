@@ -1,59 +1,74 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import React from 'react';
+import { render, fireEvent } from '@testing-library/react';
 import { vi } from 'vitest';
 import TextCardList from './TextCardList';
-import type { TextCardListProps } from './types/IProps';
 
-describe('TextCardList', () => {
-  const mockOnSelect = vi.fn();
-
-  const mockItems: Pick<
-    TextCardListProps,
-    | 'id'
-    | 'title'
-    | 'description'
-    | 'selected'
-    | 'variant'
-    | 'categoryTag'
-    | 'className'
-    | 'onSelect'
-  >[] = [
-    {
-      id: '1',
-      title: 'Item 1',
-      description: 'Desc 1',
-      selected: false,
-      variant: 'info',
-      categoryTag: 'Tag 1',
-      className: '',
-      onSelect: mockOnSelect, // usa la misma función
-    },
-  ];
-
-  it('renders props correctly', () => {
-    render(<TextCardList items={mockItems} className="extra-class" />);
-    expect(screen.getByText('Item 1')).toBeInTheDocument();
-    expect(screen.getByText('Desc 1')).toBeInTheDocument();
-    expect(screen.getByText('Tag 1')).toBeInTheDocument();
+describe('TextCardList Component', () => {
+  test('renderiza correctamente con los props mínimos', () => {
+    const { getByText } = render(<TextCardList title="Prueba" />);
+    expect(getByText('Prueba')).toBeInTheDocument();
   });
 
-  it('calls onSelect on click', () => {
-    render(<TextCardList items={mockItems} />);
-    const card = screen.getByRole('button');
-    fireEvent.click(card);
-    expect(mockOnSelect).toHaveBeenCalledWith(true);
+  test('muestra la etiqueta de categoría si se proporciona', () => {
+    const { getByText } = render(<TextCardList title="Etiqueta" categoryTag="Tag" />);
+    expect(getByText('Tag')).toBeInTheDocument();
   });
 
-  it('calls onSelect on Enter key press', () => {
-    render(<TextCardList items={mockItems} />);
-    const card = screen.getByRole('button');
-    fireEvent.keyDown(card, { key: 'Enter' });
-    expect(mockOnSelect).toHaveBeenCalledWith(true);
+  test('muestra la descripción si se proporciona', () => {
+    const { getByText } = render(
+      <TextCardList title="Descripción" description="Este es un texto" />,
+    );
+    expect(getByText('Este es un texto')).toBeInTheDocument();
   });
 
-  it('calls onSelect on Space key press', () => {
-    render(<TextCardList items={mockItems} />);
-    const card = screen.getByRole('button');
-    fireEvent.keyDown(card, { key: ' ' });
-    expect(mockOnSelect).toHaveBeenCalledWith(true);
+  test('agrega clase "selected" si selected es true', () => {
+    const { container } = render(<TextCardList title="Seleccionado" selected />);
+    expect(container.firstChild).toHaveClass('selected');
+  });
+
+  test('llama a onSelect con true cuando se marca el checkbox', () => {
+    const onSelect = vi.fn();
+    let selected = false;
+
+    const { getByRole, rerender } = render(
+      <TextCardList
+        title="Checkbox"
+        selected={selected}
+        onSelect={(value) => {
+          selected = value;
+          onSelect(value);
+          rerender(<TextCardList title="Checkbox" selected={selected} onSelect={onSelect} />);
+        }}
+      />,
+    );
+
+    const checkbox = getByRole('checkbox');
+    fireEvent.click(checkbox);
+
+    expect(onSelect).toHaveBeenCalled();
+    expect(onSelect).toHaveBeenCalledWith(true);
+  });
+
+  test('llama a onSelect con false cuando se desmarca el checkbox', () => {
+    const onSelect = vi.fn();
+    let selected = true;
+
+    const { getByRole, rerender } = render(
+      <TextCardList
+        title="Checkbox"
+        selected={selected}
+        onSelect={(value) => {
+          selected = value;
+          onSelect(value);
+          rerender(<TextCardList title="Checkbox" selected={selected} onSelect={onSelect} />);
+        }}
+      />,
+    );
+
+    const checkbox = getByRole('checkbox');
+    fireEvent.click(checkbox);
+
+    expect(onSelect).toHaveBeenCalled();
+    expect(onSelect).toHaveBeenCalledWith(false);
   });
 });

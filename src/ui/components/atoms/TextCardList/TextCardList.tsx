@@ -1,41 +1,61 @@
 import React from 'react';
+import type { TextCardPropsList } from './types/IProps';
 import styles from './TextCardList.module.scss';
-import type { TextCardListContainerProps } from './types/IProps';
 
-function TextCardList({ items, className }: TextCardListContainerProps) {
+function TextCardList({
+  title,
+  categoryTag,
+  description,
+  selected = false,
+  onSelect,
+  variant = 'default',
+  className = '',
+  badge,
+}: TextCardPropsList) {
+  function handleCheckboxChange(event: React.ChangeEvent<HTMLInputElement>) {
+    onSelect?.(event.target.checked);
+  }
+
+  const cardClasses = [
+    styles['text-card'],
+    styles[`text-card--${variant}`],
+    selected ? styles['text-card--selected'] : '',
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <div className={`${styles.cardListContainer} ${className ?? ''}`}>
-      {items.map((item) => (
-        <div
-          key={item.id}
-          role="button"
-          tabIndex={0}
-          onClick={() => item.onSelect?.(!item.selected)}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              item.onSelect?.(!item.selected);
-            }
-          }}
-          className={`${styles.card} 
-                      ${item.selected ? styles.selected : ''} 
-                      ${styles[`variant-${item.variant ?? 'default'}`]} 
-                      ${item.className ?? ''}`}
-        >
-          {}
-          <input type="checkbox" checked={item.selected} readOnly className={styles.checkbox} />
+    <div className={cardClasses}>
+      <div className={styles['text-card__header']}>
+        <div className={styles['text-card__checkbox-wrapper']}>
+          <input type="checkbox" checked={selected} onChange={handleCheckboxChange} />
+        </div>
 
-          <div className={styles.cardContent}>
-            <h3 className={styles.title}>{item.title}</h3>
-            {item.description && <p className={styles.description}>{item.description}</p>}
-            {item.categoryTag && (
-              <span className={`${styles.tag} ${styles[`tag-${item.variant ?? 'default'}`]}`}>
-                {item.categoryTag}
-              </span>
+        {badge && (
+          <div className={styles['text-card__badge']}>
+            <div className={styles['text-card__avatar-wrapper']}>
+              <img
+                className={styles['text-card__avatar']}
+                src="/src/assets/icons/facebook.svg"
+                alt="Avatar"
+              />
+            </div>
+            {badge.text && <span className={styles['text-card__text']}>{badge.text}</span>}
+            {badge.trailingText && (
+              <span className={styles['text-card__badge-trailing']}>{badge.trailingText}</span>
             )}
           </div>
+        )}
+      </div>
+
+      <div className={styles['text-card__content']}>
+        <div className={styles['text-card__title-tag']}>
+          <h3 className={styles['text-card__title']}>{title}</h3>
+          {categoryTag && <span className={styles['text-card__tag']}>{categoryTag}</span>}
         </div>
-      ))}
+        {description && <p className={styles['text-card__description-text']}>{description}</p>}
+      </div>
     </div>
   );
 }

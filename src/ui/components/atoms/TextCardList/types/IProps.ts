@@ -1,15 +1,18 @@
-export interface TextCardListProps {
-  title: string;
-  id: string;
-  categoryTag?: string;
-  description?: string;
-  selected?: boolean;
-  onSelect?: (selected: boolean) => void;
-  variant?: 'default' | 'info' | 'warning' | 'success' | 'error';
-  className?: string;
+export type Variant = 'default' | 'info' | 'warning' | 'success' | 'error';
+
+export interface BadgeProps {
+  avatarUrl: string;
+  text: string;
+  trailingText: string;
 }
 
-export interface TextCardListContainerProps {
-  items: TextCardListProps[];
+export interface TextCardPropsList {
+  title: string;
+  description?: string;
+  categoryTag?: string;
+  selected?: boolean;
+  onSelect?: (selected: boolean) => void;
+  variant?: Variant;
   className?: string;
+  badge?: BadgeProps;
 }
