@@ -16,7 +16,7 @@ const meta: Meta<IProps> = {
     },
     Styles: {
       control: 'select',
-      options: ['sans', 'serif', 'italic', 'monospace'],
+      options: ['sans', 'italic', 'serif', 'monospace'],
     },
   },
 };
@@ -43,7 +43,7 @@ export const Weight: Story = {
 
 export const Style: Story = {
   args: {
-    Styles: 'sans',
+    Styles: 'italic',
     Level: 'h2',
     Weight: 'medium',
     text: 'Editing headings',

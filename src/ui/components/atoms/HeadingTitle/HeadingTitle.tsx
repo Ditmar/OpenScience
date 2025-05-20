@@ -1,7 +1,7 @@
 import type { IProps } from './types/IProps';
 import styles from './HeadingTitle.module.scss';
 
-function HeadingTitle({ text, Styles = 'monospace', Weight = 'medium', Level = 'h1' }: IProps) {
+function HeadingTitle({ text, Styles = 'monospace', Weight = 'semi-bold', Level = 'h1' }: IProps) {
   const headingClass = `${styles['heading-title']} ${styles['heading-title__text']}
   ${styles[`heading-title--level-${Level}`]}
   ${styles[`heading-title--style-${Styles}`]}
