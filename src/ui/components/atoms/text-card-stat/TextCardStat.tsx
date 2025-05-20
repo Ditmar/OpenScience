@@ -1,5 +1,5 @@
-import styles from './TextCardStat.module.scss';
 import { Card, CardContent, Typography, Box, Avatar, Checkbox } from '@mui/material';
+import styles from './TextCardStat.module.scss';
 import type { TextCardStatProps } from './types/IProps';
 
 function TextCardStat({
