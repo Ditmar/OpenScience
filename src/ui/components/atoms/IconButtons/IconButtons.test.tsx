@@ -22,7 +22,7 @@ describe('IconButton Component', () => {
 
     expect(button).toBeInTheDocument();
     expect(screen.getByTestId('mock-icon')).toBeInTheDocument();
-    expect(button).toHaveClass(styles.iconButton, styles.md, styles.square, styles.neutral);
+    expect(button).toHaveClass(styles['icon-button'], styles.md, styles.square, styles.neutral);
   });
 
   test('handles onClick event when not disabled', () => {
@@ -74,6 +74,6 @@ describe('IconButton Component', () => {
     expect(button).toHaveClass(styles.circle);
     expect(button).toHaveClass(styles.brand);
     expect(button).toHaveClass('my-custom-btn');
-    expect(button).toHaveClass(styles.iconButton);
+    expect(button).toHaveClass(styles['icon-button']);
   });
 });
