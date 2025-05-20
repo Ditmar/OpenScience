@@ -3,80 +3,80 @@
 
 .text-card {
   border-radius: 1rem; // 4 * 4px
-  padding: 0.5rem;
   max-width: 500px;
+  padding: 0.5rem;
 
   &__header {
-    display: flex;
     align-items: center;
+    display: flex;
     margin-bottom: 0.5rem;
   }
 
   &__checkbox {
-    padding-right: 1.5rem;
     padding-left: 0;
+    padding-right: 1.5rem;
 
     &-icon {
-      width: 17px;
-      height: 17px;
-      border: 2px solid black;
+      border: 2px solid #1a1a1a;
       border-radius: 4px;
+      height: 17px;
+      width: 17px;
     }
 
     &-checked-icon {
-      width: 20px;
-      height: 20px;
-      background-color: black;
+      background-color: $ads-color-black-900;
       border-radius: 4px;
+      height: 20px;
+      width: 20px;
     }
   }
 
   &__badge {
-    display: flex;
     align-items: center;
     border-radius: 10px;
+    display: flex;
+    font-family: Poppins, 'DM Sans', sans-serif;
     padding: 4px 6px;
-    font-family: 'Poppins, DM Sans, sans-serif';
 
     &-avatar {
-      width: 24px;
-      height: 24px;
       border-radius: 6px;
+      height: 24px;
       margin-right: 0.5rem;
+      width: 24px;
     }
 
     &-text {
-      color: white;
-      font-weight: normal;
+      color: $ads-color-main;
+      font-family: Poppins, 'DM Sans', sans-serif;
       font-size: 14px;
+      font-weight: normal;
       margin-right: 0.5rem;
-      font-family: 'Poppins, DM Sans, sans-serif';
     }
 
     &-number {
-      background-color: white;
+      background-color: $ads-color-main;
       border-radius: 4px;
-      padding: 4px 10px;
+      font-family: Poppins, 'DM Sans', sans-serif;
       font-size: 12px;
       font-weight: 600;
       line-height: 1;
+      padding: 4px 10px;
       text-align: center;
-      font-family: 'Poppins, DM Sans, sans-serif';
     }
   }
 
   &__content {
-    padding-top: 0;
     padding-left: 42px;
+    padding-top: 0;
 
     &-title {
-      font-family: 'Poppins, DM Sans, sans-serif';
+      font-family: Poppins, 'DM Sans', sans-serif;
       font-weight: 600;
     }
 
     &-text {
-      font-family: 'Poppins, DM Sans, sans-serif';
       color: $ads-text-secondary;
+      font-family: Poppins, 'DM Sans', sans-serif;
     }
   }
 }
