@@ -20,10 +20,7 @@ function TextCardStat({
           className={styles['text-card__checkbox']}
         />
 
-        <Box
-          className={styles['text-card__badge']}
-          style={{ backgroundColor: badgeColor }}
-        >
+        <Box className={styles['text-card__badge']} style={{ backgroundColor: badgeColor }}>
           {badgeAvatarUrl && (
             <Avatar
               alt="Avatar"
@@ -32,13 +29,8 @@ function TextCardStat({
               variant="rounded"
             />
           )}
-          <Typography className={styles['text-card__badge-text']}>
-            {badgeText}
-          </Typography>
-          <Box
-            className={styles['text-card__badge-number']}
-            style={{ color: badgeColor }}
-          >
+          <Typography className={styles['text-card__badge-text']}>{badgeText}</Typography>
+          <Box className={styles['text-card__badge-number']} style={{ color: badgeColor }}>
             {badgeNumber}
           </Box>
         </Box>
