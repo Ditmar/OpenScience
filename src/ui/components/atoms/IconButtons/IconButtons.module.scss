@@ -19,7 +19,7 @@ $ads-state-disabled-opacity: 0.5;
 $ads-state-hover-opacity: 0.85;
 $ads-color-disabled-icon: #a0a0a0;
 
-.iconButton {
+.icon-button {
   align-items: center;
   border: none;
   cursor: pointer;
@@ -29,6 +29,7 @@ $ads-color-disabled-icon: #a0a0a0;
   padding: 0;
   transition: opacity 0.2s ease;
   vertical-align: middle;
+
 
   &:disabled {
     cursor: not-allowed;

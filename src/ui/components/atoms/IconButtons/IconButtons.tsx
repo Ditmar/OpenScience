@@ -13,7 +13,13 @@ function IconButton({
   type = 'button',
   onClick,
 }: IIconButtonProps): JSX.Element {
-  const buttonClasses = [styles.iconButton, styles[size], styles[shape], styles[color], className]
+  const buttonClasses = [
+    styles['icon-button'],
+    styles[size],
+    styles[shape],
+    styles[color],
+    className,
+  ]
     .filter(Boolean)
     .join(' ');
 
