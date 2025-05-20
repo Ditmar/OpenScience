@@ -1,0 +1,82 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.text-card {
+  border-radius: 1rem; // 4 * 4px
+  padding: 0.5rem;
+  max-width: 500px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  &__checkbox {
+    padding-right: 1.5rem;
+    padding-left: 0;
+
+    &-icon {
+      width: 17px;
+      height: 17px;
+      border: 2px solid black;
+      border-radius: 4px;
+    }
+
+    &-checked-icon {
+      width: 20px;
+      height: 20px;
+      background-color: black;
+      border-radius: 4px;
+    }
+  }
+
+  &__badge {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 4px 6px;
+    font-family: 'Poppins, DM Sans, sans-serif';
+
+    &-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      margin-right: 0.5rem;
+    }
+
+    &-text {
+      color: white;
+      font-weight: normal;
+      font-size: 14px;
+      margin-right: 0.5rem;
+      font-family: 'Poppins, DM Sans, sans-serif';
+    }
+
+    &-number {
+      background-color: white;
+      border-radius: 4px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1;
+      text-align: center;
+      font-family: 'Poppins, DM Sans, sans-serif';
+    }
+  }
+
+  &__content {
+    padding-top: 0;
+    padding-left: 42px;
+
+    &-title {
+      font-family: 'Poppins, DM Sans, sans-serif';
+      font-weight: 600;
+    }
+
+    &-text {
+      font-family: 'Poppins, DM Sans, sans-serif';
+      color: $ads-text-secondary;
+    }
+  }
+}

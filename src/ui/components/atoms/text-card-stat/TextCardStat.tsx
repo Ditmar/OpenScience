@@ -1,3 +1,4 @@
+import styles from './TextCardStat.module.scss';
 import { Card, CardContent, Typography, Box, Avatar, Checkbox } from '@mui/material';
 import type { TextCardStatProps } from './types/IProps';
 
@@ -10,79 +11,44 @@ function TextCardStat({
   content,
 }: TextCardStatProps) {
   return (
-    <Card sx={{ borderRadius: 4, padding: 2, maxWidth: 500 }}>
-      <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+    <Card className={styles['text-card']}>
+      <Box className={styles['text-card__header']}>
         <Checkbox
           disableRipple
-          icon={
-            <Box sx={{ width: 17, height: 17, border: '2px solid black', borderRadius: '4px' }} />
-          }
-          checkedIcon={
-            <Box sx={{ width: 20, height: 20, backgroundColor: 'black', borderRadius: '4px' }} />
-          }
-          sx={{ paddingRight: 1.5, paddingLeft: 0 }}
+          icon={<Box className={styles['text-card__checkbox-icon']} />}
+          checkedIcon={<Box className={styles['text-card__checkbox-checked-icon']} />}
+          className={styles['text-card__checkbox']}
         />
 
         <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            backgroundColor: badgeColor,
-            borderRadius: '10px',
-            padding: '4px 6px',
-            fontFamily: 'Poppins, DM Sans, sans-serif',
-          }}
+          className={styles['text-card__badge']}
+          style={{ backgroundColor: badgeColor }}
         >
           {badgeAvatarUrl && (
             <Avatar
               alt="Avatar"
               src={badgeAvatarUrl}
-              sx={{ width: 24, height: 24, borderRadius: '6px', marginRight: 1 }}
+              className={styles['text-card__badge-avatar']}
               variant="rounded"
             />
           )}
-          <Typography
-            sx={{
-              color: 'white',
-              fontWeight: 'normal',
-              fontSize: '14px',
-              marginRight: 1,
-              fontFamily: 'Poppins, DM Sans, sans-serif',
-            }}
-          >
+          <Typography className={styles['text-card__badge-text']}>
             {badgeText}
           </Typography>
           <Box
-            sx={{
-              backgroundColor: 'white',
-              color: badgeColor,
-              borderRadius: '4px',
-              padding: '4px 10px',
-              fontSize: '12px',
-              fontWeight: 600,
-              lineHeight: 1,
-              textAlign: 'center',
-              fontFamily: 'Poppins, DM Sans, sans-serif',
-            }}
+            className={styles['text-card__badge-number']}
+            style={{ color: badgeColor }}
           >
             {badgeNumber}
           </Box>
         </Box>
       </Box>
 
-      <CardContent sx={{ paddingTop: 0, paddingLeft: '42px' }}>
-        <Typography
-          variant="h6"
-          gutterBottom
-          sx={{ fontFamily: 'Poppins, DM Sans, sans-serif', fontWeight: 600 }}
-        >
+      <CardContent className={styles['text-card__content']}>
+        <Typography variant="h6" gutterBottom className={styles['text-card__content-title']}>
           {title}
         </Typography>
-        <Typography
-          variant="body2"
-          color="text.secondary"
-          sx={{ fontFamily: 'Poppins, DM Sans, sans-serif' }}
-        >
+        <Typography variant="body2" className={styles['text-card__content-text']}>
           {content}
         </Typography>
       </CardContent>
