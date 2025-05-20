@@ -9,9 +9,9 @@
   flex-direction: column;
   gap: 24px;
   height: 263px;
+  max-width: 619px;
   padding: 24px;
-  width: 100%; // Cambiado de 619px a 100%
-  max-width: 619px; // Para que no se pase de este ancho
+  width: 100%; 
 
   &--selected {
     box-shadow: 0 0 0 2px $ads-primary-main;
