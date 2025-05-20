@@ -3,105 +3,161 @@
 @import '../../../../globals/fonts';
 @import '../../../../globals/breakpoints';
 
-.card-list__container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: $ads-padding-large;
-
-  @include respond-to('small') {
-    flex-direction: column;
-  }
-
-  @include respond-to('medium') {
-    flex-direction: row;
-  }
-
-  @include respond-to('large') {
-    flex-direction: row;
-  }
-}
-
-.card {
-  align-items: flex-start;
+.text-card {
   background-color: $ads-tertiary-main;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  cursor: pointer;
   display: flex;
-  padding: $ads-padding-large;
-  position: relative;
-  transition: border-color 0.3s, box-shadow 0.3s;
-
-  &:hover {
-    border-color: $ads-secondary-main;
-    box-shadow: 0 2px 8px;
-  }
-
-  @include respond-to('small') {
-    margin-bottom: 1rem;
-    width: 100%;
-  }
-
-  @include respond-to('medium') {
-    width: 48%;
-  }
-
-  @include respond-to('large') {
-    width: 48%;
-  }
-}
-
-.selected {
-  background-color: $ads-primary-main;
-  border-color: $ads-primary-main; 
-}
-
-.card__content {
-  display: flex;
-  flex: 1;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 24px;
+  height: 263px;
+  padding: 24px;
+  width: 100%; // Cambiado de 619px a 100%
+  max-width: 619px; // Para que no se pase de este ancho
+
+  &--selected {
+    box-shadow: 0 0 0 2px $ads-primary-main;
+  }
+
+  &--default { background-color: $ads-tertiary-main; }
+  &--info { border-left: 4px solid $ads-primary-main; }
+  &--success { border-left: 4px solid $ads-text-main; }
+  &--warning { border-left: 4px solid $ads-warning-main; }
+  &--error { border-left: 4px solid $ads-danger-main; }
+  &--sharp { border-radius: 0; }
+
+  &__header {
+    align-items: center;
+    display: flex;
+    gap: 16px;
+  }
+
+  &__checkbox-wrapper {
+    flex-shrink: 0;
+    height: 24px;
+    width: 24px;
+  }
+
+  &__badge {
+    align-items: center;
+    background-color: $ads-primary-main;
+    border-radius: 8px;
+    display: flex;
+    gap: 8px;
+    height: auto;
+    padding: 4px 8px 4px 4px;
+    width: fit-content;
+  }
+
+  &__avatar-wrapper {
+    align-items: center;
+    background-color: $ads-warning-main;
+    border-radius: 8px;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    width: 25px;
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    height: 21px;
+    object-fit: cover;
+    width: 21px;
+  }
+
+  &__text {
+    color: $ads-tertiary-main;
+    font-family: Montserrat, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  &__badge-trailing {
+    background-color: $ads-tertiary-main;
+    border-radius: 4px;
+    color: $ads-primary-main;
+    font-family: Montserrat, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1;
+    padding: 4px 8px;
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 215px;
+    width: 523px;
+  }
+
+  &__title-tag {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    height: 54px;
+    justify-content: space-between;
+    width: 523px;
+  }
+
+  &__title {
+    color: $ads-text-main;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.125rem;
+    margin: 0;
+  }
+
+  &__tag {
+    background-color: $ads-tertiary-main;
+    border-radius: 4px;
+    color: $ads-text-secondary;
+    font-size: $ads-font-size-fifth;
+    padding: 4px 8px;
+  }
+
+  &__description-text {
+    color: $ads-text-secondary;
+    font-family: Lato, sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 1;
+    max-width: 523px;
+  }
 }
 
-.title {
-  font-size: $ads-font-size-primary;
-  font-weight: $ads-font-weight-bold;
-  margin: 0;
-}
-
-.description {
-  color: $ads-text-secondary;
-  font-size: $ads-font-size-fifth;
-  margin: 0;
-}
-
-.checkbox {
-  margin-right: 0.75rem;
-  margin-top: 0.25rem;
-}
-
-.tag {
+.text-card__checkbox-wrapper input[type='checkbox'] {
+  appearance: none;
+  background-color: $ads-tertiary-main;
+  border: 2px solid $ads-text-main-hover;
   border-radius: 4px;
+  cursor: pointer;
+  height: 100%;
+  position: relative;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+.text-card__checkbox-wrapper input[type='checkbox']:checked {
+  background-color: $ads-secondary-main;
+}
+
+.text-card__checkbox-wrapper input[type='checkbox']:checked::after {
   color: $ads-color-main;
-  display: inline-block;
-  font-size: $ads-font-size-fifth;
+  content: '✔';
+  font-size: 16px;
   font-weight: $ads-font-weight-bold;
-  padding: 0.2rem 0.5rem;
-  width: fit-content;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.variant-default {
-  border-color: $ads-text-main; 
+.text-card__checkbox-wrapper input[type='checkbox']:focus {
+  box-shadow: 0 0 0 2px $ads-background-color-black;
+  outline: none;
 }
-
-.variant-info {
-  background-color: $ads-warning-main;
-  border-color: $ads-danger-main;
-}
-
-.variant-warning {
-  background-color: $ads-warning-main;
-  border-color: $ads-warning-main;
-}
-
