@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import DropdownStats from './dropdown-stats';
-import type { DropdownStatsProps } from './types/IProps';
+import type { DropdownStatsProps, DropdownStatsOption } from './types/IProps';
 
 const meta: Meta<typeof DropdownStats> = {
   title: 'ui/components/molecules/DropdownStats',
