@@ -3,7 +3,7 @@ import { PhoneDropdown } from './PhoneDropdown';
 import type { ICountry } from './types/IProps';
 
 export default {
-  title: 'ui/components/atoms/phone-dropdown',
+  title: 'library/component/molecules/phone-dropdown',
   component: PhoneDropdown,
 };
 
