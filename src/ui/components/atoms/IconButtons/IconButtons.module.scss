@@ -1,23 +1,5 @@
-$ads-size-xs: 24px;
-$ads-size-sm: 32px;
-$ads-size-md: 40px;
-$ads-size-lg: 48px;
-
-$ads-border-radius-rounded: 8px;
-$ads-border-radius-circle: 50%;
-
-$ads-color-neutral-bg: #f0f0f0;
-$ads-color-neutral-icon: #333;
-
-$ads-color-brand-bg: #007bff;
-$ads-color-brand-icon: #fff;
-
-$ads-color-feedback-bg: #ffc107;
-$ads-color-feedback-icon: #333;
-
-$ads-state-disabled-opacity: 0.5;
-$ads-state-hover-opacity: 0.85;
-$ads-color-disabled-icon: #a0a0a0;
+@import '../../../../globals/variables.scss';
+@import '../../../../globals/size.scss';
 
 .icon-button {
   align-items: center;
@@ -84,7 +66,7 @@ $ads-color-disabled-icon: #a0a0a0;
 
 .neutral {
   background-color: $ads-color-neutral-bg;
-  color: $ads-color-neutral-icon;
+  color: $ads-color-black-700;
 
   &:disabled {
     color: $ads-color-disabled-icon;
@@ -101,8 +83,8 @@ $ads-color-disabled-icon: #a0a0a0;
 }
 
 .feedback {
-  background-color: $ads-color-feedback-bg;
-  color: $ads-color-feedback-icon;
+  background-color: $ads-warning-main;
+  color: $ads-color-black-700;
 
   &:disabled {
     color: $ads-color-disabled-icon;
