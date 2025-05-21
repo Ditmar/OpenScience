@@ -4,7 +4,7 @@
 @import '../../../../globals/breakpoints';
 
 .text-card {
-  background-color: $ads-tertiary-main;
+  background-color: $ads-color-main;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -14,10 +14,10 @@
   width: 100%; 
 
   &--selected {
-    box-shadow: 0 0 0 2px $ads-primary-main;
+    box-shadow: 0 0 0 2px $ads-color-main;
   }
 
-  &--default { background-color: $ads-tertiary-main; }
+  &--default { background-color: $ads-color-main; }
   &--info { border-left: 4px solid $ads-primary-main; }
   &--success { border-left: 4px solid $ads-text-main; }
   &--warning { border-left: 4px solid $ads-warning-main; }
@@ -38,7 +38,7 @@
 
   &__badge {
     align-items: center;
-    background-color: $ads-primary-main;
+    background-color: $ads-color-brand-primary-500;
     border-radius: 8px;
     display: flex;
     gap: 8px;
@@ -49,7 +49,7 @@
 
   &__avatar-wrapper {
     align-items: center;
-    background-color: $ads-warning-main;
+    background-color: $ads-color-feedback-warning-200;
     border-radius: 8px;
     display: flex;
     height: 25px;
@@ -65,17 +65,17 @@
   }
 
   &__text {
-    color: $ads-tertiary-main;
-    font-family: Montserrat, sans-serif;
+    color: $ads-paragraph-color-light;
+    font-family: Poppins, sans-serif;
     font-size: 1rem;
     font-weight: 400;
   }
 
   &__badge-trailing {
-    background-color: $ads-tertiary-main;
+    background-color: $ads-color-main;
     border-radius: 4px;
-    color: $ads-primary-main;
-    font-family: Montserrat, sans-serif;
+    color: $ads-color-brand-primary-500;
+    font-family: Poppins, sans-serif;
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1;
@@ -103,11 +103,11 @@
 
   &__title {
     color: $ads-text-main;
-    font-family: Montserrat, sans-serif;
-    font-size: 1.125rem;
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: 1.125rem;
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0%;
+    line-height: 100%;
     margin: 0;
   }
 
@@ -120,12 +120,12 @@
   }
 
   &__description-text {
-    color: $ads-text-secondary;
-    font-family: Lato, sans-serif;
-    font-size: 1rem;
+    color: $ads-color-gray-soft-500;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
     font-weight: 300;
-    letter-spacing: 0;
-    line-height: 1;
+    letter-spacing: 0%;
+    line-height: 100%;
     max-width: 523px;
   }
 }
@@ -133,7 +133,7 @@
 .text-card__checkbox-wrapper input[type='checkbox'] {
   appearance: none;
   background-color: $ads-tertiary-main;
-  border: 2px solid $ads-text-main-hover;
+  border: 2px solid $ads-color-gray-strong-800;
   border-radius: 4px;
   cursor: pointer;
   height: 100%;
@@ -143,21 +143,21 @@
 }
 
 .text-card__checkbox-wrapper input[type='checkbox']:checked {
-  background-color: $ads-secondary-main;
+  background-color: $ads-color-gray-strong-800;
 }
 
 .text-card__checkbox-wrapper input[type='checkbox']:checked::after {
   color: $ads-color-main;
   content: '✔';
   font-size: 16px;
-  font-weight: $ads-font-weight-bold;
+  font-weight: $ads-color-gray-strong-800;
   left: 50%;
   position: absolute;
-  top: 50%;
+  top: 25%;
   transform: translate(-50%, -50%);
 }
 
 .text-card__checkbox-wrapper input[type='checkbox']:focus {
-  box-shadow: 0 0 0 2px $ads-background-color-black;
+  box-shadow: 0 0 0 2px $ads-color-gray-strong-800;
   outline: none;
 }
