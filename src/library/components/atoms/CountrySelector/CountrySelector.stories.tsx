@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import CountrySelector from './CountrySelector';
-import { countries } from './countries';
+import { getAllCountries } from './countries';
 import type { Country } from './CountrySelector.type';
+
+const countries = getAllCountries();
 
 const meta: Meta<typeof CountrySelector> = {
   title: 'Atoms/CountrySelector',
@@ -15,7 +17,9 @@ export const Default: Story = {
   args: {
     countries,
     selectedCountry: null,
-    onChange: (val: Country | null) => console.log(val),
+    onChange: (val: Country | null) => {
+      console.log(val);
+    },
   },
 };
 
@@ -23,7 +27,9 @@ export const WithSelection: Story = {
   args: {
     countries,
     selectedCountry: countries[0],
-    onChange: (val: Country | null) => console.log(val),
+    onChange: (val: Country | null) => {
+      console.log(val);
+    },
   },
 };
 

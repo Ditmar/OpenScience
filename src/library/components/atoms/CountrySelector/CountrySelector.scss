@@ -1,0 +1,30 @@
+.country-selector-wrapper {
+  max-width: 200px;
+  width: 100%;
+}
+
+.country-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.country-option img {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.selected-country {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.selected-country img {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 50%;
+}

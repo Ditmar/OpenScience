@@ -1,14 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import CountrySelector from './CountrySelector';
-import { countries } from './countries';
+import { getAllCountries } from './countries';
 
 test('renders country selector with label', () => {
+  const countries = getAllCountries();
   render(
-    <CountrySelector
-      countries={countries}
-      selectedCountry={countries[0]}
-      onChange={() => {}}
-    />
+    <CountrySelector countries={countries} selectedCountry={countries[0]} onChange={() => {}} />,
   );
   expect(screen.getByLabelText(/Select Country/i)).toBeInTheDocument();
 });

@@ -1,7 +1,7 @@
-export type Country = {
+export interface Country {
   code: string;
   label: string;
-};
+}
 
 export interface CountrySelectorProps {
   countries: Country[];

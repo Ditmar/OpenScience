@@ -1,8 +1,14 @@
+import countries from 'i18n-iso-countries';
+import enLocale from 'i18n-iso-countries/langs/en.json';
 import type { Country } from './CountrySelector.type';
 
-export const countries: Country[] = [
-  { code: 'ar', label: 'Argentina' },
-  { code: 'al', label: 'Albania' },
-  { code: 'dz', label: 'Algeria' },
-  { code: 'ad', label: 'Andorra' },
-];
+countries.registerLocale(enLocale);
+
+export const getAllCountries = (): Country[] => {
+  const countryNames = countries.getNames('en', { select: 'official' });
+
+  return Object.entries(countryNames).map(([code, label]) => ({
+    code: code.toLowerCase(),
+    label,
+  }));
+};
