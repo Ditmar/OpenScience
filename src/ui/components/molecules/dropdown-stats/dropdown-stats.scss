@@ -1,8 +1,9 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
+@import '../../../../globals/globals';
 
 .dropdown-stats {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Poppins, sans-serif;
   max-width: 300px;
   position: relative;
   width: 100%;
@@ -42,17 +43,20 @@
   }
 
   &__label {
+    color: $ads-color-black-900;
     font-weight: $ads-font-weight;
     margin-right: 8px;
   }
 
   &__code {
     color: $ads-text-secondary;
+    color: $ads-color-black-900;
     margin-right: auto;
   }
 
   &__stat {
     color: $ads-primary-main;
+    color: $ads-color-black-900;
     font-weight: $ads-font-weight-bold;
   }
 
@@ -79,11 +83,18 @@
     transition: background-color 0.2s;
 
     &:hover {
-      background-color: $ads-background-main;
+      background-color: var(--color-neutral-gray-soft-200);
     }
 
     &.selected {
-      background-color: $ads-background-desktop;
+      background-color: var(--color-brand-primary-600);
+      color: $ads-color-main;
+
+      .dropdown-stats__label,
+      .dropdown-stats__code,
+      .dropdown-stats__stat {
+        color: $ads-color-main;
+      }
     }
 
     &:focus {
