@@ -119,5 +119,9 @@
 
 @font-face {
   font-family: Poppins-LightItalic;
+<<<<<<< HEAD
   src: url('/public/fonts/Poppins-LightItalic.ttf') format(woff2);
+=======
+  src: url('/public/fonts/Poppins-LightItalic.ttf') format(woff2),
+>>>>>>> b091516c (feat(URLinput): implement URL input component with prefix, action button, icons, states, and accessibility)
 }
