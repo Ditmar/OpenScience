@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import CloseIcon from '@mui/icons-material/Close';
 import type { IIconButtonProps } from './types/Iprops';
 import IconButton from './IconButtons';
-import '../../../../globals/size.scss';
 
 const meta: Meta<IIconButtonProps> = {
   title: 'Components/IconButton',
