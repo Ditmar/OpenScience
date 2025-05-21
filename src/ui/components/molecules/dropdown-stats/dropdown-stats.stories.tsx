@@ -1,30 +1,10 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import DropdownStats from './dropdown-stats';
-
-export interface DropdownStatsOption {
-  label: string;
-  value: string;
-  code: string;
-  stat: number;
-}
-
-export interface DropdownStatsProps {
-  options: DropdownStatsOption[];
-  selectedValue?: string;
-  onChange: (value: string) => void;
-  maxValue?: number;
-  barColor?: string;
-  showPercentage?: boolean;
-  className?: string;
-  disabled?: boolean;
-  isOpen: boolean;
-  onToggle: () => void;
-  displayFormat?: 'percentage' | 'value' | 'both';
-}
+import type { DropdownStatsProps } from './types/IProps';
 
 const meta: Meta<typeof DropdownStats> = {
-  title: 'ui/components/atoms/DropdownStats',
+  title: 'ui/components/molecules/DropdownStats',
   component: DropdownStats,
   argTypes: {
     barColor: { control: 'color' },
