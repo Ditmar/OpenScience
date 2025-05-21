@@ -60,6 +60,7 @@ export function PhoneDropdown({
     styles[border],
     error ? styles.error : '',
     disabled ? styles.disabled : '',
+    dropdownOpen ? styles.active : '',
     className,
   ].join(' ');
 
