@@ -8,7 +8,6 @@ function UserTextCard(props: IProps) {
     userHandle,
     timestamp,
     content,
-    actions,
     variant = 'default',
     isVerified = false,
     onClick,
@@ -16,15 +15,17 @@ function UserTextCard(props: IProps) {
     isChecked = false,
     onCheckChange,
   } = props;
+  const containerClass = [styles.card, styles[variant], className].filter(Boolean).join(' ');
 
   return (
-    <div className={[styles.card, styles[variant], className].filter(Boolean).join(' ')}>
+    <div className={containerClass} data-testid={`user-card-${variant}`}>
       <input
         type="checkbox"
         checked={isChecked}
         onChange={(e) => {
           e.stopPropagation();
           onCheckChange?.(e.target.checked);
+          onClick();
         }}
         className={styles.checkbox}
       />
@@ -42,17 +43,7 @@ function UserTextCard(props: IProps) {
               {isVerified && <span className={styles.verified}>✔️</span>}
               {userHandle && <span className={styles['header__user-handle']}>@{userHandle}</span>}
             </div>
-            <div
-              className={styles.message}
-              onClick={onClick}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  onClick?.();
-                }
-              }}
-            >
+            <div className={styles.message}>
               {typeof content === 'string' ? <p>{content}</p> : content}
             </div>
           </div>
@@ -60,22 +51,6 @@ function UserTextCard(props: IProps) {
           {timestamp && (
             <div className={styles.timestamp}>
               {typeof timestamp === 'string' ? timestamp : timestamp.toLocaleString()}
-            </div>
-          )}
-
-          {variant === 'expanded' && actions && (
-            <div className={styles.actions}>
-              {actions.map((action, i) => (
-                <button
-                  key={action.label || i}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    action.onClick();
-                  }}
-                >
-                  {action.label}
-                </button>
-              ))}
             </div>
           )}
         </div>

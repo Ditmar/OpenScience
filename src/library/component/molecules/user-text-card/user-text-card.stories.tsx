@@ -68,6 +68,7 @@ export const Compact: Story = {
           actions={args.actions}
           isChecked={checked}
           onClick={args.onClick}
+          variant={args.variant}
           onCheckChange={(newVal) => {
             setChecked(newVal);
             args.onCheckChange?.(newVal);
@@ -104,6 +105,7 @@ export const Expanded: Story = {
           actions={args.actions}
           isChecked={checked}
           onClick={args.onClick}
+          variant={args.variant}
           onCheckChange={(newVal) => {
             setChecked(newVal);
             args.onCheckChange?.(newVal);

@@ -1,0 +1,157 @@
+@import '../../../../globals/variables';
+
+.card {
+  background-color: $ads-color-main;
+  border-radius: 0.75rem;
+  display: flex;
+  gap: 1rem;
+  min-height: 3rem;
+  padding: 1rem;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 0.125rem 0.5rem $ads-text-main-hover;
+  }
+
+  &__content-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .avatar img {
+    align-self: flex-start;
+    border-radius: 0.375rem;
+    height: auto;
+    max-width: 3rem;
+    width: 100%;
+  }
+
+  .checkbox {
+    accent-color: $ads-primary-main;
+    cursor: pointer;
+    height: 1.25rem;
+    transform: scale(1.372);
+    width: 1.25rem;
+  }
+
+  .content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .header {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.188rem;
+
+    &__user-name {
+      color: $ads-text-main-hover;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .verified {
+      font-size: 0.9rem;
+    }
+  }
+
+  .message {
+    min-height: 0.5rem;
+
+    p {
+      color: $ads-paragraph-color-dark;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      margin: 0;
+      text-wrap: wrap;
+      width: 100%;
+    }
+  }
+
+  .timestamp {
+    align-self: flex-start;
+    color: $ads-text-input;
+    font-size: 0.75rem;
+    margin-top: 0.188rem;
+  }
+
+  &.compact {
+    max-width: 31.25rem;
+    min-height: 5rem;
+    padding: 0.5rem;
+
+    .content {
+      justify-content: start;
+    }
+
+    .header__user-handle {
+      font-size: 0.75rem;
+    }
+
+    .header__user-name {
+      font-size: 0.9rem;
+    }
+
+    .message p {
+      font-size: 0.85rem;
+      min-height: 0;
+    }
+
+    .timestamp {
+      font-size: 0.7rem;
+    }
+  }
+
+  &.default {
+    max-width: 43.313rem;
+  }
+
+  &.expanded {
+    max-width: 800px;
+    padding: 1.5rem;
+
+    .avatar img {
+      max-width: 40rem;
+      min-height: 3.75rem;
+      min-width: 3.75rem;
+    }
+
+    .header {
+      min-height: 2rem;
+
+      &__user-name {
+        font-size: 1.5rem;
+      }
+
+      &__user-handle {
+        font-size: 1.1rem;
+      }
+
+      .verified {
+        font-size: 1.2rem;
+      }
+    }
+
+    .message p {
+      line-height: 1.8;
+      min-height: 5rem;
+    }
+
+    .timestamp {
+      font-size: 1rem;
+      margin-top: 1.5rem;
+    }
+  }
+}

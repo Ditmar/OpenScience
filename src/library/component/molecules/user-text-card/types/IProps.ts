@@ -9,8 +9,8 @@ export interface IProps {
   actions?: { label: string; onClick: () => void }[];
   variant?: 'default' | 'compact' | 'expanded';
   isVerified?: boolean;
-  onClick?: () => void;
+  onClick: () => void;
   className?: string;
-  isChecked?: boolean;
+  isChecked: boolean;
   onCheckChange?: (checked: boolean) => void;
 }
