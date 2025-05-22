@@ -13,15 +13,14 @@ function ShadowsDemo() {
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
         gap: '1.5rem',
-      }}
-    >
+      }}>
       {shadowLevels.map((level) => (
         <div
           key={level}
           className={`shadow-demo shadow-${level}`}
-          style={{ marginBottom: '1.5rem' }}
-        >
-       <p style={{ margin: 0, fontSize: '1rem' }}>Sombra {level.toUpperCase()}</p>
+          style={{ marginBottom: '1.5rem' }}>
+        <p style={{ margin: 0, fontSize: '1rem' }}>Sombra {level.toUpperCase()}
+        </p>
         </div>
       ))}
     </div>
