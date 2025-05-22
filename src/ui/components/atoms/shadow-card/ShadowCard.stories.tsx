@@ -1,11 +1,15 @@
-// scripts/src/ui/components/atoms/shadow-card/ShadowCard.stories.tsx
 import React from 'react';
 import ShadowsDemo from '../../../../shadows/ShadowsDemo';
+import type { Meta, StoryObj } from '@storybook/react';
 
-export default {
+const meta: Meta = {
   title: 'Design System/Shadows',
-  component: ShadowsDemo
+  component: ShadowsDemo,
 };
 
-export const AllShadows = () => <ShadowsDemo />;
+export default meta;
+type Story = StoryObj<typeof ShadowsDemo>;
 
+export const AllShadows: Story = {
+  render: () => <ShadowsDemo />,
+};
