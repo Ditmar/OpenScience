@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import TextCardStat from './TextCardStat';
 
 describe('TextCardStat Component', () => {
-  test('renderiza el título', () => {
+  test('render title', () => {
     render(
       <TextCardStat
         label="test label"
@@ -11,7 +11,7 @@ describe('TextCardStat Component', () => {
         badgeColor="#1976d2"
         badgeNumber={42}
         badgeAvatarUrl="https://example.com/avatar.png"
-        title="Users Statistics"
+        title="User Statistics"
         content="detailed user content"
       />,
     );
