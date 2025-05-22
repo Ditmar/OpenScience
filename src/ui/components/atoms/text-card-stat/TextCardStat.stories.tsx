@@ -6,9 +6,9 @@ const meta = {
   component: TextCardStat,
   tags: ['autodocs'],
   args: {
-    label: 'Nuevo',
-    title: 'Título de prueba',
-    description: 'Este es el contenido de la tarjeta',
+    label: 'New',
+    title: 'Test Title',
+    description: 'This is the card content',
     variant: 'primary',
     size: 'medium',
     elevation: 1,
@@ -71,7 +71,7 @@ export const Large: Story = {
 export const Clickable: Story = {
   args: {
     onClick: () => {
-      alert('Tarjeta clickeada');
+      alert('Card clicked');
     },
   },
 };
