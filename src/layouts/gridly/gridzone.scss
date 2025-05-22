@@ -1,0 +1,78 @@
+@import '../../globals/variables';
+@import './breakpoints-grid.scss';
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($ads-breakpoints-scales, $breakpoint) {
+    @media (max-width: map-get($ads-breakpoints-scales, $breakpoint)) {
+      @content;
+    }
+  }
+
+  @else {
+     @warn #{$breakpoint};
+  }
+}
+
+.container {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $ads-gridforge-container-size;
+  overflow-x: hidden;
+  padding-left: $ads-gridforge-gutter;
+  padding-right: $ads-gridforge-gutter;
+  width: 100%;
+}
+
+.auto-grid {
+  display: grid;
+  gap: $ads-gridforge-gutter;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  width: 100%;
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  @include respond-to(xs) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+.grid-item {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  box-sizing: border-box;
+  color: $ads-color-dark;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  min-height: 50px;
+  padding: $ads-grid-item-padding;
+  text-align: center;
+  width: 100%;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    grid-column: span $i;
+  }
+}
+
+@each $breakpoint, $value in $ads-breakpoints-scales {
+  @for $i from 1 through 12 {
+    .col-#{$breakpoint}-#{$i} {
+      @include respond-to($breakpoint) {
+        grid-column: span $i;
+      }
+    }
+  }
+}
+
+@each $key, $value in $ads-alignments-map-list {
+  .align-self-#{$key} {
+    align-self: $value;
+  }
+}
+
