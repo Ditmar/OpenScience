@@ -1,0 +1,120 @@
+@import '../../../../globals/_fonts';
+@import '../../../../globals/_variables';
+@import '../../../../globals/globals';
+
+.country-input {
+  width: fit-content;
+
+  svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  div:nth-child(1),
+  div:nth-child(3) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Poppins-Light, sans-serif;
+    font-weight: 500;
+    color: var(--color-neutral-gray-strong-700);
+
+    div:nth-child(1) {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    p {
+      height: fit-content;
+    }
+
+    span {
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+  }
+
+  .select-wrapper {
+    position: relative;
+
+
+    .select-country {
+      width: 23.188rem;
+      color: var(--color-neutral-gray-strong-700);
+      padding: 0.85rem 1rem;
+      margin: 0.875rem 0;
+      border: 1px solid #e0e6e7;
+      border-radius: 0;
+
+      div:nth-child(1) {
+        font-weight: 300;
+        font-family: Poppins-Light, sans-serif;
+        font-size: 1rem;
+        padding: 0;
+        justify-content: flex-start;
+        gap: 0.5rem;
+      }
+
+      svg:nth-child(3) {
+        color: var(--color-neutral-gray-strong-800);
+        top: 1rem;
+        right: 0.75rem;
+      }
+
+      fieldset {
+        display: none;
+      }
+
+      .MuiSelect-select {
+        background-color: red;
+      }
+      // .MuiOutlinedInput-root {
+      //   fieldset {
+      //     border: 1px solid #ccc;
+      //     transition: all 0.3s ease;
+      //   }
+
+      //   &.Mui-focused fieldset {
+      //     border-color: #1976d2;
+      //     border-width: 2px;
+      //   }
+      // }
+
+      &.select-semi {
+        border-radius: 0.5rem;
+      }
+
+      &.select-circle {
+        border-radius: 50px;
+      }
+
+      // &.mouseFocus:focus {
+      //   border-width: 4px;
+      //   border-color: var(--color-brand-primary-100);
+      // }
+
+      // &:focus:not(&.mouseFocus:focus) {
+      //   border-width: 1px;
+      //   border-color: var(--color-brand-primary-500);
+      // }
+
+      &:focus {
+        background-color: red;
+      }
+    }
+  }
+
+  div:nth-child(3) {
+    p {
+      margin: 0;
+      font-family: Poppins-Light, sans-serif;
+      font-weight: 300;
+      color: var(--color-neutral-gray-soft-500);
+    }
+
+    div:nth-child(2) svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+}
