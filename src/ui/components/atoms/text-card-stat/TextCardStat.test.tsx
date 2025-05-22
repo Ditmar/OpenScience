@@ -5,65 +5,65 @@ describe('TextCardStat Component', () => {
   test('renderiza el título', () => {
     render(
       <TextCardStat
-        label="Etiqueta de prueba"
-        description="Descripción de prueba"
-        badgeText="Usuarios"
+        label="test label"
+        description="Test Description"
+        badgeText="Users"
         badgeColor="#1976d2"
         badgeNumber={42}
         badgeAvatarUrl="https://example.com/avatar.png"
-        title="Estadísticas de Usuarios"
-        content="Contenido detallado de los usuarios"
+        title="Users Statistics"
+        content="detailed user content"
       />,
     );
-    const titleElement = screen.getByText(/Estadísticas de Usuarios/i);
+    const titleElement = screen.getByText(/User Statistics/i);
     expect(titleElement).toBeInTheDocument();
   });
 
-  test('renderiza el contenido', () => {
+  test('render the content', () => {
     render(
       <TextCardStat
-        label="Etiqueta de prueba"
-        description="Descripción de prueba"
-        badgeText="Usuarios"
+        label="test label"
+        description="Test Description"
+        badgeText="Users"
         badgeColor="#1976d2"
         badgeNumber={42}
         badgeAvatarUrl="https://example.com/avatar.png"
-        title="Estadísticas de Usuarios"
-        content="Contenido detallado de los usuarios"
+        title="Users Statistics"
+        content="Detailed user content"
       />,
     );
-    const contentElement = screen.getByText(/Contenido detallado de los usuarios/i);
+    const contentElement = screen.getByText(/Detailed user content/i);
     expect(contentElement).toBeInTheDocument();
   });
 
-  test('renderiza el número del badge', () => {
+  test('renders the badge number', () => {
     render(
       <TextCardStat
-        label="Etiqueta de prueba"
-        description="Descripción de prueba"
-        badgeText="Usuarios"
+        label="test label"
+        description="Test Description"
+        badgeText="Users"
         badgeColor="#1976d2"
         badgeNumber={42}
         badgeAvatarUrl="https://example.com/avatar.png"
-        title="Estadísticas de Usuarios"
-        content="Contenido detallado de los usuarios"
+        title="User Statistics"
+        content="Detailed user content"
       />,
     );
     const badgeNumberElement = screen.getByText('42');
     expect(badgeNumberElement).toBeInTheDocument();
   });
 
-  test('renderiza el avatar si se proporciona una URL', () => {
+  test('renders the avatar if a URL is provided', () => {
     render(
       <TextCardStat
-        label="Etiqueta de prueba"
-        description="Descripción de prueba"
-        badgeText="Usuarios"
+        label="test label"
+        description="Test Description"
+        badgeText="Users"
         badgeColor="#1976d2"
         badgeNumber={42}
         badgeAvatarUrl="https://example.com/avatar.png"
-        title="Estadísticas de Usuarios"
-        content="Contenido detallado de los usuarios"
+        title="User Statistics"
+        content="Detailed user content"
       />,
     );
     const avatarElement = screen.getByRole('img', { name: /Avatar/i });
@@ -74,30 +74,30 @@ describe('TextCardStat Component', () => {
   test('renderiza el checkbox', () => {
     render(
       <TextCardStat
-        label="Etiqueta de prueba"
-        description="Descripción de prueba"
-        badgeText="Usuarios"
+        label="test label"
+        description="Test Description"
+        badgeText="Users"
         badgeColor="#1976d2"
         badgeNumber={42}
         badgeAvatarUrl="https://example.com/avatar.png"
-        title="Estadísticas de Usuarios"
-        content="Contenido detallado de los usuarios"
+        title="User Statistics"
+        content="Detailed user content"
       />,
     );
     const checkbox = screen.getByRole('checkbox');
     expect(checkbox).toBeInTheDocument();
   });
 
-  test('no renderiza el avatar si no se proporciona una URL', () => {
+  test('does not render the avatar if a URL is not provided', () => {
     render(
       <TextCardStat
-        label="Etiqueta sin avatar"
-        description="Descripción sin avatar"
-        badgeText="Usuarios"
+        label="Tag without avatar"
+        description="Description without avatar"
+        badgeText="Users"
         badgeColor="#1976d2"
         badgeNumber={42}
-        title="Título sin avatar"
-        content="Contenido sin avatar"
+        title="Title without avatar"
+        content="Content without avatar"
       />,
     );
     const avatarElement = screen.queryByRole('img', { name: /Avatar/i });
