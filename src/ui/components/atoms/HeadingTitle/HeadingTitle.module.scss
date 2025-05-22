@@ -1,0 +1,62 @@
+@import '../../../../globals/variables.scss';
+@import '../../../../globals/typography.scss';
+
+.heading-title {
+  color: $ads-text-secondary;
+  letter-spacing: $ads-letter-spacing;
+  margin: 0;
+  padding: 0;
+}
+
+.heading-title__text {
+  font-style: normal;
+  text-transform: none;
+}
+
+.heading-title--level-h1 {
+  color: $ads-text-main;
+  font-size: $ads-font-size-headingone;
+  line-height: $ads-line-height-headingone;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.heading-title--level-h2 {
+  font-size: $ads-font-size-headingtwo;
+  line-height: $ads-line-height-headingtwo;
+  margin-bottom: 0.75rem;
+}
+
+.heading-title--level-h3 {
+  font-size: $ads-font-size-headingthree;
+  line-height: $ads-line-height-headingthree;
+  margin-bottom: 0.5rem;
+}
+
+.heading-title--weight-regular {
+  font-weight: $ads-font-weight-regular;
+}
+
+.heading-title--weight-medium {
+  font-weight: $ads-font-weight-medium;
+}
+
+.heading-title--weight-semi-bold {
+  font-weight: $ads-font-weight-semibold;
+}
+
+.heading-title--style-sans {
+  font-family: $ads-font-family-sans;
+}
+
+.heading-title--style-italic {
+  font-family: $ads-font-family-italic;
+}
+
+.heading-title--style-serif {
+  font-family: $ads-font-family-serif;
+}
+
+.heading-title--style-monospace {
+  font-family: $ads-font-family-monospace;
+}
