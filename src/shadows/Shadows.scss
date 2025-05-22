@@ -1,4 +1,6 @@
 @use '../globals/variables' as *;
+@use '../globals/mixins' as *;
+
 
 @mixin shadow($name, $value) {
   .shadow-#{$name} {
@@ -6,13 +8,12 @@
   }
 }
 
-// Aplicación de los niveles de sombra definidos en variables.scss
 @include shadow(xs, $ads-shadow-xs);
 @include shadow(sm, $ads-shadow-sm);
 @include shadow(md, $ads-shadow-md);
 @include shadow(lg, $ads-shadow-lg);
 @include shadow(xl, $ads-shadow-xl);
-@include shadow(3xl, $ads-shadow-xxxl); // Usamos xxxl para shadow-3xl
+@include shadow(3xl, $ads-shadow-xxxl); 
 
 .shadow-demo {
   align-items: center;
@@ -23,13 +24,12 @@
   display: flex;
   font-weight: 500;
   justify-content: flex-start;
-  min-height: 5rem; // Se movió antes de width (orden alfabético)
+  min-height: 5rem; 
   padding: 1rem 1.5rem;
   transition: box-shadow 0.3s ease;
   width: 100%;
 }
 
-// Media query con notación moderna (Media Queries Level 4)
 @media screen and (width >= 768px) {
   .shadow-demo {
     padding: 2rem 2.5rem;
