@@ -1,5 +1,5 @@
-@import '../globals/variables';
-@import '../globals/mixins';
+@use '../globals/variables' as *;
+@use '../globals/mixins' as *;
 
 
 @mixin shadow($name, $value) {
@@ -20,7 +20,7 @@
   background-color: $ads-color-white;
   border: 1px solid #e0e0e0;
   border-radius: 0.5rem;
-  color: $ads-black;
+  color: $ads-color-black;
   display: flex;
   font-weight: 500;
   justify-content: flex-start;
