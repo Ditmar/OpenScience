@@ -1,5 +1,5 @@
-@use '../globals/variables' as *;
-@use '../globals/mixins' as *;
+@import '../globals/variables';
+@import '../globals/mixins';
 
 
 @mixin shadow($name, $value) {
