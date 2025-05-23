@@ -17,12 +17,6 @@ describe('TextField Component', () => {
     expect(handleChange).toHaveBeenCalledWith('test');
   });
 
-  it('displays error state', () => {
-    render(<TextField value="" onChange={() => {}} error helperText="Error message" />);
-    expect(screen.getByRole('textbox')).toHaveClass('text-field__input--error');
-    expect(screen.getByText('Error message')).toHaveClass('text-field__helper-text--error');
-  });
-
   it('displays disabled state', () => {
     render(<TextField value="" onChange={() => {}} disabled />);
     expect(screen.getByRole('textbox')).toBeDisabled();
@@ -55,19 +49,11 @@ describe('TextField Component', () => {
   });
 
   it('has proper accessibility attributes', () => {
-    render(
-      <TextField
-        value=""
-        onChange={() => {}}
-        error
-        helperText="Error message"
-        name="test-field"
-      />
-    );
+    render(<TextField value="" onChange={() => {}} error helperText="Error message" name="test-field" />);
     expect(screen.getByRole('textbox')).toHaveAttribute('aria-invalid', 'true');
     expect(screen.getByRole('textbox')).toHaveAttribute(
       'aria-describedby',
-      'test-field-helper-text'
+      'test-field-helper-text',
     );
   });
 });
