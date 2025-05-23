@@ -1,1 +1,0 @@
-import{j as e}from"./jsx-runtime-DRTy3Uxn.js";function t(s){const{text:r}=s;return e.jsx("div",{className:"resources-page",children:e.jsx("span",{className:"text",children:r})})}t.__docgenInfo={description:"",methods:[],displayName:"LabelResourcesPage",props:{text:{required:!1,tsType:{name:"string"},description:""}}};export{t as L};
