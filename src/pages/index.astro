@@ -36,7 +36,7 @@ import styles from '../ui/components/molecules/volume-carousel/VolumeCarousel.mo
 import iconUploadPrimary from '../assets/icons/icon-upload-primary.svg?raw';
 import data from '../ui/components/organisms/sectiontwo-page/__mock__/section.json';
 import { seoConfig } from '../config/seo-config.mock';
-
+import { CustomIcon } from '../library/icons/CustomIcon';
 changeLanguage('es');
 const { title, description, openGraph } = {
   ...seoConfig,
@@ -54,6 +54,8 @@ const { title, description, openGraph } = {
 
 <Layout title={t('page.title')}>
   <div class="backgroud-Homepage">
+    dfsdf
+    <CustomIcon name="articles" client:only />
     <SEO title={title} description={description} openGraph={openGraph} />
     <HeaderBanner textSearch="Buscar" backgroundImage={Rectangle12.src} logo={LogoSvg.src} />
 

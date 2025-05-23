@@ -19,46 +19,7 @@ export default defineConfig({
     },
     plugins: [
       svgr({
-        include: '**/*.svg?react',
-        exclude: '',
-        svgrOptions: {
-          icon: true,
-          dimensions: false,
-          runtimeConfig: true,
-          svgProps: {
-            className: 'w-full h-full',
-            fill: 'currentColor',
-            role: 'img',
-          },
-          svgoConfig: {
-            plugins: [
-              {
-                name: 'removeAttrs',
-                params: {
-                  attrs: '(data-name|style)',
-                },
-              },
-              {
-                name: 'cleanupIDs',
-                active: true,
-              },
-              {
-                name: 'prefixIds',
-                active: true,
-              },
-              {
-                name: 'removeXMLNS',
-                active: true,
-              },
-            ],
-          },
-          exportType: 'default',
-          expandProps: 'end',
-          ref: true,
-          titleProp: true,
-          descProp: true,
-        },
-      }),
+        include: '**/*.svg?react' }),
     ],
   },
 });
