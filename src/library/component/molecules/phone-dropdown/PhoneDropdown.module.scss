@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 $ads-color-surface: #f5f5f5;
-$ads-color-text-dark: #1B2037;
-$ads-color-border: #E0E2E7;
-$ads-color-border-dropdown: #E4DAFF;
+$ads-color-text-dark: #1b2037;
+$ads-color-border: #e0e2e7;
+$ads-color-border-dropdown: #e4daff;
 $ads-color-error: red;
 $ads-color-helper: #667085;
-$ads-color-active: #7A44FF;
+$ads-color-active: #7a44ff;
 
 @mixin phone-dropdown-size-small {
   .label {
