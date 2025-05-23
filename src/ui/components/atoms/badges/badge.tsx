@@ -23,11 +23,12 @@ function Badge({
   const shapeClass = shape === 'rounded' && 'badge--rounded';
   const sizeClass = `badge--${size}`;
 
-  const getPillColor = (color: string) => {
-    if (color === 'neutral') return 'neutral-dark';
-    if (['gray', 'violet', 'blue'].includes(color)) return 'neutral-light';
+  const getPillColor = (colors: string) => {
+    if (colors === 'neutral') return 'neutral-dark';
+    if (['gray', 'violet', 'blue'].includes(colors)) return 'neutral-light';
     return 'neutral-light';
   };
+
   const getIconColor = () => {
     if (variant === 'filled') {
       return color === 'neutral' || color === 'gray' ? 'black' : 'white';
