@@ -30,7 +30,9 @@ export const Default: Story = {
     label: 'Default Input',
     placeholder: 'Enter text here',
     value: '',
-    onChange: (val) => { console.log(val); },
+    onChange: (val) => {
+      console.log(val);
+    },
   },
 };
 

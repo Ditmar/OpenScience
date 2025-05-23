@@ -18,14 +18,7 @@ describe('TextField Component', () => {
   });
 
   it('displays error state', () => {
-    render(
-      <TextField
-        value=""
-        onChange={() => {}}
-        error
-        helperText="Error message"
-      />
-    );
+    render(<TextField value="" onChange={() => {}} error helperText="Error message" />);
     expect(screen.getByRole('textbox')).toHaveClass('text-field__input--error');
     expect(screen.getByText('Error message')).toHaveClass('text-field__helper-text--error');
   });
@@ -72,6 +65,9 @@ describe('TextField Component', () => {
       />
     );
     expect(screen.getByRole('textbox')).toHaveAttribute('aria-invalid', 'true');
-    expect(screen.getByRole('textbox')).toHaveAttribute('aria-describedby', 'test-field-helper-text');
+    expect(screen.getByRole('textbox')).toHaveAttribute(
+      'aria-describedby',
+      'test-field-helper-text'
+    );
   });
 });
