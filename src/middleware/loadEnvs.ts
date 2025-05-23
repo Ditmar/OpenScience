@@ -11,7 +11,6 @@ async function fetchData(API_ROUTE: string) {
     const response = await fetcher.get();
     return response;
   } catch (error) {
-    console.error('Error fetching articles:', error);
     return null;
   }
 }
