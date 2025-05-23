@@ -8,8 +8,8 @@
     }
   }
 
-  @else {
-     @warn #{$breakpoint};
+ @else {
+    @warn #{$breakpoint};
   }
 }
 
@@ -75,4 +75,3 @@
     align-self: $value;
   }
 }
-

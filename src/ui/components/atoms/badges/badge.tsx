@@ -23,6 +23,11 @@ function Badge({
   const shapeClass = shape === 'rounded' && 'badge--rounded';
   const sizeClass = `badge--${size}`;
 
+  const getPillColor = (color: string) => {
+    if (color === 'neutral') return 'neutral-dark';
+    if (['gray', 'violet', 'blue'].includes(color)) return 'neutral-light';
+    return 'neutral-light';
+  };
   const getIconColor = () => {
     if (variant === 'filled') {
       return color === 'neutral' || color === 'gray' ? 'black' : 'white';
@@ -65,15 +70,14 @@ function Badge({
 
       {image && <img src={image} alt="avatar" className="badge__image" />}
       {icon && <span className="badge__icon">{icon}</span>}
-
       {leftCount !== undefined && (
-        <Pill text={String(leftCount)} variant="filled" color="neutral-light" size="sm" />
+        <Pill text={String(leftCount)} color={getPillColor(color)} variant={variant} size="sm" />
       )}
 
       <span className="badge__content">{children}</span>
 
       {rightCount !== undefined && (
-        <Pill text={String(rightCount)} color="neutral-light" variant="filled" size="sm" />
+        <Pill variant={variant} text={String(rightCount)} color={getPillColor(color)} size="sm" />
       )}
 
       {onClose && (
