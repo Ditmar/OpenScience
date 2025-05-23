@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import TextField from './text-field';
-import type { ITextFieldProps } from './types/IProps';
 import Icon from './Icon';
 
 const meta: Meta<typeof TextField> = {
@@ -31,7 +30,7 @@ export const Default: Story = {
     label: 'Default Input',
     placeholder: 'Enter text here',
     value: '',
-    onChange: (val) => console.log(val),
+    onChange: (val) => { console.log(val); },
   },
 };
 

@@ -12,9 +12,9 @@ interface IconProps {
   className?: string;
 }
 
-const Icon: React.FC<IconProps> = ({ name, className }) => {
+function Icon({ name, className }: IconProps): JSX.Element {
   const SvgIcon = icons[name];
   return <SvgIcon className={className} />;
-};
+}
 
 export default Icon;
