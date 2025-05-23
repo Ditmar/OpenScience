@@ -1,7 +1,9 @@
 ---
+import { FetchWrapper } from '@services/http-client/network/fetch-wrapper';
 import Layout from '../../layouts/Layout.astro';
 import ArticleTitle from '../../ui/components/atoms/article-title/ArticleTitle';
 import ArticleDescription from '../../ui/components/atoms/article-description/ArticleDescription';
+import { Demo } from '../../services/demo/Demo';
 
 async function getData() {
   const API_ROUTE = Astro.locals.API_END_POINT;
@@ -12,6 +14,23 @@ async function getData() {
 const collections = await getData();
 const articles = collections?.data;
 console.log(articles);
+
+interface MockData {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+const fetchWrapper = new FetchWrapper<MockData[]>();
+
+const response = await fetchWrapper.fetch('https://jsonplaceholder.typicode.com/todos', {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+const posts = response;
 ---
 
 <Layout title="Articulos Recientes">
@@ -19,4 +38,6 @@ console.log(articles);
   <ArticleDescription
     article="Explora nuestra colección completa de artículos científicos y descubre lo último en investigación."
   />
+  <a href="/">Volver a la página principal</a>
+  <Demo posts={posts} />
 </Layout>
