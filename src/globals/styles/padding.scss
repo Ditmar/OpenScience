@@ -1,0 +1,49 @@
+@use './tokens' as *;
+
+@each $name, $value in $ads-padding-scale {
+  .padding-#{$name} {
+    padding: $value;
+
+    @if str-index($name, 'minus_') or str-index($name, 'neg_') {
+      outline: 1px dashed rgba(#de832e, 0.3);
+      position: relative;
+
+      &::after {
+        bottom: 100%;
+        content: '⚠️ Negative padding';
+        display: none;
+        font-size: 10px;
+        left: 0;
+        position: absolute;
+      }
+
+      &:hover::after {
+        display: block;
+      }
+    }
+  }
+}
+
+@each $name, $value in $ads-padding-scale {
+  .padding-bottom-#{$name} {
+    padding-bottom: $value;
+  }
+  .padding-top-#{$name} {
+    padding-top: $value;
+  }
+  .padding-right-#{$name} {
+    padding-right: $value;
+  }
+  .padding-left-#{$name} {
+    padding-left: $value;
+  }
+
+  .padding-x-#{$name} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+  .padding-y-#{$name} {
+    padding-bottom: $value;
+    padding-top: $value;
+  }
+}
