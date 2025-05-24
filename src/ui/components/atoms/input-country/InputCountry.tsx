@@ -32,16 +32,47 @@ export function InputCountry(props: IProps) {
     };
   }, []);
 
+  let labelClass = '';
+  if (disabled) labelClass += styles.disabled + ' ';
+  if (size) labelClass += styles[size];
+
+  let borderColor = 'var(--color-neutral-gray-soft-100)';
+  if (disabled) {
+    borderColor = 'var(--color-neutral-gray-strong-50)';
+  } else if (error) {
+    borderColor = 'var(--color-feedback-negative-500)';
+  }
+
+  let borderRadiusClass = '';
+  if (borderRadius === 'circle') {
+    borderRadiusClass = styles['select-circle'];
+  } else if (borderRadius === 'semi') {
+    borderRadiusClass = styles['select-semi'];
+  }
+
+  let iconClass = '';
+  if (disabled) {
+    iconClass = styles.disabled;
+  } else if (error) {
+    iconClass = styles.error;
+  }
+
+  let helperClass = '';
+  if (disabled) {
+    helperClass += styles.disabled + ' ';
+  } else if (error) {
+    helperClass += styles.error + ' ';
+  }
+  if (size) {
+    helperClass += styles[size];
+  }
+
   return (
     <div className={styles['country-input']}>
       <div>
         <div>
           {globe && <Icon src={globe} />}
-          <p
-            className={`${disabled ? styles.disabled : ''} ${size ? styles[size] : ''}`}
-          >
-            {label ?? ''}
-          </p>
+          <p className={labelClass.trim()}>{label ?? ''}</p>
         </div>
         <div>
           {close_circle && <Icon src={close_circle} className={disabled ? styles.disabled : ''} />}
@@ -58,12 +89,7 @@ export function InputCountry(props: IProps) {
           inputProps={{ 'aria-label': 'Without label' }}
           sx={{
             '& .MuiOutlinedInput-notchedOutline': {
-              borderColor: disabled
-                ? 'var(--color-neutral-gray-strong-50)'
-                : error
-                  ? 'var(--color-feedback-negative-500)'
-                  : 'var(--color-neutral-gray-soft-100)',
-              borderWidth: '1px',
+              borderColor: borderColor
             },
             '&:hover .MuiOutlinedInput-notchedOutline': {
               borderColor: disabled
@@ -87,19 +113,7 @@ export function InputCountry(props: IProps) {
               borderWidth: '1px',
             },
           }}
-          className={`
-                            ${styles['select-country']}
-                            ${
-                              borderRadius === 'circle'
-                                ? styles['select-circle']
-                                : borderRadius === 'semi'
-                                  ? styles['select-semi']
-                                  : ''
-                            }
-                            ${keyboardFocus ? 'keyboard-focus' : 'mouse-focus'}
-                            ${disabled ? styles.disabled : ''}
-                            ${size ? styles[size] : ''}
-                            `}
+          className={`${styles['select-country']} ${borderRadiusClass}`}
           MenuProps={{
             MenuListProps: {
               sx: {
@@ -142,16 +156,10 @@ export function InputCountry(props: IProps) {
             <Icon
               data-testid="button-icon"
               src={info}
-              className={disabled ? styles.disabled : error ? styles.error : ''}
+              className={iconClass}
             />
           )}
-          <p
-            className={`${disabled ? styles.disabled : error ? styles.error : ''} ${
-              size ? styles[size] : ''
-            }`}
-          >
-            {helperText}
-          </p>
+          <p className={helperClass.trim()}>{helperText}</p>
         </div>
         <div>{info && <Icon data-testid="button-icon" src={info} />}</div>
       </div>

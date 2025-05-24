@@ -33,6 +33,7 @@
 
   div:nth-child(1) {
     p {
+      margin: 0;
       &.disabled {
         color: var(--color-neutral-gray-strong-50);
       }
