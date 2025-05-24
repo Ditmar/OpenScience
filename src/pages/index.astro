@@ -20,7 +20,6 @@ import ArticlePublish from 'ui/components/molecules/article-publish/ArticlePubli
 import LabelDate from 'ui/components/atoms/label-date/LabelDate';
 import LabelVol from 'ui/components/atoms/label-vol/LabelVol';
 import LabelRecentsArticles from 'ui/components/atoms/label-recent-articles/LabelRecentsArticles';
-import { FetchWrapper } from '@services/http-client/network/fetch-wrapper';
 import ArticleDescription from '../ui/components/atoms/article-description/ArticleDescription';
 import ArticleTitle from '../ui/components/atoms/article-title/ArticleTitle';
 import HeaderBanner from '../ui/components/molecules/header-banner/HeaderBanner';
@@ -37,7 +36,6 @@ import styles from '../ui/components/molecules/volume-carousel/VolumeCarousel.mo
 import iconUploadPrimary from '../assets/icons/icon-upload-primary.svg?raw';
 import data from '../ui/components/organisms/sectiontwo-page/__mock__/section.json';
 import { seoConfig } from '../config/seo-config.mock';
-import { Demo } from '../services/demo/Demo';
 
 changeLanguage('es');
 const { title, description, openGraph } = {
@@ -52,23 +50,6 @@ const { title, description, openGraph } = {
     },
   },
 };
-
-interface MockData {
-  userId: number;
-  id: number;
-  title: string;
-  completed: boolean;
-}
-
-const fetchWrapper = new FetchWrapper<MockData[]>();
-
-const response = await fetchWrapper.fetch('https://jsonplaceholder.typicode.com/todos', {
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
-const posts = response;
 ---
 
 <Layout title={t('page.title')}>
@@ -111,9 +92,8 @@ const posts = response;
           </div>
         ))
       }
-      <a href="/articles">Artículos Recientes</a>
     </SectiontwoPage>
-    <Demo posts={posts} />
+
     <div class="spacingdown spacedup">
       <ArticlePublish>
         <PublishButton variant="primary">PUBLICAR ARTICULO</PublishButton>
@@ -139,8 +119,6 @@ const posts = response;
         }
       </VolumeCarousel>
     </div>
-
-    <Demo posts={posts} />
   </div>
 </Layout>
 

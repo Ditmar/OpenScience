@@ -1,32 +1,31 @@
 import { createClient } from 'redis';
 import type { CacheActions } from './base-cache-actions';
-
-export interface RedisCacheOptions {
-  username: string;
-  password: string;
-  socket: {
-    host: string;
-    port: number;
-  };
-}
+import { getEnvironment } from '../../../utils/environments';
+import type { RedisConnectionOptions } from '../../types';
 
 export class RedisCache<T> implements CacheActions<T> {
+  private options: RedisConnectionOptions;
+
   private redisClient: ReturnType<typeof createClient>;
 
-  constructor(options: RedisCacheOptions) {
-    this.redisClient = createClient(options);
+  constructor() {
+    this.options = {
+      username: getEnvironment('REDIS_USERNAME', 'default'),
+      password: getEnvironment('REDIS_PASSWORD', ''),
+      socket: {
+        host: getEnvironment('REDIS_HOST', 'localhost'),
+        port: Number(getEnvironment('REDIS_PORT', '6379')),
+      },
+    };
+    this.redisClient = createClient(this.options);
     this.redisClient.on('error', (err) => {
-      console.error('Redis Client Error', err);
+      throw new Error(`Redis Client Error: ${String(err)}`);
     });
-    this.redisClient.on('ready', () => {
-      console.log('Redis Client is ready');
-    });
+    this.redisClient.on('ready', () => {});
     this.connect()
-      .then(() => {
-        console.log('Redis Client connected');
-      })
+      .then(() => {})
       .catch((err: unknown) => {
-        console.error('Redis Client connection error', err);
+        throw new Error(`Redis Client connection error: ${String(err)}`);
       });
   }
 
