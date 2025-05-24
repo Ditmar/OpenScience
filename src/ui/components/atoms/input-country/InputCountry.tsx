@@ -51,7 +51,7 @@ export function InputCountry(props: IProps) {
   }
 
   let borderColorFocus = 'var(--color-brand-primary-100)';
-if (disabled) {
+  if (disabled) {
     borderColorFocus = 'var(--color-neutral-gray-strong-50)';
   } else if (error) {
     borderColorFocus = 'var(--color-feedback-negative-100)';
@@ -65,12 +65,15 @@ if (disabled) {
   }
 
   let selectClass = '';
-  if (disabled) selectClass += `${styles['disabled']} `;
+  if (disabled) selectClass += `${styles.disabled} `;
   if (size) selectClass += styles[size];
 
   let keyboardFocusStyle = '';
   if (keyboardFocus) keyboardFocusStyle = 'keyboard-focus';
   else keyboardFocusStyle = 'mouse-focus';
+
+  let mouseFocusStyle = 'var(--color-brand-primary-500)';
+  if (error) mouseFocusStyle = 'var(--color-feedback-negative-500)';
 
   let closeCircleClass = '';
   if (disabled) {
@@ -101,9 +104,7 @@ if (disabled) {
           {globe && <Icon src={globe} />}
           <p className={labelClass.trim()}>{label ?? ''}</p>
         </div>
-        <div>
-          {close_circle && <Icon src={close_circle} className={closeCircleClass} />}
-        </div>
+        <div>{close_circle && <Icon src={close_circle} className={closeCircleClass} />}</div>
       </div>
       <div className={styles['select-wrapper']}>
         <Select
@@ -116,7 +117,7 @@ if (disabled) {
           inputProps={{ 'aria-label': 'Without label' }}
           sx={{
             '& .MuiOutlinedInput-notchedOutline': {
-              borderColor: borderColor,
+              borderColor,
             },
             '&:hover .MuiOutlinedInput-notchedOutline': {
               borderColor: borderColorHover,
@@ -125,9 +126,7 @@ if (disabled) {
               borderColor: borderColorFocus,
             },
             '&.mouse-focus.Mui-focused .MuiOutlinedInput-notchedOutline': {
-              borderColor: error
-                ? 'var(--color-feedback-negative-500)'
-                : 'var(--color-brand-primary-500)',
+              borderColor: mouseFocusStyle,
               borderWidth: '1px',
             },
           }}
@@ -170,7 +169,7 @@ if (disabled) {
       </div>
       <div>
         <div>
-          {info && (<Icon src={info} className={iconClass} />)}
+          {info && <Icon src={info} className={iconClass} />}
           <p className={helperClass.trim()}>{helperText}</p>
         </div>
         <div>{info && <Icon data-testid="button-icon" src={info} />}</div>
