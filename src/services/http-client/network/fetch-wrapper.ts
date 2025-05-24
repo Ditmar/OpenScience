@@ -2,6 +2,7 @@ import { defaultConfig } from '../../config/defaultConfig';
 import { generateKey } from '../../utils/request-utils';
 import { SingletonCache } from '../cache/cache-manager';
 import type { CacheActions } from '../cache/strategies/base-cache-actions';
+import { CacheType } from '../types/cache-types';
 
 interface Options<T> {
   method?: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
@@ -13,17 +14,15 @@ export class FetchWrapper<T> {
   private cache: CacheActions<T>;
 
   constructor() {
-    this.cache = SingletonCache.getInstance<T>('memory');
+    this.cache = SingletonCache.getInstance<T>(CacheType.MEMORY);
   }
 
   async fetch(url: string, options: Options<T> = {}): Promise<T> {
     const { method = 'GET' } = options;
 
     const cacheKey = generateKey({ url, method });
-    console.log('Cache key:', cacheKey);
-    const isCacheEnabled = await this.cache.has(cacheKey);
-    console.log('Cache enabled:', isCacheEnabled);
-    if (isCacheEnabled) {
+    const isOnCache = await this.cache.has(cacheKey);
+    if (isOnCache) {
       const cachedData = await this.cache.get(cacheKey);
       if (cachedData) {
         return cachedData as T;
