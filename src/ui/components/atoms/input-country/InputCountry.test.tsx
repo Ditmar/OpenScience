@@ -1,78 +1,79 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
 import { InputCountry } from './InputCountry';
-import globe from '../../../../assets/icons/globe.svg?raw';
-import close_circle from '../../../../assets/icons/close_circle.svg?raw';
-import info from '../../../../assets/icons/info.svg?raw';
-import ar from '../../../../assets/flags/ar.svg?raw';
 
-type Option = { label: string; value: string };
-const countryOptions: Option[] = [
-  { label: 'Argentina', value: 'AR' },
-  { label: 'Bolivia', value: 'BO' },
-  { label: 'Chile', value: 'CL' },
-  { label: 'Perú', value: 'PE' },
+type Option = { country: string; code: string };
+const options: Option[] = [
+  { country: 'Argentina', code: 'ar' },
+  { country: 'Bolivia', code: 'bo' },
+  { country: 'Chile', code: 'cl' },
+  { country: 'Perú', code: 'pe' },
 ];
 
-describe('InputCountry', () => {
-  it('renders with placeholder', () => {
+describe('InputCountry Component', () => {
+  it('renders with label', () => {
     render(
       <InputCountry
-        iconGlobe={globe}
-        iconClose={close_circle}
-        iconInfo={info}
-        iconFlag={ar}
+        label='Select Country'
+        helperText='hint'
+        options={options}
       />
     );
-    expect(screen.getByText('Selecciona un país')).toBeInTheDocument();
+    expect(screen.getByText('Select Country')).toBeInTheDocument();
   });
 
-  // it('renders label and helper text', () => {
-  //   render(
-  //     <InputCountry
-  //       value=""
-  //       onChange={() => {}}
-  //       options={mockOptions}
-  //       label="País"
-  //       helperText="Selecciona tu país"
-  //     />
-  //   );
-  //   expect(screen.getByText('País')).toBeInTheDocument();
-  //   expect(screen.getByText('Selecciona tu país')).toBeInTheDocument();
-  // });
+  it('renders with helperText and error', () => {
+    render(
+      <InputCountry
+        label="Select Country"
+        options={options}
+        error
+        helperText="Error text"
+      />
+    );
+    expect(screen.getByText('Error text')).toBeInTheDocument();
+  });
 
-  // it('displays selected value label', () => {
-  //   render(
-  //     <InputCountry value="bo" onChange={() => {}} options={mockOptions} />
-  //   );
-  //   expect(screen.getByText('Bolivia')).toBeInTheDocument();
-  // });
+  it('renders disabled state', () => {
+    render(<InputCountry label="Select Country" options={options} helperText="Hint Text" disabled />);
+    const select = screen.getByRole('combobox');
+    expect(select).toHaveAttribute('aria-disabled', 'true');
+  });
 
-  // it('calls onChange when selecting a new country', () => {
-  //   const handleChange = vi.fn();
-  //   render(
-  //     <InputCountry value="" onChange={handleChange} options={mockOptions} />
-  //   );
+  it('changes value on select', () => {
+    render(<InputCountry label="Select Country" options={options} helperText="Hint Text" />);
+    const select = screen.getByRole('combobox');
+    fireEvent.mouseDown(select);
+    const option = screen.getByText('Bolivia');
+    fireEvent.click(option);
+    expect(screen.getByText('Argentina')).toBeInTheDocument();
+  });
 
-  //   const input = screen.getByRole('combobox');
-  //   fireEvent.click(input);
+  it('matches snapshot in empty state', () => {
+    const { container } = render(<InputCountry label="Country" options={options} helperText="Hint Text" />);
+    expect(container).toMatchSnapshot();
+  });
 
-  //   const option = screen.getByText('Argentina');
-  //   fireEvent.mouseDown(option);
+  it('matches snapshot with error', () => {
+    const { container } = render(
+      <InputCountry
+        label="Country"
+        options={options}
+        error
+        helperText="Hint Text"
+      />
+    );
+    expect(container).toMatchSnapshot();
+  });
 
-  //   expect(handleChange).toHaveBeenCalledWith('ar');
-  // });
-
-  // it('disables interaction when disabled', () => {
-  //   render(
-  //     <InputCountry
-  //       value=""
-  //       onChange={() => {}}
-  //       options={mockOptions}
-  //       disabled
-  //     />
-  //   );
-  //   const input = screen.getByRole('combobox');
-  //   expect(input).toHaveAttribute('aria-disabled', 'true');
-  // });
+  it('matches snapshot disabled', () => {
+    const { container } = render(
+      <InputCountry
+        label="Country"
+        options={options}
+        helperText="Hint Text"
+        disabled
+      />
+    );
+    expect(container).toMatchSnapshot();
+  });
 });

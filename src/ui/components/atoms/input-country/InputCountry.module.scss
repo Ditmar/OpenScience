@@ -1,6 +1,7 @@
 @import '../../../../globals/_fonts';
 @import '../../../../globals/_variables';
 @import '../../../../globals/globals';
+@import '../../../../globals/_mixins';
 
 .country-input {
   width: fit-content;
@@ -24,61 +25,111 @@
       gap: 0.5rem;
     }
 
-    p {
-      height: fit-content;
-    }
-
     span {
       width: 1.125rem;
       height: 1.125rem;
     }
   }
 
+  div:nth-child(1) {
+    label {
+      &.disabled {
+        color: var(--color-neutral-gray-strong-50);
+      }
+
+      &.small {
+        font-size: $ads-paragraph-xs;
+      }
+
+      &.medium {
+        font-size: $ads-paragraph-sm;
+      }
+
+      &.large {
+        font-size: $ads-paragraph-md;
+      }
+    }
+
+    div:last-child span {
+      &.disabled {
+        path {
+          fill: var(--color-neutral-gray-strong-50);
+        }
+      }
+    }
+  }
+
   .select-wrapper {
     position: relative;
 
-
     .select-country {
-      width: 23.188rem;
-      color: var(--color-neutral-gray-strong-700);
       padding: 0.85rem 1rem;
       margin: 0.875rem 0;
       border: 1px solid #e0e6e7;
       border-radius: 0;
+      width: 23.188rem;
+
+      @include respond-to('small') {
+        max-width: 5.5rem;
+      }
+
+      @include respond-to('small-mobile') {
+        max-width: 18rem;
+      }
+
+      @include respond-to('small-mobile-large') {
+        max-width: 23.188rem;
+      }
+
+      @include respond-to('medium') {
+        max-width: 23.188rem;
+      }
+
+      @include respond-to('large') {
+        max-width: 23.188rem;
+      }
+
+      @include respond-to('large-tablet') {
+        max-width: 23.188rem;
+      }
+
+      @include respond-to('extra-large') {
+        max-width: 23.188rem;
+      }
 
       div:nth-child(1) {
         font-weight: 300;
         font-family: Poppins-Light, sans-serif;
-        font-size: 1rem;
+        font-size: $ads-paragraph-md;
         padding: 0;
         justify-content: flex-start;
         gap: 0.5rem;
+        color: var(--color-neutral-gray-strong-700);
+
+      }
+
+      &.small div:nth-child(1) {
+        font-size: $ads-paragraph-sm;
+      }
+
+      &.medium div:nth-child(1) {
+        font-size: $ads-paragraph-md;
+      }
+
+      &.large div:nth-child(1) {
+        font-size: $ads-paragraph-lg;
       }
 
       svg:nth-child(3) {
-        color: var(--color-neutral-gray-strong-800);
         top: 1rem;
         right: 0.75rem;
       }
 
       fieldset {
-        display: none;
+        legend {
+          width: 0;
+        }
       }
-
-      .MuiSelect-select {
-        background-color: red;
-      }
-      // .MuiOutlinedInput-root {
-      //   fieldset {
-      //     border: 1px solid #ccc;
-      //     transition: all 0.3s ease;
-      //   }
-
-      //   &.Mui-focused fieldset {
-      //     border-color: #1976d2;
-      //     border-width: 2px;
-      //   }
-      // }
 
       &.select-semi {
         border-radius: 0.5rem;
@@ -88,28 +139,53 @@
         border-radius: 50px;
       }
 
-      // &.mouseFocus:focus {
-      //   border-width: 4px;
-      //   border-color: var(--color-brand-primary-100);
-      // }
-
-      // &:focus:not(&.mouseFocus:focus) {
-      //   border-width: 1px;
-      //   border-color: var(--color-brand-primary-500);
-      // }
-
-      &:focus {
-        background-color: red;
+      &.disabled {
+        background-color: var(--color-neutral-gray-strong-25);
+        color: var(--color-neutral-gray-strong-50);
       }
     }
   }
 
   div:nth-child(3) {
+    div:first-child span {
+      &.disabled {
+        path {
+          fill: var(--color-neutral-gray-strong-50);
+        }
+      }
+
+      &.error {
+        path {
+          fill: var(--color-feedback-negative-500);
+        }
+      }
+    }
+
     p {
       margin: 0;
       font-family: Poppins-Light, sans-serif;
       font-weight: 300;
       color: var(--color-neutral-gray-soft-500);
+
+      &.disabled {
+        color: var(--color-neutral-gray-strong-50);
+      }
+
+      &.error {
+        color: var(--color-feedback-negative-500);
+      }
+
+      &.small {
+        font-size: $ads-paragraph-xs;
+      }
+
+      &.medium {
+        font-size: $ads-paragraph-sm;
+      }
+
+      &.large {
+        font-size: $ads-paragraph-md;
+      }
     }
 
     div:nth-child(2) svg {

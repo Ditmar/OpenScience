@@ -1,21 +1,14 @@
-type Option = { label: string; value: string };
+type Option = {
+    country: string;
+    code: string;
+};
 
 export interface IProps {
-    // label?: string;
-    // value: string;
-    // onChange: (val: string) => void;
-    // options: { label: string; value: string }[];
-    // placeholder?: string;
-    // error?: boolean;
-    // helperText?: string;
-    // disabled?: boolean;
-    // leftIcon?: React.ReactNode;
-    // rightIcon?: React.ReactNode;
-    // className?: string;
-    borderRadius?: "semi" | "circle";
-
-    iconGlobe: string;
-    iconClose: string;
-    iconInfo: string;
-    iconFlag: string;
+    label?: string;
+    options: Option[];
+    error?: boolean;
+    helperText: string;
+    disabled?: boolean;
+    borderRadius?: 'normal' | 'semi' | 'circle';
+    size?: 'small' | 'medium' | 'large';
 }
