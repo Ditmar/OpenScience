@@ -32,7 +32,7 @@
   }
 
   div:nth-child(1) {
-    label {
+    p {
       &.disabled {
         color: var(--color-neutral-gray-strong-50);
       }

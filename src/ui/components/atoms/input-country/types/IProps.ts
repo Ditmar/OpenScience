@@ -1,4 +1,4 @@
-interface Option {
+export interface Option {
   country: string;
   code: string;
 }

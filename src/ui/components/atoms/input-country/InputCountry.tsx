@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { MenuItem, Select, type SelectChangeEvent } from '@mui/material';
-import type { IProps } from './types/IProps';
+import type { IProps, Option } from './types/IProps';
 import styles from './InputCountry.module.scss';
 import { Icon } from '../../../utils/svg-icons/icons';
 import globe from '../../../../assets/icons/globe.svg?raw';
@@ -37,12 +37,11 @@ export function InputCountry(props: IProps) {
       <div>
         <div>
           {globe && <Icon src={globe} />}
-          <label
-            htmlFor=""
+          <p
             className={`${disabled ? styles.disabled : ''} ${size ? styles[size] : ''}`}
           >
-            {label || ''}
-          </label>
+            {label ?? ''}
+          </p>
         </div>
         <div>
           {close_circle && <Icon src={close_circle} className={disabled ? styles.disabled : ''} />}
@@ -91,11 +90,11 @@ export function InputCountry(props: IProps) {
           className={`
                             ${styles['select-country']}
                             ${
-                              borderRadius == 'circle'
+                              borderRadius === 'circle'
                                 ? styles['select-circle']
-                                : borderRadius == 'semi'
+                                : borderRadius === 'semi'
                                   ? styles['select-semi']
-                                  : null
+                                  : ''
                             }
                             ${keyboardFocus ? 'keyboard-focus' : 'mouse-focus'}
                             ${disabled ? styles.disabled : ''}
@@ -125,7 +124,7 @@ export function InputCountry(props: IProps) {
             },
           }}
         >
-          {options.map((item: any, index: number) => {
+          {options.map((item: Option, index: number) => {
             const iconFlag = `./images/flags/${item.code}.svg`;
             const code = index > 0 ? item.code : '';
             return (
