@@ -43,7 +43,7 @@ function TextField({
       'text-field__input--with-left-icon': leftIcon,
       'text-field__input--with-right-icon': rightIcon,
     },
-    className
+    className,
   );
 
   const labelClasses = classNames('text-field__label', {
