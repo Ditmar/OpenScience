@@ -33,7 +33,7 @@ export function InputCountry(props: IProps) {
   }, []);
 
   let labelClass = '';
-  if (disabled) labelClass += styles.disabled + ' ';
+  if (disabled) labelClass += `${styles.disabled} `;
   if (size) labelClass += styles[size];
 
   let borderColor = 'var(--color-neutral-gray-soft-100)';
@@ -43,11 +43,38 @@ export function InputCountry(props: IProps) {
     borderColor = 'var(--color-feedback-negative-500)';
   }
 
+  let borderColorHover = 'var(--color-brand-primary-500)';
+  if (disabled) {
+    borderColorHover = '';
+  } else if (error) {
+    borderColorHover = 'var(--color-feedback-negative-500)';
+  }
+
+  let borderColorFocus = 'var(--color-brand-primary-100)';
+if (disabled) {
+    borderColorFocus = 'var(--color-neutral-gray-strong-50)';
+  } else if (error) {
+    borderColorFocus = 'var(--color-feedback-negative-100)';
+  }
+
   let borderRadiusClass = '';
   if (borderRadius === 'circle') {
     borderRadiusClass = styles['select-circle'];
   } else if (borderRadius === 'semi') {
     borderRadiusClass = styles['select-semi'];
+  }
+
+  let selectClass = '';
+  if (disabled) selectClass += `${styles['disabled']} `;
+  if (size) selectClass += styles[size];
+
+  let keyboardFocusStyle = '';
+  if (keyboardFocus) keyboardFocusStyle = 'keyboard-focus';
+  else keyboardFocusStyle = 'mouse-focus';
+
+  let closeCircleClass = '';
+  if (disabled) {
+    closeCircleClass = styles.disabled;
   }
 
   let iconClass = '';
@@ -59,9 +86,9 @@ export function InputCountry(props: IProps) {
 
   let helperClass = '';
   if (disabled) {
-    helperClass += styles.disabled + ' ';
+    helperClass += `${styles.disabled} `;
   } else if (error) {
-    helperClass += styles.error + ' ';
+    helperClass += `${styles.error} `;
   }
   if (size) {
     helperClass += styles[size];
@@ -75,7 +102,7 @@ export function InputCountry(props: IProps) {
           <p className={labelClass.trim()}>{label ?? ''}</p>
         </div>
         <div>
-          {close_circle && <Icon src={close_circle} className={disabled ? styles.disabled : ''} />}
+          {close_circle && <Icon src={close_circle} className={closeCircleClass} />}
         </div>
       </div>
       <div className={styles['select-wrapper']}>
@@ -89,22 +116,13 @@ export function InputCountry(props: IProps) {
           inputProps={{ 'aria-label': 'Without label' }}
           sx={{
             '& .MuiOutlinedInput-notchedOutline': {
-              borderColor: borderColor
+              borderColor: borderColor,
             },
             '&:hover .MuiOutlinedInput-notchedOutline': {
-              borderColor: disabled
-                ? ''
-                : error
-                  ? 'var(--color-feedback-negative-500)'
-                  : 'var(--color-brand-primary-500)',
+              borderColor: borderColorHover,
             },
             '&.keyboard-focus .MuiOutlinedInput-notchedOutline': {
-              borderColor: disabled
-                ? 'var(--color-neutral-gray-strong-50)'
-                : error
-                  ? 'var(--color-feedback-negative-100)'
-                  : 'var(--color-brand-primary-100)',
-              borderWidth: disabled ? '1px' : '4px',
+              borderColor: borderColorFocus,
             },
             '&.mouse-focus.Mui-focused .MuiOutlinedInput-notchedOutline': {
               borderColor: error
@@ -113,7 +131,7 @@ export function InputCountry(props: IProps) {
               borderWidth: '1px',
             },
           }}
-          className={`${styles['select-country']} ${borderRadiusClass}`}
+          className={`${styles['select-country']} ${borderRadiusClass} ${keyboardFocusStyle} ${selectClass}`}
           MenuProps={{
             MenuListProps: {
               sx: {
@@ -152,13 +170,7 @@ export function InputCountry(props: IProps) {
       </div>
       <div>
         <div>
-          {info && (
-            <Icon
-              data-testid="button-icon"
-              src={info}
-              className={iconClass}
-            />
-          )}
+          {info && (<Icon src={info} className={iconClass} />)}
           <p className={helperClass.trim()}>{helperText}</p>
         </div>
         <div>{info && <Icon data-testid="button-icon" src={info} />}</div>
