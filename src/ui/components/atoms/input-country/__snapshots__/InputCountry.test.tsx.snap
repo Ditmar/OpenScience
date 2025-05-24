@@ -35,12 +35,11 @@ exports[`InputCountry Component > matches snapshot disabled 1`] = `
             </defs>
           </svg>
         </span>
-        <label
-          class="_disabled_6adae5 "
-          for=""
+        <p
+          class="_disabled_6adae5"
         >
           Country
-        </label>
+        </p>
       </div>
       <div>
         <span
@@ -63,13 +62,7 @@ exports[`InputCountry Component > matches snapshot disabled 1`] = `
       class="_select-wrapper_6adae5"
     >
       <div
-        class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-disabled 
- _select-country_6adae5
- null
- mouse-focus
- _disabled_6adae5
- 
- MuiSelect-root css-1qbm786-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+        class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-disabled _select-country_6adae5 mouse-focus _disabled_6adae5 MuiSelect-root css-1sbbnr6-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
       >
         <div
           aria-disabled="true"
@@ -124,7 +117,6 @@ exports[`InputCountry Component > matches snapshot disabled 1`] = `
       <div>
         <span
           class="_disabled_6adae5"
-          data-testid="button-icon"
         >
           <svg
             fill="none"
@@ -162,7 +154,7 @@ exports[`InputCountry Component > matches snapshot disabled 1`] = `
           </svg>
         </span>
         <p
-          class="_disabled_6adae5 "
+          class="_disabled_6adae5"
         >
           Hint Text
         </p>
@@ -247,12 +239,11 @@ exports[`InputCountry Component > matches snapshot in empty state 1`] = `
             </defs>
           </svg>
         </span>
-        <label
-          class=" "
-          for=""
+        <p
+          class=""
         >
           Country
-        </label>
+        </p>
       </div>
       <div>
         <span>
@@ -273,13 +264,7 @@ exports[`InputCountry Component > matches snapshot in empty state 1`] = `
       class="_select-wrapper_6adae5"
     >
       <div
-        class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary 
- _select-country_6adae5
- null
- mouse-focus
- 
- 
- MuiSelect-root css-1a44uxt-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+        class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary _select-country_6adae5 mouse-focus MuiSelect-root css-2ym78x-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
       >
         <div
           aria-expanded="false"
@@ -331,9 +316,7 @@ exports[`InputCountry Component > matches snapshot in empty state 1`] = `
     </div>
     <div>
       <div>
-        <span
-          data-testid="button-icon"
-        >
+        <span>
           <svg
             fill="none"
             viewBox="0 0 18 19"
@@ -370,7 +353,7 @@ exports[`InputCountry Component > matches snapshot in empty state 1`] = `
           </svg>
         </span>
         <p
-          class=" "
+          class=""
         >
           Hint Text
         </p>
@@ -455,12 +438,11 @@ exports[`InputCountry Component > matches snapshot with error 1`] = `
             </defs>
           </svg>
         </span>
-        <label
-          class=" "
-          for=""
+        <p
+          class=""
         >
           Country
-        </label>
+        </p>
       </div>
       <div>
         <span>
@@ -481,13 +463,7 @@ exports[`InputCountry Component > matches snapshot with error 1`] = `
       class="_select-wrapper_6adae5"
     >
       <div
-        class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary 
- _select-country_6adae5
- null
- mouse-focus
- 
- 
- MuiSelect-root css-hhhg27-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+        class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary _select-country_6adae5 mouse-focus MuiSelect-root css-1ymgccd-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
       >
         <div
           aria-expanded="false"
@@ -541,7 +517,6 @@ exports[`InputCountry Component > matches snapshot with error 1`] = `
       <div>
         <span
           class="_error_6adae5"
-          data-testid="button-icon"
         >
           <svg
             fill="none"
@@ -579,7 +554,7 @@ exports[`InputCountry Component > matches snapshot with error 1`] = `
           </svg>
         </span>
         <p
-          class="_error_6adae5 "
+          class="_error_6adae5"
         >
           Hint Text
         </p>
