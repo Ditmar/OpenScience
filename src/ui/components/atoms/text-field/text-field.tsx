@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import classNames from 'classnames';
 import type { ITextFieldProps } from './types/IProps';
 import './text-field.scss';
 
@@ -19,7 +20,7 @@ function TextField({
   required = false,
   autoComplete,
 }: ITextFieldProps) {
-  const [, setIsFocused] = useState(false); // Eliminamos isFocused ya que no se utiliza
+  const [, setIsFocused] = useState(false); // isFocused no se usa
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value);
@@ -33,51 +34,37 @@ function TextField({
     setIsFocused(false);
   };
 
-  const inputClasses = [
+  const inputClasses = classNames(
     'text-field__input',
     `text-field__input--${size}`,
-    error && 'text-field__input--error',
-    disabled && 'text-field__input--disabled',
-    leftIcon && 'text-field__input--with-left-icon',
-    rightIcon && 'text-field__input--with-right-icon',
-    className,
-  ]
-    .filter(Boolean)
-    .join(' ');
+    {
+      'text-field__input--error': error,
+      'text-field__input--disabled': disabled,
+      'text-field__input--with-left-icon': leftIcon,
+      'text-field__input--with-right-icon': rightIcon,
+    },
+    className
+  );
 
-  const labelClasses = [
-    'text-field__label',
-    error && 'text-field__label--error',
-    disabled && 'text-field__label--disabled',
-  ]
-    .filter(Boolean)
-    .join(' ');
+  const labelClasses = classNames('text-field__label', {
+    'text-field__label--error': error,
+    'text-field__label--disabled': disabled,
+  });
 
-  const helperTextClasses = [
-    'text-field__helper-text',
-    error && 'text-field__helper-text--error',
-    disabled && 'text-field__helper-text--disabled',
-  ]
-    .filter(Boolean)
-    .join(' ');
+  const helperTextClasses = classNames('text-field__helper-text', {
+    'text-field__helper-text--error': error,
+    'text-field__helper-text--disabled': disabled,
+  });
 
-  const leftIconClasses = [
-    'text-field__icon',
-    'text-field__icon--left',
-    error && 'text-field__icon--error',
-    disabled && 'text-field__icon--disabled',
-  ]
-    .filter(Boolean)
-    .join(' ');
+  const leftIconClasses = classNames('text-field__icon', 'text-field__icon--left', {
+    'text-field__icon--error': error,
+    'text-field__icon--disabled': disabled,
+  });
 
-  const rightIconClasses = [
-    'text-field__icon',
-    'text-field__icon--right',
-    error && 'text-field__icon--error',
-    disabled && 'text-field__icon--disabled',
-  ]
-    .filter(Boolean)
-    .join(' ');
+  const rightIconClasses = classNames('text-field__icon', 'text-field__icon--right', {
+    'text-field__icon--error': error,
+    'text-field__icon--disabled': disabled,
+  });
 
   return (
     <div className="text-field">
