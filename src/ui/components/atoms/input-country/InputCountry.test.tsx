@@ -1,7 +1,10 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { InputCountry } from './InputCountry';
 
-type Option = { country: string; code: string };
+interface Option {
+  country: string;
+  code: string;
+}
 const options: Option[] = [
   { country: 'Argentina', code: 'ar' },
   { country: 'Bolivia', code: 'bo' },
@@ -11,30 +14,19 @@ const options: Option[] = [
 
 describe('InputCountry Component', () => {
   it('renders with label', () => {
-    render(
-      <InputCountry
-        label='Select Country'
-        helperText='hint'
-        options={options}
-      />
-    );
+    render(<InputCountry label="Select Country" helperText="hint" options={options} />);
     expect(screen.getByText('Select Country')).toBeInTheDocument();
   });
 
   it('renders with helperText and error', () => {
-    render(
-      <InputCountry
-        label="Select Country"
-        options={options}
-        error
-        helperText="Error text"
-      />
-    );
+    render(<InputCountry label="Select Country" options={options} error helperText="Error text" />);
     expect(screen.getByText('Error text')).toBeInTheDocument();
   });
 
   it('renders disabled state', () => {
-    render(<InputCountry label="Select Country" options={options} helperText="Hint Text" disabled />);
+    render(
+      <InputCountry label="Select Country" options={options} helperText="Hint Text" disabled />,
+    );
     const select = screen.getByRole('combobox');
     expect(select).toHaveAttribute('aria-disabled', 'true');
   });
@@ -49,30 +41,22 @@ describe('InputCountry Component', () => {
   });
 
   it('matches snapshot in empty state', () => {
-    const { container } = render(<InputCountry label="Country" options={options} helperText="Hint Text" />);
+    const { container } = render(
+      <InputCountry label="Country" options={options} helperText="Hint Text" />,
+    );
     expect(container).toMatchSnapshot();
   });
 
   it('matches snapshot with error', () => {
     const { container } = render(
-      <InputCountry
-        label="Country"
-        options={options}
-        error
-        helperText="Hint Text"
-      />
+      <InputCountry label="Country" options={options} error helperText="Hint Text" />,
     );
     expect(container).toMatchSnapshot();
   });
 
   it('matches snapshot disabled', () => {
     const { container } = render(
-      <InputCountry
-        label="Country"
-        options={options}
-        helperText="Hint Text"
-        disabled
-      />
+      <InputCountry label="Country" options={options} helperText="Hint Text" disabled />,
     );
     expect(container).toMatchSnapshot();
   });

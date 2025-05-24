@@ -1,11 +1,11 @@
-import { InputCountry } from './InputCountry';
 import type { Meta, StoryObj } from '@storybook/react';
+import { InputCountry } from './InputCountry';
 import type { IProps } from './types/IProps';
-import globe from '../../../../assets/icons/globe.svg?raw';
-import close_circle from '../../../../assets/icons/close_circle.svg?raw';
-import info from '../../../../assets/icons/info.svg?raw';
 
-type Option = { country: string; code: string };
+interface Option {
+  country: string;
+  code: string;
+}
 const options: Option[] = [
   { country: 'Argentina', code: 'ar' },
   { country: 'Bolivia', code: 'bo' },
@@ -14,19 +14,16 @@ const options: Option[] = [
 ];
 
 const commonProps: Partial<IProps> = {
-  label: "Select Country",
-  options: options,
+  label: 'Select Country',
+  options,
   helperText: 'Hint Text',
-  // iconGlobe: globe,
-  // iconClose: close_circle,
-  // iconInfo: info
 };
 
 const meta = {
   title: 'ui/components/atoms/input-country',
   component: InputCountry,
   args: {
-    ...commonProps
+    ...commonProps,
   },
 } as Meta<typeof InputCountry>;
 
@@ -43,7 +40,7 @@ export const Empty: Story = {
 export const WithValue: Story = {
   args: {
     ...commonProps,
-    options: options,
+    options,
   },
 };
 
