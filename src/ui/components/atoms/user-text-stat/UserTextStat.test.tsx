@@ -20,7 +20,7 @@ describe('UserTextStat Component', () => {
         title="Suscripciones"
         mainValue="100"
         description="Incluye renovaciones automáticas"
-      />
+      />,
     );
     expect(screen.getByText('Incluye renovaciones automáticas')).toBeInTheDocument();
   });
