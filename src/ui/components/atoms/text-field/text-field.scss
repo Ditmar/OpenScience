@@ -1,0 +1,125 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/globals';
+
+.text-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+
+  &__label {
+    color: var(--color-neutral-gray-soft-800);
+    font-size: 14px;
+    font-weight: 330;
+    margin-bottom: 4px;
+
+    &--error {
+      color: var(--color-feedback-negative-600);
+    }
+
+    &--disabled {
+      color: var(--color-neutral-gray-soft-400);
+    }
+  }
+
+  &__container {
+    align-items: center;
+    display: flex;
+    position: relative;
+  }
+
+  &__input {
+    background-color: var(--color-neutral-white-900);
+    border: 1px solid var(--color-neutral-gray-soft-300);
+    border-radius: 6px;
+    color: var(--color-neutral-gray-soft-900);
+    font-size: 14px;
+    line-height: 5.5;
+    padding: 0 12px;
+    transition: all 0.2s ease;
+    width: 100%;
+
+    &:focus {
+      border-color: var(--color-brand-primary-500);
+      box-shadow: 0 0 0 2px rgb(122 68 255 / 20%);
+      outline: none;
+    }
+
+    &--error {
+      border-color: var(--color-feedback-negative-500);
+
+      &:focus {
+        border-color: var(--color-feedback-negative-600);
+        box-shadow: 0 0 0 2px rgb(255 85 74 / 20%);
+      }
+    }
+
+    &--disabled {
+      background-color: var(--color-neutral-gray-soft-50);
+      color: var(--color-neutral-gray-soft-400);
+      cursor: not-allowed;
+    }
+
+    &--with-left-icon {
+      padding-left: 36px;
+    }
+
+    &--with-right-icon {
+      padding-right: 36px;
+    }
+
+    &--small {
+      font-size: 12px;
+      height: 80px;
+    }
+
+    &--medium {
+      font-size: 14px;
+      height: 40px;
+    }
+
+    &--large {
+      font-size: 16px;
+      height: 48px;
+    }
+  }
+
+  &__icon {
+    align-items: center;
+    color: var(--color-neutral-gray-soft-500);
+    display: flex;
+    justify-content: center;
+    position: absolute;
+
+    &--left {
+      left: 12px;
+    }
+
+    &--right {
+      right: 12px;
+    }
+
+    &--disabled {
+      color: var(--color-neutral-gray-soft-400);
+    }
+
+    &--error {
+      color: var(--color-feedback-negative-600);
+    }
+  }
+
+  &__helper-text {
+    color: var(--color-neutral-gray-soft-600);
+    font-size: 12px;
+    margin-top: 4px;
+
+    &--error {
+      color: var(--color-feedback-negative-600);
+    }
+
+    &--disabled {
+      color: var(--color-neutral-gray-soft-400);
+    }
+  }
+}
