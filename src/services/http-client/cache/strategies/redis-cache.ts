@@ -10,11 +10,11 @@ export class RedisCache<T> implements CacheActions<T> {
 
   constructor() {
     this.options = {
-      username: getEnvironment('REDIS_USERNAME', 'default'),
-      password: getEnvironment('REDIS_PASSWORD', ''),
+      username: getEnvironment('REDIS_USERNAME'),
+      password: getEnvironment('REDIS_PASSWORD'),
       socket: {
-        host: getEnvironment('REDIS_HOST', 'localhost'),
-        port: Number(getEnvironment('REDIS_PORT', '6379')),
+        host: getEnvironment('REDIS_HOST'),
+        port: Number(getEnvironment('REDIS_PORT')),
       },
     };
     this.redisClient = createClient(this.options);

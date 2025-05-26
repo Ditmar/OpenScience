@@ -1,8 +1,8 @@
-import { defaultConfig } from '../../config/defaultConfig';
 import { generateKey } from '../../utils/request-utils';
 import { SingletonCache } from '../cache/cache-manager';
 import type { CacheActions } from '../cache/strategies/base-cache-actions';
 import { CacheType } from '../types/cache-types';
+import { getEnvironment } from '../../utils/environments';
 
 interface Options<T> {
   method?: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
@@ -14,7 +14,7 @@ export class FetchWrapper<T> {
   private cache: CacheActions<T>;
 
   constructor() {
-    this.cache = SingletonCache.getInstance<T>(CacheType.MEMORY);
+    this.cache = SingletonCache.getInstance<T>(CacheType.REDIS);
   }
 
   async fetch(url: string, options: Options<T> = {}): Promise<T> {
@@ -43,7 +43,7 @@ export class FetchWrapper<T> {
 
     const data = (await response.json()) as T;
 
-    await this.cache.set(cacheKey, data, Date.now() + defaultConfig.DEFAULT_CACHE_TTL_MS);
+    await this.cache.set(cacheKey, data, Date.now() + Number(getEnvironment('FETCH_CACHE_TTL_MS')));
 
     return data;
   }

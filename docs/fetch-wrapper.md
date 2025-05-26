@@ -1,50 +1,50 @@
 # 📦 `fetchWrapper` Utility & Advanced Caching System
 
-## 🧩 Descripción General
+## 🧩 Overview
 
-Para optimizar el rendimiento de la aplicación y evitar solicitudes HTTP innecesarias, se desarrolló `fetchWrapper`: un **utilitario centralizado para realizar peticiones HTTP** con soporte de **caché inteligente** y TTL (Time-To-Live) configurable.
+To optimize application performance and avoid unnecessary HTTP requests, `fetchWrapper` was developed: a **centralized utility for performing HTTP requests** with support for **smart caching** and configurable TTL (Time-To-Live).
 
-Este sistema permite reutilizar respuestas válidas en caché, reduce la latencia percibida por el usuario y desacopla la lógica de almacenamiento de caché para facilitar futuras integraciones con otros proveedores (como Redis o `localStorage`).
-
----
-
-## ⚙️ Funcionamiento del `fetchWrapper`
-
-### Flujo de ejecución:
-
-1. **Generación de clave de caché** basada en la URL y método HTTP.
-2. **Consulta de caché**:
-
-   * Si existe una entrada y su TTL no ha expirado, retorna la respuesta almacenada.
-   * Si no existe o ha expirado, realiza la petición `fetch`.
-3. **Almacenamiento**: guarda la respuesta en caché con un TTL específico.
-4. **Devolución** del resultado (desde caché o red).
+This system allows the reuse of valid cached responses, reduces perceived latency for the user, and decouples caching logic to facilitate future integrations with other providers (such as Redis or `localStorage`).
 
 ---
 
-## 📁 Estructura de Archivos Relacionados
+## ⚙️ How `fetchWrapper` Works
 
-* `fetch-wrapper.ts`: lógica principal del wrapper.
-* `cache/strategies/memory-cache.ts`: implementación del caché en memoria.
-* `cache/strategies/redis-cache.ts`: soporte para Redis como backend de caché.
-* `cache/strategies/base-cache-actions.ts`: interfaz base `CacheActions` para extensibilidad.
-* `cache/cache-manager.ts`: singleton para elegir el tipo de caché dinámicamente.
-* `utils/request-utils.ts`: generación de claves de caché.
-* `utils/environments.ts`: carga de variables de entorno.
+### Execution Flow:
 
----
+1. **Cache key generation** based on the URL and HTTP method.
+2. **Cache lookup**:
 
-## 🔁 Comportamiento del Caché
-
-* **TTL configurable** a través de `FETCH_CACHE_TTL_MS`.
-* **Default TTL**: 300,000 ms (5 minutos) si no se define otro valor.
-* **Namespace de caché**: combinando método HTTP y URL (`${url}-${method}`) para evitar colisiones.
+   * If an entry exists and its TTL has not expired, the stored response is returned.
+   * If it doesn't exist or has expired, a `fetch` request is made.
+3. **Storage**: saves the response in the cache with a specific TTL.
+4. **Return** the result (from cache or network).
 
 ---
 
-## 🧠 Diseño Extensible del Caché
+## 📁 Related File Structure
 
-`fetchWrapper` utiliza una interfaz genérica `CacheActions<T>` que define:
+* `fetch-wrapper.ts`: main wrapper logic.
+* `cache/strategies/memory-cache.ts`: in-memory cache implementation.
+* `cache/strategies/redis-cache.ts`: Redis support as a cache backend.
+* `cache/strategies/base-cache-actions.ts`: base `CacheActions` interface for extensibility.
+* `cache/cache-manager.ts`: singleton for dynamically selecting cache type.
+* `utils/request-utils.ts`: cache key generation.
+* `utils/environments.ts`: environment variable loading.
+
+---
+
+## 🔁 Cache Behavior
+
+* **Configurable TTL** via `FETCH_CACHE_TTL_MS`.
+* **Default TTL**: 300,000 ms (5 minutes) if no other value is defined.
+* **Cache namespace**: combines HTTP method and URL (`${url}-${method}`) to avoid collisions.
+
+---
+
+## 🧠 Extensible Cache Design
+
+`fetchWrapper` uses a generic interface `CacheActions<T>` that defines:
 
 ```ts
 interface CacheActions<T> {
@@ -55,41 +55,41 @@ interface CacheActions<T> {
 }
 ```
 
-Esto permite implementar múltiples estrategias de almacenamiento (in-memory, Redis, etc.).
+This allows implementation of multiple storage strategies (in-memory, Redis, etc.).
 
 ---
 
-## 🧪 Casos Cubiertos en Tests
+## 🧪 Covered Test Cases
 
-* ✔️ Retorno desde caché cuando es válido.
-* ✔️ Fallback a red si la entrada expiró o no existe.
-* ✔️ Configuración del TTL desde variable de entorno.
-* ✔️ Limpieza manual del caché (`clear()`).
-* ✔️ Compatibilidad con múltiples estrategias (memoria, Redis).
+* ✔️ Returns from cache when valid.
+* ✔️ Falls back to network if entry is expired or doesn't exist.
+* ✔️ TTL configuration via environment variable.
+* ✔️ Manual cache clearing (`clear()`).
+* ✔️ Compatibility with multiple strategies (memory, Redis).
 
 ---
 
-## 🧹 Limpieza Manual del Caché
+## 🧹 Manual Cache Clearing
 
-Desde cada estrategia puedes usar:
+From each strategy, you can use:
 
 ```ts
-await cache.clear(); // Limpia todo
+await cache.clear(); // Clears everything
 ```
 
-En el futuro, se puede extender para `clear(key)` y `clearAll()` según necesidades.
+In the future, it can be extended to `clear(key)` and `clearAll()` as needed.
 
 ---
 
-## 📝 Ejemplo de Uso (Astro + React)
+## 📝 Usage Example (Astro + React)
 
-### En Astro:
+### Define a `Demo` fetch helper function
 
-```tsx
----
-import { FetchWrapper } from '@services/http-client/network/fetch-wrapper';
+```ts
+// getPosts.ts
+import { FetchWrapper } from '../http-client/network/fetch-wrapper';
 
-interface MockData {
+export interface MockData {
   userId: number;
   id: number;
   title: string;
@@ -97,22 +97,33 @@ interface MockData {
 }
 
 const fetchWrapper = new FetchWrapper<MockData[]>();
+export async function getPosts() {
+  const response = await fetchWrapper.fetch('https://jsonplaceholder.typicode.com/todos', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 
-const response = await fetchWrapper.fetch('https://jsonplaceholder.typicode.com/todos', {
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
+  const posts = response;
+  return posts;
+}
+```
 
-const posts = response;
+### In Astro:
+
+```tsx
+---
+import { getPosts } from './getPosts';
+
+const posts = await getPosts();
 ---
 <Layout title="Sample Home">
   <Demo posts={posts} />
 </Layout>
 ```
 
-### En React:
+### In React:
 
 ```tsx
 interface MockData {
@@ -141,17 +152,20 @@ export function Demo({ posts }: { posts: MockData[] }) {
 
 ---
 
-## 📡 Agregar Nuevos Proveedores de Caché
+## 📡 Adding New Cache Providers
 
-1. Crea un archivo en `src/services/http-client/network/cache/strategies/` que implemente `CacheActions<T>`.
-2. Implementa los métodos `get`, `set`, `clear`, `has`.
-3. Registra el provider en `cache-manager.ts`:
+1. Create a file in `src/services/http-client/network/cache/strategies/` that implements `CacheActions<T>`.
+
+2. Implement the `get`, `set`, `clear`, `has` methods.
+
+3. Register the provider in `cache-manager.ts`:
 
    ```ts
-   case CacheType.<TU_PROVIDER>:
-     this.cache = new <TuClaseDeCache>();
+   case CacheType.<YOUR_PROVIDER>:
+     this.cache = new <YourCacheClass>();
      break;
    ```
-4. Usa `SingletonCache.getInstance<T>(CacheType.<TU_PROVIDER>)` para usarlo.
+
+4. Use `SingletonCache.getInstance<T>(CacheType.<YOUR_PROVIDER>)` to use it.
 
 ---
