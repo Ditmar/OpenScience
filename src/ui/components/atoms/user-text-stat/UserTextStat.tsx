@@ -59,7 +59,7 @@ function UserTextStat({
       <div>
         <h3 className={styles.title}>{title}</h3>
         <div className={styles.mainValue}>{mainValue}</div>
-        {subValue && <div className={styles.subValue}>{subValue}</div>}
+        {subValue != null && <div className={styles.subValue}>{subValue}</div>}
         {description && <div className={styles.description}>{description}</div>}
       </div>
     </div>
