@@ -6,7 +6,8 @@
     "baseUrl": "./src",
     "paths": {
       "@PubSub/*": ["./PubSub/*"],
-      "@icons": ["./ui/utils/svg-icons/icons"]
+      "@icons": ["./ui/utils/svg-icons/icons"],
+      "@services/*": ["./services/*"],
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react",
