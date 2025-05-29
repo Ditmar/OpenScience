@@ -1,0 +1,75 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/typography';
+
+.display-and-sub-title {
+  color: $ads-paragraph-color-dark;
+  margin: auto;
+  max-width: 73.125rem;
+
+  &.left {
+    text-align: left;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.right {
+    text-align: right;
+  }
+}
+
+.display-and-sub-title-display {
+  margin: 0 0 1.5rem;
+  padding: 0;
+
+    &.lg {
+        font-size: 4.5rem;
+    }
+
+    &.xl {
+        font-size: 6rem;
+    }
+
+    &.regular {
+        font-weight: $ads-font-weight-regular;
+    }
+
+    &.medium {
+        font-weight: $ads-font-weight-medium;
+    }
+
+    &.semibold {
+        font-weight: $ads-font-weight-semibold;
+    }
+
+    &.compact {
+      line-height: 1.1;
+    }
+
+    &.default {
+      line-height: 1.5;
+    }
+
+    &.spacious {
+      line-height: 1.8;
+    }
+}
+
+.display-and-sub-title-subtitle {
+  color: $ads-color-gray-soft-500;
+  font-weight: $ads-font-weight-regular;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+
+    &.lg {
+        font-size: 1.25rem;
+    }
+
+    &.xl {
+        font-size: 1.5rem;
+    }
+
+    
+}
