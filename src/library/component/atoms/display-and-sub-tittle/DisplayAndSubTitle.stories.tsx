@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import DisplayAndSubTitle from './display-and-sub-title';
+import DisplayAndSubTitle from './DisplayAndSubTitle';
 
 const meta: Meta<typeof DisplayAndSubTitle> = {
-  title: 'library/component/molecules/display-and-sub-title',
+  title: 'library/component/atoms/display-and-sub-title',
   component: DisplayAndSubTitle,
 };
 

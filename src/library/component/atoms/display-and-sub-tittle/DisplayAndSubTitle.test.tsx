@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import DisplayAndSubtitle from './display-and-sub-title';
+import DisplayAndSubtitle from './DisplayAndSubTitle';
 
 describe('DisplayAndSubtitle', () => {
   it('renders displayText with default tags', () => {
