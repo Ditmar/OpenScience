@@ -1,8 +1,8 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/typography';
+@import '../../../../globals/fonts';
 
-.display-and-sub-title {
-  color: $ads-paragraph-color-dark;
+.display-and-subtitle {
   margin: auto;
   max-width: 73.125rem;
 
@@ -19,7 +19,9 @@
   }
 }
 
-.display-and-sub-title-display {
+.display-title {
+  color: $ads-paragraph-color-dark;
+  font-family: Poppins-Regular, sans-serif;
   margin: 0 0 1.5rem;
   padding: 0;
 
@@ -56,8 +58,9 @@
     }
 }
 
-.display-and-sub-title-subtitle {
+.display-subtitle {
   color: $ads-color-gray-soft-500;
+  font-family: Poppins-Regular, sans-serif;
   font-weight: $ads-font-weight-regular;
   line-height: 1.5;
   margin: 0;
