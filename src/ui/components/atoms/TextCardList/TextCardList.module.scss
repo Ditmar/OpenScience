@@ -11,18 +11,30 @@
   height: 263px;
   max-width: 619px;
   padding: 24px;
-  width: 100%; 
+  width: 100%;
 
   &--selected {
     box-shadow: 0 0 0 2px $ads-color-main;
   }
 
-  &--default { background-color: $ads-color-main; }
-  &--info { border-left: 4px solid $ads-primary-main; }
-  &--success { border-left: 4px solid $ads-text-main; }
-  &--warning { border-left: 4px solid $ads-warning-main; }
-  &--error { border-left: 4px solid $ads-danger-main; }
-  &--sharp { border-radius: 0; }
+  &--default {
+    background-color: $ads-color-main;
+  }
+  &--info {
+    border-left: 4px solid $ads-primary-main;
+  }
+  &--success {
+    border-left: 4px solid $ads-text-main;
+  }
+  &--warning {
+    border-left: 4px solid $ads-warning-main;
+  }
+  &--error {
+    border-left: 4px solid $ads-danger-main;
+  }
+  &--sharp {
+    border-radius: 0;
+  }
 
   &__header {
     align-items: center;
