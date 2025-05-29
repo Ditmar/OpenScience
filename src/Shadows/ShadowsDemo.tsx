@@ -5,7 +5,16 @@ const shadowLevels = ['xs', 'sm', 'md', 'lg', 'xl', '3xl'];
 
 function ShadowsDemo() {
   return (
-    <div style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto' }}>
+    <div
+      style={{
+        padding: '2rem',
+        maxWidth: '900px',
+        margin: '0 auto',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+        gap: '1.5rem',
+      }}
+    >
       {shadowLevels.map((level) => (
         <div
           key={level}

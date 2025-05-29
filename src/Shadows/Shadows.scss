@@ -1,4 +1,6 @@
 @use '../globals/variables' as *;
+@use '../globals/breakpoints' as *;
+@use '../globals/mixins' as *;
 
 @mixin shadow($name, $value) {
   .shadow-#{$name} {
@@ -11,18 +13,25 @@
 @include shadow(md, $ads-shadow-md);
 @include shadow(lg, $ads-shadow-lg);
 @include shadow(xl, $ads-shadow-xl);
-@include shadow(3xl, $ads-shadow-3xl);
+@include shadow(3xl, $ads-shadow-xxxl);
 
 .shadow-demo {
   align-items: center;
-  background-color: $ads-white;
+  background-color: $ads-color-white;
   border: 1px solid #e0e0e0;
   border-radius: 0.5rem;
-  color: $ads-black;
+  color: $ads-color-black;
   display: flex;
   font-weight: 500;
   justify-content: flex-start;
+  min-height: 5rem;
   padding: 1rem 1.5rem;
   transition: box-shadow 0.3s ease;
   width: 100%;
+}
+
+@media screen and (width >= 768px) {
+  .shadow-demo {
+    padding: 2rem 2.5rem;
+  }
 }
