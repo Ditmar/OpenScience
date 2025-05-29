@@ -1,5 +1,5 @@
 import type { IProps } from './types/iprops';
-import styles from './display-and-sub-title.module.scss';
+import styles from './DisplayAndSubTitle.module.scss';
 
 function DisplayAndSubtitle(props: IProps) {
   const {
@@ -13,14 +13,14 @@ function DisplayAndSubtitle(props: IProps) {
     spacing = 'default',
   } = props;
   return (
-    <div className={`${styles['display-and-sub-title']} ${styles[alignment]}`}>
+    <div className={`${styles['display-and-subtitle']} ${styles[alignment]}`}>
       <DisplayTag
-        className={`${styles['display-and-sub-title-display']} ${styles[size]} ${styles[weight]} ${styles[spacing]}`}
+        className={`${styles['display-title']} ${styles[size]} ${styles[weight]} ${styles[spacing]}`}
       >
         {displayText}
       </DisplayTag>
       {subtitle && (
-        <SubtitleTag className={`${styles['display-and-sub-title-subtitle']} ${styles[size]} `}>
+        <SubtitleTag className={`${styles['display-subtitle']} ${styles[size]}`}>
           {subtitle}
         </SubtitleTag>
       )}
