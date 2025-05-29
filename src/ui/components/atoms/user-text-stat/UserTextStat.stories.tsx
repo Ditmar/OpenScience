@@ -9,6 +9,31 @@ export default meta;
 
 type Story = StoryObj<typeof UserTextStat>;
 
+export const WithAvatarAndCheckbox: Story = {
+  args: {
+    title: 'Christeen Lee',
+    mainValue:
+      'UI is the canvas, UX the brushstroke; together, they craft an immersive journey where every pixel tells a story of elegance, ' +
+      "efficiency, and effortless delight. It's the artistry of design at its finest.",
+    subValue: '2 mins ago',
+    variant: 'default',
+    icon: null,
+    avatarUrl: 'https://i.pravatar.cc/36?img=5',
+    showCheckbox: true,
+  },
+};
+
+export const MinimalUserCard: Story = {
+  args: {
+    title: 'Jane Doe',
+    mainValue: 'Just joined the platform.',
+    subValue: '1 minute ago',
+    avatarUrl: 'https://i.pravatar.cc/36?img=12',
+    showCheckbox: false,
+    variant: 'default',
+  },
+};
+
 export const Default: Story = {
   args: {
     title: 'Total usuarios',

@@ -48,19 +48,28 @@ function UserTextStat({
   description,
   onClick,
   className,
+  avatarUrl,
+  showCheckbox,
 }: UserTextStatProps): JSX.Element {
-  const classNames = `${styles.userTextStatCard} ${variantClasses[variant]} ${sizeClasses[size]} ${
-    className ?? ''
-  }`;
+  const classNames = [
+    styles.userTextStatCard,
+    variantClasses[variant],
+    sizeClasses[size],
+    className ?? '',
+  ].join(' ');
 
   const Content = (
-    <div style={{ display: 'flex', alignItems: 'start', gap: '1rem' }}>
-      <div>{icon ?? iconMap[variant]}</div>
-      <div>
-        <h3 className={styles.title}>{title}</h3>
-        <div className={styles.mainValue}>{mainValue}</div>
-        {subValue != null && <div className={styles.subValue}>{subValue}</div>}
-        {description && <div className={styles.description}>{description}</div>}
+    <div className={styles.userTextStatCard}>
+      {showCheckbox && <input type="checkbox" className={styles.checkbox} />}
+      {avatarUrl && <img src={avatarUrl} alt="Avatar" className={styles.avatar} />}
+      <div className={styles.content}>
+        <div className={styles.user}>
+          {!avatarUrl && (icon ?? iconMap[variant])}
+          <span style={{ marginLeft: !avatarUrl ? '0.5rem' : '0' }}>{title}</span>
+        </div>
+        <div className={styles.text}>{mainValue}</div>
+        {subValue != null && <div className={styles.timestamp}>{subValue}</div>}
+        {description && <div className={styles.text}>{description}</div>}
       </div>
     </div>
   );
