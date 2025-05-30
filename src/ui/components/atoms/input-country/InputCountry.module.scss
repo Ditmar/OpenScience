@@ -1,0 +1,146 @@
+@import '../../../../globals/_fonts';
+@import '../../../../globals/_variables';
+@import '../../../../globals/globals';
+@import '../../../../globals/_mixins';
+
+.country-input {
+  width: fit-content;
+
+  svg {
+    height: 1.125rem;
+    width: 1.125rem;
+  }
+
+  div:nth-child(1) {
+    p {
+      margin: 0;
+
+      &.disabled {
+        color: var(--color-neutral-gray-strong-50);
+      }
+
+      &.small {
+        font-size: $ads-paragraph-xs;
+      }
+
+      &.medium {
+        font-size: $ads-paragraph-sm;
+      }
+
+      &.large {
+        font-size: $ads-paragraph-md;
+      }
+    }
+
+    div:nth-child(2) span .disabled {
+      path {
+        fill: var(--color-neutral-gray-strong-50);
+      }
+    }
+  }
+
+  div:nth-child(1),
+  div:nth-child(3) {
+    align-items: center;
+    color: var(--color-neutral-gray-strong-700);
+    display: flex;
+    font-family: Poppins-Light, sans-serif;
+    font-weight: 500;
+    justify-content: space-between;
+
+    span {
+      height: 1.125rem;
+      width: 1.125rem;
+    }
+
+    div:nth-child(1) {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+
+  .select-wrapper {
+    position: relative;
+
+    .select-country {
+      border: 1px solid #e0e6e7;
+      border-radius: 0;
+      margin: 0.875rem 0;
+      padding: 0.85rem 1rem;
+      width: 23.188rem;
+
+      @include respond-to('small') {
+        max-width: 5.5rem;
+      }
+
+      @include respond-to('small-mobile') {
+        max-width: 18rem;
+      }
+
+      @include respond-to('small-mobile-large') {
+        max-width: 23.188rem;
+      }
+
+      @include respond-to('medium') {
+        max-width: 23.188rem;
+      }
+
+      @include respond-to('large') {
+        max-width: 23.188rem;
+      }
+
+      @include respond-to('large-tablet') {
+        max-width: 23.188rem;
+      }
+
+      @include respond-to('extra-large') {
+        max-width: 23.188rem;
+      }
+
+      div:nth-child(1) {
+        color: var(--color-neutral-gray-strong-700);
+        font-family: Poppins-Light, sans-serif;
+        font-size: $ads-paragraph-md;
+        font-weight: 300;
+        gap: 0.5rem;
+        justify-content: flex-start;
+        padding: 0;
+
+      }
+
+      &.small div:nth-child(1) {
+        font-size: $ads-paragraph-sm;
+      }
+
+      &.medium div:nth-child(1) {
+        font-size: $ads-paragraph-md;
+      }
+
+      &.large div:nth-child(1) {
+        font-size: $ads-paragraph-lg;
+      }
+
+      svg:nth-child(3) {
+        right: 0.75rem;
+        top: 1rem;
+      }
+
+      fieldset legend {
+        width: 0;
+      }
+
+      &.select-semi {
+        border-radius: 0.5rem;
+      }
+
+      &.select-circle {
+        border-radius: 50px;
+      }
+
+      &.disabled {
+        background-color: var(--color-neutral-gray-strong-25);
+        color: var(--color-neutral-gray-strong-50);
+      }
+    }
+  }
+}
