@@ -12,7 +12,6 @@
   transition: opacity 0.2s ease;
   vertical-align: middle;
 
-
   &:disabled {
     cursor: not-allowed;
     opacity: $ads-state-disabled-opacity;
@@ -41,7 +40,7 @@
   height: $ads-size-sm;
   width: $ads-size-sm;
 }
-  
+
 .md {
   height: $ads-size-md;
   width: $ads-size-md;

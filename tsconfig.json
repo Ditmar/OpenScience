@@ -7,7 +7,7 @@
     "paths": {
       "@PubSub/*": ["./PubSub/*"],
       "@icons": ["./ui/utils/svg-icons/icons"],
-      "@services/*": ["./services/*"],
+      "@services/*": ["./services/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react",

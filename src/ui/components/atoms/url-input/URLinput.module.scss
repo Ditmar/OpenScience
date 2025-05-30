@@ -4,352 +4,351 @@
 @import '../../../../globals/breakpoints';
 
 .container {
-    box-sizing: border-box;
-    color: $ads-text-main-hover;
-    font-family: Poppins-Light, sans-serif;
-    width: 22rem;
+  box-sizing: border-box;
+  color: $ads-text-main-hover;
+  font-family: Poppins-Light, sans-serif;
+  width: 22rem;
 
-    @include respond-to('extra-large') {
-        min-width: 0;
-        width: 27%;
-    }
+  @include respond-to('extra-large') {
+    min-width: 0;
+    width: 27%;
+  }
 }
 
 .header {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: .5rem;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
 }
 
 .label-wrapper {
-    align-items: center;
-    display: flex;
-    font-weight: $ads-font-weight-third;
-    gap: .3rem;
+  align-items: center;
+  display: flex;
+  font-weight: $ads-font-weight-third;
+  gap: 0.3rem;
 }
 
 .label-icon {
-    height: 1rem;
-    width: 1rem;
+  height: 1rem;
+  width: 1rem;
 
-    path {
-        fill: currentcolor;
-    }
+  path {
+    fill: currentcolor;
+  }
 }
 
 .close-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 
-    &:hover {
-        opacity: 0.8;
-    }
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .close-icon-url {
-    height: 1rem;
-    width: 1rem;
+  height: 1rem;
+  width: 1rem;
 
-    path {
-        fill: currentcolor;
-    }
+  path {
+    fill: currentcolor;
+  }
 }
 
 .input-container {
-    align-items: center;
-    border: 1px solid;
-    box-sizing: border-box;
-    display: flex;
-    transition: all 0.2s ease;
-    width: 100%;
+  align-items: center;
+  border: 1px solid;
+  box-sizing: border-box;
+  display: flex;
+  transition: all 0.2s ease;
+  width: 100%;
 }
 
 .input-wrapper {
-    align-items: center;
-    display: flex;
-    padding-left: 1rem;
-    padding-right: 0.15rem;
-    width: 100%;
+  align-items: center;
+  display: flex;
+  padding-left: 1rem;
+  padding-right: 0.15rem;
+  width: 100%;
 }
 
 .planet-icon {
-    height: 0.9rem;
-    margin-right: 0.5rem;
-    width: 1.3rem;
+  height: 0.9rem;
+  margin-right: 0.5rem;
+  width: 1.3rem;
 
-    path {
-        fill: currentcolor;
-    }
+  path {
+    fill: currentcolor;
+  }
 }
 
 .protocol {
-    font-size: .3rem;
-    font-weight: $ads-font-weight-first;
+  font-size: 0.3rem;
+  font-weight: $ads-font-weight-first;
 }
 
 .divider {
-    margin: 0 .4rem;
+  margin: 0 0.4rem;
 }
 
 .input {
-    background: transparent;
-    border: none;
-    font-family: Poppins-Light, sans-serif;
-    outline: none;
+  background: transparent;
+  border: none;
+  font-family: Poppins-Light, sans-serif;
+  outline: none;
 
-    &:disabled {
-        cursor: not-allowed;
-        opacity: 0.7;
-    }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
 
-    path {
-        fill: currentcolor;
-    }
+  path {
+    fill: currentcolor;
+  }
 }
 
 .copy-button {
-    align-items: center;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    font-size: .3rem;
-    font-weight: 500;
-    gap: .2rem;
-    padding: .55rem 1rem;
-    transition: all 0.2s ease;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  font-size: 0.3rem;
+  font-weight: 500;
+  gap: 0.2rem;
+  padding: 0.55rem 1rem;
+  transition: all 0.2s ease;
 
-    &:hover {
-        opacity: 0.9;
-    }
+  &:hover {
+    opacity: 0.9;
+  }
 
-    &:disabled {
-        cursor: not-allowed;
-        opacity: 0.6;
-    }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 }
 
 .footer {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    margin-top: .5rem;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
 }
 
 .hint-text {
-    align-items: center;
-    display: flex;
-    font-size: .8rem;
-    font-weight: $ads-font-weight-first;
-    gap: .5rem;
+  align-items: center;
+  display: flex;
+  font-size: 0.8rem;
+  font-weight: $ads-font-weight-first;
+  gap: 0.5rem;
 }
 
 .info-icon {
-    height: 1rem;
-    width: 1rem;
+  height: 1rem;
+  width: 1rem;
 
-    path {
-        fill: currentcolor;
-    }
+  path {
+    fill: currentcolor;
+  }
 }
 
 .standalone-info-icon {
-    height: 1rem;
-    width: 1rem;
+  height: 1rem;
+  width: 1rem;
 
-    path {
-        fill: $ads-text-main-hover;
-    }
+  path {
+    fill: $ads-text-main-hover;
+  }
 }
 
 .icon-planet {
-    height: 1rem;
-    width: 1rem;
+  height: 1rem;
+  width: 1rem;
 
-    path {
-        fill: currentcolor;
-    }
+  path {
+    fill: currentcolor;
+  }
 }
 
 .copy-icon {
-    height: 1rem;
-    width: 1rem;
+  height: 1rem;
+  width: 1rem;
 }
 
 .variant--default {
-    .input-container {
-        border-color: $ads-text-main-hover;
-    }
+  .input-container {
+    border-color: $ads-text-main-hover;
+  }
 
-    .copy-button {
-        background: $ads-color-primary;
-        color: $ads-background-main;
-    }
+  .copy-button {
+    background: $ads-color-primary;
+    color: $ads-background-main;
+  }
 }
 
 .variant--focus {
-    .input-container {
-        border-color: $ads-color-primary;
-        box-shadow: 0 0 0 .1rem $ads-color-brand-primary-100
-;
-    }
+  .input-container {
+    border-color: $ads-color-primary;
+    box-shadow: 0 0 0 0.1rem $ads-color-brand-primary-100;
+  }
 
-    .copy-button {
-        background: $ads-color-primary;
-        color: $ads-background-main;
-    }
+  .copy-button {
+    background: $ads-color-primary;
+    color: $ads-background-main;
+  }
 }
 
 .variant--error {
-    .input-container {
-        border-color: $ads-color-negative;
-    }
+  .input-container {
+    border-color: $ads-color-negative;
+  }
 
-    .copy-button {
-        background: $ads-color-negative;
-        color: $ads-background-main;
-    }
+  .copy-button {
+    background: $ads-color-negative;
+    color: $ads-background-main;
+  }
 
-    .hint-text {
-        color: $ads-color-negative;
-        font-family: Poppins-Light, sans-serif;
-    }
+  .hint-text {
+    color: $ads-color-negative;
+    font-family: Poppins-Light, sans-serif;
+  }
 }
 
 .variant--disabled {
+  color: $ads-color-gray-strong-25;
+
+  .input-container {
+    border-color: $ads-color-gray-strong-25;
+  }
+
+  .copy-button {
+    background: $ads-color-gray-strong-25;
+    color: $ads-background-main;
+  }
+
+  .input {
     color: $ads-color-gray-strong-25;
+  }
 
-    .input-container {
-        border-color: $ads-color-gray-strong-25;
-    }
+  .planet-icon {
+    color: $ads-color-gray-strong-25;
+  }
 
-    .copy-button {
-        background: $ads-color-gray-strong-25;
-        color: $ads-background-main;
-    }
+  .protocol {
+    color: $ads-color-gray-strong-25;
+  }
 
-    .input {
-        color: $ads-color-gray-strong-25;
-    }
-
-    .planet-icon {
-        color: $ads-color-gray-strong-25;
-    }
-
-    .protocol {
-        color: $ads-color-gray-strong-25;
-    }
-
-    .close-icon-url {
-        color: $ads-color-gray-strong-25;
-    }
+  .close-icon-url {
+    color: $ads-color-gray-strong-25;
+  }
 }
 
 .size--small {
-    .input-container {
-        height: 2.4rem;
-    }
+  .input-container {
+    height: 2.4rem;
+  }
 
-    .input,
-    .hint-text,
-    .label-text,
-    .protocol,
-    .copy-button {
-        font-size: .8rem;
-    }
+  .input,
+  .hint-text,
+  .label-text,
+  .protocol,
+  .copy-button {
+    font-size: 0.8rem;
+  }
 }
 
 .size--medium {
-    .input-container {
-        height: 40px;
-    }
+  .input-container {
+    height: 40px;
+  }
 
-    .input,
-    .protocol,
-    .label-text,
-    .hint-text,
-    .copy-button {
-        font-size: .85rem;
-    }
+  .input,
+  .protocol,
+  .label-text,
+  .hint-text,
+  .copy-button {
+    font-size: 0.85rem;
+  }
 }
 
 .size--large {
-    .input-container {
-        height: 2.6rem;
-    }
+  .input-container {
+    height: 2.6rem;
+  }
 
-    .input,
-    .protocol,
-    .label-text,
-    .hint-text,
-    .copy-button {
-        font-size: .9rem;
-    }
+  .input,
+  .protocol,
+  .label-text,
+  .hint-text,
+  .copy-button {
+    font-size: 0.9rem;
+  }
 }
 
 .input-group {
-    align-items: center;
-    display: flex;
-    flex-grow: 1;
-    position: relative;
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  .input-icon {
+    height: 1rem;
+    left: 0.2rem;
+    position: absolute;
+    width: 1rem;
+    z-index: 2;
+
+    path {
+      fill: currentcolor;
+    }
+  }
+
+  .input {
+    border: none;
+    outline: none;
+    padding-left: 1.7rem;
+    padding-right: 1.5rem;
+    width: 100%;
 
     &:disabled {
-        cursor: not-allowed;
+      cursor: not-allowed;
     }
-
-    .input-icon {
-        height: 1rem;
-        left: 0.2rem;
-        position: absolute;
-        width: 1rem;
-        z-index: 2;
-
-        path {
-            fill: currentcolor;
-        }
-    }
-
-    .input {
-        border: none;
-        outline: none;
-        padding-left: 1.7rem;
-        padding-right: 1.5rem;
-        width: 100%;
-
-        &:disabled {
-            cursor: not-allowed;
-        }
-    }
+  }
 }
 
 .radius--none {
-    .input-container {
-        border-radius: 0;
-    }
+  .input-container {
+    border-radius: 0;
+  }
 
-    .copy-button {
-        border-radius: 0;
-    }
+  .copy-button {
+    border-radius: 0;
+  }
 }
 
 .radius--small {
-    .input-container {
-        border-radius: .3rem;
-    }
+  .input-container {
+    border-radius: 0.3rem;
+  }
 
-    .copy-button {
-        border-radius: .3rem;
-    }
+  .copy-button {
+    border-radius: 0.3rem;
+  }
 }
 
 .radius--full {
-    .input-container {
-        border-radius: 40rem;
-    }
+  .input-container {
+    border-radius: 40rem;
+  }
 
-    .copy-button {
-        border-radius: 5rem;
-    }
+  .copy-button {
+    border-radius: 5rem;
+  }
 }
