@@ -11,7 +11,7 @@
 
 .title-subtitle__title {
   color: $ads-text-main;
-  font-family: 'Poppins-Semibolt';
+  font-family: Poppins-Semibolt, $ads-font-family-sans;
   font-weight: $ads-font-weight-semibold;
   line-height: $ads-line-height-default;
   margin: 0;
@@ -20,7 +20,7 @@
 
 .title-subtitle__subtitle {
   color: $ads-text-secondary;
-  font-family: 'Poppins-Regular';
+  font-family: Poppins-Regular, $ads-font-family-sans;
   font-weight: $ads-font-weight-regular;
   line-height: $ads-line-height-default;
   margin: 0;
