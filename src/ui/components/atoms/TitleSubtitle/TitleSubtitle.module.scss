@@ -1,5 +1,6 @@
 @import '../../../../globals/variables.scss';
 @import '../../../../globals/typography.scss';
+@import '../../../../globals/fonts.scss';
 
 .title-subtitle {
   display: flex;
@@ -10,7 +11,7 @@
 
 .title-subtitle__title {
   color: $ads-text-main;
-  font-family: $ads-font-family-sans;
+  font-family: 'Poppins-Semibolt';
   font-weight: $ads-font-weight-semibold;
   line-height: $ads-line-height-default;
   margin: 0;
@@ -19,7 +20,7 @@
 
 .title-subtitle__subtitle {
   color: $ads-text-secondary;
-  font-family: $ads-font-family-sans;
+  font-family: 'Poppins-Regular';
   font-weight: $ads-font-weight-regular;
   line-height: $ads-line-height-default;
   margin: 0;
