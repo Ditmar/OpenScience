@@ -1,0 +1,60 @@
+@import '../../../../globals/_variables.scss';
+@import '../../../../globals/_fonts';
+
+.typography-display {
+  &.display-xl {
+    font-size: $ads-display-xl;
+    line-height: $ads-display-xl-height;
+  }
+
+  &.display-lg {
+    font-size: 56px;
+    line-height: $ads-display-lg-height;
+  }
+
+  &.regular {
+    font-weight: $ads-display-regular-weight;
+  }
+
+  &.medium {
+    font-weight: $ads-display-medium-weight;
+  }
+
++
+  &.none-line {
+    text-decoration: none;
+  }
+
+  &.underline {
+    text-decoration: underline;
+  }
+
+  &.line-through {
+    text-decoration: line-through;
+  }
+
+  &.dark {
+    color: $ads-display-color-dark;
+  }
+
+  &.white {
+    background-color: $ads-display-color-dark;
+    color: $ads-display-color-light;
+  }
+
+  &.sans {
+    font-family: Inter, sans-serif;
+  }
+
+  &.serif {
+    font-family: Georgia, serif;
+  }
+
+  &.mono {
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+}
