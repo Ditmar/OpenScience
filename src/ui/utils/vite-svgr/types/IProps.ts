@@ -17,6 +17,8 @@ export type IconName =
   | 'facebook'
   | 'facebook1'
   | 'facelocation'
+  | 'fi-rr-calendar'
+  | 'fi-rr-clock-five'
   | 'google'
   | 'home'
   | 'icon-upload-default'
