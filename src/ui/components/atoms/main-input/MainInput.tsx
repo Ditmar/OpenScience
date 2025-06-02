@@ -33,7 +33,7 @@ function MainInput(props: IProps) {
           value={value}
           onChange={onChange}
           disabled={disabled}
-          aria-describedby={hint ?? error ? `${inputId}-hint` : undefined}
+          aria-describedby={(hint ?? error) ? `${inputId}-hint` : undefined}
           aria-invalid={!!error}
         />
         {rightIcon && (
