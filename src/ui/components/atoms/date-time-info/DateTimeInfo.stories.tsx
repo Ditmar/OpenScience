@@ -26,82 +26,62 @@ const meta: Meta<typeof DateTimeInfo> = {
 export default meta;
 type Story = StoryObj<typeof DateTimeInfo>;
 
-const twoMinutesAgo = new Date(Date.now() - 2 * 60 * 1000);
+const timestamp = new Date(Date.now() - 2 * 60 * 1000);
 
-export const SmallLeftWithIcon: Story = {
+const createStory = (args: Partial<Story['args']>): Story => ({
   args: {
-    timestamp: twoMinutesAgo,
-    showIcon: true,
-    iconPosition: 'left',
-    size: 'small',
+    timestamp,
+    ...args,
   },
-};
+});
 
-export const MediumLeftWithIcon: Story = {
-  args: {
-    timestamp: twoMinutesAgo,
-    showIcon: true,
-    iconPosition: 'left',
-    size: 'medium',
-  },
-};
+export const SmallLeftWithIcon = createStory({
+  showIcon: true,
+  iconPosition: 'left',
+  size: 'small',
+});
 
-export const LargeLeftWithIcon: Story = {
-  args: {
-    timestamp: twoMinutesAgo,
-    showIcon: true,
-    iconPosition: 'left',
-    size: 'large',
-  },
-};
+export const MediumLeftWithIcon = createStory({
+  showIcon: true,
+  iconPosition: 'left',
+  size: 'medium',
+});
 
-export const SmallRightWithIcon: Story = {
-  args: {
-    timestamp: twoMinutesAgo,
-    showIcon: true,
-    iconPosition: 'right',
-    size: 'small',
-  },
-};
+export const LargeLeftWithIcon = createStory({
+  showIcon: true,
+  iconPosition: 'left',
+  size: 'large',
+});
 
-export const MediumRightWithIcon: Story = {
-  args: {
-    timestamp: twoMinutesAgo,
-    showIcon: true,
-    iconPosition: 'right',
-    size: 'medium',
-  },
-};
+export const SmallRightWithIcon = createStory({
+  showIcon: true,
+  iconPosition: 'right',
+  size: 'small',
+});
 
-export const LargeRightWithIcon: Story = {
-  args: {
-    timestamp: twoMinutesAgo,
-    showIcon: true,
-    iconPosition: 'right',
-    size: 'large',
-  },
-};
+export const MediumRightWithIcon = createStory({
+  showIcon: true,
+  iconPosition: 'right',
+  size: 'medium',
+});
 
-export const SmallWithoutIcon: Story = {
-  args: {
-    timestamp: twoMinutesAgo,
-    showIcon: false,
-    size: 'small',
-  },
-};
+export const LargeRightWithIcon = createStory({
+  showIcon: true,
+  iconPosition: 'right',
+  size: 'large',
+});
 
-export const MediumWithoutIcon: Story = {
-  args: {
-    timestamp: twoMinutesAgo,
-    showIcon: false,
-    size: 'medium',
-  },
-};
+export const SmallWithoutIcon = createStory({
+  showIcon: false,
+  size: 'small',
+});
 
-export const LargeWithoutIcon: Story = {
-  args: {
-    timestamp: twoMinutesAgo,
-    showIcon: false,
-    size: 'large',
-  },
-};
+export const MediumWithoutIcon = createStory({
+  showIcon: false,
+  size: 'medium',
+});
+
+export const LargeWithoutIcon = createStory({
+  showIcon: false,
+  size: 'large',
+});
