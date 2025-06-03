@@ -15,7 +15,7 @@ describe('TextCardStat Component', () => {
         content="detailed user content"
       />,
     );
-    const titleElement = screen.getByText(/User Statistics/i);
+    const titleElement = screen.getByText(/Users Statistics/i);
     expect(titleElement).toBeInTheDocument();
   });
 
