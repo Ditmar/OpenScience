@@ -5,15 +5,15 @@ import styles from './TextArrangement.module.scss';
 describe('TextArrangement Component Tests', () => {
   describe('Unit tests - Rendering according to props', () => {
     test('Apply layout columns class', () => {
-      render(<TextArrangement layout="columns" data-testid="container-div" />);
-      const container = screen.getByTestId('container-div');
+      render(<TextArrangement layout="columns" data-testid="container" />);
+      const container = screen.getByTestId('container');
       expect(container).toHaveClass(styles.container);
       expect(container).toHaveClass(styles['layout-columns']);
     });
 
     test('Apply mobile responsive class', () => {
-      render(<TextArrangement responsive="mobile" data-testid="container-div" />);
-      const container = screen.getByTestId('container-div');
+      render(<TextArrangement responsive="mobile" data-testid="container" />);
+      const container = screen.getByTestId('container');
       expect(container).toHaveClass(styles['responsive-mobile']);
     });
   });
@@ -40,28 +40,28 @@ describe('TextArrangement Component Tests', () => {
     });
 
     test('The main container exists', () => {
-      render(<TextArrangement data-testid="container-div" />);
-      const container = screen.getByTestId('container-div');
+      render(<TextArrangement data-testid="container" />);
+      const container = screen.getByTestId('container');
       expect(container).toBeInTheDocument();
     });
   });
 
   describe('Responsiveness tests', () => {
     test('Apply responsive class for mobile', () => {
-      render(<TextArrangement responsive="mobile" data-testid="container-div" />);
-      const container = screen.getByTestId('container-div');
+      render(<TextArrangement responsive="mobile" data-testid="container" />);
+      const container = screen.getByTestId('container');
       expect(container).toHaveClass(styles['responsive-mobile']);
     });
 
     test('aplica clase responsive para tablet', () => {
-      render(<TextArrangement responsive="tablet" data-testid="container-div" />);
-      const container = screen.getByTestId('container-div');
+      render(<TextArrangement responsive="tablet" data-testid="container" />);
+      const container = screen.getByTestId('container');
       expect(container).toHaveClass(styles['responsive-tablet']);
     });
 
     test('aplica clase responsive para desktop', () => {
-      render(<TextArrangement responsive="desktop" data-testid="container-div" />);
-      const container = screen.getByTestId('container-div');
+      render(<TextArrangement responsive="desktop" data-testid="container" />);
+      const container = screen.getByTestId('container');
       expect(container).toHaveClass(styles['responsive-desktop']);
     });
   });
