@@ -1,0 +1,134 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/globals';
+
+.badge {
+  align-items: center;
+  border: 1px solid transparent;
+  display: inline-flex;
+  font-family: Poppins, sans-serif;
+  font-size: $ads-font-size-primary;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+
+  // Child elements
+  &__icon,
+  &__image,
+  &__pill,
+  &__counter {
+    margin: 0 0.25rem;
+  }
+
+  &__image {
+    border-radius: 0%;
+    height: 24px;
+    width: 24px;
+  }
+
+  &__content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: $ads-font-size-primary;
+    margin-left: 0.25rem;
+    padding: 4px;
+
+    svg {
+      fill: currentcolor;
+    }
+
+    &:hover {
+      background-color: $ads-icontextstat-color-title;
+    }
+  }
+
+  // Size modifiers
+  &--sm {
+    font-size: $ads-font-size-fifth;
+    padding: 0.125rem 0.375rem;
+  }
+
+  &--md {
+    font-size: $ads-font-size-primary;
+    padding: 0.25rem 0.5rem;
+  }
+
+  // Shape modifier
+  &--rounded {
+    border-radius: 8px;
+  }
+
+  // Variant modifiers
+  &--filled {
+    background-color: $ads-background-main;
+    color: $ads-text-main;
+
+    &:not(.badge--light) {
+      .badge__close-button svg {
+        fill: $ads-text-main;
+      }
+    }
+
+    &.badge--light {
+      .badge__close-button svg {
+        fill: var(--color-neutral-black-900);
+      }
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 1px solid currentcolor;
+  }
+
+  &--soft {
+    background-color: $ads-background-color-black;
+    color: $ads-text-main;
+  }
+
+  // Color modifiers
+  &--neutral {
+    background-color: var(--color-neutral-white-900);
+    color: $ads-text-main;
+  }
+
+  &--gray {
+    background-color: var(--color-neutral-gray-strong-800);
+    color: $ads-color-main;
+  }
+
+  &--violet {
+    background-color: $ads-color-secondary;
+    color: $ads-color-main;
+  }
+
+  &--blue {
+    background-color: var(--color-brand-primary-500);
+    color: $ads-color-main;
+  }
+
+  &--custom {
+    // Custom styles defined via props
+  }
+}
+
+.icon--small {
+  height: 16px;
+  width: 16px;
+}
+
+.icon--medium {
+  height: 24px;
+  width: 24px;
+}
+
+.icon--large {
+  height: 32px;
+  width: 32px;
+}
