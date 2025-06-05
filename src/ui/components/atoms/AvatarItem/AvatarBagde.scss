@@ -1,0 +1,18 @@
+.avatar-item {
+  border-radius: 0% !important; // !important para sobrescribir estilos de MUI
+
+  &--small {
+    height: 24px !important;
+    width: 24px !important;
+  }
+
+  &--medium {
+    height: 40px !important;
+    width: 40px !important;
+  }
+
+  &--large {
+    height: 56px !important;
+    width: 56px !important;
+  }
+}
