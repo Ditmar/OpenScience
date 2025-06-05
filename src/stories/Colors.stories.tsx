@@ -1,3 +1,4 @@
+
 import React from 'react';
 interface ColorBoxProps {
   name: string;
@@ -170,7 +171,6 @@ const colors: Record<string, string> = {
   "ads-color-tertiary-soft": "#f5f9ff",
   "ads-color-warning": "#ffc14a",
   "ads-color-warning-soft": "#fffcf6",
-
 };
 
 const ColorsGrid: React.FC = () => (
