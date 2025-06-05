@@ -1,0 +1,18 @@
+@import '../../../../globals/_variables.scss';
+@import '../../../../globals/fonts';
+
+.text {
+  font-family: Poppins, sans-serif;
+
+  &--small {
+    font-size: $ads-paragraph-sm;
+  }
+
+  &--medium {
+    font-size: $ads-paragraph-md;
+  }
+
+  &--large {
+    font-size: $ads-paragraph-lg;
+  }
+}
