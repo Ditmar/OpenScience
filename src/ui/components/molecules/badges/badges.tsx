@@ -53,7 +53,7 @@ export function AvatarBadgeItem({
 }: AvatarBadgeItemProps) {
   const handleCerrar = (e: React.MouseEvent) => {
     e.stopPropagation();
-    onRemove?.();
+    //logica de cierre
   };
 
   const getContainerStyles = () => {
