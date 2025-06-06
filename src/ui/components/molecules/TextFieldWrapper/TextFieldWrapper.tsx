@@ -43,15 +43,6 @@ export function TextFieldWrapper({
         disabled={disabled}
         size={size}
         endIcon={<ValidationIcons status={status} />}
-        className="text-field-wrapper__outlined-input"
-        InputProps={{
-          className: 'text-field-wrapper__input-base',
-          classes: {
-            focused: 'text-field-wrapper__outlined-input--focused',
-            error: 'text-field-wrapper__outlined-input--error',
-            disabled: 'text-field-wrapper__outlined-input--disabled',
-          },
-        }}
       />
       {helperText && <HintText text={helperText} error={error} id={`${id}-hint`} />}
     </Box>
