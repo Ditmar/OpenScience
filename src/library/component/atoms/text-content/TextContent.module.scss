@@ -1,0 +1,44 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/typography';
+@import '../../../../globals/fonts';
+
+.text-content {
+  color: $ads-color-gray-soft-500;
+  font-family: Poppins-Regular, sans-serif;
+  font-weight: $ads-font-weight-regular;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+
+  &.compact {
+    line-height: 1.1;
+  }
+
+  &.default {
+    line-height: 1.5;
+  }
+
+  &.spacious {
+    line-height: 1.8;
+  }
+
+  &.xs {
+    font-size: 0.850rem;
+  }
+
+  &.sm {
+    font-size: 0.875rem;
+  }
+
+  &.md {
+    font-size: 1rem;
+  }
+
+  &.lg {
+    font-size: 1.25rem;
+  }
+
+  &.xl {
+    font-size: 1.5rem;
+  }
+}
