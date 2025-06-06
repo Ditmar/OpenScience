@@ -6,7 +6,9 @@
     @media (max-width: map-get($ads-breakpoints-scales, $breakpoint)) {
       @content;
     }
-  } @else {
+  }
+
+ @else {
     @warn #{$breakpoint};
   }
 }
