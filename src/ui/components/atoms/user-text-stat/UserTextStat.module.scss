@@ -1,71 +1,64 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
 
-.user-text-stat-card { // corregido para kebab-case y patrón esperado
+.user-text-stat {
   align-items: flex-start;
-  background-color: $ads-color-main;
-  border: 1px solid $ads-primary-soft;
-  border-radius: 0.5rem;
-  box-shadow: rgb(145 105 242 / 12%) 0 2px 8px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0 0 0 / 8%);
   display: flex;
-  font-family: Inter, sans-serif; // sin comillas
+  font-family: Inter, sans-serif;
   gap: 1rem;
-  margin: 0 auto;
   max-width: 740px;
-  padding: 1.25rem 1.5rem;
-  transition: box-shadow 0.2s ease-in-out;
+  padding: 1.75rem 2rem;
   width: 100%;
 
-  &:hover {
-    box-shadow: rgb(145 105 242 / 20%) 0 4px 20px;
+  &.white {
+    background-color: $ads-color-main;
   }
 
-  &.highlight {
-    background-color: $ads-primary-soft;
-    border-color: transparent;
+  &.lavender {
+    background-color: $ads-color-brand-primary-50;
+  }
+
+  &.gray {
+    background-color: $ads-color-gray-soft-50;
   }
 
   .checkbox {
-    flex-shrink: 0;
+    height: 20px;
     margin-top: 6px;
+    width: 20px;
   }
 
   .avatar {
-    border-radius: 10%;
-    flex-shrink: 0;
-    height: 36px;
-    margin-right: 0.75rem;
+    border-radius: 50%;
+    height: 40px;
     object-fit: cover;
-    width: 36px;
+    width: 40px;
   }
 
   .content {
     display: flex;
-    flex: 1;
     flex-direction: column;
-    justify-content: flex-start;
-    text-align: justify;
 
     .user {
-      color: $ads-color-black-800;
+      color: $ads-color-gray-strong-900;
       font-size: 1rem;
       font-weight: 700;
-      line-height: 1.2;
     }
 
     .text {
-      color: $ads-color-black-600;
+      color: $ads-color-gray-soft-400;
       font-size: 0.875rem;
+      font-weight: 400;
       line-height: 1.4;
       margin-top: 0.25rem;
-      white-space: normal;
-      word-break: break-word;
     }
 
     .timestamp {
       color: $ads-color-black-300;
       font-size: 0.75rem;
-      margin-top: 0.3rem;
+      margin-top: 0.5rem;
     }
   }
 }

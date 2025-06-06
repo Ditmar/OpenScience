@@ -15,29 +15,6 @@ const sizeClasses = {
   large: styles.large,
 };
 
-const iconMap = {
-  default: (
-    <span role="img" aria-label="info">
-      ℹ️
-    </span>
-  ),
-  success: (
-    <span role="img" aria-label="check">
-      ✅
-    </span>
-  ),
-  warning: (
-    <span role="img" aria-label="warning">
-      ⚠️
-    </span>
-  ),
-  error: (
-    <span role="img" aria-label="error">
-      ❌
-    </span>
-  ),
-};
-
 function UserTextStat({
   title,
   mainValue,
@@ -50,28 +27,32 @@ function UserTextStat({
   className,
   avatarUrl,
   showCheckbox,
+  styleVariant = 'white', // ✅ nuevo prop visual, con valor por defecto
 }: UserTextStatProps): JSX.Element {
+  const styleVariantClass = styles[styleVariant] ?? ''; // busca .white, .lavender, .gray
+
   const classNames = [
     styles.userTextStatCard,
+    styleVariantClass,
     variantClasses[variant],
     sizeClasses[size],
     className ?? '',
   ].join(' ');
 
   const Content = (
-    <div className={styles.userTextStatCard}>
+    <>
       {showCheckbox && <input type="checkbox" className={styles.checkbox} />}
       {avatarUrl && <img src={avatarUrl} alt="Avatar" className={styles.avatar} />}
       <div className={styles.content}>
         <div className={styles.user}>
-          {!avatarUrl && (icon ?? iconMap[variant])}
-          <span style={{ marginLeft: !avatarUrl ? '0.5rem' : '0' }}>{title}</span>
+          {icon && !avatarUrl && <span style={{ marginRight: '0.5rem' }}>{icon}</span>}
+          <span>{title}</span>
         </div>
         <div className={styles.text}>{mainValue}</div>
-        {subValue != null && <div className={styles.timestamp}>{subValue}</div>}
+        {subValue && <div className={styles.timestamp}>{subValue}</div>}
         {description && <div className={styles.text}>{description}</div>}
       </div>
-    </div>
+    </>
   );
 
   return onClick ? (
