@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { DateTimeInfo } from './DateTimeInfo';
 
 const meta: Meta<typeof DateTimeInfo> = {
-  title: 'DateTimeInfo',
+  title: 'ui/components/atoms/date-time-info',
   component: DateTimeInfo,
   tags: ['autodocs'],
   argTypes: {
