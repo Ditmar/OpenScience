@@ -10,7 +10,7 @@ export interface TextFieldWrapperProps {
   hint?: string;
   error?: boolean;
   disabled?: boolean;
-  status?: "error" | "success" | null;
+  status?: 'error' | 'success' | null;
   size?: 'small' | 'medium' | 'large';
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
