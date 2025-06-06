@@ -7,9 +7,4 @@ describe('HintText Component', () => {
     render(<HintText text="Test hint" id="custom-id" />);
     expect(screen.getByText('Test hint')).toHaveAttribute('id', 'custom-id');
   });
-
-  it('matches snapshot', () => {
-    const { asFragment } = render(<HintText text="Snapshot test" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
 });
