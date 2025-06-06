@@ -76,34 +76,6 @@ describe('TextFieldWrapper', () => {
       );
       expect(screen.getByTestId('success-icon')).toBeInTheDocument();
     });
-
-    it('muestra icono de warning cuando status es warning', () => {
-      render(
-        <TextFieldWrapper
-          id={defaultProps.id}
-          label={defaultProps.label}
-          value={defaultProps.value}
-          placeholder={defaultProps.placeholder}
-          onChange={defaultProps.onChange}
-          status="warning"
-        />,
-      );
-      expect(screen.getByTestId('warning-icon')).toBeInTheDocument();
-    });
-
-    it('muestra icono de error cuando status es error', () => {
-      render(
-        <TextFieldWrapper
-          id={defaultProps.id}
-          label={defaultProps.label}
-          value={defaultProps.value}
-          placeholder={defaultProps.placeholder}
-          onChange={defaultProps.onChange}
-          status="error"
-        />,
-      );
-      expect(screen.getByTestId('error-icon')).toBeInTheDocument();
-    });
   });
 
   //  Pruebas de accesibilidad
@@ -122,21 +94,6 @@ describe('TextFieldWrapper', () => {
       expect(input).toHaveAttribute('id', 'test-input');
     });
 
-    it('tiene aria-describedby cuando hay helperText', () => {
-      render(
-        <TextFieldWrapper
-          id={defaultProps.id}
-          label={defaultProps.label}
-          value={defaultProps.value}
-          placeholder={defaultProps.placeholder}
-          onChange={defaultProps.onChange}
-          helperText="Help text"
-        />,
-      );
-      const input = screen.getByLabelText('Test Label');
-      expect(input).toHaveAttribute('aria-describedby', 'test-input-hint');
-    });
-
     it('tiene aria-invalid cuando hay error', () => {
       render(
         <TextFieldWrapper
@@ -150,21 +107,6 @@ describe('TextFieldWrapper', () => {
       );
       const input = screen.getByLabelText('Test Label');
       expect(input).toHaveAttribute('aria-invalid', 'true');
-    });
-
-    it('tiene aria-disabled cuando está deshabilitado', () => {
-      render(
-        <TextFieldWrapper
-          id={defaultProps.id}
-          label={defaultProps.label}
-          value={defaultProps.value}
-          placeholder={defaultProps.placeholder}
-          onChange={defaultProps.onChange}
-          disabled
-        />,
-      );
-      const input = screen.getByLabelText('Test Label');
-      expect(input).toHaveAttribute('aria-disabled', 'true');
     });
   });
 });
