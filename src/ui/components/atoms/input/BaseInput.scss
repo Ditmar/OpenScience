@@ -1,0 +1,86 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/globals';
+
+.base-input {
+  &__outlined-root {
+    border-radius: $ads-border-radius-rounded;
+    transition: border-color 0.2s ease;
+
+    fieldset {
+      border-color: $ads-input-border-color;
+    }
+
+    // Estados específicos devem vir antes do hover
+    &--focused fieldset {
+      border-color: $ads-color-primary;
+      box-shadow: 0 0 0 2px rgba($ads-color-primary, 0.2);
+    }
+
+    &--error fieldset {
+      border-color: $ads-color-negative !important;
+    }
+
+    &--disabled fieldset {
+      background-color: $ads-color-background-disabled;
+      border-color: $ads-input-disabled-border-color;
+    }
+
+    &--success fieldset {
+      border-color: $ads-color-positive;
+    }
+
+    // Hover deve vir depois dos estados específicos
+    &:hover fieldset {
+      border-color: $ads-color-black-300;
+    }
+  }
+
+  &__input-base {
+    &--size-small {
+      font-size: $ads-paragraph-xs;
+      padding: 8px 10px;
+    }
+
+    &--size-medium {
+      font-size: $ads-paragraph-sm;
+      padding: 12px 14px;
+    }
+  }
+
+  &__input {
+    color: $ads-text-main;
+
+    &::placeholder {
+      color: $ads-input-hint-color;
+      opacity: 1;
+    }
+
+    &:disabled {
+      color: $ads-input-disabled-color;
+      opacity: $ads-input-disabled-opacity;
+    }
+  }
+
+  &__helper-text {
+    &--error {
+      color: $ads-color-negative;
+    }
+  }
+
+  &__label {
+    color: $ads-icontextstat-color-text;
+
+    &--focused {
+      color: $ads-color-primary;
+    }
+
+    &--error {
+      color: $ads-color-negative;
+    }
+
+    &--disabled {
+      color: $ads-input-disabled-color;
+    }
+  }
+}
