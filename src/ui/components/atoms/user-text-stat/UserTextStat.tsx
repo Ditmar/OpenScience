@@ -27,12 +27,12 @@ function UserTextStat({
   className,
   avatarUrl,
   showCheckbox,
-  styleVariant = 'white', // ✅ nuevo prop visual, con valor por defecto
+  styleVariant = 'white',
 }: UserTextStatProps): JSX.Element {
-  const styleVariantClass = styles[styleVariant] ?? ''; // busca .white, .lavender, .gray
+  const styleVariantClass = styles[styleVariant] ?? '';
 
   const classNames = [
-    styles.userTextStatCard,
+    styles['user-text-stat'],
     styleVariantClass,
     variantClasses[variant],
     sizeClasses[size],
