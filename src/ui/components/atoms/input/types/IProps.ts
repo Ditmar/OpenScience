@@ -12,4 +12,5 @@ export interface IInputProps {
   error?: boolean;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
+  size?: 'small' | 'medium' | 'large';
 }
