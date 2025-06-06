@@ -166,6 +166,5 @@ describe('TextFieldWrapper', () => {
       const input = screen.getByLabelText('Test Label');
       expect(input).toHaveAttribute('aria-disabled', 'true');
     });
-
   });
 });
