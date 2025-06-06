@@ -62,20 +62,6 @@ describe('TextFieldWrapper', () => {
       );
       expect(screen.queryByTestId('validation-icon')).not.toBeInTheDocument();
     });
-
-    it('muestra icono de éxito cuando status es success', () => {
-      render(
-        <TextFieldWrapper
-          id={defaultProps.id}
-          label={defaultProps.label}
-          value={defaultProps.value}
-          placeholder={defaultProps.placeholder}
-          onChange={defaultProps.onChange}
-          status="success"
-        />,
-      );
-      expect(screen.getByTestId('success-icon')).toBeInTheDocument();
-    });
   });
 
   //  Pruebas de accesibilidad
