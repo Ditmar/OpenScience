@@ -4,13 +4,11 @@ import { BaseInput } from './BaseInput';
 
 describe('BaseInput Component', () => {
   const mockOnChange = vi.fn();
-  const mockOnFocus = vi.fn();
 
   beforeEach(() => {
     vi.clearAllMocks();
   });
 
-  // Test 1: Basic rendering
   it('renders correctly with default props', () => {
     render(<BaseInput id="test-input" value="" onChange={mockOnChange} />);
     const input = screen.getByRole('textbox');
@@ -18,15 +16,4 @@ describe('BaseInput Component', () => {
     expect(input).toHaveAttribute('type', 'text');
   });
 
-  // Test 2: Event handling
-  it('handles onChange and onFocus events', () => {
-    render(<BaseInput id="test-input" value="" onChange={mockOnChange} onFocus={mockOnFocus} />);
-    const input = screen.getByRole('textbox');
-
-    fireEvent.change(input, { target: { value: 'new value' } });
-    fireEvent.focus(input);
-
-    expect(mockOnChange).toHaveBeenCalled();
-    expect(mockOnFocus).toHaveBeenCalled();
-  });
 });

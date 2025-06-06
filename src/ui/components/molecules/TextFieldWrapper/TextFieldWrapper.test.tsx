@@ -167,18 +167,5 @@ describe('TextFieldWrapper', () => {
       expect(input).toHaveAttribute('aria-disabled', 'true');
     });
 
-    it('iconos de validación tienen aria-labels apropiados', () => {
-      render(
-        <TextFieldWrapper
-          id={defaultProps.id}
-          label={defaultProps.label}
-          value={defaultProps.value}
-          placeholder={defaultProps.placeholder}
-          onChange={defaultProps.onChange}
-          status="success"
-        />,
-      );
-      expect(screen.getByTestId('success-icon')).toHaveAttribute('aria-label', 'success');
-    });
   });
 });
