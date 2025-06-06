@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { BaseInput } from './BaseInput';
 
 describe('BaseInput Component', () => {
@@ -15,5 +15,4 @@ describe('BaseInput Component', () => {
     expect(input).toBeInTheDocument();
     expect(input).toHaveAttribute('type', 'text');
   });
-
 });
