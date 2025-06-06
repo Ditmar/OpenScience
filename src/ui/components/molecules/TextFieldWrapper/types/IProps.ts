@@ -5,7 +5,7 @@ export interface TextFieldWrapperProps {
   label: string;
   value?: string;
   placeholder?: string;
-  helperText?: string
+  helperText?: string;
   type?: 'text' | 'email' | 'password';
   hint?: string;
   error?: boolean;
