@@ -10,7 +10,7 @@ import './TextFieldWrapper.scss';
 export function TextFieldWrapper({
   id,
   label,
-  value= 'text field',
+  value = 'text field',
   placeholder,
   helperText = '',
   type = 'email',
@@ -41,7 +41,7 @@ export function TextFieldWrapper({
         type={type}
         error={error}
         disabled={disabled}
-        size={size} 
+        size={size}
         endIcon={<ValidationIcons status={status} />}
         className="text-field-wrapper__outlined-input"
         InputProps={{
