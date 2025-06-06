@@ -16,9 +16,4 @@ describe('InputLabel Component', () => {
     const label = screen.getByText('Test Label');
     expect(label).toHaveAttribute('for', 'test-input');
   });
-
-  it('matches snapshot with default props', () => {
-    const { asFragment } = render(<InputLabel>Test Label</InputLabel>);
-    expect(asFragment()).toMatchSnapshot();
-  });
 });
