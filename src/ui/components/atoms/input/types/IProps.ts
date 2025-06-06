@@ -3,7 +3,7 @@ import type { ChangeEvent, FocusEvent, ReactNode } from 'react';
 export interface IInputProps {
   id?: string;
   placeholder?: string;
-  type?: 'text' | 'email' | 'password' ;
+  type?: 'text' | 'email' | 'password';
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void;

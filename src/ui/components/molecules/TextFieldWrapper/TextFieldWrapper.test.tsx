@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import '@testing-library/jest-dom';
 import { TextFieldWrapper } from './TextFieldWrapper';
-import type { TextFieldWrapperProps } from './types/IProps'; 
+import type { TextFieldWrapperProps } from './types/IProps';
 
 describe('TextFieldWrapper', () => {
   const defaultProps: TextFieldWrapperProps = {
@@ -23,7 +23,7 @@ describe('TextFieldWrapper', () => {
           value={defaultProps.value}
           placeholder={defaultProps.placeholder}
           onChange={defaultProps.onChange}
-        />
+        />,
       );
 
       expect(screen.getByLabelText('Test Label')).toBeInTheDocument();
@@ -41,7 +41,7 @@ describe('TextFieldWrapper', () => {
           placeholder={defaultProps.placeholder}
           onChange={defaultProps.onChange}
           helperText="Helper text"
-        />
+        />,
       );
       expect(screen.getByText('Helper text')).toBeInTheDocument();
     });
@@ -58,7 +58,7 @@ describe('TextFieldWrapper', () => {
           placeholder={defaultProps.placeholder}
           onChange={defaultProps.onChange}
           status={null}
-        />
+        />,
       );
       expect(screen.queryByTestId('validation-icon')).not.toBeInTheDocument();
     });
@@ -72,7 +72,7 @@ describe('TextFieldWrapper', () => {
           placeholder={defaultProps.placeholder}
           onChange={defaultProps.onChange}
           status="success"
-        />
+        />,
       );
       expect(screen.getByTestId('success-icon')).toBeInTheDocument();
     });
@@ -86,7 +86,7 @@ describe('TextFieldWrapper', () => {
           placeholder={defaultProps.placeholder}
           onChange={defaultProps.onChange}
           status="warning"
-        />
+        />,
       );
       expect(screen.getByTestId('warning-icon')).toBeInTheDocument();
     });
@@ -100,7 +100,7 @@ describe('TextFieldWrapper', () => {
           placeholder={defaultProps.placeholder}
           onChange={defaultProps.onChange}
           status="error"
-        />
+        />,
       );
       expect(screen.getByTestId('error-icon')).toBeInTheDocument();
     });
@@ -116,7 +116,7 @@ describe('TextFieldWrapper', () => {
           value={defaultProps.value}
           placeholder={defaultProps.placeholder}
           onChange={defaultProps.onChange}
-        />
+        />,
       );
       const input = screen.getByLabelText('Test Label');
       expect(input).toHaveAttribute('id', 'test-input');
@@ -131,7 +131,7 @@ describe('TextFieldWrapper', () => {
           placeholder={defaultProps.placeholder}
           onChange={defaultProps.onChange}
           helperText="Help text"
-        />
+        />,
       );
       const input = screen.getByLabelText('Test Label');
       expect(input).toHaveAttribute('aria-describedby', 'test-input-hint');
@@ -146,7 +146,7 @@ describe('TextFieldWrapper', () => {
           placeholder={defaultProps.placeholder}
           onChange={defaultProps.onChange}
           error
-        />
+        />,
       );
       const input = screen.getByLabelText('Test Label');
       expect(input).toHaveAttribute('aria-invalid', 'true');
@@ -161,7 +161,7 @@ describe('TextFieldWrapper', () => {
           placeholder={defaultProps.placeholder}
           onChange={defaultProps.onChange}
           disabled
-        />
+        />,
       );
       const input = screen.getByLabelText('Test Label');
       expect(input).toHaveAttribute('aria-disabled', 'true');
@@ -176,7 +176,7 @@ describe('TextFieldWrapper', () => {
           placeholder={defaultProps.placeholder}
           onChange={defaultProps.onChange}
           status="success"
-        />
+        />,
       );
       expect(screen.getByTestId('success-icon')).toHaveAttribute('aria-label', 'success');
     });
