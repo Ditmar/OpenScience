@@ -1,0 +1,12 @@
+.validation-icon {
+  font-size: 1.25rem;
+  margin-left: 8px;
+
+  &--success {
+    color: var(--success-color);
+  }
+
+  &--error {
+    color: var(--error-color);
+  }
+}
