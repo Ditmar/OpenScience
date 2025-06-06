@@ -13,7 +13,7 @@ export function TextFieldWrapper({
   value,
   placeholder,
   helperText = '',
-  type = 'text',
+  type = 'email',
   error = false,
   disabled = false,
   status = null,
