@@ -2,67 +2,49 @@ import { render, screen } from '@testing-library/react';
 import TextArrangement from './TextArrangement';
 import styles from './TextArrangement.module.scss';
 
-describe('TextArrangement Component Tests', () => {
-  describe('Unit tests - Rendering according to props', () => {
-    test('Apply layout columns class', () => {
-      render(<TextArrangement layout="columns" data-testid="container" />);
-      const container = screen.getByTestId('container');
-      expect(container).toHaveClass(styles.container);
-      expect(container).toHaveClass(styles['layout-columns']);
-    });
+const baseProps = {
+  content: {
+    title: 'Título de prueba',
+    text: 'Texto de prueba',
+  },
+};
 
-    test('Apply mobile responsive class', () => {
-      render(<TextArrangement responsive="mobile" data-testid="container" />);
-      const container = screen.getByTestId('container');
-      expect(container).toHaveClass(styles['responsive-mobile']);
-    });
+describe('TextArrangement - layouts', () => {
+  it('renders correctly in standard layout', () => {
+    render(<TextArrangement content={baseProps.content} layout="standard" />);
+    expect(screen.getByText('Título de prueba')).toBeInTheDocument();
+    expect(screen.getByText('Texto de prueba')).toBeInTheDocument();
   });
 
-  describe('Accessibility basic tests', () => {
-    test('It has a title with the correct text', () => {
-      const { container } = render(
-        <TextArrangement title="Accessible Title" description="Description" />,
-      );
-      const title = container.querySelector('div');
-      const children = title?.children ? Array.from(title.children) : [];
-      const found = children.some((child) => child.textContent?.includes('Accessible Title'));
-      expect(found).toBe(true);
-    });
-
-    test('Renders the accessible title correctly', () => {
-      const { container } = render(
-        <TextArrangement title="Accessible Title" description="Description" />,
-      );
-      const title = container.querySelector('div');
-      const children = title?.children ? Array.from(title.children) : [];
-      const found = children.some((child) => child.textContent?.includes('Accessible Title'));
-      expect(found).toBe(true);
-    });
-
-    test('The main container exists', () => {
-      render(<TextArrangement data-testid="container" />);
-      const container = screen.getByTestId('container');
-      expect(container).toBeInTheDocument();
-    });
+  it('renders correctly in layout columns', () => {
+    render(<TextArrangement content={baseProps.content} layout="columns" />);
+    expect(screen.getByText('Título de prueba')).toBeInTheDocument();
   });
 
-  describe('Responsiveness tests', () => {
-    test('Apply responsive class for mobile', () => {
-      render(<TextArrangement responsive="mobile" data-testid="container" />);
-      const container = screen.getByTestId('container');
-      expect(container).toHaveClass(styles['responsive-mobile']);
-    });
+  it('renders correctly in layout featured', () => {
+    render(<TextArrangement content={baseProps.content} layout="featured" />);
+    expect(screen.getByText('Título de prueba')).toBeInTheDocument();
+  });
 
-    test('aplica clase responsive para tablet', () => {
-      render(<TextArrangement responsive="tablet" data-testid="container" />);
-      const container = screen.getByTestId('container');
-      expect(container).toHaveClass(styles['responsive-tablet']);
-    });
+  it('renders correctly in layout cards', () => {
+    render(<TextArrangement content={baseProps.content} layout="cards" />);
+    expect(screen.getByText('Título de prueba')).toBeInTheDocument();
+  });
+});
 
-    test('aplica clase responsive para desktop', () => {
-      render(<TextArrangement responsive="desktop" data-testid="container" />);
-      const container = screen.getByTestId('container');
-      expect(container).toHaveClass(styles['responsive-desktop']);
-    });
+describe('TextArrangement - accesibilidad', () => {
+  it('use semantic elements for the title and text', () => {
+    render(<TextArrangement content={baseProps.content} layout="standard" />);
+    const heading = screen.getByText('Título de prueba');
+    expect(heading.tagName).toMatch(/^H[1-6]$/);
+    const paragraph = screen.getByText('Texto de prueba');
+    expect(['P', 'H2']).toContain(paragraph.tagName);
+  });
+});
+
+describe('TextArrangement - responsivo', () => {
+  it('apply the columns layout class', () => {
+    const { container } = render(<TextArrangement content={baseProps.content} layout="columns" />);
+    expect(container.firstChild).toHaveClass(styles.columns);
   });
 });
