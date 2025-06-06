@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import TextCardList from './TextCardList';
 
 const meta: Meta<typeof TextCardList> = {
-  title: 'ui/components/atoms/TextCardList',
+  title: 'ui/components/molecules/TextCardList',
   component: TextCardList,
   argTypes: {
     variant: {
