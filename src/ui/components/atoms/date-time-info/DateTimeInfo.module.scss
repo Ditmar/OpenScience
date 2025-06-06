@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import '../../../../globals/breakpoints';
+@import '../../../../globals/globals.scss';
+@import '../../../../globals/mixins';
+
+.container {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  gap: 0.5rem;
+
+  .icon {
+    align-items: center;
+    display: flex;
+    height: 20px;
+    justify-content: center;
+    line-height: 0;
+    padding: 2px;
+    width: 20px;
+
+    & * {
+      display: block;
+      fill: var(--color-neutral-gray-strong-200);
+      height: 100%;
+      margin: 0 auto;
+      stroke: none;
+      width: 100%;
+    }
+  }
+
+  .text {
+    background: transparent;
+    border: none;
+    color: var(--color-neutral-gray-strong-200);
+    cursor: pointer;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  &.icon-right {
+    flex-direction: row-reverse;
+    gap: 0.4rem;
+  }
+
+  &.size--large {
+    .icon {
+      height: 1.7rem;
+      padding: 0.1rem;
+      width: 1.7rem;
+    }
+
+    .text {
+      font-size: 1.25rem;
+    }
+  }
+
+  &.size--medium {
+    .icon {
+      height: 1.325rem;
+      padding: 0.1rem;
+      width: 1.325rem;
+    }
+
+    .text {
+      font-size: 1rem;
+    }
+  }
+
+  &.size--small {
+    .icon {
+      height: 0.95rem;
+      padding: 0.1rem;
+      width: 0.95rem;
+    }
+
+    .text {
+      font-size: 0.75rem;
+    }
+  }
+
+  @include respond-to('extra-large') {
+    .icon {
+      height: 1.95rem;
+      padding: 0.1rem;
+      width: 1.95rem;
+    }
+
+    .text {
+      font-size: 1.375rem;
+    }
+  }
+
+  @include respond-to('large') {
+    .icon {
+      height: 1.7rem;
+      padding: 0.1rem;
+      width: 1.7rem;
+    }
+
+    .text {
+      font-size: 1.25rem;
+    }
+  }
+
+  @include respond-to('large-tablet') {
+    .icon {
+      height: 2.45rem;
+      padding: 0.1rem;
+      width: 2.45rem;
+    }
+
+    .text {
+      font-size: 1.5rem;
+    }
+  }
+
+  @include respond-to('medium') {
+    .icon {
+      height: 1.325rem;
+      padding: 0.1rem;
+      width: 1.325rem;
+    }
+
+    .text {
+      font-size: 1rem;
+    }
+  }
+
+  @include respond-to('small') {
+    padding: 0 0.4rem;
+    width: 100%;
+
+    .icon {
+      height: 1.1rem;
+      padding: 0.1rem;
+      width: 1.1rem;
+    }
+
+    .text {
+      font-size: 0.9rem;
+    }
+  }
+
+  @include respond-to('small-mobile') {
+    .icon {
+      height: 0.9rem;
+      padding: 0.1rem;
+      width: 0.9rem;
+    }
+
+    .text {
+      font-size: 0.7rem;
+    }
+  }
+
+  @include respond-to('small-mobile-large') {
+    .icon {
+      height: 1.05rem;
+      padding: 0.1rem;
+      width: 1.05rem;
+    }
+
+    .text {
+      font-size: 0.85rem;
+    }
+  }
+}
