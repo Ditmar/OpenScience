@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Title from './Title';
 
 const meta: Meta<typeof Title> = {
-  title: 'library/component/atoms/title',
+  title: 'ui/components/atoms/title',
   component: Title,
 };
 
@@ -41,6 +41,15 @@ export const ExtraLarge: Story = {
   args: {
     text: 'Harmonizing Human Experience: The Artistry of UI-UX Design',
     size: 'xl',
+    weight: 'regular',
+    spacing: 'default',
+  },
+};
+
+export const ExtraExtraLarge: Story = {
+  args: {
+    text: 'Harmonizing Human Experience: The Artistry of UI-UX Design',
+    size: 'xxl',
     weight: 'regular',
     spacing: 'default',
   },

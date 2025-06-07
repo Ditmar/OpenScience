@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import DisplayAndSubtitle from './DisplayAndSubTitle';
 
 const meta: Meta<typeof DisplayAndSubtitle> = {
-  title: 'library/component/molecules/display-and-sub-title',
+  title: 'ui/components/molecules/display-and-sub-title',
   component: DisplayAndSubtitle,
 };
 
@@ -66,12 +66,24 @@ export const ExtraLarge: Story = {
   },
 };
 
+export const ExtraExtraLarge: Story = {
+  args: {
+    title: 'Harmonizing Human Experience: The Artistry of UI-UX Design',
+    subtitle: `I is the canvas, UX the brushstroke; together, they craft an immersive journey where every pixel 
+    tells a story of elegance, efficiency, and effortless delight. It's the artistry of design at its finest.`,
+    size: 'xxl',
+    weight: 'regular',
+    spacing: 'default',
+    alignment: 'left',
+  },
+};
+
 export const Left: Story = {
   args: {
     title: 'Harmonizing Human Experience: The Artistry of UI-UX Design',
     subtitle: `I is the canvas, UX the brushstroke; together, they craft an immersive journey where every pixel 
     tells a story of elegance, efficiency, and effortless delight. It's the artistry of design at its finest.`,
-    size: 'lg',
+    size: 'xl',
     weight: 'regular',
     spacing: 'default',
     alignment: 'left',
@@ -83,7 +95,7 @@ export const Center: Story = {
     title: 'Harmonizing Human Experience: The Artistry of UI-UX Design',
     subtitle: `I is the canvas, UX the brushstroke; together, they craft an immersive journey where every pixel 
     tells a story of elegance, efficiency, and effortless delight. It's the artistry of design at its finest.`,
-    size: 'lg',
+    size: 'xl',
     weight: 'regular',
     spacing: 'default',
     alignment: 'center',
@@ -95,7 +107,7 @@ export const Right: Story = {
     title: 'Harmonizing Human Experience: The Artistry of UI-UX Design',
     subtitle: `I is the canvas, UX the brushstroke; together, they craft an immersive journey where every pixel 
     tells a story of elegance, efficiency, and effortless delight. It's the artistry of design at its finest.`,
-    size: 'lg',
+    size: 'xl',
     weight: 'regular',
     spacing: 'default',
     alignment: 'right',

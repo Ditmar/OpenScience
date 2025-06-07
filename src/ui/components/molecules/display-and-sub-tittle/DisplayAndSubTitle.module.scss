@@ -1,6 +1,13 @@
 .display-and-subtitle {
   margin: auto;
-  max-width: 73.125rem;
+
+  &.sm, &.md, &.lg {
+    max-width: 38.813rem;
+  }
+
+  &.xl, &.xxl {
+    max-width: 73.125rem;
+  }
 
   &.left {
     text-align: left;

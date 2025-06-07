@@ -8,13 +8,13 @@ function DisplayAndSubtitle(props: IProps) {
   const {
     title,
     subtitle,
-    size = 'lg',
+    size = 'xl',
     weight = 'regular',
     spacing = 'default',
     alignment = 'left',
   } = props;
   return (
-    <div className={`${styles['display-and-subtitle']} ${styles[alignment]}`}>
+    <div className={`${styles['display-and-subtitle']} ${styles[alignment]} ${styles[size]}`}>
       <Title text={title} size={size} weight={weight} spacing={spacing} />
       {subtitle && <SubTitle text={subtitle} size={size} />}
     </div>
