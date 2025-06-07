@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import SubTitle from './SubTitle';
 
 const meta: Meta<typeof SubTitle> = {
-  title: 'library/component/atoms/subtitle',
+  title: 'ui/components/atoms/subtitle',
   component: SubTitle,
 };
 
@@ -39,5 +39,13 @@ export const ExtraLarge: Story = {
     text: `I is the canvas, UX the brushstroke; together, they craft an immersive journey where every pixel 
     tells a story of elegance, efficiency, and effortless delight. It's the artistry of design at its finest.`,
     size: 'xl',
+  },
+};
+
+export const ExtraExtraLarge: Story = {
+  args: {
+    text: `I is the canvas, UX the brushstroke; together, they craft an immersive journey where every pixel 
+    tells a story of elegance, efficiency, and effortless delight. It's the artistry of design at its finest.`,
+    size: 'xxl',
   },
 };
