@@ -58,7 +58,7 @@ export const Default: Story = {
     title: 'Welcome to OpenScience',
     subtitle: 'Discover the latest research and scientific breakthroughs from around the world',
     size: 'md',
-    alignment: 'left',
+    alignment: 'center',
     variant: 'default',
     titleTag: 'h2',
     subtitleTag: 'p',
@@ -67,8 +67,11 @@ export const Default: Story = {
 
 export const SmallSize: Story = {
   args: {
-    title: 'Research Categories',
-    subtitle: 'Browse through different scientific fields',
+    title: 'Harmonizing Human Experience: The Artistry of UI-UX Design',
+    subtitle:
+      'UI is the canvas, UX the brushstroke; together, they craft an immersive journey ' +
+      'where every pixel tells a story of elegance, efficiency, and effortless delight. ' +
+      'It is the artistry of design at its finest.',
     size: 'sm',
     alignment: 'left',
     variant: 'default',
@@ -79,8 +82,11 @@ export const SmallSize: Story = {
 
 export const MediumSize: Story = {
   args: {
-    title: 'Latest Publications',
-    subtitle: 'Stay updated with recent scientific publications and papers',
+    title: 'Harmonizing Human Experience: The Artistry of UI-UX Design',
+    subtitle:
+      'UI is the canvas, UX the brushstroke; together, they craft an immersive journey ' +
+      'where every pixel tells a story of elegance, efficiency, and effortless delight. ' +
+      'It is the artistry of design at its finest.',
     size: 'md',
     alignment: 'left',
     variant: 'default',
@@ -91,8 +97,11 @@ export const MediumSize: Story = {
 
 export const LargeSize: Story = {
   args: {
-    title: 'Open Science Platform',
-    subtitle: 'Advancing scientific knowledge through collaboration and open access',
+    title: 'Harmonizing Human Experience: The Artistry of UI-UX Design',
+    subtitle:
+      'UI is the canvas, UX the brushstroke; together, they craft an immersive journey ' +
+      'where every pixel tells a story of elegance, efficiency, and effortless delight. ' +
+      'It is the artistry of design at its finest.',
     size: 'lg',
     alignment: 'center',
     variant: 'default',
