@@ -1,0 +1,66 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.ghost-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-transform: none;
+
+  &:hover {
+    background-color: $ads-icontextstat-color-title;
+    text-decoration: underline;
+  }
+
+  &:disabled {
+    color: $ads-icontextstat-color-text;
+    cursor: not-allowed;
+  }
+}
+
+.primary {
+  color: $ads-primary-main;
+}
+
+.dark {
+  color: $ads-text-main; 
+}
+
+.intenseviolet {
+  color: $ads-stroke-primary;
+}
+
+.violet {
+  color: $ads-stroke-secondary;
+}
+
+.teritary {
+  color: $ads-stroke-disabled;
+}
+
+.green {
+  color: $ads-stroke-positive;
+}
+
+.red {
+  color: $ads-danger-main;
+}
+
+.yellow {
+  color: $ads-warning-main;
+}
+
+.size-small {
+  font-size: 14px;
+  padding: 4px 12px;
+}
+
+.size-medium {
+  font-size: 18px;
+  padding: 6px 16px;
+}
+
+.size-large {
+  font-size: 20px;
+  padding: 8px 20px;
+}
