@@ -5,6 +5,9 @@ on:
     branches:
       - '**'
 
+env:
+  BASE_URL: https://${{ github.repository_owner }}.github.io/openscience/
+
 jobs:
 
   quality-checks:
@@ -90,9 +93,9 @@ jobs:
       - name: Show Storybook URL
         run: |
           if [ "${{ github.ref_name }}" = "main" ]; then
-            echo "Storybook is available at https://openscience.github.io/openscience-storybook/"
+            echo "Storybook is available at ${{ env.BASE_URL }}"
           else
-            echo "Storybook is available at https://openscience.github.io/openscience-storybook/${{ steps.sanitize_branch_name.outputs.SANITIZED_BRANCH_NAME }}/"
+            echo "Storybook is available at ${{ env.BASE_URL }}/${{ steps.sanitize_branch_name.outputs.SANITIZED_BRANCH_NAME }}/"
           fi
       - name: Clean storybook folder
         run: rm -rf ./storybook-static
