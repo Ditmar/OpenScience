@@ -6,7 +6,7 @@ on:
       - '**'
 
 env:
-  BASE_URL: https://KEVIN-117.github.io/OpenScience
+  BASE_URL: https://ditmar.github.io/OpenScience/
 
 jobs:
 
