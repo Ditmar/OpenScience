@@ -50,7 +50,7 @@ src/
 │       ├── article.svg
 │       └── ...
 ├── ui/
-│   └── components/
+│   └── utils/
 │       └── Icons/
 │           ├── Icon.tsx
 │           ├── types/
@@ -103,27 +103,44 @@ export type IconName =
 ### 2. Dynamic Import Hook
 
 ```ts
+// loadSvgIcon.ts
+import type { DynamicIcon } from './types/IconType';
+
+export async function loadSvgIcon(iconName: string): Promise<DynamicIcon> {
+  const module = (await import(`../../../assets/icons/${iconName}.svg?react`)) as {
+    default: DynamicIcon;
+  };
+  return module.default;
+}
+```
+
+```ts
 // useDynamic.ts
-import { useState, useEffect, type FunctionComponent } from 'react';
-import type { IconName } from './types/IProps';
+import { useEffect, useState } from 'react';
+import type { IconName } from '../vite-svgr/types/IProps';
+import type { DynamicIcon } from '../vite-svgr/types/IconType';
+import { loadSvgIcon } from '../vite-svgr/loadSvgIcon';
 
-export function useDynamic(iconName: IconName) {
-  const [DynamicComponent, setDynamicComponent] = useState<FunctionComponent<
-    React.SVGProps<SVGSVGElement>
-  > | null>(null);
-  const [loading, setLoading] = useState(true);
+export function useDynamicIcon(iconName: IconName) {
+  const [IconComponent, setIconComponent] = useState<DynamicIcon>(null);
+  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<unknown>(null);
-
   useEffect(() => {
     setLoading(true);
     setError(null);
-    import(`../../../assets/icons/${iconName}.svg?react`)
-      .then((mod) => setDynamicComponent(() => mod.default))
-      .catch((err) => setError(err))
-      .finally(() => setLoading(false));
-  }, [iconName]);
 
-  return [DynamicComponent, setDynamicComponent, loading, error] as const;
+    loadSvgIcon(iconName)
+      .then((component) => {
+        setIconComponent(() => component);
+      })
+      .catch((caughtError: unknown) => {
+        setError(caughtError);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [iconName]);
+  return [IconComponent, setIconComponent, loading, error] as const;
 }
 ```
 
@@ -133,26 +150,25 @@ export function useDynamic(iconName: IconName) {
 
 ```tsx
 // Icon.tsx
-import { useDynamic } from './useDynamic';
+import { useDynamicIcon } from '../hooks/useDynamicIcon';
 import type { IconProps } from './types/IProps';
-
-function LoadingComponent({ titulo }: { titulo: string }) {
-  return <div>Loading {titulo}...</div>;
-}
+import { Loader } from './Loader';
 
 export function Icon({ iconName, ...props }: IconProps) {
-  const [DynamicComponent] = useDynamic(iconName);
+  const [DynamicComponent] = useDynamicIcon(iconName);
 
   return (
     <div>
       {DynamicComponent ? (
-        <DynamicComponent width={100} height={100} stroke="red" {...props} />
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        <DynamicComponent {...props} />
       ) : (
-        <LoadingComponent titulo="icon" />
+        <Loader />
       )}
     </div>
   );
 }
+
 ```
 
 ---
@@ -165,51 +181,50 @@ The SVGs can be styled via props:
 <Icon iconName="logo" width="48" height="48" fill="currentColor" />
 ```
 
-Use `fill`, `stroke`, `width`, `height`, or className to control appearance.
+Use `fill`, `stroke`, `width`, `height`, className to control appearance.
+
+Reference the [SVG attribute styling documentation](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute) for more details.
 
 ---
 
-## 📖 Storybook Integration
+## More Examples
 
-A Storybook section has been added to demonstrate and document icon usage.
-
-### Example Story
-
-```tsx
-// Icon.stories.tsx
-import type { Meta, StoryObj } from '@storybook/react';
-import { Icon } from './Icon';
-
-const meta: Meta<typeof Icon> = {
-  component: Icon,
-  title: 'Components/Icon',
-  args: {
-    iconName: 'logo',
-    width: 48,
-    height: 48,
-    fill: '#0077cc',
-  },
-};
-
-export default meta;
-type Story = StoryObj<typeof Icon>;
-
-export const Default: Story = {};
-
-export const CustomColor: Story = {
-  args: {
-    fill: '#ff5722',
-  },
-};
-
-export const Responsive: Story = {
-  args: {
-    width: '100%',
-    height: 'auto',
-  },
-};
+```astro
+<Icon iconName="logo" width="48" height="48" fill="currentColor" />
+<Icon iconName="home" width="24" height="24" fill="#000" />
+<Icon iconName="facebook" width="32" height="32" fill="#3b5998" />
+<Icon iconName="downloads" width="20" height="20" fill="#4CAF50" />
+<Icon iconName="start" width="16" height="16" fill="#FF9800" />
+<Icon iconName="volume" width="24" height="24" fill="#F44336" />
 ```
 
+### in react components:
+
+```tsx
+import { Icon } from 'path/to/ui/Icon/Component';
+export function MyComponent() {
+  return (
+    <div>
+      <Icon iconName="article" width="32" height="32" fill="currentColor" />
+      <Icon iconName="home" width="24" height="24" fill="#000" />
+    </div>
+  );
+}
+```
+
+```tsx
+import { Icon } from 'path/to/ui/Icon/Component';
+export function AnotherComponent() {
+  return (
+    <div>
+      <Icon iconName="facebook" width="32" height="32" fill="#3b5998" />
+      <Icon iconName="downloads" width="20" height="20" fill="#4CAF50" />
+      <Icon iconName="start" width="16" height="16" fill="#FF9800" />
+      <Icon iconName="volume" width="24" height="24" fill="#F44336" />
+    </div>
+  );
+}
+```
 ---
 
 ## 📌 Notes
