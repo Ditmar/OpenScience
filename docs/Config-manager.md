@@ -45,17 +45,17 @@ const configSchema = z.object({
   API_BASE_URL: z.string().url(),
   ENABLE_FEATURE_X: z.string().transform((v) => v === 'true'),
   NODE_ENV: z.enum(['development', 'production', 'test']),
-  //additional environment variables can be defined here
+  // additional environment variables can be defined here
 });
 
-const _parsed = configSchema.safeParse(process.env);
+const parsed = configSchema.safeParse(process.env);
 
-if (!_parsed.success) {
-  console.error('Invalid environment variables:', _parsed.error.format());
+if (!parsed.success) {
+  console.error('Invalid environment variables:', parsed.error.format());
   throw new Error('Invalid environment variables');
 }
 
-export const config = _parsed.data;
+export const config = parsed.data;
 export type AppConfig = z.infer<typeof configSchema>;
 ```
 
@@ -82,23 +82,26 @@ export function configMiddleware(req: Request, res: Response, next: NextFunction
 [FILE](../src/server/index.ts): `src/server/index.ts`
 
 ```ts
-import express from 'express';
+import express, { type RequestHandler } from 'express';
 import { configMiddleware } from '../middleware/config-middleware';
 import { handler as astroHandler } from '../../dist/server/entry.mjs';
 
 const app = express();
 app.use(configMiddleware);
-app.use(async (req, res, next) => {
-  const handlerWithLocals = astroHandler({
-    locals: {
-      config: res.locals.config
-    }
-  });
 
-  if (typeof handlerWithLocals === 'function') {
-    return (handlerWithLocals as Function)(req, res, next);
+app.use((req, res, next) => {
+  const handler = astroHandler as unknown;
+
+  function isRequestHandler(fn: unknown): fn is RequestHandler {
+    return typeof fn === 'function';
   }
-  return handlerWithLocals;
+
+  if (isRequestHandler(handler)) {
+    handler(req, res, next);
+    return;
+  }
+
+  res.status(500).send('Internal Server Error');
 });
 ```
 

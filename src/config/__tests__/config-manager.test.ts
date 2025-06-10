@@ -1,5 +1,6 @@
 import { describe, expect, it, beforeEach, vi } from 'vitest';
 
+/* eslint-disable turbo/no-undeclared-env-vars */
 beforeEach(() => {
   vi.resetModules();
   process.env = {

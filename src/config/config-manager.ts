@@ -11,12 +11,12 @@ const configSchema = z.object({
   // additional environment variables can be defined here
 });
 
-const _parsed = configSchema.safeParse(process.env);
+const parsed = configSchema.safeParse(process.env);
 
-if (!_parsed.success) {
-  console.error('Invalid environment variables:', _parsed.error.format());
+if (!parsed.success) {
+  console.error('Invalid environment variables:', parsed.error.format());
   throw new Error('Invalid environment variables');
 }
 
-export const config = _parsed.data;
+export const config = parsed.data;
 export type AppConfig = z.infer<typeof configSchema>;
