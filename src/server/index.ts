@@ -7,8 +7,8 @@ app.use(configMiddleware);
 app.use(async (req, res, next) => {
   const handlerWithLocals = astroHandler({
     locals: {
-      config: res.locals.config
-    }
+      config: res.locals.config,
+    },
   });
 
   if (typeof handlerWithLocals === 'function') {
