@@ -1,3 +1,5 @@
+import type { AppConfig } from '../config/config-manager';
+
 export interface ArticlesApiResponse {
   data: {
     id: number;
@@ -18,4 +20,6 @@ export interface Locals {
   API_BASE_ROUTE: string;
   DOMAIN: string;
   collections: (API_ROUTE: string) => Promise<ArticlesApiResponse>;
+
+  config: AppConfig;
 }
