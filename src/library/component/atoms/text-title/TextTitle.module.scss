@@ -1,0 +1,54 @@
+@import '../../../../globals/typography';
+@import '../../../../globals/variables';
+@import '../../../../globals/fonts';
+
+.title {
+  color: $ads-paragraph-color-dark;
+  font-family: Poppins-Regular, sans-serif;
+  margin: 0 0 1.5rem;
+  padding: 0;
+
+  &.compact {
+    line-height: 1.1;
+  }
+
+  &.default {
+    line-height: 1.5;
+  }
+
+  &.spacious {
+    line-height: 1.8;
+  }
+
+  &.regular {
+    font-weight: $ads-font-weight-regular;
+  }
+
+  &.medium {
+    font-weight: $ads-font-weight-medium;
+  }
+
+  &.semibold {
+    font-weight: $ads-font-weight-semibold;
+  }
+
+  &.xs {
+    font-size: 1rem;
+  }
+
+  &.sm {
+    font-size: 1.5rem;
+  }
+
+  &.md {
+    font-size: 2.5rem;
+  }
+
+  &.lg {
+    font-size: 4.5rem;
+  }
+
+  &.xl {
+    font-size: 6rem;
+  }
+}
