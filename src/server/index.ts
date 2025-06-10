@@ -1,18 +1,21 @@
-import express from 'express';
+import express, { type RequestHandler } from 'express';
 import { configMiddleware } from '../middleware/config-middleware';
 import { handler as astroHandler } from '../../dist/server/entry.mjs';
 
 const app = express();
 app.use(configMiddleware);
-app.use(async (req, res, next) => {
-  const handlerWithLocals = astroHandler({
-    locals: {
-      config: res.locals.config,
-    },
-  });
 
-  if (typeof handlerWithLocals === 'function') {
-    return (handlerWithLocals as Function)(req, res, next);
+app.use((req, res, next) => {
+  const handler = astroHandler as unknown;
+
+  function isRequestHandler(fn: unknown): fn is RequestHandler {
+    return typeof fn === 'function';
   }
-  return handlerWithLocals;
+
+  if (isRequestHandler(handler)) {
+    handler(req, res, next);
+    return;
+  }
+
+  res.status(500).send('Internal Server Error');
 });
