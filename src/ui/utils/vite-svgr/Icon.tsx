@@ -9,7 +9,7 @@ export function Icon({ iconName, ...props }: IconProps) {
     <div>
       {DynamicComponent ? (
         // eslint-disable-next-line react/jsx-props-no-spreading
-        <DynamicComponent width={100} height={100} stroke="red" {...props} />
+        <DynamicComponent {...props} />
       ) : (
         <Loader />
       )}
