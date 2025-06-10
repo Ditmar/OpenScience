@@ -7,6 +7,7 @@ function TextCardStat({
   badgeColor,
   badgeNumber = 0,
   badgeAvatarUrl,
+  badgeAvatarAlt = 'Avatar',
   title,
   content,
 }: TextCardStatProps) {
@@ -18,12 +19,13 @@ function TextCardStat({
           icon={<Box className={styles['text-card__checkbox-icon']} />}
           checkedIcon={<Box className={styles['text-card__checkbox-checked-icon']} />}
           className={styles['text-card__checkbox']}
+          aria-label="Select card"
         />
 
         <Box className={styles['text-card__badge']} style={{ backgroundColor: badgeColor }}>
           {badgeAvatarUrl && (
             <Avatar
-              alt="Avatar"
+              alt={badgeAvatarAlt}
               src={badgeAvatarUrl}
               className={styles['text-card__badge-avatar']}
               variant="rounded"

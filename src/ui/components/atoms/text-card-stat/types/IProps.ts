@@ -7,6 +7,8 @@ export interface TextCardStatProps {
 
   badgeAvatarUrl?: string;
 
+  badgeAvatarAlt?: string;
+
   title: string;
 
   description: string;
