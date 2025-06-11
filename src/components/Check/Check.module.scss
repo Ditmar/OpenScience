@@ -1,0 +1,72 @@
+@import '../../globals/_variables.scss';
+
+
+.check {
+  width: 24px;
+  height: 24px;
+  border: 2px solid $ads-color-black-100;
+  border-radius: 15%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: $ads-color-white;
+
+  &:focus-visible {
+    outline: 2px solid $ads-color-black;
+    outline-offset: 2px;
+  }
+}
+
+.rounded {
+  border-radius: 50%;
+}
+
+.checked {
+  color: $ads-color-white;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.default {
+  border-color: $ads-color-black;
+}
+.default.checked {
+  background-color: $ads-color-black;
+}
+
+.success {
+  border-color: $ads-color-success;
+}
+.success.checked {
+  background-color: $ads-color-success;
+}
+
+.info {
+  border-color: $ads-color-info;
+}
+.info.checked {
+  background-color: $ads-color-info;
+}
+
+.warning {
+  border-color: $ads-color-warning;
+}
+.warning.checked {
+  background-color: $ads-color-warning;
+}
+
+.danger {
+  border-color: $ads-color-danger;
+}
+.danger.checked {
+  background-color: $ads-color-danger;
+}
+
+.icon {
+  stroke: $ads-color-white;
+}
