@@ -2,82 +2,42 @@
 @import '../../../../globals/mixins';
 @import '../../../../globals/globals';
 
-.badge {
+.badge__icon {
   align-items: center;
-  border: 1px solid transparent;
-  display: inline-flex;
-  font-family: Poppins, sans-serif;
-  font-size: $ads-font-size-primary;
-  gap: 0.25rem;
-  padding: 0.25rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  line-height: 0;
+}
 
-  // Child elements
-  &__icon,
-  &__image,
-  &__pill,
-  &__counter {
-    margin: 0 0.25rem;
-  }
-
-  &__image {
-    border-radius: 0%;
-    height: 24px;
-    width: 24px;
-  }
-
-  &__content {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  &__close-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: $ads-font-size-primary;
-    margin-left: 0.25rem;
-    padding: 4px;
-
-    svg {
-      fill: currentcolor;
-    }
-
-    &:hover {
-      background-color: $ads-icontextstat-color-title;
-    }
-  }
-
-  // Size modifiers
-  &--sm {
-    font-size: $ads-font-size-fifth;
-    padding: 0.125rem 0.375rem;
-  }
-
-  &--md {
-    font-size: $ads-font-size-primary;
-    padding: 0.25rem 0.5rem;
-  }
-
-  // Shape modifier
-  &--rounded {
-    border-radius: 8px;
-  }
-
-  // Variant modifiers
+.badge {
   &--filled {
-    background-color: $ads-background-main;
-    color: $ads-text-main;
+    &.badge--violet {
+      background-color: $ads-color-secondary;
+      color: $ads-color-main;
 
-    &:not(.badge--light) {
-      .badge__close-button svg {
-        fill: $ads-text-main;
+      .badge__icon,
+      .badge__counter {
+        color: $ads-color-main;
       }
     }
 
-    &.badge--light {
-      .badge__close-button svg {
-        fill: var(--color-neutral-black-900);
+    &.badge--blue {
+      background-color: var(--color-brand-primary-500);
+      color: $ads-color-main;
+
+      .badge__icon,
+      .badge__counter {
+        color: $ads-color-main;
+      }
+    }
+
+    &.badge--gray {
+      background-color: var(--color-neutral-gray-strong-800);
+      color: $ads-color-main;
+
+      .badge__icon,
+      .badge__counter {
+        color: $ads-color-main;
       }
     }
   }
@@ -85,37 +45,60 @@
   &--outline {
     background-color: transparent;
     border: 1px solid currentcolor;
+
+    &.badge--violet {
+      border-color: $ads-color-secondary;
+      color: $ads-color-main;
+
+      .badge__icon,
+      .badge__counter {
+        color: $ads-color-main;
+      }
+    }
+
+    &.badge--blue {
+      border-color: var(--color-brand-primary-500);
+      color: $ads-color-main;
+
+      .badge__icon,
+      .badge__counter {
+        color: $ads-color-main;
+      }
+    }
+
+    &.badge--gray {
+      border-color: var(--color-neutral-gray-strong-800);
+      color: $ads-color-main;
+
+      .badge__icon,
+      .badge__counter {
+        color: $ads-color-main;
+      }
+    }
   }
 
   &--soft {
-    background-color: $ads-background-color-black;
-    color: $ads-text-main;
-  }
+    background-color: $ads-color-dark-soft;
 
-  // Color modifiers
-  &--neutral {
-    background-color: var(--color-neutral-white-900);
-    color: $ads-text-main;
-  }
+    &.badge--violet {
+      color: $ads-color-secondary;
+    }
 
-  &--gray {
-    background-color: var(--color-neutral-gray-strong-800);
-    color: $ads-color-main;
-  }
+    &.badge--blue {
+      color: var(--color-brand-primary-500);
+    }
 
-  &--violet {
-    background-color: $ads-color-secondary;
-    color: $ads-color-main;
+    &.badge--gray {
+      color: var(--color-neutral-gray-strong-800);
+    }
   }
+}
 
-  &--blue {
-    background-color: var(--color-brand-primary-500);
-    color: $ads-color-main;
-  }
-
-  &--custom {
-    // Custom styles defined via props
-  }
+.badge__icon--x {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  line-height: 0;
 }
 
 .icon--small {
@@ -124,11 +107,11 @@
 }
 
 .icon--medium {
-  height: 24px;
-  width: 24px;
+  height: 20px;
+  width: 20px;
 }
 
 .icon--large {
-  height: 32px;
-  width: 32px;
+  height: 24px;
+  width: 24px;
 }

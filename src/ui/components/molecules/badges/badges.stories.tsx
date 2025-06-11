@@ -118,12 +118,3 @@ export const WithCounters: Story = {
   },
 };
 
-export const WithPill: Story = {
-  args: {
-    avatarSrc: 'https://i.pravatar.cc/150?img=13',
-    pillProps: {
-      text: 'Premium',
-      color: 'neutral-dark',
-    },
-  },
-};
