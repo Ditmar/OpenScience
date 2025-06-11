@@ -1,10 +1,11 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { describe, it, expect, vi } from 'vitest'; // <-- Cambiado
 import { Check } from './Check';
 
 describe('Check component', () => {
   it('calls onChange with true when clicked', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn(); // <-- Cambiado
     const { getByRole } = render(<Check checked={false} onChange={onChange} />);
     const checkbox = getByRole('checkbox');
     fireEvent.click(checkbox);
@@ -12,7 +13,7 @@ describe('Check component', () => {
   });
 
   it('does not call onChange when disabled', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
     const { getByRole } = render(<Check checked={false} disabled onChange={onChange} />);
     const checkbox = getByRole('checkbox');
     fireEvent.click(checkbox);
@@ -20,7 +21,7 @@ describe('Check component', () => {
   });
 
   it('handles keyboard Enter key', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
     const { getByRole } = render(<Check checked={false} onChange={onChange} />);
     const checkbox = getByRole('checkbox');
     fireEvent.keyDown(checkbox, { key: 'Enter' });
@@ -28,7 +29,7 @@ describe('Check component', () => {
   });
 
   it('handles keyboard Space key', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
     const { getByRole } = render(<Check checked={false} onChange={onChange} />);
     const checkbox = getByRole('checkbox');
     fireEvent.keyDown(checkbox, { key: ' ' });
