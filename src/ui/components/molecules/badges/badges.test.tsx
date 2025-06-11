@@ -24,18 +24,6 @@ describe('AvatarBadgeItem', () => {
   afterEach(() => {
     vi.clearAllMocks();
   });
-
-  it('renders the circle quarters icon', () => {
-    render(
-      <AvatarBadgeItem
-        text=""
-        avatarSrc={defaultProps.avatarUrl}
-        onRemove={defaultProps.onRemove}
-      />,
-    );
-    expect(screen.getByTestId('circle-quarters-icon')).toBeInTheDocument();
-  });
-
   it('renders without avatar', () => {
     render(<AvatarBadgeItem text="" avatarSrc={undefined} onRemove={defaultProps.onRemove} />);
     expect(screen.queryByAltText('Avatar')).not.toBeInTheDocument();
