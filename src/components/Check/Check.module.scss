@@ -1,18 +1,18 @@
 @import '../../globals/_variables.scss';
 
 
-.check {
-  width: 24px;
-  height: 24px;
+.check {  
+  align-items: center;
+  background-color: $ads-color-white;
   border: 2px solid $ads-color-black-100;
   border-radius: 15%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
+  display: inline-flex;
+  height: 24px;
+  justify-content: center;
   transition: all 0.2s ease;
-  background-color: $ads-color-white;
-
+  width: 24px;
+  
   &:focus-visible {
     outline: 2px solid $ads-color-black;
     outline-offset: 2px;
@@ -28,8 +28,8 @@
 }
 
 .disabled {
-  opacity: 0.5;
   cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .default {
