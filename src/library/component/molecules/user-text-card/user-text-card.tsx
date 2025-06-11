@@ -41,7 +41,7 @@ function UserTextCard(props: IProps) {
         {variant !== 'compact' && (
           <div className={styles.avatar}>
             {typeof avatar === 'string' ? (
-              <Avatar src={avatar} alt="Avatar" className={styles.avatar} variant="rounded" />
+              <Avatar src={avatar} alt="avatar" className={styles.avatar} variant="rounded" />
             ) : (
               avatar
             )}
