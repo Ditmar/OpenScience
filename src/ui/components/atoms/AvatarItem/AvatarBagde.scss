@@ -1,18 +1,24 @@
 .avatar-item {
-  border-radius: 0% !important; // !important para sobrescribir estilos de MUI
-
   &--small {
     height: 24px !important;
     width: 24px !important;
   }
 
   &--medium {
-    height: 40px !important;
-    width: 40px !important;
+    height: 28px !important;
+    width: 28px !important;
   }
 
   &--large {
-    height: 56px !important;
-    width: 56px !important;
+    height: 31px !important;
+    width: 31px !important;
+  }
+
+  &--default {
+    border-radius: 0 !important;
+  }
+
+  &--rounded {
+    border-radius: 8px !important;
   }
 }

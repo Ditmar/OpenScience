@@ -1,16 +1,14 @@
 import React from 'react';
-import CloseIcon from '@mui/icons-material/Close';
-import IconButton from '@mui/material/IconButton';
 import { Stack } from '@mui/material';
+import type { IProps } from 'library/component/atoms/pills/types/IProps';
 import { AvatarItem } from '../../atoms/AvatarItem/AvatarBagde';
 import { Text } from '../../atoms/Text/Text';
 import Pill from '../../../../library/component/atoms/pills/pills';
-import { IconCircleQuarters } from './Icon';
 import type { AvatarBadgeItemProps } from './types/IProps';
+import { Icon } from '../../../utils/vite-svgr/Icon';
 import './badges.scss';
 
-const getFontSize = (badgeSize: string) =>
-  badgeSize === 'small' ? '$ads-font-size-fifth' : '$ads-font-size-primary';
+const getFontSize = (badgeSize: string) => (badgeSize === 'small' ? '0.75rem' : '1rem');
 
 const getPillSize = (pillSizeArg: string) => {
   switch (pillSizeArg) {
@@ -34,11 +32,26 @@ const getBadgeSizeClass = (badgeSizeArg: string) => {
   }
 };
 
+const pillColorMap: Record<string, IProps['color']> = {
+  neutral: 'neutral-dark',
+  custom: 'neutral-dark',
+};
+
+const getMappedPillColor = (color: string, variant: string): IProps['color'] => {
+  if (variant === 'filled') {
+    if (color === 'neutral') return 'neutral-light';
+    return 'neutral-dark';
+  }
+
+  if (color === 'custom') return 'neutral-dark';
+  return pillColorMap[color] ?? 'read-only-disabled';
+};
+
 export function AvatarBadgeItem({
   avatarSrc,
-  text = 'test',
-  countStart = 0,
-  countEnd = 0,
+  text = 'Badge Text',
+  countStart = 100,
+  countEnd = 100,
   showAvatar = true,
   size = 'medium',
   bold = false,
@@ -55,11 +68,37 @@ export function AvatarBadgeItem({
     e.stopPropagation();
   };
 
+  const getIconSizeClass = (iconSize: 'small' | 'medium' | 'large' = 'medium') =>
+    `icon--${iconSize}`;
+
+  const colorMap: Record<string, string> = {
+    primary: '#0d6efd',
+    secondary: '#6c757d',
+    success: '#198754',
+    danger: '#dc3545',
+    warning: '#ffc107',
+    info: '#0dcaf0',
+    neutral: '#6c757d',
+    default: '#000',
+  };
+
+  const getTextColor = () => {
+    if (variant === 'filled') {
+      if (color === 'neutral') return '#fff';
+      return '#000';
+    }
+    if (color === 'custom' && customColor) return customColor;
+    return colorMap[color] || colorMap.default;
+  };
+
+  const getIconColor = () => getTextColor();
+
   const getContainerStyles = () => {
     const baseStyles = {
+      display: 'inline-flex',
       cursor: onClick ? 'pointer' : 'default',
       padding: size === 'small' ? '0.125rem 0.375rem' : '0.25rem 0.5rem',
-      borderRadius: shape === 'rounded' ? '8px' : '4px',
+      borderRadius: shape === 'rounded' ? '8px' : '0px',
       transition: 'all 0.2s ease',
       fontFamily: 'Poppins, sans-serif',
       fontSize: getFontSize(size),
@@ -67,21 +106,33 @@ export function AvatarBadgeItem({
       alignItems: 'center',
     };
 
-    if (color === 'custom' && customColor) {
+    const finalColor =
+      color === 'custom' && customColor ? customColor : colorMap[color] ?? colorMap.default;
+
+    if (variant === 'filled') {
+      const filledStyles =
+        color === 'neutral'
+          ? { backgroundColor: '#000', color: '#fff' }
+          : { backgroundColor: '#fff', color: '#000' };
+
       return {
         ...baseStyles,
-        backgroundColor: variant === 'filled' ? customColor : 'transparent',
-        border: variant === 'outline' ? `1px solid ${customColor}` : '1px solid transparent',
-        color: variant === 'outline' || variant === 'soft' ? customColor : '$ads-text-main',
+        ...filledStyles,
+        border: '1px solid transparent',
       };
     }
 
-    return baseStyles;
+    return {
+      ...baseStyles,
+      backgroundColor: variant === 'soft' ? `${finalColor}20` : 'transparent',
+      color: finalColor,
+      border: variant === 'outline' ? `1px solid ${finalColor}` : '1px solid transparent',
+    };
   };
 
   const pillSize = getPillSize(size);
   const badgeSizeClass = getBadgeSizeClass(size);
-  const pillColor = color === 'neutral' ? 'neutral-dark' : 'neutral-light';
+  const pillColor = getMappedPillColor(color, variant);
 
   return (
     <Stack
@@ -91,13 +142,29 @@ export function AvatarBadgeItem({
       className={`badge badge--${variant} badge--${color} ${
         shape === 'rounded' ? 'badge--rounded' : ''
       } badge--${badgeSizeClass} ${className}`}
-      sx={getContainerStyles()}
+      sx={{
+        ...getContainerStyles(),
+        color: getTextColor(),
+      }}
       data-testid="avatar-badge-item"
     >
-      <IconCircleQuarters size={size} className="badge__icon" />
+      <Icon
+        name="close_circle"
+        iconName="circle-quarters"
+        className={`badge__icon ${getIconSizeClass(size)}`}
+        strokeWidth="0"
+        stroke={getIconColor()}
+        color={getIconColor()}
+      />
 
       {showAvatar && avatarSrc && (
-        <AvatarItem src={avatarSrc} size={size} aria-label="Avatar" data-testid="avatar" />
+        <AvatarItem
+          shape={shape}
+          src={avatarSrc}
+          size={size}
+          aria-label="Avatar"
+          data-testid="avatar"
+        />
       )}
 
       {pillProps && (
@@ -110,34 +177,36 @@ export function AvatarBadgeItem({
         />
       )}
 
-      {countStart > 0 && <span className="badge__counter">{countStart}</span>}
+      {countStart > 0 && (
+        <span className="badge__counter" style={{ color: getTextColor() }}>
+          {countStart}
+        </span>
+      )}
 
-      <Text text={text} size={size} bold={bold ? 'bold' : 'regular'} />
+      <Text
+        text={text}
+        size={size}
+        bold={bold ? 'bold' : 'regular'}
+        style={{ color: getTextColor() }}
+      />
 
-      {countEnd > 0 && <span className="badge__counter">{countEnd}</span>}
+      {countEnd > 0 && (
+        <span className="badge__counter" style={{ color: getTextColor() }}>
+          {countEnd}
+        </span>
+      )}
 
       {onRemove && (
-        <IconButton
-          aria-label="Eliminar"
+        <Icon
           onClick={handleCerrar}
-          size="small"
-          className="badge__close-button"
-          sx={{
-            padding: '4px',
-            color: 'white',
-            marginLeft: '0.25rem',
-            background: '#ffffff',
-            border: 'none',
-            '&:hover': {
-              backgroundColor: 'rgba(0, 0, 0, 0.04)',
-            },
-            '& svg': {
-              fill: 'currentcolor',
-            },
-          }}
-        >
-          <CloseIcon fontSize={size} sx={{ color: '#ffffff' }} />
-        </IconButton>
+          name="Close-URL"
+          iconName="Close-URL"
+          className="badge__icon--x"
+          width="16"
+          height="16"
+          stroke={getIconColor()}
+          color={getIconColor()}
+        />
       )}
     </Stack>
   );
