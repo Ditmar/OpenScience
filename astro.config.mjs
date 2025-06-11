@@ -11,7 +11,7 @@ export default defineConfig({
   output: 'server',
   integrations: [react(), astroI18next(), sitemap()],
   adapter: node({
-    mode: 'http',
+    mode: 'middleware',
   }),
   vite: {
     ssr: {
