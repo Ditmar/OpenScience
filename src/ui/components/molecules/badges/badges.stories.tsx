@@ -117,4 +117,3 @@ export const WithCounters: Story = {
     countEnd: 10,
   },
 };
-
