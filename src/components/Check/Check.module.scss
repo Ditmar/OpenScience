@@ -35,6 +35,7 @@
 .default {
   border-color: $ads-color-black;
 }
+
 .default.checked {
   background-color: $ads-color-black;
 }
@@ -42,6 +43,7 @@
 .success {
   border-color: $ads-color-success;
 }
+
 .success.checked {
   background-color: $ads-color-success;
 }
@@ -49,6 +51,7 @@
 .info {
   border-color: $ads-color-info;
 }
+
 .info.checked {
   background-color: $ads-color-info;
 }
@@ -56,6 +59,7 @@
 .warning {
   border-color: $ads-color-warning;
 }
+
 .warning.checked {
   background-color: $ads-color-warning;
 }
@@ -63,6 +67,7 @@
 .danger {
   border-color: $ads-color-danger;
 }
+
 .danger.checked {
   background-color: $ads-color-danger;
 }
