@@ -4,6 +4,19 @@ import OLBullet from '../../../../ui/components/atoms/ol-bullet/OLBullet';
 import styles from './OlUlList.module.scss';
 import type { IProps } from './types/IProps';
 
+const getSizeClasses = (size: string) => ({
+  [styles['extra-small']]: size === 'extra-small',
+  [styles.small]: size === 'small',
+  [styles.medium]: size === 'medium' || !['extra-small', 'small', 'large'].includes(size),
+  [styles.large]: size === 'large',
+});
+
+const getOLItemSize = (size: string): 'sm' | 'md' | 'lg' => {
+  if (size === 'extra-small' || size === 'small') return 'sm';
+  if (size === 'large') return 'lg';
+  return 'md';
+};
+
 function OlUlList({ type, style = 'circle', size = 'medium', items = [], count = 1 }: IProps) {
   const containerClasses = clsx(
     styles['ol-ul-list'],
@@ -12,28 +25,12 @@ function OlUlList({ type, style = 'circle', size = 'medium', items = [], count =
       [styles.unordered]: type === 'unordered',
     },
     styles[`${style}List`] || styles.circleList,
-    {
-      [styles['extra-small']]: size === 'extra-small',
-      [styles.small]: size === 'small',
-      [styles.medium]: size === 'medium' || !['extra-small', 'small', 'large'].includes(size),
-      [styles.large]: size === 'large',
-    },
+    getSizeClasses(size),
   );
 
-  const contentSizeClass = clsx({
-    [styles['extra-small']]: size === 'extra-small',
-    [styles.small]: size === 'small',
-    [styles.medium]: size === 'medium' || !['extra-small', 'small', 'large'].includes(size),
-    [styles.large]: size === 'large',
-  });
+  const contentSizeClass = clsx(getSizeClasses(size));
 
-  const olItemSize = clsx({
-    sm: size === 'extra-small' || size === 'small',
-    md: size === 'medium' || !['extra-small', 'small', 'large'].includes(size),
-    lg: size === 'large',
-  }) as 'sm' | 'md' | 'lg';
-
-  const olItemStyle = style;
+  const olItemSize = getOLItemSize(size);
 
   const renderListItems = () => {
     const listData =
@@ -44,19 +41,23 @@ function OlUlList({ type, style = 'circle', size = 'medium', items = [], count =
             paragraph: `Este es el párrafo del elemento ${String(i + 1)} de la lista.`,
           }));
 
-    return listData.map((item, index) => (
-      <div key={item.subtitle ?? index} className={styles['ol-ul-list__item']}>
-        {type === 'ordered' ? (
-          <OLItem value={String(index + 1)} active shape={olItemStyle} size={olItemSize} />
-        ) : (
-          <OLBullet active shape={olItemStyle} size={olItemSize} />
-        )}
-        <div className={styles['ol-ul-list__item-content']}>
-          {item.subtitle && <h3 className={contentSizeClass}>{item.subtitle}</h3>}
-          {item.paragraph && <p className={contentSizeClass}>{item.paragraph}</p>}
+    return listData.map((item, index) => {
+      const safeKey = `${item.subtitle ?? 'item'}-${String(index)}`;
+
+      return (
+        <div key={safeKey} className={styles['ol-ul-list__item']}>
+          {type === 'ordered' ? (
+            <OLItem value={String(index + 1)} active shape={style} size={olItemSize} />
+          ) : (
+            <OLBullet active shape={style} size={olItemSize} />
+          )}
+          <div className={styles['ol-ul-list__item-content']}>
+            {item.subtitle && <h3 className={contentSizeClass}>{item.subtitle}</h3>}
+            {item.paragraph && <p className={contentSizeClass}>{item.paragraph}</p>}
+          </div>
         </div>
-      </div>
-    ));
+      );
+    });
   };
 
   return <div className={containerClasses}>{renderListItems()}</div>;
