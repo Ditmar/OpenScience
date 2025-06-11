@@ -23,7 +23,7 @@ const meta: Meta<typeof GhostButton> = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['primary', 'dark', 'intenseviolet', 'violet', 'teritary', 'green', 'red', 'yellow'],
+      options: ['primary', 'dark', 'intenseviolet', 'violet', 'tertiary', 'green', 'red', 'yellow'],
     },
     size: {
       control: 'select',
@@ -42,7 +42,7 @@ type Story = StoryObj<typeof GhostButton>;
 export const Primary: Story = {
   args: {
     label: 'Ghost Button',
-    variant: 'teritary',
+    variant: 'tertiary',
     size: 'medium',
     disabled: false,
   },
@@ -74,7 +74,7 @@ const variants: GhostButtonProps['variant'][] = [
   'dark',
   'intenseviolet',
   'violet',
-  'teritary',
+  'tertiary',
   'green',
   'red',
   'yellow',
@@ -125,6 +125,23 @@ export const AllVariantslarge: Story = {
           variant={variant}
           size="large"
           label="GhostButton variant"
+          iconLeft
+          iconRight
+          style={{ margin: 8 }}
+        />
+      ))}
+    </>
+  ),
+};
+export const SizesWithIcons: Story = {
+  render: () => (
+    <>
+      {(['small', 'medium', 'large'] as const).map((size) => (
+        <GhostButton
+          key={size}
+          label={`Size ${size}`}
+          variant="primary"
+          size={size}
           iconLeft
           iconRight
           style={{ margin: 8 }}

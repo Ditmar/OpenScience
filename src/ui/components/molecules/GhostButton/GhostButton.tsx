@@ -11,7 +11,7 @@ export interface GhostButtonProps extends Omit<ButtonProps, 'size' | 'variant' |
     | 'dark'
     | 'intenseviolet'
     | 'violet'
-    | 'teritary'
+    | 'tertiary'
     | 'green'
     | 'red'
     | 'yellow';
