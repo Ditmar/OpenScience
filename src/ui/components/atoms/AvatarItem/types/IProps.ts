@@ -3,4 +3,5 @@ export interface AvatarItemProps {
   alt?: string;
   size?: 'small' | 'medium' | 'large';
   hidden?: boolean;
+  shape?: 'default' | 'rounded';
 }
