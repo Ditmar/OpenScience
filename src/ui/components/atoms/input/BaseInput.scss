@@ -3,15 +3,23 @@
 @import '../../../../globals/globals';
 
 .base-input {
+  &__container {
+    display: inline-block;
+    max-width: 100%;
+    width: auto;
+  }
+
   &__outlined-root {
     border-radius: $ads-border-radius-rounded;
+    max-width: 100%;
+    min-width: 200px;
     transition: border-color 0.2s ease;
+    width: auto;
 
     fieldset {
       border-color: $ads-input-border-color;
     }
 
-    // Estados específicos devem vir antes do hover
     &--focused fieldset {
       border-color: $ads-color-primary;
       box-shadow: 0 0 0 2px rgba($ads-color-primary, 0.2);
@@ -30,7 +38,6 @@
       border-color: $ads-color-positive;
     }
 
-    // Hover deve vir depois dos estados específicos
     &:hover fieldset {
       border-color: $ads-color-black-300;
     }
@@ -39,12 +46,17 @@
   &__input-base {
     &--size-small {
       font-size: $ads-paragraph-xs;
-      padding: 8px 10px;
+      // padding: 6px 10px;
     }
 
     &--size-medium {
       font-size: $ads-paragraph-sm;
-      padding: 12px 14px;
+      // padding: 10px 14px;
+    }
+
+    &--size-large {
+      font-size: $ads-paragraph-lg;
+      // padding: 14px 18px;
     }
   }
 

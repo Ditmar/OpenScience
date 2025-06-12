@@ -15,45 +15,51 @@ export function BaseInput({
   error = false,
   startIcon,
   endIcon,
+  size = 'medium',
 }: IInputProps) {
+  const sizeClass = `base-input__input-base--size-${size}`;
+
   return (
-    <TextField
-      id={id}
-      variant="outlined"
-      placeholder={placeholder}
-      type={type}
-      value={value}
-      onChange={onChange}
-      onBlur={onBlur}
-      onFocus={onFocus}
-      disabled={disabled}
-      error={error}
-      fullWidth
-      className="base-input__outlined-root"
-      InputProps={{
-        className: 'base-input__input',
-        classes: {
-          focused: 'base-input__outlined-root--focused',
-          error: 'base-input__outlined-root--error',
-          disabled: 'base-input__outlined-root--disabled',
-        },
-        startAdornment: startIcon && <InputAdornment position="start">{startIcon}</InputAdornment>,
-        endAdornment: endIcon && <InputAdornment position="end">{endIcon}</InputAdornment>,
-      }}
-      InputLabelProps={{
-        className: 'base-input__label',
-        classes: {
-          focused: 'base-input__label--focused',
-          error: 'base-input__label--error',
-          disabled: 'base-input__label--disabled',
-        },
-      }}
-      FormHelperTextProps={{
-        className: 'base-input__helper-text',
-        classes: {
-          error: 'base-input__helper-text--error',
-        },
-      }}
-    />
+    <div className="base-input__container">
+      <TextField
+        id={id}
+        variant="outlined"
+        placeholder={placeholder}
+        type={type}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+        onFocus={onFocus}
+        disabled={disabled}
+        error={error}
+        className="base-input__outlined-root"
+        InputProps={{
+          className: `base-input__input ${sizeClass}`,
+          classes: {
+            focused: 'base-input__outlined-root--focused',
+            error: 'base-input__outlined-root--error',
+            disabled: 'base-input__outlined-root--disabled',
+          },
+          startAdornment: startIcon && (
+            <InputAdornment position="start">{startIcon}</InputAdornment>
+          ),
+          endAdornment: endIcon && <InputAdornment position="end">{endIcon}</InputAdornment>,
+        }}
+        InputLabelProps={{
+          className: 'base-input__label',
+          classes: {
+            focused: 'base-input__label--focused',
+            error: 'base-input__label--error',
+            disabled: 'base-input__label--disabled',
+          },
+        }}
+        FormHelperTextProps={{
+          className: 'base-input__helper-text',
+          classes: {
+            error: 'base-input__helper-text--error',
+          },
+        }}
+      />
+    </div>
   );
 }
