@@ -36,4 +36,6 @@ export type IconName =
   | 'vector'
   | 'volume'
   | 'volumes'
-  | 'whatsapp';
+  | 'whatsapp'
+  | 'check'
+  | 'errors';;
