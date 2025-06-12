@@ -38,4 +38,4 @@ export type IconName =
   | 'volumes'
   | 'whatsapp'
   | 'check'
-  | 'errors';;
+  | 'errors';
