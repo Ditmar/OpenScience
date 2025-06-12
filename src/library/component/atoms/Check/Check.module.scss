@@ -1,11 +1,10 @@
-@import '../../globals/_variables.scss';
+@import 'src/globals/_variables.scss';
 
 
 .check {  
   align-items: center;
   background-color: $ads-color-white;
   border: 2px solid $ads-color-black-100;
-  border-radius: 15%;
   cursor: pointer;
   display: inline-flex;
   height: 24px;
@@ -19,8 +18,12 @@
   }
 }
 
-.rounded {
+.check.rounded {
   border-radius: 50%;
+}
+
+.check:not(.rounded) {
+  border-radius: 15%;
 }
 
 .checked {

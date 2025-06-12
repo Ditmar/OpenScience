@@ -1,14 +1,6 @@
 import React from 'react';
 import styles from './Check.module.scss';
-
-type Variant = 'default' | 'success' | 'info' | 'warning' | 'danger';
-
-export interface CheckProps {
-  checked: boolean;
-  onChange: (value: boolean) => void;
-  disabled?: boolean;
-  variant?: Variant;
-}
+import type { CheckProps } from './Check.props';
 
 function classNames(...args: (string | false | null | undefined)[]): string {
   return args.filter(Boolean).join(' ');
@@ -19,6 +11,7 @@ export function Check({
   onChange,
   disabled = false,
   variant = 'default',
+  rounded = true,
 }: CheckProps): JSX.Element {
   const handleClick = (): void => {
     if (!disabled) {
@@ -44,6 +37,7 @@ export function Check({
         styles[variant],
         checked && styles.checked,
         disabled && styles.disabled,
+        rounded && styles.rounded,
       )}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
