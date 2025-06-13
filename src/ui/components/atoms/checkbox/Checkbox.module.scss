@@ -1,6 +1,9 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
 .checkbox {
-  padding: 0;
   margin-right: 0.75rem;
+  padding: 0;
 }
 
 .icon {
@@ -10,8 +13,8 @@
   width: 17px;
 }
 
-.checkedIcon {
-  background-color: #1a1a1a;
+.checkbox__icon--checked {
+  background-color: $ads-color-black-800;
   border-radius: 4px;
   height: 20px;
   width: 20px;
