@@ -1,0 +1,34 @@
+.text-card {
+  border-radius: 1rem;
+  max-width: 500px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  &__content {
+    padding-left: 42px;
+  }
+
+  &__title {
+    font-weight: 600;
+  }
+
+  &__description {
+    color: #666;
+  }
+}
