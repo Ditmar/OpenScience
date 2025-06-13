@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
+    "start": "node app-server/server.mjs",
     "build": "astro check && astro build --logLevel warn && yarn build:tokens",
     "preview": "astro preview",
     "astro": "astro",
