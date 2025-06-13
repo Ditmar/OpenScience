@@ -3,16 +3,17 @@ import React from 'react';
 import { vi } from 'vitest';
 import UserTextCard from './user-text-card';
 
-describe('UserTextCard', () => {
-  const avatar = 'https://i.pravatar.cc/40?img=1';
-  const userName = 'Alice Johnson';
-  const userHandle = 'alicej';
-  const content = 'Testing user text card content';
-  const timestamp = 'Just now';
-  const isVerified = true;
-  const onClick = vi.fn();
-  const onCheckChange = vi.fn();
+const avatar = 'https://i.pravatar.cc/40?img=1';
+const userName = 'Alice Johnson';
+const userHandle = 'alicej';
+const content = 'Testing user text card content';
+const timestamp = 'Just now';
+const isVerified = true;
+const onClick = vi.fn();
+const onCheckChange = vi.fn();
+const isChecked = false;
 
+describe('UserTextCard', () => {
   beforeEach(() => {
     vi.clearAllMocks();
   });
@@ -27,7 +28,7 @@ describe('UserTextCard', () => {
         timestamp={timestamp}
         isVerified={isVerified}
         onClick={onClick}
-        isChecked={false}
+        isChecked={isChecked}
         onCheckChange={onCheckChange}
       />,
     );
@@ -41,7 +42,7 @@ describe('UserTextCard', () => {
     expect(screen.getByAltText('avatar')).toBeInTheDocument();
   });
 
-  it('passes basic accessibility: has name, handle, timestamp, and alt for avatar', () => {
+  it('passes basic accessibility checks', () => {
     render(
       <UserTextCard
         avatar={avatar}
@@ -51,7 +52,7 @@ describe('UserTextCard', () => {
         timestamp={timestamp}
         isVerified={isVerified}
         onClick={onClick}
-        isChecked={false}
+        isChecked={isChecked}
         onCheckChange={onCheckChange}
       />,
     );
@@ -72,7 +73,7 @@ describe('UserTextCard', () => {
         timestamp={timestamp}
         isVerified={isVerified}
         onClick={onClick}
-        isChecked={false}
+        isChecked={isChecked}
         onCheckChange={onCheckChange}
       />,
     );
@@ -94,7 +95,7 @@ describe('UserTextCard', () => {
         timestamp={timestamp}
         isVerified={isVerified}
         onClick={onClick}
-        isChecked={false}
+        isChecked={isChecked}
         onCheckChange={onCheckChange}
         variant="default"
       />,
@@ -113,7 +114,7 @@ describe('UserTextCard', () => {
         timestamp={timestamp}
         isVerified={isVerified}
         onClick={onClick}
-        isChecked={false}
+        isChecked={isChecked}
         onCheckChange={onCheckChange}
         variant="compact"
       />,
@@ -132,7 +133,7 @@ describe('UserTextCard', () => {
         timestamp={timestamp}
         isVerified={isVerified}
         onClick={onClick}
-        isChecked={false}
+        isChecked={isChecked}
         onCheckChange={onCheckChange}
         variant="expanded"
       />,
@@ -142,22 +143,78 @@ describe('UserTextCard', () => {
   });
 
   it('renders content as ReactNode', () => {
-    const customContent = <strong>Bold content</strong>;
+    render(
+      <UserTextCard
+        avatar={avatar}
+        userName={userName}
+        userHandle={userHandle}
+        content={<strong>Bold content</strong>}
+        timestamp={timestamp}
+        isVerified={isVerified}
+        onClick={onClick}
+        isChecked={isChecked}
+        onCheckChange={onCheckChange}
+      />,
+    );
+
+    expect(screen.getByText('Bold content')).toBeInTheDocument();
+  });
+
+  it('renders timestamp as Date object', () => {
+    const date = new Date('2024-06-01T12:00:00');
 
     render(
       <UserTextCard
         avatar={avatar}
         userName={userName}
         userHandle={userHandle}
-        content={customContent}
-        timestamp={timestamp}
+        content={content}
+        timestamp={date}
         isVerified={isVerified}
         onClick={onClick}
-        isChecked={false}
+        isChecked={isChecked}
         onCheckChange={onCheckChange}
       />,
     );
 
-    expect(screen.getByText('Bold content')).toBeInTheDocument();
+    expect(screen.getByText(date.toLocaleString())).toBeInTheDocument();
+  });
+
+  it('applies correct colorVariant class', () => {
+    render(
+      <UserTextCard
+        avatar={avatar}
+        userName={userName}
+        userHandle={userHandle}
+        content={content}
+        timestamp={timestamp}
+        isVerified={isVerified}
+        onClick={onClick}
+        isChecked={isChecked}
+        onCheckChange={onCheckChange}
+        variant="default"
+        colorVariant="warning"
+      />,
+    );
+
+    expect(screen.getByTestId('user-card-default').className).toContain('warning');
+  });
+
+  it('renders avatar as ReactNode', () => {
+    render(
+      <UserTextCard
+        avatar={<div data-testid="custom-avatar">👤</div>}
+        userName={userName}
+        userHandle={userHandle}
+        content={content}
+        timestamp={timestamp}
+        isVerified={isVerified}
+        onClick={onClick}
+        isChecked={isChecked}
+        onCheckChange={onCheckChange}
+      />,
+    );
+
+    expect(screen.getByTestId('custom-avatar')).toBeInTheDocument();
   });
 });
