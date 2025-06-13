@@ -32,14 +32,13 @@ export const CountrySelectList = forwardRef<HTMLDivElement, CountrySelectListPro
     return (
       <Paper
         elevation={3}
-        sx={{
+        sx={(theme) => ({
           zIndex: 1300,
           width: '100%',
-          borderRadius: '12px',
+          borderRadius: theme.spacing(1.5),
           backgroundColor: 'background.paper',
-          boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
           overflow: 'hidden',
-        }}
+        })}
       >
         {headerText && (
           <Typography variant="h6" sx={{ p: 2, fontWeight: 'bold' }}>
