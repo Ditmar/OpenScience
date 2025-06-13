@@ -2,12 +2,12 @@
 @import '../../../../globals/mixins';
 
 .badge {
-  display: flex;
   align-items: center;
   border-radius: 10px;
+  display: flex;
   font-family: Poppins, 'DM Sans', sans-serif;
-  padding: 4px 6px;
   gap: 0.5rem;
+  padding: 4px 6px;
 
   &--small {
     font-size: 12px;
@@ -38,11 +38,11 @@
   &__number {
     background-color: $ads-color-main;
     border-radius: 4px;
+    color: $ads-color-white;
     font-size: 12px;
     font-weight: 600;
     line-height: 1;
     padding: 4px 10px;
     text-align: center;
-    color: white;
   }
 }
