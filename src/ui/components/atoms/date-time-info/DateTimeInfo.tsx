@@ -1,8 +1,9 @@
 import React from 'react';
+import { Box, Typography } from '@mui/material';
 import type { IProps } from './types/IProps';
-import styles from './DateTimeInfo.module.scss';
 import { Icon } from '../../../utils/vite-svgr/Icon';
 import { formatRelativeTime } from '../../../utils/date';
+import styles from './DateTimeInfo.module.scss';
 
 export function DateTimeInfo({
   timestamp,
@@ -11,14 +12,6 @@ export function DateTimeInfo({
   size = 'large',
   format,
 }: IProps) {
-  const containerClass = [
-    styles.container,
-    styles[`size--${size}`],
-    iconPosition === 'right' ? styles['icon-right'] : '',
-  ]
-    .filter(Boolean)
-    .join(' ');
-
   const getDisplayTime = (inputTimestamp: IProps['timestamp']): string => {
     if (format) return format(inputTimestamp);
     const dateObj = new Date(inputTimestamp);
@@ -27,15 +20,29 @@ export function DateTimeInfo({
 
   const displayTime = getDisplayTime(timestamp);
 
+  const containerClass = [
+    styles.container,
+    styles[`size--${size}`],
+    iconPosition === 'right' ? styles['icon-right'] : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <div className={containerClass}>
+    <Box className={containerClass}>
       {showIcon && iconPosition === 'left' && (
-        <Icon iconName="fi-rr-calendar" className={styles.icon} aria-hidden="true" />
+        <Box className={styles.icon} component="span" aria-hidden="true">
+          <Icon iconName="fi-rr-calendar" />
+        </Box>
       )}
-      <span className={styles.text}>{displayTime}</span>
+      <Typography className={styles.text} component="span">
+        {displayTime}
+      </Typography>
       {showIcon && iconPosition === 'right' && (
-        <Icon iconName="fi-rr-clock-five" className={styles.icon} aria-hidden="true" />
+        <Box className={styles.icon} component="span" aria-hidden="true">
+          <Icon iconName="fi-rr-clock-five" />
+        </Box>
       )}
-    </div>
+    </Box>
   );
 }
