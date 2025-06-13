@@ -1,26 +1,20 @@
-import circleQuarters from '../../../../assets/icons/circle-quarters.svg?raw';
+import React from 'react';
+import { useDynamicIcon } from './useDynamic';
+import type { IconProps } from './types/IProps';
 
-interface IconProps {
-  size?: number;
-  className?: string;
-  'data-testid'?: string;
-}
+export function Icon({
+  iconName,
+  width = 24,
+  height = 24,
+  fill = 'currentColor',
+  className,
+  'data-testid': testId,
+}: IconProps) {
+  const [SvgIcon, , loading] = useDynamicIcon(iconName);
 
-function Icon({ size = 24, className, 'data-testid': testId }: IconProps) {
+  if (loading || !SvgIcon) return null;
+
   return (
-    <span
-      className={className}
-      style={{
-        display: 'inline-block',
-        width: size,
-        height: size,
-        verticalAlign: 'middle',
-        lineHeight: 1,
-      }}
-      dangerouslySetInnerHTML={{ __html: circleQuarters }}
-      data-testid={testId}
-    />
+    <SvgIcon width={width} height={height} fill={fill} className={className} data-testid={testId} />
   );
 }
-
-export default Icon;

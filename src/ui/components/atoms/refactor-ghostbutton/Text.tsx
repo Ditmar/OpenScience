@@ -15,7 +15,6 @@ function Text(props: TypographyProps) {
     component,
   } = props;
 
-  // Si `component` existe, pásalo; de lo contrario, no lo incluimos
   if (component) {
     return (
       <Typography
@@ -34,7 +33,6 @@ function Text(props: TypographyProps) {
     );
   }
 
-  // Sin `component`
   return (
     <Typography
       variant={variant}

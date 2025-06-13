@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import App from 'style-library/core/ThemeProvider';
 import { ModeSwitcher } from 'style-library/core/ThemeSwitcher';
 import GhostButton from './GhostButton';
-import type { GhostButtonProps } from './GhostButton';
+import type { GhostButtonProps } from './types/IProps';
 
 const meta: Meta<typeof GhostButton> = {
   title: 'Molecules/GhostButton',
