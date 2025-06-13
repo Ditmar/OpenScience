@@ -1,0 +1,48 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.badge {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  font-family: Poppins, 'DM Sans', sans-serif;
+  padding: 4px 6px;
+  gap: 0.5rem;
+
+  &--small {
+    font-size: 12px;
+    padding: 2px 4px;
+  }
+
+  &--medium {
+    font-size: 14px;
+    padding: 4px 6px;
+  }
+
+  &--large {
+    font-size: 16px;
+    padding: 6px 8px;
+  }
+
+  &__avatar {
+    border-radius: 6px;
+    height: 24px;
+    width: 24px;
+  }
+
+  &__text {
+    color: $ads-color-main;
+    font-weight: normal;
+  }
+
+  &__number {
+    background-color: $ads-color-main;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 4px 10px;
+    text-align: center;
+    color: white;
+  }
+}
