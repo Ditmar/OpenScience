@@ -1,12 +1,15 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
 .text-card {
   border-radius: 1rem;
+  cursor: pointer;
   max-width: 500px;
   padding: 0.5rem;
-  cursor: pointer;
   transition: box-shadow 0.2s ease;
 
   &:hover {
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 0 2px rgb(0 0 0 / 5%);
   }
 
   &--disabled {
@@ -15,8 +18,8 @@
   }
 
   &__header {
-    display: flex;
     align-items: center;
+    display: flex;
     margin-bottom: 0.5rem;
   }
 
@@ -29,6 +32,6 @@
   }
 
   &__description {
-    color: #666;
+    color: $ads-color-black-500;
   }
 }
