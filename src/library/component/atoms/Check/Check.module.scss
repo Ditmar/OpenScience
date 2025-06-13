@@ -3,7 +3,7 @@
 
 .check {  
   align-items: center;
-  background-color: $ads-color-white-check;
+  background-color: $ads-color-white;
   border: 2px solid $ads-color-black-100;
   cursor: pointer;
   display: inline-flex;
@@ -13,7 +13,7 @@
   width: 24px;
   
   &:focus-visible {
-    outline: 2px solid $ads-color-black-check;
+    outline: 2px solid $ads-color-black;
     outline-offset: 2px;
   }
 }
@@ -27,7 +27,7 @@
 }
 
 .checked {
-  color: $ads-color-white-check;
+  color: $ads-color-white;
 }
 
 .disabled {
@@ -36,11 +36,11 @@
 }
 
 .default {
-  border-color: $ads-color-black-check;
+  border-color: $ads-color-black;
 }
 
 .default.checked {
-  background-color: $ads-color-black-check;
+  background-color: $ads-color-black;
 }
 
 .success {
@@ -76,5 +76,5 @@
 }
 
 .icon {
-  stroke: $ads-color-white-check;
+  stroke: $ads-color-white;
 }
