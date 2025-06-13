@@ -50,6 +50,8 @@ const { title, description, openGraph } = {
     },
   },
 };
+const public_site = Astro.locals;
+console.log('PUBLIC_SITE_URL:', public_site);
 ---
 
 <Layout title={t('page.title')}>
