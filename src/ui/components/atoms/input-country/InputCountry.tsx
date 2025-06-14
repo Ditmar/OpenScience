@@ -1,136 +1,64 @@
 import React, { useEffect, useState } from 'react';
-import { MenuItem, Select, type SelectChangeEvent } from '@mui/material';
+import { Box, MenuItem, Select, type SelectChangeEvent } from '@mui/material';
 import type { IProps, Option } from './types/IProps';
 import styles from './InputCountry.module.scss';
 import { Icon } from '../../../utils/svg-icons/icons';
 import globe from '../../../../assets/icons/globe.svg?raw';
 import close_circle from '../../../../assets/icons/close_circle.svg?raw';
 import info from '../../../../assets/icons/info.svg?raw';
+import { selectSx, textSx, iconSx } from './styles';
 
 export function InputCountry(props: IProps) {
   const { label, options, error, helperText, disabled, borderRadius, size } = props;
-  const [country, setCountry] = React.useState('');
+  const [country, setCountry] = useState('');
   const [keyboardFocus, setKeyboardFocus] = useState(false);
-  const handleChange = (event: SelectChangeEvent) => {
-    setCountry(event.target.value);
-  };
+
+  const handleChange = (event: SelectChangeEvent) => setCountry(event.target.value);
 
   useEffect(() => {
-    const handleKeyDown = () => {
-      setKeyboardFocus(true);
-    };
-    const handleMouseDown = () => {
-      setKeyboardFocus(false);
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    window.addEventListener('mousedown', handleMouseDown);
-
+    const onKey = () => setKeyboardFocus(true);
+    const onMouse = () => setKeyboardFocus(false);
+    window.addEventListener('keydown', onKey);
+    window.addEventListener('mousedown', onMouse);
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-      window.removeEventListener('mousedown', handleMouseDown);
+      window.removeEventListener('keydown', onKey);
+      window.removeEventListener('mousedown', onMouse);
     };
   }, []);
 
-  let labelClass = '';
-  if (disabled) labelClass += `${styles.disabled} `;
-  if (size) labelClass += styles[size];
+  const selectStyles = selectSx({ disabled, error, keyboardFocus });
+  const labelStyles  = textSx({ disabled, error, size });
+  const helperStyles = textSx({ disabled, error, size });
+  const closeStyles  = iconSx({ disabled, error });
+  const infoStyles   = iconSx({ disabled, error });
 
-  let borderColor = 'var(--color-neutral-gray-soft-100)';
-  if (disabled) {
-    borderColor = 'var(--color-neutral-gray-strong-50)';
-  } else if (error) {
-    borderColor = 'var(--color-feedback-negative-500)';
-  }
+  const borderCls = borderRadius === 'circle'
+    ? styles['select-circle']
+    : borderRadius === 'semi'
+    ? styles['select-semi']
+    : '';
 
-  let borderColorHover = 'var(--color-brand-primary-500)';
-  if (disabled) {
-    borderColorHover = '';
-  } else if (error) {
-    borderColorHover = 'var(--color-feedback-negative-500)';
-  }
-
-  let borderColorFocus = 'var(--color-brand-primary-100)';
-  if (disabled) {
-    borderColorFocus = 'var(--color-neutral-gray-strong-50)';
-  } else if (error) {
-    borderColorFocus = 'var(--color-feedback-negative-100)';
-  }
-
-  let borderRadiusClass = '';
-  if (borderRadius === 'circle') {
-    borderRadiusClass = styles['select-circle'];
-  } else if (borderRadius === 'semi') {
-    borderRadiusClass = styles['select-semi'];
-  }
-
-  let selectClass = '';
-  if (disabled) selectClass += `${styles.disabled} `;
-  if (size) selectClass += styles[size];
-
-  let keyboardFocusStyle = '';
-  if (keyboardFocus) keyboardFocusStyle = 'keyboard-focus';
-  else keyboardFocusStyle = 'mouse-focus';
-
-  let mouseFocusStyle = 'var(--color-brand-primary-500)';
-  if (error) mouseFocusStyle = 'var(--color-feedback-negative-500)';
-
-  let closeCircleClass = '';
-  if (disabled) {
-    closeCircleClass = styles.disabled;
-  }
-
-  let iconClass = '';
-  if (disabled) {
-    iconClass = styles.disabled;
-  } else if (error) {
-    iconClass = styles.error;
-  }
-
-  let helperClass = '';
-  if (disabled) {
-    helperClass += `${styles.disabled} `;
-  } else if (error) {
-    helperClass += `${styles.error} `;
-  }
-  if (size) {
-    helperClass += styles[size];
-  }
+  const focusCls = keyboardFocus ? 'keyboard-focus' : 'mouse-focus';
 
   return (
-    <div className={styles['country-input']}>
-      <div>
-        <div>
+    <Box className={styles['country-input']}> 
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
           {globe && <Icon src={globe} />}
-          <p className={labelClass.trim()}>{label ?? ''}</p>
-        </div>
-        <div>{close_circle && <Icon src={close_circle} className={closeCircleClass} />}</div>
-      </div>
-      <div className={styles['select-wrapper']}>
+          <Box component="p" sx={labelStyles}>{label || ''}</Box>
+        </Box>
+        <Box>{close_circle && <Icon src={close_circle} />}</Box>
+      </Box>
+      <Box sx={{ position: 'relative' }}>
         <Select
           id="country-select"
-          label="country-select"
           value={country}
           onChange={handleChange}
           displayEmpty
           disabled={disabled}
           inputProps={{ 'aria-label': 'Without label' }}
-          sx={{
-            '& .MuiOutlinedInput-notchedOutline': {
-              borderColor,
-            },
-            '&:hover .MuiOutlinedInput-notchedOutline': {
-              borderColor: borderColorHover,
-            },
-            '&.keyboard-focus .MuiOutlinedInput-notchedOutline': {
-              borderColor: borderColorFocus,
-            },
-            '&.mouse-focus.Mui-focused .MuiOutlinedInput-notchedOutline': {
-              borderColor: mouseFocusStyle,
-              borderWidth: '1px',
-            },
-          }}
-          className={`${styles['select-country']} ${borderRadiusClass} ${keyboardFocusStyle} ${selectClass}`}
+          className={`${styles['select-country']} ${borderCls} ${focusCls}`}
+          sx={selectStyles}
           MenuProps={{
             MenuListProps: {
               sx: {
@@ -141,39 +69,27 @@ export function InputCountry(props: IProps) {
                   fontWeight: 300,
                   fontFamily: 'Poppins-Light, sans-serif',
                   fontSize: '1rem',
-                  '&:focus': {
-                    backgroundColor: 'var(--color-brand-primary-50)',
-                    '&:active': {
-                      backgroundColor: 'var(--color-brand-primary-50)',
-                    },
-                  },
-                  '&:active': {
-                    backgroundColor: 'var(--color-brand-primary-50)',
-                  },
+                  '&:focus, &:active': { backgroundColor: 'var(--color-brand-primary-50)' },
                 },
               },
             },
           }}
         >
-          {options.map((item: Option, index: number) => {
-            const iconFlag = `./images/flags/${item.code}.svg`;
-            const code = index > 0 ? item.code : '';
-            return (
-              <MenuItem value={code} key={code}>
-                <img src={iconFlag} alt="" />
-                {item.country}
-              </MenuItem>
-            );
-          })}
+          {options.map((item: Option, idx) => (
+            <MenuItem value={idx > 0 ? item.code : ''} key={item.code}>
+              <Box component="img" src={`./images/flags/${item.code}.svg`} alt={item.country} sx={{ width: 24, height: 16 }} />
+              {item.country}
+            </MenuItem>
+          ))}
         </Select>
-      </div>
-      <div>
-        <div>
-          {info && <Icon src={info} className={iconClass} />}
-          <p className={helperClass.trim()}>{helperText}</p>
-        </div>
-        <div>{info && <Icon data-testid="button-icon" src={info} />}</div>
-      </div>
-    </div>
+      </Box>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 1 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+          {info && <Icon src={info} />}
+          <Box component="p" sx={helperStyles}>{helperText}</Box>
+        </Box>
+        <Box>{info && <Icon src={info} />}</Box>
+      </Box>
+    </Box>
   );
 }
