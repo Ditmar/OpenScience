@@ -18,6 +18,6 @@ export interface IProps {
   ariaLabel?: string;
   shadow?: boolean;
   stroke?: 'border-soft' | 'border-strong';
-  icon?: string | ReactNode;
+  icon?: ReactNode;
   iconPosition?: 'left' | 'right';
 }

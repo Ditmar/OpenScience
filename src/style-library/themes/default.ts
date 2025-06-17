@@ -1,6 +1,6 @@
 // theme/lightTheme.js
 import { createTheme } from '@mui/material/styles';
-import tokens from './tokens/tokens.json';
+import tokens from './tokens/tokens';
 
 export const lightTheme = createTheme({
   palette: {
@@ -25,9 +25,41 @@ export const lightTheme = createTheme({
       primary: tokens.colors.text_main_alpha,
       secondary: tokens.colors.text_secondary,
     },
+    olpalette: {
+      dark: tokens.colors.dark,
+      dark_soft: tokens.colors.dark_soft,
+      disabled: tokens.colors.disabled,
+      light: tokens.colors.light,
+      negative: tokens.colors.negative,
+      negative_soft: tokens.colors.negative_soft,
+      positive: tokens.colors.positive,
+      positive_soft: tokens.colors.positive_soft,
+      primary: tokens.colors.primary,
+      secondary: tokens.colors.secondary,
+      secondary_soft: tokens.colors.secondary_soft,
+      tertiary: tokens.colors.tertiary,
+      tertiary_soft: tokens.colors.tertiary_soft,
+      warning: tokens.colors.warning,
+      warning_soft: tokens.colors.warning_soft,
+      stroke_dark: tokens.colors.stroke_dark,
+      stroke_dark_soft: tokens.colors.stroke_dark_soft,
+      stroke_disabled: tokens.colors.stroke_disabled,
+      stroke_negative: tokens.colors.stroke_negative,
+      stroke_negative_soft: tokens.colors.stroke_negative_soft,
+      stroke_positive: tokens.colors.stroke_positive,
+      stroke_positive_soft: tokens.colors.stroke_positive_soft,
+      stroke_primary: tokens.colors.stroke_primary,
+      stroke_primary_soft: tokens.colors.stroke_primary_soft,
+      stroke_secondary: tokens.colors.stroke_secondary,
+      stroke_secondary_soft: tokens.colors.stroke_secondary_soft,
+      stroke_tertiary: tokens.colors.stroke_tertiary,
+      stroke_tertiary_soft: tokens.colors.stroke_tertiary_soft,
+      stroke_warning: tokens.colors.stroke_warning,
+      stroke_warning_soft: tokens.colors.stroke_warning_soft,
+    },
   },
   typography: {
-    fontFamily: '"Lato", "Roboto", "Montserrat", sans-serif',
+    fontFamily: '"Lato", "Roboto", "Montserrat", "Poppins-Regular", sans-serif',
     fontSize: 16,
     h1: {
       fontSize: tokens.typography.fontSizes.first,
@@ -48,6 +80,18 @@ export const lightTheme = createTheme({
     body2: {
       fontSize: tokens.typography.fontSizes.sixth,
       color: tokens.colors.text_input,
+    },
+    textPoppins: {
+      fontFamily: 'Poppins-Regular',
+    },
+    textSm: {
+      fontSize: tokens.colors.icontextstat_fontsize_smalltext,
+    },
+    textMd: {
+      fontSize: tokens.colors.icontextstat_fontsize_mediumtext,
+    },
+    textLg: {
+      fontSize: tokens.colors.icontextstat_fontsize_largetext,
     },
   },
   spacing: 8,

@@ -1,5 +1,5 @@
 export interface AvatarItemProps {
-  src: string;
+  src?: string;
   alt?: string;
   size?: 'small' | 'medium' | 'large';
   hidden?: boolean;
