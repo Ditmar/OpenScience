@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved, import/extensions */
 import express, { type RequestHandler } from 'express';
 import { configMiddleware } from '../middleware/config-middleware';
 // @ts-expect-error: astroHandler is only available after Astro SSR build
@@ -20,3 +21,5 @@ app.use((req, res, next) => {
 
   res.status(500).send('Internal Server Error');
 });
+
+export default app;
