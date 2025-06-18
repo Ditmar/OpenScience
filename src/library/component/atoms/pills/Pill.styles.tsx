@@ -1,15 +1,11 @@
-// src/components/Pill/Pill.styles.tsx
-
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import type { CSSProperties } from 'react'; // Importación de tipo de librería externa primero
+import type { CSSProperties } from 'react';
 import type { TypographyVariants } from '@mui/material/styles';
-import type { IProps } from './types/IProps'; // Importación de tipo local después
+import type { IProps } from './types/IProps';
 
-// Define el tipo para las claves de color, basado en tu IProps.color
-type PillColorKey = NonNullable<IProps['color']>; // NonNullable quita 'undefined' del tipo
+type PillColorKey = NonNullable<IProps['color']>;
 
-// Define el tipo para los objetos de estilo que contendrán tus mapas
 type PillColorMapStyles = CSSProperties;
 
 interface IPillStyleProps {
@@ -19,7 +15,7 @@ interface IPillStyleProps {
   rounded?: IProps['rounded'];
   shadow?: boolean;
   stroke?: IProps['stroke'];
-  iconPosition?: IProps['iconPosition']; // <--- MANTENER AQUÍ para que TypeScript lo acepte
+  iconPosition?: IProps['iconPosition'];
 }
 
 export const StyledPill = styled(Box)<IPillStyleProps>(({
@@ -30,8 +26,6 @@ export const StyledPill = styled(Box)<IPillStyleProps>(({
   rounded,
   shadow,
   stroke,
-  // ¡ELIMINADO! Ya no desestructuramos iconPosition aquí,
-  // porque no lo usamos directamente en los estilos de StyledPill.
 }) => {
   const theme = currentTheme;
 
@@ -65,7 +59,6 @@ export const StyledPill = styled(Box)<IPillStyleProps>(({
     },
   };
 
-  // TIPADO EXPLÍCITO DE LOS MAPAS DE COLORES
   const filledColorMap: Record<PillColorKey, PillColorMapStyles> = {
     'neutral-dark': { backgroundColor: olpalette.dark, color: olpalette.light },
     'neutral-light': { backgroundColor: olpalette.light, color: olpalette.dark },
@@ -192,7 +185,7 @@ export const StyledPill = styled(Box)<IPillStyleProps>(({
 
 export const StyledIconWrapper = styled(Box)<{ iconPosition?: 'left' | 'right' }>(({
   theme: currentTheme,
-  iconPosition, // <-- Aquí sí se usa iconPosition
+  iconPosition,
 }) => {
   const theme = currentTheme;
   const { spacing } = theme;

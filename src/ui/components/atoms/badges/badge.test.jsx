@@ -1,11 +1,23 @@
-// badge.test.tsx
+import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect } from 'vitest'; // Mantener Vitest imports
+import '@testing-library/jest-dom';
+
+// Importa tu ThemeProvider. Asegúrate de que esta ruta sea correcta y tenga la extensión .tsx
+import ThemeProvider from '../../../../style-library/core/ThemeProvider.tsx';
+
+// Importa tu componente Badge. Asegúrate de que esta ruta sea correcta
 import Badge from './badge.tsx';
+
+// Helper para renderizar componentes dentro del ThemeProvider
+const renderWithTheme = (component) => {
+  return render(<ThemeProvider>{component}</ThemeProvider>);
+};
 
 describe('Badge Component', () => {
   it('renders with default props', () => {
-    render(
+    // Usar renderWithTheme para envolver el componente Badge
+    renderWithTheme(
       <Badge variant="filled" color="neutral" shape="default" size="md">
         Badge Text
       </Badge>,
@@ -14,7 +26,8 @@ describe('Badge Component', () => {
   });
 
   it('renders with icon', () => {
-    render(
+    // Usar renderWithTheme para envolver el componente Badge
+    renderWithTheme(
       <Badge
         variant="filled"
         color="neutral"
@@ -45,7 +58,8 @@ describe('Badge Component', () => {
   });
 
   it('renders with image', () => {
-    render(
+    // Usar renderWithTheme para envolver el componente Badge
+    renderWithTheme(
       <Badge
         variant="filled"
         color="neutral"
@@ -60,17 +74,20 @@ describe('Badge Component', () => {
   });
 
   it('renders with rounded shape', () => {
-    render(
+    // Usar renderWithTheme para envolver el componente Badge
+    renderWithTheme(
       <Badge variant="filled" color="neutral" shape="rounded" size="md">
         Badge Text
       </Badge>,
     );
     const badge = screen.getByText('Badge Text').parentElement;
+    // Esto asume que 'badge--rounded' es una clase CSS que se aplica
     expect(badge?.classList.contains('badge--rounded')).toBe(true);
   });
 
   it('renders with left and right counters', () => {
-    render(
+    // Usar renderWithTheme para envolver el componente Badge
+    renderWithTheme(
       <Badge
         variant="filled"
         color="neutral"

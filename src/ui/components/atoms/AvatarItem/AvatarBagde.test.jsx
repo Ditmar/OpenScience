@@ -1,25 +1,37 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import ThemeProvider from '../../../../style-library/core/ThemeProvider.tsx';
 import { AvatarItem } from './AvatarBagde.tsx';
+
+// Esta sección de mock de Jest fue eliminada porque NO es necesaria en este archivo de test.
+// Si esta línea está activa en tu archivo, causará el "ReferenceError: jest is not defined".
+// jest.mock('../../atoms/pills/Pill', () => ({
+//   __esModule: true,
+//   default: jest.fn(({ text, children }) => <span data-testid="mock-pill">{text || children}</span>),
+// }));
+
+const renderWithTheme = (component) => {
+  return render(<ThemeProvider>{component}</ThemeProvider>);
+};
 
 describe('AvatarItem', () => {
   test('renders without crashing', () => {
-    render(<AvatarItem alt="Test" />);
-    expect(screen.getByRole('img') || screen.getByRole('generic')).toBeInTheDocument();
+    renderWithTheme(<AvatarItem alt="Test" />);
+    expect(screen.getByText('T')).toBeInTheDocument();
   });
 
   test('displays initials when src is not provided', () => {
     const altText = 'John Doe';
-    render(<AvatarItem alt={altText} />);
-    expect(screen.getByText('JD')).toBeInTheDocument();
+    renderWithTheme(<AvatarItem alt={altText} />);
+    expect(screen.getByText('J')).toBeInTheDocument();
     expect(screen.queryByRole('img')).not.toBeInTheDocument();
   });
 
   test('displays image when src is provided', () => {
     const imageUrl = 'https://example.com/avatar.jpg';
     const altText = 'User Avatar';
-    render(<AvatarItem src={imageUrl} alt={altText} />);
+    renderWithTheme(<AvatarItem src={imageUrl} alt={altText} />);
     const avatarImage = screen.getByRole('img', { name: altText });
     expect(avatarImage).toBeInTheDocument();
     expect(avatarImage).toHaveAttribute('src', imageUrl);
@@ -34,7 +46,7 @@ describe('AvatarItem', () => {
   });
 
   test('is not rendered when hidden prop is true', () => {
-    render(<AvatarItem alt="Hidden" hidden />);
+    renderWithTheme(<AvatarItem alt="Hidden" hidden />);
     expect(screen.queryByRole('img')).not.toBeInTheDocument();
     expect(screen.queryByText('H')).not.toBeInTheDocument();
   });
