@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import { DefaultInput } from './DefaultInput';
 
 const meta: Meta<typeof DefaultInput> = {
-  title: 'Components/DefaultInput',
+  title: 'Molecules/DefaultInput',
   component: DefaultInput,
   argTypes: {
     shape: { table: { disable: true } },
