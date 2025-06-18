@@ -1,6 +1,7 @@
 import express, { type RequestHandler } from 'express';
 import { configMiddleware } from '../middleware/config-middleware';
 // @ts-expect-error: astroHandler is only available after Astro SSR build
+// eslint-disable-next-line import/no-unresolved, import/extensions
 import { handler as astroHandler } from '../../dist/server/entry.mjs';
 
 const app = express();
