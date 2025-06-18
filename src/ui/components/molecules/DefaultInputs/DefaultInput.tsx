@@ -1,13 +1,43 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, forwardRef } from 'react';
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
-import { TextInput } from '../../atoms/TextInput/TextInput';
-import { HintText } from '../../atoms/HintText/HintText';
-import { ClearIcon } from '../../atoms/Icons/ClearIcon';
-import { EmailIcon } from '../../atoms/Icons/EmailIcon';
-import { InfoIcon } from '../../atoms/Icons/InfoIcon';
+import TextField from '@mui/material/TextField';
+import type { TextFieldProps } from '@mui/material/TextField';
+import Close from '@mui/icons-material/Close';
+import EmailOutlined from '@mui/icons-material/EmailOutlined';
+import InfoOutlined from '@mui/icons-material/InfoOutlined';
 import type { DefaultInputProps } from './types/types';
+
+const TextInput = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
+  return <TextField fullWidth variant="outlined" inputRef={ref} {...props} />;
+});
+TextInput.displayName = 'TextInput';
+
+function HintText({ children, error }: { children: string; error?: boolean }) {
+  return (
+    <Typography
+      variant="caption"
+      color={error ? 'error' : 'text.secondary'}
+      sx={{ marginTop: '4px' }}
+    >
+      {children}
+    </Typography>
+  );
+}
+
+function ClearIcon() {
+  return <Close fontSize="small" />;
+}
+
+function EmailIcon() {
+  return <EmailOutlined fontSize="small" />;
+}
+
+function InfoIcon() {
+  return <InfoOutlined fontSize="small" />;
+}
 
 export function DefaultInput({
   label,
