@@ -22,7 +22,6 @@ const renderVariants = (args: Partial<React.ComponentProps<typeof DefaultInput>>
         <Typography variant="subtitle1" fontWeight="bold">
           Email Address
         </Typography>
-        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <DefaultInput {...args} shape={shape} />
       </Stack>
     ))}
