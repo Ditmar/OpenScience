@@ -1,0 +1,1 @@
+import{j as h}from"./jsx-runtime-BlDnFLNC.js";import{c as o}from"./createSvgIcon-8vP1eH-R.js";const t=o(h.jsx("path",{d:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m1 15h-2v-2h2zm0-4h-2V7h2z"})),m=o(h.jsx("path",{d:"M1 21h22L12 2zm12-3h-2v-2h2zm0-4h-2v-4h2z"}));export{t as E,m as W};
