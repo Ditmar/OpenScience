@@ -1,9 +1,6 @@
-// src/ui/components/atoms/SubTitleAndParagraph/SubTitleAndParagraph.tsx
-
 import React from 'react';
-import { Typography, Box } from '@mui/material'; // Importamos Typography y Box de MUI
+import { Typography, Box } from '@mui/material';
 import type { IProps } from './Types/IProps';
-// NO importamos SCSS modular aquí
 
 function SubTitleAndParagraph({
   title,
@@ -11,7 +8,7 @@ function SubTitleAndParagraph({
   size = 'md',
   alignment = 'left',
   variant = 'default',
-  titleTag = 'h2',
+  titleTag = 'h3',
   subtitleTag = 'p',
   className = '',
 }: IProps) {
@@ -41,7 +38,6 @@ function SubTitleAndParagraph({
     }
   };
 
-  // Estilos basados en 'variant'
   const getTextColor = (v: 'default' | 'emphasized' | 'minimal') => {
     switch (v) {
       case 'emphasized':

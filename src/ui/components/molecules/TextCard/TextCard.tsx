@@ -1,12 +1,10 @@
-// src/ui/components/molecules/TextCard/TextCard.tsx
-
 import React from 'react';
-import { Box, Stack, CardContent } from '@mui/material'; // Quitamos Card de aquí ya que lo usa StyledTextCard
+import { Box, Stack, CardContent } from '@mui/material';
 import { Check } from '../../../../library/component/atoms/Check/Check';
 import { AvatarBadgeItem } from '../badges/badges';
 import SubTitleAndParagraph from '../../atoms/SubTitleAndParagraph/SubTitleAndParagraph';
 import type { IProps } from './types/IProps';
-import { StyledTextCard } from './TextCard.styles'; // <-- ¡Importamos el StyledTextCard desde el nuevo archivo!
+import { StyledTextCard } from './TextCard.styles';
 
 function TextCard({
   isChecked,
@@ -44,7 +42,7 @@ function TextCard({
           onChange={onCheckChange}
           disabled={isCheckDisabled}
           variant="default"
-          rounded
+          rounded={false}
         />
       </Box>
 

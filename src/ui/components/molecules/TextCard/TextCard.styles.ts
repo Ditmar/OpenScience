@@ -1,5 +1,3 @@
-// src/ui/components/molecules/TextCard/TextCard.styles.ts
-
 import { Card } from '@mui/material';
 import { styled, type Theme } from '@mui/material/styles';
 import type { IProps } from './types/IProps';
@@ -47,6 +45,7 @@ const getHoverBorderColor = (
   const paletteColor = theme.palette[variant as PaletteColorKey];
   return paletteColor.dark;
 };
+
 export const StyledTextCard = styled(Card)<StyledTextCardProps>(({
   theme,
   isSelected,
@@ -58,6 +57,7 @@ export const StyledTextCard = styled(Card)<StyledTextCardProps>(({
 
   return {
     display: 'flex',
+    flexDirection: 'row',
     padding: theme.spacing(2),
     alignItems: 'flex-start',
     border: `1px solid ${borderColor}`,
@@ -72,5 +72,7 @@ export const StyledTextCard = styled(Card)<StyledTextCardProps>(({
       borderColor: hoverBorderColor,
       boxShadow: theme.shadows[6],
     },
+    maxWidth: 400,
+    width: '100%',
   };
 });
