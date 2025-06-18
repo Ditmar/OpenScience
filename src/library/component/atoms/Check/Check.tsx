@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Check.module.scss';
-import type { CheckProps } from './Check.props';
+import type { CheckProps } from './types/iProps';
 
 function classNames(...args: (string | false | null | undefined)[]): string {
   return args.filter(Boolean).join(' ');

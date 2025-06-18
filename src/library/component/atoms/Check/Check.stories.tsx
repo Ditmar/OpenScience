@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { Meta } from '@storybook/react';
-import type { CheckProps } from './Check.props';
+import type { CheckProps } from './types/iProps';
 import { Check } from './Check';
 
 const meta: Meta<typeof Check> = {
