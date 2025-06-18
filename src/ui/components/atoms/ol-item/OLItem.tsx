@@ -1,4 +1,4 @@
-import { OLItemRoot } from './OLItem.module';
+import { OLItemRoot } from './OLItem.style';
 import type { OLItemProps } from './types/IProps';
 
 function OLItem({ value, shape = 'square', size = 'md', active = false }: OLItemProps) {
