@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { vi } from 'vitest'; // ✅ IMPORTACIÓN VITEST
+import { vi } from 'vitest';
 import MainInput from './MainInput';
 
 describe('MainInput', () => {
@@ -15,13 +15,13 @@ describe('MainInput', () => {
     expect(screen.getByText('Consejo')).toBeInTheDocument();
 
     rerender(
-      <MainInput label="Test" placeholder="Hola" value="" onChange={() => {}} error="Error" />,
+      <MainInput label="Test" placeholder="Hola" value="" onChange={() => {}} errorMsg="Error" />,
     );
     expect(screen.getByText('Error')).toBeInTheDocument();
   });
 
   it('llama onChange al escribir', () => {
-    const handleChange = vi.fn(); // ✅ CAMBIO CLAVE
+    const handleChange = vi.fn();
     render(<MainInput label="Test" placeholder="Hola" value="" onChange={handleChange} />);
     fireEvent.change(screen.getByPlaceholderText('Hola'), { target: { value: 'nuevo' } });
     expect(handleChange).toHaveBeenCalled();

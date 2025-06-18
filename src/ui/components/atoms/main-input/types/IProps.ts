@@ -1,13 +1,14 @@
-import React from 'react';
+import type { ReactNode, ChangeEvent } from 'react';
+import type { TextFieldProps } from '@mui/material';
 
-export interface IProps {
+export interface IProps extends Omit<TextFieldProps, 'variant' | 'onChange'> {
   label: string;
-  placeholder: string;
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  placeholder?: string;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
   hint?: string;
-  error?: string;
+  errorMsg?: string;
   disabled?: boolean;
 }
