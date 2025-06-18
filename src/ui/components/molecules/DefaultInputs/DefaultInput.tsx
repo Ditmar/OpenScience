@@ -10,9 +10,53 @@ import EmailOutlined from '@mui/icons-material/EmailOutlined';
 import InfoOutlined from '@mui/icons-material/InfoOutlined';
 import type { DefaultInputProps } from './types/types';
 
-const TextInput = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
-  return <TextField fullWidth variant="outlined" inputRef={ref} {...props} />;
-});
+const TextInput = forwardRef<HTMLInputElement, TextFieldProps>(
+  (
+    {
+      id,
+      name,
+      type = 'text',
+      label,
+      placeholder,
+      value,
+      onChange,
+      required,
+      disabled,
+      autoComplete,
+      error,
+      sx,
+      InputProps,
+      autoFocus,
+      'aria-describedby': ariaDescribedby,
+      'aria-invalid': ariaInvalid,
+    },
+    ref,
+  ) => {
+    return (
+      <TextField
+        fullWidth
+        variant="outlined"
+        inputRef={ref}
+        id={id}
+        name={name}
+        type={type}
+        label={label}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        required={required}
+        disabled={disabled}
+        autoComplete={autoComplete}
+        error={error}
+        sx={sx}
+        InputProps={InputProps}
+        autoFocus={autoFocus}
+        aria-describedby={ariaDescribedby}
+        aria-invalid={ariaInvalid}
+      />
+    );
+  },
+);
 TextInput.displayName = 'TextInput';
 
 function HintText({ children, error }: { children: string; error?: boolean }) {
@@ -54,6 +98,7 @@ export function DefaultInput({
   autoComplete,
   id,
   shape = 'rounded',
+  autoFocus,
 }: DefaultInputProps) {
   const [internalValue, setInternalValue] = useState(value);
 
@@ -94,6 +139,7 @@ export function DefaultInput({
         disabled={disabled}
         autoComplete={autoComplete}
         error={!!error}
+        autoFocus={autoFocus}
         aria-describedby={id ? `${id}-helper-text` : undefined}
         aria-invalid={!!error}
         sx={{

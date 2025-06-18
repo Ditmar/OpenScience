@@ -22,7 +22,23 @@ const renderVariants = (args: Partial<React.ComponentProps<typeof DefaultInput>>
         <Typography variant="subtitle1" fontWeight="bold">
           Email Address
         </Typography>
-        <DefaultInput {...args} shape={shape} />
+        <DefaultInput
+          label={args.label}
+          placeholder={args.placeholder}
+          hint={args.hint}
+          error={args.error}
+          value={args.value}
+          autoFocus={args.autoFocus}
+          disabled={args.disabled}
+          onChange={args.onChange}
+          onClear={args.onClear}
+          required={args.required}
+          name={args.name}
+          id={args.id}
+          autoComplete={args.autoComplete}
+          type={args.type}
+          shape={shape}
+        />
       </Stack>
     ))}
   </Stack>
