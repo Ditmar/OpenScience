@@ -1,40 +1,28 @@
-## 🛠️ Centralized Configuration with Validation (Astro + Express)
+# Config Manager
 
-This project implements a centralized system for validating and accessing environment variables (`.env`) at runtime, using `Zod` for validation and exposing that configuration in both Express routes and Astro pages via `res.locals` and `Astro.locals`.
+## Objective
 
----
-
-### 📁 File Structure
-
-```
-src/
-├── config/
-│      ├── __tests__/
-│      │      └── config-manager.test.ts    # Unit tests for configuration
-│      │ 
-│      └── config-manager.ts                # Loads and validates environment variables
-│
-├── middleware/
-│      └── config-middleware.ts    # Injects configuration into res.locals
-│
-├── types/
-│      └── locals.d.ts             # Defines the shape of Astro.locals.config
-│
-├── pages/
-│      └── index.astro             # Example of accessing Astro.locals.config
-│
-├── env.d.ts        # Global typing
-│
-└── astro-env.d.ts  # Extends Astro typing
-```
+Centralize, validate, and type the project's environment variables using [Zod](https://zod.dev/), ensuring their availability on both the Express server and the Astro SSR environment.
 
 ---
 
-## 🔧 1. Environment variable validation
+## Why use a Config Manager?
 
-[FILE](../src/config/config-manager.ts): `src/config/config-manager.ts` 
+- **Robust validation:** Detects configuration errors at startup.
+- **Strict typing:** Prevents errors at development time.
+- **Centralization:** A single place to define and modify required environment variables.
+- **Hybrid compatibility:** Works on both Express and Astro SSR.
 
-```ts
+---
+
+## Implementation
+
+### 1. Validation and typing with Zod
+
+The `config-manager.ts` file defines the schema for the required environment variables and validates them upon application startup. If any variable is invalid or missing, the app fails to start and throws a clear error.
+
+```typescript
+// config-manager/config-manager.ts
 import { z } from 'zod';
 import dotenv from 'dotenv';
 
@@ -44,30 +32,28 @@ const configSchema = z.object({
   PUBLIC_SITE_URL: z.string().url(),
   API_BASE_URL: z.string().url(),
   ENABLE_FEATURE_X: z.string().transform((v) => v === 'true'),
-  NODE_ENV: z.enum(['development', 'production', 'test']),
-  // additional environment variables can be defined here
+  NODE_ENV: z.enum(['dev', 'prod', 'qa']),
 });
 
-const parsed = configSchema.safeParse(process.env);
+const { success, data } = configSchema.safeParse(process.env);
 
-if (!parsed.success) {
-  console.error('Invalid environment variables:', parsed.error.format());
+if (!success) {
   throw new Error('Invalid environment variables');
 }
 
-export const config = parsed.data;
-export type AppConfig = z.infer<typeof configSchema>;
+export const config = data;
 ```
 
 ---
 
-## 🔗 2. Express Middleware
+### 2. Middleware for Express
 
-[FILE](../src/middleware/config-middleware.ts): `src/middleware/config-middleware.ts`
+The `config-middleware.ts` middleware injects the validated configuration into `res.locals.config` so that it is available to any Express handler.
 
-```ts
-import { config } from '../config/config-manager';
+```typescript
+// src/middleware/config-middleware.ts
 import type { Request, Response, NextFunction } from 'express';
+import { config } from '../../config-manager/config-manager';
 
 export function configMiddleware(req: Request, res: Response, next: NextFunction) {
   res.locals.config = config;
@@ -75,121 +61,54 @@ export function configMiddleware(req: Request, res: Response, next: NextFunction
 }
 ```
 
----
+**Use in Express:**
 
-## 🚀 3. Injection in Astro.locals
-
-[FILE](../src/server/index.ts): `src/server/index.ts`
-
-```ts
-import express, { type RequestHandler } from 'express';
+```typescript
+import express from 'express';
 import { configMiddleware } from '../middleware/config-middleware';
-import { handler as astroHandler } from '../../dist/server/entry.mjs';
 
 const app = express();
 app.use(configMiddleware);
 
-app.use((req, res, next) => {
-  const handler = astroHandler as unknown;
-
-  function isRequestHandler(fn: unknown): fn is RequestHandler {
-    return typeof fn === 'function';
-  }
-
-  if (isRequestHandler(handler)) {
-    handler(req, res, next);
-    return;
-  }
-
-  res.status(500).send('Internal Server Error');
-});
+// You can now access res.locals.config in your routes
 ```
 
 ---
 
-## 🌍 4. Access from Astro (how to use...)
+### 3. Access from Astro SSR
 
-File: `src/pages/index.astro` or other .astro file
+Thanks to the integration with Express, validated environment variables are available in the Astro SSR context via `Astro.locals.config`.
 
-```astro
----
-const { config } = Astro.locals;
+**Example usage in Astro:**
 
-console.log(config.API_BASE_URL); // direct use
----
+```typescript
+// On an Astro SSR endpoint or page
+const config = Astro.locals.config;
+console.log(config.API_BASE_URL);
 ```
 
 ---
 
-## 🧠 5. Typing `Astro.locals`
+### 4. Unit Tests
 
-[FILE](../src/astro-env.d.ts): `src/astro-env.d.ts`
+The `config-manager.test.ts` file contains tests that verify:
 
-```ts
-import type { Locals } from './types/locals';
-
-declare module 'astro' {
-  interface AstroGlobal {
-    locals: Locals;
-  }
-}
-```
-
-[FILE](../src/types/locals.d.ts): `src/types/locals.d.ts`
-
-```ts
-import type { AppConfig } from '../config/config-manager';
-
-export interface ArticlesApiResponse {
-  data: {
-    id: number;
-    attributes: {
-      title: string;
-      date: string;
-      complete_text: string;
-      brief: string;
-      createdAt: string;
-      updatedAt: string;
-      publishedAt: string;
-    };
-  }[];
-}
-export interface Locals {
-  API_END_POINT: string;
-  API_KEY: string;
-  API_BASE_ROUTE: string;
-  DOMAIN: string;
-  collections: (API_ROUTE: string) => Promise<ArticlesApiResponse>;
-
-  config: AppConfig;
-}
-```
+- Successful loading and validation of variables.
+- Clear errors when a variable is missing or invalid.
+- Correct typing of values.
 
 ---
 
-## 🧪 6. Unit tests
+## Best Practices
 
-[FILE](../src/config/__tests__/config-manager.test.ts): `src/config/__tests__/config-manager.test.ts`
-
-
-
-### Run tests
-
-```bash
-# Run tests of this file
-yarn vitest watch src/config/__tests__/config-manager.test.ts
-```
-
-> Make sure you have the `.env` file configured correctly when running the tests.
+- **Add new variables only in `config-manager.ts`** and update the Zod schema.
+- **Do not directly access `process.env`** in business code; always use `config`.
+- **Keep tests up to date** if you change the configuration schema.
+- **Document each variable** in this README to facilitate onboarding.
 
 ---
 
-## ✅ Best Practices
+## Notes
 
-* ✅ Keep `config-manager.ts` as the single source of truth for your environment variables.
-* ✅ Validate everything with `Zod` to avoid errors in production.
-* ✅ Use `Astro.locals.config` in SSR and `res.locals.config` in API routes.
-* ✅ Define your types clearly in `types/locals.d.ts` and `astro-env.d.ts`.
-* ✅ Write unit tests to ensure your configuration is valid.
-
----
+- This system does not affect current business logic or endpoints, but **should be considered in all SSR routes and Express handlers** that depend on environment variables.
+- If you add new variables, remember to update the schema and tests.
