@@ -1,6 +1,6 @@
 import { Avatar } from '@mui/material';
 import type { AvatarItemProps } from './types/IProps';
-import './AvatarBagde.scss';
+import style from './AvatarBagde.module.scss';
 
 export function AvatarItem({
   shape = 'default',
@@ -11,8 +11,11 @@ export function AvatarItem({
 }: AvatarItemProps) {
   if (hidden) return null;
 
-  const sizeClass = `avatar-item--${size}`;
-  const shapeClass = shape === 'rounded' ? 'avatar-item--rounded' : 'avatar-item--default';
+  const sizeClass = style[`avatar-item--${size}`];
+  const shapeClass =
+    shape === 'rounded' ? style['avatar-item--rounded'] : style['avatar-item--default'];
 
-  return <Avatar src={src} alt={alt} className={`avatar-item ${sizeClass} ${shapeClass}`} />;
+  return (
+    <Avatar src={src} alt={alt} className={`${style['avatar-item']} ${sizeClass} ${shapeClass}`} />
+  );
 }

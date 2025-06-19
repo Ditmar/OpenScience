@@ -6,7 +6,7 @@ import { Text } from '../../atoms/Text/Text';
 import Pill from '../../../../library/component/atoms/pills/pills';
 import type { AvatarBadgeItemProps } from './types/IProps';
 import { Icon } from '../../../utils/vite-svgr/Icon';
-import './badges.scss';
+import styles from './badges.module.scss';
 
 const getFontSize = (badgeSize: string) => (badgeSize === 'small' ? '0.75rem' : '1rem');
 
@@ -69,7 +69,7 @@ export function AvatarBadgeItem({
   };
 
   const getIconSizeClass = (iconSize: 'small' | 'medium' | 'large' = 'medium') =>
-    `icon--${iconSize}`;
+    styles[`icon--${iconSize}`];
 
   const colorMap: Record<string, string> = {
     primary: '#0d6efd',
@@ -134,14 +134,23 @@ export function AvatarBadgeItem({
   const badgeSizeClass = getBadgeSizeClass(size);
   const pillColor = getMappedPillColor(color, variant);
 
+  const badgeClassName = [
+    styles.badge,
+    styles[`badge--${variant}`],
+    styles[`badge--${color}`],
+    shape === 'rounded' ? styles['badge--rounded'] : '',
+    styles[`badge--${badgeSizeClass}`],
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
     <Stack
       aria-label={`Badge de ${text}`}
       direction="row"
       onClick={onClick}
-      className={`badge badge--${variant} badge--${color} ${
-        shape === 'rounded' ? 'badge--rounded' : ''
-      } badge--${badgeSizeClass} ${className}`}
+      className={badgeClassName}
       sx={{
         ...getContainerStyles(),
         color: getTextColor(),
@@ -151,7 +160,7 @@ export function AvatarBadgeItem({
       <Icon
         name="close_circle"
         iconName="circle-quarters"
-        className={`badge__icon ${getIconSizeClass(size)}`}
+        className={`${styles.badge__icon} ${getIconSizeClass(size)}`}
         strokeWidth="0"
         stroke={getIconColor()}
         color={getIconColor()}
@@ -178,7 +187,7 @@ export function AvatarBadgeItem({
       )}
 
       {countStart > 0 && (
-        <span className="badge__counter" style={{ color: getTextColor() }}>
+        <span className={styles.badge__counter} style={{ color: getTextColor() }}>
           {countStart}
         </span>
       )}
@@ -191,7 +200,7 @@ export function AvatarBadgeItem({
       />
 
       {countEnd > 0 && (
-        <span className="badge__counter" style={{ color: getTextColor() }}>
+        <span className={styles.badge__counter} style={{ color: getTextColor() }}>
           {countEnd}
         </span>
       )}
@@ -201,7 +210,7 @@ export function AvatarBadgeItem({
           onClick={handleCerrar}
           name="Close-URL"
           iconName="Close-URL"
-          className="badge__icon--x"
+          className={styles['badge__icon--x']}
           width="16"
           height="16"
           stroke={getIconColor()}
