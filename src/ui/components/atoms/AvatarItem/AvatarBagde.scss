@@ -1,0 +1,24 @@
+.avatar-item {
+  &--small {
+    height: 24px !important;
+    width: 24px !important;
+  }
+
+  &--medium {
+    height: 28px !important;
+    width: 28px !important;
+  }
+
+  &--large {
+    height: 31px !important;
+    width: 31px !important;
+  }
+
+  &--default {
+    border-radius: 0 !important;
+  }
+
+  &--rounded {
+    border-radius: 8px !important;
+  }
+}
