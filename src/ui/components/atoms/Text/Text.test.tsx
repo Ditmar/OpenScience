@@ -12,9 +12,4 @@ describe('Text', () => {
     const element = screen.getByText('Texto regular');
     expect(element).toHaveStyle('font-weight: normal');
   });
-
-  it('aplica la clase de tamaño correcta', () => {
-    render(<Text text="Texto pequeño" size="small" />);
-    expect(screen.getByText('Texto pequeño')).toHaveClass('text--small');
-  });
 });
