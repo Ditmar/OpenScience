@@ -20,4 +20,5 @@ export interface IProps {
   stroke?: 'border-soft' | 'border-strong';
   icon?: string | ReactNode;
   iconPosition?: 'left' | 'right';
+  // sx?: SxProps;
 }
