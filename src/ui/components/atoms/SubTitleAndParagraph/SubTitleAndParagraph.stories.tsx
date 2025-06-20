@@ -9,7 +9,7 @@ const meta: Meta<typeof SubTitleAndParagraph> = {
   argTypes: {
     title: {
       control: 'text',
-      description: 'El texto del título principal.',
+      description: 'El texto del título princip.',
     },
     subtitle: {
       control: 'text',
