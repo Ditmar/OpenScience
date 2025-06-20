@@ -1,1 +1,0 @@
-import{r as t}from"./index-Cu9bd8lq.js";import{j as s}from"./jsx-runtime-BlDnFLNC.js";const a=typeof window<"u"?t.useLayoutEffect:t.useEffect,o=t.createContext();function f({value:e,...r}){return s.jsx(o.Provider,{value:e??!0,...r})}const c=()=>t.useContext(o)??!1;export{f as R,c as a,a as u};
