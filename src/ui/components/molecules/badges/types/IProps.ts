@@ -1,22 +1,25 @@
 import React from 'react';
-import type { IProps } from '../../../../../library/component/atoms/pills/types/IProps';
+import type { IProps as PillProps } from '../../../../../library/component/atoms/pills/types/IProps';
 
 interface AvatarBadgeItemProps {
   avatarSrc?: string;
   text: string;
-  countStart?: number;
-  countEnd?: number;
+
   showAvatar?: boolean;
   size?: 'small' | 'medium' | 'large';
   bold?: boolean;
-  onRemove?: React.MouseEventHandler<HTMLDivElement>;
+  onRemove?: (event: React.MouseEvent) => void;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
-  pillProps?: IProps;
+
   className?: string;
   variant?: 'filled' | 'outline' | 'soft';
   color?: 'neutral' | 'gray' | 'violet' | 'blue' | 'custom';
   customColor?: string;
   shape?: 'default' | 'rounded';
+  showLeadingIcon?: boolean;
+  leftPillProps?: PillProps;
+  rightPillProps?: PillProps;
+  showRemoveIcon?: boolean;
 }
 
 export type { AvatarBadgeItemProps };

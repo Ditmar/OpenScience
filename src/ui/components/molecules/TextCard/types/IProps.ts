@@ -1,6 +1,11 @@
+import type { ReactNode } from 'react';
 import type { CheckProps } from '../../../../../library/component/atoms/Check/types/iProps';
 import type { AvatarBadgeItemProps } from '../../badges/types/IProps';
 import type { IProps as SubTitleAndParagraphProps } from '../../../atoms/SubTitleAndParagraph/types/IProps';
+import type { IProps as PillProps } from '../../../../../library/component/atoms/pills/types/IProps';
+
+export type CardSizeVariant = 'large' | 'medium' | 'small';
+export type CardShapeVariant = 'soft' | 'sharp';
 
 export interface IProps {
   isChecked: CheckProps['checked'];
@@ -25,4 +30,11 @@ export interface IProps {
   isSelected?: boolean;
 
   cardVariantColor?: 'default' | 'info' | 'warning' | 'success' | 'error' | 'primary' | 'secondary';
+  sizeVariant?: CardSizeVariant;
+  shapeVariant?: CardShapeVariant;
+
+  showLeadingIcon?: boolean;
+  leadingIcon?: ReactNode;
+  showLeadingPill?: boolean;
+  cardRightPillProps?: PillProps;
 }
