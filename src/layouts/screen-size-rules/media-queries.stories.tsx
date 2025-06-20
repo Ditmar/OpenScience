@@ -2,7 +2,14 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeProvider, CssBaseline, Typography, Box, Button, Paper } from '@mui/material';
 import { theme } from './theme';
-import { useIsMobile, useIsTabletUp, useIsDesktopDown } from './media-queries';
+import {
+  useIsMobile,
+  useIsTabletUp,
+  useIsDesktopDown,
+  useIsSmallMobileDown,
+  useIsSmallMobileLargeUp,
+  useIsLargeTabletUp,
+} from './media-queries';
 
 const meta: Meta = {
   title: 'Theme/MediaQueriesMUI',
@@ -14,6 +21,9 @@ function ResponsiveTypographyDemoComponent() {
   const isMobile = useIsMobile();
   const isTabletUp = useIsTabletUp();
   const isDesktopDown = useIsDesktopDown();
+  const isSmallMobileDown = useIsSmallMobileDown();
+  const isSmallMobileLargeUp = useIsSmallMobileLargeUp();
+  const isLargeTabletUp = useIsLargeTabletUp();
 
   return (
     <Box sx={{ p: 2, bgcolor: '#f9f9f9' }}>
@@ -69,6 +79,22 @@ function ResponsiveTypographyDemoComponent() {
               </Typography>
             ))}
           </Box>
+
+          {isSmallMobileDown && (
+            <Typography variant="caption" color="error.main" sx={{ mt: 1, display: 'block' }}>
+              You are on a very small mobile device (≤ 320px).
+            </Typography>
+          )}
+          {isSmallMobileLargeUp && (
+            <Typography variant="caption" color="success.main" sx={{ mt: 1, display: 'block' }}>
+              Your screen is at least 568px wide.
+            </Typography>
+          )}
+          {isLargeTabletUp && (
+            <Typography variant="caption" color="info.main" sx={{ mt: 1, display: 'block' }}>
+              Tablet or larger (≥ 1112px) detected.
+            </Typography>
+          )}
         </Box>
       </Box>
 

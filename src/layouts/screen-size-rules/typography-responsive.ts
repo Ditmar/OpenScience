@@ -20,6 +20,8 @@ const baseSizes = {
 export function generateResponsiveTypography(): TypographyVariantsOptions {
   const variants: TypographyVariantsOptions = {};
 
+  const sortedBreakpoints = Object.entries(breakpoints).sort(([, a], [, b]) => a - b);
+
   (Object.keys(baseSizes) as (keyof typeof baseSizes)[]).forEach((variant) => {
     const baseSize = baseSizes[variant];
 
@@ -27,10 +29,8 @@ export function generateResponsiveTypography(): TypographyVariantsOptions {
       fontSize: `${baseSize.toFixed(3)}rem`,
     };
 
-    Object.values(breakpoints).forEach((minWidth, i) => {
-      const minWidthStr = minWidth.toString();
-
-      styles[`@media (min-width:${minWidthStr}px)`] = {
+    sortedBreakpoints.forEach(([, minWidth], i) => {
+      styles[`@media (min-width:${minWidth.toString()}px)`] = {
         fontSize: `${(baseSize + 0.25 * i).toFixed(3)}rem`,
       };
     });
