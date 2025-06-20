@@ -132,7 +132,7 @@ export const InfoVariantCard: Story = {
   args: {
     ...Default.args,
     cardVariantColor: 'info',
-    cardSubtitle: 'Alerta Importante',
+    cardSubtitle: 'Alerta Imp',
     cardParagraph: 'Esta tarjeta utiliza la variante de color para información.',
   },
 };
