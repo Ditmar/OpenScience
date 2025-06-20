@@ -1,8 +1,19 @@
 import type { SxProps, Theme } from '@mui/material';
 
+import '../../../../globals/_fonts.scss';
+import '../../../../globals/_variables.scss';
+import '../../../../globals/globals.scss';
+import '../../../../globals/_mixins.scss';
+
 const fontSizeMap = {
   small: '0.75rem',
   medium: '1rem',
+  large: '1.25rem',
+} as const;
+
+const fontSizeSelectMap = {
+  small: '1rem',
+  medium: '1.125rem',
   large: '1.25rem',
 } as const;
 
@@ -10,6 +21,12 @@ const borderColorMap = {
   default: 'var(--color-neutral-gray-soft-100)',
   error: 'var(--color-feedback-negative-500)',
   disabled: 'var(--color-neutral-gray-strong-50)',
+} as const;
+
+const borderRadiusMap = {
+  normal: '0',
+  semi: '0.5rem',
+  circle: '3.125rem',
 } as const;
 
 const borderHoverMap = {
@@ -29,35 +46,67 @@ const mouseFocusMap = {
   error: 'var(--color-feedback-negative-500)',
 } as const;
 
-function stateKey(disabled?: boolean, error?: boolean) {
+function stateKey(disabled?: boolean, error?: boolean, borderRadius?: string, size?: string) {
   if (disabled) return 'disabled';
   if (error) return 'error';
+  switch (borderRadius) {
+    case 'normal':
+      return 'normal';
+    case 'semi':
+      return 'semi';
+    case 'circle':
+      return 'circle';
+  }
+  switch(size) {
+    case 'small':
+      return 'small';
+    case 'medium':
+      return 'medium';
+    case 'large':
+      return 'large';
+  }
+
   return 'default';
 }
 
 export const selectSx = (opts: {
   disabled?: boolean;
   error?: boolean;
+  borderRadius?: 'normal' | 'semi' | 'circle';
   keyboardFocus?: boolean;
+  size?: 'small' | 'medium' | 'large';
 }): SxProps<Theme> => {
-  const key = stateKey(opts.disabled, opts.error);
+  const key = stateKey(opts.disabled, opts.error, opts.borderRadius, opts.size);
   const keyMouse = opts.error ? 'error' : 'default';
   return {
     width: '23.188rem',
-    borderRadius: 0,
-    m: '0.875rem 0',
-    p: '0.85rem 1rem',
+    borderRadius: borderRadiusMap[key as keyof typeof borderRadiusMap] ?? borderRadiusMap.normal,
+    fontWeight: '400',
+    fontFamily: 'Poppins-Light, sans-serif',
+    fontSize: fontSizeSelectMap[key as keyof typeof fontSizeSelectMap] ?? fontSizeSelectMap.medium,
     border: '1px solid #e0e6e7',
     '@media(max-width:600px)': { maxWidth: '18rem' },
     '& .MuiOutlinedInput-notchedOutline': {
-      borderColor: borderColorMap[key],
+      borderColor: borderColorMap[
+        key === 'error' || key === 'disabled' ? key : 'default'
+      ],
       borderWidth: '1px',
     },
+    '& .MuiInputBase-input': {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '0.5rem',
+      p: '0.938rem 1.125rem 0.938rem 0.875rem',
+    },
     '&:hover .MuiOutlinedInput-notchedOutline': {
-      borderColor: borderHoverMap[key],
+      borderColor: borderHoverMap[
+        key === 'error' || key === 'disabled' ? key : 'default'
+      ],
     },
     '&.keyboard-focus .MuiOutlinedInput-notchedOutline': {
-      borderColor: borderFocusMap[key],
+      borderColor: borderFocusMap[
+        key === 'error' || key === 'disabled' ? key : 'default'
+      ],
       borderWidth: key === 'disabled' ? '1px' : '4px',
     },
     '&.mouse-focus.Mui-focused .MuiOutlinedInput-notchedOutline': {
