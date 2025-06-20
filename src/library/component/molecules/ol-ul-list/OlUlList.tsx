@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import classnames from 'classnames';
 import OLItem from '../../../../ui/components/atoms/ol-item/OLItem';
 import OLBullet from '../../../../ui/components/atoms/ol-bullet/OLBullet';
 import styles from './OlUlList.module.scss';
@@ -18,7 +18,7 @@ const getOLItemSize = (size: string): 'sm' | 'md' | 'lg' => {
 };
 
 function OlUlList({ type, style = 'circle', size = 'medium', items = [], count = 1 }: IProps) {
-  const containerClasses = clsx(
+  const containerClasses = classnames(
     styles['ol-ul-list'],
     {
       [styles.ordered]: type === 'ordered',
@@ -28,7 +28,7 @@ function OlUlList({ type, style = 'circle', size = 'medium', items = [], count =
     getSizeClasses(size),
   );
 
-  const contentSizeClass = clsx(getSizeClasses(size));
+  const contentSizeClass = classnames(getSizeClasses(size));
 
   const olItemSize = getOLItemSize(size);
 
