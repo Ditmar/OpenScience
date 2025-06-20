@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Box, MenuItem, Select, type SelectChangeEvent } from '@mui/material';
 import type { IProps, Option } from './types/IProps';
-import styles from './InputCountry.module.scss';
+// import styles from './InputCountry.module.scss';
 import { Icon } from '../../../utils/svg-icons/icons';
 import globe from '../../../../assets/icons/globe.svg?raw';
 import close_circle from '../../../../assets/icons/close_circle.svg?raw';
@@ -26,28 +26,22 @@ export function InputCountry(props: IProps) {
     };
   }, []);
 
-  const selectStyles = selectSx({ disabled, error, keyboardFocus });
-  const labelStyles  = textSx({ disabled, error, size });
+  const selectStyles = selectSx({ disabled, error, borderRadius, size , keyboardFocus });
+  const labelStyles = textSx({ disabled, error, size });
   const helperStyles = textSx({ disabled, error, size });
-  const closeStyles  = iconSx({ disabled, error });
-  const infoStyles   = iconSx({ disabled, error });
-
-  const borderCls = borderRadius === 'circle'
-    ? styles['select-circle']
-    : borderRadius === 'semi'
-    ? styles['select-semi']
-    : '';
+  const closeStyles = iconSx({ disabled, error });
+  const infoStyles = iconSx({ disabled, error });
 
   const focusCls = keyboardFocus ? 'keyboard-focus' : 'mouse-focus';
 
   return (
-    <Box className={styles['country-input']}> 
+    <Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-          {globe && <Icon src={globe} />}
+          {globe && <Icon src={globe} styles={closeStyles as React.CSSProperties} />}
           <Box component="p" sx={labelStyles}>{label || ''}</Box>
         </Box>
-        <Box>{close_circle && <Icon src={close_circle} />}</Box>
+        <Box>{close_circle && <Icon src={close_circle} styles={closeStyles as React.CSSProperties} />}</Box>
       </Box>
       <Box sx={{ position: 'relative' }}>
         <Select
@@ -57,7 +51,7 @@ export function InputCountry(props: IProps) {
           displayEmpty
           disabled={disabled}
           inputProps={{ 'aria-label': 'Without label' }}
-          className={`${styles['select-country']} ${borderCls} ${focusCls}`}
+          className={`${focusCls}`}
           sx={selectStyles}
           MenuProps={{
             MenuListProps: {
@@ -77,7 +71,7 @@ export function InputCountry(props: IProps) {
         >
           {options.map((item: Option, idx) => (
             <MenuItem value={idx > 0 ? item.code : ''} key={item.code}>
-              <Box component="img" src={`./images/flags/${item.code}.svg`} alt={item.country} sx={{ width: 24, height: 16 }} />
+              <Box component="img" src={`./images/flags/${item.code}.svg`} alt={item.country} sx={{ width: 18, height: 18 }} />
               {item.country}
             </MenuItem>
           ))}
@@ -85,10 +79,10 @@ export function InputCountry(props: IProps) {
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 1 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-          {info && <Icon src={info} />}
+          {info && <Icon src={info} styles={infoStyles as React.CSSProperties} />}
           <Box component="p" sx={helperStyles}>{helperText}</Box>
         </Box>
-        <Box>{info && <Icon src={info} />}</Box>
+        <Box>{info && <Icon src={info} styles={infoStyles as React.CSSProperties} />}</Box>
       </Box>
     </Box>
   );
