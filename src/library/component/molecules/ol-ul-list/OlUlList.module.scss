@@ -1,0 +1,79 @@
+@import '../../../../globals/variables';
+
+.ol-ul-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.ol-ul-list__item {
+  align-items: flex-start;
+  display: flex;
+  gap: 1.5rem;
+
+  .ol-ul-list__item-content {
+    flex: 1;
+
+    h3 {
+      color: $ads-icontextstat-color-title;
+      font-size: 0.95em;
+      font-weight: 600;
+      margin: 0 0 4px;
+    }
+
+    p {
+      color: $ads-icontextstat-color-text;
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
+}
+
+.extra-small {
+  .ol-ul-list__item-content {
+    h3 {
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.875rem;
+    }
+  }
+}
+
+.small {
+  .ol-ul-list__item-content {
+    h3 {
+      font-size: 1.125rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+.medium {
+  .ol-ul-list__item-content {
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+.large {
+  .ol-ul-list__item-content {
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+  }
+}
