@@ -2,12 +2,10 @@ import { render, screen } from '@testing-library/react';
 import { vi } from 'vitest';
 import { AvatarBadgeItem } from './badges';
 
-// Mock del ícono de badge
 vi.mock('/src/assets/icons/circle-quarters.svg?react', () => ({
   default: () => <svg data-testid="circle-quarters-icon" />,
 }));
 
-// Mock del ícono de eliminar si se usa un SVG o ícono de librería
 vi.mock('@/components/ui/icons/delete-icon.svg?react', () => ({
   default: () => <button data-testid="delete-icon" aria-label="Eliminar" />,
 }));

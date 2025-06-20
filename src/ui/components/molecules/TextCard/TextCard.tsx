@@ -3,8 +3,21 @@ import { Box, Stack, CardContent } from '@mui/material';
 import { Check } from '../../../../library/component/atoms/Check/Check';
 import { AvatarBadgeItem } from '../badges/badges';
 import SubTitleAndParagraph from '../../atoms/SubTitleAndParagraph/SubTitleAndParagraph';
-import type { IProps } from './types/IProps';
+import type { IProps, CardSizeVariant } from './types/IProps';
 import { StyledTextCard } from './TextCard.styles';
+
+const mapCardSizeToAtomSize = (cardSize: CardSizeVariant): 'lg' | 'md' | 'sm' => {
+  switch (cardSize) {
+    case 'large':
+      return 'lg';
+    case 'medium':
+      return 'md';
+    case 'small':
+      return 'sm';
+    default:
+      return 'md';
+  }
+};
 
 function TextCard({
   isChecked,
@@ -23,12 +36,35 @@ function TextCard({
   className = '',
   isSelected = false,
   cardVariantColor = 'default',
+  sizeVariant = 'medium',
+  shapeVariant = 'soft',
+  showLeadingIcon = false,
+  showLeadingPill = false,
+  cardRightPillProps,
 }: IProps) {
+  const atomSize = mapCardSizeToAtomSize(sizeVariant);
+
+  let avatarBadgeItemSize: 'small' | 'medium' | 'large';
+  switch (atomSize) {
+    case 'lg':
+      avatarBadgeItemSize = 'large';
+      break;
+    case 'sm':
+      avatarBadgeItemSize = 'small';
+      break;
+    case 'md':
+    default:
+      avatarBadgeItemSize = 'medium';
+      break;
+  }
+
   return (
     <StyledTextCard
       className={className}
       isSelected={isSelected}
       cardVariantColor={cardVariantColor}
+      sizeVariant={sizeVariant}
+      shapeVariant={shapeVariant}
     >
       <Box
         sx={{
@@ -51,17 +87,28 @@ function TextCard({
           flexGrow: 1,
           p: 0,
           '&:last-child': { pb: 0 },
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
         <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 1 }}>
           <AvatarBadgeItem
             text={badgeText}
+            showAvatar={!showLeadingIcon && !showLeadingPill && !!badgeAvatarSrc}
             avatarSrc={badgeAvatarSrc}
+            showLeadingIcon={showLeadingIcon}
+            leftPillProps={
+              showLeadingPill
+                ? { text: 'Pill', variant: 'soft', color: 'neutral-dark', size: atomSize }
+                : undefined
+            }
             onClick={onBadgeClick}
-            size="medium"
+            size={avatarBadgeItemSize}
             variant="filled"
             color="neutral"
             shape="default"
+            showRemoveIcon={false}
+            rightPillProps={cardRightPillProps}
           />
         </Stack>
 
@@ -69,10 +116,10 @@ function TextCard({
           <SubTitleAndParagraph
             title={cardSubtitle}
             subtitle={cardParagraph}
-            size={subtitleSize ?? 'md'}
+            size={subtitleSize ?? atomSize}
             alignment={subtitleAlignment ?? 'left'}
             variant={subtitleVariant ?? 'default'}
-            titleTag={subtitleTitleTag ?? 'h4'}
+            titleTag={subtitleTitleTag ?? 'h3'}
             subtitleTag={paragraphSubtitleTag ?? 'p'}
           />
         </Box>

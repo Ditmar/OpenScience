@@ -1,97 +1,172 @@
 import React from 'react';
 import { Stack } from '@mui/material';
-import type { IProps } from 'library/component/atoms/pills/types/IProps';
+import type { IProps as PillProps } from '../../../../library/component/atoms/pills/types/IProps';
+import Pill from '../../../../library/component/atoms/pills/pills';
 import { AvatarItem } from '../../atoms/AvatarItem/AvatarBagde';
 import { Text } from '../../atoms/Text/Text';
-import Pill from '../../../../library/component/atoms/pills/pills';
 import type { AvatarBadgeItemProps } from './types/IProps';
 import { Icon } from '../../../utils/vite-svgr/Icon';
-import './badges.scss';
+import styles from './badges.module.scss';
 
-const getFontSize = (badgeSize: string) => (badgeSize === 'small' ? '0.75rem' : '1rem');
-
-const getPillSize = (pillSizeArg: string) => {
-  switch (pillSizeArg) {
+const getFontSize = (badgeSize: 'small' | 'medium' | 'large') => {
+  switch (badgeSize) {
     case 'small':
-      return 'sm';
+      return '0.75rem';
     case 'medium':
-      return 'md';
+      return '1rem';
+    case 'large':
+      return '1.125rem';
     default:
-      return 'lg';
+      return '1rem';
   }
 };
 
-const getBadgeSizeClass = (badgeSizeArg: string) => {
+const getBadgeSizeClass = (badgeSizeArg: 'small' | 'medium' | 'large') => {
   switch (badgeSizeArg) {
     case 'small':
       return 'sm';
     case 'medium':
       return 'md';
-    default:
+    case 'large':
       return 'lg';
+    default:
+      return 'md';
   }
 };
 
-const pillColorMap: Record<string, IProps['color']> = {
-  neutral: 'neutral-dark',
-  custom: 'neutral-dark',
+const getPillSize = (badgeSize: 'small' | 'medium' | 'large') => {
+  switch (badgeSize) {
+    case 'small':
+      return 'sm';
+    case 'medium':
+      return 'md';
+    case 'large':
+      return 'lg';
+    default:
+      return 'md';
+  }
 };
 
-const getMappedPillColor = (color: string, variant: string): IProps['color'] => {
-  if (variant === 'filled') {
-    if (color === 'neutral') return 'neutral-light';
+type PillColorMapKeys =
+  | 'neutral'
+  | 'gray'
+  | 'violet'
+  | 'blue'
+  | 'custom'
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'danger'
+  | 'warning'
+  | 'info'
+  | 'default';
+const pillColorMap: Record<PillColorMapKeys, PillProps['color']> = {
+  neutral: 'neutral-dark',
+  gray: 'neutral-dark', // Añadido 'gray' para el mapeo
+  violet: 'brand-secondary',
+  blue: 'brand-primary',
+  custom: 'neutral-dark',
+  primary: 'brand-primary',
+  secondary: 'neutral-dark',
+  success: 'feedback-positive',
+  danger: 'feedback-negative',
+  warning: 'feedback-warning',
+  info: 'brand-tertiary',
+  default: 'neutral-dark',
+};
+const getMappedPillColor = (
+  color: AvatarBadgeItemProps['color'],
+  variant: AvatarBadgeItemProps['variant'],
+) => {
+  const effectiveColorKey: PillColorMapKeys = color as PillColorMapKeys;
+  if (effectiveColorKey === 'custom') {
     return 'neutral-dark';
   }
-
-  if (color === 'custom') return 'neutral-dark';
-  return pillColorMap[color] ?? 'read-only-disabled';
+  if (variant === 'filled' && (effectiveColorKey === 'neutral' || effectiveColorKey === 'gray')) {
+    return 'neutral-light';
+  }
+  return pillColorMap[effectiveColorKey];
 };
+
+type BadgePrimaryColorMapKeys =
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'danger'
+  | 'warning'
+  | 'info'
+  | 'neutral'
+  | 'gray'
+  | 'violet'
+  | 'blue'
+  | 'default'
+  | 'custom';
+const colorMap: Record<BadgePrimaryColorMapKeys, string> = {
+  primary: '#0d6efd',
+  secondary: '#6c757d',
+  success: '#198754',
+  danger: '#dc3545',
+  warning: '#ffc107',
+  info: '#0dcaf0',
+  neutral: '#6c757d',
+  gray: '#6c757d',
+  violet: '#9a4aff',
+  blue: '#3994ff',
+  default: '#000',
+  custom: '#6c757d',
+};
+
+const getTextColor = (
+  variant: string,
+  color: AvatarBadgeItemProps['color'],
+  customColor?: string,
+) => {
+  const effectiveColorKey: BadgePrimaryColorMapKeys = color as BadgePrimaryColorMapKeys;
+  const finalColorValue =
+    effectiveColorKey === 'custom' && customColor ? customColor : colorMap[effectiveColorKey];
+
+  if (variant === 'filled') {
+    if (effectiveColorKey === 'neutral' || effectiveColorKey === 'gray') return '#fff';
+    return '#000';
+  }
+  return finalColorValue;
+};
+
+const getIconColor = (
+  variant: string,
+  color: AvatarBadgeItemProps['color'],
+  customColor?: string,
+) => getTextColor(variant, color, customColor);
 
 export function AvatarBadgeItem({
   avatarSrc,
   text = 'Badge Text',
-  countStart = 100,
-  countEnd = 100,
+
   showAvatar = true,
   size = 'medium',
   bold = false,
   onRemove,
   onClick,
-  pillProps,
+
   className = '',
   variant = 'filled',
   color = 'neutral',
   customColor,
   shape = 'default',
+  showLeadingIcon = false,
+  leftPillProps,
+  rightPillProps,
+  showRemoveIcon = true,
 }: AvatarBadgeItemProps) {
   const handleCerrar = (e: React.MouseEvent) => {
     e.stopPropagation();
+    if (onRemove) {
+      onRemove(e);
+    }
   };
 
   const getIconSizeClass = (iconSize: 'small' | 'medium' | 'large' = 'medium') =>
-    `icon--${iconSize}`;
-
-  const colorMap: Record<string, string> = {
-    primary: '#0d6efd',
-    secondary: '#6c757d',
-    success: '#198754',
-    danger: '#dc3545',
-    warning: '#ffc107',
-    info: '#0dcaf0',
-    neutral: '#6c757d',
-    default: '#000',
-  };
-
-  const getTextColor = () => {
-    if (variant === 'filled') {
-      if (color === 'neutral') return '#fff';
-      return '#000';
-    }
-    if (color === 'custom' && customColor) return customColor;
-    return colorMap[color] || colorMap.default;
-  };
-
-  const getIconColor = () => getTextColor();
+    styles[`icon--${iconSize}`];
 
   const getContainerStyles = () => {
     const baseStyles = {
@@ -106,56 +181,96 @@ export function AvatarBadgeItem({
       alignItems: 'center',
     };
 
+    const effectiveColorKeyForContainer: BadgePrimaryColorMapKeys =
+      color as BadgePrimaryColorMapKeys;
     const finalColor =
-      color === 'custom' && customColor ? customColor : colorMap[color] ?? colorMap.default;
+      effectiveColorKeyForContainer === 'custom' && customColor
+        ? customColor
+        : colorMap[effectiveColorKeyForContainer];
 
-    if (variant === 'filled') {
-      const filledStyles =
-        color === 'neutral'
-          ? { backgroundColor: '#000', color: '#fff' }
-          : { backgroundColor: '#fff', color: '#000' };
+    switch (variant) {
+      case 'filled': {
+        const filledBgColor = effectiveColorKeyForContainer === 'neutral' ? '#000' : finalColor;
+        const filledTextColor = effectiveColorKeyForContainer === 'neutral' ? '#fff' : '#000';
 
-      return {
-        ...baseStyles,
-        ...filledStyles,
-        border: '1px solid transparent',
-      };
+        return {
+          ...baseStyles,
+          backgroundColor: filledBgColor,
+          color: filledTextColor,
+          border: '1px solid transparent',
+        };
+      }
+      case 'outline': {
+        return {
+          ...baseStyles,
+          backgroundColor: 'transparent',
+          color: finalColor,
+          border: `1px solid ${finalColor}`,
+        };
+      }
+      case 'soft': {
+        const softBgColor = `${finalColor}20`;
+        return {
+          ...baseStyles,
+          backgroundColor: softBgColor,
+          color: finalColor,
+          border: '1px solid transparent',
+        };
+      }
+      default:
+        return { ...baseStyles };
     }
-
-    return {
-      ...baseStyles,
-      backgroundColor: variant === 'soft' ? `${finalColor}20` : 'transparent',
-      color: finalColor,
-      border: variant === 'outline' ? `1px solid ${finalColor}` : '1px solid transparent',
-    };
   };
 
-  const pillSize = getPillSize(size);
   const badgeSizeClass = getBadgeSizeClass(size);
-  const pillColor = getMappedPillColor(color, variant);
+
+  const badgeClassName = [
+    styles.badge,
+    styles[`badge--${variant}`],
+    styles[`badge--${color}`],
+    shape === 'rounded' ? styles['badge--rounded'] : '',
+    styles[`badge--${badgeSizeClass}`],
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   return (
     <Stack
       aria-label={`Badge de ${text}`}
       direction="row"
       onClick={onClick}
-      className={`badge badge--${variant} badge--${color} ${
-        shape === 'rounded' ? 'badge--rounded' : ''
-      } badge--${badgeSizeClass} ${className}`}
+      className={badgeClassName}
       sx={{
         ...getContainerStyles(),
-        color: getTextColor(),
+        color: getTextColor(variant, color, customColor),
       }}
       data-testid="avatar-badge-item"
     >
-      <Icon
-        name="close_circle"
-        iconName="circle-quarters"
-        className={`badge__icon ${getIconSizeClass(size)}`}
-        strokeWidth="0"
-        stroke={getIconColor()}
-        color={getIconColor()}
-      />
+      {showLeadingIcon && (
+        <Icon
+          iconName="circle-quarters"
+          className={`${styles.badge__icon} ${getIconSizeClass(size)}`}
+          strokeWidth="0"
+          stroke={getIconColor(variant, color, customColor)}
+          color={getIconColor(variant, color, customColor)}
+        />
+      )}
+
+      {leftPillProps && (
+        <Pill
+          text={leftPillProps.text}
+          icon={leftPillProps.icon}
+          size={leftPillProps.size ?? getPillSize(size)}
+          color={leftPillProps.color ?? getMappedPillColor(color, variant)}
+          variant={leftPillProps.variant}
+          rounded={leftPillProps.rounded}
+          shadow={leftPillProps.shadow}
+          stroke={leftPillProps.stroke}
+          iconPosition={leftPillProps.iconPosition}
+          ariaLabel={leftPillProps.ariaLabel}
+        />
+      )}
 
       {showAvatar && avatarSrc && (
         <AvatarItem
@@ -167,45 +282,37 @@ export function AvatarBadgeItem({
         />
       )}
 
-      {pillProps && (
-        <Pill
-          text={text}
-          icon={pillProps.icon}
-          size={pillSize}
-          color={pillColor}
-          variant={variant}
-        />
-      )}
-
-      {countStart > 0 && (
-        <span className="badge__counter" style={{ color: getTextColor() }}>
-          {countStart}
-        </span>
-      )}
-
       <Text
         text={text}
         size={size}
         bold={bold ? 'bold' : 'regular'}
-        style={{ color: getTextColor() }}
+        style={{ color: getTextColor(variant, color, customColor) }}
       />
 
-      {countEnd > 0 && (
-        <span className="badge__counter" style={{ color: getTextColor() }}>
-          {countEnd}
-        </span>
+      {rightPillProps && (
+        <Pill
+          text={rightPillProps.text}
+          icon={rightPillProps.icon}
+          size={rightPillProps.size ?? getPillSize(size)}
+          color={rightPillProps.color ?? getMappedPillColor(color, variant)}
+          variant={rightPillProps.variant}
+          rounded={rightPillProps.rounded}
+          shadow={rightPillProps.shadow}
+          stroke={rightPillProps.stroke}
+          iconPosition={rightPillProps.iconPosition}
+          ariaLabel={rightPillProps.ariaLabel}
+        />
       )}
 
-      {onRemove && (
+      {showRemoveIcon && onRemove && (
         <Icon
           onClick={handleCerrar}
-          name="Close-URL"
           iconName="Close-URL"
-          className="badge__icon--x"
+          className={styles['badge__icon--x']}
           width="16"
           height="16"
-          stroke={getIconColor()}
-          color={getIconColor()}
+          stroke={getIconColor(variant, color, customColor)}
+          color={getIconColor(variant, color, customColor)}
         />
       )}
     </Stack>

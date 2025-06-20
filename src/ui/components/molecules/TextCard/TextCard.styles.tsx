@@ -1,10 +1,12 @@
 import { Card } from '@mui/material';
 import { styled, type Theme } from '@mui/material/styles';
-import type { IProps } from './types/IProps';
+import type { IProps, CardSizeVariant, CardShapeVariant } from './types/IProps';
 
 interface StyledTextCardProps {
   isSelected: boolean;
   cardVariantColor: IProps['cardVariantColor'];
+  sizeVariant: CardSizeVariant;
+  shapeVariant: CardShapeVariant;
 }
 
 type PaletteColorKey = Exclude<IProps['cardVariantColor'], 'default' | undefined>;
@@ -50,6 +52,8 @@ export const StyledTextCard = styled(Card)<StyledTextCardProps>(({
   theme,
   isSelected,
   cardVariantColor,
+  sizeVariant, // RECIBE sizeVariant
+  shapeVariant, // RECIBE shapeVariant
 }) => {
   const borderColor = getBorderColor(theme, isSelected, cardVariantColor);
   const backgroundColor = getBackgroundColor(theme, isSelected);
@@ -58,11 +62,11 @@ export const StyledTextCard = styled(Card)<StyledTextCardProps>(({
   return {
     display: 'flex',
     flexDirection: 'row',
-    padding: theme.spacing(2),
+
     alignItems: 'flex-start',
     border: `1px solid ${borderColor}`,
     backgroundColor,
-    borderRadius: theme.shape.borderRadius,
+
     boxShadow: isSelected ? theme.shadows[3] : theme.shadows[1],
     transition: theme.transitions.create(['border-color', 'background-color', 'box-shadow'], {
       duration: theme.transitions.duration.standard,
@@ -74,5 +78,36 @@ export const StyledTextCard = styled(Card)<StyledTextCardProps>(({
     },
     maxWidth: 400,
     width: '100%',
+    ...(() => {
+      switch (sizeVariant) {
+        case 'large':
+          return {
+            padding: theme.spacing(4),
+          };
+        case 'small':
+          return {
+            padding: theme.spacing(1),
+          };
+        case 'medium':
+        default:
+          return {
+            padding: theme.spacing(2),
+          };
+      }
+    })(),
+
+    ...(() => {
+      switch (shapeVariant) {
+        case 'sharp':
+          return {
+            borderRadius: 0,
+          };
+        case 'soft':
+        default:
+          return {
+            borderRadius: theme.shape.borderRadius,
+          };
+      }
+    })(),
   };
 });

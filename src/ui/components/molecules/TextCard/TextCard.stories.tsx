@@ -4,6 +4,9 @@ import TextCard from './TextCard';
 const meta: Meta<typeof TextCard> = {
   title: 'Molecules/TextCard',
   component: TextCard,
+  parameters: {
+    layout: 'centered',
+  },
   argTypes: {
     isChecked: {
       control: 'boolean',
@@ -52,12 +55,23 @@ const meta: Meta<typeof TextCard> = {
       description:
         'Define la variante de color para el borde de la tarjeta cuando no está seleccionada.',
     },
+    sizeVariant: {
+      control: 'select',
+      options: ['large', 'medium', 'small'],
+      description:
+        'Define el tamaño predefinido de la tarjeta (afecta padding y tamaño de átomos).',
+    },
+    shapeVariant: {
+      control: 'select',
+      options: ['soft', 'sharp'],
+      description: 'Define la forma de los bordes de la tarjeta.',
+    },
+    cardRightPillProps: {
+      control: 'object',
+      description:
+        'Propiedades para el Pill que se mostrará a la derecha del badge. Debe ser un objeto con `text`, `variant`, `color`, `size`.',
+    },
   },
-};
-
-export default meta;
-type Story = StoryObj<typeof TextCard>;
-export const Default: Story = {
   args: {
     isChecked: false,
     badgeText: 'Nombre de Usuario',
@@ -67,8 +81,22 @@ export const Default: Story = {
     isSelected: false,
     cardVariantColor: 'default',
     badgeAvatarSrc: 'https://via.placeholder.com/24',
+    sizeVariant: 'medium',
+    shapeVariant: 'soft',
+    cardRightPillProps: {
+      text: '100',
+      variant: 'filled',
+      color: 'brand-primary',
+      size: 'sm',
+    },
   },
 };
+
+export default meta;
+
+type Story = StoryObj<typeof TextCard>;
+
+export const Default: Story = {};
 
 export const CheckedState: Story = {
   args: {
@@ -115,5 +143,65 @@ export const ErrorVariantCard: Story = {
     cardVariantColor: 'error',
     cardSubtitle: 'Mensaje de Error',
     cardParagraph: 'Algo salió mal, revisa esta información urgente.',
+  },
+};
+
+export const LargeSoftCard: Story = {
+  args: {
+    ...Default.args,
+    sizeVariant: 'large',
+    shapeVariant: 'soft',
+    cardSubtitle: 'Tarjeta Grande y Suave',
+    cardParagraph: 'El tamaño y los bordes se ajustan según la variante.',
+  },
+};
+
+export const MediumSoftCard: Story = {
+  args: {
+    ...Default.args,
+    sizeVariant: 'medium',
+    shapeVariant: 'soft',
+    cardSubtitle: 'Tarjeta Mediana y Suave',
+    cardParagraph: 'El tamaño y los bordes se ajustan según la variante.',
+  },
+};
+
+export const SmallSoftCard: Story = {
+  args: {
+    ...Default.args,
+    sizeVariant: 'small',
+    shapeVariant: 'soft',
+    cardSubtitle: 'Tarjeta Pequeña y Suave',
+    cardParagraph: 'El tamaño y los bordes se ajustan según la variante.',
+  },
+};
+
+export const LargeSharpCard: Story = {
+  args: {
+    ...Default.args,
+    sizeVariant: 'large',
+    shapeVariant: 'sharp',
+    cardSubtitle: 'Tarjeta Grande y Afilada',
+    cardParagraph: 'El tamaño y los bordes se ajustan según la variante.',
+  },
+};
+
+export const MediumSharpCard: Story = {
+  args: {
+    ...Default.args,
+    sizeVariant: 'medium',
+    shapeVariant: 'sharp',
+    cardSubtitle: 'Tarjeta Mediana y Afilada',
+    cardParagraph: 'El tamaño y los bordes se ajustan según la variante.',
+  },
+};
+
+export const SmallSharpCard: Story = {
+  args: {
+    ...Default.args,
+    sizeVariant: 'small',
+    shapeVariant: 'sharp',
+    cardSubtitle: 'Tarjeta Pequeña y Afilada',
+    cardParagraph: 'El tamaño y los bordes se ajustan según la variante.',
   },
 };
