@@ -2,6 +2,10 @@
 @import '../../../../globals/mixins';
 @import '../../../../globals/globals';
 
+:root {
+  --ads-primary-main: #{$ads-primary-main};
+}
+
 .dropdown-stats {
   font-family: Poppins, sans-serif;
   max-width: 300px;
@@ -49,13 +53,11 @@
   }
 
   &__code {
-    color: $ads-text-secondary;
     color: $ads-color-black-900;
     margin-right: auto;
   }
 
   &__stat {
-    color: $ads-primary-main;
     color: $ads-color-black-900;
     font-weight: $ads-font-weight-bold;
   }
@@ -119,7 +121,43 @@
   }
 
   &__progress-bar {
+    background-color: var(--ads-primary-main);
     height: 100%;
     transition: width 0.3s ease;
+  }
+}
+
+// Responsivo
+@media (width <= 768px) {
+  .dropdown-stats {
+    max-width: 100%;
+
+    &__toggle {
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 8px 12px;
+    }
+
+    &__selected {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    &__label,
+    &__code,
+    &__stat {
+      font-size: 0.875rem;
+    }
+
+    &__item {
+      padding: 8px 12px;
+    }
+
+    &__item-content {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 4px;
+    }
   }
 }
