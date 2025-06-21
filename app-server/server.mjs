@@ -1,7 +1,8 @@
 import express from 'express';
-import { handler } from '../dist/server/entry.mjs';
+import { handler as astroHandler } from '../dist/server/entry.mjs';
 import fs from 'fs';
 import path from 'path';
+import { config } from '../config-manager/config-manager.mjs';
 
 if (process.env.ENV === 'local') {
   require('dotenv').config();
@@ -19,7 +20,21 @@ app.get('/systeminfo', (req, res) => {
   res.json({ hashcommit: commitHash });
 });
 
-app.use(handler);
+app.use((req, res, next) => {
+  const handler = astroHandler;
+  console.log('config -> ', config);
+  function isRequestHandler(fn){
+    return typeof fn === 'function';
+  }
+
+  if (isRequestHandler(handler)) {
+    req.locals = config;
+    handler(req, res, next);
+    return;
+  }
+
+  res.status(500).send('Internal Server Error');
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
