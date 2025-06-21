@@ -20,43 +20,50 @@
       border-color: $ads-input-border-color;
     }
 
-    &--focused fieldset {
-      border-color: $ads-color-primary;
-      box-shadow: 0 0 0 2px rgba($ads-color-primary, 0.2);
+    &--focused {
+      fieldset {
+        border-color: $ads-color-primary;
+        box-shadow: 0 0 0 2px rgba($ads-color-primary, 0.2);
+      }
     }
 
-    &--error fieldset {
-      border-color: $ads-color-negative !important;
+    &--error {
+      fieldset {
+        border-color: $ads-color-negative;
+      }
     }
 
-    &--disabled fieldset {
-      background-color: $ads-color-background-disabled;
-      border-color: $ads-input-disabled-border-color;
+    &--disabled {
+      fieldset {
+        background-color: $ads-color-background-disabled;
+        border-color: $ads-input-disabled-border-color;
+      }
     }
 
-    &--success fieldset {
-      border-color: $ads-color-positive;
+    &--success {
+      fieldset {
+        border-color: $ads-color-positive;
+      }
     }
 
-    &:hover fieldset {
-      border-color: $ads-color-black-300;
+    &:hover {
+      fieldset {
+        border-color: $ads-color-black-300;
+      }
     }
   }
 
   &__input-base {
     &--size-small {
       font-size: $ads-paragraph-xs;
-      // padding: 6px 10px;
     }
 
     &--size-medium {
       font-size: $ads-paragraph-sm;
-      // padding: 10px 14px;
     }
 
     &--size-large {
       font-size: $ads-paragraph-lg;
-      // padding: 14px 18px;
     }
   }
 
