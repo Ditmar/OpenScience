@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import './dropdown-stats.scss';
+import styles from './dropdown-stats.module.scss';
 import type { DropdownStatsProps } from './types/IProps';
 
 function DropdownStats({
@@ -7,7 +7,7 @@ function DropdownStats({
   selectedValue,
   onChange,
   maxValue,
-  barColor = '#8a2be2',
+  barColor,
   showPercentage = true,
   className = '',
   disabled = false,
@@ -19,24 +19,21 @@ function DropdownStats({
   const selectedOption = options.find((option) => option.value === selectedValue) ?? options[0];
   const calculatedMaxValue = maxValue ?? Math.max(...options.map((option) => option.stat), 1);
 
-  useEffect(
-    function setupClickOutsideListener() {
-      function handleClickOutside(event: MouseEvent) {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-          onToggle();
-        }
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        onToggle();
       }
+    }
 
-      if (isOpen) {
-        document.addEventListener('mousedown', handleClickOutside);
-      }
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
 
-      return function cleanupClickOutsideListener() {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
-    },
-    [isOpen, onToggle],
-  );
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen, onToggle]);
 
   function handleKeyDown(e: React.KeyboardEvent, value: string) {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -48,7 +45,6 @@ function DropdownStats({
 
   function renderStatDisplay(stat: number) {
     const percentage = Math.round((stat / calculatedMaxValue) * 100);
-
     switch (displayFormat) {
       case 'percentage':
         return `${percentage.toString()}%`;
@@ -65,59 +61,69 @@ function DropdownStats({
   }
 
   return (
-    <div className={`dropdown-stats ${className} ${disabled ? 'disabled' : ''}`} ref={dropdownRef}>
+    <div
+      className={`${styles['dropdown-stats']} ${className} ${disabled ? styles.disabled : ''}`}
+      ref={dropdownRef}
+    >
       <button
         type="button"
-        className="dropdown-stats__toggle"
+        className={styles['dropdown-stats__toggle']}
         onClick={onToggle}
         disabled={disabled}
         aria-haspopup="true"
         aria-expanded={isOpen ? 'true' : 'false'}
       >
-        <div className="dropdown-stats__selected">
-          <span className="dropdown-stats__label">{selectedOption.label}</span>
-          <span className="dropdown-stats__code">({selectedOption.code})</span>
+        <div className={styles['dropdown-stats__selected']}>
+          <span className={styles['dropdown-stats__label']}>{selectedOption.label}</span>
+          <span className={styles['dropdown-stats__code']}>({selectedOption.code})</span>
           {showPercentage && (
-            <span className="dropdown-stats__stat">{renderStatDisplay(selectedOption.stat)}</span>
+            <span className={styles['dropdown-stats__stat']}>
+              {renderStatDisplay(selectedOption.stat)}
+            </span>
           )}
         </div>
       </button>
 
       {isOpen && (
-        <ul className="dropdown-stats__menu" role="listbox">
-          {options.map((option) => (
-            <li
-              key={option.value}
-              className={`dropdown-stats__item ${selectedValue === option.value ? 'selected' : ''}`}
-              onClick={() => {
-                onChange(option.value);
-                onToggle();
-              }}
-              onKeyDown={(e) => {
-                handleKeyDown(e, option.value);
-              }}
-              role="option"
-              aria-selected={selectedValue === option.value}
-              tabIndex={0}
-            >
-              <div className="dropdown-stats__item-content">
-                <span className="dropdown-stats__label">{option.label}</span>
-                <span className="dropdown-stats__code">({option.code})</span>
-                {showPercentage && (
-                  <span className="dropdown-stats__stat">{renderStatDisplay(option.stat)}</span>
-                )}
-              </div>
-              <div className="dropdown-stats__progress-container">
-                <div
-                  className="dropdown-stats__progress-bar"
-                  style={{
-                    width: `${calculateWidthPercentage(option.stat)}%`,
-                    backgroundColor: barColor,
-                  }}
-                />
-              </div>
-            </li>
-          ))}
+        <ul className={styles['dropdown-stats__menu']} role="listbox">
+          {options.map((option) => {
+            const isSelected = selectedValue === option.value;
+            return (
+              <li
+                key={option.value}
+                className={`${styles['dropdown-stats__item']} ${isSelected ? styles.selected : ''}`}
+                onClick={() => {
+                  onChange(option.value);
+                  onToggle();
+                }}
+                onKeyDown={(e) => {
+                  handleKeyDown(e, option.value);
+                }}
+                role="option"
+                aria-selected={isSelected}
+                tabIndex={0}
+              >
+                <div className={styles['dropdown-stats__item-content']}>
+                  <span className={styles['dropdown-stats__label']}>{option.label}</span>
+                  <span className={styles['dropdown-stats__code']}>({option.code})</span>
+                  {showPercentage && (
+                    <span className={styles['dropdown-stats__stat']}>
+                      {renderStatDisplay(option.stat)}
+                    </span>
+                  )}
+                </div>
+                <div className={styles['dropdown-stats__progress-container']}>
+                  <div
+                    className={styles['dropdown-stats__progress-bar']}
+                    style={{
+                      width: `${calculateWidthPercentage(option.stat)}%`,
+                      backgroundColor: barColor ?? 'var(--ads-primary-main)',
+                    }}
+                  />
+                </div>
+              </li>
+            );
+          })}
         </ul>
       )}
     </div>
