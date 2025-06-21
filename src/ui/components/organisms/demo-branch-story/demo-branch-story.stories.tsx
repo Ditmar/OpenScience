@@ -27,3 +27,14 @@ export const WithTheme: Story = {
     ),
   ],
 };
+
+export const WithCustomStyles: Story = {
+  args: {},
+  decorators: [
+    (Story) => (
+      <div style={{ padding: '20px', backgroundColor: '#f0f0f0' }}>
+        <Story />
+      </div>
+    ),
+  ],
+};
