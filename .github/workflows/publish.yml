@@ -7,7 +7,6 @@ on:
 
 env:
   BASE_URL: https://ditmar.github.io/OpenScience
-
 jobs:
 
   quality-checks:
@@ -66,6 +65,13 @@ jobs:
 
       - name: Build Storybook
         run: yarn build-storybook
+      
+      - name: Sanitize Branch name
+        run: |
+          BRANCH_NAME=${{ github.ref_name }}
+          SANITIZED_BRANCH_NAME=$(echo "${{ github.ref_name }}" | sed 's/[^a-zA-Z0-9-]/-/g')
+          echo "SANITIZED_BRANCH_NAME=${SANITIZED_BRANCH_NAME}" >> "$GITHUB_OUTPUT"
+        id: sanitize_branch_name
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -74,12 +80,6 @@ jobs:
           publish_dir: ./storybook-static
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-      - name: Sanitize Branch name
-        run: |
-          BRANCH_NAME=${{ github.ref_name }}
-          SANITIZED_BRANCH_NAME=$(echo "${{ github.ref_name }}" | sed 's/[^a-zA-Z0-9-]/-/g')
-          echo "SANITIZED_BRANCH_NAME=${SANITIZED_BRANCH_NAME}" >> "$GITHUB_OUTPUT"
-        id: sanitize_branch_name
 
       - name: Deploy Storybook to branch
         if: github.ref_name != 'main'
