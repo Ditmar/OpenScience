@@ -1,4 +1,5 @@
-import type { AppConfig } from '../config/config-manager';
+//import type { AppConfig } from '../config/config-manager';
+import type { config } from '../../config-manager/config-manager.mjs';
 
 export interface ArticlesApiResponse {
   data: {
