@@ -10,7 +10,6 @@ describe('BaseInput Component', () => {
     vi.clearAllMocks();
   });
 
-  // Test 1: Basic rendering
   it('renders correctly with default props', () => {
     render(<BaseInput id="test-input" value="" onChange={mockOnChange} />);
     const input = screen.getByRole('textbox');
@@ -18,7 +17,6 @@ describe('BaseInput Component', () => {
     expect(input).toHaveAttribute('type', 'text');
   });
 
-  // Test 2: Event handling
   it('handles onChange and onFocus events', () => {
     render(<BaseInput id="test-input" value="" onChange={mockOnChange} onFocus={mockOnFocus} />);
     const input = screen.getByRole('textbox');
