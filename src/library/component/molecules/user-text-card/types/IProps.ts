@@ -8,6 +8,7 @@ export interface IProps {
   timestamp?: string | Date;
   actions?: { label: string; onClick: () => void }[];
   variant?: 'default' | 'compact' | 'expanded';
+  colorVariant?: 'default' | 'info' | 'success' | 'warning' | 'error';
   isVerified?: boolean;
   onClick: () => void;
   className?: string;
