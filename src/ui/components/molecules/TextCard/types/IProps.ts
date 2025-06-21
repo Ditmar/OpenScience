@@ -1,0 +1,40 @@
+import type { ReactNode } from 'react';
+import type { CheckProps } from '../../../../../library/component/atoms/Check/types/iProps';
+import type { AvatarBadgeItemProps } from '../../badges/types/IProps';
+import type { IProps as SubTitleAndParagraphProps } from '../../../atoms/SubTitleAndParagraph/types/IProps';
+import type { IProps as PillProps } from '../../../../../library/component/atoms/pills/types/IProps';
+
+export type CardSizeVariant = 'large' | 'medium' | 'small';
+export type CardShapeVariant = 'soft' | 'sharp';
+
+export interface IProps {
+  isChecked: CheckProps['checked'];
+  onCheckChange: CheckProps['onChange'];
+  isCheckDisabled?: CheckProps['disabled'];
+
+  badgeText: AvatarBadgeItemProps['text'];
+  badgeAvatarSrc?: AvatarBadgeItemProps['avatarSrc'];
+  onBadgeClick?: AvatarBadgeItemProps['onClick'];
+
+  cardSubtitle: SubTitleAndParagraphProps['title'];
+  subtitleSize?: SubTitleAndParagraphProps['size'];
+  subtitleAlignment?: SubTitleAndParagraphProps['alignment'];
+  subtitleVariant?: SubTitleAndParagraphProps['variant'];
+  subtitleTitleTag?: SubTitleAndParagraphProps['titleTag'];
+
+  cardParagraph?: SubTitleAndParagraphProps['subtitle'];
+  paragraphSubtitleTag?: SubTitleAndParagraphProps['subtitleTag'];
+
+  className?: string;
+
+  isSelected?: boolean;
+
+  cardVariantColor?: 'default' | 'info' | 'warning' | 'success' | 'error' | 'primary' | 'secondary';
+  sizeVariant?: CardSizeVariant;
+  shapeVariant?: CardShapeVariant;
+
+  showLeadingIcon?: boolean;
+  leadingIcon?: ReactNode;
+  showLeadingPill?: boolean;
+  cardRightPillProps?: PillProps;
+}
