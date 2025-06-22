@@ -1,131 +1,102 @@
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { CheckCircle, Warning, Error } from '@mui/icons-material';
 import Pill from './pills';
 
+// LISTA DE TODOS LOS COLORES DISPONIBLES SEGÚN TU colorMap
+const colorList = [
+  'neutral-dark',
+  'neutral-light',
+  'brand-primary',
+  'brand-secondary',
+  'brand-tertiary',
+  'feedback-positive',
+  'feedback-negative',
+  'feedback-warning',
+  'read-only-disabled',
+] as const;
+
+const variantList = ['filled', 'outline', 'soft'] as const;
+const sizeList = ['sm', 'md', 'lg'] as const;
+
 const meta: Meta<typeof Pill> = {
-  title: 'Components/Atoms/Pill',
+  title: 'Atoms/Pill',
   component: Pill,
-  tags: ['autodocs'],
-  argTypes: {
-    text: {
-      control: 'text',
-      description: 'Texto principal del Pill',
-      defaultValue: 'Label',
-    },
-    color: {
-      control: 'select',
-      options: [
-        'neutral-dark',
-        'neutral-light',
-        'brand-primary',
-        'brand-secondary',
-        'brand-tertiary',
-        'feedback-positive',
-        'feedback-negative',
-        'feedback-warning',
-        'read-only-disabled',
-      ],
-      description: 'Paleta de colores del sistema',
-    },
-    variant: {
-      control: 'radio',
-      options: ['filled', 'outline', 'soft'],
-      description: 'Estilo de variante',
-    },
-    size: {
-      control: 'radio',
-      options: ['sm', 'md', 'lg'],
-      description: 'Tamaños disponibles',
-    },
-    rounded: {
-      control: 'radio',
-      options: ['r_none', 'r_md', 'r_full'],
-      description: 'Radio de bordes',
-      defaultValue: 'r_md',
-    },
-    shadow: {
-      control: 'boolean',
-      description: 'Agrega sombra al componente',
-    },
-    stroke: {
-      control: 'radio',
-      options: ['border-soft', 'border-strong'],
-      description: 'Estilo de borde',
-    },
-    iconPosition: {
-      control: 'radio',
-      options: ['left', 'right'],
-      if: { arg: 'icon', truthy: true },
-    },
+  parameters: {
+    layout: 'centered',
   },
+  tags: ['autodocs'],
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Pill>;
-
-export const Default: Story = {
+export const BasicFilledPrimary: StoryObj<typeof Pill> = {
   args: {
-    text: 'Default Pill',
-    color: 'brand-primary',
-    variant: 'filled',
-    size: 'md',
-  },
-};
-
-export const ColorVariants: Story = {
-  render: () => (
-    <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-      <Pill text="Neutral Dark" color="neutral-dark" />
-      <Pill text="Brand Primary" color="brand-primary" />
-      <Pill text="Positive" color="feedback-positive" />
-      <Pill text="Warning" color="feedback-warning" />
-      <Pill text="Negative" color="feedback-negative" />
-      <Pill text="Disabled" color="read-only-disabled" />
-    </div>
-  ),
-};
-
-export const StyleVariants: Story = {
-  render: () => (
-    <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-      <Pill text="Filled" variant="filled" color="brand-primary" />
-      <Pill text="Outline" variant="outline" color="brand-primary" />
-      <Pill text="Soft" variant="soft" color="brand-primary" />
-    </div>
-  ),
-};
-
-export const WithIcons: Story = {
-  render: () => (
-    <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-      <Pill text="Success" color="feedback-positive" icon={<CheckCircle fontSize="small" />} />
-      <Pill
-        text="Warning"
-        color="feedback-warning"
-        icon={<Warning fontSize="small" />}
-        iconPosition="right"
-      />
-      <Pill
-        text="Error"
-        color="feedback-negative"
-        icon={<Error fontSize="small" />}
-        variant="outline"
-      />
-    </div>
-  ),
-};
-
-export const Playground: Story = {
-  args: {
-    text: 'Custom Pill',
+    text: '100',
     color: 'brand-primary',
     variant: 'filled',
     size: 'md',
     rounded: 'r_md',
-    shadow: false,
-    icon: <CheckCircle fontSize="small" />,
     iconPosition: 'left',
   },
 };
+
+export const WithIconLeft: StoryObj<typeof Pill> = {
+  args: {
+    text: 'Con ícono izquierdo',
+    color: 'feedback-positive',
+    variant: 'filled',
+    size: 'md',
+    rounded: 'r_full',
+    icon: <CheckCircleOutlineIcon />,
+    iconPosition: 'left',
+  },
+};
+
+export const WithIconRight: StoryObj<typeof Pill> = {
+  args: {
+    text: 'Con ícono derecho',
+    color: 'feedback-negative',
+    variant: 'filled',
+    size: 'md',
+    rounded: 'r_md',
+    icon: <ErrorOutlineIcon />,
+    iconPosition: 'right',
+  },
+};
+
+export const VisualGrid: StoryObj<typeof Pill> = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+      {variantList.map((variant) => (
+        <div key={variant}>
+          <h4 style={{ marginBottom: 4, marginTop: 0 }}>{variant.toUpperCase()}</h4>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem' }}>
+            {colorList.map((color) => (
+              <div key={`${variant}-${color}`}>
+                <div
+                  style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', marginBottom: 4 }}
+                >
+                  {sizeList.map((size) => (
+                    <Pill
+                      key={`${variant}-${color}-${size}`}
+                      text="100"
+                      color={color}
+                      variant={variant}
+                      size={size}
+                      rounded="r_md"
+                      stroke={variant === 'outline' ? 'border-soft' : undefined}
+                    />
+                  ))}
+                </div>
+                <small style={{ fontSize: 12, color: '#888' }}>{color}</small>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  ),
+};
+
+VisualGrid.storyName = 'Todas las combinaciones básicas';

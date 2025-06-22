@@ -1,35 +1,53 @@
-/** @jsxImportSource @emotion/react */
-import { Box } from '@mui/material';
-import { getPillStyles } from './pills.module';
 import type { IProps } from './types/IProps';
+import { PillRoot, PillIcon } from './pills.styles';
 
-function Pill({
-  text,
-  ariaLabel,
-  variant = 'filled',
-  color = 'brand-primary',
-  size = 'md',
-  rounded = 'r_md',
-  icon,
-  iconPosition = 'left',
-  ...props
-}: IProps) {
-  const styles = getPillStyles({
+function Pill(props: IProps) {
+  const {
     text,
-    variant,
-    color,
-    size,
-    rounded,
-    iconPosition,
-    ...props,
-  });
+    color = 'neutral-dark',
+    variant = 'filled',
+    size = 'md',
+    rounded = 'r_md',
+    ariaLabel,
+    shadow = false,
+    stroke,
+    icon,
+    iconPosition = 'left',
+  } = props;
+
+  function renderIcon() {
+    if (!icon) return null;
+    if (typeof icon === 'string') {
+      return null;
+    }
+    return icon;
+  }
 
   return (
-    <Box sx={styles.root} aria-label={ariaLabel ?? text}>
-      {icon && iconPosition === 'left' && <Box sx={styles.icon}>{icon}</Box>}
-      <Box sx={styles.content}>{text}</Box>
-      {icon && iconPosition === 'right' && <Box sx={styles.icon}>{icon}</Box>}
-    </Box>
+    <PillRoot
+      text="100"
+      color={color}
+      variant={variant}
+      size={size}
+      rounded={rounded}
+      shadow={shadow}
+      stroke={stroke}
+      tabIndex={0}
+      role="status"
+      aria-label={ariaLabel ?? text}
+    >
+      {icon && iconPosition === 'left' && (
+        <PillIcon position="left" aria-hidden data-testid="pill-icon-left">
+          {renderIcon()}
+        </PillIcon>
+      )}
+      {text}
+      {icon && iconPosition === 'right' && (
+        <PillIcon position="right" aria-hidden data-testid="pill-icon-right">
+          {renderIcon()}
+        </PillIcon>
+      )}
+    </PillRoot>
   );
 }
 
