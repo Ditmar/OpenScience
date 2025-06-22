@@ -4,11 +4,13 @@ import type { TextFieldProps } from '@mui/material';
 export interface IProps extends Omit<TextFieldProps, 'variant' | 'onChange'> {
   label: string;
   value: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
   placeholder?: string;
-  leftIcon?: ReactNode;
-  rightIcon?: ReactNode;
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
   hint?: string;
   errorMsg?: string;
   disabled?: boolean;
+  type?: string;
+  id?: string;
 }
