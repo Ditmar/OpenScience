@@ -4,14 +4,14 @@ declare module '@mui/material/styles' {
   interface Palette {
     olitemPalette: {
       stroke_Primary: string;
-      text_ligth: string;
+      text_light: string;
       stroke_primary_Soft: string;
     };
   }
   interface PaletteOptions {
     olitemPalette?: {
       stroke_Primary: string;
-      text_ligth: string;
+      text_light: string;
       stroke_primary_Soft: string;
     };
   }

@@ -7,7 +7,7 @@ export const OLItemRoot = styled(Box, {
 })<Omit<OLItemProps, 'value'>>(({ theme, shape, size, active }) => ({
   alignItems: 'center',
   background: theme.palette.olitemPalette.stroke_Primary,
-  color: theme.palette.olitemPalette.text_ligth,
+  color: theme.palette.olitemPalette.text_light,
   display: 'flex',
   fontFamily: theme.typography.textPoppins.fontFamily,
   fontWeight: theme.typography.fontWeightRegular,

@@ -27,7 +27,7 @@ export const lightTheme = createTheme({
     },
     olitemPalette: {
       stroke_Primary: tokens.colors.stroke_primary,
-      text_ligth: tokens.colors.main,
+      text_light: tokens.colors.main,
       stroke_primary_Soft: tokens.colors.stroke_primary_soft,
     },
   },
