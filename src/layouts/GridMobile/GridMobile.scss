@@ -1,0 +1,57 @@
+// Importar variables globales y puntos de ruptura (breakpoints)
+@import '../../globals/variables';
+@import './breakpoints-gridmobile.scss';
+
+
+@mixin respond-to-mobile($breakpoint) {
+  @if map-has-key($ads-mobile-breakpoints, $breakpoint) {
+    @media (max-width: map-get($ads-mobile-breakpoints, $breakpoint)) {
+      @content;
+    }
+  } 
+  
+  @else {
+    @warn #{$breakpoint};
+  }
+}
+
+.container-mobile {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 398px;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 100%;
+}
+
+.grid-mobile {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-item-mobile {
+  align-items: center;
+  background-color: transparent;
+  border: 1px dashed #ccc;
+  box-sizing: border-box;
+  color: $ads-color-dark;
+  display: flex;
+  justify-content: center;
+  min-height: 50px;
+  text-align: center;
+  width: 100%;
+}
+
+@for $i from 1 through 4 {
+  .col-mb-#{$i} {
+    grid-column: span $i;
+  }
+}
+
+@each $key, $value in $ads-mobile-alignments {
+  .align-self-mb-#{$key} {
+    align-self: $value;
+  }
+}
