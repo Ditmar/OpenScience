@@ -1,0 +1,13 @@
+import{j as r}from"./jsx-runtime-BlDnFLNC.js";import{T as o}from"./Typography-Dp85eycI.js";const u="_typography_1f33z_1",p="_normal_1f33z_5",d="_medium_1f33z_9",y="_bold_1f33z_13",i={typography:u,normal:p,medium:d,bold:y};function c({children:e,variant:a="body1",component:l,className:m,fontWeight:s="normal",color:n}){const t=[i.typography,i[s],m].filter(Boolean).join(" ").trim();return l?r.jsx(o,{variant:a,component:l,className:t,style:{color:n},children:e}):r.jsx(o,{variant:a,className:t,style:{color:n},children:e})}c.__docgenInfo={description:"",methods:[],displayName:"Typography",props:{children:{required:!0,tsType:{name:"ReactNode"},description:""},variant:{required:!1,tsType:{name:"union",raw:`| 'h1'
+| 'h2'
+| 'h3'
+| 'h4'
+| 'h5'
+| 'h6'
+| 'subtitle1'
+| 'subtitle2'
+| 'body1'
+| 'body2'
+| 'caption'
+| 'button'
+| 'overline'`,elements:[{name:"literal",value:"'h1'"},{name:"literal",value:"'h2'"},{name:"literal",value:"'h3'"},{name:"literal",value:"'h4'"},{name:"literal",value:"'h5'"},{name:"literal",value:"'h6'"},{name:"literal",value:"'subtitle1'"},{name:"literal",value:"'subtitle2'"},{name:"literal",value:"'body1'"},{name:"literal",value:"'body2'"},{name:"literal",value:"'caption'"},{name:"literal",value:"'button'"},{name:"literal",value:"'overline'"}]},description:"",defaultValue:{value:"'body1'",computed:!1}},className:{required:!1,tsType:{name:"string"},description:""},component:{required:!1,tsType:{name:"ElementType"},description:""},fontWeight:{required:!1,tsType:{name:"union",raw:"'normal' | 'medium' | 'bold'",elements:[{name:"literal",value:"'normal'"},{name:"literal",value:"'medium'"},{name:"literal",value:"'bold'"}]},description:"",defaultValue:{value:"'normal'",computed:!1}},color:{required:!1,tsType:{name:"string"},description:""}}};export{c as T};
