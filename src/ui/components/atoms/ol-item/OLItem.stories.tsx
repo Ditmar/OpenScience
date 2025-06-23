@@ -1,20 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeProvider } from '@mui/material/styles';
-import { lightTheme } from '../../../../style-library/themes/default';
 import OLItem from './OLItem';
 
 const meta = {
   title: 'ui/components/atoms/ol-item',
   component: OLItem,
-  decorators: [
-    (Story) => (
-      <ThemeProvider theme={lightTheme}>
-        <div>
-          <Story />
-        </div>
-      </ThemeProvider>
-    ),
-  ],
   argTypes: {
     shape: {
       control: 'select',
