@@ -33,6 +33,18 @@ function TextCardStat({
       className={cardClassName}
       onClick={!isDisabled ? onClick : undefined}
       elevation={elevation}
+      role={!isDisabled && onClick ? 'button' : undefined}
+      tabIndex={!isDisabled && onClick ? 0 : -1}
+      onKeyDown={
+        !isDisabled && onClick
+          ? (e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                onClick();
+              }
+            }
+          : undefined
+      }
     >
       <Box className={styles['text-card__header']}>
         <Checkbox aria-label="Select card" />
