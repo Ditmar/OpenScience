@@ -12,11 +12,13 @@ function TitleSubtitle({
   subtitleTag = 'p',
   className = '',
 }: IProps) {
-  const containerClass = `${styles['title-subtitle']} 
-    ${styles[`title-subtitle--size-${size}`]} 
-    ${styles[`title-subtitle--alignment-${alignment}`]} 
-    ${styles[`title-subtitle--variant-${variant}`]} 
-    ${className}`.trim();
+  const containerClass = [
+    styles['title-subtitle'],
+    styles[`title-subtitle--size-${size}`],
+    styles[`title-subtitle--alignment-${alignment}`],
+    styles[`title-subtitle--variant-${variant}`],
+    className,
+  ].join(' ');
 
   const titleClass = `${styles['title-subtitle__title']} ${
     styles[`title-subtitle__title--${titleTag}`]
