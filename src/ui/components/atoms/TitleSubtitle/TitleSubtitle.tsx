@@ -1,6 +1,8 @@
 import React from 'react';
 import type { IProps } from './types/IProps';
 import styles from './TitleSubtitle.module.scss';
+import { TitleTag } from './TitleTag';
+import { SubtitleTag } from './SubtitleTag';
 
 function TitleSubtitle({
   title,
@@ -27,13 +29,16 @@ function TitleSubtitle({
     styles[`title-subtitle__subtitle--${subtitleTag}`]
   }`;
 
-  const TitleTag = titleTag as keyof JSX.IntrinsicElements;
-  const SubtitleTag = subtitleTag as keyof JSX.IntrinsicElements;
-
   return (
     <div className={containerClass}>
-      <TitleTag className={titleClass}>{title}</TitleTag>
-      {subtitle && <SubtitleTag className={subtitleClass}>{subtitle}</SubtitleTag>}
+      <TitleTag tag={titleTag} className={titleClass}>
+        {title}
+      </TitleTag>
+      {subtitle && (
+        <SubtitleTag tag={subtitleTag} className={subtitleClass}>
+          {subtitle}
+        </SubtitleTag>
+      )}
     </div>
   );
 }
