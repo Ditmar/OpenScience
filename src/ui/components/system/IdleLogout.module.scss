@@ -1,0 +1,23 @@
+@use '../../../globals/variables' as *;
+
+.overlay {
+  align-items: center;
+  background: $ads-shadow-xs;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 9999;
+}
+
+.modal {
+  background: $ads-primary-twenty-five;
+  border-radius: 1rem;
+  color: $ads-icontextstat-color-title;
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+}

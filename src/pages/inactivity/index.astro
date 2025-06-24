@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import IdleLogout from '../../ui/components/system/IdleLogout';
+---
+
+<Layout title="Prueba de inactividad">
+  <IdleLogout client:load />
+
+  <div style={{ padding: '2rem' }}>
+    <h1>Página de prueba</h1>
+    <p>No interactúes con la página para ver el modal de advertencia después de inactividad.</p>
+    <p>Se mostrará un mensaje y luego redireccionará a <code>/login</code> si no haces nada.</p>
+  </div>
+</Layout>
