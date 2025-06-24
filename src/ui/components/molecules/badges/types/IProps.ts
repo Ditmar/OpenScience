@@ -9,7 +9,7 @@ interface AvatarBadgeItemProps {
   showAvatar?: boolean;
   size?: 'small' | 'medium' | 'large';
   bold?: boolean;
-  onRemove?: React.MouseEventHandler<HTMLDivElement>;
+  onRemove?: (e: React.MouseEvent<HTMLDivElement>) => void;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
   pillProps?: IProps;
   className?: string;

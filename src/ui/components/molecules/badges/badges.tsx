@@ -66,6 +66,9 @@ export function AvatarBadgeItem({
 }: AvatarBadgeItemProps) {
   const handleCerrar = (e: React.MouseEvent) => {
     e.stopPropagation();
+    if (onRemove) {
+      onRemove(e);
+    }
   };
 
   const getIconSizeClass = (iconSize: 'small' | 'medium' | 'large' = 'medium') =>
@@ -213,6 +216,8 @@ export function AvatarBadgeItem({
           className={styles['badge__icon--x']}
           width="16"
           height="16"
+          aria-label="Remove badge"
+          role="button"
           stroke={getIconColor()}
           color={getIconColor()}
         />
