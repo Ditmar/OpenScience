@@ -67,7 +67,7 @@ export function AvatarBadgeItem({
   const handleCerrar = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (onRemove) {
-      onRemove(e);
+      onRemove(e as React.MouseEvent<HTMLDivElement>);
     }
   };
 
