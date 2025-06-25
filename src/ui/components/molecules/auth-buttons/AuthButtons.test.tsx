@@ -22,25 +22,13 @@ describe('AuthButtons', () => {
   });
 
   test('botones muestran estado loading', () => {
-    render(
-      <AuthButtons
-        onLogin={() => {}}
-        onRegister={() => {}}
-        loading={true}
-      />
-    );
+    render(<AuthButtons onLogin={() => {}} onRegister={() => {}} loading />);
     expect(screen.getByTestId('login-button')).toHaveTextContent('Cargando...');
     expect(screen.getByTestId('register-button')).toHaveTextContent('Cargando...');
   });
 
   test('botones deshabilitados', () => {
-    render(
-      <AuthButtons
-        onLogin={() => {}}
-        onRegister={() => {}}
-        disabled={true}
-      />
-    );
+    render(<AuthButtons onLogin={() => {}} onRegister={() => {}} disabled />);
     expect(screen.getByTestId('login-button')).toBeDisabled();
     expect(screen.getByTestId('register-button')).toBeDisabled();
   });
