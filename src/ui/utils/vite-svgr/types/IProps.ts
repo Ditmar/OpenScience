@@ -41,4 +41,8 @@ export type IconName =
   | 'info'
   | 'fi-rr-calendar'
   | 'fi-rr-clock-five'
-  | 'whatsapp';
+  | 'whatsapp'
+  |  'Close-URL'
+  |  'circle-quarters'
+  |  'errors'
+  |  'check';
