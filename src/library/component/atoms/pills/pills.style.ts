@@ -35,7 +35,7 @@ const textMap: Record<NonNullable<IProps['color']>, keyof Theme['palette']['pill
   'brand-tertiary': 'light',
   'feedback-positive': 'light',
   'feedback-negative': 'light',
-  'feedback-warning': 'dark',
+  'feedback-warning': 'light',
   'read-only-disabled': 'stroke_disabled',
 };
 
