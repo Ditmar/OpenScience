@@ -1,6 +1,0 @@
-import{j as s}from"./jsx-runtime-BlDnFLNC.js";const l={"ol-bullet":"_ol-bullet_17fl4_106","ol-bullet--active":"_ol-bullet--active_17fl4_111","ol-bullet--circle":"_ol-bullet--circle_17fl4_115","ol-bullet--rounded":"_ol-bullet--rounded_17fl4_118","ol-bullet--square":"_ol-bullet--square_17fl4_121","ol-bullet--sm":"_ol-bullet--sm_17fl4_124","ol-bullet--md":"_ol-bullet--md_17fl4_128","ol-bullet--lg":"_ol-bullet--lg_17fl4_132"};function r(e){const{shape:t="square",size:a="md",active:o=!1}=e,u=`
-    ${l["ol-bullet"]}
-    ${l[`ol-bullet--${t}`]}
-    ${l[`ol-bullet--${a}`]}
-    ${o?l["ol-bullet--active"]:""}
-  `.trim();return s.jsx("span",{className:u,role:"presentation"})}r.__docgenInfo={description:"",methods:[],displayName:"OLBullet",props:{shape:{required:!1,tsType:{name:"union",raw:"'square' | 'rounded' | 'circle'",elements:[{name:"literal",value:"'square'"},{name:"literal",value:"'rounded'"},{name:"literal",value:"'circle'"}]},description:""},size:{required:!1,tsType:{name:"union",raw:"'sm' | 'md' | 'lg'",elements:[{name:"literal",value:"'sm'"},{name:"literal",value:"'md'"},{name:"literal",value:"'lg'"}]},description:""},active:{required:!1,tsType:{name:"boolean"},description:""}}};export{r as O};
