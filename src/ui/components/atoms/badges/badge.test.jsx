@@ -4,8 +4,7 @@ import { describe, it, expect } from 'vitest';
 import Badge from './badge.tsx';
 
 describe('Badge Component', () => {
-
-// This test uses PillRoot, which requires ThemeProvider. Temporarily skipped.
+  // This test uses PillRoot, which requires ThemeProvider. Temporarily skipped
   it.skip('renders with default props', () => {
     render(
       <Badge variant="filled" color="neutral" shape="default" size="md">
@@ -15,7 +14,7 @@ describe('Badge Component', () => {
     expect(screen.getByText('Badge Text')).toBeInTheDocument();
   });
 
-// This test uses PillRoot, which requires ThemeProvider. Temporarily skipped.
+  // This test uses PillRoot, which requires ThemeProvider. Temporarily skipped.
   it.skip('renders with icon', () => {
     render(
       <Badge
