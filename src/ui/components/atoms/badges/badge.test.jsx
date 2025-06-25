@@ -4,6 +4,8 @@ import { describe, it, expect } from 'vitest';
 import Badge from './badge.tsx';
 
 describe('Badge Component', () => {
+
+// This test uses PillRoot, which requires ThemeProvider. Temporarily skipped.
   it.skip('renders with default props', () => {
     render(
       <Badge variant="filled" color="neutral" shape="default" size="md">
@@ -13,6 +15,7 @@ describe('Badge Component', () => {
     expect(screen.getByText('Badge Text')).toBeInTheDocument();
   });
 
+// This test uses PillRoot, which requires ThemeProvider. Temporarily skipped.
   it.skip('renders with icon', () => {
     render(
       <Badge
@@ -44,6 +47,7 @@ describe('Badge Component', () => {
     expect(screen.getByTestId('icon')).toBeInTheDocument();
   });
 
+  // This test uses PillRoot, which requires ThemeProvider. Temporarily skipped.
   it.skip('renders with image', () => {
     render(
       <Badge
@@ -59,7 +63,7 @@ describe('Badge Component', () => {
     expect(screen.getByAltText(/avatar/i)).toBeInTheDocument();
   });
 
-  it.skip('renders with rounded shape', () => {
+  it('renders with rounded shape', () => {
     render(
       <Badge variant="filled" color="neutral" shape="rounded" size="md">
         Badge Text
@@ -69,6 +73,7 @@ describe('Badge Component', () => {
     expect(badge?.classList.contains('badge--rounded')).toBe(true);
   });
 
+  // This test uses PillRoot, which requires ThemeProvider. Temporarily skipped.
   it.skip('renders with left and right counters', () => {
     render(
       <Badge
