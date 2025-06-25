@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 export interface IProps {
-  avatar: string | ReactNode;
+  avatar: string;
   userName: string;
   userHandle?: string;
   content: string | ReactNode;

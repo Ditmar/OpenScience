@@ -199,22 +199,4 @@ describe('UserTextCard', () => {
 
     expect(screen.getByTestId('user-card-default').className).toContain('warning');
   });
-
-  it('renders avatar as ReactNode', () => {
-    render(
-      <UserTextCard
-        avatar={<div data-testid="custom-avatar">👤</div>}
-        userName={userName}
-        userHandle={userHandle}
-        content={content}
-        timestamp={timestamp}
-        isVerified={isVerified}
-        onClick={onClick}
-        isChecked={isChecked}
-        onCheckChange={onCheckChange}
-      />,
-    );
-
-    expect(screen.getByTestId('custom-avatar')).toBeInTheDocument();
-  });
 });

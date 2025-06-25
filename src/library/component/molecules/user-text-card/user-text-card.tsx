@@ -6,7 +6,7 @@ import type { IProps } from './types/IProps';
 
 function UserTextCard(props: IProps) {
   const {
-    avatar = 'https://i.pravatar.cc/40?img=5',
+    avatar,
     userName,
     userHandle,
     timestamp,
@@ -19,6 +19,7 @@ function UserTextCard(props: IProps) {
     isChecked,
     onCheckChange,
   } = props;
+
   const containerClass = [styles.card, styles[variant], styles[colorVariant], className]
     .filter(Boolean)
     .join(' ');
@@ -34,18 +35,10 @@ function UserTextCard(props: IProps) {
         className={styles.checkbox}
         variant="default"
         shape="square"
-        disabled={false}
       />
-
       <div className={styles['card__content-wrapper']}>
         {variant !== 'compact' && (
-          <div className={styles.avatar}>
-            {typeof avatar === 'string' ? (
-              <Avatar src={avatar} alt="avatar" className={styles.avatar} variant="rounded" />
-            ) : (
-              avatar
-            )}
-          </div>
+          <Avatar src={avatar} alt="avatar" className={styles.avatar} variant="rounded" />
         )}
         <div className={styles.content}>
           <div className={styles['card__text-container']}>
@@ -64,12 +57,10 @@ function UserTextCard(props: IProps) {
                 </Typography>
               )}
             </div>
-
             <Typography variant="body2" className={styles['user-text-card__message-text']}>
-              {typeof content === 'string' ? content : content}
+              {content}
             </Typography>
           </div>
-
           {timestamp && (
             <div className={styles.timestamp}>
               {typeof timestamp === 'string' ? timestamp : timestamp.toLocaleString()}
