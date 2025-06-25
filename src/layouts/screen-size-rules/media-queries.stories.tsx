@@ -2,14 +2,7 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeProvider, CssBaseline, Typography, Box, Button, Paper } from '@mui/material';
 import { theme } from './theme';
-import {
-  useIsMobile,
-  useIsTabletUp,
-  useIsDesktopDown,
-  useIsSmallMobileDown,
-  useIsSmallMobileLargeUp,
-  useIsLargeTabletUp,
-} from './media-queries';
+import { useBreakpoint } from './media-queries';
 
 const meta: Meta = {
   title: 'Theme/MediaQueriesMUI',
@@ -18,12 +11,12 @@ const meta: Meta = {
 export default meta;
 
 function ResponsiveTypographyDemoComponent() {
-  const isMobile = useIsMobile();
-  const isTabletUp = useIsTabletUp();
-  const isDesktopDown = useIsDesktopDown();
-  const isSmallMobileDown = useIsSmallMobileDown();
-  const isSmallMobileLargeUp = useIsSmallMobileLargeUp();
-  const isLargeTabletUp = useIsLargeTabletUp();
+  const isMobile = useBreakpoint('sm', 'max');
+  const isTabletUp = useBreakpoint('md', 'min');
+  const isDesktopDown = useBreakpoint('lg', 'max');
+  const isSmallMobileDown = useBreakpoint('small-mobile', 'max');
+  const isSmallMobileLargeUp = useBreakpoint('small-mobile-large', 'min');
+  const isLargeTabletUp = useBreakpoint('large-tablet', 'min');
 
   return (
     <Box sx={{ p: 2, bgcolor: '#f9f9f9' }}>
@@ -45,8 +38,7 @@ function ResponsiveTypographyDemoComponent() {
         component={Paper}
         elevation={2}
         sx={{
-          display: 'flex',
-          flexDirection: isTabletUp ? 'row' : 'column',
+          display: isTabletUp ? 'row' : 'column',
           gap: 3,
           p: 2,
           mb: 3,
