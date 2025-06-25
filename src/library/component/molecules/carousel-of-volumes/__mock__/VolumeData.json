@@ -1,0 +1,39 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "pathImage": "src/ui/components/atoms/thumbnail/__mock__/imgs/Rectangle27.png",
+            "volumen": "Vol.",
+            "date": "2023-01-01",
+            "alt": "Vol."
+        },
+        {
+            "id": 2,
+            "pathImage": "src/ui/components/atoms/thumbnail/__mock__/imgs/Rectangle28.png",
+            "volumen": "Vol.",
+            "date": "2023-02-01",
+            "alt": "Vol."
+        },
+        {
+            "id": 3,
+            "pathImage": "src/ui/components/atoms/thumbnail/__mock__/imgs/Rectangle29.png",
+            "volumen": "Vol.",
+            "date": "2023-03-01",
+            "alt": "Vol."
+        },
+        {
+            "id": 4,
+            "pathImage": "src/ui/components/atoms/thumbnail/__mock__/imgs/Rectangle30.png",
+            "volumen": "Vol.",
+            "date": "2023-04-01",
+            "alt": "Vol."
+        },
+        {
+            "id": 5,
+            "pathImage": "src/ui/components/atoms/thumbnail/__mock__/imgs/Rectangle31.png",
+            "volumen": "Vol.",
+            "date": "2023-05-01",
+            "alt": "Vol."
+        }
+    ]
+}
