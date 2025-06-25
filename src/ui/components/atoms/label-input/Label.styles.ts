@@ -5,6 +5,7 @@ import type { LabelProps, Size } from './types/IProps';
 export const StyledLabelWrapper = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   display: 'flex',
+  fontFamily: theme.typography.fontFamily,
   gap: theme.spacing(0.6),
 
   '& > *': {

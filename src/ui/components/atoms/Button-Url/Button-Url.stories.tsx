@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ButtonUrl } from './Button-Url';
-import ThemeWrapper from '../../../../style-library/core/ThemeProvider';
 
 const meta: Meta<typeof ButtonUrl> = {
   component: ButtonUrl,
@@ -55,13 +54,6 @@ const meta: Meta<typeof ButtonUrl> = {
       description: 'Button component for user actions',
     },
   },
-  decorators: [
-    (Story) => (
-      <ThemeWrapper>
-        <Story />
-      </ThemeWrapper>
-    ),
-  ],
 };
 
 export default meta;

@@ -12,7 +12,7 @@ export const StyledInput = styled(TextField)<{
   return {
     background: 'transparent',
     border: 'none',
-    fontFamily: 'Poppins, sans-serif',
+    fontFamily: theme.typography.fontFamily,
     outline: 'none',
     fontSize: fontSizes[size],
 

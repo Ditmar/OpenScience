@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Input } from './BaseInput';
-import ThemeWrapper from '../../../../style-library/core/ThemeProvider';
 
 const meta: Meta<typeof Input> = {
   component: Input,
@@ -69,13 +68,6 @@ const meta: Meta<typeof Input> = {
       },
     },
   },
-  decorators: [
-    (Story) => (
-      <ThemeWrapper>
-        <Story />
-      </ThemeWrapper>
-    ),
-  ],
 };
 
 export default meta;

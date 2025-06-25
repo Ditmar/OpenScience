@@ -39,7 +39,6 @@ export type IconName =
   | 'fi-rr-copy'
   | 'fi-sr-globe'
   | 'info'
-  | 'Close-URL'
   | 'fi-rr-calendar'
   | 'fi-rr-clock-five'
   | 'whatsapp'
