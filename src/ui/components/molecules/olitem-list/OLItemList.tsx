@@ -1,10 +1,10 @@
-import styles from './OLItemList.module.scss';
 import OLItem from '../../atoms/ol-item/OLItem';
 import type { OLItemListProps } from './types/IProps';
+import { StyledOLItemList } from './OLItemList.style';
 
 function OLItemList({ items, direction = 'row' }: OLItemListProps) {
   return (
-    <ol className={`${styles['ol-item-list']} ${styles[`ol-item-list--${direction}`]}`}>
+    <StyledOLItemList direction={direction}>
       {items.map((item) => (
         <OLItem
           key={item.value}
@@ -14,7 +14,7 @@ function OLItemList({ items, direction = 'row' }: OLItemListProps) {
           active={item.active}
         />
       ))}
-    </ol>
+    </StyledOLItemList>
   );
 }
 
