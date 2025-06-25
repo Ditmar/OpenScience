@@ -36,6 +36,6 @@ export type IconName =
   | 'vector'
   | 'volume'
   | 'volumes'
-  | 'whatsapp'
-  | 'check'
-  | 'errors';
+  | 'fi-rr-calendar'
+  | 'fi-rr-clock-five'
+  | 'whatsapp';
