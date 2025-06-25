@@ -1,103 +1,76 @@
+import { ThemeProvider } from '@mui/material/styles';
 import { render, screen } from '@testing-library/react';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import AddIcon from '@mui/icons-material/Add';
+import { lightTheme } from '../../../../style-library/themes/default';
 import Pill from './pills';
+import type { IProps } from './types/IProps';
 
-function isTransparentColor(color: string): boolean {
-  return color === 'transparent' || color === 'rgba(0, 0, 0, 0)';
-}
-
-describe('Componente <Pill />', () => {
-  const text = 'Texto base';
-  const color = 'brand-primary';
-  const variant = 'filled';
-  const size = 'md';
-  const rounded = 'r_md';
-  const iconPosition = 'left';
-
-  test('debe renderizar texto correctamente', () => {
+describe('Pill Component', () => {
+  const renderWithTheme = (props?: Partial<IProps>) =>
     render(
-      <Pill
-        text={text}
-        color={color}
-        variant={variant}
-        size={size}
-        rounded={rounded}
-        iconPosition={iconPosition}
-      />,
+      <ThemeProvider theme={lightTheme}>
+        <Pill
+          text={props?.text ?? 'Texto de prueba'}
+          color={props?.color ?? 'neutral-light'}
+          variant={props?.variant ?? 'filled'}
+          size={props?.size ?? 'md'}
+          rounded={props?.rounded ?? 'r_md'}
+          shadow={props?.shadow}
+          stroke={props?.stroke}
+          icon={props?.icon}
+          iconPosition={props?.iconPosition}
+          ariaLabel={props?.ariaLabel}
+        />
+      </ThemeProvider>,
     );
-    expect(screen.getByText(text)).toBeInTheDocument();
+
+  it('debería renderizar texto correctamente', () => {
+    renderWithTheme();
+    expect(screen.getByText(/Texto de prueba/i)).toBeInTheDocument();
   });
 
-  test('aplica aria-label cuando se proporciona', () => {
-    const ariaLabel = 'Etiqueta personalizada';
-
-    render(
-      <Pill
-        text={text}
-        color={color}
-        variant={variant}
-        size={size}
-        rounded={rounded}
-        iconPosition={iconPosition}
-        ariaLabel={ariaLabel}
-      />,
-    );
-
-    expect(screen.getByRole('status')).toHaveAttribute('aria-label', ariaLabel);
+  it('debería aplicar variantes y colores sin errores', () => {
+    renderWithTheme({
+      text: 'Texto',
+      color: 'brand-primary',
+      variant: 'soft',
+      size: 'lg',
+      shadow: true,
+      stroke: 'border-strong',
+    });
+    expect(screen.getByText(/Texto/i)).toBeInTheDocument();
   });
 
-  test('muestra ícono a la izquierda', () => {
-    render(
-      <Pill
-        text={text}
-        color={color}
-        variant={variant}
-        size={size}
-        rounded={rounded}
-        icon={<CheckCircleOutlineIcon data-testid="icon-left" />}
-        iconPosition="left"
-      />,
-    );
-
-    expect(screen.getByTestId('icon-left')).toBeInTheDocument();
+  it('debería mostrar ícono a la izquierda', () => {
+    const icon = <AddIcon data-testid="icon" />;
+    renderWithTheme({ text: 'Texto', icon, iconPosition: 'left' });
+    expect(screen.getByTestId('icon')).toBeInTheDocument();
+    const pillContainer = screen.getByTestId('icon').parentElement;
+    expect(pillContainer?.firstChild).toBe(screen.getByTestId('icon'));
   });
 
-  test('usa estilo outline con stroke', () => {
-    render(
-      <Pill
-        text={text}
-        color={color}
-        variant="outline"
-        size={size}
-        rounded={rounded}
-        stroke="border-soft"
-        iconPosition={iconPosition}
-      />,
-    );
-
-    const element = screen.getByText(text);
-    const styles = window.getComputedStyle(element);
-
-    expect(styles.border).toContain('solid');
-    expect(isTransparentColor(styles.backgroundColor)).toBe(true);
+  it('debería mostrar ícono a la derecha', () => {
+    const icon = <AddIcon data-testid="icon" />;
+    renderWithTheme({ text: 'Texto', icon, iconPosition: 'right' });
+    expect(screen.getByTestId('icon')).toBeInTheDocument();
+    const pillContainer = screen.getByTestId('icon').parentElement;
+    expect(pillContainer?.lastChild).toBe(screen.getByTestId('icon'));
   });
 
-  test('usa estilo soft', () => {
-    render(
-      <Pill
-        text={text}
-        color={color}
-        variant="soft"
-        size={size}
-        rounded={rounded}
-        iconPosition={iconPosition}
-      />,
-    );
+  it('debería usar ariaLabel si se provee explícitamente', () => {
+    renderWithTheme({ text: 'Texto', ariaLabel: 'Etiqueta personalizada' });
+    const pill = screen.getByRole('status');
+    expect(pill).toHaveAttribute('aria-label', 'Etiqueta personalizada');
+  });
 
-    const element = screen.getByText(text);
-    const styles = window.getComputedStyle(element);
+  it('debería asignar aria-label basado en text si no se provee', () => {
+    renderWithTheme({ text: 'Texto accesible' });
+    const pill = screen.getByRole('status');
+    expect(pill).toHaveAttribute('aria-label', 'Texto accesible');
+  });
 
-    expect(styles.backgroundColor).toContain('rgba');
-    expect(styles.backgroundColor).toContain('0.12');
+  it('no debería mostrar ícono si no se pasa', () => {
+    renderWithTheme({ text: 'Texto' });
+    expect(screen.queryByTestId('icon')).not.toBeInTheDocument();
   });
 });

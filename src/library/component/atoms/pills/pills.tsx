@@ -1,52 +1,36 @@
+import { PillRoot } from './pills.style';
 import type { IProps } from './types/IProps';
-import { PillRoot, PillIcon } from './pills.styles';
 
 function Pill(props: IProps) {
   const {
     text,
-    color = 'neutral-dark',
-    variant = 'filled',
-    size = 'md',
-    rounded = 'r_md',
-    ariaLabel,
-    shadow = false,
-    stroke,
     icon,
     iconPosition = 'left',
+    ariaLabel,
+    color,
+    variant,
+    size,
+    rounded,
+    shadow,
+    stroke,
   } = props;
-
-  function renderIcon() {
-    if (!icon) return null;
-    if (typeof icon === 'string') {
-      return null;
-    }
-    return icon;
-  }
 
   return (
     <PillRoot
-      text="100"
+      role="status"
+      aria-label={ariaLabel ?? text}
+      iconPosition={icon ? iconPosition : undefined}
+      text={text}
       color={color}
       variant={variant}
       size={size}
       rounded={rounded}
       shadow={shadow}
       stroke={stroke}
-      tabIndex={0}
-      role="status"
-      aria-label={ariaLabel ?? text}
     >
-      {icon && iconPosition === 'left' && (
-        <PillIcon position="left" aria-hidden data-testid="pill-icon-left">
-          {renderIcon()}
-        </PillIcon>
-      )}
-      {text}
-      {icon && iconPosition === 'right' && (
-        <PillIcon position="right" aria-hidden data-testid="pill-icon-right">
-          {renderIcon()}
-        </PillIcon>
-      )}
+      {icon && iconPosition === 'left' && <span className="pill__icon">{icon}</span>}
+      <span>{text}</span>
+      {icon && iconPosition === 'right' && <span className="pill__icon">{icon}</span>}
     </PillRoot>
   );
 }
