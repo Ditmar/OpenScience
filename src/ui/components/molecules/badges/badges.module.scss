@@ -1,0 +1,117 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/globals';
+
+.badge__icon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  line-height: 0;
+}
+
+.badge {
+  &--filled {
+    &.badge--violet {
+      background-color: $ads-color-secondary;
+      color: $ads-color-main;
+
+      .badge__icon,
+      .badge__counter {
+        color: $ads-color-main;
+      }
+    }
+
+    &.badge--blue {
+      background-color: var(--color-brand-primary-500);
+      color: $ads-color-main;
+
+      .badge__icon,
+      .badge__counter {
+        color: $ads-color-main;
+      }
+    }
+
+    &.badge--gray {
+      background-color: var(--color-neutral-gray-strong-800);
+      color: $ads-color-main;
+
+      .badge__icon,
+      .badge__counter {
+        color: $ads-color-main;
+      }
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 1px solid currentcolor;
+
+    &.badge--violet {
+      border-color: $ads-color-secondary;
+      color: $ads-color-main;
+
+      .badge__icon,
+      .badge__counter {
+        color: $ads-color-main;
+      }
+    }
+
+    &.badge--blue {
+      border-color: var(--color-brand-primary-500);
+      color: $ads-color-main;
+
+      .badge__icon,
+      .badge__counter {
+        color: $ads-color-main;
+      }
+    }
+
+    &.badge--gray {
+      border-color: var(--color-neutral-gray-strong-800);
+      color: $ads-color-main;
+
+      .badge__icon,
+      .badge__counter {
+        color: $ads-color-main;
+      }
+    }
+  }
+
+  &--soft {
+    background-color: $ads-color-dark-soft;
+
+    &.badge--violet {
+      color: $ads-color-secondary;
+    }
+
+    &.badge--blue {
+      color: var(--color-brand-primary-500);
+    }
+
+    &.badge--gray {
+      color: var(--color-neutral-gray-strong-800);
+    }
+  }
+}
+
+.badge__icon--x {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  line-height: 0;
+}
+
+.icon--small {
+  height: 16px;
+  width: 16px;
+}
+
+.icon--medium {
+  height: 20px;
+  width: 20px;
+}
+
+.icon--large {
+  height: 24px;
+  width: 24px;
+}
