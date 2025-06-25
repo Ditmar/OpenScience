@@ -89,18 +89,3 @@ export const Default: Story = {
     placeholder: 'Enter text here',
   },
 };
-
-export const EmailInput: Story = {
-  args: {
-    type: 'email',
-    iconName: 'volume',
-    placeholder: 'Enter your email',
-  },
-};
-
-export const PasswordInput: Story = {
-  args: {
-    type: 'password',
-    placeholder: 'Enter your password',
-  },
-};

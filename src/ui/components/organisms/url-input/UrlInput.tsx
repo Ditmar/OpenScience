@@ -62,14 +62,14 @@ export function UrlInput({
       <StyledFooter>
         {variant === 'error' && (
           <StyledHintText variant={variant} size={size}>
-            <StyledIcon iconName="Info-Tooltip" iconSize="medium" />
+            <StyledIcon iconName="info" iconSize="medium" />
             {hintText}
           </StyledHintText>
         )}
 
         <ToolTipButton title="Copiar URL" aria-label="Copiar URL" placement="bottom" arrow>
           <StyledButton>
-            <StyledIcon iconName="Info-Tooltip" iconSize="medium" />
+            <StyledIcon iconName="info" iconSize="medium" />
           </StyledButton>
         </ToolTipButton>
       </StyledFooter>

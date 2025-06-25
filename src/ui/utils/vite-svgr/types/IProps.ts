@@ -38,7 +38,7 @@ export type IconName =
   | 'volumes'
   | 'fi-rr-copy'
   | 'fi-sr-globe'
-  | 'Info-Tooltip'
+  | 'info'
   | 'Close-URL'
   | 'fi-rr-calendar'
   | 'fi-rr-clock-five'
