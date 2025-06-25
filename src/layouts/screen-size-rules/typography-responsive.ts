@@ -1,5 +1,5 @@
 import type { TypographyVariantsOptions } from '@mui/material/styles';
-import { breakpoints } from './breakpoints';
+import { breakpointValues } from './breakpoints';
 
 const baseSizes = {
   h1: 1.5,
@@ -20,7 +20,7 @@ const baseSizes = {
 export function generateResponsiveTypography(): TypographyVariantsOptions {
   const variants: TypographyVariantsOptions = {};
 
-  const sortedBreakpoints = Object.entries(breakpoints).sort(([, a], [, b]) => a - b);
+  const sortedBreakpoints = Object.entries(breakpointValues.values).sort(([, a], [, b]) => a - b);
 
   (Object.keys(baseSizes) as (keyof typeof baseSizes)[]).forEach((variant) => {
     const baseSize = baseSizes[variant];
@@ -29,10 +29,13 @@ export function generateResponsiveTypography(): TypographyVariantsOptions {
       fontSize: `${baseSize.toFixed(3)}rem`,
     };
 
-    sortedBreakpoints.forEach(([, minWidth], i) => {
-      styles[`@media (min-width:${minWidth.toString()}px)`] = {
-        fontSize: `${(baseSize + 0.25 * i).toFixed(3)}rem`,
-      };
+    sortedBreakpoints.forEach(([, minWidth], index) => {
+      if (minWidth > 0) {
+        const mediaQuery = `@media (min-width: ${minWidth.toString()}px)`;
+        styles[mediaQuery] = {
+          fontSize: `${(baseSize + 0.25 * index).toFixed(3)}rem`,
+        };
+      }
     });
 
     if (variant === 'button') styles.textTransform = 'none';

@@ -4,7 +4,7 @@ import { breakpoints } from './breakpoints';
 
 type CustomBreakpointKey = keyof typeof breakpoints;
 
-function useBreakpoint(key: CustomBreakpointKey, direction: 'up' | 'down' = 'up'): boolean {
+export function useBreakpoint(key: CustomBreakpointKey, direction: 'up' | 'down' = 'up'): boolean {
   const theme = useTheme();
 
   const isOfficialBreakpoint = ['xs', 'sm', 'md', 'lg', 'xl'].includes(key);
