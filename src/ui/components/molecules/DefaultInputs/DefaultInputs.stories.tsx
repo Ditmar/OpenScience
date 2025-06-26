@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import { DefaultInput } from './DefaultInput';
 
 const meta: Meta<typeof DefaultInput> = {
-  title: 'Molecules/DefaultInput',
+  title: 'Molecule/DefaultInput',
   component: DefaultInput,
   argTypes: {
     shape: { table: { disable: true } },
@@ -22,23 +22,8 @@ const renderVariants = (args: Partial<React.ComponentProps<typeof DefaultInput>>
         <Typography variant="subtitle1" fontWeight="bold">
           Email Address
         </Typography>
-        <DefaultInput
-          label={args.label}
-          placeholder={args.placeholder}
-          hint={args.hint}
-          error={args.error}
-          value={args.value}
-          autoFocus={args.autoFocus}
-          disabled={args.disabled}
-          onChange={args.onChange}
-          onClear={args.onClear}
-          required={args.required}
-          name={args.name}
-          id={args.id}
-          autoComplete={args.autoComplete}
-          type={args.type}
-          shape={shape}
-        />
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+        <DefaultInput {...args} shape={shape} />
       </Stack>
     ))}
   </Stack>
@@ -62,16 +47,14 @@ export const Focus: Story = {
 
 export const Filled: Story = {
   args: {
-    placeholder: 'Input Text',
-    hint: 'Hint Text',
     value: 'example@gmail.com',
+    hint: 'Hint Text',
   },
   render: (args) => renderVariants(args),
 };
 
 export const Error: Story = {
   args: {
-    placeholder: 'Input Text',
     error: 'Invalid email address',
   },
   render: (args) => renderVariants(args),
@@ -79,7 +62,6 @@ export const Error: Story = {
 
 export const Disabled: Story = {
   args: {
-    placeholder: 'Input Text',
     hint: 'Hint Text',
     disabled: true,
   },

@@ -1,21 +1,12 @@
-import type React from 'react';
+import type { TextFieldProps } from '@mui/material/TextField';
+import type { ReactNode } from 'react';
 
-export interface DefaultInputProps {
-  label?: string;
-  placeholder?: string;
-  value?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onClear?: () => void;
-  hint?: string;
+export interface DefaultInputProps extends Omit<TextFieldProps, 'error'> {
   error?: string;
-  disabled?: boolean;
-  required?: boolean;
-  type?: string;
-  name?: string;
-  id?: string;
-  autoComplete?: string;
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
+  hint?: string;
+  onClear?: () => void;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
+  value?: string;
   shape?: 'square' | 'rounded' | 'pill';
-  autoFocus?: boolean;
 }
