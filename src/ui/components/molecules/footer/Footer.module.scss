@@ -1,0 +1,156 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/fonts';
+
+.icon {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+
+.section {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 800px;
+  width: 100%;
+
+  &.small {
+    padding: 0.5rem;
+
+    .text {
+      color: inherit;
+      font-size: 10px;
+      margin-right: 0.15rem;
+    }
+
+    .divider {
+      align-self: center;
+      background-color: transparent;
+      height: 2.4rem;
+      margin: 0 0.4rem;
+      width: 0.12rem;
+    }
+
+    .icon {
+      height: 1rem;
+      width: 1.4rem;
+    }
+  }
+
+  &.medium {
+    padding: 1rem;
+
+    .text {
+      color: inherit;
+      font-size: 12px;
+      margin-right: 0.25rem;
+    }
+
+    .divider {
+      align-self: center;
+      background-color: transparent;
+      height: 3rem;
+      margin: 0 0.6rem;
+      width: 0.15rem;
+    }
+
+    .icon {
+      height: 1.3rem;
+      width: 1.8rem;
+    }
+  }
+
+  &.large {
+    padding: 1.5rem;
+
+    .text {
+      color: inherit;
+      font-size: 14px;
+      margin-right: 0.35rem;
+    }
+
+    .divider {
+      align-self: center;
+      background-color: transparent;
+      height: 4rem;
+      margin: 0 0.8rem;
+      width: 0.2rem;
+    }
+
+    .icon {
+      height: 2rem;
+      width: 2.8rem;
+    }
+  }
+}
+
+@media (min-width >= 768px) {
+  .footer.small {
+    .text {
+      font-size: 11px;
+    }
+
+    .divider {
+      align-self: center;
+      background-color: transparent;
+      height: 2.8rem;
+      margin: 0 0.45rem;
+      width: 0.14rem;
+    }
+
+    .icon {
+      height: 1.2rem;
+      width: 1.6rem;
+    }
+  }
+
+  .footer.medium {
+    .text {
+      font-size: 13px;
+    }
+
+    .divider {
+      align-self: center;
+      background-color: transparent;
+      height: 3.3rem;
+      margin: 0 0.65rem;
+      width: 0.18rem;
+    }
+
+    .icon {
+      height: 1.6rem;
+      width: 2.2rem;
+    }
+  }
+
+  .footer.large {
+    .text {
+      font-size: 16px;
+    }
+
+    .divider {
+      align-self: center;
+      background-color: transparent;
+      height: 4.8rem;
+      margin: 0 0.85rem;
+      width: 0.25rem;
+    }
+
+    .icon {
+      height: 2.3rem;
+      width: 3.2rem;
+    }
+  }
+}
