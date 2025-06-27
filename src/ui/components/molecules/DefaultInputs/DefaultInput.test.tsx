@@ -4,15 +4,15 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { DefaultInput } from './DefaultInput';
 
 describe('DefaultInput', () => {
-  it('renders with label', () => {
-    render(<DefaultInput label="Email" />);
-    expect(screen.getByLabelText('Email')).toBeInTheDocument();
+  it('renders with placeholder', () => {
+    render(<DefaultInput placeholder="Email" />);
+    expect(screen.getByPlaceholderText('Email')).toBeInTheDocument();
   });
 
   it('calls onChange', () => {
     const handleChange = vi.fn();
-    render(<DefaultInput label="Email" onChange={handleChange} />);
-    fireEvent.change(screen.getByLabelText('Email'), { target: { value: 'a' } });
+    render(<DefaultInput placeholder="Email" onChange={handleChange} />);
+    fireEvent.change(screen.getByPlaceholderText('Email'), { target: { value: 'a' } });
     expect(handleChange).toHaveBeenCalled();
   });
 
@@ -25,13 +25,13 @@ describe('DefaultInput', () => {
   });
 
   it('displays error and aria-invalid', () => {
-    render(<DefaultInput label="Email" error="Invalid" />);
+    render(<DefaultInput placeholder="Email" error="Invalid" />);
     expect(screen.getByText('Invalid')).toBeInTheDocument();
-    expect(screen.getByLabelText('Email')).toHaveAttribute('aria-invalid', 'true');
+    expect(screen.getByPlaceholderText('Email')).toHaveAttribute('aria-invalid', 'true');
   });
 
   it('disables input', () => {
-    render(<DefaultInput label="Email" disabled />);
-    expect(screen.getByLabelText('Email')).toBeDisabled();
+    render(<DefaultInput placeholder="Email" disabled />);
+    expect(screen.getByPlaceholderText('Email')).toBeDisabled();
   });
 });

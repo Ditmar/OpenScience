@@ -2,17 +2,15 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
-
-import { TextInput } from '../../atoms/DefaultInputs/TextInput';
-import { EmailIcon } from '../../atoms/DefaultInputs/EmailIcon';
-import { ClearIcon } from '../../atoms/DefaultInputs/ClearIcon';
-import { InfoIcon } from '../../atoms/DefaultInputs/InfoIcon';
-import { HintText } from '../../atoms/DefaultInputs/HintText';
-import { useDefaultInput } from './useDefaultInput';
+import { TextInput } from '../../atoms/Atoms-DefaultInputs/TextInput';
+import { EmailIcon } from '../../atoms/Atoms-DefaultInputs/EmailIcon';
+import { ClearIcon } from '../../atoms/Atoms-DefaultInputs/ClearIcon';
+import { InfoIcon } from '../../atoms/Atoms-DefaultInputs/InfoIcon';
+import { HintText } from '../../atoms/Atoms-DefaultInputs/HintText';
+import { HookDefaultInput } from './HookDefaultInput';
 import type { DefaultInputProps } from './types/types';
 
 export function DefaultInput({
-  label,
   placeholder = 'Input Text',
   value = '',
   onChange,
@@ -20,15 +18,9 @@ export function DefaultInput({
   hint = 'Hint Text',
   error,
   disabled,
-  type = 'text',
-  name,
-  required,
-  autoComplete,
-  id,
   shape = 'rounded',
-  autoFocus,
 }: DefaultInputProps) {
-  const { internalValue, handleChange, handleClear } = useDefaultInput(value, onChange, onClear);
+  const { internalValue, handleChange, handleClear } = HookDefaultInput(value, onChange, onClear);
 
   let borderRadius: number | string;
   if (shape === 'square') {
@@ -42,19 +34,11 @@ export function DefaultInput({
   return (
     <Box sx={{ width: 330 }}>
       <TextInput
-        id={id}
-        name={name}
-        type={type}
-        label={label}
         placeholder={placeholder}
         value={internalValue}
         onChange={handleChange}
-        required={required}
         disabled={disabled}
-        autoComplete={autoComplete}
         error={!!error}
-        autoFocus={autoFocus}
-        aria-describedby={id ? `${id}-helper-text` : undefined}
         aria-invalid={!!error}
         sx={{
           '& .MuiOutlinedInput-root': {

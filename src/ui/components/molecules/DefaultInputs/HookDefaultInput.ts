@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { ChangeEvent } from 'react';
 
-export function useDefaultInput(
+export function HookDefaultInput(
   value: string,
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void,
   onClear?: () => void,
