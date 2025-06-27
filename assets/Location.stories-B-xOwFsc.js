@@ -1,9 +1,0 @@
-import{F as u,l as h}from"./location-CDJKLmOz.js";import{j as e}from"./jsx-runtime-BlDnFLNC.js";import{I as n}from"./icons-Dqqr9IZ9.js";import"./index-Cu9bd8lq.js";import"./index-gagdKHFB.js";function c(l){const{variant:d,children:m,icon:o,icon1:t,children1:p}=l;return e.jsxs("div",{className:"location",children:[e.jsx("span",{className:"location__label",children:m}),e.jsx("button",{className:"location__icon","aria-label":"icon",children:o&&e.jsx(n,{"data-testid":"location__button",src:o})}),e.jsx("hr",{className:`divider--${d}`}),e.jsx("span",{className:"location__label1",children:p}),e.jsx("button",{className:"location__icon1","aria-label":"icon",children:t&&e.jsx(n,{"data-testid":"location__button1",src:t})})]})}c.__docgenInfo={description:"",methods:[],displayName:"Location",props:{icon:{required:!1,tsType:{name:"string"},description:""},icon1:{required:!1,tsType:{name:"string"},description:""},children:{required:!0,tsType:{name:"ReactReactNode",raw:"React.ReactNode"},description:""},children1:{required:!0,tsType:{name:"ReactReactNode",raw:"React.ReactNode"},description:""},variant:{required:!0,tsType:{name:"union",raw:"'solid' | 'dotted' | 'dashed'",elements:[{name:"literal",value:"'solid'"},{name:"literal",value:"'dotted'"},{name:"literal",value:"'dashed'"}]},description:""}}};const j={title:"ui/components/molecules/location-variable",component:c,argTypes:{variant:{control:{type:"select"},options:["solid","dotted","dashed"]}}},a={args:{icon:h,children:"UBICACIÓN",variant:"solid",icon1:u,children1:"SÍGUENOS EN"}};var i,r,s;a.parameters={...a.parameters,docs:{...(i=a.parameters)==null?void 0:i.docs,source:{originalSource:`{
-  args: {
-    icon: location,
-    children: 'UBICACIÓN',
-    variant: 'solid',
-    icon1: Facebook,
-    children1: 'SÍGUENOS EN'
-  }
-}`,...(s=(r=a.parameters)==null?void 0:r.docs)==null?void 0:s.source}}};const y=["Primary"];export{a as Primary,y as __namedExportsOrder,j as default};
