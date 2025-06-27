@@ -25,7 +25,7 @@ const meta: Meta<typeof Pill> = {
     },
     variant: {
       control: 'select',
-      options: ['filled', 'soft', 'outlined'],
+      options: ['filled', 'soft', 'outline'],
     },
     size: {
       control: 'select',
