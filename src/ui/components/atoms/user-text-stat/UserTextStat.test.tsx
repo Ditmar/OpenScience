@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { vi } from 'vitest'; 
+import { vi } from 'vitest';
 import UserTextStat from './UserTextStat';
 
 describe('UserTextStat Component', () => {

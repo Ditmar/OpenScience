@@ -64,4 +64,3 @@ export const MinimalUserCard: Story = {
     variant: 'default',
   },
 };
-
