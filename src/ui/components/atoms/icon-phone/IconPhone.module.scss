@@ -1,0 +1,29 @@
+@import '../../../../globals/colors';
+
+.container {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  line-height: 1;
+}
+
+.icon {
+  flex-shrink: 0;
+  height: 18px;
+  width: 18px;
+}
+
+.text {
+  font-family: Poppins, sans-serif;
+}
+
+.font-size-14 { font-size: 14px; }
+.font-size-16 { font-size: 16px; }
+.font-size-18 { font-size: 18px; }
+.font-size-20 { font-size: 20px; }
+
+.font-weight-300 { font-weight: 300; }
+.font-weight-400 { font-weight: 400; }
+
+.color-dark { color: $ads-color-gray-strong-700; }
+.color-gray { color: $ads-color-gray-soft-500; }
