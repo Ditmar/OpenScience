@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import AuthButtons from './AuthButtons';
 
 const meta: Meta<typeof AuthButtons> = {
-  title: 'Molecules/AuthButtons',
+  title: 'library/component/molecules/AuthButtons',
   component: AuthButtons,
   tags: ['autodocs'],
 };
@@ -37,6 +37,15 @@ export const Disabled: Story = {
     onLogin: () => {},
     onRegister: () => {},
     loading: false,
+    disabled: true,
+  },
+};
+
+export const LoadingAndDisabled: Story = {
+  args: {
+    onLogin: () => {},
+    onRegister: () => {},
+    loading: true,
     disabled: true,
   },
 };

@@ -1,13 +1,16 @@
 import React from 'react';
-import { Button } from '@mui/material';
+import { Button, Stack } from '@mui/material';
 import type { AuthButtonsProps } from './types/iProps';
-import LoginRegisterButtons from '../login-register-buttons/LoginRegisterButtons';
 
 function AuthButtons(props: AuthButtonsProps) {
   const { onLogin, onRegister, loading = false, disabled = false } = props;
 
   return (
-    <LoginRegisterButtons>
+    <Stack
+      spacing={2}
+      direction={{ xs: 'column', sm: 'row' }}
+      aria-label="Botones de autenticación"
+    >
       <Button
         variant="outlined"
         color="inherit"
@@ -19,11 +22,11 @@ function AuthButtons(props: AuthButtonsProps) {
           fontWeight: 'bold',
           color: '#ffffff',
           borderColor: '#ffffff',
-          marginRight: '1rem',
           '&:hover': {
             backgroundColor: 'rgba(255, 255, 255, 0.1)',
           },
         }}
+        fullWidth
       >
         {loading ? 'Cargando...' : 'INICIAR SESIÓN'}
       </Button>
@@ -42,10 +45,11 @@ function AuthButtons(props: AuthButtonsProps) {
             backgroundColor: '#005645',
           },
         }}
+        fullWidth
       >
         {loading ? 'Cargando...' : 'REGISTRARSE'}
       </Button>
-    </LoginRegisterButtons>
+    </Stack>
   );
 }
 
