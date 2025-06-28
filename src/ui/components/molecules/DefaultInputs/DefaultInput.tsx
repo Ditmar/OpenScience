@@ -32,7 +32,7 @@ export function DefaultInput({
   }
 
   return (
-    <Box sx={{ width: 330 }}>
+    <Box sx={{ width: '100%', maxWidth: 330 }}>
       <TextInput
         placeholder={placeholder}
         value={internalValue}
@@ -40,13 +40,7 @@ export function DefaultInput({
         disabled={disabled}
         error={!!error}
         aria-invalid={!!error}
-        sx={{
-          '& .MuiOutlinedInput-root': {
-            borderRadius,
-            height: 53,
-          },
-          width: '100%',
-        }}
+        sx={{ '& .MuiOutlinedInput-root': { borderRadius, height: 53 }, width: '100%' }}
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
@@ -70,7 +64,6 @@ export function DefaultInput({
           ),
         }}
       />
-
       {(hint || error) && (
         <Box sx={{ display: 'flex', alignItems: 'center', mt: 0.5 }}>
           <InfoIcon />
