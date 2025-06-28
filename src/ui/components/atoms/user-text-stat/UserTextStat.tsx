@@ -19,10 +19,9 @@ function UserTextStat({
   title,
   mainValue,
   subValue,
+  description,
   variant = 'default',
   size = 'medium',
-  icon,
-  description,
   onClick,
   className,
   avatarUrl,
@@ -45,11 +44,10 @@ function UserTextStat({
       {avatarUrl && <img src={avatarUrl} alt="Avatar" className={styles.avatar} />}
       <div className={styles.content}>
         <div className={styles.user}>
-          {icon && !avatarUrl && <span style={{ marginRight: '0.5rem' }}>{icon}</span>}
           <span>{title}</span>
         </div>
         <div className={styles.text}>{mainValue}</div>
-        {subValue && <div className={styles.timestamp}>{subValue}</div>}
+        {subValue !== undefined && <div className={styles.timestamp}>{subValue}</div>}
         {description && <div className={styles.text}>{description}</div>}
       </div>
     </>
