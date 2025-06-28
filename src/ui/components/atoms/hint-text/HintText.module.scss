@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+@import '../../../../globals/colors';
+
+.hint-text {
+  align-items: center;
+  display: flex;
+  padding: 0;
+  width: 371px;
+}
+
+.hint-text--small {
+  font-size: 14px;
+  line-height: 18px;
+  
+  .hint-text__icon svg {
+    height: 18px;
+    width: 18px;
+  }
+}
+
+.hint-text--medium {
+  font-size: 16px;
+  line-height: 18px;
+  
+  .hint-text__icon svg {
+    height: 18px;
+    width: 18px;
+  }
+}
+
+.hint-text--large {
+  font-size: 18px;
+  line-height: 20px;
+  
+  .hint-text__icon svg {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.hint-text__icon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  &--right {
+    margin-left: auto;
+  }
+}
+
+.hint-text__text {
+  color: $ads-icontextstat-color-text;
+  font-family: Poppins, sans-serif;
+  font-weight: 300;
+  margin-left: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
