@@ -5,10 +5,13 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import type { BadgeItemProps } from './types/IProps';
 import Pill from '../../atoms/pills/pills';
 import { BadgeContainer } from './badgeItem.styles';
+import type { IProps } from '../../atoms/pills/types/IProps';
 
-const pillColorMap = {
+type ColorKey = 'neutral' | 'gray' | 'violet' | 'blue' | 'custom';
+type PillColor = IProps['color'];
+
+const pillColorMap: Record<ColorKey, PillColor> = {
   neutral: 'neutral-dark',
-  white: 'neutral-dark',
   gray: 'neutral-dark',
   violet: 'neutral-dark',
   blue: 'neutral-dark',
@@ -26,7 +29,7 @@ const getPillSize = (pillSizeArg: string): 'sm' | 'md' | 'lg' => {
   }
 };
 
-const getMappedPillColor = (color: keyof typeof pillColorMap, variant: string): any => {
+const getMappedPillColor = (color: keyof typeof pillColorMap, variant: string): IProps['color'] => {
   if (variant === 'filled') {
     return color === 'neutral' ? 'neutral-light' : 'neutral-dark';
   }
@@ -48,7 +51,6 @@ const getTextColor = (
 
   const colorMap: Record<typeof color, string> = {
     neutral: '#0d6efd',
-    white: '#ffffff',
     gray: '#6c757d',
     violet: '#6610f2',
     blue: '#0d6efd',
