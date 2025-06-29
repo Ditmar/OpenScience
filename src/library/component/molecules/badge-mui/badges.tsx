@@ -6,7 +6,7 @@ import type { BadgeItemProps } from './types/IProps';
 import Pill from '../../atoms/pills/pills';
 import { BadgeContainer } from './badgeItem.styles';
 
-const pillColorMap: Record<'neutral' | 'white' | 'gray' | 'violet' | 'blue' | 'custom', string> = {
+const pillColorMap = {
   neutral: 'neutral-dark',
   white: 'neutral-dark',
   gray: 'neutral-dark',
@@ -26,7 +26,7 @@ const getPillSize = (pillSizeArg: string): 'sm' | 'md' | 'lg' => {
   }
 };
 
-const getMappedPillColor = (color: keyof typeof pillColorMap, variant: string): string => {
+const getMappedPillColor = (color: keyof typeof pillColorMap, variant: string): any => {
   if (variant === 'filled') {
     return color === 'neutral' ? 'neutral-light' : 'neutral-dark';
   }
