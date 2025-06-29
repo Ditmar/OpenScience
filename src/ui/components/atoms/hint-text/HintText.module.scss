@@ -1,59 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
-@import '../../../../globals/colors';
 
 .hint-text {
   align-items: center;
   display: flex;
-  padding: 0;
-  width: 371px;
-}
+  max-width: 371px;
+  width: 100%;
 
-.hint-text--small {
-  font-size: 14px;
-  line-height: 18px;
-  
-  .hint-text__icon svg {
-    height: 18px;
-    width: 18px;
+  &--disabled {
+    opacity: 0.5;
   }
-}
 
-.hint-text--medium {
-  font-size: 16px;
-  line-height: 18px;
-  
-  .hint-text__icon svg {
-    height: 18px;
-    width: 18px;
+  &__text {
+    flex-grow: 1;
+    font-family: Poppins, sans-serif;
+    font-weight: 300;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &--small {
+      font-size: 0.875rem;
+      margin: 0 8px;
+    }
+
+    &--medium {
+      font-size: 1rem;
+      margin: 0 12px;
+    }
+
+    &--large {
+      font-size: 1.125rem;
+      margin: 0 16px;
+    }
   }
-}
 
-.hint-text--large {
-  font-size: 18px;
-  line-height: 20px;
-  
-  .hint-text__icon svg {
-    height: 20px;
-    width: 20px;
+  &__icon {
+    flex-shrink: 0;
+
+    &--small {
+      font-size: 18px;
+    }
+
+    &--medium {
+      font-size: 20px;
+    }
+
+    &--large {
+      font-size: 22px;
+    }
   }
-}
-
-.hint-text__icon {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-
-  &--right {
-    margin-left: auto;
-  }
-}
-
-.hint-text__text {
-  color: $ads-icontextstat-color-text;
-  font-family: Poppins, sans-serif;
-  font-weight: 300;
-  margin-left: 16px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }

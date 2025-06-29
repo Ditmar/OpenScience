@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { CountryFlag } from './IconFlag';
 import { allCountries } from './countryMock';
-import styles from './IconFlag.module.scss';
 
 describe('CountryFlag Component', () => {
   test('renders correctly with default props (circular)', () => {
@@ -18,12 +17,15 @@ describe('CountryFlag Component', () => {
       />,
     );
 
-    const avatarWrapper = screen.getByAltText(testCountry.alt).closest('div');
-    expect(avatarWrapper).toHaveClass(styles['country-flag-avatar']);
+    const avatarImg = screen.getByAltText(testCountry.alt);
+    const avatar = avatarImg.parentElement;
+
+    expect(avatar).toBeInTheDocument();
+    expect(avatar?.getAttribute('class')).toMatch(/country-flag-avatar--circular/);
+    expect(avatar?.getAttribute('class')).toMatch(/country-flag-avatar--medium/);
 
     const text = screen.getByText(testCountry.name);
     const dial = screen.getByText(`(${testCountry.dialCode})`);
-
     expect(text).toBeInTheDocument();
     expect(dial).toBeInTheDocument();
   });
@@ -41,7 +43,9 @@ describe('CountryFlag Component', () => {
       />,
     );
 
-    const avatarWrapper = screen.getByAltText(testCountry.alt).closest('div');
-    expect(avatarWrapper).toHaveClass(styles.rectangular);
+    const avatarImg = screen.getByAltText(testCountry.alt);
+    const avatar = avatarImg.parentElement;
+
+    expect(avatar?.getAttribute('class')).toMatch(/country-flag-avatar--rectangular/);
   });
 });

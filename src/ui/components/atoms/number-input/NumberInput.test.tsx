@@ -1,29 +1,101 @@
-import { vi } from 'vitest';
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, cleanup, waitFor } from '@testing-library/react';
+import { ThemeProvider, createTheme } from '@mui/material';
+import '@testing-library/jest-dom';
+import { vi, describe, it, afterEach } from 'vitest';
+
 import PhoneNumberInput from './NumberInput';
-import styles from './NumberInput.module.scss';
+import type { PhoneNumberInputProps } from './types/IProps';
 
-describe('PhoneNumberInput component', () => {
-  test('renders with default props', () => {
-    render(<PhoneNumberInput />);
-    const input = screen.getByPlaceholderText('Phone Number');
-    expect(input).toBeInTheDocument();
-    expect(input).toHaveClass(styles.input);
+vi.mock('@mui/icons-material', () => {
+  return {
+    ArrowDropDown: () => <svg data-testid="arrow-drop-down-mock" />,
+    ArrowDropUp: () => <svg data-testid="arrow-drop-up-mock" />,
+  };
+});
+
+const theme = createTheme();
+const mockOnChange = vi.fn();
+
+const renderComponent = ({
+  value = '',
+  onChange = mockOnChange,
+  size = 'medium' as const,
+  borderRadius = 'rounded' as const,
+  state = 'default' as const,
+}: Partial<PhoneNumberInputProps> = {}) => {
+  return render(
+    <ThemeProvider theme={theme}>
+      <PhoneNumberInput
+        value={value}
+        onChange={onChange}
+        size={size}
+        borderRadius={borderRadius}
+        state={state}
+      />
+    </ThemeProvider>,
+  );
+};
+
+describe('PhoneNumberInput', () => {
+  afterEach(() => {
+    vi.clearAllMocks();
+    cleanup();
   });
 
-  test('accepts only numbers', () => {
-    const handleChange = vi.fn();
-    render(<PhoneNumberInput onChange={handleChange} />);
-    const input = screen.getByPlaceholderText('Phone Number');
-    fireEvent.change(input, { target: { value: 'abc123' } });
-    expect(handleChange).toHaveBeenCalledWith('123');
+  it('renders correctly with default props', () => {
+    renderComponent();
+
+    expect(screen.getByPlaceholderText('Phone Number')).toBeInTheDocument();
+    expect(screen.getByText('(+54)')).toBeInTheDocument();
+    expect(screen.getByRole('button')).toBeInTheDocument();
+    expect(screen.getByAltText('Flag')).toBeInTheDocument();
+    expect(screen.getByAltText('Phone icon')).toBeInTheDocument();
   });
 
-  test('applies correct size and border radius', () => {
-    render(<PhoneNumberInput size="large" borderRadius="rounded" />);
-    const container = screen.getByPlaceholderText('Phone Number').parentElement;
-    expect(container?.className).toMatch(/large/);
-    expect(container?.className).toMatch(/rounded/);
+  it('calls onChange with only numbers when typing', () => {
+    renderComponent();
+
+    const input = screen.getByPlaceholderText('Phone Number');
+    fireEvent.change(input, { target: { value: '123abc456' } });
+
+    expect(mockOnChange).toHaveBeenCalledWith('123456');
+  });
+
+  it('toggles dropdown open and closed when clicking button', async () => {
+    renderComponent();
+
+    const button = screen.getByRole('button');
+
+    expect(screen.getByText('Country List')).not.toBeVisible();
+
+    fireEvent.click(button);
+    expect(screen.getByText('Country List')).toBeVisible();
+
+    fireEvent.click(button);
+
+    await waitFor(() => {
+      expect(screen.getByText('Country List')).not.toBeVisible();
+    });
+  });
+
+  it('does not open dropdown if disabled', () => {
+    renderComponent({ state: 'disabled' });
+
+    const button = screen.getByRole('button');
+    fireEvent.click(button);
+
+    expect(screen.getByText('Country List')).not.toBeVisible();
+  });
+
+  it('shows mocked ArrowDropUp and ArrowDropDown icons', () => {
+    renderComponent();
+
+    expect(screen.getByTestId('arrow-drop-down-mock')).toBeInTheDocument();
+
+    const button = screen.getByRole('button');
+    fireEvent.click(button);
+
+    expect(screen.getByTestId('arrow-drop-up-mock')).toBeInTheDocument();
   });
 });
