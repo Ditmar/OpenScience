@@ -1,29 +1,57 @@
-@import '../../../../globals/colors';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
-.container {
+.icon-phone {
   align-items: center;
   display: flex;
-  gap: 10px;
-  line-height: 1;
+  max-width: 371px;
+  width: 100%;
+
+  &--disabled {
+    opacity: 0.5;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+
+    &--small {
+      height: 18px;
+      width: 18px;
+    }
+
+    &--medium {
+      height: 20px;
+      width: 20px;
+    }
+
+    &--large {
+      height: 22px;
+      width: 22px;
+    }
+  }
+
+  &__text {
+    flex-grow: 1;
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+
+    &--small {
+      font-size: 0.875rem;
+      margin-left: 10px;
+    }
+
+    &--medium {
+      font-size: 1rem;
+      margin-left: 14px;
+    }
+
+    &--large {
+      font-size: 1.125rem;
+      margin-left: 18px;
+    }
+  }
+
+  &__close-button {
+    margin-left: auto;
+    padding: 0;
+  }
 }
-
-.icon {
-  flex-shrink: 0;
-  height: 18px;
-  width: 18px;
-}
-
-.text {
-  font-family: Poppins, sans-serif;
-}
-
-.font-size-14 { font-size: 14px; }
-.font-size-16 { font-size: 16px; }
-.font-size-18 { font-size: 18px; }
-.font-size-20 { font-size: 20px; }
-
-.font-weight-300 { font-weight: 300; }
-.font-weight-400 { font-weight: 400; }
-
-.color-dark { color: $ads-color-gray-strong-700; }
-.color-gray { color: $ads-color-gray-soft-500; }

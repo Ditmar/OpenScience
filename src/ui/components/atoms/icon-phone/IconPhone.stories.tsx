@@ -1,64 +1,59 @@
-/* eslint-disable react/function-component-definition */
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import PhoneNumber from './IconPhone';
-import type { PhoneNumberProps } from './types/IProps';
+import type { StoryObj } from '@storybook/react';
+import IconPhone from './IconPhone';
 
-const meta: Meta<PhoneNumberProps> = {
+const meta = {
   title: 'ui/Components/Atoms/IconPhone',
-  component: PhoneNumber,
+  component: IconPhone,
   argTypes: {
-    fontSizeClass: {
+    text: { control: 'text' },
+    size: {
       control: { type: 'select' },
-      options: ['font-size-14', 'font-size-16', 'font-size-18', 'font-size-20'],
+      options: ['small', 'medium', 'large'],
     },
-    colorClass: {
-      control: { type: 'select' },
-      options: ['color-dark', 'color-gray'],
-    },
-    fontWeightClass: {
-      control: { type: 'select' },
-      options: ['font-weight-300', 'font-weight-400'],
-    },
-    text: {
-      control: { type: 'text' },
-    },
+    disabled: { control: 'boolean' },
+    onClose: { action: 'closed' },
   },
 };
 
 export default meta;
-type Story = StoryObj<PhoneNumberProps>;
+type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  render: (args) => (
-    <PhoneNumber
-      text={args.text}
-      fontSizeClass={args.fontSizeClass}
-      colorClass={args.colorClass}
-      fontWeightClass={args.fontWeightClass}
-    />
-  ),
+export const Small: Story = {
   args: {
     text: 'Phone Number',
-    fontSizeClass: 'font-size-16',
-    colorClass: 'color-dark',
-    fontWeightClass: 'font-weight-400',
+    size: 'small',
   },
 };
 
-export const Variations: Story = {
-  render: (args) => (
-    <PhoneNumber
-      text={args.text}
-      fontSizeClass={args.fontSizeClass}
-      colorClass={args.colorClass}
-      fontWeightClass={args.fontWeightClass}
-    />
-  ),
+export const Medium: Story = {
   args: {
     text: 'Phone Number',
-    fontSizeClass: 'font-size-16',
-    colorClass: 'color-gray',
-    fontWeightClass: 'font-weight-300',
+    size: 'medium',
+  },
+};
+
+export const Large: Story = {
+  args: {
+    text: 'Phone Number',
+    size: 'large',
+  },
+};
+
+export const WithCloseButton: Story = {
+  args: {
+    text: 'Phone Number',
+    size: 'medium',
+    onClose: () => {
+      // eslint-disable-next-line no-console
+      console.log('Close clicked');
+    },
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    text: 'Phone Number',
+    size: 'medium',
+    disabled: true,
   },
 };

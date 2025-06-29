@@ -1,38 +1,32 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import PhoneNumber from './IconPhone';
+import { render, screen, fireEvent } from '@testing-library/react';
+import { vi } from 'vitest';
+import '@testing-library/jest-dom';
+import IconPhone from './IconPhone';
 
-describe('PhoneNumber component', () => {
-  test('renders phone icon and default text', () => {
-    render(<PhoneNumber />);
+describe('IconPhone Component', () => {
+  test('renders phone icon and text', () => {
+    render(<IconPhone text="Test Phone" />);
 
-    const icon = screen.getByTestId('phone-icon');
-    expect(icon).toBeInTheDocument();
-    expect(icon).toHaveAttribute('src');
-    expect(icon).toHaveAttribute('alt', 'phone icon');
-
-    expect(screen.getByText('Phone Number')).toBeInTheDocument();
+    expect(screen.getByTestId('phone-icon')).toBeInTheDocument();
+    expect(screen.getByText('Test Phone')).toBeInTheDocument();
   });
 
-  test('renders with custom classes and icon', () => {
-    render(
-      <PhoneNumber
-        text="Emergency Contact"
-        fontSizeClass="font-size-14"
-        colorClass="color-gray"
-        fontWeightClass="font-weight-300"
-      />,
-    );
+  test('renders close button when onClose is provided', () => {
+    const mockOnClose = vi.fn();
+    render(<IconPhone onClose={mockOnClose} />);
 
-    const textElement = screen.getByText('Emergency Contact');
-    expect(textElement).toBeInTheDocument();
-    expect(textElement.className).toMatch(/font-size-14/);
-    expect(textElement.className).toMatch(/color-gray/);
-    expect(textElement.className).toMatch(/font-weight-300/);
+    const closeButton = screen.getByTestId('close-button');
+    expect(closeButton).toBeInTheDocument();
 
-    const icon = screen.getByTestId('phone-icon');
-    expect(icon).toBeInTheDocument();
-    expect(icon).toHaveAttribute('src');
-    expect(icon).toHaveAttribute('alt', 'phone icon');
+    fireEvent.click(closeButton);
+    expect(mockOnClose).toHaveBeenCalled();
+  });
+
+  test('disables correctly', () => {
+    render(<IconPhone disabled />);
+
+    const container = screen.getByTestId('icon-phone');
+    expect(container.className).toMatch(/icon-phone--disabled/);
   });
 });

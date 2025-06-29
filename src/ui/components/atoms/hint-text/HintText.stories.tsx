@@ -10,6 +10,7 @@ const meta = {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],
     },
+    disabled: { control: 'boolean' },
   },
 };
 
@@ -34,5 +35,13 @@ export const Large: Story = {
   args: {
     text: 'Hint Text',
     size: 'large',
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    text: 'Hint Text',
+    size: 'medium',
+    disabled: true,
   },
 };
