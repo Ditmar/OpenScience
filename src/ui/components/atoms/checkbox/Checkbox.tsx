@@ -1,4 +1,6 @@
-import { Checkbox as MUICheckbox, Box } from '@mui/material';
+import { Checkbox as MUICheckbox } from '@mui/material';
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import styles from './Checkbox.module.scss';
 import type { CheckboxProps } from './types/IProps';
 
@@ -20,8 +22,8 @@ function Checkbox({
       disabled={isDisabled}
       disableRipple
       className={combinedClassName}
-      icon={icon ?? <Box className={styles.icon} />}
-      checkedIcon={checkedIcon ?? <Box className={styles.checkedIcon} />}
+      icon={icon ?? <CheckBoxOutlineBlankIcon />}
+      checkedIcon={checkedIcon ?? <CheckBoxIcon />}
       inputProps={{ 'aria-label': ariaLabel }}
     />
   );
