@@ -161,6 +161,7 @@ export default function PhoneNumberInput({
         <Box
           sx={{
             position: 'relative',
+            color: '#1B2037',
             flex: 1,
             height: '100%',
             display: 'flex',
@@ -197,6 +198,7 @@ export default function PhoneNumberInput({
               fontFamily: '"Poppins", sans-serif',
               fontWeight: 300,
               fontSize: sizeStyles[size].fontSize,
+              color: '#1B2037',
               '& input::placeholder': { color: theme.palette.text.disabled, opacity: 1 },
             }}
           />
