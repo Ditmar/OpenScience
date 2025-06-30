@@ -44,8 +44,8 @@
 
 ### Husky
 
-- \*\*Description: Husky is a tool for managing Git hooks, allowing the execution of scripts at specific points in the Git workflow.
-- \*\*Documentation: [Husky Docs](https://typicode.github.io/husky/)
+- **Description**: Husky is a tool for managing Git hooks, allowing the execution of scripts at specific points in the Git workflow.
+- **Documentation**: [Husky Docs](https://typicode.github.io/husky/)
 
 ### Storybook
 
@@ -67,9 +67,9 @@
 - **Description**: Playwright is a browser automation tool that enables end-to-end testing with a powerful and flexible API.
 - **Documentation**: [Playwright Docs](https://playwright.dev/docs/intro)
 
-- ## Installation and Usage
+## Installation and Usage
 
-**Clone the repository**:
+### Clone the repository
 
 ```sh
 git clone https://github.com/your-username/openscience.git
@@ -93,21 +93,21 @@ yarn dev
 ```
 +---------------+       +---------------+
 |  Developer    |       |  GitHub       |
-|  (person)    +------->  Actions      |
-|               |       |  (platform) |
+|  (person)     +------->  Actions      |
+|               |       |  (platform)   |
 +---------------+       +-------+-------+
-                                    |
-                                    v
-                            +-------+-------+
-                            |  Docker Hub   |
-                            |  (registry)   |
-                            +---------------+
-                                    |
-                                    v
-                            +-------+-------+
-                            |  GitHub Pages |
-                            |  (service)   |
-                            +---------------+
+                                |
+                                v
+                        +-------+-------+
+                        |  Docker Hub   |
+                        |  (registry)   |
+                        +---------------+
+                                |
+                                v
+                        +-------+-------+
+                        |  GitHub Pages |
+                        |  (service)    |
+                        +---------------+
 ```
 
 ### Containers level 2
@@ -144,3 +144,9 @@ yarn dev
 ### Pipeline
 
 ![GitHub Actions Pipeline](./docs/images/pipeline.png)
+
+---
+
+## Config-manager Documentation
+
+README FILE: [Config-manager.md](./docs/Config-manager.md)
