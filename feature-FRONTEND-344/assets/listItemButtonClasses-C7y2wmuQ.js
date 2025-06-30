@@ -1,0 +1,1 @@
+import{g as e,a as s}from"./memoTheme-BE2zh0Q8.js";function a(t){return s("MuiListItemButton",t)}const l=e("MuiListItemButton",["root","focusVisible","dense","alignItemsFlexStart","disabled","divider","gutters","selected"]);export{a as g,l};
