@@ -1,0 +1,82 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
+.text-card {
+  border-radius: 1rem; // 4 * 4px
+  max-width: 500px;
+  padding: 0.5rem;
+
+  &__header {
+    align-items: center;
+    display: flex;
+    margin-bottom: 0.5rem;
+  }
+
+  &__checkbox {
+    padding-left: 0;
+    padding-right: 1.5rem;
+
+    &-icon {
+      border: 2px solid #1a1a1a;
+      border-radius: 4px;
+      height: 17px;
+      width: 17px;
+    }
+
+    &-checked-icon {
+      background-color: $ads-color-black-900;
+      border-radius: 4px;
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &__badge {
+    align-items: center;
+    border-radius: 10px;
+    display: flex;
+    font-family: Poppins, 'DM Sans', sans-serif;
+    padding: 4px 6px;
+
+    &-avatar {
+      border-radius: 6px;
+      height: 24px;
+      margin-right: 0.5rem;
+      width: 24px;
+    }
+
+    &-text {
+      color: $ads-color-main;
+      font-family: Poppins, 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      margin-right: 0.5rem;
+    }
+
+    &-number {
+      background-color: $ads-color-main;
+      border-radius: 4px;
+      font-family: Poppins, 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1;
+      padding: 4px 10px;
+      text-align: center;
+    }
+  }
+
+  &__content {
+    padding-left: 42px;
+    padding-top: 0;
+
+    &-title {
+      font-family: Poppins, 'DM Sans', sans-serif;
+      font-weight: 600;
+    }
+
+    &-text {
+      color: $ads-text-secondary;
+      font-family: Poppins, 'DM Sans', sans-serif;
+    }
+  }
+}
