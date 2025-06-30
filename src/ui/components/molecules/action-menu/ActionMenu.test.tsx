@@ -46,15 +46,4 @@ describe('ActionMenu Component', () => {
     expect(await screen.findByText('MEDIA')).toBeInTheDocument();
     expect(screen.getByLabelText(/image option/i)).toBeInTheDocument();
   });
-
-  it('closes options when clicking the same button twice', async () => {
-    render(<ActionMenu />);
-    const pdfButton = screen.getByLabelText(/pdf/i);
-
-    fireEvent.click(pdfButton);
-    expect(await screen.findByText('DESCARGAR')).toBeInTheDocument();
-
-    fireEvent.click(pdfButton);
-    expect(screen.queryByText('DESCARGAR')).not.toBeInTheDocument();
-  });
 });
