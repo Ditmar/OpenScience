@@ -25,9 +25,14 @@ export const lightTheme = createTheme({
       primary: tokens.colors.text_main_alpha,
       secondary: tokens.colors.text_secondary,
     },
+    olitemPalette: {
+      stroke_Primary: tokens.colors.stroke_primary,
+      text_light: tokens.colors.main,
+      stroke_primary_Soft: tokens.colors.stroke_primary_soft,
+    },
   },
   typography: {
-    fontFamily: '"Lato", "Roboto", "Montserrat", sans-serif',
+    fontFamily: '"Lato", "Roboto", "Montserrat", "Poppins-Regular", sans-serif',
     fontSize: 16,
     h1: {
       fontSize: tokens.typography.fontSizes.first,
@@ -48,6 +53,18 @@ export const lightTheme = createTheme({
     body2: {
       fontSize: tokens.typography.fontSizes.sixth,
       color: tokens.colors.text_input,
+    },
+    textPoppins: {
+      fontFamily: 'Poppins-Regular',
+    },
+    textSm: {
+      fontSize: tokens.colors.icontextstat_fontsize_smalltext,
+    },
+    textMd: {
+      fontSize: tokens.colors.icontextstat_fontsize_mediumtext,
+    },
+    textLg: {
+      fontSize: tokens.colors.icontextstat_fontsize_largetext,
     },
   },
   spacing: 8,
