@@ -17,7 +17,7 @@ export default function IconPhone({
   onClose,
 }: IconPhoneProps) {
   const theme = useTheme();
-  const textColor = disabled ? theme.palette.text.disabled : theme.palette.text.primary;
+  const textColor = disabled ? theme.palette.text.disabled : '#1B2037';
 
   return (
     <Box

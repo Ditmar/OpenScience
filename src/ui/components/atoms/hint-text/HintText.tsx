@@ -12,7 +12,6 @@ export default function HintText({
 }: IProps) {
   const theme = useTheme();
   const iconColor = disabled ? theme.palette.text.disabled : '#151A2D';
-  const textColor = disabled ? theme.palette.text.disabled : theme.palette.text.secondary;
 
   return (
     <Box
@@ -32,7 +31,7 @@ export default function HintText({
       <Typography
         variant="body2"
         className={`${styles['hint-text__text']} ${styles[`hint-text__text--${size}`]}`}
-        sx={{ color: textColor }}
+        sx={{ color: theme.palette.text.disabled }}
       >
         {text}
       </Typography>

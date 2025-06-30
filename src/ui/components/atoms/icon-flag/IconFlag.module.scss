@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 
 :root {
-  --color-bg-hover: rgb(0 0 0 / 4%);       /* Modern color-function with alpha as percentage */
+  --color-bg-hover: rgb(0 0 0 / 4%);
   --color-text-primary: #1B2037;
 }
 
@@ -13,11 +13,6 @@
   padding: 4px 8px;
   transition: background-color 0.2s ease;
   width: max-content;
-
-  &:hover {
-    background-color: var(--color-bg-hover);
-    border-radius: 4px;
-  }
 }
 
 .country-flag-avatar {
