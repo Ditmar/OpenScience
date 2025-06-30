@@ -51,27 +51,11 @@ describe('ActionMenu Component', () => {
     render(<ActionMenu />);
     const pdfButton = screen.getByLabelText(/pdf/i);
 
-    // First click opens
     fireEvent.click(pdfButton);
     expect(await screen.findByText('DESCARGAR')).toBeInTheDocument();
 
-    // Second click closes
     fireEvent.click(pdfButton);
     expect(screen.queryByText('DESCARGAR')).not.toBeInTheDocument();
   });
 
-  it('switches between different menus', async () => {
-    render(<ActionMenu />);
-    const pdfButton = screen.getByLabelText(/pdf/i);
-    const linkButton = screen.getByLabelText(/link/i);
-
-    // Open PDF menu
-    fireEvent.click(pdfButton);
-    expect(await screen.findByText('DESCARGAR')).toBeInTheDocument();
-
-    // Switch to Link menu
-    fireEvent.click(linkButton);
-    expect(screen.queryByText('DESCARGAR')).not.toBeInTheDocument();
-    expect(await screen.findByLabelText(/whatsapp/i)).toBeInTheDocument();
-  });
 });

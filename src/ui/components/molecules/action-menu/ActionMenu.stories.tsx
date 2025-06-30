@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import MediaButtons from './ActionMenu'; // Asegúrate de que la ruta sea correcta
+import MediaButtons from './ActionMenu';
 
 const meta: Meta<typeof MediaButtons> = {
   title: 'ui/components/molecules/action-menu',
