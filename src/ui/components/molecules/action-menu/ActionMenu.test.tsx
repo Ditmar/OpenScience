@@ -9,8 +9,8 @@ describe('ActionMenu', () => {
   });
 
   it('muestra los botones PDF, Link e Imagen', () => {
-    expect(screen.getByRole('button', { name: /picture as pdf/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /link/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /image/i })).toBeInTheDocument();
-  });
+  expect(screen.getByRole('button', { name: /pdf/i })).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: /link/i })).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: /image/i })).toBeInTheDocument();
+});
 });

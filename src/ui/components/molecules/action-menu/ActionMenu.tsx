@@ -25,6 +25,7 @@ function ActionMenu() {
             toggleMenu('pdf');
           }}
           active={selectedMenu === 'pdf'}
+          aria-label="PDF"
         >
           <PictureAsPdf />
         </MenuButton>
@@ -34,6 +35,7 @@ function ActionMenu() {
             toggleMenu('link');
           }}
           active={selectedMenu === 'link'}
+          aria-label="Link"
         >
           <LinkIcon />
         </MenuButton>
@@ -43,6 +45,7 @@ function ActionMenu() {
             toggleMenu('image');
           }}
           active={selectedMenu === 'image'}
+          aria-label="Image"
         >
           <Image />
         </MenuButton>
