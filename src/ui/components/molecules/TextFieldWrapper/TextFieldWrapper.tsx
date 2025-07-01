@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box } from '@mui/material';
 import { BaseInput } from '../../atoms/input/BaseInput';
 import { InputLabel } from '../../atoms/label/InputLabel';
@@ -10,7 +10,6 @@ import './TextFieldWrapper.scss';
 export function TextFieldWrapper({
   id,
   label,
-  value = 'text field',
   placeholder,
   helperText = '',
   type = 'email',
@@ -18,9 +17,17 @@ export function TextFieldWrapper({
   disabled = false,
   status = null,
   size = 'medium',
-  onChange = () => {},
+  value: propValue,
+  onChange: propOnChange,
   className = '',
 }: TextFieldWrapperProps) {
+  const [localValue, setLocalValue] = useState(propValue ?? '');
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setLocalValue(event.target.value);
+    propOnChange?.(event); // llama al onChange del padre si existe
+  };
+
   return (
     <Box
       className={`text-field-wrapper text-field-wrapper--${size} ${
@@ -36,8 +43,8 @@ export function TextFieldWrapper({
       <BaseInput
         id={id}
         placeholder={placeholder}
-        value={value}
-        onChange={onChange}
+        value={localValue}
+        onChange={handleChange}
         type={type}
         error={error}
         disabled={disabled}
