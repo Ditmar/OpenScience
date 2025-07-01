@@ -16,7 +16,7 @@ export default function AuthButtons({
       sx={{
         width: '100%',
         minHeight: '250px',
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `url(${backgroundImage.src})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         display: 'flex',
