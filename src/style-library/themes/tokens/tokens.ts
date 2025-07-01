@@ -32,7 +32,7 @@ const tokens: DesignTokens = {
     size_lg: '3rem',
     font_size_headingone: '3rem',
     font_size_headingtwo: '2.25rem',
-    font_size_headingthree: '1.5',
+    font_size_headingthree: '1.5rem',
     line_height_headingone: '4.5rem',
     line_height_headingtwo: '3.375rem',
     line_height_headingthree: '2.25rem',
