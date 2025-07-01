@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import AuthButtons from './AuthButtons';
 
 const meta: Meta<typeof AuthButtons> = {
-  title: 'library/component/molecules/AuthButtons',
+  title: 'library/Component/molecules/AuthButtons',
   component: AuthButtons,
   tags: ['autodocs'],
 };
@@ -13,10 +13,10 @@ type Story = StoryObj<typeof AuthButtons>;
 export const Default: Story = {
   args: {
     onLogin: () => {
-      console.log('Iniciar sesión clickeado');
+      alert('Iniciar sesión');
     },
     onRegister: () => {
-      console.log('Registrarse clickeado');
+      alert('Registrarse');
     },
     loading: false,
     disabled: false,

@@ -1,56 +1,34 @@
 import React from 'react';
-import { Button, Stack } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import type { AuthButtonsProps } from './types/iProps';
+import LoginButton from '../../atoms/LoginButton/LoginButton';
+import RegisterButton from '../../atoms/RegisterButton/RegisterButton';
+import backgroundImage from '../../assets/background-auth.png';
 
-function AuthButtons(props: AuthButtonsProps) {
-  const { onLogin, onRegister, loading = false, disabled = false } = props;
-
+export default function AuthButtons({
+  onLogin,
+  onRegister,
+  loading = false,
+  disabled = false,
+}: AuthButtonsProps) {
   return (
-    <Stack
-      spacing={2}
-      direction={{ xs: 'column', sm: 'row' }}
-      aria-label="Botones de autenticación"
+    <Box
+      sx={{
+        width: '100%',
+        minHeight: '250px',
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 2,
+      }}
     >
-      <Button
-        variant="outlined"
-        color="inherit"
-        onClick={onLogin}
-        disabled={disabled}
-        aria-label="Iniciar sesión"
-        data-testid="login-button"
-        sx={{
-          fontWeight: 'bold',
-          color: '#ffffff',
-          borderColor: '#ffffff',
-          '&:hover': {
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
-          },
-        }}
-        fullWidth
-      >
-        {loading ? 'Cargando...' : 'INICIAR SESIÓN'}
-      </Button>
-
-      <Button
-        variant="contained"
-        onClick={onRegister}
-        disabled={disabled}
-        aria-label="Registrarse"
-        data-testid="register-button"
-        sx={{
-          fontWeight: 'bold',
-          backgroundColor: '#003c2f',
-          color: '#ffffff',
-          '&:hover': {
-            backgroundColor: '#005645',
-          },
-        }}
-        fullWidth
-      >
-        {loading ? 'Cargando...' : 'REGISTRARSE'}
-      </Button>
-    </Stack>
+      <Stack spacing={4} direction="row" alignItems="center" justifyContent="center">
+        <LoginButton onClick={onLogin} loading={loading} disabled={disabled} />
+        <RegisterButton onClick={onRegister} loading={loading} disabled={disabled} />
+      </Stack>
+    </Box>
   );
 }
-
-export default AuthButtons;
