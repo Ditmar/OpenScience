@@ -10,7 +10,6 @@ export const SocialMenuContainer = styled(Box)<{
   flexDirection: orientation === 'vertical' ? 'column' : 'row',
   gap: theme.spacing(0),
   backgroundColor: backgroundColor ?? '#0793BF',
-  borderRadius: theme.spacing(1),
   padding: theme.spacing(0.5),
   boxShadow: theme.shadows[4],
   zIndex: theme.zIndex.fab,
