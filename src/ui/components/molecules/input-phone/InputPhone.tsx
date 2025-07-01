@@ -14,6 +14,9 @@ export default function InputPhone({
   state = 'default',
   initialValue = '',
   onClose,
+  onCountryButtonClick,
+  selectedCountry,
+  isOpen = false,
 }: InputPhoneProps) {
   const [phoneValue, setPhoneValue] = useState(initialValue);
 
@@ -40,6 +43,9 @@ export default function InputPhone({
         state={disabled ? 'disabled' : state}
         value={phoneValue}
         onChange={handleChange}
+        onCountryButtonClick={onCountryButtonClick}
+        selectedCountry={selectedCountry}
+        isOpen={isOpen}
       />
 
       {hintText && <HintText text={hintText} size={size} disabled={disabled} />}

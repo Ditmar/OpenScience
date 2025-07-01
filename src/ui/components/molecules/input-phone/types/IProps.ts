@@ -1,3 +1,5 @@
+import type { CountryFlagProps } from '../../../atoms/icon-flag/types/IProps';
+
 export interface InputPhoneProps {
   iconText?: string;
   hintText?: string;
@@ -8,4 +10,7 @@ export interface InputPhoneProps {
   initialValue?: string;
   onChange?: (value: string) => void;
   onClose?: () => void;
+  onCountryButtonClick?: () => void;
+  selectedCountry?: CountryFlagProps;
+  isOpen?: boolean;
 }
