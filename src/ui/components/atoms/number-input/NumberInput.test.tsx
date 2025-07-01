@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent, cleanup, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, cleanup } from '@testing-library/react';
 import { ThemeProvider, createTheme } from '@mui/material';
 import '@testing-library/jest-dom';
 import { vi, describe, it, afterEach } from 'vitest';
@@ -23,6 +23,8 @@ const renderComponent = ({
   size = 'medium' as const,
   borderRadius = 'rounded' as const,
   state = 'default' as const,
+  onCountryButtonClick,
+  isOpen = false,
 }: Partial<PhoneNumberInputProps> = {}) => {
   return render(
     <ThemeProvider theme={theme}>
@@ -32,6 +34,8 @@ const renderComponent = ({
         size={size}
         borderRadius={borderRadius}
         state={state}
+        onCountryButtonClick={onCountryButtonClick}
+        isOpen={isOpen}
       />
     </ThemeProvider>,
   );
@@ -62,39 +66,34 @@ describe('PhoneNumberInput', () => {
     expect(mockOnChange).toHaveBeenCalledWith('123456');
   });
 
-  it('toggles dropdown open and closed when clicking button', async () => {
-    renderComponent();
+  it('calls onCountryButtonClick when clicking button and not disabled', () => {
+    const onCountryButtonClick = vi.fn();
+    renderComponent({ onCountryButtonClick });
 
     const button = screen.getByRole('button');
-
-    expect(screen.getByText('Country List')).not.toBeVisible();
-
-    fireEvent.click(button);
-    expect(screen.getByText('Country List')).toBeVisible();
-
     fireEvent.click(button);
 
-    await waitFor(() => {
-      expect(screen.getByText('Country List')).not.toBeVisible();
-    });
+    expect(onCountryButtonClick).toHaveBeenCalledTimes(1);
   });
 
-  it('does not open dropdown if disabled', () => {
-    renderComponent({ state: 'disabled' });
+  it('does not call onCountryButtonClick if disabled', () => {
+    const onCountryButtonClick = vi.fn();
+    renderComponent({ state: 'disabled', onCountryButtonClick });
 
     const button = screen.getByRole('button');
     fireEvent.click(button);
 
-    expect(screen.getByText('Country List')).not.toBeVisible();
+    expect(onCountryButtonClick).not.toHaveBeenCalled();
   });
 
   it('shows mocked ArrowDropUp and ArrowDropDown icons', () => {
-    renderComponent();
+    const { unmount } = renderComponent();
 
     expect(screen.getByTestId('arrow-drop-down-mock')).toBeInTheDocument();
 
-    const button = screen.getByRole('button');
-    fireEvent.click(button);
+    unmount();
+
+    renderComponent({ isOpen: true });
 
     expect(screen.getByTestId('arrow-drop-up-mock')).toBeInTheDocument();
   });

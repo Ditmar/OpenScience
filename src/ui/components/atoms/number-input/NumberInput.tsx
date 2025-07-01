@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Box, InputBase, IconButton, useTheme, Typography, Collapse } from '@mui/material';
+import React from 'react';
+import { Box, InputBase, IconButton, useTheme, Typography } from '@mui/material';
 import { ArrowDropDown, ArrowDropUp } from '@mui/icons-material';
 import type { PhoneNumberInputProps } from './types/IProps';
 
@@ -11,11 +11,13 @@ export default function PhoneNumberInput({
   state = 'default',
   value = '',
   onChange,
+  onCountryButtonClick,
+  selectedCountry,
+  isOpen = false,
 }: PhoneNumberInputProps) {
   const theme = useTheme();
-  const [isOpen, setIsOpen] = useState(false);
-  const [countryCode] = useState('(+54)');
-  const [countryFlag] = useState('https://flagcdn.com/w320/ar.png');
+  const countryCode = selectedCountry?.dialCode ? `(${selectedCountry.dialCode})` : '(+54)';
+  const countryFlag = selectedCountry?.src ?? 'https://flagcdn.com/w320/ar.png';
 
   const sizeStyles = {
     small: {
@@ -69,7 +71,7 @@ export default function PhoneNumberInput({
 
   const toggleDropdown = () => {
     if (state !== 'disabled') {
-      setIsOpen(!isOpen);
+      onCountryButtonClick?.();
     }
   };
 
@@ -204,22 +206,6 @@ export default function PhoneNumberInput({
           />
         </Box>
       </Box>
-
-      <Collapse in={isOpen}>
-        <Box
-          sx={{
-            mt: 1,
-            border: 1,
-            borderColor: theme.palette.divider,
-            borderRadius: borderRadius === 'rounded' ? '8px' : '0',
-            color: '#1B2037',
-            p: 2,
-            backgroundColor: theme.palette.background.paper,
-          }}
-        >
-          <Typography>Country List</Typography>
-        </Box>
-      </Collapse>
     </Box>
   );
 }

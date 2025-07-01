@@ -1,3 +1,5 @@
+import type { CountryFlagProps } from '../../icon-flag/types/IProps';
+
 export interface Country {
   code: string;
   name: string;
@@ -13,4 +15,7 @@ export interface PhoneNumberInputProps {
   value?: string;
   onChange?: (value: string) => void;
   defaultCountry?: Country;
+  onCountryButtonClick?: () => void;
+  selectedCountry?: CountryFlagProps;
+  isOpen?: boolean;
 }
