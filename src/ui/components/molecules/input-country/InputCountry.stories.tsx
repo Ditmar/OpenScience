@@ -20,7 +20,7 @@ const commonProps: Partial<IProps> = {
 };
 
 const meta = {
-  title: 'ui/components/atoms/input-country',
+  title: 'ui/components/molecules/input-country',
   component: InputCountry,
   args: {
     ...commonProps,

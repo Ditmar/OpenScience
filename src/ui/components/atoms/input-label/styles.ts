@@ -4,6 +4,7 @@ import '../../../../globals/_fonts.scss';
 import '../../../../globals/_variables.scss';
 import '../../../../globals/globals.scss';
 import '../../../../globals/_mixins.scss';
+import '../../../../globals/main.scss';
 
 const fontSizeMap = {
   small: '0.75rem',
