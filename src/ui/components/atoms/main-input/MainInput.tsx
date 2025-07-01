@@ -1,54 +1,64 @@
-import React from 'react';
-import styles from './MainInput.module.scss';
+import React, { forwardRef } from 'react';
+import { InputAdornment, useTheme } from '@mui/material';
 import type { IProps } from './types/IProps';
+import { StyledTextField } from './MainInput.styles';
+import styles from './MainInput.module.scss';
 
-function MainInput(props: IProps) {
-  const { label, placeholder, value, onChange, leftIcon, rightIcon, hint, error, disabled } = props;
+const MainInput = forwardRef<HTMLInputElement, IProps>((props, ref) => {
+  const {
+    label,
+    value,
+    onChange,
+    placeholder,
+    leftIcon,
+    rightIcon,
+    hint,
+    errorMsg,
+    disabled = false,
+    type = 'text',
+    id,
+  } = props;
 
-  const inputId = `input-${label.replace(/\s+/g, '-').toLowerCase()}`;
-
-  const containerClass = [
-    styles['input-container'],
-    error ? styles.error : '',
-    disabled ? styles.disabled : '',
-  ].join(' ');
+  const theme = useTheme();
+  const hasError = Boolean(errorMsg);
+  const helperText = errorMsg ?? hint;
+  const inputId = id ?? `input-${label.replace(/\s+/g, '-').toLowerCase()}`;
+  const helperId = helperText ? `${inputId}-helper` : undefined;
 
   return (
     <div className={styles['main-input-wrapper']}>
-      <label htmlFor={inputId} className={styles.label}>
-        {leftIcon && <span className={styles['icon-left']}>{leftIcon}</span>}
-        {label}
-        {hint && !error && (
-          <span className={styles.tooltip} data-tooltip={hint}>
-            ℹ️
-          </span>
-        )}
-      </label>
-      <div className={containerClass}>
-        <input
-          id={inputId}
-          type="text"
-          className={styles.input}
-          placeholder={placeholder}
-          value={value}
-          onChange={onChange}
-          disabled={disabled}
-          aria-describedby={hint ?? error ? `${inputId}-hint` : undefined}
-          aria-invalid={!!error}
-        />
-        {rightIcon && (
-          <span className={`${styles['icon-right']} ${!disabled ? 'clickable' : ''}`}>
-            {rightIcon}
-          </span>
-        )}
-      </div>
-      {(hint ?? error) && (
-        <p id={`${inputId}-hint`} className={error ? styles['error-message'] : styles.hint}>
-          {error ?? hint}
-        </p>
-      )}
+      <StyledTextField
+        id={inputId}
+        label={label}
+        placeholder={placeholder}
+        type={type}
+        value={value}
+        onChange={onChange}
+        disabled={disabled}
+        error={hasError}
+        helperText={helperText}
+        FormHelperTextProps={{ id: helperId }}
+        aria-describedby={helperId}
+        aria-invalid={hasError || undefined}
+        inputRef={ref}
+        fullWidth
+        variant="outlined"
+        InputProps={{
+          startAdornment: leftIcon && (
+            <InputAdornment position="start" sx={{ mr: theme.spacing(1) }}>
+              {leftIcon}
+            </InputAdornment>
+          ),
+          endAdornment: rightIcon && (
+            <InputAdornment position="end" sx={{ ml: theme.spacing(1) }}>
+              {rightIcon}
+            </InputAdornment>
+          ),
+        }}
+      />
     </div>
   );
-}
+});
 
+MainInput.displayName = 'MainInput';
 export default MainInput;

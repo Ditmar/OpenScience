@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
+    "start": "node app-server/server.mjs",
     "build": "astro check && astro build --logLevel warn && yarn build:tokens",
     "preview": "astro preview",
     "astro": "astro",
@@ -42,6 +42,7 @@
     "astro-sitemap": "1.0.0",
     "astrojs-service-worker": "2.0.0",
     "classnames": "2.5.1",
+    "dotenv": "16.4.5",
     "eslint-config-standard": "17.1.0",
     "express": "^4.19.2",
     "glider-js": "^1.7.9",
@@ -52,7 +53,8 @@
     "redis": "5.1.0",
     "sass": "^1.77.2",
     "svgo": "^3.3.2",
-    "typescript": "5.4.5"
+    "typescript": "5.4.5",
+    "zod": "^3.25.57"
   },
   "devDependencies": {
     "@astrojs/ts-plugin": "1.4.0",
@@ -76,7 +78,6 @@
     "@typescript-eslint/eslint-plugin": "7.9.0",
     "@typescript-eslint/parser": "7.9.0",
     "@vitest/coverage-v8": "1.6.0",
-    "dotenv": "^16.4.5",
     "eslint": "8.56.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-airbnb-base": "15.0.0",
