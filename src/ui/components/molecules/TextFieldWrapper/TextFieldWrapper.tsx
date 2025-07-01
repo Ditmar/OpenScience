@@ -25,7 +25,7 @@ export function TextFieldWrapper({
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLocalValue(event.target.value);
-    propOnChange?.(event); // llama al onChange del padre si existe
+    propOnChange?.(event); 
   };
 
   return (
