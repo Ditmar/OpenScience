@@ -50,7 +50,7 @@ const tokens: DesignTokens = {
     text_secondary: '#6c757d',
     text_main_hover: '#000',
     background_main: '#f5f5f5',
-    sky_error: "#0095cc",
+    sky_error: '#0095cc',
     fill_primary: '#7a44ff',
     primary_soft: '#f8f5ff',
     main: '#fff',
