@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { vi } from 'vitest';
 import { ThemeProvider } from '@mui/material/styles';
-import { lightTheme } from '../../../../style-library/themes/default'; // ✅ ajusta esta ruta según tu proyecto
+import { lightTheme } from '../../../../style-library/themes/default';
 import TextCard from './TextCard';
 
 describe('TextCard Component', () => {
