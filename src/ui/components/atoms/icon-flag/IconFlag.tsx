@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Avatar, Typography } from '@mui/material';
 import type { CountryFlagProps } from './types/IProps';
-import styles from './IconFlag.module.scss';
 
 export function CountryFlag({
   src,
@@ -11,20 +10,62 @@ export function CountryFlag({
   size = 'medium',
   variant = 'circular',
 }: CountryFlagProps): JSX.Element {
+  const sizeStyles = {
+    small: {
+      avatarSize: 24,
+      fontSize: '0.875rem',
+    },
+    medium: {
+      avatarSize: 28,
+      fontSize: '1rem',
+    },
+    large: {
+      avatarSize: 32,
+      fontSize: '1.125rem',
+    },
+  };
+
+  const currentSize = sizeStyles[size];
+  const borderRadius = variant === 'circular' ? '50%' : '2px';
+
   return (
-    <Box className={styles['country-flag-container']}>
+    <Box
+      data-testid="country-flag"
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        padding: '4px 8px',
+        width: 'max-content',
+        maxWidth: '100%',
+        cursor: 'pointer',
+        transition: 'background-color 0.2s ease',
+      }}
+    >
       <Avatar
         src={src}
         alt={alt}
-        className={`${styles['country-flag-avatar']} ${styles[`country-flag-avatar--${size}`]} ${
-          styles[`country-flag-avatar--${variant}`]
-        }`}
+        sx={{
+          width: currentSize.avatarSize,
+          height: currentSize.avatarSize,
+          borderRadius,
+        }}
       />
       <Typography
         variant="body1"
-        className={`${styles['country-flag-text']} ${styles[`country-flag-text--${size}`]}`}
+        sx={{
+          ml: '16px',
+          fontFamily: 'Poppins, sans-serif',
+          fontWeight: 300,
+          fontSize: currentSize.fontSize,
+          color: '#1B2037',
+          display: 'flex',
+          alignItems: 'center',
+        }}
       >
-        {name} <span className="dial-code">({dialCode})</span>
+        {name}
+        <Box component="span" sx={{ color: '#1B2037', ml: '4px' }}>
+          ({dialCode})
+        </Box>
       </Typography>
     </Box>
   );

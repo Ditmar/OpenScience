@@ -51,10 +51,14 @@ describe('InputPhone Component', () => {
 
   it('disables all elements when disabled prop is true', () => {
     render(<InputPhone disabled onChange={mockOnChange} onClose={mockOnClose} />);
-    expect(screen.getByTestId('icon-phone').className).toMatch(/icon-phone--disabled/);
-    expect(screen.getByPlaceholderText('Phone Number')).toBeDisabled();
+    const iconPhone = screen.getByTestId('icon-phone');
+    expect(parseFloat(window.getComputedStyle(iconPhone).opacity)).toBeLessThan(1);
+    const input = screen.getByPlaceholderText('Phone Number');
+    expect(input).toBeDisabled();
     const hintEl = screen.queryByTestId('hint-text');
-    if (hintEl) expect(hintEl.className).toMatch(/hint-text--disabled/);
+    if (hintEl) {
+      expect(parseFloat(window.getComputedStyle(hintEl).opacity)).toBeLessThan(1);
+    }
   });
 
   it('does not render hint when hintText is not provided', () => {
