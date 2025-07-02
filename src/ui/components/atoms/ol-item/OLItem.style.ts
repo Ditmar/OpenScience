@@ -17,6 +17,7 @@ export const OLItemRoot = styled(Box, {
     borderRadius: '0',
   }),
   ...(shape === 'rounded' && {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/restrict-plus-operands
     borderRadius: theme.shape.borderRadius + 4,
   }),
   ...(shape === 'circle' && {

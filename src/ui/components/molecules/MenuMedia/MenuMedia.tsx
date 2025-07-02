@@ -1,0 +1,90 @@
+import React, { useState } from 'react';
+import { Box, useMediaQuery, useTheme } from '@mui/material';
+import type { MenuMediaProps } from './types/MenuMedia.props';
+import HeroBanner from '../../atoms/hero-banner/HeroBanner';
+import { TabsSelector } from '../../atoms/Atoms-MenuMedia/TabsSelector';
+import { OpenImageButton } from '../../atoms/Atoms-MenuMedia/OpenImageButton';
+import { ImageDescriptionText } from '../../atoms/Atoms-MenuMedia/ImageDescriptionText';
+
+const descriptions = [
+  'The recent 2022 international outbreak has caused an unprecedented transmission of the virus mainly in men ' +
+    'that have sex with men. The extent of the outbreak has decreased dramatically after a few months, with 13 to ' +
+    '37 daily cases worldwide in February 2023. We still do not understand the reasons why the MPXV clade circulating ' +
+    'in 2022 was so transmissible in humans.',
+  'Table data is not currently available. Further information will be updated once studies are concluded.',
+  'Additional data and analysis are ongoing. This section will include graphical interpretations, sources, and visual context.',
+];
+
+const sizeMap = {
+  small: 320,
+  medium: 450,
+  large: 600,
+};
+
+const heightMap = {
+  small: 160,
+  medium: 235,
+  large: 320,
+};
+
+export function MenuMedia({ imageSrc, imageAlt, onOpenImage, size = 'medium' }: MenuMediaProps) {
+  const [tabIndex, setTabIndex] = useState(0);
+  const resolvedImageSrc = typeof imageSrc === 'string' ? imageSrc : imageSrc.src;
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const effectiveSize = isMobile ? 'small' : size;
+  const maxWidth = sizeMap[effectiveSize] || sizeMap.medium;
+  const imgHeight = heightMap[effectiveSize] || heightMap.medium;
+
+  return (
+    <Box sx={{ width: '100%', maxWidth, pb: 4 }}>
+      <TabsSelector
+        value={tabIndex}
+        onChange={(_, val) => {
+          setTabIndex(val);
+        }}
+      />
+      <Box
+        sx={{
+          backgroundColor: '#02322C',
+          pt: 2,
+          pb: 4,
+          px: 2,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          boxSizing: 'border-box',
+        }}
+      >
+        <Box
+          sx={{
+            width: '100%',
+            maxWidth,
+            height: imgHeight,
+            mb: 1.5,
+            '& img': {
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              display: 'block',
+            },
+          }}
+        >
+          <HeroBanner
+            backgroundImage={resolvedImageSrc}
+            alt={imageAlt}
+            className="hero-banner__content"
+          >
+            {null}
+          </HeroBanner>
+        </Box>
+        <Box sx={{ mb: 0.5 }}>
+          <OpenImageButton onClick={onOpenImage} />
+        </Box>
+        <Box sx={{ width: '100%' }}>
+          <ImageDescriptionText text={descriptions[tabIndex]} />
+        </Box>
+      </Box>
+    </Box>
+  );
+}
