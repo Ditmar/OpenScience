@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Typography, IconButton, useTheme } from '@mui/material';
 import type { IconPhoneProps } from './types/IProps';
-import styles from './IconPhone.module.scss';
 
 const phoneIconUrl = new URL('../../../../assets/icons/fi-rr-phone-flip.svg', import.meta.url).href;
 const closeIconUrl = new URL(
@@ -17,15 +16,40 @@ export default function IconPhone({
   onClose,
 }: IconPhoneProps) {
   const theme = useTheme();
+
+  const sizeStyles = {
+    small: {
+      iconSize: 18,
+      textSize: '0.875rem',
+      marginLeft: '10px',
+    },
+    medium: {
+      iconSize: 20,
+      textSize: '1rem',
+      marginLeft: '14px',
+    },
+    large: {
+      iconSize: 22,
+      textSize: '1.125rem',
+      marginLeft: '18px',
+    },
+  };
+
+  const currentSize = sizeStyles[size];
   const textColor = disabled ? theme.palette.text.disabled : '#1B2037';
+  const filterBase =
+    'brightness(0) saturate(100%) invert(8%) sepia(15%) saturate(2044%) hue-rotate(185deg) brightness(95%) contrast(95%)';
+  const filter = `${filterBase} ${disabled ? 'opacity(0.5)' : ''}`;
 
   return (
     <Box
       data-testid="icon-phone"
-      className={`${styles['icon-phone']} ${
-        disabled ? styles['icon-phone--disabled'] : ''
-      } ${className}`}
+      className={className}
       sx={{
+        alignItems: 'center',
+        display: 'flex',
+        maxWidth: '371px',
+        width: '100%',
         transition: 'opacity 0.2s ease',
         opacity: disabled ? 0.5 : 1,
       }}
@@ -35,18 +59,24 @@ export default function IconPhone({
         data-testid="phone-icon"
         src={phoneIconUrl}
         alt="Phone icon"
-        className={`${styles['icon-phone__icon']} ${styles[`icon-phone__icon--${size}`]}`}
         style={{
-          filter: `brightness(0) saturate(100%) invert(8%) sepia(15%) saturate(2044%) hue-rotate(185deg) brightness(95%) contrast(95%) ${
-            disabled ? 'opacity(0.5)' : ''
-          }`,
+          width: currentSize.iconSize,
+          height: currentSize.iconSize,
+          flexShrink: 0,
+          filter,
         }}
       />
 
       <Typography
         variant="body2"
-        className={`${styles['icon-phone__text']} ${styles[`icon-phone__text--${size}`]}`}
-        sx={{ color: textColor }}
+        sx={{
+          flexGrow: 1,
+          fontFamily: 'Poppins, sans-serif',
+          fontWeight: 400,
+          fontSize: currentSize.textSize,
+          marginLeft: currentSize.marginLeft,
+          color: textColor,
+        }}
       >
         {text}
       </Typography>
@@ -56,10 +86,9 @@ export default function IconPhone({
           data-testid="close-button"
           onClick={onClose}
           disabled={disabled}
-          className={styles['icon-phone__close-button']}
           sx={{
-            padding: 0,
             marginLeft: 'auto',
+            padding: 0,
             '&:hover': {
               backgroundColor: 'transparent',
             },
@@ -68,11 +97,11 @@ export default function IconPhone({
           <img
             src={closeIconUrl}
             alt="Close icon"
-            className={`${styles['icon-phone__icon']} ${styles[`icon-phone__icon--${size}`]}`}
             style={{
-              filter: `brightness(0) saturate(100%) invert(8%) sepia(15%) saturate(2044%) hue-rotate(185deg) brightness(95%) contrast(95%) ${
-                disabled ? 'opacity(0.5)' : ''
-              }`,
+              width: currentSize.iconSize,
+              height: currentSize.iconSize,
+              flexShrink: 0,
+              filter,
             }}
           />
         </IconButton>

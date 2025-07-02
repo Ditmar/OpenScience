@@ -5,7 +5,6 @@ import { vi } from 'vitest';
 import { CountryList } from './CountryList';
 import { allCountries } from '../../atoms/icon-flag/countryMock';
 import type { CountryListProps } from './types/IProps';
-import styles from './CountryList.module.scss';
 
 describe('CountryList Component', () => {
   const getDefaultProps = (): CountryListProps => ({
@@ -27,14 +26,9 @@ describe('CountryList Component', () => {
       />,
     );
 
-    const title = screen.getByText('Select Country');
-    expect(title).toBeInTheDocument();
-
-    const list = screen.getByTestId('country-list');
-    expect(list).toBeInTheDocument();
-
-    const items = screen.getAllByRole('listitem');
-    expect(items).toHaveLength(5);
+    expect(screen.getByText('Select Country')).toBeInTheDocument();
+    expect(screen.getByTestId('country-list')).toBeInTheDocument();
+    expect(screen.getAllByRole('listitem')).toHaveLength(5);
   });
 
   test('renders without title when showTitle is false', () => {
@@ -47,8 +41,7 @@ describe('CountryList Component', () => {
       />,
     );
 
-    const title = screen.queryByText('Select Country');
-    expect(title).not.toBeInTheDocument();
+    expect(screen.queryByText('Select Country')).not.toBeInTheDocument();
   });
 
   test('calls onCountrySelect when a country is clicked', () => {
@@ -69,7 +62,7 @@ describe('CountryList Component', () => {
     expect(mockOnSelect).toHaveBeenCalledWith(allCountries[0]);
   });
 
-  test('applies correct size and flag variant to CountryFlag components', () => {
+  test('applies correct size and flag variant to CountryFlag avatars', () => {
     render(
       <CountryList
         countries={getDefaultProps().countries}
@@ -79,15 +72,17 @@ describe('CountryList Component', () => {
       />,
     );
 
-    const avatars = screen.getAllByRole('img');
-    avatars.forEach((avatar) => {
-      const parent = avatar.parentElement;
-      expect(parent?.className).toMatch(/country-flag-avatar--small/);
-      expect(parent?.className).toMatch(/country-flag-avatar--rectangular/);
+    screen.getAllByRole('img').forEach((img) => {
+      const parent = img.parentElement;
+      if (!parent) throw new Error('Parent element not found');
+      const style = window.getComputedStyle(parent);
+      expect(parseInt(style.width, 10)).toBeLessThanOrEqual(24);
+      expect(parseInt(style.height, 10)).toBeLessThanOrEqual(24);
+      expect(style.borderRadius).toBe('2px');
     });
   });
 
-  test('applies correct title size class', () => {
+  test('applies correct title size style', () => {
     render(
       <CountryList
         countries={getDefaultProps().countries}
@@ -96,11 +91,11 @@ describe('CountryList Component', () => {
         titleSize="large"
       />,
     );
-    const title = screen.getByText('Select Country');
-    expect(title).toHaveClass(styles['country-list-title--large']);
+    const titleEl = screen.getByText('Select Country');
+    expect(window.getComputedStyle(titleEl).fontSize).toBe('1.5rem');
   });
 
-  test('applies straight container variant', () => {
+  test('applies straight container variant style', () => {
     render(
       <CountryList
         countries={getDefaultProps().countries}
@@ -108,7 +103,11 @@ describe('CountryList Component', () => {
         containerVariant="straight"
       />,
     );
-    const container = screen.getByTestId('country-list').parentElement;
-    expect(container).toHaveClass(styles['country-list-container--straight']);
+    const listEl = screen.getByTestId('country-list');
+    const container = listEl.parentElement;
+    if (!container) {
+      throw new Error('Container element not found');
+    }
+    expect(window.getComputedStyle(container).borderRadius).toBe('0px');
   });
 });

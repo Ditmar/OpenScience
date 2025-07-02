@@ -25,8 +25,8 @@ describe('IconPhone Component', () => {
 
   test('disables correctly', () => {
     render(<IconPhone disabled />);
-
     const container = screen.getByTestId('icon-phone');
-    expect(container.className).toMatch(/icon-phone--disabled/);
+    const styles = window.getComputedStyle(container);
+    expect(parseFloat(styles.opacity)).toBeLessThan(1);
   });
 });
