@@ -56,7 +56,7 @@ export const Clickable: Story = {
 };
 
 export const InteractiveCheckbox: Story = {
-  render: (args) => {
+  render: function InteractiveCheckboxRender(args) {
     const [checked, setChecked] = useState(false);
 
     const {
