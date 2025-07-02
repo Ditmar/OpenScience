@@ -31,7 +31,7 @@ export const darkTheme = createTheme({
       stroke_primary_Soft: tokens.colors.stroke_primary_soft,
     },
     errorPalette: {
-      errorPrimary: tokens.colors.sky_error,
+      errorPrimary: '#0095cc',
     },
   },
   customColors: {
