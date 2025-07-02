@@ -1,10 +1,16 @@
 import { render, screen } from '@testing-library/react';
 import { ErrorPage } from './ErrorPage';
 import '@testing-library/jest-dom';
+import { ThemeProvider } from '@mui/material/styles';
+import { lightTheme } from '../../../../style-library/themes/default'; 
+
+function renderWithTheme(ui: React.ReactElement) {
+  return render(<ThemeProvider theme={lightTheme}>{ui}</ThemeProvider>);
+}
 
 describe('ErrorPage Component', () => {
   it('renders error code, title, and message', () => {
-    render(<ErrorPage code={404} title="Page not found" message="This page does not exist." />);
+    renderWithTheme(<ErrorPage code={404} title="Page not found" message="This page does not exist." />);
 
     expect(screen.getByText('404')).toBeInTheDocument();
     expect(screen.getByText('Page not found')).toBeInTheDocument();
@@ -12,7 +18,7 @@ describe('ErrorPage Component', () => {
   });
 
   it('renders without message', () => {
-    render(<ErrorPage code={500} title="Internal Server Error" />);
+    renderWithTheme(<ErrorPage code={500} title="Internal Server Error" />);
 
     expect(screen.getByText('500')).toBeInTheDocument();
     expect(screen.getByText('Internal Server Error')).toBeInTheDocument();
@@ -20,10 +26,11 @@ describe('ErrorPage Component', () => {
   });
 
   it('applies correct styles for code', () => {
-    render(<ErrorPage code={403} title="Forbidden" message="You don't have access." />);
+    renderWithTheme(<ErrorPage code={403} title="Forbidden" message="You don\'t have access." />);
     const codeElement = screen.getByText('403');
 
-    expect(codeElement).toHaveStyle('color: #0095cc');
-    expect(codeElement).toHaveStyle('font-weight: 700');
+    const computedColor = lightTheme.palette.errorPalette.errorPrimary;
+    expect(codeElement).toHaveStyle(`color: ${computedColor}`);
+    expect(codeElement).toHaveStyle(`font-weight: ${lightTheme.typography.fontWeightBold}`);
   });
 });
