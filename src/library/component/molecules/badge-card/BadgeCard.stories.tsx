@@ -34,7 +34,7 @@ const defaultArgs: BadgeCardProps = {
     alt: 'User Avatar',
   },
   text: {
-    content: 'Badge Text',
+    content: 'Badge text',
     color: 'light',
     fontWeight: 600,
   },
