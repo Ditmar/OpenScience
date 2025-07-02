@@ -18,6 +18,8 @@ function TextCardStat({
   elevation = 1,
   isDisabled = false,
   className,
+  checked = false,
+  onCheckedChange = () => {},
 }: TextCardStatProps) {
   const cardClassName = [
     styles['text-card'],
@@ -47,7 +49,8 @@ function TextCardStat({
       }
     >
       <Box className={styles['text-card__header']}>
-        <Checkbox aria-label="Select card" />
+        <Checkbox checked={checked} onChange={onCheckedChange} aria-label="Select card" />
+
         <Badge
           avatarUrl={badgeAvatarUrl}
           avatarAlt={badgeAvatarAlt}
