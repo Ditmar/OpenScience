@@ -121,7 +121,14 @@ declare module '@mui/material/styles' {
       borderDefault?: string;
       borderCountryList?: string;
     };
+
+    errorPalette: {
+      errorPrimary: string;
+    };
   }
+  
+
+
 
   interface TypographyVariants {
     textSm: React.CSSProperties;

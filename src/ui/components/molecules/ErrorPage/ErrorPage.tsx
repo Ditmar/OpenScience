@@ -1,8 +1,10 @@
 import React from 'react';
-import { Typography, Stack } from '@mui/material';
+import { Typography, Stack, useTheme } from '@mui/material';
 import type { ErrorPageProps } from './types/IProps';
 
 export function ErrorPage({ code, title, message }: ErrorPageProps) {
+  const theme = useTheme();
+
   return (
     <Stack
       spacing={1.5}
@@ -11,7 +13,7 @@ export function ErrorPage({ code, title, message }: ErrorPageProps) {
       sx={{
         minHeight: '100vh',
         textAlign: 'center',
-        backgroundColor: '#f9f9f9',
+        backgroundColor: theme.palette.background.default,
         px: 2,
       }}
     >
@@ -19,8 +21,8 @@ export function ErrorPage({ code, title, message }: ErrorPageProps) {
         variant="h1"
         sx={{
           fontSize: { xs: '5rem', sm: '6rem', md: '8rem' },
-          fontWeight: 700,
-          color: '#0095cc',
+          fontWeight: theme.typography.fontWeightBold,
+          color: theme.palette.errorPalette.errorPrimary,
           lineHeight: 1,
         }}
       >
@@ -29,14 +31,17 @@ export function ErrorPage({ code, title, message }: ErrorPageProps) {
       <Typography
         variant="h4"
         sx={{
-          fontWeight: 600,
-          color: '#0095cc',
+          fontWeight: theme.typography.fontWeightMedium,
+          color: theme.palette.errorPalette.errorPrimary,
         }}
       >
         {title}
       </Typography>
       {message && (
-        <Typography variant="body1" sx={{ color: '#0095cc', maxWidth: 500 }}>
+        <Typography
+          variant="body1"
+          sx={{ color: theme.palette.errorPalette.errorPrimary, maxWidth: 500 }}
+        >
           {message}
         </Typography>
       )}
