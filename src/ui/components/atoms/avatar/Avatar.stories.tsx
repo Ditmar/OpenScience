@@ -6,7 +6,7 @@ const meta: Meta<typeof Avatar> = {
   component: Avatar,
   tags: ['autodocs'],
   args: {
-    src: 'https://example.com/avatar.png',
+    src: 'src/ui/components/atoms/avatar/__mock_/AvatarImage.png',
     alt: 'Avatar image',
     variant: 'rounded',
   },

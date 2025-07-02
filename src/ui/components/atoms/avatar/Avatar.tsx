@@ -1,11 +1,15 @@
+import { styled } from '@mui/material/styles';
 import { Avatar as MUIAvatar } from '@mui/material';
-import styles from './Avatar.module.scss';
 import type { AvatarProps } from './types/IProps';
 
-function Avatar({ src, alt = 'Avatar', variant = 'rounded', className }: AvatarProps) {
-  const combinedClassName = `${styles.avatar} ${className ?? ''}`.trim();
+const StyledAvatar = styled(MUIAvatar)(({ theme }) => ({
+  borderRadius: theme.shape.borderRadius,
+  width: 24,
+  height: 24,
+}));
 
-  return <MUIAvatar src={src} alt={alt} variant={variant} className={combinedClassName} />;
+function Avatar({ src, alt = 'Avatar', variant = 'rounded', className }: AvatarProps) {
+  return <StyledAvatar src={src} alt={alt} variant={variant} className={className} />;
 }
 
 export default Avatar;
