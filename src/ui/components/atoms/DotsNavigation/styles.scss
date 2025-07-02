@@ -1,0 +1,17 @@
+.dots-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 4px;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+    &.active {
+      background: #333;
+    }
+  }
+}
