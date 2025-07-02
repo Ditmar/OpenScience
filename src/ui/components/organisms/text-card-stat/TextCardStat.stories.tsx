@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import TextCardStat from './TextCardStat';
 
@@ -51,5 +52,49 @@ export const Clickable: Story = {
     onClick: () => {
       alert('Card clicked');
     },
+  },
+};
+
+export const InteractiveCheckbox: Story = {
+  render: (args) => {
+    const [checked, setChecked] = useState(false);
+
+    const {
+      label,
+      badgeColor,
+      badgeNumber,
+      badgeAvatarUrl,
+      badgeAvatarAlt,
+      title,
+      description,
+      variant,
+      size,
+      onClick,
+      elevation,
+      isDisabled,
+      className,
+    } = args;
+
+    return (
+      <TextCardStat
+        label={label}
+        badgeColor={badgeColor}
+        badgeNumber={badgeNumber}
+        badgeAvatarUrl={badgeAvatarUrl}
+        badgeAvatarAlt={badgeAvatarAlt}
+        title={title}
+        description={description}
+        variant={variant}
+        size={size}
+        onClick={onClick}
+        elevation={elevation}
+        isDisabled={isDisabled}
+        className={className}
+        checked={checked}
+        onCheckedChange={(e) => {
+          setChecked(e.target.checked);
+        }}
+      />
+    );
   },
 };

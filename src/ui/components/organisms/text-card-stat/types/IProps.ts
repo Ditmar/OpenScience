@@ -1,3 +1,5 @@
+import type { ChangeEvent } from 'react';
+
 export interface TextCardStatProps {
   label: string;
   badgeColor?: string;
@@ -12,4 +14,6 @@ export interface TextCardStatProps {
   elevation?: number;
   isDisabled?: boolean;
   className?: string;
+  checked?: boolean;
+  onCheckedChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
