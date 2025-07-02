@@ -17,11 +17,7 @@ export const OLItemRoot = styled(Box, {
     borderRadius: '0',
   }),
   ...(shape === 'rounded' && {
-<<<<<<< HEAD
-    borderRadius: (theme.shape.borderRadius as number) + 4,
-=======
-    borderRadius: `${String(theme.shape.borderRadius + 4)}px`,
->>>>>>> 8d0b6a28 (fix: problems in the eslint relationship with OLItem)
+    borderRadius: theme.shape.borderRadius + 4,
   }),
   ...(shape === 'circle' && {
     borderRadius: '50%',
