@@ -3,10 +3,12 @@ import Avatar from './Avatar';
 
 describe('Avatar Atom', () => {
   it('renders with image src and alt text', () => {
-    render(<Avatar src="https://example.com/image.png" alt="Example avatar" />);
+    render(
+      <Avatar src="src/ui/components/atoms/avatar/__mock_/AvatarImage.png" alt="Example avatar" />,
+    );
     const img = screen.getByRole('img', { name: 'Example avatar' });
     expect(img).toBeInTheDocument();
-    expect(img).toHaveAttribute('src', 'https://example.com/image.png');
+    expect(img).toHaveAttribute('src', 'src/ui/components/atoms/avatar/__mock_/AvatarImage.png');
   });
 
   it('applies custom className', () => {
