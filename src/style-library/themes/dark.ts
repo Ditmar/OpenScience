@@ -26,13 +26,13 @@ export const darkTheme = createTheme({
       secondary: tokens.colors.text_input,
     },
     olitemPalette: {
-      stroke_Primary: '',
-      text_light: '',
-      stroke_primary_Soft: ''
+      stroke_Primary: tokens.colors.stroke_primary,
+      text_light: tokens.colors.main,
+      stroke_primary_Soft: tokens.colors.stroke_primary_soft,
     },
     errorPalette: {
-      errorPrimary: ''
-    }
+      errorPrimary: tokens.colors.sky_error,
+    },
   },
   customColors: {
     primary: '#235347',
