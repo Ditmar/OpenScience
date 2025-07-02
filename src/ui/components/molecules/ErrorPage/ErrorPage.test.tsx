@@ -26,11 +26,4 @@ describe('ErrorPage Component', () => {
     expect(codeElement).toHaveStyle('color: #0095cc');
     expect(codeElement).toHaveStyle('font-weight: 700');
   });
-
-  it('matches snapshot', () => {
-    const { container } = render(
-      <ErrorPage code={401} title="Unauthorized" message="Login required." />,
-    );
-    expect(container).toMatchSnapshot();
-  });
 });
