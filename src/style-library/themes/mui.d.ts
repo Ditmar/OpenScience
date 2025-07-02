@@ -7,14 +7,25 @@ declare module '@mui/material/styles' {
       text_light: string;
       stroke_primary_Soft: string;
     };
+
+    errorPalette: {
+      errorPrimary: string;
+    };
   }
   interface PaletteOptions {
-    olitemPalette?: {
+    olitemPalette: {
       stroke_Primary: string;
       text_light: string;
       stroke_primary_Soft: string;
     };
+
+    errorPalette: {
+      errorPrimary: string;
+    };
   }
+  
+
+
 
   interface TypographyVariants {
     textSm: React.CSSProperties;

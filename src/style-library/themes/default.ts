@@ -30,6 +30,9 @@ export const lightTheme = createTheme({
       text_light: tokens.colors.main,
       stroke_primary_Soft: tokens.colors.stroke_primary_soft,
     },
+    errorPalette: {
+      errorPrimary: tokens.colors.sky_error,
+    },
   },
   typography: {
     fontFamily: '"Lato", "Roboto", "Montserrat", "Poppins-Regular", sans-serif',
