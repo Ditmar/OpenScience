@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import LabelDate from '../../atoms/label-date/LabelDate';
+import LabelVol from '../../atoms/label-vol/LabelVol';
 import VolumeBox from '../../molecules/volume-box/VolumeBox';
 import Thumbnail from '../../atoms/thumbnail/Thumbnail';
 import LabelArticles from '../../atoms/label-articles/LabelArticles';
@@ -72,37 +73,47 @@ function RecentArticlesSection({ volumes }: IProps) {
       aria-label="Artículos más recientes"
     >
       <div className="recent-articles-section__head">
-        <VolumeBox>
-          <LabelDate date={volume.date} />
-          <span> | {volume.volumeLabel}</span>
-          <span>{String(volume.volumeNumber)}</span>
-          <span> | Nu. {String(volume.issueNumber)}</span>
+        <VolumeBox className="custom-label-date-color">
+          <LabelDate date={new Date(volume.date)} />
+          <span className="separator">│</span>
+          <LabelVol volumen="Vol." id={volume.volumeNumber} />
+          <span className="separator">│</span>
+          <LabelVol volumen="Nu." id={volume.issueNumber} />
         </VolumeBox>
-        <Thumbnail
-          pathImage={typeof volume.image === 'string' ? volume.image : volume.image.src}
-          alt={`Volumen ${String(volume.volumeNumber)}`}
-        />
       </div>
 
-      <div className="recent-articles-section__label">
-        <LabelArticles variant="secondary">ARTÍCULOS MÁS RECIENTES</LabelArticles>
-      </div>
-
-      <div className={`recent-articles-section__fade${fade ? ' fade-out' : ' fade-in'}`}>
-        {volume.articles.map((article) => (
-          <RecentArticleCard
-            key={article.id}
-            date={article.date}
-            title={article.title}
-            description={article.description}
-            author={article.author}
-            pdfUrl={article.pdfUrl}
-            shareUrl={article.shareUrl}
+      <div className="recent-articles-section__content">
+        <div className="recent-articles-section__thumbnail">
+          <Thumbnail
+            pathImage={typeof volume.image === 'string' ? volume.image : volume.image.src}
+            alt={`Volumen ${String(volume.volumeNumber)}`}
           />
-        ))}
-      </div>
+        </div>
 
-      <DotsNavigation count={volumes.length} activeIndex={activeVolume} onDotClick={onDotClick} />
+        <div>
+          <div className="recent-articles-section__label">
+            <LabelArticles variant="secondary">ARTÍCULOS MÁS RECIENTES</LabelArticles>
+          </div>
+          <div className={`recent-articles-section__fade${fade ? ' fade-out' : ' fade-in'}`}>
+            {volume.articles.map((article) => (
+              <RecentArticleCard
+                key={article.id}
+                date={article.date}
+                title={article.title}
+                description={article.description}
+                author={article.author}
+                pdfUrl={article.pdfUrl}
+                shareUrl={article.shareUrl}
+              />
+            ))}
+          </div>
+          <DotsNavigation
+            count={volumes.length}
+            activeIndex={activeVolume}
+            onDotClick={onDotClick}
+          />
+        </div>
+      </div>
     </section>
   );
 }

@@ -8,7 +8,8 @@ describe('RecentArticlesSection', () => {
     expect(screen.getByText(/Vol\./)).toBeInTheDocument();
     expect(screen.getByText(/ARTÍCULOS MÁS RECIENTES/i)).toBeInTheDocument();
     expect(screen.getByText(/Featured Article Volume 1/i)).toBeInTheDocument();
-    expect(screen.queryByText(/Featured Article Volume 2/i)).not.toBeInTheDocument();
+    expect(screen.getByText(/Featured Article Volume 2/i)).toBeInTheDocument();
+    expect(screen.getByText(/Featured Article Volume 3/i)).toBeInTheDocument();
   });
 
   it('displays the date and volume number correctly', () => {
