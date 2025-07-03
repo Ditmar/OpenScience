@@ -17,7 +17,7 @@ const meta: Meta<typeof ReferencesSection> = {
   decorators: [
     (Story) => (
       <Box sx={{ p: 2 }}>
-        <Box sx={{ transform: 'scale(0.85)', transformOrigin: 'top left' }}>
+        <Box sx={{ transformOrigin: 'top left' }}>
           <Story />
         </Box>
       </Box>
