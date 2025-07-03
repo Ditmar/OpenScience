@@ -5,21 +5,26 @@ export const Root = styled('a')(({ theme }) => ({
   alignItems: 'center',
   textDecoration: 'none',
   color: theme.palette.text.quintary_main,
-  fontFamily: theme.typography.textLato.fontFamily,
-  fontSize: theme.typography.body3.fontSize,
-  fontWeight: theme.typography.body3.fontWeight,
-  padding: theme.spacing(0.1, 0),
+  fontFamily: theme.typography.fontFamily,
+  fontSize: 14,
+  fontWeight: 600,
+  padding: theme.spacing(0.3, 0),
+  lineHeight: 1.2,
+  transition: 'color 0.2s ease-in-out',
+  '&:hover': {
+    color: theme.palette.text.primary_alpha,
+  },
 }));
 
 export const Bullet = styled('span')(({ theme }) => ({
-  width: 6,
-  height: 6,
+  width: 5,
+  height: 5,
   borderRadius: '50%',
   backgroundColor: theme.palette.text.quintary_main,
-  marginRight: theme.spacing(1),
+  marginRight: 3.5,
   transition: 'transform 0.2s ease-in-out',
   flexShrink: 0,
   '&:hover': {
-    transform: 'scale(1.3)',
+    transform: 'scale(1.2)',
   },
 }));

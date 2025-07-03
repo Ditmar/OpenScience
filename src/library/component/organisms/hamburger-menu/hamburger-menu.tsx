@@ -13,7 +13,6 @@ export default function HombregerMenu({ menuItems }: HamburgerMenuProps) {
   const toggleMenu = () => {
     setOpen((prev) => !prev);
   };
-
   const closeMenu = () => {
     setOpen(false);
   };
@@ -23,10 +22,10 @@ export default function HombregerMenu({ menuItems }: HamburgerMenuProps) {
       <HamburgerButton onClick={toggleMenu} ariaLabel="Menu" />
       <Collapse in={open} timeout="auto" unmountOnExit>
         <MenuContainer>
+          <LogoWrapper>
+            <img src={logo} alt="Logo" style={{ width: 53, height: 28 }} />
+          </LogoWrapper>
           <DrawerContent>
-            <LogoWrapper>
-              <img src={logo} alt="Logo" style={{ width: 53, height: 28 }} />
-            </LogoWrapper>
             <HamburgerMenuList items={menuItems} onItemClick={closeMenu} />
           </DrawerContent>
         </MenuContainer>
