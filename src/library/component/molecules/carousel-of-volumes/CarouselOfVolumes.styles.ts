@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import tokens from 'style-library/themes/tokens/tokens';
+import tokens from '../../../../style-library/themes/tokens/tokens';
 
 export const CarouselWrapper = styled('div')(() => ({
   display: 'flex',
