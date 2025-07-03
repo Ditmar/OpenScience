@@ -87,6 +87,8 @@ declare module '@mui/material/styles' {
     textMd: React.CSSProperties;
     textLg: React.CSSProperties;
     textPoppins: React.CSSProperties;
+    textLato: React.CSSProperties;
+    body3: React.CSSProperties;
   }
 
   interface TypographyVariantsOptions {
@@ -94,5 +96,19 @@ declare module '@mui/material/styles' {
     textMd?: React.CSSProperties;
     textLg?: React.CSSProperties;
     textPoppins?: React.CSSProperties;
+    textLato?: React.CSSProperties;
+    body3?: React.CSSProperties;
+  }
+
+  interface TypeText {
+    tertiary: string;
+    primary_alpha: string;
+    quintary_main: string;
+  }
+
+  interface TypeTextOptions {
+    tertiary?: string;
+    primary_alpha?: string;
+    quintary_main?: string;
   }
 }
