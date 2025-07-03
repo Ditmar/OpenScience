@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import LabelDate from '../../atoms/label-date/LabelDate';
 import LabelVol from '../../atoms/label-vol/LabelVol';
 import VolumeBox from '../../molecules/volume-box/VolumeBox';
-import Thumbnail from '../../atoms/thumbnail/Thumbnail';
 import LabelArticles from '../../atoms/label-articles/LabelArticles';
 import RecentArticleCard from '../../molecules/Recent-Article-Card/Recent-Article-Card';
 import DotsNavigation from '../../atoms/DotsNavigation/DotsNavigation';
@@ -83,14 +82,14 @@ function RecentArticlesSection({ volumes }: IProps) {
       </div>
 
       <div className="recent-articles-section__content">
-        <div className="recent-articles-section__thumbnail">
-          <Thumbnail
-            pathImage={typeof volume.image === 'string' ? volume.image : volume.image.src}
+        <div className="recent-articles-section__image">
+          <img
+            src={typeof volume.image === 'string' ? volume.image : volume.image.src}
             alt={`Volumen ${String(volume.volumeNumber)}`}
           />
         </div>
 
-        <div>
+        <div className="recent-articles-section__articles">
           <div className="recent-articles-section__label">
             <LabelArticles variant="secondary">ARTÍCULOS MÁS RECIENTES</LabelArticles>
           </div>
