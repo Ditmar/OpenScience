@@ -1,7 +1,6 @@
 @import 'src/globals/_variables.scss';
 
-
-.check {  
+.check {
   align-items: center;
   background-color: $ads-color-white;
   border: 2px solid $ads-color-black-100;
@@ -11,7 +10,7 @@
   justify-content: center;
   transition: all 0.2s ease;
   width: 24px;
-  
+
   &:focus-visible {
     outline: 2px solid $ads-color-black;
     outline-offset: 2px;

@@ -20,7 +20,6 @@ import ArticlePublish from 'ui/components/molecules/article-publish/ArticlePubli
 import LabelDate from 'ui/components/atoms/label-date/LabelDate';
 import LabelVol from 'ui/components/atoms/label-vol/LabelVol';
 import LabelRecentsArticles from 'ui/components/atoms/label-recent-articles/LabelRecentsArticles';
-import IdleLogout from 'hooks/IdleLogout';
 import ArticleDescription from '../ui/components/atoms/article-description/ArticleDescription';
 import ArticleTitle from '../ui/components/atoms/article-title/ArticleTitle';
 import HeaderBanner from '../ui/components/molecules/header-banner/HeaderBanner';
@@ -51,12 +50,11 @@ const { title, description, openGraph } = {
     },
   },
 };
-const idleTimeout = Number(Astro.cookies.get('idleTimeout')?.value || 10000);
-const warningDuration = Number(Astro.cookies.get('warningDuration')?.value || 10000);
+const publicSite = Astro.locals;
+console.log('PUBLIC_SITE_URL:', publicSite);
 ---
 
 <Layout title={t('page.title')}>
-  <IdleLogout idleTimeout={idleTimeout} warningDuration={warningDuration} client:load />
   <div class="backgroud-Homepage">
     <SEO title={title} description={description} openGraph={openGraph} />
     <HeaderBanner textSearch="Buscar" backgroundImage={Rectangle12.src} logo={LogoSvg.src} />
