@@ -1,5 +1,5 @@
 import React from 'react';
-import '../layouts/GridMobile/GridMobile.scss'; 
+import '../layouts/GridMobile/GridMobile.scss';
 
 export default {
   title: 'Layout/GridMobile',

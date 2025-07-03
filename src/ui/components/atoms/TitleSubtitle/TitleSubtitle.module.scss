@@ -34,7 +34,7 @@
     line-height: $ads-line-height-headingthree;
     margin-bottom: 0.25rem;
   }
-  
+
   .title-subtitle__subtitle {
     font-size: $ads-paragraph-sm;
     line-height: $ads-paragraph-sm-height;
@@ -47,7 +47,7 @@
     line-height: $ads-line-height-headingtwo;
     margin-bottom: 0.5rem;
   }
-  
+
   .title-subtitle__subtitle {
     font-size: $ads-paragraph-md;
     line-height: $ads-paragraph-md-height;
@@ -60,7 +60,7 @@
     line-height: $ads-line-height-headingone;
     margin-bottom: 0.75rem;
   }
-  
+
   .title-subtitle__subtitle {
     font-size: $ads-paragraph-lg;
     line-height: $ads-paragraph-lg-height;
@@ -70,7 +70,7 @@
 .title-subtitle--alignment-left {
   margin-left: 0;
   margin-right: auto;
-  
+
   .title-subtitle__title,
   .title-subtitle__subtitle {
     text-align: left;
@@ -103,7 +103,7 @@
   .title-subtitle__title {
     color: $ads-text-main;
   }
-  
+
   .title-subtitle__subtitle {
     color: $ads-text-secondary;
   }
@@ -114,7 +114,7 @@
     color: $ads-color-brand-primary-500;
     font-weight: $ads-font-weight-bold;
   }
-  
+
   .title-subtitle__subtitle {
     color: $ads-text-main;
     font-weight: $ads-font-weight-medium;
@@ -126,7 +126,7 @@
     color: $ads-text-secondary;
     font-weight: $ads-font-weight-medium;
   }
-  
+
   .title-subtitle__subtitle {
     color: $ads-color-gray-soft-400;
     font-weight: $ads-font-weight-regular;
