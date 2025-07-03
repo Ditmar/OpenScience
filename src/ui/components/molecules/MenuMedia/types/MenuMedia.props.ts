@@ -5,4 +5,5 @@ export interface MenuMediaProps {
   imageAlt: string;
   onOpenImage?: () => void;
   size?: 'small' | 'medium' | 'large';
+  descriptions: string[];
 }

@@ -3,9 +3,18 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { vi } from 'vitest';
 import { MenuMedia } from './MenuMedia';
 
+const descriptions = [
+  'The recent 2022 international outbreak has caused an unprecedented transmission of the virus mainly in men ' +
+    'that have sex with men. The extent of the outbreak has decreased dramatically after a few months, with 13 to ' +
+    '37 daily cases worldwide in February 2023. We still do not understand the reasons why the MPXV clade circulating ' +
+    'in 2022 was so transmissible in humans.',
+  'Table data is not currently available. Further information will be updated once studies are concluded.',
+  'Additional data and analysis are ongoing. This section will include graphical interpretations, sources, and visual context.',
+];
+
 describe('MenuMedia', () => {
   it('renders and switches tabs', () => {
-    render(<MenuMedia imageSrc="image.jpg" imageAlt="Alt text" />);
+    render(<MenuMedia imageSrc="image.jpg" imageAlt="Alt text" descriptions={descriptions} />);
     expect(screen.getByText('Figura')).toBeInTheDocument();
 
     fireEvent.click(screen.getByText('Tabla'));
@@ -17,14 +26,21 @@ describe('MenuMedia', () => {
 
   it('calls onOpenImage when button is clicked', () => {
     const mockFn = vi.fn();
-    render(<MenuMedia imageSrc="image.jpg" imageAlt="Alt text" onOpenImage={mockFn} />);
+    render(
+      <MenuMedia
+        imageSrc="image.jpg"
+        imageAlt="Alt text"
+        onOpenImage={mockFn}
+        descriptions={descriptions}
+      />,
+    );
     fireEvent.click(screen.getByText('ABRIR IMAGEN'));
     expect(mockFn).toHaveBeenCalled();
   });
 
   it('renders correctly with imageSrc as object', () => {
     const mockImageSrc = { src: 'image.jpg' };
-    render(<MenuMedia imageSrc={mockImageSrc} imageAlt="Alt text" />);
+    render(<MenuMedia imageSrc={mockImageSrc} imageAlt="Alt text" descriptions={descriptions} />);
     expect(screen.getByText('Figura')).toBeInTheDocument();
   });
 });

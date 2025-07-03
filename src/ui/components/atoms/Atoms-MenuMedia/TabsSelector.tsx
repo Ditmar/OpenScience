@@ -17,12 +17,19 @@ export function TabsSelector({ value, onChange }: TabsSelectorProps) {
       sx={{
         backgroundColor: '#fff',
         overflow: 'hidden',
-        minHeight: '10px',
+        minHeight: '32px',
         boxShadow: '0px 0px 2px rgba(0,0,0,0.15)',
+        '& .MuiTabs-flexContainer': {
+          minHeight: '32px',
+        },
         '& .MuiTab-root': {
           fontWeight: 'bold',
+          fontSize: '1.2rem',
           textTransform: 'none',
-          minHeight: '40px',
+          minHeight: '32px',
+          paddingTop: 0.5,
+          paddingBottom: 0.5,
+          lineHeight: 1,
           borderRight: '2.5px solid #02322C',
           color: '#02322C',
         },
@@ -31,6 +38,9 @@ export function TabsSelector({ value, onChange }: TabsSelectorProps) {
         },
         '& .Mui-selected': {
           backgroundColor: '#fff',
+          color: '#02322C',
+        },
+        '& .Mui-selected .MuiTab-wrapper': {
           color: '#02322C',
         },
       }}
