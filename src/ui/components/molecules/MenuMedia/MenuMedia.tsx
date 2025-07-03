@@ -6,15 +6,6 @@ import { TabsSelector } from '../../atoms/Atoms-MenuMedia/TabsSelector';
 import { OpenImageButton } from '../../atoms/Atoms-MenuMedia/OpenImageButton';
 import { ImageDescriptionText } from '../../atoms/Atoms-MenuMedia/ImageDescriptionText';
 
-const descriptions = [
-  'The recent 2022 international outbreak has caused an unprecedented transmission of the virus mainly in men ' +
-    'that have sex with men. The extent of the outbreak has decreased dramatically after a few months, with 13 to ' +
-    '37 daily cases worldwide in February 2023. We still do not understand the reasons why the MPXV clade circulating ' +
-    'in 2022 was so transmissible in humans.',
-  'Table data is not currently available. Further information will be updated once studies are concluded.',
-  'Additional data and analysis are ongoing. This section will include graphical interpretations, sources, and visual context.',
-];
-
 const sizeMap = {
   small: 320,
   medium: 450,
@@ -27,7 +18,13 @@ const heightMap = {
   large: 320,
 };
 
-export function MenuMedia({ imageSrc, imageAlt, onOpenImage, size = 'medium' }: MenuMediaProps) {
+export function MenuMedia({
+  imageSrc,
+  imageAlt,
+  onOpenImage,
+  size = 'medium',
+  descriptions,
+}: MenuMediaProps) {
   const [tabIndex, setTabIndex] = useState(0);
   const resolvedImageSrc = typeof imageSrc === 'string' ? imageSrc : imageSrc.src;
   const theme = useTheme();
