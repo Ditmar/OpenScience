@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import LabelDate from 'ui/components/atoms/label-date/LabelDate';
+import LabelDate from '../../atoms/label-date/LabelDate';
 import VolumeBox from '../../molecules/volume-box/VolumeBox';
 import Thumbnail from '../../atoms/thumbnail/Thumbnail';
 import LabelArticles from '../../atoms/label-articles/LabelArticles';
