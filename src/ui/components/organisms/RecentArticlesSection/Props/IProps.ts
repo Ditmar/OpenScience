@@ -1,3 +1,5 @@
+import type { ImageMetadata } from 'astro';
+
 export interface ArticleData {
   id: number;
   date: Date;
@@ -14,7 +16,7 @@ export interface VolumeData {
   volumeLabel: string;
   volumeNumber: number;
   issueNumber: number;
-  image: string;
+  image: string | ImageMetadata;
   articles: ArticleData[];
 }
 

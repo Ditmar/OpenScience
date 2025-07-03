@@ -78,7 +78,10 @@ function RecentArticlesSection({ volumes }: IProps) {
           <span>{String(volume.volumeNumber)}</span>
           <span> | Nu. {String(volume.issueNumber)}</span>
         </VolumeBox>
-        <Thumbnail pathImage={volume.image} alt={`Volumen ${String(volume.volumeNumber)}`} />
+        <Thumbnail
+          pathImage={typeof volume.image === 'string' ? volume.image : volume.image.src}
+          alt={`Volumen ${String(volume.volumeNumber)}`}
+        />
       </div>
 
       <div className="recent-articles-section__label">
