@@ -6,9 +6,7 @@ export default {
   component: DotsNavigation,
 };
 
-export const Default = () => {
+export function Default() {
   const [active, setActive] = useState(0);
-  return (
-    <DotsNavigation count={5} activeIndex={active} onDotClick={setActive} />
-  );
-};
+  return <DotsNavigation count={5} activeIndex={active} onDotClick={setActive} />;
+}

@@ -1,0 +1,43 @@
+.recent-articles-section {
+  &__head {
+    justify-items: center;
+
+    .volume-box {
+      align-items: center;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      font-size: 1.5rem;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__thumbnail {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  &__label {
+    .label {
+      background-color: transparent;
+      width: 100%;
+    }
+
+  }
+}
+
+.recent-articles-section__fade {
+  opacity: 1;
+  transition: opacity 0.4s;
+
+  &.fade-out {
+    opacity: 0;
+  }
+
+  &.fade-in {
+    opacity: 1;
+  }
+}

@@ -4,4 +4,5 @@ export interface IProps {
   description: string;
   author: string;
   pdfUrl?: string;
+  shareUrl?: string;
 }
