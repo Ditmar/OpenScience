@@ -24,7 +24,7 @@ export function TabsSelector({ value, onChange }: TabsSelectorProps) {
         },
         '& .MuiTab-root': {
           fontWeight: 'bold',
-          fontSize: '1.2rem',
+          fontSize: '1rem',
           textTransform: 'none',
           minHeight: '32px',
           paddingTop: 0.5,
