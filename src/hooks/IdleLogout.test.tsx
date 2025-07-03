@@ -11,7 +11,7 @@ vi.mock('./useIdleLogout', () => ({
 
 describe('IdleLogout', () => {
   it('muestra advertencia cuando showWarning es true', () => {
-    render(<IdleLogout />);
+    render(<IdleLogout idleTimeout={10000} warningDuration={5000} />);
 
     expect(screen.getByText(/vas a ser desconectado/i)).toBeInTheDocument();
     expect(screen.getByText(/7 segundos/)).toBeInTheDocument();
