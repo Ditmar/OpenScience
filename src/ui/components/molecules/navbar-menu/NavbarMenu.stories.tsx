@@ -14,7 +14,7 @@ const meta: Meta<typeof NavbarMenu> = {
   parameters: {
     docs: {
       description: {
-        component: 'Menú de navegación con íconos y texto, accesible y configurable.',
+        component: 'Navbar Menu',
       },
     },
   },
