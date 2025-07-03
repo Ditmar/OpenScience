@@ -1,0 +1,1 @@
+.dots-navigation{align-items:center;display:flex;justify-content:center}.dots-navigation .dot{background:#88bfff;border:none;border-radius:50%;cursor:pointer;height:.75rem;margin:1rem .3rem;width:.75rem}.dots-navigation .dot.active{background:#3994ff}
