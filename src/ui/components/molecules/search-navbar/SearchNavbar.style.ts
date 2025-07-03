@@ -53,7 +53,7 @@ export const StyledForm = styled('form')(({ theme }) => ({
 }));
 
 export const StyledInput = styled(InputBase)(({ theme }) => ({
-  borderBottom: '0.625rem solid white',
+  borderBottom: '0.3rem solid white',
   color: 'white',
   width: '100%',
 
@@ -73,10 +73,10 @@ export const StyledSearchButton = styled(Button)(({ theme }) => ({
   backgroundColor: 'white',
   color: 'currentColor',
   borderRadius: '0.125rem',
-  width: '11rem',
-  height: '3rem',
-  fontSize: '2rem',
-  padding: theme.spacing(2, 10),
+  width: '1rem',
+  height: '2rem',
+  fontSize: '1.2rem',
+  padding: theme.spacing(1, 7),
 
   [theme.breakpoints.down('md')]: {
     width: '5rem',
@@ -86,10 +86,10 @@ export const StyledSearchButton = styled(Button)(({ theme }) => ({
   },
 
   [theme.breakpoints.down('sm')]: {
-    width: '4rem ',
-    height: '1.5rem',
-    fontSize: '1rem',
-    padding: theme.spacing(0, 7),
+    width: '1.1rem ',
+    height: '1.2rem',
+    fontSize: '0.8rem',
+    padding: theme.spacing(0, 5.5),
   },
 
   '&:hover, &:focus, &:active': {
@@ -109,7 +109,7 @@ export const StyledFormContainer = styled(Box)(({ theme }) => ({
 }));
 
 export const StyledArrowIcon = styled(ArrowForwardIosIcon)(({ theme }) => ({
-  fontSize: '2rem',
+  fontSize: '1.2rem',
 
   [theme.breakpoints.down('md')]: {
     fontSize: '1rem',
