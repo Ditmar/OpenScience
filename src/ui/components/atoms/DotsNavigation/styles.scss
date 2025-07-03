@@ -1,0 +1,21 @@
+@import '../../../../globals/variables';
+
+.dots-navigation {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  .dot {
+    background: $ads-color-brand-tertiary-300;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 0.75rem;
+    margin: 1rem 0.3rem;
+    width: 0.75rem;
+
+    &.active {
+      background: $ads-color-brand-tertiary-500;
+    }
+  }
+}
