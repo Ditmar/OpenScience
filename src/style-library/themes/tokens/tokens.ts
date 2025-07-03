@@ -189,6 +189,9 @@ const tokens: DesignTokens = {
     danger: '#e74c3c',
     success: '#2ecc71',
     info: '#3498db',
+    volume_title: '#00526C',
+    volume_text: '#02322C',
+    volume_date: '#000',
   },
   typography: {
     fonts: {

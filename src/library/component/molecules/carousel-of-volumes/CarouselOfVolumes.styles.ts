@@ -1,4 +1,5 @@
 import { styled } from '@mui/material/styles';
+import tokens from 'style-library/themes/tokens/tokens';
 
 export const CarouselWrapper = styled('div')(() => ({
   display: 'flex',
@@ -12,9 +13,9 @@ export const CarouselWrapper = styled('div')(() => ({
   },
 }));
 
-export const CarouselTitle = styled('div')(({ theme }) => ({
+export const CarouselTitle = styled('div')(() => ({
   '& span': {
-    color: theme.palette.info.dark,
+    color: tokens.colors?.volume_title,
     fontSize: '3rem',
   },
 }));
@@ -35,18 +36,20 @@ export const CarouselItems = styled('div')(() => ({
   },
 }));
 
-export const CarouselItem = styled('div')(({ theme }) => ({
+export const CarouselItem = styled('div')(() => ({
   '& div': {
     height: '100%',
   },
   '& p:nth-of-type(1)': {
     fontFamily: 'Lato, sans-serif',
-    fontWeight: 300,
+    fontWeight: 275,
+    color: tokens.colors?.volume_date,
     margin: 0,
     padding: 0,
   },
   '& p:nth-of-type(2)': {
-    color: theme.palette.success.main,
+    color: tokens.colors?.volume_text,
+    fontWeight: 700,
     margin: 0,
     padding: 0,
   },
@@ -56,9 +59,9 @@ export const ButtonBase = styled('button')(() => ({
   backgroundColor: 'transparent',
   border: 'none',
   cursor: 'pointer',
-  height: '2rem',
-  width: '2rem',
-  margin: '1rem',
+  height: '1.6rem',
+  width: '1.6rem',
+  margin: '0.1rem',
   padding: 0,
   position: 'relative',
   bottom: '2rem',
