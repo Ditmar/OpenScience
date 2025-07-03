@@ -1,0 +1,190 @@
+@import '../../../../globals/variables.scss';
+@import '../../../../globals/typography.scss';
+@import '../../../../globals/fonts.scss';
+
+.title-subtitle {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+}
+
+.title-subtitle__title {
+  color: $ads-text-main;
+  font-family: Poppins-Regular, $ads-font-family-sans;
+  font-weight: $ads-font-weight-semibold;
+  line-height: $ads-line-height-default;
+  margin: 0;
+  padding: 0;
+}
+
+.title-subtitle__subtitle {
+  color: $ads-text-secondary;
+  font-family: Poppins-Regular, $ads-font-family-sans;
+  font-weight: $ads-font-weight-regular;
+  line-height: $ads-line-height-default;
+  margin: 0;
+  padding: 0;
+}
+
+.title-subtitle--size-sm {
+  .title-subtitle__title {
+    font-size: $ads-font-size-headingthree;
+    line-height: $ads-line-height-headingthree;
+    margin-bottom: 0.25rem;
+  }
+
+  .title-subtitle__subtitle {
+    font-size: $ads-paragraph-sm;
+    line-height: $ads-paragraph-sm-height;
+  }
+}
+
+.title-subtitle--size-md {
+  .title-subtitle__title {
+    font-size: $ads-font-size-headingtwo;
+    line-height: $ads-line-height-headingtwo;
+    margin-bottom: 0.5rem;
+  }
+
+  .title-subtitle__subtitle {
+    font-size: $ads-paragraph-md;
+    line-height: $ads-paragraph-md-height;
+  }
+}
+
+.title-subtitle--size-lg {
+  .title-subtitle__title {
+    font-size: $ads-font-size-headingone;
+    line-height: $ads-line-height-headingone;
+    margin-bottom: 0.75rem;
+  }
+
+  .title-subtitle__subtitle {
+    font-size: $ads-paragraph-lg;
+    line-height: $ads-paragraph-lg-height;
+  }
+}
+
+.title-subtitle--alignment-left {
+  margin-left: 0;
+  margin-right: auto;
+
+  .title-subtitle__title,
+  .title-subtitle__subtitle {
+    text-align: left;
+  }
+}
+
+.title-subtitle--alignment-center {
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  .title-subtitle__title,
+  .title-subtitle__subtitle {
+    text-align: center;
+  }
+}
+
+.title-subtitle--alignment-right {
+  align-items: flex-end;
+  margin-left: auto;
+  margin-right: 0;
+
+  .title-subtitle__title,
+  .title-subtitle__subtitle {
+    text-align: right;
+  }
+}
+
+.title-subtitle--variant-default {
+  .title-subtitle__title {
+    color: $ads-text-main;
+  }
+
+  .title-subtitle__subtitle {
+    color: $ads-text-secondary;
+  }
+}
+
+.title-subtitle--variant-emphasized {
+  .title-subtitle__title {
+    color: $ads-color-brand-primary-500;
+    font-weight: $ads-font-weight-bold;
+  }
+
+  .title-subtitle__subtitle {
+    color: $ads-text-main;
+    font-weight: $ads-font-weight-medium;
+  }
+}
+
+.title-subtitle--variant-minimal {
+  .title-subtitle__title {
+    color: $ads-text-secondary;
+    font-weight: $ads-font-weight-medium;
+  }
+
+  .title-subtitle__subtitle {
+    color: $ads-color-gray-soft-400;
+    font-weight: $ads-font-weight-regular;
+  }
+}
+
+.title-subtitle__title--h1 {
+  font-size: $ads-font-size-headingone;
+  line-height: $ads-line-height-headingone;
+}
+
+.title-subtitle__title--h2 {
+  font-size: $ads-font-size-headingtwo;
+  line-height: $ads-line-height-headingtwo;
+}
+
+.title-subtitle__title--h3 {
+  font-size: $ads-font-size-headingthree;
+  line-height: $ads-line-height-headingthree;
+}
+
+.title-subtitle__title--h4 {
+  font-size: $ads-paragraph-lg;
+  font-weight: $ads-font-weight-semibold;
+  line-height: $ads-paragraph-lg-height;
+}
+
+.title-subtitle__title--h5 {
+  font-size: $ads-paragraph-md;
+  font-weight: $ads-font-weight-semibold;
+  line-height: $ads-paragraph-md-height;
+}
+
+.title-subtitle__subtitle--p {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.title-subtitle__subtitle--h3 {
+  font-size: $ads-paragraph-lg;
+  font-weight: $ads-font-weight-medium;
+  line-height: $ads-paragraph-lg-height;
+}
+
+.title-subtitle__subtitle--h4 {
+  font-size: $ads-paragraph-md;
+  font-weight: $ads-font-weight-medium;
+  line-height: $ads-paragraph-md-height;
+}
+
+.title-subtitle__subtitle--h5 {
+  font-size: $ads-paragraph-sm;
+  font-weight: $ads-font-weight-medium;
+  line-height: $ads-paragraph-sm-height;
+}
+
+.title-subtitle__subtitle--h6 {
+  font-size: $ads-paragraph-xs;
+  font-weight: $ads-font-weight-medium;
+  line-height: $ads-paragraph-xs-height;
+}

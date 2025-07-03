@@ -2,15 +2,14 @@
 @import '../../globals/variables';
 @import './breakpoints-gridmobile.scss';
 
-
 @mixin respond-to-mobile($breakpoint) {
   @if map-has-key($ads-mobile-breakpoints, $breakpoint) {
     @media (max-width: map-get($ads-mobile-breakpoints, $breakpoint)) {
       @content;
     }
-  } 
-  
-  @else {
+  }
+
+ @else {
     @warn #{$breakpoint};
   }
 }

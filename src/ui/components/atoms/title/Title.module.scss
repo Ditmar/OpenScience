@@ -2,54 +2,53 @@
 @import '../../../../globals/typography';
 @import '../../../../globals/fonts';
 
-
 .title {
   color: $ads-paragraph-color-dark;
   font-family: Poppins-Regular, sans-serif;
   margin: 0 0 1.5rem;
   padding: 0;
 
-    &.sm {
-        font-size: 1.5rem;
-    }
+  &.sm {
+    font-size: 1.5rem;
+  }
 
-    &.md {
-        font-size: 2.25rem;
-    }
+  &.md {
+    font-size: 2.25rem;
+  }
 
-    &.lg {
-        font-size: 3rem;
-    }
-    
-    &.xl {
-        font-size: 4.5rem;
-    }
+  &.lg {
+    font-size: 3rem;
+  }
 
-    &.xxl {
-        font-size: 6rem;
-    }
+  &.xl {
+    font-size: 4.5rem;
+  }
 
-    &.regular {
-        font-weight: $ads-font-weight-regular;
-    }
+  &.xxl {
+    font-size: 6rem;
+  }
 
-    &.medium {
-        font-weight: $ads-font-weight-medium;
-    }
+  &.regular {
+    font-weight: $ads-font-weight-regular;
+  }
 
-    &.semibold {
-        font-weight: $ads-font-weight-semibold;
-    }
+  &.medium {
+    font-weight: $ads-font-weight-medium;
+  }
 
-    &.compact {
-      line-height: 1.1;
-    }
+  &.semibold {
+    font-weight: $ads-font-weight-semibold;
+  }
 
-    &.default {
-      line-height: 1.5;
-    }
+  &.compact {
+    line-height: 1.1;
+  }
 
-    &.spacious {
-      line-height: 1.8;
-    }
+  &.default {
+    line-height: 1.5;
+  }
+
+  &.spacious {
+    line-height: 1.8;
+  }
 }

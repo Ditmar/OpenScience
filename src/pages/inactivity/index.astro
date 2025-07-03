@@ -1,0 +1,17 @@
+---
+import IdleLogout from 'hooks/IdleLogout';
+import Layout from '../../layouts/Layout.astro';
+
+const idleTimeout = Number(Astro.cookies.get('idleTimeout')?.value || 10000);
+const warningDuration = Number(Astro.cookies.get('warningDuration')?.value || 10000);
+---
+
+<Layout title="Prueba de inactividad">
+  <IdleLogout idleTimeout={idleTimeout} warningDuration={warningDuration} client:load />
+
+  <div style={{ padding: '2rem' }}>
+    <h1>Página de prueba</h1>
+    <p>No interactúes con la página para ver el modal de advertencia después de inactividad.</p>
+    <p>Se mostrará un mensaje y luego redireccionará a <code>/login</code> si no haces nada.</p>
+  </div>
+</Layout>
