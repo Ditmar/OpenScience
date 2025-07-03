@@ -6,7 +6,7 @@ export const bannerNavbarStyles = (theme: Theme) => ({
     background: '#0793BF',
     padding: 0,
     margin: 0,
-    borderBottom: '10px solid #02322C',
+    borderBottom: '13px solid #02322C',
   },
   toolbar: {
     display: 'flex',
