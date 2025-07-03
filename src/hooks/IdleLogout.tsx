@@ -1,8 +1,14 @@
+// src/components/system/IdleLogout.tsx
 import { useIdleLogout } from './useIdleLogout';
 import styles from './IdleLogout.module.scss';
 
-export default function IdleLogout() {
-  const { showWarning, countdown } = useIdleLogout();
+interface IdleLogoutProps {
+  idleTimeout: number;
+  warningDuration: number;
+}
+
+export default function IdleLogout({ idleTimeout, warningDuration }: IdleLogoutProps) {
+  const { showWarning, countdown } = useIdleLogout({ idleTimeout, warningDuration });
 
   return (
     showWarning && (

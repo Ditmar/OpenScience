@@ -1,9 +1,12 @@
+// src/hooks/useIdleLogout.ts
 import { useEffect, useRef, useState } from 'react';
 
-const idleTimeout = Number(import.meta.env.PUBLIC_IDLE_TIMEOUT) || 10000;
-const warningDuration = Number(import.meta.env.PUBLIC_IDLE_WARNING_DURATION) || 10000;
+interface IdleLogoutOptions {
+  idleTimeout: number;
+  warningDuration: number;
+}
 
-export function useIdleLogout() {
+export function useIdleLogout({ idleTimeout, warningDuration }: IdleLogoutOptions) {
   const [showWarning, setShowWarning] = useState(false);
   const [countdown, setCountdown] = useState(warningDuration / 1000);
 
@@ -13,7 +16,7 @@ export function useIdleLogout() {
 
   useEffect(() => {
     const logout = () => {
-      window.location.href = '/login';
+      window.location.replace('/login');
     };
 
     const startWarning = () => {
@@ -24,6 +27,7 @@ export function useIdleLogout() {
         setCountdown((prev) => {
           if (prev <= 1) {
             clearInterval(intervalRef.current);
+            return 0;
           }
           return prev - 1;
         });
@@ -55,7 +59,7 @@ export function useIdleLogout() {
       clearTimeout(warningTimer.current);
       clearInterval(intervalRef.current);
     };
-  }, []);
+  }, [idleTimeout, warningDuration]);
 
   return { showWarning, countdown };
 }
