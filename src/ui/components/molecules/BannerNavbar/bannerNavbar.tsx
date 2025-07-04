@@ -1,16 +1,6 @@
 import React, { useState, useCallback } from 'react';
-import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  InputBase,
-  Box,
-  Button,
-  Dialog,
-  Slide,
-  type SlideProps,
-  useTheme,
-} from '@mui/material';
+import { AppBar, Toolbar, IconButton, InputBase, Box, Button, Dialog, Slide } from '@mui/material';
+import { type SlideProps, useTheme } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 import { bannerNavbarStyles } from './bannerNavbar.style';
