@@ -42,7 +42,7 @@ export function MenuMedia({
       />
       <Box
         sx={{
-          backgroundColor: '#02322C',
+          backgroundColor: theme.palette.primary.dark,
           pt: 2,
           pb: 4,
           px: 2,

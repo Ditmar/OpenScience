@@ -14,36 +14,36 @@ export function TabsSelector({ value, onChange }: TabsSelectorProps) {
       centered
       variant="fullWidth"
       TabIndicatorProps={{ style: { display: 'none' } }}
-      sx={{
-        backgroundColor: '#fff',
+      sx={(theme) => ({
+        backgroundColor: theme.palette.common.white,
         overflow: 'hidden',
-        minHeight: '32px',
-        boxShadow: '0px 0px 2px rgba(0,0,0,0.15)',
+        minHeight: 32,
+        boxShadow: theme.shadows[1],
         '& .MuiTabs-flexContainer': {
-          minHeight: '32px',
+          minHeight: 32,
         },
         '& .MuiTab-root': {
           fontWeight: 'bold',
           fontSize: '1rem',
           textTransform: 'none',
-          minHeight: '32px',
+          minHeight: 32,
           paddingTop: 0.5,
           paddingBottom: 0.5,
           lineHeight: 1,
-          borderRight: '2.5px solid #02322C',
-          color: '#02322C',
+          borderRight: `2.5px solid ${theme.palette.primary.dark}`,
+          color: theme.palette.primary.dark,
         },
         '& .MuiTab-root:last-of-type': {
           borderRight: 'none',
         },
         '& .Mui-selected': {
-          backgroundColor: '#fff',
-          color: '#02322C',
+          backgroundColor: theme.palette.common.white,
+          color: theme.palette.primary.dark,
         },
         '& .Mui-selected .MuiTab-wrapper': {
-          color: '#02322C',
+          color: theme.palette.primary.dark,
         },
-      }}
+      })}
     >
       <Tab label="Figura" />
       <Tab label="Tabla" />
