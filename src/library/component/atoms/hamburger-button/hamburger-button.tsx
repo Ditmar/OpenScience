@@ -9,5 +9,4 @@ function HamburgerButton({ onClick, ariaLabel = 'Open menu' }: HamburgerButtonPr
     </StyledHamburgerButton>
   );
 }
-
 export default HamburgerButton;

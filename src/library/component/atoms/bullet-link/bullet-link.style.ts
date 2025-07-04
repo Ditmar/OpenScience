@@ -7,7 +7,7 @@ export const Root = styled('a')(({ theme }) => ({
   color: theme.palette.text.quintary_main,
   fontFamily: theme.typography.fontFamily,
   fontSize: 14,
-  fontWeight: 600,
+  fontWeight: 400,
   padding: theme.spacing(0.3, 0),
   lineHeight: 1.2,
   transition: 'color 0.2s ease-in-out',
