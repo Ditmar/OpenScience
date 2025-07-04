@@ -29,7 +29,7 @@ export const lightTheme = createTheme({
   customColors: {
     primary: '#235347',
     secondary: '#03a9f4',
-    white: '#ffffff',
+    white: tokens.colors.main,
   },
   typography: {
     fontFamily: '"Lato", "Roboto", "Montserrat", sans-serif',
