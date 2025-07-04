@@ -2,7 +2,7 @@
 @import '../../styles/globals/variables';
 @import '../../styles/globals/breakpoints';
 
-@media (min-width: 768px) and (max-width: 834px) {
+@media (width >= 768px) and (width <= 834px) {
   .container {
     max-width: 786px;
     padding-left: 24px;
