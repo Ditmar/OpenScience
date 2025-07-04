@@ -175,6 +175,9 @@ export const buttonSx = (opts: {
     return {
       ...baseStyles,
       background: 'none',
+      borderWidth: '1px',
+      borderStyle: 'solid',
+      borderColor: buttonColorDefaultMap[colorKey],
       color: resolveButtonColor(colorKey, opts.dark),
       '&.Mui-disabled': {
         borderColor: theme.colors.neutral.grayStrongDark[50],
