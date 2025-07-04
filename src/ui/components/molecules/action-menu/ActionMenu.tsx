@@ -1,17 +1,12 @@
 import { useState } from 'react';
-import { Box } from '@mui/material';
-import {
-  PictureAsPdf,
-  Link as LinkIcon,
-  Image,
-  WhatsApp,
-  Telegram,
-  Facebook,
-} from '@mui/icons-material';
+import { Box, Typography, useTheme } from '@mui/material';
+
 import { Container, MenuButton, OptionsBox, IconBox } from './ActionMenu.styles';
+import { Icon } from '../../../utils/vite-svgr/Icon';
 
 function ActionMenu() {
   const [selectedMenu, setSelectedMenu] = useState<null | 'pdf' | 'link' | 'image'>(null);
+  const theme = useTheme();
 
   const toggleMenu = (menu: 'pdf' | 'link' | 'image') => {
     setSelectedMenu((prev) => (prev === menu ? null : menu));
@@ -27,7 +22,13 @@ function ActionMenu() {
           active={selectedMenu === 'pdf'}
           aria-label="PDF"
         >
-          <PictureAsPdf />
+          <Icon
+            iconName="pdf"
+            width={24}
+            height={24}
+            strokeWidth={1.5}
+            stroke={theme.palette.info.main}
+          />
         </MenuButton>
 
         <MenuButton
@@ -37,7 +38,7 @@ function ActionMenu() {
           active={selectedMenu === 'link'}
           aria-label="Link"
         >
-          <LinkIcon />
+          <Icon iconName="link" width={24} height={24} />
         </MenuButton>
 
         <MenuButton
@@ -47,7 +48,13 @@ function ActionMenu() {
           active={selectedMenu === 'image'}
           aria-label="Image"
         >
-          <Image />
+          <Icon
+            iconName="media"
+            width={24}
+            height={24}
+            stroke={theme.palette.info.main}
+            strokeWidth={2}
+          />
         </MenuButton>
       </Container>
 
@@ -55,24 +62,24 @@ function ActionMenu() {
         <OptionsBox>
           {selectedMenu === 'pdf' && (
             <IconBox>
-              <PictureAsPdf sx={{ color: '#fff' }} />
-              DESCARGAR
+              <Icon iconName="pdf" width={24} height={24} />
+              <Typography sx={{ color: '#fff' }}>DESCARGAR</Typography>
             </IconBox>
           )}
 
           {selectedMenu === 'link' && (
-            <Box display="flex" gap={2}>
-              <LinkIcon />
-              <WhatsApp sx={{ color: '#fff', cursor: 'pointer' }} />
-              <Telegram sx={{ color: '#fff', cursor: 'pointer' }} />
-              <Facebook sx={{ color: '#fff', cursor: 'pointer' }} />
+            <Box display="flex" gap={2} alignItems="center" px={2}>
+              <Icon iconName="share" width={24} height={24} />
+              <Icon iconName="whatsapp" width={24} height={24} />
+              <Icon iconName="telegram" width={24} height={24} />
+              <Icon iconName="facebook1" width={24} height={24} />
             </Box>
           )}
 
           {selectedMenu === 'image' && (
             <IconBox>
-              <Image sx={{ color: '#fff' }} />
-              MEDIA
+              <Icon iconName="media" width={24} height={24} />
+              <Typography sx={{ color: '#fff' }}>MEDIA</Typography>
             </IconBox>
           )}
         </OptionsBox>
