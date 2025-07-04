@@ -15,7 +15,7 @@ export const Default: Story = {
     menuItems: [
       { label: 'Continent', href: '/continent' },
       { label: 'Mpox', href: '/mpox' },
-      { label: 'Reservoir', href: '/reservoir' },
+      { label: 'reservoir', href: '/reservoir' },
     ],
   },
 };
