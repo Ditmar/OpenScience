@@ -1,0 +1,23 @@
+
+@import '../../styles/globals/variables';
+@import '../../styles/globals/breakpoints';
+
+@media (min-width: 768px) and (max-width: 834px) {
+  .container {
+    max-width: 786px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .auto-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @for $i from 1 through 6 {
+    .col-tablet-#{$i} {
+      grid-column: span $i !important;
+    }
+  }
+}
