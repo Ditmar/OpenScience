@@ -7,7 +7,14 @@ interface ImageDescriptionTextProps {
 
 export function ImageDescriptionText({ text }: ImageDescriptionTextProps) {
   return (
-    <Typography variant="body2" color="white" sx={{ mt: 2, textAlign: 'justify' }}>
+    <Typography
+      variant="body2"
+      sx={(theme) => ({
+        mt: 2,
+        textAlign: 'justify',
+        color: theme.palette.common.white,
+      })}
+    >
       {text}
     </Typography>
   );

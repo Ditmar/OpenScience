@@ -10,16 +10,16 @@ export function OpenImageButton({ onClick }: OpenImageButtonProps) {
     <Button
       variant="contained"
       onClick={onClick}
-      sx={{
-        backgroundColor: '#fff',
-        color: '#02322C',
+      sx={(theme) => ({
+        backgroundColor: theme.palette.common.white,
+        color: theme.palette.primary.dark,
         fontWeight: 'bold',
         borderRadius: '20px',
         px: 3,
         '&:hover': {
-          backgroundColor: '#e0e0e0',
+          backgroundColor: theme.palette.grey[300],
         },
-      }}
+      })}
     >
       ABRIR IMAGEN
     </Button>
