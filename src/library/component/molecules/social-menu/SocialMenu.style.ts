@@ -28,9 +28,9 @@ export const SocialIconButton = styled(IconButton)<{
   };
 
   const iconSizeMap = {
-    small: 18,
-    medium: 24,
-    large: 30,
+    small: 32,
+    medium: 40,
+    large: 48,
   };
 
   const getSocialColor = () => {
