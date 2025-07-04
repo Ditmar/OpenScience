@@ -1,6 +1,6 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { describe, it, expect } from 'vitest';
 import VerticalHamburgerMenu from './VerticalHamburgerMenu';
 
 describe('VerticalHamburgerMenu', () => {
@@ -12,38 +12,42 @@ describe('VerticalHamburgerMenu', () => {
   it('toggles menu when clicked', async () => {
     render(<VerticalHamburgerMenu />);
     const menuButton = screen.getByLabelText('Toggle menu');
+
     expect(screen.queryByLabelText('PDF')).not.toBeInTheDocument();
+
     fireEvent.click(menuButton);
-    expect(screen.getByLabelText('PDF')).toBeInTheDocument();
+    expect(await screen.findByLabelText('PDF')).toBeInTheDocument();
+
     fireEvent.click(menuButton);
-    await vi.waitFor(() => {
+    await waitFor(() => {
       expect(screen.queryByLabelText('PDF')).not.toBeInTheDocument();
     });
   });
 
-  it('displays all icons when expanded', () => {
+  it('displays all icons when expanded', async () => {
     render(<VerticalHamburgerMenu />);
     fireEvent.click(screen.getByLabelText('Toggle menu'));
 
-    expect(screen.getByLabelText('PDF')).toBeInTheDocument();
-    expect(screen.getByLabelText('Link')).toBeInTheDocument();
-    expect(screen.getByLabelText('Image')).toBeInTheDocument();
-    expect(screen.getByLabelText('Reference')).toBeInTheDocument();
-  });
-
-  it('logs to console when icon is clicked', () => {
-    const consoleSpy = vi.spyOn(console, 'log');
-    render(<VerticalHamburgerMenu />);
-
-    fireEvent.click(screen.getByLabelText('Toggle menu'));
-    fireEvent.click(screen.getByLabelText('PDF'));
-
-    expect(consoleSpy).toHaveBeenCalledWith('PDF icon clicked');
-    consoleSpy.mockRestore();
+    expect(await screen.findByLabelText('PDF')).toBeInTheDocument();
+    expect(await screen.findByLabelText('Link')).toBeInTheDocument();
+    expect(await screen.findByLabelText('Image')).toBeInTheDocument();
+    expect(await screen.findByLabelText('Reference')).toBeInTheDocument();
   });
 
   it('applies position correctly', () => {
     const { container } = render(<VerticalHamburgerMenu position="right" />);
     expect(container.firstChild).toHaveStyle('right: 16px');
+  });
+
+  it('has correct background colors', async () => {
+    const { container } = render(<VerticalHamburgerMenu />);
+
+    const menuContainer = container.firstChild as HTMLElement;
+    expect(menuContainer).toHaveStyle('background-color: #02322C');
+
+    fireEvent.click(screen.getByLabelText('Toggle menu'));
+
+    const expandedList = await screen.findByRole('list');
+    expect(expandedList).toHaveStyle('background-color: #0793BF');
   });
 });

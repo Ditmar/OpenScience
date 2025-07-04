@@ -1,6 +1,4 @@
 export interface IconReferenceProps {
-  size?: 'small' | 'medium' | 'large';
-  color?: 'inherit' | 'primary' | 'secondary' | 'action' | 'disabled' | 'error';
+  background?: 'blue' | 'transparent';
   className?: string;
-  sx?: object;
 }

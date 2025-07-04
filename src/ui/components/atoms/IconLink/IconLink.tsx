@@ -1,45 +1,31 @@
 import React from 'react';
-import type { SvgIconProps } from '@mui/material';
-import LinkIconFilled from '@mui/icons-material/Link';
-import LinkIconOutlined from '@mui/icons-material/LinkOutlined';
-import LinkIconRounded from '@mui/icons-material/LinkRounded';
-import LinkIconTwoTone from '@mui/icons-material/LinkTwoTone';
-import LinkIconSharp from '@mui/icons-material/LinkSharp';
+import { Box } from '@mui/material';
+import share from '../../../../assets/icons/share.svg?raw';
 import type { IconLinkProps } from './types/IProps';
 
-const sizeMap = {
-  small: 20,
-  medium: 30,
-  large: 40,
-};
-
-const variantMap = {
-  filled: LinkIconFilled,
-  outlined: LinkIconOutlined,
-  rounded: LinkIconRounded,
-  twoTone: LinkIconTwoTone,
-  sharp: LinkIconSharp,
-} as const;
-
-function IconLink({
-  size = 'medium',
-  color = 'primary',
-  variant = 'filled',
-  className,
-  sx = {},
-}: IconLinkProps & SvgIconProps) {
-  const IconComponent = variantMap[variant];
-  const fontSize = sizeMap[size];
-
+function IconLink({ background = 'transparent', className }: IconLinkProps) {
   return (
-    <IconComponent
-      color={color}
+    <Box
       className={className}
       sx={{
-        fontSize,
-        ...sx,
+        width: 56,
+        height: 56,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: background === 'blue' ? '#0793BF' : 'transparent',
       }}
-    />
+    >
+      <Box
+        component="img"
+        src={`data:image/svg+xml;utf8,${encodeURIComponent(share)}`}
+        alt="Share icon"
+        sx={{
+          width: 32,
+          height: 33,
+        }}
+      />
+    </Box>
   );
 }
 

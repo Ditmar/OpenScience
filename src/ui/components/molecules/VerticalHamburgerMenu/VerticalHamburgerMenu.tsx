@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Box, Collapse, List, ListItemButton, styled } from '@mui/material';
 import type { VerticalHamburgerMenuProps } from './types/IProps';
-import IconImage from '../../atoms/IconImage/IconImage';
-import IconLink from '../../atoms/IconLink/IconLink';
 import IconPdf from '../../atoms/IconPdf/IconPdf';
+import IconLink from '../../atoms/IconLink/IconLink';
+import IconImage from '../../atoms/IconImage/IconImage';
 import IconReference from '../../atoms/IconReference/IconReference';
 
 const MenuContainer = styled(Box)(({ theme }) => ({
@@ -13,8 +13,8 @@ const MenuContainer = styled(Box)(({ theme }) => ({
   zIndex: theme.zIndex.appBar,
   display: 'flex',
   flexDirection: 'column',
-  backgroundColor: theme.palette.background.paper,
-  borderRadius: theme.shape.borderRadius,
+  backgroundColor: '#02322C',
+  borderRadius: 0,
   boxShadow: theme.shadows[2],
   overflow: 'hidden',
   transition: 'all 0.3s ease',
@@ -24,6 +24,8 @@ const MenuContainer = styled(Box)(({ theme }) => ({
 }));
 
 const StyledListItemButton = styled(ListItemButton)(({ theme }) => ({
+  width: 56,
+  height: 56,
   padding: theme.spacing(1),
   justifyContent: 'center',
   '&:hover': {
@@ -36,13 +38,7 @@ const StyledListItemButton = styled(ListItemButton)(({ theme }) => ({
   },
 }));
 
-function VerticalHamburgerMenu({
-  position = 'left',
-  size = 'medium',
-  color = 'primary',
-  variant = 'filled',
-  sx = {},
-}: VerticalHamburgerMenuProps) {
+function VerticalHamburgerMenu({ position = 'left', sx = {} }: VerticalHamburgerMenuProps) {
   const [open, setOpen] = useState(false);
 
   const handleToggle = () => {
@@ -61,50 +57,50 @@ function VerticalHamburgerMenu({
         ...sx,
       }}
     >
-      <StyledListItemButton onClick={handleToggle} aria-label="Toggle menu">
-        <MenuIcon fontSize={size} color={color} />
+      <StyledListItemButton
+        onClick={handleToggle}
+        aria-label="Toggle menu"
+        sx={{ backgroundColor: '#02322C' }}
+      >
+        <MenuIcon style={{ color: '#FFFFFF', fontSize: '50px' }} />
       </StyledListItemButton>
 
       <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          {/* PDF Icon */}
+        <List role="list" component="div" disablePadding sx={{ backgroundColor: '#0793BF' }}>
           <StyledListItemButton
             onClick={() => {
               handleIconClick('PDF');
             }}
             aria-label="PDF"
           >
-            <IconPdf size={size} color={color} variant={variant} />
+            <IconPdf background="transparent" />
           </StyledListItemButton>
 
-          {/* Link Icon */}
           <StyledListItemButton
             onClick={() => {
               handleIconClick('Link');
             }}
             aria-label="Link"
           >
-            <IconLink size={size} color={color} variant={variant} />
+            <IconLink background="transparent" />
           </StyledListItemButton>
 
-          {/* Image Icon */}
           <StyledListItemButton
             onClick={() => {
               handleIconClick('Image');
             }}
             aria-label="Image"
           >
-            <IconImage size={size} color={color} variant={variant} />
+            <IconImage background="transparent" />
           </StyledListItemButton>
 
-          {/* Reference Icon */}
           <StyledListItemButton
             onClick={() => {
               handleIconClick('Reference');
             }}
             aria-label="Reference"
           >
-            <IconReference size={size} color={color} />
+            <IconReference background="transparent" />
           </StyledListItemButton>
         </List>
       </Collapse>
