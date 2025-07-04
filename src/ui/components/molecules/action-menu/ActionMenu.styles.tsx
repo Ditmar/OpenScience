@@ -1,26 +1,26 @@
 import { Box, IconButton, styled } from '@mui/material';
 
-export const Container = styled(Box)({
+export const Container = styled(Box)(({ theme }) => ({
   display: 'flex',
   gap: '12px',
   padding: '4px 8px',
-  backgroundColor: 'white',
+  backgroundColor: theme.customColors.white,
   position: 'relative',
   alignItems: 'center',
   height: '48px',
-});
-
-export const MenuButton = styled(IconButton)<{ active?: boolean }>(() => ({
-  color: '#03a9f4',
 }));
 
-export const OptionsBox = styled(Box)({
+export const MenuButton = styled(IconButton)<{ active?: boolean }>(({ theme }) => ({
+  color: theme.customColors.secondary,
+}));
+
+export const OptionsBox = styled(Box)(({ theme }) => ({
   position: 'absolute',
   top: 0,
   left: '100%',
   marginLeft: '0px',
-  backgroundColor: '#235347',
-  color: '#fff',
+  backgroundColor: theme.customColors.primary,
+  color: theme.customColors.white,
   minWidth: '180px',
   padding: '12px',
   display: 'flex',
@@ -30,7 +30,7 @@ export const OptionsBox = styled(Box)({
   alignItems: 'center',
   justifyContent: 'center',
   height: '48px',
-});
+}));
 
 export const IconBox = styled(Box)({
   display: 'flex',

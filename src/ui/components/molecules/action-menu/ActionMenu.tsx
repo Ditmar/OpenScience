@@ -63,7 +63,7 @@ function ActionMenu() {
           {selectedMenu === 'pdf' && (
             <IconBox>
               <Icon iconName="pdf" width={24} height={24} />
-              <Typography sx={{ color: '#fff' }}>DESCARGAR</Typography>
+              <Typography sx={{ color: theme.customColors.white }}>DESCARGAR</Typography>
             </IconBox>
           )}
 
@@ -79,7 +79,7 @@ function ActionMenu() {
           {selectedMenu === 'image' && (
             <IconBox>
               <Icon iconName="media" width={24} height={24} />
-              <Typography sx={{ color: '#fff' }}>MEDIA</Typography>
+              <Typography sx={{ color: theme.customColors.white }}>MEDIA</Typography>
             </IconBox>
           )}
         </OptionsBox>
