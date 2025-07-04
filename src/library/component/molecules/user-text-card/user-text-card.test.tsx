@@ -30,6 +30,7 @@ describe('UserTextCard', () => {
         onClick={onClick}
         isChecked={isChecked}
         onCheckChange={onCheckChange}
+        colorVariant="error"
       />,
     );
 
@@ -54,6 +55,7 @@ describe('UserTextCard', () => {
         onClick={onClick}
         isChecked={isChecked}
         onCheckChange={onCheckChange}
+        colorVariant="error"
       />,
     );
 
@@ -75,6 +77,7 @@ describe('UserTextCard', () => {
         onClick={onClick}
         isChecked={isChecked}
         onCheckChange={onCheckChange}
+        colorVariant="default"
       />,
     );
 
@@ -98,6 +101,7 @@ describe('UserTextCard', () => {
         isChecked={isChecked}
         onCheckChange={onCheckChange}
         variant="default"
+        colorVariant="error"
       />,
     );
 
@@ -117,6 +121,7 @@ describe('UserTextCard', () => {
         isChecked={isChecked}
         onCheckChange={onCheckChange}
         variant="compact"
+        colorVariant="error"
       />,
     );
 
@@ -136,6 +141,7 @@ describe('UserTextCard', () => {
         isChecked={isChecked}
         onCheckChange={onCheckChange}
         variant="expanded"
+        colorVariant="error"
       />,
     );
 
@@ -154,6 +160,7 @@ describe('UserTextCard', () => {
         onClick={onClick}
         isChecked={isChecked}
         onCheckChange={onCheckChange}
+        colorVariant="error"
       />,
     );
 
@@ -174,6 +181,7 @@ describe('UserTextCard', () => {
         onClick={onClick}
         isChecked={isChecked}
         onCheckChange={onCheckChange}
+        colorVariant="error"
       />,
     );
 
