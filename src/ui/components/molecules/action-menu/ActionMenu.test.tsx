@@ -8,7 +8,7 @@ describe('ActionMenu component', () => {
     render(
       <ThemeProvider theme={lightTheme}>
         <ActionMenu />
-      </ThemeProvider>
+      </ThemeProvider>,
     );
 
   it('renders menu buttons', () => {
