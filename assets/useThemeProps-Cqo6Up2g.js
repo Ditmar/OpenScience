@@ -1,1 +1,0 @@
-import{b as m}from"./styled-BuMVIcWp.js";import{g as a}from"./getThemeProps-OM7c35KT.js";import{u as p}from"./extendSxProp-BtvtprHM.js";const n=m();function c({props:s,name:t,defaultTheme:o,themeId:r}){let e=p(o);return r&&(e=e[r]||e),a({theme:e,name:t,props:s})}export{n as s,c as u};
