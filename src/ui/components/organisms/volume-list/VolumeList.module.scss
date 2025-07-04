@@ -1,22 +1,12 @@
-@import '../../../../globals/variables';
-
-.volume-list {
-  background-color: $ads-color-light;
-  border-radius: 6px;
-  border-top: 4px solid $ads-tertiary-main;
-  max-width: 540px;
-  overflow: hidden;
-}
-
 .header {
-  background-color: $ads-color-gray-soft-25;
   padding: 10px;
   text-align: center;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
 
   > * {
     height: auto;

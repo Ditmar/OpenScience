@@ -7,7 +7,7 @@ import type { IProps } from './types/IProps';
 
 function VolumeList({ title, volumes = [] }: IProps) {
   return (
-    <section className={styles['volume-list']}>
+    <>
       <div className={styles.header}>
         <LabelVolumes text={title} color="tertiary" />
       </div>
@@ -26,7 +26,7 @@ function VolumeList({ title, volumes = [] }: IProps) {
           ))}
         </div>
       )}
-    </section>
+    </>
   );
 }
 

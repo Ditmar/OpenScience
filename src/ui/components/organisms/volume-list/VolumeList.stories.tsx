@@ -53,6 +53,30 @@ const MOCKED_VOLUMES: VolumeItem[] = [
     volumen: 'Vol.',
     id: 1,
   },
+  {
+    uuid: '7',
+    pathImage: '/src/ui/components/atoms/thumbnail/__mock__/imgs/Rectangle27.png',
+    alt: 'Ilustración digital de un árbol tecnológico (duplicado).',
+    date: new Date('2023-04-15T00:00:00'),
+    volumen: 'Vol.',
+    id: 1,
+  },
+  {
+    uuid: '8',
+    pathImage: '/src/ui/components/atoms/thumbnail/__mock__/imgs/Rectangle28.png',
+    alt: 'Hombre analizando datos en una interfaz digital (duplicado).',
+    date: new Date('2023-04-15T00:00:00'),
+    volumen: 'Vol.',
+    id: 1,
+  },
+  {
+    uuid: '9',
+    pathImage: '/src/ui/components/atoms/thumbnail/__mock__/imgs/Rectangle29.png',
+    alt: 'Una lupa sobre un globo terráqueo digital (duplicado).',
+    date: new Date('2023-04-15T00:00:00'),
+    volumen: 'Vol.',
+    id: 1,
+  },
 ];
 
 const meta: Meta<typeof VolumeList> = {
@@ -64,7 +88,7 @@ const meta: Meta<typeof VolumeList> = {
   },
   decorators: [
     (Story) => (
-      <div style={{ backgroundColor: '#F6F8FA', padding: '2rem' }}>
+      <div style={{ backgroundColor: '#F0F0F0', padding: '2rem' }}>
         <Story />
       </div>
     ),
