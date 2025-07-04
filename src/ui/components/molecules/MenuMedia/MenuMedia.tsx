@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Box, useMediaQuery, useTheme } from '@mui/material';
 import type { MenuMediaProps } from './types/MenuMedia.props';
-import HeroBanner from '../../atoms/hero-banner/HeroBanner';
 import { TabsSelector } from '../../atoms/Atoms-MenuMedia/TabsSelector';
 import { OpenImageButton } from '../../atoms/Atoms-MenuMedia/OpenImageButton';
 import { ImageDescriptionText } from '../../atoms/Atoms-MenuMedia/ImageDescriptionText';
@@ -37,9 +36,7 @@ export function MenuMedia({
     <Box sx={{ width: '100%', maxWidth, pb: 4 }}>
       <TabsSelector
         value={tabIndex}
-        onChange={(_, val) => {
-          setTabIndex(val);
-        }}
+        onChange={(_, val) => setTabIndex(val)}
       />
       <Box
         sx={{
@@ -62,22 +59,19 @@ export function MenuMedia({
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            '& img': {
-              width: '85%',
+          }}
+        >
+          <img
+            src={resolvedImageSrc}
+            alt={imageAlt}
+            style={{
+              width: '80%',
               height: '100%',
               objectFit: 'contain',
               display: 'block',
               margin: '0 auto',
-            },
-          }}
-        >
-          <HeroBanner
-            backgroundImage={resolvedImageSrc}
-            alt={imageAlt}
-            className="hero-banner__content"
-          >
-            {null}
-          </HeroBanner>
+            }}
+          />
         </Box>
         <Box sx={{ mb: 0.5 }}>
           <OpenImageButton onClick={onOpenImage} />
