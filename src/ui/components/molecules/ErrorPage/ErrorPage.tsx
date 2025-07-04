@@ -22,7 +22,7 @@ export function ErrorPage({ code, title, message }: ErrorPageProps) {
         sx={{
           fontSize: { xs: '5rem', sm: '6rem', md: '8rem' },
           fontWeight: theme.typography.fontWeightBold,
-          color: theme.palette.errorPalette.errorPrimary,
+          color: theme.palette.olitemPalette.brandBlue,
           lineHeight: 1,
         }}
       >
@@ -32,7 +32,7 @@ export function ErrorPage({ code, title, message }: ErrorPageProps) {
         variant="h4"
         sx={{
           fontWeight: theme.typography.fontWeightMedium,
-          color: theme.palette.errorPalette.errorPrimary,
+          color: theme.palette.olitemPalette.brandBlue,
         }}
       >
         {title}
@@ -40,7 +40,10 @@ export function ErrorPage({ code, title, message }: ErrorPageProps) {
       {message && (
         <Typography
           variant="body1"
-          sx={{ color: theme.palette.errorPalette.errorPrimary, maxWidth: 500 }}
+          sx={{
+            color: theme.palette.olitemPalette.brandBlue,
+            maxWidth: 500,
+          }}
         >
           {message}
         </Typography>

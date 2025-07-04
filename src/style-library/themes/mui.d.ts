@@ -126,9 +126,6 @@ declare module '@mui/material/styles' {
       errorPrimary: string;
     };
   }
-  
-
-
 
   interface TypographyVariants {
     textSm: React.CSSProperties;
