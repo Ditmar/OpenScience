@@ -3,7 +3,7 @@ import { ButtonFilled } from './ButtonFilled';
 import type { IProps } from './types/IProps';
 
 const commonProps: Partial<IProps> = {
-  text: 'botón GOD',
+  text: 'Button text',
 };
 
 const meta = {
