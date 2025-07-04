@@ -29,9 +29,7 @@ export const lightTheme = createTheme({
       stroke_Primary: tokens.colors.stroke_primary,
       text_light: tokens.colors.main,
       stroke_primary_Soft: tokens.colors.stroke_primary_soft,
-    },
-    errorPalette: {
-      errorPrimary: tokens.colors.sky_error,
+      brandBlue: tokens.colors.blue_main,
     },
   },
   typography: {
