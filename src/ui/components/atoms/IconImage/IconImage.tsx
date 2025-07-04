@@ -1,45 +1,31 @@
 import React from 'react';
-import type { SvgIconProps } from '@mui/material';
-import ImageIconFilled from '@mui/icons-material/Image';
-import ImageIconOutlined from '@mui/icons-material/ImageOutlined';
-import ImageIconRounded from '@mui/icons-material/ImageRounded';
-import ImageIconTwoTone from '@mui/icons-material/ImageTwoTone';
-import ImageIconSharp from '@mui/icons-material/ImageSharp';
+import { Box } from '@mui/material';
+import media from '../../../../assets/icons/media.svg?raw';
 import type { IconImageProps } from './types/IProps';
 
-const sizeMap = {
-  small: 20,
-  medium: 30,
-  large: 40,
-};
-
-const variantMap = {
-  filled: ImageIconFilled,
-  outlined: ImageIconOutlined,
-  rounded: ImageIconRounded,
-  twoTone: ImageIconTwoTone,
-  sharp: ImageIconSharp,
-} as const;
-
-function IconImage({
-  size = 'medium',
-  color = 'primary',
-  variant = 'filled',
-  className,
-  sx = {},
-}: IconImageProps & SvgIconProps) {
-  const IconComponent = variantMap[variant];
-  const fontSize = sizeMap[size];
-
+function IconImage({ background = 'transparent', className }: IconImageProps) {
   return (
-    <IconComponent
-      color={color}
+    <Box
       className={className}
       sx={{
-        fontSize,
-        ...sx,
+        width: 56,
+        height: 56,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: background === 'blue' ? '#0793BF' : 'transparent',
       }}
-    />
+    >
+      <Box
+        component="img"
+        src={`data:image/svg+xml;utf8,${encodeURIComponent(media)}`}
+        alt="Media icon"
+        sx={{
+          width: 40,
+          height: 23,
+        }}
+      />
+    </Box>
   );
 }
 

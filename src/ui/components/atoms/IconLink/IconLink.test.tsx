@@ -1,28 +1,37 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import IconLink from './IconLink';
+import Iconlink from './IconLink';
 
-describe('IconLink', () => {
-  it('renders without crashing', () => {
-    const { container } = render(<IconLink />);
-    expect(container.querySelector('svg')).toBeInTheDocument();
+describe('Iconlink Component', () => {
+  it('should render with transparent background by default', () => {
+    const { container } = render(<Iconlink />);
+    const box = container.firstChild as HTMLElement;
+
+    expect(box).toHaveStyle('width: 56px');
+    expect(box).toHaveStyle('height: 56px');
+    expect(box).toHaveStyle('background-color: rgba(0, 0, 0, 0)');
+    expect(box).toHaveStyle('display: flex');
   });
 
-  it('applies the correct font-size for large', () => {
-    const { container } = render(<IconLink size="large" />);
-    const svg = container.querySelector('svg');
-    expect(svg).toHaveStyle('font-size: 40px');
+  it('should render with blue background when specified', () => {
+    const { container } = render(<Iconlink background="blue" />);
+    const box = container.firstChild as HTMLElement;
+    expect(box).toHaveStyle('background-color: #0793BF');
   });
 
-  it('accepts custom sx props', () => {
-    const { container } = render(<IconLink sx={{ margin: '10px' }} />);
-    const svg = container.querySelector('svg');
-    expect(svg).toHaveStyle('margin: 10px');
+  it('should render the SVG icon with correct dimensions', () => {
+    const { container } = render(<Iconlink />);
+    const img = container.querySelector('img');
+
+    expect(img).toBeInTheDocument();
+    expect(img).toHaveAttribute('alt', 'Share icon');
+    expect(img).toHaveStyle('width: 32px');
+    expect(img).toHaveStyle('height: 33px');
   });
 
-  it('switches variant correctly', () => {
-    const { container: c1 } = render(<IconLink variant="outlined" />);
-    const { container: c2 } = render(<IconLink variant="rounded" />);
-    expect(c1.querySelectorAll('svg')[0]).not.toEqual(c2.querySelectorAll('svg')[0]);
+  it('should accept className prop', () => {
+    const { container } = render(<Iconlink className="test-class" />);
+    const box = container.firstChild as HTMLElement;
+    expect(box).toHaveClass('test-class');
   });
 });

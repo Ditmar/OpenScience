@@ -1,45 +1,31 @@
 import React from 'react';
-import { SvgIcon } from '@mui/material';
-import type { SvgIconProps } from '@mui/material';
+import { Box } from '@mui/material';
+import reference from '../../../../assets/icons/reference1.svg?raw';
 import type { IconReferenceProps } from './types/IProps';
 
-const sizeMap = {
-  small: 20,
-  medium: 30,
-  large: 40,
-};
-
-function IconReference({
-  size = 'medium',
-  color = 'primary',
-  className,
-  sx = {},
-}: IconReferenceProps & SvgIconProps) {
-  const fontSize = sizeMap[size];
-
+function IconReference({ background = 'transparent', className }: IconReferenceProps) {
   return (
-    <SvgIcon
-      viewBox="0 0 24 24"
-      fontSize="inherit"
-      color={color}
+    <Box
       className={className}
       sx={{
-        fontSize,
-        ...sx,
+        width: 56,
+        height: 56,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: background === 'blue' ? '#0793BF' : 'transparent',
       }}
     >
-      <text
-        x="12"
-        y="16"
-        textAnchor="middle"
-        fontFamily="Roboto, Arial, sans-serif"
-        fontWeight="bold"
-        fontSize="16"
-        fill="currentColor"
-      >
-        R
-      </text>
-    </SvgIcon>
+      <Box
+        component="img"
+        src={`data:image/svg+xml;utf8,${encodeURIComponent(reference)}`}
+        alt="Share icon"
+        sx={{
+          width: 32,
+          height: 35,
+        }}
+      />
+    </Box>
   );
 }
 

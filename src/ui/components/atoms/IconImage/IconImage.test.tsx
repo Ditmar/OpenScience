@@ -2,27 +2,36 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import IconImage from './IconImage';
 
-describe('IconImage', () => {
-  it('renders without crashing', () => {
+describe('IconImage Component', () => {
+  it('should render with transparent background by default', () => {
     const { container } = render(<IconImage />);
-    expect(container.querySelector('svg')).toBeInTheDocument();
+    const box = container.firstChild as HTMLElement;
+
+    expect(box).toHaveStyle('width: 56px');
+    expect(box).toHaveStyle('height: 56px');
+    expect(box).toHaveStyle('background-color: rgba(0, 0, 0, 0)');
+    expect(box).toHaveStyle('display: flex');
   });
 
-  it('applies the correct font-size for large', () => {
-    const { container } = render(<IconImage size="large" />);
-    const svg = container.querySelector('svg');
-    expect(svg).toHaveStyle('font-size: 40px');
+  it('should render with blue background when specified', () => {
+    const { container } = render(<IconImage background="blue" />);
+    const box = container.firstChild as HTMLElement;
+    expect(box).toHaveStyle('background-color: #0793BF');
   });
 
-  it('accepts custom sx props', () => {
-    const { container } = render(<IconImage sx={{ padding: '8px' }} />);
-    const svg = container.querySelector('svg');
-    expect(svg).toHaveStyle('padding: 8px');
+  it('should render the SVG icon with correct dimensions', () => {
+    const { container } = render(<IconImage />);
+    const img = container.querySelector('img');
+
+    expect(img).toBeInTheDocument();
+    expect(img).toHaveAttribute('alt', 'Media icon');
+    expect(img).toHaveStyle('width: 40px');
+    expect(img).toHaveStyle('height: 23px');
   });
 
-  it('switches variant correctly', () => {
-    const { container: c1 } = render(<IconImage variant="outlined" />);
-    const { container: c2 } = render(<IconImage variant="rounded" />);
-    expect(c1.querySelector('svg')).not.toEqual(c2.querySelector('svg'));
+  it('should accept className prop', () => {
+    const { container } = render(<IconImage className="test-class" />);
+    const box = container.firstChild as HTMLElement;
+    expect(box).toHaveClass('test-class');
   });
 });

@@ -2,21 +2,36 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import IconPdf from './IconPdf';
 
-describe('IconPdf', () => {
-  it('renders without crashing', () => {
+describe('IconPdf Component', () => {
+  it('should render with transparent background by default', () => {
     const { container } = render(<IconPdf />);
-    expect(container.querySelector('svg')).toBeInTheDocument();
+    const box = container.firstChild as HTMLElement;
+
+    expect(box).toHaveStyle('width: 56px');
+    expect(box).toHaveStyle('height: 56px');
+    expect(box).toHaveStyle('background-color: rgba(0, 0, 0, 0)');
+    expect(box).toHaveStyle('display: flex');
   });
 
-  it('applies the correct size class', () => {
-    const { container } = render(<IconPdf size="large" />);
-    const svg = container.querySelector('svg');
-    expect(svg).toHaveStyle('font-size: 40px');
+  it('should render with blue background when specified', () => {
+    const { container } = render(<IconPdf background="blue" />);
+    const box = container.firstChild as HTMLElement;
+    expect(box).toHaveStyle('background-color: #0793BF');
   });
 
-  it('applies custom sx styles', () => {
-    const { container } = render(<IconPdf sx={{ marginLeft: '20px' }} />);
-    const svg = container.querySelector('svg');
-    expect(svg).toHaveStyle('margin-left: 20px');
+  it('should render the SVG icon with correct dimensions', () => {
+    const { container } = render(<IconPdf />);
+    const img = container.querySelector('img');
+
+    expect(img).toBeInTheDocument();
+    expect(img).toHaveAttribute('alt', 'Share icon');
+    expect(img).toHaveStyle('width: 32px');
+    expect(img).toHaveStyle('height: 35px');
+  });
+
+  it('should accept className prop', () => {
+    const { container } = render(<IconPdf className="test-class" />);
+    const box = container.firstChild as HTMLElement;
+    expect(box).toHaveClass('test-class');
   });
 });
