@@ -1,13 +1,8 @@
-export interface Option {
-  country: string;
-  code: string;
-}
+import type { Option } from '../interfaces/IOption.interface';
 
 export interface IProps {
-  label?: string;
   options: Option[];
   error?: boolean;
-  helperText: string;
   disabled?: boolean;
   borderRadius?: 'normal' | 'semi' | 'circle';
   size?: 'small' | 'medium' | 'large';

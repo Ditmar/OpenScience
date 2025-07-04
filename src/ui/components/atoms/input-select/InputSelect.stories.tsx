@@ -1,11 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InputCountry } from './InputCountry';
+import { InputSelect } from './InputSelect';
 import type { IProps } from './types/IProps';
+import { type Option } from './interfaces/IOption.interface';
 
-interface Option {
-  country: string;
-  code: string;
-}
 const options: Option[] = [
   { country: 'Argentina', code: 'ar' },
   { country: 'Bolivia', code: 'bo' },
@@ -14,24 +11,22 @@ const options: Option[] = [
 ];
 
 const commonProps: Partial<IProps> = {
-  label: 'Select Country',
   options,
-  helperText: 'Hint Text',
 };
 
 const meta = {
-  title: 'ui/components/atoms/input-country',
-  component: InputCountry,
+  title: 'ui/components/atoms/input-select',
+  component: InputSelect,
   args: {
     ...commonProps,
   },
-} as Meta<typeof InputCountry>;
+} as Meta<typeof InputSelect>;
 
 export default meta;
 
-type Story = StoryObj<typeof InputCountry>;
+type Story = StoryObj<typeof InputSelect>;
 
-export const Empty: Story = {
+export const Default: Story = {
   args: {
     ...commonProps,
   },
@@ -48,12 +43,6 @@ export const WithError: Story = {
   args: {
     ...commonProps,
     error: true,
-  },
-};
-
-export const WithIcons: Story = {
-  args: {
-    ...commonProps,
   },
 };
 
