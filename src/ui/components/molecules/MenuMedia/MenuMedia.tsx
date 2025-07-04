@@ -59,11 +59,15 @@ export function MenuMedia({
             maxWidth,
             height: imgHeight,
             mb: 1.5,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
             '& img': {
-              width: '100%',
+              width: '85%',
               height: '100%',
               objectFit: 'contain',
               display: 'block',
+              margin: '0 auto',
             },
           }}
         >
