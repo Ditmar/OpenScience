@@ -6,12 +6,13 @@
   padding: 16px;
 
   a {
-    color: inherit;
+    color: $ads-text-main-hover;
     text-decoration: underline;
   }
 }
 
 .list {
+  color: $ads-text-main-hover;
   display: flex;
   flex-direction: column;
   gap: 10px;
