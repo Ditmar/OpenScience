@@ -34,6 +34,7 @@ export const Normal: Story = {
             setChecked(newVal);
             args.onCheckChange?.(newVal);
           }}
+          colorVariant="default"
         />
       );
     }
