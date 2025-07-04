@@ -6,6 +6,7 @@ export const bannerNavbarStyles = (theme: Theme) => ({
     background: '#0793BF',
     padding: 0,
     margin: 0,
+    height: { xs: '58px', sm: '73px', md: '78px' },
     borderBottom: '13px solid #02322C',
   },
   toolbar: {
@@ -20,13 +21,15 @@ export const bannerNavbarStyles = (theme: Theme) => ({
     backgroundColor: 'white',
     borderTopRightRadius: '50px',
     borderBottomRightRadius: '50px',
-    width: { xs: '160px', sm: '160px', md: '160px' },
-    height: '50%',
+    width: { xs: '150px', sm: '180px', md: '220px' },
+    height: { xs: '45px', sm: '60px', md: '65px' },
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     padding: 0,
     margin: 0,
+    position: 'relative',
+    left: -20,
   },
   logoImage: {
     display: 'block',
@@ -40,6 +43,9 @@ export const bannerNavbarStyles = (theme: Theme) => ({
   },
   searchButton: {
     color: theme.palette.common.white,
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
   },
   dialogPaper: {
     backgroundColor: theme.palette.background.paper,

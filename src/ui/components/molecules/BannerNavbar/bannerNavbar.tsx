@@ -13,7 +13,7 @@ import {
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
-import { bannerNavbarStyles } from './bannerNavbar.styles';
+import { bannerNavbarStyles } from './bannerNavbar.style';
 import type { IProps } from './types/IProps';
 
 function BannerNavbar({ textSearch, logo, onSearchSubmit }: IProps) {
