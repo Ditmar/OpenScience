@@ -1,1 +1,0 @@
-import{r as e}from"./index-Cu9bd8lq.js";const o=t=>e.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:2,strokeLinecap:"round",strokeLinejoin:"round",width:"1em",height:"1em",...t},e.createElement("line",{x1:18,y1:6,x2:6,y2:18}),e.createElement("line",{x1:6,y1:6,x2:18,y2:18}));export{o as default};
