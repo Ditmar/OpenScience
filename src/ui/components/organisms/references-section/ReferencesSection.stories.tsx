@@ -1,7 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Box from '@mui/material/Box';
-import React from 'react';
-
 import ReferencesSection from './ReferencesSection';
 import type { ReferenceItem } from './types/IProps';
 
@@ -12,17 +9,8 @@ const meta: Meta<typeof ReferencesSection> = {
     references: { control: false },
   },
   parameters: {
-    layout: 'fullscreen',
+    layout: 'padded',
   },
-  decorators: [
-    (Story) => (
-      <Box sx={{ p: 2 }}>
-        <Box sx={{ transformOrigin: 'top left' }}>
-          <Story />
-        </Box>
-      </Box>
-    ),
-  ],
 };
 
 export default meta;

@@ -13,7 +13,7 @@ function ReferencesSection({ references }: IProps) {
       <ol className={styles.list}>
         {references.map((item, index) => (
           <li key={`${item.text}-${index.toString()}`}>
-            <Reference text={item.text} color="tertiary" />
+            <Reference text={item.text} />
           </li>
         ))}
       </ol>
