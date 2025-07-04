@@ -36,7 +36,9 @@ export function MenuMedia({
     <Box sx={{ width: '100%', maxWidth, pb: 4 }}>
       <TabsSelector
         value={tabIndex}
-        onChange={(_, val) => setTabIndex(val)}
+        onChange={(_, val) => {
+          setTabIndex(val);
+        }}
       />
       <Box
         sx={{
@@ -55,7 +57,7 @@ export function MenuMedia({
             width: '100%',
             maxWidth,
             height: imgHeight,
-            mb: 1.5,
+            mb: 0.1,
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -73,7 +75,7 @@ export function MenuMedia({
             }}
           />
         </Box>
-        <Box sx={{ mb: 0.5 }}>
+        <Box>
           <OpenImageButton onClick={onOpenImage} />
         </Box>
         <Box sx={{ width: '100%' }}>
