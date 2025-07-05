@@ -1,19 +1,15 @@
-import { render } from '@testing-library/react';
-import { ThemeProvider } from '@mui/material/styles';
-import { lightTheme } from '../../../../style-library/themes/default';
+import { renderWithTheme } from '@testing/renderWithTheme';
 import OLItem from './OLItem';
 import type { OLItemProps } from './types/IProps';
 
 const setup = (props?: Partial<OLItemProps>) =>
-  render(
-    <ThemeProvider theme={lightTheme}>
-      <OLItem
-        value={props?.value ?? '1'}
-        shape={props?.shape ?? 'square'}
-        size={props?.size ?? 'md'}
-        active={props?.active ?? false}
-      />
-    </ThemeProvider>,
+  renderWithTheme(
+    <OLItem
+      value={props?.value ?? '1'}
+      shape={props?.shape ?? 'square'}
+      size={props?.size ?? 'md'}
+      active={props?.active ?? false}
+    />,
   );
 
 describe('OLItem', () => {
