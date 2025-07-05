@@ -1,0 +1,15 @@
+import{L as g,I as l}from"./IconMui-Cpe47Tny.js";import"./jsx-runtime-BlDnFLNC.js";import"./index-Cu9bd8lq.js";import"./createSvgIcon-CdSZYH_O.js";import"./styled-Cq8HOVa0.js";import"./defaultTheme-fNRa9lZy.js";import"./emotion-use-insertion-effect-with-fallbacks.browser.esm-B34fLoo2.js";import"./extends-CF3RwP-h.js";import"./memoTheme-DIyHk3zc.js";import"./DefaultPropsProvider-15asn56a.js";import"./index-DZ0yBYIp.js";const s={iconName:g},M={title:"ui/components/atoms/icon-mui",component:l,args:{...s}},r={args:{...s}},o={args:{...s,error:!0}},e={args:{...s,disabled:!0}};var a,t,m;r.parameters={...r.parameters,docs:{...(a=r.parameters)==null?void 0:a.docs,source:{originalSource:`{
+  args: {
+    ...commonProps
+  }
+}`,...(m=(t=r.parameters)==null?void 0:t.docs)==null?void 0:m.source}}};var n,c,p;o.parameters={...o.parameters,docs:{...(n=o.parameters)==null?void 0:n.docs,source:{originalSource:`{
+  args: {
+    ...commonProps,
+    error: true
+  }
+}`,...(p=(c=o.parameters)==null?void 0:c.docs)==null?void 0:p.source}}};var i,u,d;e.parameters={...e.parameters,docs:{...(i=e.parameters)==null?void 0:i.docs,source:{originalSource:`{
+  args: {
+    ...commonProps,
+    disabled: true
+  }
+}`,...(d=(u=e.parameters)==null?void 0:u.docs)==null?void 0:d.source}}};const N=["Default","Error","Disabled"];export{r as Default,e as Disabled,o as Error,N as __namedExportsOrder,M as default};
