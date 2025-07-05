@@ -1,3 +1,6 @@
+import Avatar from '@mui/material/Avatar';
+import { Typography } from '@mui/material';
+import Check from '../../../../ui/components/atoms/check/check';
 import styles from './user-text-card.module.scss';
 import type { IProps } from './types/IProps';
 
@@ -9,45 +12,55 @@ function UserTextCard(props: IProps) {
     timestamp,
     content,
     variant = 'default',
+    colorVariant = 'default',
     isVerified = false,
     onClick,
     className,
-    isChecked = false,
+    isChecked,
     onCheckChange,
   } = props;
-  const containerClass = [styles.card, styles[variant], className].filter(Boolean).join(' ');
+
+  const containerClass = [styles.card, styles[variant], styles[colorVariant], className]
+    .filter(Boolean)
+    .join(' ');
 
   return (
     <div className={containerClass} data-testid={`user-card-${variant}`}>
-      <input
-        type="checkbox"
+      <Check
         checked={isChecked}
-        onChange={(e) => {
-          e.stopPropagation();
-          onCheckChange?.(e.target.checked);
+        onChange={(value) => {
+          onCheckChange?.(value);
           onClick();
         }}
         className={styles.checkbox}
+        variant="default"
+        shape="square"
       />
-
       <div className={styles['card__content-wrapper']}>
         {variant !== 'compact' && (
-          <div className={styles.avatar}>
-            {typeof avatar === 'string' ? <img src={avatar} alt="avatar" /> : avatar}
-          </div>
+          <Avatar src={avatar} alt="avatar" className={styles.avatar} variant="rounded" />
         )}
         <div className={styles.content}>
           <div className={styles['card__text-container']}>
             <div className={styles.header}>
-              <span className={styles['header__user-name']}>{userName}</span>
-              {isVerified && <span className={styles.verified}>✔️</span>}
-              {userHandle && <span className={styles['header__user-handle']}>@{userHandle}</span>}
+              <Typography variant="subtitle1" className={styles['header__user-name']}>
+                {userName}
+              </Typography>
+              {isVerified && (
+                <Typography variant="body2" className={styles.verified} component="span">
+                  ✔️
+                </Typography>
+              )}
+              {userHandle && (
+                <Typography variant="body2" className={styles['header__user-handle']}>
+                  @{userHandle}
+                </Typography>
+              )}
             </div>
-            <div className={styles.message}>
-              {typeof content === 'string' ? <p>{content}</p> : content}
-            </div>
+            <Typography variant="body2" className={styles['user-text-card__message-text']}>
+              {content}
+            </Typography>
           </div>
-
           {timestamp && (
             <div className={styles.timestamp}>
               {typeof timestamp === 'string' ? timestamp : timestamp.toLocaleString()}

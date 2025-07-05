@@ -8,6 +8,7 @@
   min-height: 3rem;
   padding: 1rem;
   transition: box-shadow 0.2s ease;
+  width: 900px;
 
   &:hover {
     box-shadow: 0 0.125rem 0.5rem $ads-text-main-hover;
@@ -38,7 +39,7 @@
     accent-color: $ads-primary-main;
     cursor: pointer;
     height: 1.25rem;
-    transform: scale(1.372);
+    transform: scale(1.2);
     width: 1.25rem;
   }
 
@@ -67,19 +68,6 @@
     }
   }
 
-  .message {
-    min-height: 0.5rem;
-
-    p {
-      color: $ads-paragraph-color-dark;
-      font-size: 0.875rem;
-      line-height: 1.5;
-      margin: 0;
-      text-wrap: wrap;
-      width: 100%;
-    }
-  }
-
   .timestamp {
     align-self: flex-start;
     color: $ads-text-input;
@@ -90,7 +78,7 @@
   &.compact {
     max-width: 31.25rem;
     min-height: 5rem;
-    padding: 0.5rem;
+    padding: 0.7rem;
 
     .content {
       justify-content: start;
@@ -104,25 +92,19 @@
       font-size: 0.9rem;
     }
 
-    .message p {
-      font-size: 0.85rem;
-      min-height: 0;
-    }
-
     .timestamp {
       font-size: 0.7rem;
     }
   }
 
   &.default {
-    max-width: 43.313rem;
+    max-width: 100%;
   }
 
   &.expanded {
-    max-width: 800px;
     padding: 1.5rem;
 
-    .avatar img {
+    .avatar {
       max-width: 40rem;
       min-height: 3.75rem;
       min-width: 3.75rem;
@@ -138,13 +120,10 @@
       &__user-handle {
         font-size: 1.1rem;
       }
-
-      .verified {
-        font-size: 1.2rem;
-      }
     }
 
-    .message p {
+    .user-text-card__message-text {
+      font-size: 1.125rem;
       line-height: 1.8;
       min-height: 5rem;
     }
@@ -153,5 +132,33 @@
       font-size: 1rem;
       margin-top: 1.5rem;
     }
+
+    .verified {
+        font-size: 1.2rem;
+    }
+  }
+
+  &.info {
+    border-left: 4px solid $ads-tertiary-main;
+    border-right: 4px solid $ads-tertiary-main;
+    box-shadow: 0 0.125rem 0.5rem $ads-tertiary-main;
+  }
+
+  &.error {
+    border-left: 4px solid $ads-danger-main;
+    border-right: 4px solid $ads-danger-main;
+    box-shadow: 0 0.125rem 0.5rem $ads-danger-main;
+  }
+
+  &.success {
+    border-left: 4px solid $ads-success-main;
+    border-right: 4px solid $ads-success-main;
+    box-shadow: 0 0.125rem 0.5rem $ads-success-main;
+  }
+
+  &.warning {
+    border-left: 4px solid $ads-warning-main;
+    border-right: 4px solid $ads-warning-main;
+    box-shadow: 0 0.125rem 0.5rem $ads-warning-main;
   }
 }

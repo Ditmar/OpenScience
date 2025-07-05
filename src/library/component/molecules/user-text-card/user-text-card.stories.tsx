@@ -28,12 +28,13 @@ export const Normal: Story = {
           timestamp={args.timestamp}
           isVerified={args.isVerified}
           actions={args.actions}
-          isChecked={checked}
+          isChecked={args.isChecked || checked}
           onClick={args.onClick}
           onCheckChange={(newVal) => {
             setChecked(newVal);
             args.onCheckChange?.(newVal);
           }}
+          colorVariant="default"
         />
       );
     }
@@ -47,6 +48,7 @@ export const Normal: Story = {
     content:
       'UI is the canvas, UX the brushstroke; together, they craft an immersive journey where every pixel tells',
     timestamp: '2 mins ago',
+    isChecked: false,
     isVerified: true,
     onClick: () => {},
     variant: 'default',
@@ -69,6 +71,7 @@ export const Compact: Story = {
           isChecked={checked}
           onClick={args.onClick}
           variant={args.variant}
+          colorVariant={args.colorVariant}
           onCheckChange={(newVal) => {
             setChecked(newVal);
             args.onCheckChange?.(newVal);
@@ -106,6 +109,7 @@ export const Expanded: Story = {
           isChecked={checked}
           onClick={args.onClick}
           variant={args.variant}
+          colorVariant={args.colorVariant}
           onCheckChange={(newVal) => {
             setChecked(newVal);
             args.onCheckChange?.(newVal);
@@ -125,5 +129,163 @@ export const Expanded: Story = {
     isVerified: true,
     onClick: () => {},
     variant: 'expanded',
+  },
+};
+
+export const Info: Story = {
+  render: (args) => {
+    function WrapperComponent() {
+      const [checked, setChecked] = useState(false);
+      return (
+        <UserTextCard
+          avatar={args.avatar}
+          userName={args.userName}
+          userHandle={args.userHandle}
+          content={args.content}
+          timestamp={args.timestamp}
+          isVerified={args.isVerified}
+          actions={args.actions}
+          isChecked={checked}
+          onClick={args.onClick}
+          variant={args.variant}
+          colorVariant={args.colorVariant}
+          onCheckChange={(newVal) => {
+            setChecked(newVal);
+            args.onCheckChange?.(newVal);
+          }}
+        />
+      );
+    }
+
+    return <WrapperComponent />;
+  },
+  args: {
+    avatar: 'https://i.pravatar.cc/40?img=2',
+    userName: 'Christeen Lee',
+    userHandle: 'christeen',
+    content: 'UI is the canvas, UX the brushstroke...',
+    timestamp: '2 mins ago',
+    isVerified: true,
+    onClick: () => {},
+    colorVariant: 'info',
+    variant: 'default',
+  },
+};
+
+export const Warning: Story = {
+  render: (args) => {
+    function WrapperComponent() {
+      const [checked, setChecked] = useState(false);
+      return (
+        <UserTextCard
+          avatar={args.avatar}
+          userName={args.userName}
+          userHandle={args.userHandle}
+          content={args.content}
+          timestamp={args.timestamp}
+          isVerified={args.isVerified}
+          actions={args.actions}
+          isChecked={checked}
+          onClick={args.onClick}
+          variant={args.variant}
+          colorVariant={args.colorVariant}
+          onCheckChange={(newVal) => {
+            setChecked(newVal);
+            args.onCheckChange?.(newVal);
+          }}
+        />
+      );
+    }
+
+    return <WrapperComponent />;
+  },
+  args: {
+    avatar: 'https://i.pravatar.cc/40?img=2',
+    userName: 'Christeen Lee',
+    userHandle: 'christeen',
+    content: 'UI is the canvas, UX the brushstroke...',
+    timestamp: '2 mins ago',
+    isVerified: true,
+    onClick: () => {},
+    colorVariant: 'warning',
+    variant: 'default',
+  },
+};
+export const Success: Story = {
+  render: (args) => {
+    function WrapperComponent() {
+      const [checked, setChecked] = useState(false);
+      return (
+        <UserTextCard
+          avatar={args.avatar}
+          userName={args.userName}
+          userHandle={args.userHandle}
+          content={args.content}
+          timestamp={args.timestamp}
+          isVerified={args.isVerified}
+          actions={args.actions}
+          isChecked={checked}
+          onClick={args.onClick}
+          variant={args.variant}
+          colorVariant={args.colorVariant}
+          onCheckChange={(newVal) => {
+            setChecked(newVal);
+            args.onCheckChange?.(newVal);
+          }}
+        />
+      );
+    }
+
+    return <WrapperComponent />;
+  },
+  args: {
+    avatar: 'https://i.pravatar.cc/40?img=2',
+    userName: 'Christeen Lee',
+    userHandle: 'christeen',
+    content: 'UI is the canvas, UX the brushstroke...',
+    timestamp: '2 mins ago',
+    isVerified: true,
+    onClick: () => {},
+    colorVariant: 'success',
+    variant: 'default',
+  },
+};
+export const Error: Story = {
+  render: (args) => {
+    function WrapperComponent() {
+      const [checked, setChecked] = useState(false);
+      return (
+        <UserTextCard
+          avatar={args.avatar}
+          userName={args.userName}
+          userHandle={args.userHandle}
+          content={args.content}
+          timestamp={args.timestamp}
+          isVerified={args.isVerified}
+          actions={args.actions}
+          isChecked={checked}
+          onClick={args.onClick}
+          variant={args.variant}
+          colorVariant={args.colorVariant}
+          onCheckChange={(newVal) => {
+            setChecked(newVal);
+            args.onCheckChange?.(newVal);
+          }}
+        />
+      );
+    }
+
+    return <WrapperComponent />;
+  },
+  args: {
+    avatar: 'https://i.pravatar.cc/40?img=2',
+    userName: 'Christeen Lee',
+    userHandle: 'christeen',
+    content: 'UI is the canvas, UX the brushstroke...',
+    timestamp: '2 mins ago',
+    isVerified: true,
+    onClick: () => {},
+    colorVariant: 'error',
+    variant: 'default',
   },
 };
