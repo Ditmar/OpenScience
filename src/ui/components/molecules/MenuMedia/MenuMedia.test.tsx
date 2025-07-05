@@ -1,7 +1,9 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { vi } from 'vitest';
+import { ThemeProvider } from '@mui/material/styles';
 import { MenuMedia } from './MenuMedia';
+import { lightTheme } from '../../../../style-library/themes/default';
 
 const descriptions = [
   'The recent 2022 international outbreak has caused an unprecedented transmission of the virus mainly in men ' +
@@ -12,9 +14,16 @@ const descriptions = [
   'Additional data and analysis are ongoing. This section will include graphical interpretations, sources, and visual context.',
 ];
 
+function renderWithTheme(ui: React.ReactElement) {
+  return render(<ThemeProvider theme={lightTheme}>{ui}</ThemeProvider>);
+}
+
 describe('MenuMedia', () => {
   it('renders and switches tabs', () => {
-    render(<MenuMedia imageSrc="image.jpg" imageAlt="Alt text" descriptions={descriptions} />);
+    renderWithTheme(
+      <MenuMedia imageSrc="image.jpg" imageAlt="Alt text" descriptions={descriptions} />,
+    );
+
     expect(screen.getByText('Figura')).toBeInTheDocument();
 
     fireEvent.click(screen.getByText('Tabla'));
@@ -26,7 +35,7 @@ describe('MenuMedia', () => {
 
   it('calls onOpenImage when button is clicked', () => {
     const mockFn = vi.fn();
-    render(
+    renderWithTheme(
       <MenuMedia
         imageSrc="image.jpg"
         imageAlt="Alt text"
@@ -34,13 +43,17 @@ describe('MenuMedia', () => {
         descriptions={descriptions}
       />,
     );
+
     fireEvent.click(screen.getByText('ABRIR IMAGEN'));
     expect(mockFn).toHaveBeenCalled();
   });
 
   it('renders correctly with imageSrc as object', () => {
     const mockImageSrc = { src: 'image.jpg' };
-    render(<MenuMedia imageSrc={mockImageSrc} imageAlt="Alt text" descriptions={descriptions} />);
+    renderWithTheme(
+      <MenuMedia imageSrc={mockImageSrc} imageAlt="Alt text" descriptions={descriptions} />,
+    );
+
     expect(screen.getByText('Figura')).toBeInTheDocument();
   });
 });
