@@ -7,6 +7,8 @@ declare module '@mui/material/styles' {
       primary: string;
       secondary: string;
       white: string;
+      navbarMain: string;
+      navbarBorder: string;
     };
   }
 
@@ -15,6 +17,8 @@ declare module '@mui/material/styles' {
       primary?: string;
       secondary?: string;
       white?: string;
+      navbarMain?: string;
+      navbarBorder?: string;
     };
   }
 }

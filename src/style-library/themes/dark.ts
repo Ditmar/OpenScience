@@ -30,6 +30,8 @@ export const darkTheme = createTheme({
     primary: '#235347',
     secondary: '#03a9f4',
     white: tokens.colors.main,
+    navbarMain: tokens.colors.quintary_main,
+    navbarBorder: tokens.colors.text_main,
   },
   typography: {
     fontFamily: '"Lato", "Roboto", "Montserrat", sans-serif',
