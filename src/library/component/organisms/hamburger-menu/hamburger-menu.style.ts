@@ -7,7 +7,7 @@ export const MenuContainer = styled(Box)(({ theme }) => ({
   height: 126,
   backgroundColor: theme.palette.background.paper,
   padding: 0,
-  marginTop: 0,
+  marginTop: -2,
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-start',
@@ -24,7 +24,7 @@ export const LogoWrapper = styled(Box)({
 });
 
 export const DrawerContent = styled(Box)({
-  width: 117,
+  // width: 117,
   display: 'block',
   flexDirection: 'column',
   alignItems: 'flex-start',
