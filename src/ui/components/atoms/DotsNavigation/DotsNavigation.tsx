@@ -1,18 +1,15 @@
 import React from 'react';
-import './styles.scss';
+import { DotsWrapper, DotButton } from './DotsNavigation.styles';
 import type { IProps } from './Props/IProps';
 
 function DotsNavigation({ count, activeIndex, onDotClick, className = '' }: IProps) {
   return (
-    <div
-      className={`dots-navigation ${className}`}
-      role="tablist"
-      aria-label="Navegación por volúmenes"
-    >
+    <DotsWrapper className={className} role="tablist" aria-label="Navegación por volúmenes">
       {Array.from({ length: count }).map((_, idx) => (
-        <button
+        <DotButton
+          // eslint-disable-next-line react/no-array-index-key
           key={`dot-${String(idx)}`}
-          className={`dot${idx === activeIndex ? ' active' : ''}`}
+          active={idx === activeIndex}
           aria-label={`Ir al volumen ${String(idx + 1)}`}
           tabIndex={0}
           onClick={() => {
@@ -20,7 +17,7 @@ function DotsNavigation({ count, activeIndex, onDotClick, className = '' }: IPro
           }}
         />
       ))}
-    </div>
+    </DotsWrapper>
   );
 }
 

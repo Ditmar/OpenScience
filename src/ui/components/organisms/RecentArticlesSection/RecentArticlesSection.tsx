@@ -5,7 +5,15 @@ import VolumeBox from '../../molecules/volume-box/VolumeBox';
 import LabelArticles from '../../atoms/label-articles/LabelArticles';
 import RecentArticleCard from '../../molecules/Recent-Article-Card/Recent-Article-Card';
 import DotsNavigation from '../../atoms/DotsNavigation/DotsNavigation';
-import './styles.scss';
+import {
+  Section,
+  Head,
+  Content,
+  ImageContainer,
+  ArticlesContainer,
+  LabelWrapper,
+  FadeWrapper,
+} from './RecentArticlesSection.styles';
 import type { IProps } from './Props/IProps';
 
 const FADE_DURATION = 400;
@@ -37,18 +45,18 @@ function RecentArticlesSection({ volumes }: IProps) {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeVolume, volumes.length]);
 
   useEffect(() => {
-    if (isHovered) return undefined;
+    if (isHovered) {
+      return () => {};
+    }
     timeoutRef.current = setTimeout(() => {
       changeVolume((activeVolume + 1) % volumes.length);
     }, 5000);
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeVolume, isHovered, volumes.length]);
 
   const volume = volumes[activeVolume];
@@ -57,12 +65,11 @@ function RecentArticlesSection({ volumes }: IProps) {
     (idx: number) => {
       changeVolume(idx);
     },
-    [activeVolume, volumes.length],
+    [activeVolume],
   );
 
   return (
-    <section
-      className="recent-articles-section"
+    <Section
       onMouseEnter={() => {
         setIsHovered(true);
       }}
@@ -71,7 +78,7 @@ function RecentArticlesSection({ volumes }: IProps) {
       }}
       aria-label="Artículos más recientes"
     >
-      <div className="recent-articles-section__head">
+      <Head>
         <VolumeBox className="custom-label-date-color">
           <LabelDate date={new Date(volume.date)} />
           <span className="separator">│</span>
@@ -79,21 +86,22 @@ function RecentArticlesSection({ volumes }: IProps) {
           <span className="separator">│</span>
           <LabelVol volumen="Nu." id={volume.issueNumber} />
         </VolumeBox>
-      </div>
+      </Head>
 
-      <div className="recent-articles-section__content">
-        <div className="recent-articles-section__image">
+      <Content>
+        <ImageContainer>
           <img
             src={typeof volume.image === 'string' ? volume.image : volume.image.src}
             alt={`Volumen ${String(volume.volumeNumber)}`}
           />
-        </div>
+        </ImageContainer>
 
-        <div className="recent-articles-section__articles">
-          <div className="recent-articles-section__label">
+        <ArticlesContainer>
+          <LabelWrapper>
             <LabelArticles variant="secondary">ARTÍCULOS MÁS RECIENTES</LabelArticles>
-          </div>
-          <div className={`recent-articles-section__fade${fade ? ' fade-out' : ' fade-in'}`}>
+          </LabelWrapper>
+
+          <FadeWrapper fade={fade}>
             {volume.articles.map((article) => (
               <RecentArticleCard
                 key={article.id}
@@ -105,15 +113,16 @@ function RecentArticlesSection({ volumes }: IProps) {
                 shareUrl={article.shareUrl}
               />
             ))}
-          </div>
+          </FadeWrapper>
+
           <DotsNavigation
             count={volumes.length}
             activeIndex={activeVolume}
             onDotClick={onDotClick}
           />
-        </div>
-      </div>
-    </section>
+        </ArticlesContainer>
+      </Content>
+    </Section>
   );
 }
 

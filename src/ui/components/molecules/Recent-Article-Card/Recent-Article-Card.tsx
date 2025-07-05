@@ -7,26 +7,37 @@ import PointsDivider from '../../atoms/points-divider/PointsDivider';
 import PdfIcon from '../../../../assets/icons/pdf.svg?raw';
 import LinkIcon from '../../../../assets/icons/share.svg?raw';
 import VariableButton from '../../atoms/variable-button/VariableButton';
-import './styles.scss';
 import type { IProps } from './IProps/IProps';
+import {
+  ArticleDescriptionWrapper,
+  ArticleTitleWrapper,
+  ArticleWrapper,
+  AuthorWrapper,
+  ButtonsWrapper,
+  DateWrapper,
+  Divider,
+} from './Recent-Article-Card.styles';
 
 function RecentArticleCard({ date, title, description, author, pdfUrl, shareUrl }: IProps) {
   return (
-    <div className="article">
-      <div className="date">
+    <ArticleWrapper>
+      <DateWrapper>
         <LabelDate date={date} />
-      </div>
-      <div className="article-title">
+      </DateWrapper>
+
+      <ArticleTitleWrapper>
         <ArticleTitle title={title} variant="default" />
-      </div>
-      <div className="article-description">
+      </ArticleTitleWrapper>
+
+      <ArticleDescriptionWrapper>
         <ArticleDescription article={description} variant="default" />
-      </div>
-      <div className="divider">
-        <div className="autor">
+      </ArticleDescriptionWrapper>
+
+      <Divider>
+        <AuthorWrapper>
           <AuthorLabel variant={author} />
-        </div>
-        <div className="buttons">
+        </AuthorWrapper>
+        <ButtonsWrapper>
           {pdfUrl && (
             <a href={pdfUrl} target="_blank" rel="noopener noreferrer" aria-label="Descargar PDF">
               <VariableButton icon={PdfIcon} />
@@ -42,12 +53,11 @@ function RecentArticleCard({ date, title, description, author, pdfUrl, shareUrl 
               <VariableButton icon={LinkIcon} />
             </a>
           )}
-        </div>
-      </div>
-      <div>
-        <PointsDivider color="tertiary" size="medium" variant="solid-line" />
-      </div>
-    </div>
+        </ButtonsWrapper>
+      </Divider>
+
+      <PointsDivider color="tertiary" size="medium" variant="solid-line" />
+    </ArticleWrapper>
   );
 }
 
