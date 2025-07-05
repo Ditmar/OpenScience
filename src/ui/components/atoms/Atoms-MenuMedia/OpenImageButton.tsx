@@ -11,8 +11,8 @@ export function OpenImageButton({ onClick }: OpenImageButtonProps) {
       variant="contained"
       onClick={onClick}
       sx={(theme) => ({
-        backgroundColor: theme.palette.common.white,
-        color: theme.palette.primary.dark,
+        backgroundColor: theme.customColors.white,
+        color: theme.customColors.primary,
         fontWeight: 'bold',
         borderRadius: '20px',
         px: 3,

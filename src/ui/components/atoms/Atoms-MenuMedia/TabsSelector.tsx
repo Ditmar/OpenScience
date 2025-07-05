@@ -15,7 +15,7 @@ export function TabsSelector({ value, onChange }: TabsSelectorProps) {
       variant="fullWidth"
       TabIndicatorProps={{ style: { display: 'none' } }}
       sx={(theme) => ({
-        backgroundColor: theme.palette.common.white,
+        backgroundColor: theme.customColors.white,
         overflow: 'hidden',
         minHeight: 32,
         boxShadow: theme.shadows[1],
@@ -30,18 +30,18 @@ export function TabsSelector({ value, onChange }: TabsSelectorProps) {
           paddingTop: 0.5,
           paddingBottom: 0.5,
           lineHeight: 1,
-          borderRight: `2.5px solid ${theme.palette.primary.dark}`,
-          color: theme.palette.primary.dark,
+          borderRight: `2.5px solid ${theme.customColors.primary}`,
+          color: theme.customColors.primary,
         },
         '& .MuiTab-root:last-of-type': {
           borderRight: 'none',
         },
         '& .Mui-selected': {
-          backgroundColor: theme.palette.common.white,
-          color: theme.palette.primary.dark,
+          backgroundColor: theme.customColors.white,
+          color: theme.customColors.primary,
         },
         '& .Mui-selected .MuiTab-wrapper': {
-          color: theme.palette.primary.dark,
+          color: theme.customColors.primary,
         },
       })}
     >
