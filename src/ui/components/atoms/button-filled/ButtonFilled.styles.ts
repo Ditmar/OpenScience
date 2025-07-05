@@ -32,7 +32,7 @@ const buttonColorDefaultMap = {
 
 const buttonColorExtraSoftMap = {
   white: theme.colors.neutral.graySoft[50],
-  black: null,
+  black: theme.colors.neutral.graySoft[50],
   primary: theme.colors.brand.primary[50],
   secondary: theme.colors.brand.secondary[50],
   tertiary: theme.colors.brand.tertiary[50],
@@ -43,7 +43,7 @@ const buttonColorExtraSoftMap = {
 
 const buttonColorSoftMap = {
   white: theme.colors.neutral.graySoft[100],
-  black: null,
+  black: theme.colors.neutral.graySoft[100],
   primary: theme.colors.brand.primary[100],
   secondary: theme.colors.brand.secondary[100],
   tertiary: theme.colors.brand.tertiary[100],
@@ -53,7 +53,7 @@ const buttonColorSoftMap = {
 } as const;
 
 const buttonColorDarkMap = {
-  white: null,
+  white: theme.colors.neutral.white[900],
   black: theme.colors.neutral.grayStrongDark[800],
   primary: theme.colors.brand.primary[600],
   secondary: theme.colors.brand.secondary[600],
@@ -83,6 +83,21 @@ function resolveButtonColor(
   }
 
   return buttonColorDarkMap[colorVariant];
+}
+
+function resolveTextButtonColor(
+  colorVariant: keyof typeof buttonColorDefaultMap,
+  dark?: boolean,
+): string | null {
+  if (colorVariant === 'white') {
+    return theme.colors.neutral.grayStrongDark[800];
+  }
+
+  if (!dark) {
+    return buttonColorDefaultMap[colorVariant];
+  }
+
+  return theme.colors.neutral.white[900];
 }
 
 export const buttonSx = (opts: {
@@ -146,7 +161,9 @@ export const buttonSx = (opts: {
       backgroundColor: !opts.dark
         ? buttonColorExtraSoftMap[colorKey]
         : buttonColorDarkMap[colorKey],
-      color: resolveButtonColor(colorKey, opts.dark),
+      color: !opts.dark
+        ? resolveButtonColor(colorKey, opts.dark)
+        : resolveTextButtonColor(colorKey, opts.dark),
       '&.Mui-disabled': {
         backgroundColor: theme.colors.neutral.grayStrongDark[25],
         borderColor: 'none',
@@ -162,8 +179,12 @@ export const buttonSx = (opts: {
         : buttonColorDarkMap[colorKey],
       borderWidth: '1px',
       borderStyle: 'solid',
-      borderColor: buttonColorSoftMap[colorKey],
-      color: resolveButtonColor(colorKey, opts.dark),
+      borderColor: !opts.dark
+        ? buttonColorSoftMap[colorKey]
+        : resolveButtonColor(colorKey, opts.dark),
+      color: !opts.dark
+        ? resolveButtonColor(colorKey, opts.dark)
+        : resolveTextButtonColor(colorKey, opts.dark),
       '&.Mui-disabled': {
         backgroundColor: theme.colors.neutral.grayStrongDark[25],
         borderColor: theme.colors.neutral.grayStrongDark[50],
@@ -174,11 +195,13 @@ export const buttonSx = (opts: {
   if (buttonVariant === 'outline') {
     return {
       ...baseStyles,
-      background: 'none',
+      backgroundColor: !opts.dark ? 'transparent' : buttonColorDarkMap[colorKey],
       borderWidth: '1px',
       borderStyle: 'solid',
-      borderColor: buttonColorDefaultMap[colorKey],
-      color: resolveButtonColor(colorKey, opts.dark),
+      borderColor: resolveButtonColor(colorKey, opts.dark),
+      color: !opts.dark
+        ? resolveButtonColor(colorKey, opts.dark)
+        : resolveTextButtonColor(colorKey, opts.dark),
       '&.Mui-disabled': {
         borderColor: theme.colors.neutral.grayStrongDark[50],
       },
