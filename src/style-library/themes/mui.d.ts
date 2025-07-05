@@ -7,7 +7,6 @@ declare module '@mui/material/styles' {
       text_light: string;
       stroke_primary_Soft: string;
     };
-
     pillpalette: {
       dark: string;
       dark_soft: string;
@@ -40,7 +39,9 @@ declare module '@mui/material/styles' {
       stroke_warning: string;
       stroke_warning_soft: string;
     };
-
+    tertiary: PaletteColor;
+    primary_alpha: PaletteColor;
+    quintary_main: PaletteColor;
   }
   interface PaletteOptions {
     olitemPalette?: {
@@ -80,6 +81,9 @@ declare module '@mui/material/styles' {
       stroke_warning?: string;
       stroke_warning_soft?: string;
     };
+    tertiary?: PaletteColorOptions;
+    primary_alpha?: PaletteColorOptions;
+    quintary_main?: PaletteColorOptions;
   }
 
   interface TypographyVariants {
@@ -87,6 +91,8 @@ declare module '@mui/material/styles' {
     textMd: React.CSSProperties;
     textLg: React.CSSProperties;
     textPoppins: React.CSSProperties;
+    textLato: React.CSSProperties;
+    body3: React.CSSProperties;
   }
 
   interface TypographyVariantsOptions {
@@ -94,5 +100,19 @@ declare module '@mui/material/styles' {
     textMd?: React.CSSProperties;
     textLg?: React.CSSProperties;
     textPoppins?: React.CSSProperties;
+    textLato?: React.CSSProperties;
+    body3?: React.CSSProperties;
+  }
+
+  interface TypeText {
+    tertiary: string;
+    primary_alpha: string;
+    quintary_main: string;
+  }
+
+  interface TypeTextOptions {
+    tertiary?: string;
+    primary_alpha?: string;
+    quintary_main?: string;
   }
 }
