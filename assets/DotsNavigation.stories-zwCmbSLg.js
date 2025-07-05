@@ -1,0 +1,4 @@
+import{j as n}from"./jsx-runtime-BlDnFLNC.js";import{r as c}from"./index-Cu9bd8lq.js";import{D as s}from"./DotsNavigation-DNA8od4y.js";import"./styled-CrBHPD2g.js";import"./defaultTheme-dzi_3K9V.js";import"./emotion-use-insertion-effect-with-fallbacks.browser.esm-B89909lT.js";import"./extends-CF3RwP-h.js";const l={title:"Atoms/DotsNavigation",component:s};function t(){const[r,i]=c.useState(0);return n.jsx(s,{count:5,activeIndex:r,onDotClick:i})}t.__docgenInfo={description:"",methods:[],displayName:"Default"};var o,e,a;t.parameters={...t.parameters,docs:{...(o=t.parameters)==null?void 0:o.docs,source:{originalSource:`function Default() {
+  const [active, setActive] = useState(0);
+  return <DotsNavigation count={5} activeIndex={active} onDotClick={setActive} />;
+}`,...(a=(e=t.parameters)==null?void 0:e.docs)==null?void 0:a.source}}};const x=["Default"];export{t as Default,x as __namedExportsOrder,l as default};
