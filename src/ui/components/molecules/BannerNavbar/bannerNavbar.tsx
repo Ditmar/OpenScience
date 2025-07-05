@@ -1,16 +1,25 @@
 import React, { useState, useCallback } from 'react';
-import { AppBar, Toolbar, IconButton, InputBase, Box, Button, Dialog, Slide } from '@mui/material';
-import { type SlideProps, useTheme } from '@mui/material';
+import { Dialog, Slide } from '@mui/material';
+import { type SlideProps } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
-import { bannerNavbarStyles } from './bannerNavbar.style';
+import {
+  AppBarStyled,
+  ToolbarStyled,
+  LogoContainer,
+  LogoImage,
+  Spacer,
+  SearchIconButton,
+  SearchFormContainer,
+  CloseIconButton,
+  SearchInput,
+  SubmitButton,
+} from './bannerNavbar.style';
 import type { IProps } from './types/IProps';
 
 function BannerNavbar({ textSearch, logo, onSearchSubmit }: IProps) {
   const [showSearch, setShowSearch] = useState(false);
   const [searchValue, setSearchValue] = useState('');
-  const theme = useTheme();
-  const styles = bannerNavbarStyles(theme);
 
   const handleSearchToggle = useCallback(() => {
     setShowSearch((prev) => !prev);
@@ -34,23 +43,18 @@ function BannerNavbar({ textSearch, logo, onSearchSubmit }: IProps) {
   }, []);
 
   return (
-    <AppBar position="static" sx={styles.appBar}>
-      <Toolbar disableGutters sx={styles.toolbar}>
-        <Box sx={styles.logoContainer}>
-          <img src={logo} alt="Logotipo" style={styles.logoImage} />
-        </Box>
+    <AppBarStyled position="static">
+      <ToolbarStyled disableGutters>
+        <LogoContainer>
+          <LogoImage src={logo} alt="Logotipo" />
+        </LogoContainer>
 
-        <Box sx={styles.spacer} />
+        <Spacer />
 
-        <IconButton
-          color="inherit"
-          aria-label="Abrir búsqueda"
-          onClick={handleSearchToggle}
-          sx={styles.searchButton}
-        >
+        <SearchIconButton color="inherit" aria-label="Abrir búsqueda" onClick={handleSearchToggle}>
           <SearchIcon fontSize="medium" />
-        </IconButton>
-      </Toolbar>
+        </SearchIconButton>
+      </ToolbarStyled>
 
       <Dialog
         fullScreen
@@ -58,38 +62,30 @@ function BannerNavbar({ textSearch, logo, onSearchSubmit }: IProps) {
         onClose={handleCloseSearch}
         TransitionComponent={Slide}
         TransitionProps={{ direction: 'down' } as Partial<SlideProps>}
-        PaperProps={{ sx: styles.dialogPaper }}
       >
-        <Box
-          component="form"
-          onSubmit={handleSearchSubmit}
-          data-testid="search-form"
-          sx={styles.searchForm}
-        >
-          <IconButton
+        <SearchFormContainer onSubmit={handleSearchSubmit} data-testid="search-form">
+          <CloseIconButton
             edge="end"
             color="inherit"
             onClick={handleCloseSearch}
             aria-label="Cerrar búsqueda"
-            sx={styles.closeButton}
           >
             <CloseIcon />
-          </IconButton>
+          </CloseIconButton>
 
-          <InputBase
+          <SearchInput
             autoFocus
             fullWidth
             value={searchValue}
             onChange={handleInputChange}
             placeholder="Buscar..."
-            sx={styles.searchInput}
           />
-          <Button type="submit" variant="contained" sx={styles.submitButton}>
+          <SubmitButton type="submit" variant="contained">
             {textSearch}
-          </Button>
-        </Box>
+          </SubmitButton>
+        </SearchFormContainer>
       </Dialog>
-    </AppBar>
+    </AppBarStyled>
   );
 }
 

@@ -1,15 +1,22 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { vi } from 'vitest';
+import { ThemeProvider } from '@mui/material/styles';
 import BannerNavbar from './bannerNavbar';
+import { lightTheme } from '../../../../style-library/themes/default';
 
 describe('BannerNavbar', () => {
   it('calls onSearchSubmit when the form is submitted with the search value', () => {
     const onSearchSubmitMock = vi.fn();
     const searchValue = 'prueba';
 
-    render(
-      <BannerNavbar onSearchSubmit={onSearchSubmitMock} logo="logo.png" textSearch="Buscar" />,
-    );
+    const renderWithTheme = () =>
+      render(
+        <ThemeProvider theme={lightTheme}>
+          <BannerNavbar onSearchSubmit={onSearchSubmitMock} logo="logo.png" textSearch="Buscar" />
+        </ThemeProvider>,
+      );
+
+    renderWithTheme();
 
     const openSearchButton = screen.getByRole('button', { name: /abrir búsqueda/i });
     fireEvent.click(openSearchButton);
