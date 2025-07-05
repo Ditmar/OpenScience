@@ -1,156 +1,188 @@
 @import '../../../../globals/variables';
 @import '../../../../globals/mixins';
-@import '../../../../globals/fonts';
-
-.icon {
-  align-items: center;
-  background-color: transparent;
-  border: none;
-  display: flex;
-  justify-content: center;
-}
-
-.section {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-}
 
 .footer {
   align-items: center;
+  background-color: $ads-color-light;
+  border: 0.0938rem solid $ads-color-light;
+  color: $ads-text-main;
   display: flex;
-  flex-direction: row;
-  gap: 0;
-  justify-content: center;
-  margin: 0 auto;
-  max-width: 800px;
-  width: 100%;
+  flex-direction: column;
+  padding: 0 2rem 1.5rem;
 
-  &.small {
-    padding: 0.5rem;
+  &--small {
+    min-height: 6rem;
+  }
 
-    .text {
-      color: inherit;
-      font-size: 10px;
-      margin-right: 0.15rem;
-    }
+  &--medium {
+    min-height: 10rem;
+  }
 
-    .divider {
-      align-self: center;
-      background-color: transparent;
-      height: 2.4rem;
-      margin: 0 0.4rem;
-      width: 0.12rem;
-    }
+  &--large {
+    min-height: 13rem;
+  }
 
-    .icon {
-      height: 1rem;
-      width: 1.4rem;
+  &__logo-section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 0;
+
+    svg,
+    img {
+      margin-bottom: 1rem;
+      width: 8rem;
+
+      @include respond-to('small-mobile') {
+        width: 3.5rem;
+      }
+
+      @include respond-to('small') {
+        width: 4.5rem;
+      }
+
+      @include respond-to('medium') {
+        width: 6rem;
+      }
+
+      @include respond-to('large') {
+        width: 8rem;
+      }
+
+      @include respond-to('extra-large') {
+        width: 10rem;
+      }
     }
   }
 
-  &.medium {
-    padding: 1rem;
+  &__variables {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 37.5rem;
+    position: relative;
+  }
 
-    .text {
-      color: inherit;
-      font-size: 12px;
-      margin-right: 0.25rem;
-    }
+  &__section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 40%;
 
-    .divider {
-      align-self: center;
-      background-color: transparent;
-      height: 3rem;
-      margin: 0 0.6rem;
-      width: 0.15rem;
-    }
-
-    .icon {
-      height: 1.3rem;
-      width: 1.8rem;
+    &--left,
+    &--right {
+      flex: none;
     }
   }
 
-  &.large {
-    padding: 1.5rem;
-
-    .text {
-      color: inherit;
-      font-size: 14px;
-      margin-right: 0.35rem;
-    }
-
-    .divider {
-      align-self: center;
-      background-color: transparent;
-      height: 4rem;
-      margin: 0 0.8rem;
-      width: 0.2rem;
-    }
-
-    .icon {
-      height: 2rem;
-      width: 2.8rem;
-    }
+  &__section1 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 0.4rem;
   }
-}
 
-@media (min-width >= 768px) {
-  .footer.small {
-    .text {
-      font-size: 11px;
+  &__label {
+    color: $ads-text-main;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include respond-to('small-mobile') {
+      font-size: 0.75rem;
     }
 
-    .divider {
-      align-self: center;
-      background-color: transparent;
-      height: 2.8rem;
-      margin: 0 0.45rem;
-      width: 0.14rem;
+    @include respond-to('small') {
+      font-size: 0.9rem;
     }
 
-    .icon {
-      height: 1.2rem;
-      width: 1.6rem;
+    @include respond-to('medium') {
+      font-size: 1.2rem;
+    }
+
+    @include respond-to('large') {
+      font-size: 1.4rem;
+    }
+
+    @include respond-to('extra-large') {
+      font-size: 1.6rem;
     }
   }
 
-  .footer.medium {
-    .text {
-      font-size: 13px;
+  &__text {
+    color: $ads-text-main;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.0625rem;
+    text-align: center;
+
+    &--shift-left {
+      margin-right: 0;
     }
 
-    .divider {
-      align-self: center;
-      background-color: transparent;
-      height: 3.3rem;
-      margin: 0 0.65rem;
-      width: 0.18rem;
+    @include respond-to('small-mobile') {
+      font-size: 0.6rem;
     }
 
-    .icon {
-      height: 1.6rem;
-      width: 2.2rem;
+    @include respond-to('small') {
+      font-size: 0.85rem;
+    }
+
+    @include respond-to('medium') {
+      font-size: 1.1rem;
+    }
+
+    @include respond-to('large') {
+      font-size: 1.25rem;
+    }
+
+    @include respond-to('extra-large') {
+      font-size: 1.4rem;
     }
   }
 
-  .footer.large {
-    .text {
-      font-size: 16px;
+  &__divider {
+    display: none;
+  }
+
+  &__vertical-line::before {
+    background: #1b3b3a;
+    content: '';
+    display: block;
+    gap: 2rem;
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 0.25rem;
+  }
+
+  @include respond-to('small') {
+    &__variables {
+      flex-direction: row;
+      gap: 0.8rem;
     }
 
-    .divider {
-      align-self: center;
-      background-color: transparent;
-      height: 4.8rem;
-      margin: 0 0.85rem;
-      width: 0.25rem;
+    &__section {
+      align-items: center;
+      width: 45%;
     }
 
-    .icon {
-      height: 2.3rem;
-      width: 3.2rem;
+    &__section1 {
+      align-items: flex-start;
     }
+  }
+
+  &__location {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 }
