@@ -1,0 +1,41 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`InputLabelText Component > matches snapshot disabled 1`] = `
+<div>
+  <p
+    class="MuiTypography-root MuiTypography-body1 css-1b4s42d-MuiTypography-root"
+  >
+    Input Label
+  </p>
+</div>
+`;
+
+exports[`InputLabelText Component > matches snapshot helper 1`] = `
+<div>
+  <p
+    class="MuiTypography-root MuiTypography-body1 css-9lmazj-MuiTypography-root"
+  >
+    Input Label
+  </p>
+</div>
+`;
+
+exports[`InputLabelText Component > matches snapshot with error 1`] = `
+<div>
+  <p
+    class="MuiTypography-root MuiTypography-body1 css-ek0aq9-MuiTypography-root"
+  >
+    Input Label
+  </p>
+</div>
+`;
+
+exports[`InputLabelText Component > renders disabled state 1`] = `
+<div>
+  <p
+    class="MuiTypography-root MuiTypography-body1 css-1b4s42d-MuiTypography-root"
+  >
+    Input Label
+  </p>
+</div>
+`;

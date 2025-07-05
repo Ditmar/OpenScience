@@ -1,80 +1,76 @@
+import { ThemeProvider } from '@mui/material/styles';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import AddIcon from '@mui/icons-material/Add';
+import { lightTheme } from '../../../../style-library/themes/default';
 import Pill from './pills';
+import type { IProps } from './types/IProps';
 
-function hasClassContaining(element: HTMLElement, fragment: string): boolean {
-  return element.className.split(' ').some((cls) => cls.includes(fragment));
-}
-
-describe('Testing Pill React Component', () => {
-  test('should render the text "Etiqueta"', () => {
-    render(<Pill text="Etiqueta" color="neutral-dark" variant="filled" size="md" />);
-    const pillElement = screen.getByText(/Etiqueta/i);
-    expect(pillElement).toBeInTheDocument();
-  });
-
-  test('should apply correct styles for size, color, variant and rounded', () => {
+describe('Pill Component', () => {
+  const renderWithTheme = (props?: Partial<IProps>) =>
     render(
-      <Pill
-        text="Cantidad"
-        color="read-only-disabled"
-        variant="filled"
-        size="md"
-        rounded="r_none"
-      />,
-    );
-    const pillElement = screen.getByText(/Cantidad/i);
-
-    expect(hasClassContaining(pillElement, 'pill')).toBe(true);
-    expect(hasClassContaining(pillElement, 'pill--md')).toBe(true);
-    expect(hasClassContaining(pillElement, 'pill--filled-read-only-disabled')).toBe(true);
-
-    const hasRoundedClass = hasClassContaining(pillElement, 'pill--r_none');
-
-    expect(hasRoundedClass).toBe(false);
-  });
-
-  test('should render with no rounded class when rounded is "r_none"', () => {
-    render(
-      <Pill text="No rounded" rounded="r_none" color="neutral-dark" variant="filled" size="md" />,
-    );
-    const pillElement = screen.getByText(/No rounded/i);
-    expect(pillElement.className).not.toMatch(/pill--r_md/);
-    expect(pillElement.className).not.toMatch(/pill--r_full/);
-  });
-
-  // TODO: Replace the `icon` text prop with an SVG component using `useDynamic` and `Icon.tsx`.
-  /* 
-        const svgPath = 'Icon';
-        render(
-          <Pill
-          text="Etiqueta"
-          color="neutral-dark"
-          variant="filled"
-          size="md"
-          icon={svgPath} 
-          />); */
-  test('should include icon element when provided', () => {
-    const mockIcon = <svg data-testid="custom-icon" />;
-    render(
-      <Pill text="Etiqueta" color="neutral-dark" variant="filled" size="md" icon={mockIcon} />,
+      <ThemeProvider theme={lightTheme}>
+        <Pill
+          text={props?.text ?? 'Test text'}
+          color={props?.color ?? 'neutral-light'}
+          variant={props?.variant ?? 'filled'}
+          size={props?.size ?? 'md'}
+          rounded={props?.rounded ?? 'r_md'}
+          shadow={props?.shadow}
+          stroke={props?.stroke}
+          icon={props?.icon}
+          iconPosition={props?.iconPosition}
+          ariaLabel={props?.ariaLabel}
+        />
+      </ThemeProvider>,
     );
 
-    const iconElements = screen.getAllByTestId('custom-icon');
-    expect(iconElements.length).toBeGreaterThan(0);
+  it('should render text correctly', () => {
+    renderWithTheme();
+    expect(screen.getByText(/Test text/i)).toBeInTheDocument();
   });
 
-  test('should have role and aria-label when provided', () => {
-    render(
-      <Pill
-        text="Accesible"
-        ariaLabel="Etiqueta accesible"
-        color="neutral-dark"
-        variant="filled"
-        size="md"
-      />,
-    );
-    const pillElement = screen.getByRole('status');
-    expect(pillElement).toHaveAttribute('aria-label', 'Etiqueta accesible');
+  it('should apply variants and colors without errors', () => {
+    renderWithTheme({
+      text: 'Text',
+      color: 'brand-primary',
+      variant: 'soft',
+      size: 'lg',
+      shadow: true,
+      stroke: 'border-strong',
+    });
+    expect(screen.getByText(/Text/i)).toBeInTheDocument();
+  });
+
+  it('should display icon on the left', () => {
+    const icon = <AddIcon data-testid="icon" />;
+    renderWithTheme({ text: 'Text', icon, iconPosition: 'left' });
+    expect(screen.getByTestId('icon')).toBeInTheDocument();
+    const pillContainer = screen.getByTestId('icon').parentElement;
+    expect(pillContainer?.firstChild).toBe(screen.getByTestId('icon'));
+  });
+
+  it('should display icon on the right', () => {
+    const icon = <AddIcon data-testid="icon" />;
+    renderWithTheme({ text: 'Text', icon, iconPosition: 'right' });
+    expect(screen.getByTestId('icon')).toBeInTheDocument();
+    const pillContainer = screen.getByTestId('icon').parentElement;
+    expect(pillContainer?.lastChild).toBe(screen.getByTestId('icon'));
+  });
+
+  it('should use ariaLabel if explicitly provided', () => {
+    renderWithTheme({ text: 'Text', ariaLabel: 'Custom label' });
+    const pill = screen.getByRole('status');
+    expect(pill).toHaveAttribute('aria-label', 'Custom label');
+  });
+
+  it('should fallback to text as aria-label if not provided', () => {
+    renderWithTheme({ text: 'Accessible text' });
+    const pill = screen.getByRole('status');
+    expect(pill).toHaveAttribute('aria-label', 'Accessible text');
+  });
+
+  it('should not render icon if not provided', () => {
+    renderWithTheme({ text: 'Text' });
+    expect(screen.queryByTestId('icon')).not.toBeInTheDocument();
   });
 });

@@ -1,8 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
 import Pill from './pills';
 
-const meta = {
-  title: 'ui/components/atoms/pills',
+type TStory = StoryObj<typeof Pill>;
+
+const meta: Meta<typeof Pill> = {
+  title: 'library/component/atoms/Pill',
   component: Pill,
   argTypes: {
     color: {
@@ -21,7 +24,7 @@ const meta = {
     },
     variant: {
       control: 'select',
-      options: ['filled', 'outline', 'soft'],
+      options: ['filled', 'soft', 'outline'],
     },
     size: {
       control: 'select',
@@ -31,117 +34,69 @@ const meta = {
       control: 'select',
       options: ['r_none', 'r_md', 'r_full'],
     },
-    shadow: {
-      control: 'boolean',
-    },
     stroke: {
-      control: 'radio',
-      options: ['border-soft', 'border-strong'],
+      control: 'select',
+      options: [undefined, 'border-soft', 'border-strong'],
     },
-    icon: {
-      control: false,
+    iconPosition: {
+      control: 'select',
+      options: [undefined, 'left', 'right'],
     },
+    shadow: { control: 'boolean' },
   },
-} as Meta<typeof Pill>;
+};
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
-
-export const PillDark: Story = {
+export const Default: TStory = {
   args: {
     text: '100',
     color: 'neutral-dark',
     variant: 'filled',
-    size: 'sm',
+    size: 'md',
     rounded: 'r_none',
+    shadow: false,
   },
 };
-
-export const PillLight: Story = {
+export const LightWithBorder: TStory = {
   args: {
     text: '100',
     color: 'neutral-light',
-    variant: 'outline',
-    size: 'sm',
-    rounded: 'r_none',
-    icon: undefined,
-  },
-};
-
-export const PillPrimary: Story = {
-  args: {
-    text: '100',
-    color: 'brand-primary',
     variant: 'filled',
-    size: 'sm',
-    rounded: 'r_none',
-    icon: undefined,
+    size: 'md',
+    rounded: 'r_md',
+    shadow: false,
+    stroke: 'border-strong',
   },
 };
 
-export const PillSecondary: Story = {
-  args: {
-    text: '100',
-    color: 'brand-secondary',
-    variant: 'filled',
-    size: 'sm',
-    rounded: 'r_none',
-    icon: undefined,
-  },
-};
-
-export const PillTertiary: Story = {
-  args: {
-    text: '100',
-    color: 'brand-tertiary',
-    variant: 'filled',
-    size: 'sm',
-    rounded: 'r_none',
-    icon: undefined,
-  },
-};
-
-export const PillPositive: Story = {
+export const PositiveSoft: TStory = {
   args: {
     text: '100',
     color: 'feedback-positive',
-    variant: 'filled',
-    size: 'sm',
-    rounded: 'r_none',
-    icon: undefined,
+    variant: 'soft',
+    size: 'md',
+    rounded: 'r_md',
+    shadow: false,
   },
 };
 
-export const PillNegative: Story = {
-  args: {
-    text: '100',
-    color: 'feedback-negative',
-    variant: 'filled',
-    size: 'sm',
-    rounded: 'r_none',
-    icon: undefined,
-  },
-};
-
-export const PillWarning: Story = {
-  args: {
-    text: '100',
-    color: 'feedback-warning',
-    variant: 'filled',
-    size: 'sm',
-    rounded: 'r_none',
-    icon: undefined,
-  },
-};
-
-export const PillDisabled: Story = {
+export const Disabled: TStory = {
   args: {
     text: '100',
     color: 'read-only-disabled',
     variant: 'filled',
-    size: 'sm',
-    rounded: 'r_none',
-    icon: undefined,
+    size: 'md',
+    rounded: 'r_md',
+    shadow: false,
+  },
+};
+export const ConIcono: TStory = {
+  args: {
+    text: '100',
+    color: 'brand-secondary',
+    variant: 'filled',
+    icon: <BookmarkIcon fontSize="small" />,
+    iconPosition: 'left',
   },
 };
