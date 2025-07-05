@@ -9,7 +9,7 @@ export const StyledHamburgerButton = styled(IconButton)(({ theme }) => ({
   height: 41,
   padding: 0,
   '& svg': {
-    fontSize: 41,
+    fontSize: 43,
     width: 41,
     height: 41,
     color: theme.palette.common.white,
