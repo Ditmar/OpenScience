@@ -25,6 +25,12 @@ export const darkTheme = createTheme({
       primary: tokens.colors.main,
       secondary: tokens.colors.text_input,
     },
+    olitemPalette: {
+      stroke_Primary: tokens.colors.stroke_primary,
+      text_light: tokens.colors.main,
+      stroke_primary_Soft: tokens.colors.stroke_primary_soft,
+      brandBlue: '#0793BF',
+    },
   },
   customColors: {
     primary: '#235347',

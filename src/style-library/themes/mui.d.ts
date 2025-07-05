@@ -6,6 +6,7 @@ declare module '@mui/material/styles' {
       stroke_Primary: string;
       text_light: string;
       stroke_primary_Soft: string;
+      brandBlue?: string;
     };
 
     pillpalette: {
@@ -47,6 +48,7 @@ declare module '@mui/material/styles' {
       stroke_Primary: string;
       text_light: string;
       stroke_primary_Soft: string;
+      brandBlue?: string; 
     };
     pillpalette?: {
       dark?: string;

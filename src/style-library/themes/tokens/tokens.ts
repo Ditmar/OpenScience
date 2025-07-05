@@ -26,6 +26,7 @@ const tokens: DesignTokens = {
     extra_large: '1280px',
   },
   colors: {
+    blue_main: '#0793BF',
     size_xs: '1.5rem',
     size_sm: '2rem',
     size_md: '2.5rem',
