@@ -40,9 +40,7 @@ export function TabsSelector({ value, onChange }: TabsSelectorProps) {
           backgroundColor: theme.customColors.white,
           color: theme.customColors.primary,
         },
-        '& .Mui-selected .MuiTab-wrapper': {
-          color: theme.customColors.primary,
-        },
+        '& .Mui-selected .MuiTab-wrapper': {},
       })}
     >
       <Tab label="Figura" />
