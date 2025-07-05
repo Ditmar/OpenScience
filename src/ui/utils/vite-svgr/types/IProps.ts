@@ -43,4 +43,5 @@ export type IconName =
   | 'fi-rr-clock-five'
   | 'whatsapp'
   | 'circle-quarters'
-  | 'Close-URL';
+  | 'Close-URL'
+  | 'link';

@@ -63,6 +63,11 @@ export const lightTheme = createTheme({
       stroke_warning_soft: tokens.colors.stroke_warning_soft,
     },
   },
+  customColors: {
+    primary: '#235347',
+    secondary: '#03a9f4',
+    white: tokens.colors.main,
+  },
   typography: {
     fontFamily: '"Lato", "Roboto", "Montserrat", "Poppins-Regular", sans-serif',
     fontSize: 16,
