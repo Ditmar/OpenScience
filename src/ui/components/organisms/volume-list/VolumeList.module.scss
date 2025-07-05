@@ -1,0 +1,14 @@
+.header {
+  padding: 10px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+
+  > * {
+    height: auto;
+  }
+}
