@@ -1,12 +1,11 @@
 // badge.test.tsx
-import { render, screen } from '@testing-library/react';
+import { renderWithTheme, screen } from '@testing/renderWithTheme';
 import { describe, it, expect } from 'vitest';
 import Badge from './badge.tsx';
 
 describe('Badge Component', () => {
-  // This test uses PillRoot, which requires ThemeProvider. Temporarily skipped
-  it.skip('renders with default props', () => {
-    render(
+  it('renders with default props', () => {
+    renderWithTheme(
       <Badge variant="filled" color="neutral" shape="default" size="md">
         Badge Text
       </Badge>,
@@ -14,9 +13,8 @@ describe('Badge Component', () => {
     expect(screen.getByText('Badge Text')).toBeInTheDocument();
   });
 
-  // This test uses PillRoot, which requires ThemeProvider. Temporarily skipped
-  it.skip('renders with icon', () => {
-    render(
+  it('renders with icon', () => {
+    renderWithTheme(
       <Badge
         variant="filled"
         color="neutral"
@@ -46,9 +44,8 @@ describe('Badge Component', () => {
     expect(screen.getByTestId('icon')).toBeInTheDocument();
   });
 
-  // This test uses PillRoot, which requires ThemeProvider. Temporarily skipped
-  it.skip('renders with image', () => {
-    render(
+  it('renders with image', () => {
+    renderWithTheme(
       <Badge
         variant="filled"
         color="neutral"
@@ -62,9 +59,8 @@ describe('Badge Component', () => {
     expect(screen.getByAltText(/avatar/i)).toBeInTheDocument();
   });
 
-  // This test uses PillRoot, which requires ThemeProvider. Temporarily skipped
-  it.skip('renders with rounded shape', () => {
-    render(
+  it('renders with rounded shape', () => {
+    renderWithTheme(
       <Badge variant="filled" color="neutral" shape="rounded" size="md">
         Badge Text
       </Badge>,
@@ -73,9 +69,8 @@ describe('Badge Component', () => {
     expect(badge?.classList.contains('badge--rounded')).toBe(true);
   });
 
-  // This test uses PillRoot, which requires ThemeProvider. Temporarily skipped
-  it.skip('renders with left and right counters', () => {
-    render(
+  it('renders with left and right counters', () => {
+    renderWithTheme(
       <Badge
         variant="filled"
         color="neutral"
