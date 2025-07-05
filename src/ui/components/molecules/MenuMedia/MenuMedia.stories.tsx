@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeProvider } from '@mui/material/styles';
 import { MenuMedia } from './MenuMedia';
 import Rectangle10 from '../../atoms/hero-banner/__mock__/imgs/Rectangle10.png';
-import theme from '../../../../theme/theme';
+import { lightTheme } from '../../../../style-library/themes/default';
 
 const descriptions = [
   'The recent 2022 international outbreak has caused an unprecedented transmission of the virus mainly in men ' +
@@ -18,7 +18,7 @@ const meta: Meta<typeof MenuMedia> = {
   component: MenuMedia,
   decorators: [
     (Story) => (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={lightTheme}>
         <Story />
       </ThemeProvider>
     ),

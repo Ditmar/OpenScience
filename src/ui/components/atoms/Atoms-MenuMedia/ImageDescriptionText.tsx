@@ -12,7 +12,7 @@ export function ImageDescriptionText({ text }: ImageDescriptionTextProps) {
       sx={(theme) => ({
         mt: 2,
         textAlign: 'justify',
-        color: theme.palette.common.white,
+        color: theme.customColors.white,
       })}
     >
       {text}
