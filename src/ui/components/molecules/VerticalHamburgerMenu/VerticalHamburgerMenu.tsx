@@ -1,44 +1,50 @@
 import React, { useState } from 'react';
-import MenuIcon from '@mui/icons-material/Menu';
-import { Box, Collapse, List, ListItemButton, styled } from '@mui/material';
+import { Collapse } from '@mui/material';
 import type { VerticalHamburgerMenuProps } from './types/IProps';
-import IconPdf from '../../atoms/IconPdf/IconPdf';
-import IconLink from '../../atoms/IconLink/IconLink';
-import IconImage from '../../atoms/IconImage/IconImage';
-import IconReference from '../../atoms/IconReference/IconReference';
+import Icon from '../../atoms/icons/Icons';
+import media from '../../../../assets/icons/media.svg?raw';
+import pdf from '../../../../assets/icons/pdf.svg?raw';
+import link from '../../../../assets/icons/share.svg?raw';
+import reference from '../../../../assets/icons/reference1.svg?raw';
+import {
+  MenuContainer,
+  StyledListItemButton,
+  StyledList,
+  StyledMenuIcon,
+} from './VerticalHamburgerMenu.styles';
 
-const MenuContainer = styled(Box)(({ theme }) => ({
-  position: 'fixed',
-  top: theme.spacing(2),
-  zIndex: theme.zIndex.appBar,
-  display: 'flex',
-  flexDirection: 'column',
-  backgroundColor: '#02322C',
-  borderRadius: 0,
-  boxShadow: theme.shadows[2],
-  overflow: 'hidden',
-  transition: 'all 0.3s ease',
-  '&:hover': {
-    boxShadow: theme.shadows[4],
+const icons = [
+  {
+    name: 'PDF',
+    icon: pdf,
+    alt: 'PDF icon',
+    iconWidth: 32,
+    iconHeight: 35,
   },
-}));
+  {
+    name: 'Link',
+    icon: link,
+    alt: 'Link icon',
+    iconWidth: 32,
+    iconHeight: 33,
+  },
+  {
+    name: 'Image',
+    icon: media,
+    alt: 'Media icon',
+    iconWidth: 40,
+    iconHeight: 24,
+  },
+  {
+    name: 'Reference',
+    icon: reference,
+    alt: 'Reference icon',
+    iconWidth: 32,
+    iconHeight: 35,
+  },
+];
 
-const StyledListItemButton = styled(ListItemButton)(({ theme }) => ({
-  width: 56,
-  height: 56,
-  padding: theme.spacing(1),
-  justifyContent: 'center',
-  '&:hover': {
-    backgroundColor: theme.palette.action.hover,
-    transform: 'scale(1.1)',
-    transition: 'transform 0.2s ease',
-  },
-  '&:active': {
-    transform: 'scale(0.95)',
-  },
-}));
-
-function VerticalHamburgerMenu({ position = 'left', sx = {} }: VerticalHamburgerMenuProps) {
+function VerticalHamburgerMenu({ position = 'left' }: VerticalHamburgerMenuProps) {
   const [open, setOpen] = useState(false);
 
   const handleToggle = () => {
@@ -51,58 +57,34 @@ function VerticalHamburgerMenu({ position = 'left', sx = {} }: VerticalHamburger
   };
 
   return (
-    <MenuContainer
-      sx={{
-        [position]: 16,
-        ...sx,
-      }}
-    >
-      <StyledListItemButton
-        onClick={handleToggle}
-        aria-label="Toggle menu"
-        sx={{ backgroundColor: '#02322C' }}
-      >
-        <MenuIcon style={{ color: '#FFFFFF', fontSize: '50px' }} />
+    <MenuContainer side={position}>
+      <StyledListItemButton onClick={handleToggle} aria-label="Toggle menu">
+        <StyledMenuIcon />
       </StyledListItemButton>
 
       <Collapse in={open} timeout="auto" unmountOnExit>
-        <List role="list" component="div" disablePadding sx={{ backgroundColor: '#0793BF' }}>
-          <StyledListItemButton
-            onClick={() => {
-              handleIconClick('PDF');
-            }}
-            aria-label="PDF"
-          >
-            <IconPdf background="transparent" />
-          </StyledListItemButton>
-
-          <StyledListItemButton
-            onClick={() => {
-              handleIconClick('Link');
-            }}
-            aria-label="Link"
-          >
-            <IconLink background="transparent" />
-          </StyledListItemButton>
-
-          <StyledListItemButton
-            onClick={() => {
-              handleIconClick('Image');
-            }}
-            aria-label="Image"
-          >
-            <IconImage background="transparent" />
-          </StyledListItemButton>
-
-          <StyledListItemButton
-            onClick={() => {
-              handleIconClick('Reference');
-            }}
-            aria-label="Reference"
-          >
-            <IconReference background="transparent" />
-          </StyledListItemButton>
-        </List>
+        <StyledList role="list" as="div" disablePadding>
+          {icons.map(({ name, icon, alt, iconWidth, iconHeight }) => {
+            return (
+              <StyledListItemButton
+                key={name}
+                onClick={() => {
+                  handleIconClick(name);
+                }}
+                aria-label={name}
+              >
+                <Icon
+                  icon={icon}
+                  background="transparent"
+                  containerSize={56}
+                  iconWidth={iconWidth}
+                  iconHeight={iconHeight}
+                  alt={alt}
+                />
+              </StyledListItemButton>
+            );
+          })}
+        </StyledList>
       </Collapse>
     </MenuContainer>
   );

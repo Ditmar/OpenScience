@@ -85,7 +85,12 @@ declare module '@mui/material/styles' {
     primary_alpha?: PaletteColorOptions;
     quintary_main?: PaletteColorOptions;
   }
-
+  interface Palette {
+    customBlue: Palette['primary'];
+  }
+  interface PaletteOptions {
+    customBlue?: PaletteOptions['primary'];
+  }
   interface TypographyVariants {
     textSm: React.CSSProperties;
     textMd: React.CSSProperties;

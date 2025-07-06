@@ -68,6 +68,9 @@ export const lightTheme = createTheme({
       stroke_warning: tokens.colors.stroke_warning,
       stroke_warning_soft: tokens.colors.stroke_warning_soft,
     },
+    customBlue: {
+      main: '#0793BF',
+    },
   },
   customColors: {
     primary: '#235347',

@@ -1,16 +1,21 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
+import { ThemeProvider } from '@mui/material/styles';
+import { lightTheme } from '../../../../style-library/themes/default';
 import VerticalHamburgerMenu from './VerticalHamburgerMenu';
+
+function renderWithTheme(ui: React.ReactElement) {
+  return render(<ThemeProvider theme={lightTheme}>{ui}</ThemeProvider>);
+}
 
 describe('VerticalHamburgerMenu', () => {
   it('renders without crashing', () => {
-    render(<VerticalHamburgerMenu />);
+    renderWithTheme(<VerticalHamburgerMenu />);
     expect(screen.getByLabelText('Toggle menu')).toBeInTheDocument();
   });
 
   it('toggles menu when clicked', async () => {
-    render(<VerticalHamburgerMenu />);
+    renderWithTheme(<VerticalHamburgerMenu />);
     const menuButton = screen.getByLabelText('Toggle menu');
 
     expect(screen.queryByLabelText('PDF')).not.toBeInTheDocument();
@@ -25,7 +30,7 @@ describe('VerticalHamburgerMenu', () => {
   });
 
   it('displays all icons when expanded', async () => {
-    render(<VerticalHamburgerMenu />);
+    renderWithTheme(<VerticalHamburgerMenu />);
     fireEvent.click(screen.getByLabelText('Toggle menu'));
 
     expect(await screen.findByLabelText('PDF')).toBeInTheDocument();
@@ -35,19 +40,19 @@ describe('VerticalHamburgerMenu', () => {
   });
 
   it('applies position correctly', () => {
-    const { container } = render(<VerticalHamburgerMenu position="right" />);
+    const { container } = renderWithTheme(<VerticalHamburgerMenu position="right" />);
     expect(container.firstChild).toHaveStyle('right: 16px');
   });
 
   it('has correct background colors', async () => {
-    const { container } = render(<VerticalHamburgerMenu />);
+    const { container } = renderWithTheme(<VerticalHamburgerMenu />);
 
     const menuContainer = container.firstChild as HTMLElement;
-    expect(menuContainer).toHaveStyle('background-color: #02322C');
+    expect(menuContainer).toHaveStyle(`background-color: ${lightTheme.palette.text.primary}`);
 
     fireEvent.click(screen.getByLabelText('Toggle menu'));
 
     const expandedList = await screen.findByRole('list');
-    expect(expandedList).toHaveStyle('background-color: #0793BF');
+    expect(expandedList).toHaveStyle(`background-color: ${lightTheme.palette.customBlue.main}`);
   });
 });
