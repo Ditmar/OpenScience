@@ -1,3 +1,6 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+
 .share-container {
   align-items: flex-start;
   background-color: $ads-share-main;
