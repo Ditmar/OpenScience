@@ -59,7 +59,7 @@ function WelcomeScreen() {
                 px: { xs: 0, sm: 2 },
               }}
             >
-              <InitialButton onClick={handleButtonClick} />
+              <InitialButton label="INGRESAR" onClick={handleButtonClick} fullWidth />
             </Box>
           </Stack>
         </Box>

@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import StartButton from './initial-button';
-import type InitialButton from './initial-button';
 
-const meta: Meta<typeof InitialButton> = {
+const meta: Meta<typeof StartButton> = {
   title: 'ui/components/atoms/initial-button',
   component: StartButton,
   args: {
@@ -12,7 +11,7 @@ const meta: Meta<typeof InitialButton> = {
 
 export default meta;
 
-type Story = StoryObj<typeof InitialButton>;
+type Story = StoryObj<typeof StartButton>;
 
 export const Default: Story = {
   args: {
@@ -26,7 +25,7 @@ export const ModelOne: Story = {
   },
 };
 
-export const ModelThwo: Story = {
+export const ModelTwo: Story = {
   args: {
     label: 'INGRESAR',
     onClick: () => {},

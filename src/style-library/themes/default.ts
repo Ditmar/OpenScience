@@ -17,6 +17,9 @@ export const lightTheme = createTheme({
     warning: {
       main: tokens.colors.warning_main,
     },
+    info: {
+      main: tokens.colors.tertiary_main,
+    },
     background: {
       default: tokens.colors.background_main,
       paper: tokens.colors.main,
