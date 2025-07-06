@@ -49,6 +49,63 @@ export const SocialIconButton = styled(IconButton)<{
   const buttonColor = backgroundColor ?? getSocialColor();
   const socialColor = getSocialColor();
 
+  if (socialType === 'telegram') {
+    return {
+      width: sizeMap[size],
+      height: sizeMap[size],
+      backgroundColor: '#fff',
+      color: buttonColor,
+      margin: theme.spacing(0.25),
+      border: 'none',
+      borderRadius: '50%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      boxShadow: theme.shadows[2],
+      transition: theme.transitions.create(
+        ['transform', 'box-shadow', 'background-color', 'color'],
+        {
+          duration: theme.transitions.duration.short,
+        },
+      ),
+
+      '& .MuiSvgIcon-root': {
+        fontSize: iconSizeMap[size],
+        color: buttonColor,
+        transition: theme.transitions.create(['color'], {
+          duration: theme.transitions.duration.short,
+        }),
+      },
+
+      '&:hover': {
+        backgroundColor: '#fff',
+        transform: 'scale(1.1)',
+        boxShadow: theme.shadows[6],
+        '& .MuiSvgIcon-root': {
+          color: socialColor,
+        },
+      },
+
+      '&:focus': {
+        backgroundColor: '#fff',
+        outline: `2px solid ${socialColor}`,
+        outlineOffset: '2px',
+        '& .MuiSvgIcon-root': {
+          color: socialColor,
+        },
+      },
+
+      '&:active': {
+        transform: 'scale(0.95)',
+      },
+
+      '&:focus-visible': {
+        outline: `3px solid ${socialColor}`,
+        outlineOffset: '2px',
+      },
+    };
+  }
+
   return {
     width: sizeMap[size],
     height: sizeMap[size],
@@ -72,7 +129,6 @@ export const SocialIconButton = styled(IconButton)<{
       backgroundColor: socialColor,
       transform: 'scale(1.1)',
       boxShadow: theme.shadows[6],
-
       '& .MuiSvgIcon-root': {
         color: 'white',
       },
@@ -82,7 +138,6 @@ export const SocialIconButton = styled(IconButton)<{
       backgroundColor: socialColor,
       outline: `2px solid white`,
       outlineOffset: '2px',
-
       '& .MuiSvgIcon-root': {
         color: 'white',
       },
