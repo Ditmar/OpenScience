@@ -53,7 +53,6 @@ function NavbarMenu({
               aria-label={typeof children === 'string' ? children : undefined}
               type="button"
             >
-              {/* eslint-disable-next-line react/no-danger */}
               <div className="icon-circle" dangerouslySetInnerHTML={{ __html: icon }} />
               <div className="label-container">
                 <span className="label">{children}</span>
@@ -73,7 +72,6 @@ function NavbarMenu({
                 }
                 type="button"
               >
-                {/* eslint-disable-next-line react/no-danger */}
                 <div
                   className="logout-icon"
                   dangerouslySetInnerHTML={{ __html: footerItem.icon }}
