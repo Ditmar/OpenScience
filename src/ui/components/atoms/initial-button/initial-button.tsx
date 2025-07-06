@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginIcon from '@mui/icons-material/Login';
 import type { MouseEventHandler } from 'react';
-import { InitialButtonRoot } from './initial-button.styled';
+import { InitialButtonRoot } from './initial-button.styles';
 
 export interface InitialButtonProps {
   label: string;
