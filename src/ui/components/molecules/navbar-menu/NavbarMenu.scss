@@ -1,7 +1,9 @@
 @import '../../../../globals/breakpoints';
 @import '../../../../globals/fonts';
 @import '../../../../globals/mixins';
+@import '../../../../globals/shadows';
 @import '../../../../globals/variables';
+
 
 div {
   border: none !important;
@@ -17,39 +19,35 @@ div {
   transition: background-color 0.3s ease;
   width: 60px;
 
-  svg * {
-    fill: $ads-quintary-main;
+  svg {
     height: 2rem;
-    transition: fill 0.3s ease;
     width: 2rem;
-  }
-}
 
-.navbar-wrapper--logout .logout-icon {
-  height: 30px;
-  width: 30px;
-
-  svg * {
-    color: $ads-color-main;
-    height: 30px !important;
-    transition: fill 0.3s ease;
-    width: 30px !important;
-  }
-
-  &:hover,
-  &:focus {
-    svg * {
-      color: $ads-quintary-main;
+    * {
+      fill: $ads-quintary-main;
+      transition: fill 0.3s ease;
     }
   }
 }
 
-.navbar-wrapper:hover .icon-circle,
-.navbar-wrapper:focus .icon-circle {
-  background-color: $ads-quintary-main;
+.navbar-wrapper--logout {
+  .logout-icon {
+    height: 30px;
+    width: 30px;
 
-  svg * {
-    fill: $ads-color-main;
+    svg * {
+      color: $ads-color-main;
+      height: 30px !important;
+      transition: fill 0.3s ease;
+      width: 30px !important;
+    }
+
+    &:focus-visible,
+    &:hover {
+      svg * {
+        color: $ads-quintary-main;
+      }
+    }
   }
 }
 
@@ -109,7 +107,7 @@ div {
   padding: 1rem 0;
   position: relative;
   width: 100%;
-  z-index: 1;
+  z-index: 5;
 }
 
 .navbar-menu__footer {
@@ -143,20 +141,63 @@ div {
   gap: 0.5rem;
   outline: none;
   padding: 0.5rem;
-  transition:
-    opacity 0.3s ease,
-    transform 0.2s ease;
-
-  &:hover,
-  &:focus {
-    opacity: 0.9;
-    transform: translateY(-3px);
-  }
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  user-select: none;
 
   &:active {
     box-shadow: none;
     opacity: 1;
     transform: translateY(0);
+  }
+
+  &:focus-visible,
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-3px);
+  }
+}
+
+.navbar-wrapper:hover .icon-circle,
+.navbar-wrapper:focus-visible .icon-circle {
+  background-color: $ads-quintary-main;
+
+  svg * {
+    fill: $ads-color-main;
+  }
+}
+
+.open-menu-button {
+  background-color: $ads-color-main;
+  border: none;
+  border-radius: 6px;
+  box-shadow: $ads-shadow-xl;
+  color: $ads-quintary-main;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  position: relative;
+  right: 1rem;
+  top: 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+
+  &:focus-visible,
+  &:hover {
+    background-color: $ads-color-main;
+    box-shadow: $ads-shadow-xxxl;
+    outline: none;
+  }
+}
+
+@media (width <= 414px) {
+  .icon-circle {
+    height: 2.5rem;
+    width: 2.5rem;
+
+    svg {
+      height: 1.25rem;
+      width: 1.25rem;
+    }
   }
 }
 
@@ -169,18 +210,6 @@ div {
     svg {
       height: 1rem;
       width: 1rem;
-    }
-  }
-}
-
-@media (width <= 414px) {
-  .icon-circle {
-    height: 2.5rem;
-    width: 2.5rem;
-
-    svg {
-      height: 1.25rem;
-      width: 1.25rem;
     }
   }
 }

@@ -1,7 +1,13 @@
-import { useState, useCallback } from 'react';
+import { useCallback } from 'react';
 import './NavbarMenu.scss';
 import HeroBanner from '../../atoms/hero-banner/HeroBanner';
-import type { IProps, NavbarItem } from './types/IProps';
+import type { IProps } from './types/IProps';
+
+interface NavbarMenuProps extends IProps {
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+}
 
 function NavbarMenu({
   items,
@@ -9,56 +15,77 @@ function NavbarMenu({
   backgroundImage,
   alt = 'Rectangle6',
   className = 'navbar-hero-banner',
-}: IProps) {
-  const [navItems] = useState<NavbarItem[]>(items);
-
+  onOpen,
+  onClose,
+  isOpen = true,
+}: NavbarMenuProps) {
   const handleClick = useCallback((onClick?: () => void) => {
     if (onClick) onClick();
   }, []);
 
+  const handleFooterClick = useCallback(() => {
+    handleClick(footerItem?.onClick);
+    onClose();
+  }, [footerItem, handleClick, onClose]);
+
   return (
-    <HeroBanner backgroundImage={backgroundImage} alt={alt} className={className}>
-      <nav className="navbar-menu" role="navigation" aria-label="Menú de navegación principal">
-        {navItems.map(({ children, icon, onClick }) => (
-          <button
-            key={String(children)}
-            type="button"
-            className="navbar-wrapper"
-            onClick={() => {
-              handleClick(onClick);
-            }}
-            aria-label={typeof children === 'string' ? children : undefined}
-          >
-            <div className="icon-circle" dangerouslySetInnerHTML={{ __html: icon }} />
-            <div className="label-container">
-              <span className="label">{children}</span>
-            </div>
-          </button>
-        ))}
-        {footerItem ? (
-          <div className="navbar-menu__footer">
+    <HeroBanner
+      backgroundImage={backgroundImage}
+      alt={alt}
+      className={className}
+      aria-label="Sección del menú de navegación"
+    >
+      {!isOpen && (
+        <button className="open-menu-button" onClick={onOpen} aria-label="Abrir menú" type="button">
+          Abrir menú
+        </button>
+      )}
+
+      {isOpen && (
+        <nav className="navbar-menu" role="navigation" aria-label="Menú de navegación principal">
+          {items.map(({ children, icon, onClick }) => (
             <button
-              type="button"
-              className="navbar-wrapper navbar-wrapper--logout"
+              key={String(children)}
               onClick={() => {
-                handleClick(footerItem.onClick);
+                handleClick(onClick);
               }}
-              aria-label={
-                typeof footerItem.children === 'string'
-                  ? footerItem.children
-                  : 'Botón de cierre de sesión'
-              }
+              className="navbar-wrapper"
+              aria-label={typeof children === 'string' ? children : undefined}
+              type="button"
             >
-              <span className="logout-icon" aria-hidden="true">
-                <span dangerouslySetInnerHTML={{ __html: footerItem.icon }} />
-              </span>
-              {typeof footerItem.children === 'string' && (
-                <span className="visually-hidden">{footerItem.children}</span>
-              )}
+              {/* eslint-disable-next-line react/no-danger */}
+              <div className="icon-circle" dangerouslySetInnerHTML={{ __html: icon }} />
+              <div className="label-container">
+                <span className="label">{children}</span>
+              </div>
             </button>
-          </div>
-        ) : null}
-      </nav>
+          ))}
+
+          {footerItem && (
+            <div className="navbar-menu__footer">
+              <button
+                onClick={handleFooterClick}
+                className="navbar-wrapper navbar-wrapper--logout"
+                aria-label={
+                  typeof footerItem.children === 'string'
+                    ? footerItem.children
+                    : 'Botón de cierre de sesión'
+                }
+                type="button"
+              >
+                {/* eslint-disable-next-line react/no-danger */}
+                <div
+                  className="logout-icon"
+                  dangerouslySetInnerHTML={{ __html: footerItem.icon }}
+                />
+                {typeof footerItem.children === 'string' && (
+                  <span className="visually-hidden">{footerItem.children}</span>
+                )}
+              </button>
+            </div>
+          )}
+        </nav>
+      )}
     </HeroBanner>
   );
 }

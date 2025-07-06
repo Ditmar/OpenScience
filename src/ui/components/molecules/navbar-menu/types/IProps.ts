@@ -1,15 +1,19 @@
 import type { ReactNode } from 'react';
 
 export interface NavbarItem {
-  icon: string;
   children: ReactNode;
+  icon: string;
   onClick?: () => void;
 }
 
 export interface IProps {
   items: NavbarItem[];
+  footerItem?: NavbarItem;
   backgroundImage: string;
   alt?: string;
-  className: string;
-  footerItem?: NavbarItem;
+  className?: string;
+  onClick?: () => void;
+  onClose?: () => void;
+  onItemClick?: (label: string) => void;
+  isOpen?: boolean;
 }
