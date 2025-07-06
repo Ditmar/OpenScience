@@ -1,4 +1,5 @@
 import { styled } from '@mui/material';
+import { theme } from '../../../../globals/theme';
 
 export const DotsWrapper = styled('div')({
   display: 'flex',
@@ -7,7 +8,7 @@ export const DotsWrapper = styled('div')({
 });
 
 export const DotButton = styled('button')<{ active?: boolean }>(({ active }) => ({
-  backgroundColor: active ? '#3994ff' : '#88bfff',
+  backgroundColor: active ? theme.colors.brand.tertiary[500] : theme.colors.brand.tertiary[300],
   border: 'none',
   borderRadius: '50%',
   cursor: 'pointer',

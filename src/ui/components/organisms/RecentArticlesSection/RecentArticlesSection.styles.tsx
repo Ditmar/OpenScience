@@ -1,4 +1,5 @@
 import { styled } from '@mui/material';
+import { theme } from '../../../../globals/theme';
 
 export const Section = styled('section')({
   '& .separator': {
@@ -15,12 +16,12 @@ export const Head = styled('div')({
   '& .volume-box': {
     display: 'inline-flex',
     alignItems: 'center',
-    background: '#f5f5f5',
+    background: theme.colors.neutral.graySoft[25],
     padding: '0.5rem 1rem',
   },
 });
 
-export const Content = styled('div')(({ theme }) => ({
+export const Content = styled('div')(({ theme: muiTheme }) => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -28,21 +29,21 @@ export const Content = styled('div')(({ theme }) => ({
   marginBottom: '1.5rem',
   width: '100%',
 
-  [theme.breakpoints.up(569)]: {
+  [muiTheme.breakpoints.up(569)]: {
     flexDirection: 'row-reverse',
     padding: '0 1rem',
     gap: '2rem',
   },
 }));
 
-export const ImageContainer = styled('div')(({ theme }) => ({
+export const ImageContainer = styled('div')(({ theme: muiTheme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   marginBottom: '1.5rem',
   width: '100%',
 
-  [theme.breakpoints.up(569)]: {
+  [muiTheme.breakpoints.up(569)]: {
     flex: '0 0 30%',
     maxWidth: '30%',
     marginTop: '0.5rem',
@@ -57,14 +58,14 @@ export const ImageContainer = styled('div')(({ theme }) => ({
   },
 }));
 
-export const ArticlesContainer = styled('div')(({ theme }) => ({
+export const ArticlesContainer = styled('div')(({ theme: muiTheme }) => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   placeSelf: 'flex-start',
   width: '100%',
 
-  [theme.breakpoints.up(569)]: {
+  [muiTheme.breakpoints.up(569)]: {
     flex: '0 0 70%',
     maxWidth: '70%',
   },

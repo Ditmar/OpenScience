@@ -1,4 +1,5 @@
 import { styled } from '@mui/material/styles';
+import { theme } from '../../../../layouts/screen-size-rules/theme';
 
 export const ArticleWrapper = styled('div')({
   marginTop: '1rem',
@@ -7,11 +8,10 @@ export const ArticleWrapper = styled('div')({
 export const DateWrapper = styled('div')({
   p: {
     fontSize: '1rem',
-    '@media (max-width: 320px)': { fontSize: '0.7rem' },
-    '@media (min-width: 321px) and (max-width: 375px)': { fontSize: '0.75rem' },
-    '@media (min-width: 768px)': { fontSize: '1rem' },
-    '@media (min-width: 1024px)': { fontSize: '1.2rem' },
-    '@media (min-width: 1440px)': { fontSize: '1.5rem' },
+    [theme.breakpoints.down('xs')]: { fontSize: '0.7rem' },
+    [theme.breakpoints.up('sm')]: { fontSize: '0.75rem' },
+    [theme.breakpoints.up('lg')]: { fontSize: '1.2rem' },
+    [theme.breakpoints.up('xl')]: { fontSize: '1.5rem' },
   },
 });
 
@@ -21,20 +21,20 @@ export const ArticleTitleWrapper = styled('div')({
     lineHeight: '1.3rem',
     marginTop: 0,
     paddingLeft: 0,
-    '@media (max-width: 320px)': {
+    [theme.breakpoints.down('xs')]: {
       fontSize: '0.8rem',
       lineHeight: '0.9rem',
       marginTop: '0.5rem',
     },
-    '@media (min-width: 321px) and (max-width: 375px)': {
+    [theme.breakpoints.up('sm')]: {
       fontSize: '0.875rem',
       lineHeight: '1.1rem',
     },
-    '@media (min-width: 1024px)': {
+    [theme.breakpoints.up('lg')]: {
       fontSize: '1.3rem',
       lineHeight: '1.5rem',
     },
-    '@media (min-width: 1440px)': {
+    [theme.breakpoints.up('xl')]: {
       fontSize: '2.5rem',
       lineHeight: '3.492rem',
     },
@@ -43,23 +43,23 @@ export const ArticleTitleWrapper = styled('div')({
 
 export const ArticleDescriptionWrapper = styled('div')({
   p: {
-    marginBottom: '2rem',
     fontSize: '0.85rem',
     lineHeight: '1rem',
-    '@media (max-width: 320px)': {
+    marginBottom: '2rem',
+    [theme.breakpoints.down('xs')]: {
       fontSize: '0.7rem',
       lineHeight: '0.75rem',
       marginTop: '-0.5rem',
     },
-    '@media (min-width: 321px) and (max-width: 375px)': {
+    [theme.breakpoints.up('sm')]: {
       fontSize: '0.75rem',
       lineHeight: '0.85rem',
     },
-    '@media (min-width: 1024px)': {
+    [theme.breakpoints.up('lg')]: {
       fontSize: '0.95rem',
       lineHeight: '1.2rem',
     },
-    '@media (min-width: 1440px)': {
+    [theme.breakpoints.up('xl')]: {
       fontSize: '2.25rem',
       lineHeight: '3.06rem',
     },
@@ -81,23 +81,23 @@ export const AuthorWrapper = styled('div')({
   p: {
     fontSize: '0.75rem',
   },
-  '@media (max-width: 320px)': {
+  [theme.breakpoints.down('xs')]: {
     marginTop: '-2.5rem',
     p: { fontSize: '0.625rem' },
   },
-  '@media (min-width: 321px) and (max-width: 375px)': {
+  [theme.breakpoints.up('sm')]: {
     marginTop: '-1.5rem',
     p: { fontSize: '0.7rem' },
   },
-  '@media (min-width: 768px)': {
+  [theme.breakpoints.up('md')]: {
     marginTop: '1rem',
     p: { fontSize: '0.75rem' },
   },
-  '@media (min-width: 1024px)': {
+  [theme.breakpoints.up('lg')]: {
     marginTop: '-3rem',
     p: { fontSize: '0.85rem' },
   },
-  '@media (min-width: 1440px)': {
+  [theme.breakpoints.up('xl')]: {
     marginBottom: '2rem',
     p: { fontSize: '1.5rem' },
   },
@@ -115,7 +115,7 @@ export const ButtonsWrapper = styled('div')({
     height: '5rem',
     width: '2.5rem',
   },
-  '@media (max-width: 320px)': {
+  [theme.breakpoints.down('xs')]: {
     marginBottom: '-1rem',
     paddingTop: 0,
     button: {
@@ -123,7 +123,7 @@ export const ButtonsWrapper = styled('div')({
       width: '2rem',
     },
   },
-  '@media (min-width: 321px) and (max-width: 375px)': {
+  [theme.breakpoints.up('sm')]: {
     marginBottom: '-1rem',
     marginTop: '-1rem',
     button: {
@@ -131,13 +131,13 @@ export const ButtonsWrapper = styled('div')({
       width: '2.25rem',
     },
   },
-  '@media (min-width: 1024px)': {
+  [theme.breakpoints.up('lg')]: {
     button: {
       height: '6rem',
       width: '3rem',
     },
   },
-  '@media (min-width: 1440px)': {
+  [theme.breakpoints.up('xl')]: {
     button: {
       height: '7.875rem',
       width: '3.75rem',
