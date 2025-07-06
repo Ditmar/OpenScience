@@ -29,7 +29,7 @@ export const Content = styled('div')(({ theme: muiTheme }) => ({
   marginBottom: '1.5rem',
   width: '100%',
 
-  [muiTheme.breakpoints.up(569)]: {
+  [muiTheme.breakpoints.up('sm')]: {
     flexDirection: 'row-reverse',
     padding: '0 1rem',
     gap: '2rem',
@@ -43,7 +43,7 @@ export const ImageContainer = styled('div')(({ theme: muiTheme }) => ({
   marginBottom: '1.5rem',
   width: '100%',
 
-  [muiTheme.breakpoints.up(569)]: {
+  [muiTheme.breakpoints.up('sm')]: {
     flex: '0 0 30%',
     maxWidth: '30%',
     marginTop: '0.5rem',
@@ -65,7 +65,7 @@ export const ArticlesContainer = styled('div')(({ theme: muiTheme }) => ({
   placeSelf: 'flex-start',
   width: '100%',
 
-  [muiTheme.breakpoints.up(569)]: {
+  [muiTheme.breakpoints.up('sm')]: {
     flex: '0 0 70%',
     maxWidth: '70%',
   },
