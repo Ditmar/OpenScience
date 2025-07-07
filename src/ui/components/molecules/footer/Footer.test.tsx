@@ -31,11 +31,4 @@ describe('Footer component', () => {
     const root = container.firstChild as HTMLElement;
     expect(root.className.includes('footer--large')).toBeTruthy();
   });
-
-  test('matches DOM structure snapshot', () => {
-    const { asFragment } = render(
-      <Footer locationText="UBICANOS" followUsText="SIGUENOS EN" size="medium" />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
 });

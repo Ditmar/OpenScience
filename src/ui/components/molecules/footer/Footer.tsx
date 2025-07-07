@@ -22,6 +22,7 @@ function Footer({ locationText, followUsText, size = 'medium' }: IFooterProps) {
       }}
     >
       <div className={styles['footer__logo-section']}>
+        <p className={styles.footer__title}>FOOTER</p>
         <LogoFooter icon={logo} color="secondary" />
       </div>
 
@@ -33,7 +34,7 @@ function Footer({ locationText, followUsText, size = 'medium' }: IFooterProps) {
         <div className={classNames(styles.footer__section, styles['footer__section--left'])}>
           <div className={styles.footer__group}>
             <div className={styles.footer__label}>
-              <LabelResourcesPage text={followUsText} />
+              <LabelResourcesPage text="RECURSOS" />
             </div>
             <div className={styles.footer__section1}>
               <div className={classNames(styles.footer__text, styles['footer__text--shift-right'])}>
@@ -52,7 +53,7 @@ function Footer({ locationText, followUsText, size = 'medium' }: IFooterProps) {
               <LabelResourcesPage text="PÁGINA" />
             </div>
             <div className={styles.footer__text}>
-              <Variables text={locationText} colorVariant="primary" />
+              <Variables text="UNIPOL.EDU.BO" colorVariant="primary" />
             </div>
           </div>
         </div>

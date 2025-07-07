@@ -7,6 +7,7 @@ const meta: Meta<typeof Footer> = {
   args: {
     locationText: 'UBICANOS',
     followUsText: 'SIGUENOS EN',
+    titleText: 'FOOTER',
     size: 'medium',
   },
 };

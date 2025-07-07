@@ -10,6 +10,7 @@
   justify-content: center;
   margin: 0 auto;
   max-width: 800px;
+  padding-right: 3rem;
 
   &__section {
     align-items: center;
@@ -38,6 +39,7 @@
 
   &--small {
     padding: 0.5rem;
+    padding-left: 4rem;
 
     .location__text {
       font-size: 10px;
@@ -57,7 +59,9 @@
   }
 
   &--medium {
+    justify-content: flex-end;
     padding: 1rem;
+    padding-left: 4rem;
 
     .location__text {
       font-size: 12px;
