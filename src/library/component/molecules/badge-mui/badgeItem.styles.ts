@@ -13,7 +13,7 @@ const getBackgroundColor = (
   const colorMap: Record<string, string> = {
     neutral: theme.palette.common.white,
     white: theme.palette.common.white,
-    gray: theme.customColors.gray,
+    gray: theme.customColorsBarge.gray,
     violet: theme.palette.secondary.main,
     blue: theme.palette.primary.main,
     custom: customColor ?? theme.palette.warning.main,
