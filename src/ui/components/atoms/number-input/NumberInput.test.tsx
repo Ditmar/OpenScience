@@ -1,11 +1,10 @@
 import React from 'react';
-import { render, screen, fireEvent, cleanup } from '@testing-library/react';
-import { ThemeProvider, createTheme } from '@mui/material';
+import { screen, fireEvent, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { vi, describe, it, afterEach } from 'vitest';
-
 import PhoneNumberInput from './NumberInput';
 import type { PhoneNumberInputProps } from './types/IProps';
+import { renderWithTheme } from '../../../../testUtils/renderWithTheme';
 
 vi.mock('@mui/icons-material', () => {
   return {
@@ -14,7 +13,6 @@ vi.mock('@mui/icons-material', () => {
   };
 });
 
-const theme = createTheme();
 const mockOnChange = vi.fn();
 
 const renderComponent = ({
@@ -26,18 +24,16 @@ const renderComponent = ({
   onCountryButtonClick,
   isOpen = false,
 }: Partial<PhoneNumberInputProps> = {}) => {
-  return render(
-    <ThemeProvider theme={theme}>
-      <PhoneNumberInput
-        value={value}
-        onChange={onChange}
-        size={size}
-        borderRadius={borderRadius}
-        state={state}
-        onCountryButtonClick={onCountryButtonClick}
-        isOpen={isOpen}
-      />
-    </ThemeProvider>,
+  return renderWithTheme(
+    <PhoneNumberInput
+      value={value}
+      onChange={onChange}
+      size={size}
+      borderRadius={borderRadius}
+      state={state}
+      onCountryButtonClick={onCountryButtonClick}
+      isOpen={isOpen}
+    />,
   );
 };
 
@@ -50,11 +46,19 @@ describe('PhoneNumberInput', () => {
   it('renders correctly with default props', () => {
     renderComponent();
 
-    expect(screen.getByPlaceholderText('Phone Number')).toBeInTheDocument();
-    expect(screen.getByText('(+54)')).toBeInTheDocument();
+    const input = screen.getByPlaceholderText('Phone Number');
+    const code = screen.getByText('(+54)');
+    expect(input).toBeInTheDocument();
+    expect(code).toBeInTheDocument();
     expect(screen.getByRole('button')).toBeInTheDocument();
     expect(screen.getByAltText('Flag')).toBeInTheDocument();
     expect(screen.getByAltText('Phone icon')).toBeInTheDocument();
+    const codeStyles = window.getComputedStyle(code);
+    expect(codeStyles.fontFamily).toMatch(/Poppins/);
+    expect(codeStyles.fontWeight).toBe('300');
+    expect(codeStyles.color).toBeDefined();
+    const inputStyles = window.getComputedStyle(input);
+    expect(inputStyles.color).toBeDefined();
   });
 
   it('calls onChange with only numbers when typing', () => {

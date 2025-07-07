@@ -5,9 +5,11 @@ import type { CountryListProps } from './types/IProps';
 import type { CountryFlagProps } from '../../atoms/icon-flag/types/IProps';
 import { allCountries } from '../../atoms/icon-flag/countryMock';
 
-const StyledContainer = styled(Box)<{ borderRadius: string }>(({ theme, borderRadius }) => ({
+const StyledContainer = styled(Box, {
+  shouldForwardProp: (prop) => prop !== 'borderRadius',
+})<{ borderRadius: string }>(({ theme, borderRadius }) => ({
   backgroundColor: theme.palette.background.paper,
-  border: `1px solid ${theme.palette.divider}`,
+  border: `1px solid ${theme.palette.phonedropdownPalette.borderCountryList}`,
   boxShadow: theme.shadows[2],
   height: '350px',
   maxWidth: '371px',
@@ -23,14 +25,16 @@ const StyledContainer = styled(Box)<{ borderRadius: string }>(({ theme, borderRa
   },
 }));
 
-const StyledTitle = styled(Typography)<{
+const StyledTitle = styled(Typography, {
+  shouldForwardProp: (prop) => !['fontSize', 'pt', 'pb'].includes(prop as string),
+})<{
   fontSize: string;
   pt: string;
   pb: string;
 }>(({ theme, fontSize, pt, pb }) => ({
-  color: theme.palette.text.primary,
-  fontFamily: theme.typography.fontFamily,
-  fontWeight: theme.typography.fontWeightRegular,
+  color: theme.palette.phonedropdownPalette.textPrimary,
+  fontFamily: 'Poppins, "Poppins-Regular", sans-serif',
+  fontWeight: 400,
   fontSize,
   paddingTop: pt,
   paddingBottom: pb,
@@ -49,7 +53,7 @@ const StyledList = styled(List)<{ maxHeight: string }>(({ theme, maxHeight }) =>
     background: theme.palette.background.default,
   },
   '&::-webkit-scrollbar-thumb': {
-    background: theme.palette.primary.main,
+    background: theme.palette.phonedropdownPalette.background,
     borderRadius: '4px',
   },
   '&::-webkit-scrollbar-thumb:hover': {
@@ -65,14 +69,14 @@ const StyledListItem = styled(ListItem)(({ theme }) => ({
   paddingBottom: '8px',
   transition: 'all 0.2s ease',
   borderRadius: '8px',
-  fontFamily: theme.typography.fontFamily,
-  fontWeight: theme.typography.fontWeightRegular,
-  color: theme.palette.text.primary,
+  fontFamily: 'Poppins, "Poppins-Regular", sans-serif',
+  fontWeight: 300,
+  color: theme.palette.phonedropdownPalette.textPrimary,
   '&:hover': {
     backgroundColor: theme.palette.action.hover,
+    color: theme.palette.phonedropdownPalette.textTertiary,
   },
   '&:active': {
-    backgroundColor: theme.palette.action.selected,
     transform: 'scale(0.98)',
   },
 }));
@@ -125,7 +129,7 @@ export function CountryList({
   };
 
   return (
-    <StyledContainer borderRadius={borderRadius}>
+    <StyledContainer borderRadius={borderRadius} data-testid="country-list-container">
       {showTitle && (
         <StyledTitle
           variant="h6"

@@ -1,13 +1,14 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { CountryFlag } from './IconFlag';
 import { allCountries } from './countryMock';
+import { renderWithTheme } from '../../../../testUtils/renderWithTheme';
 
 describe('CountryFlag Component', () => {
   test('renders correctly with default props (circular medium)', () => {
     const testCountry = allCountries[0];
-    render(
+    renderWithTheme(
       <CountryFlag
         src={testCountry.src}
         alt={testCountry.alt}
@@ -31,11 +32,17 @@ describe('CountryFlag Component', () => {
     const dial = screen.getByText(`(${testCountry.dialCode})`);
     expect(text).toBeInTheDocument();
     expect(dial).toBeInTheDocument();
+    const textStyles = window.getComputedStyle(text);
+    expect(textStyles.fontFamily).toMatch(/Poppins/);
+    expect(textStyles.fontWeight).toBe('300');
+    expect(textStyles.color).toBeDefined();
+    const dialStyles = window.getComputedStyle(dial);
+    expect(dialStyles.color).toBeDefined();
   });
 
   test('renders rectangular variant correctly small size', () => {
     const testCountry = allCountries[1];
-    render(
+    renderWithTheme(
       <CountryFlag
         src={testCountry.src}
         alt={testCountry.alt}

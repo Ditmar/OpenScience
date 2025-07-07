@@ -20,7 +20,7 @@ const StyledIcon = styled(InfoOutlinedIcon)<{ iconSize: number; iconColor?: stri
   ({ theme, iconSize, iconColor }) => ({
     fontSize: iconSize,
     flexShrink: 0,
-    color: iconColor ?? theme.palette.text.primary,
+    color: iconColor ?? theme.palette.phonedropdownPalette.textPrimary,
   }),
 );
 
@@ -30,18 +30,18 @@ const StyledTypography = styled(Typography)<{
   fontFamily?: string;
   fontWeight?: number | string;
   textColor?: string;
-}>(({ theme, fontSize, marginX, fontFamily, fontWeight, textColor }) => ({
+}>(({ theme, fontSize, marginX, fontWeight, textColor }) => ({
   flexGrow: 1,
   minWidth: 0,
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   whiteSpace: 'nowrap',
-  fontFamily: fontFamily ?? theme.typography.fontFamily,
-  fontWeight: fontWeight ?? theme.typography.fontWeightLight,
+  fontFamily: 'Poppins, "Poppins-Regular", sans-serif',
+  fontWeight: fontWeight ?? 300,
   fontSize,
   marginLeft: marginX,
   marginRight: marginX,
-  color: textColor ?? theme.palette.text.secondary,
+  color: textColor ?? theme.palette.phonedropdownPalette.textSecondary,
 }));
 
 export default function HintText({
@@ -72,10 +72,14 @@ export default function HintText({
 
   const currentSize = sizeStyles[size];
 
-  const iconColor = disabled ? theme.palette.text.disabled : theme.palette.text.primary;
-  const textColor = theme.palette.text.disabled;
-  const fontFamily = undefined;
-  const fontWeight = undefined;
+  const iconColor = disabled
+    ? theme.palette.text.disabled
+    : theme.palette.phonedropdownPalette.textPrimary;
+  const textColor = disabled
+    ? theme.palette.text.disabled
+    : theme.palette.phonedropdownPalette.textSecondary;
+  const fontFamily = 'Poppins, "Poppins-Regular", sans-serif';
+  const fontWeight = 300;
 
   return (
     <StyledBox data-testid="hint-text" className={className} disabled={disabled}>

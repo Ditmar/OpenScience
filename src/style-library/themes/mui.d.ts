@@ -50,6 +50,16 @@ declare module '@mui/material/styles' {
     };
 
     customBlue: Palette['primary'];
+
+    phonedropdownPalette: {
+      textPrimary: string;
+      textSecondary: string;
+      textTertiary: string;
+      background: string;
+      borderFocus: string;
+      borderDefault: string;
+      borderCountryList: string;
+    };
   }
 
   interface PaletteOptions {
@@ -101,6 +111,16 @@ declare module '@mui/material/styles' {
     };
 
     customBlue?: PaletteOptions['primary'];
+
+    phonedropdownPalette?: {
+      textPrimary?: string;
+      textSecondary?: string;
+      textTertiary?: string;
+      background?: string;
+      borderFocus?: string;
+      borderDefault?: string;
+      borderCountryList?: string;
+    };
   }
 
   interface TypographyVariants {

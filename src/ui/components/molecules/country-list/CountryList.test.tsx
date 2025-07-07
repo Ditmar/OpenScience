@@ -1,10 +1,11 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { vi } from 'vitest';
 import { CountryList } from './CountryList';
 import { allCountries } from '../../atoms/icon-flag/countryMock';
 import type { CountryListProps } from './types/IProps';
+import { renderWithTheme } from '../../../../testUtils/renderWithTheme';
 
 describe('CountryList Component', () => {
   const getDefaultProps = (): CountryListProps => ({
@@ -18,7 +19,7 @@ describe('CountryList Component', () => {
   });
 
   test('renders correctly with default props', () => {
-    render(
+    renderWithTheme(
       <CountryList
         countries={getDefaultProps().countries}
         flagVariant={getDefaultProps().flagVariant}
@@ -32,7 +33,7 @@ describe('CountryList Component', () => {
   });
 
   test('renders without title when showTitle is false', () => {
-    render(
+    renderWithTheme(
       <CountryList
         countries={getDefaultProps().countries}
         flagVariant={getDefaultProps().flagVariant}
@@ -46,7 +47,7 @@ describe('CountryList Component', () => {
 
   test('calls onCountrySelect when a country is clicked', () => {
     const mockOnSelect = vi.fn();
-    render(
+    renderWithTheme(
       <CountryList
         countries={getDefaultProps().countries}
         flagVariant={getDefaultProps().flagVariant}
@@ -63,7 +64,7 @@ describe('CountryList Component', () => {
   });
 
   test('applies correct size and flag variant to CountryFlag avatars', () => {
-    render(
+    renderWithTheme(
       <CountryList
         countries={getDefaultProps().countries}
         flagVariant="rectangular"
@@ -83,7 +84,7 @@ describe('CountryList Component', () => {
   });
 
   test('applies correct title size style', () => {
-    render(
+    renderWithTheme(
       <CountryList
         countries={getDefaultProps().countries}
         flagVariant={getDefaultProps().flagVariant}
@@ -96,7 +97,7 @@ describe('CountryList Component', () => {
   });
 
   test('applies straight container variant style', () => {
-    render(
+    renderWithTheme(
       <CountryList
         countries={getDefaultProps().countries}
         flagVariant={getDefaultProps().flagVariant}

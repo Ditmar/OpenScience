@@ -1,8 +1,9 @@
 import React from 'react';
-import { render, screen, fireEvent, cleanup } from '@testing-library/react';
+import { screen, fireEvent, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { vi, describe, it, afterEach } from 'vitest';
 import InputPhone from './InputPhone';
+import { renderWithTheme } from '../../../../testUtils/renderWithTheme';
 
 vi.mock('@mui/icons-material', () => ({
   __esModule: true,
@@ -21,7 +22,7 @@ describe('InputPhone Component', () => {
   });
 
   it('renders phone icon, input and hint when props provided', () => {
-    render(
+    renderWithTheme(
       <InputPhone
         iconText="My Icon"
         hintText="Helpful hint"
@@ -36,21 +37,21 @@ describe('InputPhone Component', () => {
   });
 
   it('strips non-numeric chars from the input value', () => {
-    render(<InputPhone onChange={mockOnChange} />);
+    renderWithTheme(<InputPhone onChange={mockOnChange} />);
     const input = screen.getByPlaceholderText('Phone Number');
     fireEvent.change(input, { target: { value: '555abc123' } });
     expect((input as HTMLInputElement).value).toBe('555123');
   });
 
   it('calls onClose when close button clicked', () => {
-    render(<InputPhone onClose={mockOnClose} />);
+    renderWithTheme(<InputPhone onClose={mockOnClose} />);
     const btn = screen.getByTestId('close-button');
     fireEvent.click(btn);
     expect(mockOnClose).toHaveBeenCalledTimes(1);
   });
 
   it('disables all elements when disabled prop is true', () => {
-    render(<InputPhone disabled onChange={mockOnChange} onClose={mockOnClose} />);
+    renderWithTheme(<InputPhone disabled onChange={mockOnChange} onClose={mockOnClose} />);
     const iconPhone = screen.getByTestId('icon-phone');
     expect(parseFloat(window.getComputedStyle(iconPhone).opacity)).toBeLessThan(1);
     const input = screen.getByPlaceholderText('Phone Number');
@@ -62,12 +63,12 @@ describe('InputPhone Component', () => {
   });
 
   it('does not render hint when hintText is not provided', () => {
-    render(<InputPhone />);
+    renderWithTheme(<InputPhone />);
     expect(screen.queryByTestId('hint-text')).toBeNull();
   });
 
   it('toggles arrow icon when dropdown state changes', () => {
-    render(<InputPhone onChange={mockOnChange} />);
+    renderWithTheme(<InputPhone onChange={mockOnChange} />);
     expect(screen.getByTestId('arrow-drop-down-mock')).toBeInTheDocument();
     const button = screen.getByRole('button');
     fireEvent.click(button);

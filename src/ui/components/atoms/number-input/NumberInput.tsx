@@ -83,9 +83,9 @@ const StyledFlag = styled('img')<{
 }));
 
 const StyledCountryCode = styled(Typography)(({ theme }) => ({
-  fontFamily: theme.typography.fontFamily,
-  fontWeight: theme.typography.fontWeightLight,
-  color: theme.palette.text.primary,
+  fontFamily: 'Poppins, "Poppins-Regular", sans-serif',
+  fontWeight: 300,
+  color: theme.palette.phonedropdownPalette.textPrimary,
 }));
 
 const StyledDropdownBox = styled(Box)({
@@ -105,7 +105,7 @@ const StyledArrowUp = styled(ArrowDropUp)<{ isOpen: boolean }>(({ isOpen }) => (
   opacity: isOpen ? 1 : 0,
 }));
 
-const StyledArrowDown = styled(ArrowDropDown)<{ isOpen: boolean }>(({ isOpen }) => ({
+const StyledArrowDown = styled(ArrowDropDown)<{ isOpen: boolean }>(({ theme, isOpen }) => ({
   position: 'absolute',
   top: 0,
   left: 0,
@@ -113,6 +113,7 @@ const StyledArrowDown = styled(ArrowDropDown)<{ isOpen: boolean }>(({ isOpen }) 
   height: 18,
   transition: 'opacity 0.2s ease',
   opacity: isOpen ? 0 : 1,
+  color: theme.palette.phonedropdownPalette.textPrimary,
 }));
 
 const StyledInputBox = styled(Box)(({ theme }) => ({
@@ -144,10 +145,10 @@ const StyledInputBase = styled(InputBase)<{
   height: '100%',
   paddingLeft: inputPadding,
   paddingRight: 16,
-  fontFamily: theme.typography.fontFamily,
-  fontWeight: theme.typography.fontWeightLight,
+  fontFamily: 'Poppins, "Poppins-Regular", sans-serif',
+  fontWeight: 300,
   fontSize,
-  color: theme.palette.text.primary,
+  color: theme.palette.phonedropdownPalette.textPrimary,
   '& input::placeholder': {
     color: theme.palette.text.disabled,
     opacity: 1,
@@ -194,7 +195,7 @@ export default function PhoneNumberInput({
 
   const stateStyles = {
     default: {
-      borderColor: theme.palette.divider,
+      borderColor: theme.palette.phonedropdownPalette.borderDefault,
       backgroundColor: theme.palette.background.paper,
     },
     hover: {
@@ -202,10 +203,13 @@ export default function PhoneNumberInput({
       backgroundColor: theme.palette.background.paper,
     },
     focus: {
-      borderColor: theme.palette.primary.main,
+      borderColor: theme.palette.phonedropdownPalette.borderFocus,
       backgroundColor: theme.palette.background.paper,
     },
-    error: { borderColor: theme.palette.error.main, backgroundColor: theme.palette.error.light },
+    error: {
+      borderColor: theme.palette.error.main,
+      backgroundColor: theme.palette.error.light,
+    },
     disabled: {
       borderColor: theme.palette.action.disabled,
       backgroundColor: theme.palette.action.disabledBackground,
@@ -228,8 +232,10 @@ export default function PhoneNumberInput({
   const currentState = stateStyles[state];
   const opacity = state === 'disabled' ? 0.6 : 1;
   const borderRadiusValue = borderRadius === 'rounded' ? '8px' : '0';
-  const iconButtonBg = isOpen ? theme.palette.primary.main : 'transparent';
-  const iconButtonColor = isOpen ? theme.palette.common.white : theme.palette.text.primary;
+  const iconButtonBg = isOpen ? theme.palette.phonedropdownPalette.background : 'transparent';
+  const iconButtonColor = isOpen
+    ? theme.palette.phonedropdownPalette.textTertiary
+    : theme.palette.phonedropdownPalette.textPrimary;
   const iconButtonBorderColor = isOpen ? theme.palette.primary.main : currentState.borderColor;
   const phoneIconFilter =
     state === 'disabled'
@@ -274,7 +280,9 @@ export default function PhoneNumberInput({
           borderColor={iconButtonBorderColor}
         >
           <StyledFlag src={countryFlag} alt="Flag" iconSize={currentSize.iconSize} />
-          <StyledCountryCode variant="body1">{countryCode}</StyledCountryCode>
+          <StyledCountryCode variant="body1" style={{ color: iconButtonColor }}>
+            {countryCode}
+          </StyledCountryCode>
           <StyledDropdownBox>
             <StyledArrowUp isOpen={isOpen} />
             <StyledArrowDown isOpen={isOpen} />

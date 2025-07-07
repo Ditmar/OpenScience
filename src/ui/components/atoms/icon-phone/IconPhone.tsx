@@ -33,11 +33,11 @@ const StyledTypography = styled(Typography)<{
   textColor?: string;
 }>(({ theme, textSize, marginLeft, textColor }) => ({
   flexGrow: 1,
-  fontFamily: theme.typography.fontFamily,
-  fontWeight: theme.typography.fontWeightRegular,
+  fontFamily: 'Poppins, "Poppins-Regular", sans-serif',
+  fontWeight: 400,
   fontSize: textSize,
   marginLeft,
-  color: textColor ?? theme.palette.text.primary,
+  color: textColor ?? theme.palette.phonedropdownPalette.textPrimary,
 }));
 
 const StyledIconButton = styled(IconButton)({
@@ -76,7 +76,9 @@ export default function IconPhone({
   };
 
   const currentSize = sizeStyles[size];
-  const textColor = disabled ? theme.palette.text.disabled : theme.palette.text.primary;
+  const textColor = disabled
+    ? theme.palette.text.disabled
+    : theme.palette.phonedropdownPalette.textPrimary;
   const filterBase =
     'brightness(0) saturate(100%) invert(8%) sepia(15%) saturate(2044%) hue-rotate(185deg) brightness(95%) contrast(95%)';
   const filter = `${filterBase} ${disabled ? 'opacity(0.5)' : ''}`;

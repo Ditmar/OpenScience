@@ -25,18 +25,18 @@ const StyledTypography = styled(Typography)<{
   fontFamily?: string;
   fontWeight?: number | string;
   color?: string;
-}>(({ theme, fontSize, fontFamily, fontWeight, color }) => ({
+}>(({ theme, fontSize, fontWeight, color }) => ({
   marginLeft: '16px',
-  fontFamily: fontFamily ?? theme.typography.fontFamily,
-  fontWeight: fontWeight ?? theme.typography.fontWeightLight,
+  fontFamily: 'Poppins, "Poppins-Regular", sans-serif',
+  fontWeight: fontWeight ?? 300,
   fontSize,
-  color: color ?? theme.palette.text.primary,
+  color: color ?? theme.palette.phonedropdownPalette.textPrimary,
   display: 'flex',
   alignItems: 'center',
 }));
 
 const StyledDialCode = styled(Box)<{ color?: string }>(({ theme, color }) => ({
-  color: color ?? theme.palette.text.primary,
+  color: color ?? theme.palette.phonedropdownPalette.textPrimary,
   marginLeft: '4px',
 }));
 
@@ -65,8 +65,8 @@ export function CountryFlag({
 
   const currentSize = sizeStyles[size];
   const borderRadius = variant === 'circular' ? '50%' : '2px';
-  const fontFamily = undefined;
-  const fontWeight = undefined;
+  const fontFamily = 'Poppins, "Poppins-Regular", sans-serif';
+  const fontWeight = 300;
   const color = undefined;
 
   return (

@@ -1,20 +1,26 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import { vi } from 'vitest';
 import '@testing-library/jest-dom';
+import { screen, fireEvent } from '@testing-library/react';
+import { vi } from 'vitest';
+import { renderWithTheme } from '../../../../testUtils/renderWithTheme';
 import IconPhone from './IconPhone';
 
 describe('IconPhone Component', () => {
   test('renders phone icon and text', () => {
-    render(<IconPhone text="Test Phone" />);
+    renderWithTheme(<IconPhone text="Test Phone" />);
 
     expect(screen.getByTestId('phone-icon')).toBeInTheDocument();
-    expect(screen.getByText('Test Phone')).toBeInTheDocument();
+    const text = screen.getByText('Test Phone');
+    expect(text).toBeInTheDocument();
+    const textStyles = window.getComputedStyle(text);
+    expect(textStyles.fontFamily).toMatch(/Poppins/);
+    expect(textStyles.fontWeight).toBe('400');
+    expect(textStyles.color).toBeDefined();
   });
 
   test('renders close button when onClose is provided', () => {
     const mockOnClose = vi.fn();
-    render(<IconPhone onClose={mockOnClose} />);
+    renderWithTheme(<IconPhone onClose={mockOnClose} />);
 
     const closeButton = screen.getByTestId('close-button');
     expect(closeButton).toBeInTheDocument();
@@ -24,7 +30,7 @@ describe('IconPhone Component', () => {
   });
 
   test('disables correctly', () => {
-    render(<IconPhone disabled />);
+    renderWithTheme(<IconPhone disabled />);
     const container = screen.getByTestId('icon-phone');
     const styles = window.getComputedStyle(container);
     expect(parseFloat(styles.opacity)).toBeLessThan(1);

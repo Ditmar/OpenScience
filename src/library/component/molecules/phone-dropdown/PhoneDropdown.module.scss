@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+$ads-color-surface: #f5f5f5;
+$ads-color-text-dark: #1b2037;
+$ads-color-border: #e0e2e7;
+$ads-color-border-dropdown: #e4daff;
+$ads-color-error: red;
+$ads-color-helper: #667085;
+$ads-color-active: #7a44ff;
+
+@mixin phone-dropdown-size-small {
+  .label {
+    font-size: 0.875rem;
+  }
+
+  .input {
+    font-size: 1rem;
+    padding: 0.375rem 0.5rem;
+  }
+
+  .dropdown-button {
+    font-size: 1rem;
+    padding: 0.375rem 0.5rem;
+  }
+
+  .dropdown-arrow {
+    font-size: 0.45rem;
+  }
+
+  .helper-text {
+    font-size: 0.875rem;
+  }
+
+  .dropdown-title {
+    font-size: 1.25rem;
+  }
+
+  .dropdown-item {
+    font-size: 1rem;
+    padding: 0.375rem 0.75rem;
+  }
+
+  .flag {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+@mixin phone-dropdown-size-medium {
+  .label {
+    font-size: 1rem;
+  }
+
+  .input {
+    font-size: 1.125rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .dropdown-button {
+    font-size: 1.125rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .dropdown-arrow {
+    font-size: 0.5rem;
+  }
+
+  .helper-text {
+    font-size: 1rem;
+  }
+
+  .dropdown-title {
+    font-size: 1.25rem;
+  }
+
+  .dropdown-item {
+    font-size: 1.125rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .flag {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+@mixin phone-dropdown-size-large {
+  .label {
+    font-size: 1.125rem;
+  }
+
+  .input {
+    font-size: 1.25rem;
+    padding: 0.625rem 1rem;
+  }
+
+  .dropdown-button {
+    font-size: 1.25rem;
+    padding: 0.625rem 1rem;
+  }
+
+  .dropdown-arrow {
+    font-size: 0.5rem;
+  }
+
+  .helper-text {
+    font-size: 1.125rem;
+  }
+
+  .dropdown-title {
+    font-size: 1.25rem;
+  }
+
+  .dropdown-item {
+    font-size: 1.25rem;
+    padding: 0.625rem 1rem;
+  }
+
+  .flag {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+.container {
+  border: 1px solid $ads-color-border;
+  display: flex;
+  overflow: hidden;
+  width: 371px;
+}
+
+.dropdown {
+  border: 1px solid $ads-color-border-dropdown;
+  box-shadow: 0 16px 18px 0 rgba(0 0 0 / 6%);
+  left: 0;
+  margin-top: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+  position: absolute;
+  top: 100%;
+  width: 371px;
+  z-index: 999;
+}
+
+.wrapper {
+  background-color: $ads-color-surface;
+  color: $ads-color-text-dark;
+  display: flex;
+  flex-direction: column;
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  position: relative;
+  width: 371px;
+
+  &.small {
+    @include phone-dropdown-size-small;
+  }
+
+  &.medium {
+    @include phone-dropdown-size-medium;
+  }
+
+  &.large {
+    @include phone-dropdown-size-large;
+  }
+
+  &.rounded .container,
+  &.rounded .dropdown {
+    border-radius: 0.75rem;
+  }
+
+  &.straight .container,
+  &.straight .dropdown {
+    border-radius: 0;
+  }
+
+  &.error .container {
+    border: 1px solid $ads-color-error;
+  }
+
+  &.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+.label {
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+}
+
+.dropdown-button {
+  align-items: center;
+  background-color: $ads-color-surface;
+  border-right: 1px solid $ads-color-border;
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.dropdown-arrow {
+  font-size: 0.45rem;
+}
+
+.code {
+  font-weight: 300;
+}
+
+.icon-place-holder {
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+}
+
+.input {
+  background-color: $ads-color-surface;
+  border: none;
+  flex: 1;
+  outline: none;
+}
+
+.helper-text {
+  color: $ads-color-helper;
+  font-style: normal;
+  margin-top: 0.25rem;
+}
+
+.dropdown-title {
+  background-color: $ads-color-surface;
+  font-weight: 400;
+  padding: 0.75rem;
+}
+
+.dropdown-item {
+  align-items: center;
+  background-color: $ads-color-surface;
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+
+  &:hover {
+    background-color: $ads-color-surface;
+  }
+}
+
+.flag {
+  object-fit: cover;
+}
+
+.wrapper.active .container {
+  border: 1px solid $ads-color-active;
+}
+
+.wrapper.active .dropdown-button {
+  background-color: $ads-color-active;
+  color: $ads-color-surface;
+}
