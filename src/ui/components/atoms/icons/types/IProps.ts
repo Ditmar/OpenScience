@@ -8,6 +8,6 @@ export interface IconProps {
   alt: string;
 }
 
-export type ValidationIconsProps = {
+export interface ValidationIconsProps {
   status: 'success' | 'error';
-};
+}
