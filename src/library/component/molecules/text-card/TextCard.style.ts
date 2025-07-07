@@ -6,10 +6,10 @@ interface StyledProps {
 }
 
 export const StyledTextCard = styled('div')<StyledProps>(({ theme, size, rounded }) => {
-  const paddingBySize = {
-    sm: theme.spacing(1),
-    md: theme.spacing(2),
-    lg: theme.spacing(3),
+  const heightBySize = {
+    sm: 263,
+    md: 284,
+    lg: 311,
   };
 
   const borderRadiusByRounded = {
@@ -18,35 +18,34 @@ export const StyledTextCard = styled('div')<StyledProps>(({ theme, size, rounded
     r_full: 9999,
   };
 
-  const maxWidthBySize = {
-    sm: 280,
-    md: 300,
-    lg: 640,
-  };
-
   return {
     display: 'flex',
     flexDirection: 'column',
-    padding: paddingBySize[size],
+    padding: theme.spacing(3),
     border: `1px solid ${theme.palette.grey[300]}`,
     borderRadius: borderRadiusByRounded[rounded],
-    maxWidth: maxWidthBySize[size],
-    width: 'auto',
+    width: 619,
+    height: heightBySize[size],
     boxSizing: 'border-box',
-    gap: theme.spacing(1),
+    gap: theme.spacing(3),
 
     [theme.breakpoints.down('sm')]: {
-      padding: theme.spacing(1),
-      maxWidth: '100%',
       width: '100%',
+      maxWidth: '100%',
+      height: 'auto',
     },
   };
 });
 
 export const Header = styled('div')(({ theme }) => ({
   display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  marginBottom: theme.spacing(1),
-  gap: theme.spacing(2),
+  alignItems: 'flex-start',
+  gap: theme.spacing(3),
+  marginBottom: 0,
+}));
+
+export const BadgeContainer = styled('div')(() => ({
+  display: 'inline-flex',
+  width: 'fit-content',
+  maxWidth: '100%',
 }));

@@ -15,16 +15,9 @@ function TextCard({
   description,
   descriptionProps,
 }: TextCardProps) {
-  const { checked, onChange, disabled, name, value, variant } = checkProps;
+  const { checked, onChange, disabled, name, value } = checkProps;
 
-  const {
-    size: badgeSize,
-    rounded: badgeRounded,
-    backgroundColor,
-    avatar,
-    text,
-    pill,
-  } = badgeProps;
+  const { backgroundColor, avatar, text, pill, rounded: badgeRounded } = badgeProps;
 
   return (
     <StyledTextCard size={size} rounded={rounded}>
@@ -35,35 +28,37 @@ function TextCard({
           disabled={disabled}
           name={name}
           value={value}
-          variant={variant}
+          variant="neutral-dark"
         />
-        <BadgeCard
-          size={badgeSize}
-          rounded={badgeRounded}
-          backgroundColor={backgroundColor}
-          avatar={avatar}
-          text={text}
-          pill={pill}
-        />
+        <div className="content">
+          <BadgeCard
+            size={size}
+            rounded={badgeRounded}
+            backgroundColor={backgroundColor}
+            avatar={avatar}
+            text={text}
+            pill={pill}
+          />
+          <AtomText
+            size="lg"
+            color={titleProps?.color}
+            align={titleProps?.align}
+            fontWeight={titleProps?.fontWeight}
+            gutterBottom={titleProps?.gutterBottom}
+          >
+            {title}
+          </AtomText>
+          <AtomText
+            size="md"
+            color={descriptionProps?.color}
+            align={descriptionProps?.align}
+            fontWeight={descriptionProps?.fontWeight}
+            gutterBottom={descriptionProps?.gutterBottom}
+          >
+            {description}
+          </AtomText>
+        </div>
       </Header>
-      <AtomText
-        size="lg"
-        color={titleProps?.color}
-        align={titleProps?.align}
-        fontWeight={titleProps?.fontWeight}
-        gutterBottom={titleProps?.gutterBottom}
-      >
-        {title}
-      </AtomText>
-      <AtomText
-        size="md"
-        color={descriptionProps?.color}
-        align={descriptionProps?.align}
-        fontWeight={descriptionProps?.fontWeight}
-        gutterBottom={descriptionProps?.gutterBottom}
-      >
-        {description}
-      </AtomText>
     </StyledTextCard>
   );
 }

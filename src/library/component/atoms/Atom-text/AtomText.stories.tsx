@@ -4,7 +4,7 @@ import AtomText from './AtomText';
 import type { AtomTextProps } from './types/IProps';
 
 const meta: Meta<typeof AtomText> = {
-  title: 'Atoms/AtomText',
+  title: 'library/component/Atoms/AtomText',
   component: AtomText,
   argTypes: {
     color: {

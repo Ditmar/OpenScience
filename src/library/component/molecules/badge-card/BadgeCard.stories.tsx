@@ -3,7 +3,7 @@ import BadgeCard from './BadgeCard';
 import type { BadgeCardProps } from './types/IProps';
 
 const meta: Meta<typeof BadgeCard> = {
-  title: 'Molecules/BadgeCard',
+  title: 'library/component/molecules/BadgeCard',
   component: BadgeCard,
   argTypes: {
     backgroundColor: {

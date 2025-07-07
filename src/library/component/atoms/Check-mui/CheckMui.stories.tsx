@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import CheckMui from './CheckMui';
 
 const meta: Meta<typeof CheckMui> = {
-  title: 'Atoms/CheckMui',
+  title: 'library/component/Atoms/CheckMui',
   component: CheckMui,
   argTypes: {
     variant: {

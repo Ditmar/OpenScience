@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import AtomAvatar from './Avatar';
 
 const meta: Meta<typeof AtomAvatar> = {
-  title: 'Atoms/Avatar',
+  title: 'library/component/Atoms/Avatar',
   component: AtomAvatar,
   argTypes: {
     size: { control: 'radio', options: ['sm', 'md', 'lg'] },

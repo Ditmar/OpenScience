@@ -35,17 +35,9 @@ export const StyledBadgeCard = styled(Box, {
     r_full: theme.spacing(99),
   };
 
-  const badgeCardPalette = theme.palette.badgeCard as
-    | {
-        primary: string;
-        secondary: string;
-        warning: string;
-        success: string;
-        danger: string;
-      }
-    | undefined;
+  const badgeCardPalette = theme.palette.badgeCard;
 
-  const bgColorValue = badgeCardPalette?.[backgroundColor] ?? theme.palette.background.paper;
+  const bgColorValue = badgeCardPalette[backgroundColor];
 
   const gapMap = {
     sm: 6,

@@ -1,148 +1,146 @@
-import React from 'react';
-import { ThemeProvider } from '@mui/material/styles';
-import type { StoryFn } from '@storybook/react';
-import { lightTheme } from '../../../../style-library/themes/default';
+import React, { useState } from 'react';
+import type { StoryObj } from '@storybook/react';
 import TextCard from './TextCard';
-import type { TextCardProps } from './types/IProps';
 
-export default {
-  title: 'Molecules/TextCard',
+const meta = {
+  title: 'library/component/molecules/TextCard',
   component: TextCard,
-  argTypes: {
-    size: {
-      control: 'radio',
-      options: ['sm', 'md', 'lg'],
-    },
-    rounded: {
-      control: 'radio',
-      options: ['r_none', 'r_md', 'r_full'],
-    },
-  },
 };
 
-function Template({
-  size,
-  rounded,
-  checkProps,
-  badgeProps,
-  title,
-  titleProps,
-  description,
-  descriptionProps,
-}: TextCardProps) {
-  return (
-    <ThemeProvider theme={lightTheme}>
-      <TextCard
-        size={size}
-        rounded={rounded}
-        checkProps={checkProps}
-        badgeProps={badgeProps}
-        title={title}
-        titleProps={titleProps}
-        description={description}
-        descriptionProps={descriptionProps}
-      />
-    </ThemeProvider>
-  );
-}
+export default meta;
 
-const TemplateStory: StoryFn<TextCardProps> = Template;
+type Story = StoryObj<typeof TextCard>;
 
-const baseArgs: Omit<TextCardProps, 'size' | 'rounded'> = {
-  checkProps: {
-    checked: true,
-    onChange: () => {},
-    variant: 'brand-primary',
-    name: 'checkbox-textcard',
-    value: 'card-1',
-  },
-  badgeProps: {
-    size: 'md',
-    rounded: 'r_md',
-    backgroundColor: 'primary',
-    avatar: {
-      src: 'https://via.placeholder.com/50',
-      alt: 'Avatar',
-    },
-    text: {
-      content: 'Badge Text',
-      color: 'paragraph_dark',
-      fontWeight: 600,
-    },
-    pill: {
-      text: '100',
-      color: 'brand-primary',
-      variant: 'filled',
-      rounded: 'r_md',
-    },
-  },
-  title: 'Título Principal',
-  titleProps: {
-    color: 'paragraph_dark',
-    fontWeight: 700,
-    align: 'center',
-    gutterBottom: true,
-  },
-  description: 'Esta es una descripción del TextCard.',
-  descriptionProps: {
-    color: 'icon_text',
-    fontWeight: 400,
-    align: 'center',
-  },
+const mapColorToPillColor = (
+  color: 'primary' | 'secondary' | 'success' | 'warning' | 'danger',
+):
+  | 'brand-primary'
+  | 'brand-secondary'
+  | 'feedback-positive'
+  | 'feedback-warning'
+  | 'feedback-negative' => {
+  const map = {
+    primary: 'brand-primary',
+    secondary: 'brand-secondary',
+    success: 'feedback-positive',
+    warning: 'feedback-warning',
+    danger: 'feedback-negative',
+  };
+
+  return map[color] as
+    | 'brand-primary'
+    | 'brand-secondary'
+    | 'feedback-positive'
+    | 'feedback-warning'
+    | 'feedback-negative';
 };
 
-export const Default = TemplateStory.bind({});
-Default.args = {
-  ...baseArgs,
-  size: 'md',
-  rounded: 'r_md',
-};
+const createStory = (
+  backgroundColor: 'primary' | 'secondary' | 'success' | 'warning' | 'danger',
+): Story => ({
+  render: () => {
+    function InteractiveStory() {
+      const [checked, setChecked] = useState(false);
 
-export const Small = TemplateStory.bind({});
-Small.args = {
-  ...baseArgs,
-  size: 'sm',
-  rounded: 'r_md',
-};
+      return (
+        <TextCard
+          checkProps={{
+            checked,
+            onChange: () => {
+              setChecked(!checked);
+            },
+            disabled: false,
+            name: `checkbox-${backgroundColor}`,
+            value: backgroundColor,
+          }}
+          badgeProps={{
+            backgroundColor,
+            avatar: {
+              src: 'https://via.placeholder.com/32',
+              alt: 'User Avatar',
+            },
+            text: {
+              content: 'badge text',
+              color: 'light',
+              fontWeight: 700,
+            },
+            pill: {
+              text: '100',
+              color: mapColorToPillColor(backgroundColor),
+              variant: 'soft',
+              rounded: 'r_md',
+            },
+            rounded: 'r_md',
+          }}
+          title="Harmonizing Human Experience: The Artistry of UI-UX Design"
+          titleProps={{
+            color: 'paragraph_dark',
+            fontWeight: 700,
+          }}
+          description="UI is the canvas, UX the brushstroke; together, they
+          craft an immersive journey where every pixel tells a story of elegance, 
+          efficiency, and effortless delight. It's the artistry of design at its finest."
+          descriptionProps={{
+            color: 'icon_text',
+          }}
+        />
+      );
+    }
 
-export const Large = TemplateStory.bind({});
-Large.args = {
-  ...baseArgs,
-  size: 'lg',
-  rounded: 'r_md',
-};
-
-export const Rounded = TemplateStory.bind({});
-Rounded.args = {
-  ...baseArgs,
-  size: 'md',
-  rounded: 'r_full',
-};
-
-export const Square = TemplateStory.bind({});
-Square.args = {
-  ...baseArgs,
-  size: 'md',
-  rounded: 'r_none',
-};
-
-export const Disabled = TemplateStory.bind({});
-Disabled.args = {
-  ...baseArgs,
-  checkProps: {
-    ...baseArgs.checkProps,
-    disabled: true,
+    return <InteractiveStory />;
   },
-  badgeProps: {
-    ...baseArgs.badgeProps,
-    pill: {
-      ...baseArgs.badgeProps.pill,
-      text: 'Deshabilitado',
-      color: 'brand-secondary',
-    },
+});
+
+export const Primary = createStory('primary');
+export const Secondary = createStory('secondary');
+export const Success = createStory('success');
+export const Warning = createStory('warning');
+export const Danger = createStory('danger');
+
+export const DisabledCheck: Story = {
+  render: () => {
+    function DisabledStory() {
+      return (
+        <TextCard
+          checkProps={{
+            checked: true,
+            onChange: () => {},
+            disabled: true,
+            name: 'checkbox-disabled',
+            value: 'disabled',
+          }}
+          badgeProps={{
+            backgroundColor: 'secondary',
+            avatar: {
+              src: 'https://via.placeholder.com/32',
+              alt: 'User Avatar',
+            },
+            text: {
+              content: 'Jane Smith',
+              color: 'light',
+              fontWeight: 700,
+            },
+            pill: {
+              text: '100',
+              color: 'read-only-disabled',
+              variant: 'soft',
+              rounded: 'r_md',
+            },
+            rounded: 'r_md',
+          }}
+          title="TextCard - Check deshabilitado"
+          titleProps={{
+            color: 'paragraph_dark',
+            fontWeight: 700,
+          }}
+          description="El checkbox está deshabilitado en este ejemplo."
+          descriptionProps={{
+            color: 'icon_text',
+          }}
+        />
+      );
+    }
+
+    return <DisabledStory />;
   },
-  title: 'Tarjeta Deshabilitada',
-  description: 'Este texto está asociado a un componente inactivo.',
-  size: 'md',
-  rounded: 'r_md',
 };
