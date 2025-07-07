@@ -1,4 +1,4 @@
-import{L as m}from"./LabelResourcesPage-CDmt94wV.js";import"./jsx-runtime-BlDnFLNC.js";import"./index-Cu9bd8lq.js";const d={title:"ui/components/atoms/lavel-resources-page",component:m},e={args:{text:"RECURSOS "}},r={args:{text:"PAGINA"}};var s,a,t;e.parameters={...e.parameters,docs:{...(s=e.parameters)==null?void 0:s.docs,source:{originalSource:`{
+import{L as m}from"./LabelResourcesPage-DqaUKDIp.js";import"./jsx-runtime-BlDnFLNC.js";import"./index-Cu9bd8lq.js";const d={title:"ui/components/atoms/lavel-resources-page",component:m},e={args:{text:"RECURSOS "}},r={args:{text:"PAGINA"}};var s,a,t;e.parameters={...e.parameters,docs:{...(s=e.parameters)==null?void 0:s.docs,source:{originalSource:`{
   args: {
     text: 'RECURSOS '
   }
