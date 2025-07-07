@@ -11,7 +11,7 @@ const mockData: IData[] = [
 const mockBackgroundImage = 'mock-background-image.png';
 
 describe('YearSelector Component', () => {
-  test('renderiza con año inicial y botón visible', () => {
+  test('renders with initial year and button visible', () => {
     render(
       <YearSelector data={mockData} initialYear="AÑO" backgroundImage={mockBackgroundImage} />,
     );
@@ -19,7 +19,7 @@ describe('YearSelector Component', () => {
     expect(screen.getByRole('button')).toHaveTextContent('AÑO');
   });
 
-  test('muestra y oculta la lista de años al hacer clic en el botón', () => {
+  test('Show and hide the list of years when clicking the button', () => {
     render(
       <YearSelector data={mockData} initialYear="AÑO" backgroundImage={mockBackgroundImage} />,
     );
@@ -38,7 +38,7 @@ describe('YearSelector Component', () => {
     expect(screen.queryByText('2020')).not.toBeVisible();
   });
 
-  test('selecciona un año y actualiza el botón, oculta la lista', () => {
+  test('Select a year and update the button, hide the list', () => {
     render(
       <YearSelector data={mockData} initialYear="AÑO" backgroundImage={mockBackgroundImage} />,
     );
