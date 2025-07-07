@@ -24,6 +24,9 @@ export const lightTheme = createTheme({
     text: {
       primary: tokens.colors.text_main_alpha,
       secondary: tokens.colors.text_secondary,
+      primary_alpha: tokens.colors.text_main,
+      tertiary: tokens.colors.tertiary_main,
+      quintary_main: tokens.colors.quintary_main,
     },
     olitemPalette: {
       stroke_Primary: tokens.colors.stroke_primary,
@@ -93,8 +96,15 @@ export const lightTheme = createTheme({
       fontSize: tokens.typography.fontSizes.sixth,
       color: tokens.colors.text_input,
     },
+    body3: {
+      fontSize: tokens.colors.font_size_fifth,
+      fontWeight: tokens.colors.font_weight_regular,
+    },
     textPoppins: {
       fontFamily: 'Poppins-Regular',
+    },
+    textLato: {
+      fontFamily: 'Lato',
     },
     textSm: {
       fontSize: tokens.colors.icontextstat_fontsize_smalltext,
