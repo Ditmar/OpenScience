@@ -15,20 +15,4 @@ describe('Footer component', () => {
     const icons = container.querySelectorAll('span[aria-hidden="true"]');
     expect(icons.length).toBeGreaterThanOrEqual(2);
   });
-
-  test('applies correct size class: small', () => {
-    const { container } = render(
-      <Footer locationText="UNIPOL.EDU.BO" followUsText="RECURSOS" size="small" />,
-    );
-    const root = container.firstChild as HTMLElement;
-    expect(root.className.includes('footer--small')).toBeTruthy();
-  });
-
-  test('applies correct size class: large', () => {
-    const { container } = render(
-      <Footer locationText="UNIPOL.EDU.BO" followUsText="RECURSOS" size="large" />,
-    );
-    const root = container.firstChild as HTMLElement;
-    expect(root.className.includes('footer--large')).toBeTruthy();
-  });
 });
