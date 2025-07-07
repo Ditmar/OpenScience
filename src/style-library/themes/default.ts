@@ -67,6 +67,8 @@ export const lightTheme = createTheme({
     primary: '#235347',
     secondary: '#03a9f4',
     white: tokens.colors.main,
+  },
+  customColorsBarge:{
     gray:'#e0e0e0'
   },
   typography: {
