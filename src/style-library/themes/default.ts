@@ -73,6 +73,15 @@ export const lightTheme = createTheme({
       accent: tokens.colors.quintary_main,
       iconSize: tokens.typography.fontSizes.headingone,
     },
+    phonedropdownPalette: {
+      textPrimary: '#1B2037',
+      textSecondary: tokens.colors.icontextstat_color_text,
+      textTertiary: tokens.colors.white,
+      background: tokens.colors.primary_main,
+      borderFocus: tokens.colors.primary_main,
+      borderDefault: tokens.colors.stroke_dark_soft,
+      borderCountryList: tokens.colors.stroke_primary_soft,
+    },
   },
   customColors: {
     primary: '#235347',
