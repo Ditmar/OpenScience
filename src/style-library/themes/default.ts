@@ -68,8 +68,8 @@ export const lightTheme = createTheme({
     secondary: '#03a9f4',
     white: tokens.colors.main,
   },
-  customColorsBarge:{
-    gray:'#e0e0e0'
+  customColorsBarge: {
+    gray: '#e0e0e0',
   },
   typography: {
     fontFamily: '"Lato", "Roboto", "Montserrat", "Poppins-Regular", sans-serif',
