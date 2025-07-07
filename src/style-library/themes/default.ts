@@ -90,6 +90,9 @@ export const lightTheme = createTheme({
     navbarMain: tokens.colors.quintary_main,
     navbarBorder: tokens.colors.text_main,
   },
+  customColorsBadge: {
+    gray: '#e0e0e0',
+  },
   typography: {
     fontFamily: '"Lato", "Roboto", "Montserrat", "Poppins-Regular", sans-serif',
     fontSize: 16,
