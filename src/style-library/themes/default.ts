@@ -68,7 +68,7 @@ export const lightTheme = createTheme({
     secondary: '#03a9f4',
     white: tokens.colors.main,
   },
-  customColorsBarge: {
+  customColorsBadge: {
     gray: '#e0e0e0',
   },
   typography: {

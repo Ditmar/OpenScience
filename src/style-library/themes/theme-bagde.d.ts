@@ -2,13 +2,13 @@ import '@mui/material/styles';
 
 declare module '@mui/material/styles' {
   interface Theme {
-    customColorsBarge: {
+    customColorsBadge: {
       gray:string;
     };
   }
 
   interface ThemeOptions {
-    customColorsBarge?: {
+    customColorsBadge?: {
       gray?:string;
     };
   }

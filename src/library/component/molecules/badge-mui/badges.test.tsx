@@ -26,7 +26,7 @@ const mockTheme = createTheme({
     },
     divider: '#dee2e6',
   },
-  customColors: {
+  customColorsBadge: {
     gray: '#e0e0e0',
   },
 });
