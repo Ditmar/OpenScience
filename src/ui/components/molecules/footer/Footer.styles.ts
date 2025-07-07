@@ -47,11 +47,11 @@ export const LogoSection = styled(Box)(({ theme }) => ({
 }));
 
 export const FooterTitle = styled(Typography)(({ theme }) => ({
-  alignSelf: 'stretch', 
-  textAlign: 'center', 
+  alignSelf: 'stretch',
+  textAlign: 'center',
   fontWeight: 'bold',
   marginBottom: '0.5rem',
-  fontSize: '0.8rem', 
+  fontSize: '0.8rem',
   [theme.breakpoints.up('sm')]: {
     fontSize: '1rem',
   },
