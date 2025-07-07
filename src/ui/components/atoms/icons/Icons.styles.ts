@@ -2,7 +2,7 @@ import { styled } from '@mui/material/styles';
 import type { Theme } from '@mui/material/styles';
 
 export const backgroundColor: Record<string, (theme: Theme) => string> = {
-  blue: (theme) => theme.palette.customBlue.main,
+  blue: (theme) => theme.palette.hamburgerMenuPalette.accent,
   transparent: () => 'transparent',
 };
 

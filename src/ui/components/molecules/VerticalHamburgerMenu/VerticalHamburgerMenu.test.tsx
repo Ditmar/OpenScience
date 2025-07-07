@@ -48,11 +48,15 @@ describe('VerticalHamburgerMenu', () => {
     const { container } = renderWithTheme(<VerticalHamburgerMenu />);
 
     const menuContainer = container.firstChild as HTMLElement;
-    expect(menuContainer).toHaveStyle(`background-color: ${lightTheme.palette.text.primary}`);
+    expect(menuContainer).toHaveStyle(
+      `background-color: ${lightTheme.palette.hamburgerMenuPalette.main}`,
+    );
 
     fireEvent.click(screen.getByLabelText('Toggle menu'));
 
     const expandedList = await screen.findByRole('list');
-    expect(expandedList).toHaveStyle(`background-color: ${lightTheme.palette.customBlue.main}`);
+    expect(expandedList).toHaveStyle(
+      `background-color: ${lightTheme.palette.hamburgerMenuPalette.accent}`,
+    );
   });
 });

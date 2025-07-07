@@ -42,12 +42,21 @@ declare module '@mui/material/styles' {
     tertiary: PaletteColor;
     primary_alpha: PaletteColor;
     quintary_main: PaletteColor;
+
+    hamburgerMenuPalette: {
+      main: string;
+      accent: string;
+      iconSize: string;
+    };
+
+    customBlue: Palette['primary'];
   }
+
   interface PaletteOptions {
     olitemPalette?: {
-      stroke_Primary: string;
-      text_light: string;
-      stroke_primary_Soft: string;
+      stroke_Primary?: string;
+      text_light?: string;
+      stroke_primary_Soft?: string;
     };
     pillpalette?: {
       dark?: string;
@@ -84,13 +93,16 @@ declare module '@mui/material/styles' {
     tertiary?: PaletteColorOptions;
     primary_alpha?: PaletteColorOptions;
     quintary_main?: PaletteColorOptions;
-  }
-  interface Palette {
-    customBlue: Palette['primary'];
-  }
-  interface PaletteOptions {
+
+    hamburgerMenuPalette?: {
+      main?: string;
+      accent?: string;
+      iconSize?: string;
+    };
+
     customBlue?: PaletteOptions['primary'];
   }
+
   interface TypographyVariants {
     textSm: React.CSSProperties;
     textMd: React.CSSProperties;

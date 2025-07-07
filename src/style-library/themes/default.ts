@@ -68,8 +68,10 @@ export const lightTheme = createTheme({
       stroke_warning: tokens.colors.stroke_warning,
       stroke_warning_soft: tokens.colors.stroke_warning_soft,
     },
-    customBlue: {
-      main: '#0793BF',
+    hamburgerMenuPalette: {
+      main: tokens.colors.text_main,
+      accent: tokens.colors.quintary_main,
+      iconSize: tokens.typography.fontSizes.headingone,
     },
   },
   customColors: {

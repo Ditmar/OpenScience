@@ -1,7 +1,6 @@
 import { Box, List, ListItemButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { styled } from '@mui/material/styles';
-import tokens from '../../../../style-library/themes/tokens/tokens.json';
 
 export interface MenuContainerProps {
   side: 'left' | 'right';
@@ -16,7 +15,7 @@ export const MenuContainer = styled(Box, {
   zIndex: theme.zIndex.appBar,
   display: 'flex',
   flexDirection: 'column',
-  backgroundColor: theme.palette.text.primary,
+  backgroundColor: theme.palette.hamburgerMenuPalette.main,
   boxShadow: theme.shadows[2],
   overflow: 'hidden',
   transition: 'all 0.3s ease',
@@ -42,11 +41,11 @@ export const StyledListItemButton = styled(ListItemButton)(({ theme }) => ({
 }));
 
 export const StyledList = styled(List)(({ theme }) => ({
-  backgroundColor: theme.palette.customBlue.main,
+  backgroundColor: theme.palette.hamburgerMenuPalette.accent,
   padding: 0,
 }));
 
 export const StyledMenuIcon = styled(MenuIcon)(({ theme }) => ({
   color: theme.palette.common.white,
-  fontSize: tokens.typography.fontSizes.headingone,
+  fontSize: theme.palette.hamburgerMenuPalette.iconSize,
 }));
