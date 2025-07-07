@@ -9,5 +9,5 @@ export interface IconProps {
 }
 
 export interface ValidationIconsProps {
-  status: 'success' | 'error';
+  status: 'success' | 'error' | null;
 }
