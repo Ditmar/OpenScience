@@ -13,4 +13,8 @@ export interface IProps {
   name?: string;
   value?: string | number;
   checked?: boolean;
+  id?: string;
+  'aria-label'?: string;
+  'aria-labelledby'?: string;
+  'data-testid'?: string;
 }

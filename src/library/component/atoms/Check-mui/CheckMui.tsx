@@ -3,7 +3,18 @@ import { StyledCheckbox } from './CheckMui.style';
 import type { IProps } from './types/IProps';
 
 function CheckMui(props: IProps) {
-  const { disabled, variant, onChange, name, value, checked } = props;
+  const {
+    disabled,
+    variant,
+    onChange,
+    name,
+    value,
+    checked,
+    id,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledby,
+    'data-testid': dataTestid,
+  } = props;
 
   return (
     <StyledCheckbox
@@ -13,6 +24,10 @@ function CheckMui(props: IProps) {
       name={name}
       value={value}
       checked={checked}
+      id={id}
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledby}
+      data-testid={dataTestid}
     />
   );
 }
