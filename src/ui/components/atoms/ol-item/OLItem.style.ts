@@ -14,10 +14,12 @@ export const OLItemRoot = styled(Box, {
   justifyContent: 'center',
 
   ...(shape === 'square' && {
-    borderRadius: '0',
+    borderRadius: 0,
   }),
   ...(shape === 'rounded' && {
-    borderRadius: theme.shape.borderRadius + 4,
+    borderRadius: typeof theme.shape.borderRadius === 'number'
+      ? theme.shape.borderRadius + 4
+      : `calc(${theme.shape.borderRadius} + 4px)`,
   }),
   ...(shape === 'circle' && {
     borderRadius: '50%',
