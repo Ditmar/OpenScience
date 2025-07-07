@@ -30,8 +30,7 @@ export const LogoSection = styled(Box)(({ theme }) => ({
   margin: '1rem 0',
   '& svg, & img': {
     marginBottom: '1rem',
-    // Mobile-first approach
-    width: '3.5rem', // xs
+    width: '3.5rem',
     [theme.breakpoints.up('sm')]: {
       width: '4.5rem',
     },
@@ -48,12 +47,11 @@ export const LogoSection = styled(Box)(({ theme }) => ({
 }));
 
 export const FooterTitle = styled(Typography)(({ theme }) => ({
-  alignSelf: 'stretch', // Use stretch to fill width
-  textAlign: 'center', // Center the text
+  alignSelf: 'stretch', 
+  textAlign: 'center', 
   fontWeight: 'bold',
   marginBottom: '0.5rem',
-  // Mobile-first font sizes
-  fontSize: '0.8rem', // xs
+  fontSize: '0.8rem', 
   [theme.breakpoints.up('sm')]: {
     fontSize: '1rem',
   },
@@ -72,7 +70,7 @@ export const VariablesContainer = styled(Box)(({ theme }) => ({
   justifyContent: 'space-between',
   margin: '0 auto',
   maxWidth: '37.5rem',
-  width: '100%', // Ensure it takes up space
+  width: '100%',
   position: 'relative',
   gap: '0.8rem',
   '&::before': {
@@ -92,13 +90,13 @@ export const FooterSection = styled(Box)({
   flexDirection: 'column',
   alignItems: 'center',
   gap: '0.5rem',
-  width: '45%', // Use a consistent width
+  width: '45%',
 });
 
 export const FooterSectionInner = styled(Box)({
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'flex-start', // Align text to the left within the section
+  alignItems: 'flex-start',
   gap: '0.4rem',
   marginTop: '0.4rem',
 });
@@ -107,8 +105,7 @@ export const SectionText = styled(Typography)(({ theme }) => ({
   fontWeight: 400,
   letterSpacing: '0.0625rem',
   textAlign: 'center',
-  // Mobile-first font sizes
-  fontSize: '0.6rem', // xs
+  fontSize: '0.6rem',
   [theme.breakpoints.up('sm')]: {
     fontSize: '0.85rem',
   },
