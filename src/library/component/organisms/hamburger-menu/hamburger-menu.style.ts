@@ -24,7 +24,6 @@ export const LogoWrapper = styled(Box)({
 });
 
 export const DrawerContent = styled(Box)({
-  // width: 117,
   display: 'block',
   flexDirection: 'column',
   alignItems: 'flex-start',
