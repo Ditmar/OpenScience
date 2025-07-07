@@ -1,6 +1,7 @@
 import { styled } from '@mui/material/styles';
 import { Box, IconButton } from '@mui/material';
 import type { ISocialMenuProps } from './types/IProps';
+import tokens from '../../../../style-library/themes/tokens/tokens';
 
 export const SocialMenuContainer = styled(Box)<{
   orientation: ISocialMenuProps['orientation'];
@@ -9,7 +10,7 @@ export const SocialMenuContainer = styled(Box)<{
   display: 'flex',
   flexDirection: orientation === 'vertical' ? 'column' : 'row',
   gap: theme.spacing(0),
-  backgroundColor: backgroundColor ?? '#0793BF',
+  backgroundColor: backgroundColor ?? tokens.colors?.quintary_main,
   padding: theme.spacing(0.5),
   boxShadow: theme.shadows[4],
   zIndex: theme.zIndex.fab,
@@ -36,11 +37,11 @@ export const SocialIconButton = styled(IconButton)<{
   const getSocialColor = () => {
     switch (socialType) {
       case 'whatsapp':
-        return '#25D366';
+        return tokens.colors?.green_main;
       case 'telegram':
-        return '#0088cc';
+        return tokens.colors?.tertiary;
       case 'facebook':
-        return '#1877f2';
+        return tokens.colors?.brand_bg;
       default:
         return theme.palette.primary.main;
     }
@@ -53,7 +54,7 @@ export const SocialIconButton = styled(IconButton)<{
     return {
       width: sizeMap[size],
       height: sizeMap[size],
-      backgroundColor: '#fff',
+      backgroundColor: tokens.colors?.main,
       color: buttonColor,
       margin: theme.spacing(0.25),
       border: 'none',
@@ -78,7 +79,7 @@ export const SocialIconButton = styled(IconButton)<{
       },
 
       '&:hover': {
-        backgroundColor: '#fff',
+        backgroundColor: tokens.colors?.main,
         transform: 'scale(1.1)',
         boxShadow: theme.shadows[6],
         '& .MuiSvgIcon-root': {
@@ -87,8 +88,8 @@ export const SocialIconButton = styled(IconButton)<{
       },
 
       '&:focus': {
-        backgroundColor: '#fff',
-        outline: `2px solid ${socialColor}`,
+        backgroundColor: tokens.colors?.main,
+        outline: `2px solid ${socialColor ?? ''}`,
         outlineOffset: '2px',
         '& .MuiSvgIcon-root': {
           color: socialColor,
@@ -100,7 +101,7 @@ export const SocialIconButton = styled(IconButton)<{
       },
 
       '&:focus-visible': {
-        outline: `3px solid ${socialColor}`,
+        outline: `3px solid ${socialColor ?? ''}`,
         outlineOffset: '2px',
       },
     };
