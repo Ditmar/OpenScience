@@ -1,10 +1,23 @@
 import React, { useState, useRef } from 'react';
-import { Box, Collapse, ClickAwayListener } from '@mui/material';
+import { Box, Collapse, ClickAwayListener, styled } from '@mui/material';
 import InputPhone from '../../molecules/input-phone/InputPhone';
 import { CountryList } from '../../molecules/country-list/CountryList';
 import type { PhoneDropdownProps } from './types/IProps';
 import type { CountryFlagProps } from '../../atoms/icon-flag/types/IProps';
 import { allCountries } from '../../atoms/icon-flag/countryMock';
+
+const StyledContainer = styled(Box)({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '8px',
+  width: '100%',
+  maxWidth: '371px',
+  position: 'relative',
+});
+
+const StyledCollapseBox = styled(Box)({
+  marginTop: 8,
+});
 
 export default function PhoneDropdown({
   iconText = 'Phone Number',
@@ -49,18 +62,7 @@ export default function PhoneDropdown({
 
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
-      <Box
-        ref={containerRef}
-        data-testid="phone-dropdown"
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '8px',
-          width: '100%',
-          maxWidth: '371px',
-          position: 'relative',
-        }}
-      >
+      <StyledContainer ref={containerRef} data-testid="phone-dropdown">
         <InputPhone
           iconText={iconText}
           hintText={isCountryListOpen ? '' : hintText}
@@ -75,9 +77,8 @@ export default function PhoneDropdown({
           selectedCountry={selectedCountry}
           isOpen={isCountryListOpen}
         />
-
         <Collapse in={isCountryListOpen}>
-          <Box sx={{ mt: 1 }}>
+          <StyledCollapseBox>
             <CountryList
               countries={countryListProps.countries ?? allCountries}
               size={size}
@@ -88,9 +89,9 @@ export default function PhoneDropdown({
               title="Select Country"
               titleSize={size}
             />
-          </Box>
+          </StyledCollapseBox>
         </Collapse>
-      </Box>
+      </StyledContainer>
     </ClickAwayListener>
   );
 }

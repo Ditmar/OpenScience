@@ -1,7 +1,48 @@
 import React from 'react';
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, Typography, useTheme, styled } from '@mui/material';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import type { IProps } from './types/IProps';
+
+const StyledBox = styled(Box, {
+  shouldForwardProp: (prop) => prop !== 'disabled',
+})<{
+  disabled: boolean;
+}>(({ disabled }) => ({
+  alignItems: 'center',
+  display: 'flex',
+  maxWidth: '371px',
+  width: '100%',
+  opacity: disabled ? 0.4 : 1,
+  transition: 'opacity 0.2s ease',
+}));
+
+const StyledIcon = styled(InfoOutlinedIcon)<{ iconSize: number; iconColor?: string }>(
+  ({ theme, iconSize, iconColor }) => ({
+    fontSize: iconSize,
+    flexShrink: 0,
+    color: iconColor ?? theme.palette.text.primary,
+  }),
+);
+
+const StyledTypography = styled(Typography)<{
+  fontSize: string;
+  marginX: string;
+  fontFamily?: string;
+  fontWeight?: number | string;
+  textColor?: string;
+}>(({ theme, fontSize, marginX, fontFamily, fontWeight, textColor }) => ({
+  flexGrow: 1,
+  minWidth: 0,
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  whiteSpace: 'nowrap',
+  fontFamily: fontFamily ?? theme.typography.fontFamily,
+  fontWeight: fontWeight ?? theme.typography.fontWeightLight,
+  fontSize,
+  marginLeft: marginX,
+  marginRight: marginX,
+  color: textColor ?? theme.palette.text.secondary,
+}));
 
 export default function HintText({
   text,
@@ -31,55 +72,33 @@ export default function HintText({
 
   const currentSize = sizeStyles[size];
 
-  const iconColor = disabled ? theme.palette.text.disabled : '#151A2D';
+  const iconColor = disabled ? theme.palette.text.disabled : theme.palette.text.primary;
   const textColor = theme.palette.text.disabled;
+  const fontFamily = undefined;
+  const fontWeight = undefined;
 
   return (
-    <Box
-      data-testid="hint-text"
-      className={className}
-      sx={{
-        alignItems: 'center',
-        display: 'flex',
-        maxWidth: '371px',
-        width: '100%',
-        opacity: disabled ? 0.4 : 1,
-        transition: 'opacity 0.2s ease',
-      }}
-    >
-      <InfoOutlinedIcon
+    <StyledBox data-testid="hint-text" className={className} disabled={disabled}>
+      <StyledIcon
         data-testid="hint-icon-left"
-        sx={{
-          fontSize: currentSize.iconSize,
-          flexShrink: 0,
-          color: iconColor,
-        }}
+        iconSize={currentSize.iconSize}
+        iconColor={iconColor}
       />
-      <Typography
+      <StyledTypography
         variant="body2"
-        sx={{
-          flexGrow: 1,
-          minWidth: 0,
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
-          whiteSpace: 'nowrap',
-          fontFamily: 'Poppins, sans-serif',
-          fontWeight: 300,
-          fontSize: currentSize.fontSize,
-          mx: currentSize.marginX,
-          color: textColor,
-        }}
+        fontSize={currentSize.fontSize}
+        marginX={currentSize.marginX}
+        fontFamily={fontFamily}
+        fontWeight={fontWeight}
+        textColor={textColor}
       >
         {text}
-      </Typography>
-      <InfoOutlinedIcon
+      </StyledTypography>
+      <StyledIcon
         data-testid="hint-icon-right"
-        sx={{
-          fontSize: currentSize.iconSize,
-          flexShrink: 0,
-          color: iconColor,
-        }}
+        iconSize={currentSize.iconSize}
+        iconColor={iconColor}
       />
-    </Box>
+    </StyledBox>
   );
 }

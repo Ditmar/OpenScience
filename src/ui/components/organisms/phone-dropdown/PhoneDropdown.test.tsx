@@ -8,6 +8,12 @@ interface BoxProps {
   className?: string;
   style?: React.CSSProperties;
 }
+interface StyledComponentProps {
+  children?: ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
+  [key: string]: unknown;
+}
 vi.mock('@mui/material', () => ({
   Box: ({ children, className, style }: BoxProps) => (
     <div className={className} style={style}>
@@ -17,6 +23,13 @@ vi.mock('@mui/material', () => ({
   Collapse: ({ in: inProp, children }: { in: boolean; children?: ReactNode }) =>
     inProp ? <div data-testid="collapse">{children}</div> : null,
   ClickAwayListener: ({ children }: { children?: ReactNode }) => <div>{children}</div>,
+  styled: (Component: React.ComponentType<StyledComponentProps>) => (styles: React.CSSProperties) =>
+    function StyledComponent(props: StyledComponentProps) {
+      // eslint-disable-next-line react/destructuring-assignment
+      const mergedStyle = { ...(props.style ?? {}), ...styles };
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      return <Component {...props} style={mergedStyle} />;
+    },
 }));
 
 interface InputPhoneProps {
@@ -111,10 +124,8 @@ describe('PhoneDropdown (light)', () => {
   it('opens and closes the list on button click', () => {
     render(<PhoneDropdown />);
     const toggleButton = screen.getByTestId('country-button');
-
     fireEvent.click(toggleButton);
     expect(screen.getByTestId('country-list')).toBeInTheDocument();
-
     fireEvent.click(toggleButton);
     expect(screen.queryByTestId('country-list')).not.toBeInTheDocument();
   });
@@ -123,11 +134,9 @@ describe('PhoneDropdown (light)', () => {
     const onCountrySelect = vi.fn();
     render(<PhoneDropdown onCountrySelect={onCountrySelect} />);
     const toggleButton = screen.getByTestId('country-button');
-
     fireEvent.click(toggleButton);
     const brazil = screen.getByText('Brasil');
     fireEvent.click(brazil);
-
     expect(onCountrySelect).toHaveBeenCalledWith({
       code: 'BR',
       name: 'Brasil',
@@ -141,7 +150,6 @@ describe('PhoneDropdown (light)', () => {
     const onChange = vi.fn();
     render(<PhoneDropdown onChange={onChange} />);
     const input = screen.getByPlaceholderText('Phone');
-
     fireEvent.change(input, { target: { value: 'abc123!@#' } });
     expect(onChange).toHaveBeenCalledWith('123');
   });

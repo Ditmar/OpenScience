@@ -1,9 +1,81 @@
 import React from 'react';
-import { Box, List, ListItem, Typography } from '@mui/material';
+import { Box, List, ListItem, Typography, styled } from '@mui/material';
 import { CountryFlag } from '../../atoms/icon-flag/IconFlag';
 import type { CountryListProps } from './types/IProps';
 import type { CountryFlagProps } from '../../atoms/icon-flag/types/IProps';
 import { allCountries } from '../../atoms/icon-flag/countryMock';
+
+const StyledContainer = styled(Box)<{ borderRadius: string }>(({ theme, borderRadius }) => ({
+  backgroundColor: theme.palette.background.paper,
+  border: `1px solid ${theme.palette.divider}`,
+  boxShadow: theme.shadows[2],
+  height: '350px',
+  maxWidth: '371px',
+  width: '100%',
+  overflow: 'hidden',
+  borderRadius,
+  '@media (max-width: 371px)': {
+    maxWidth: '100%',
+  },
+  '@media (max-height: 350px)': {
+    height: 'auto',
+    maxHeight: '100vh',
+  },
+}));
+
+const StyledTitle = styled(Typography)<{
+  fontSize: string;
+  pt: string;
+  pb: string;
+}>(({ theme, fontSize, pt, pb }) => ({
+  color: theme.palette.text.primary,
+  fontFamily: theme.typography.fontFamily,
+  fontWeight: theme.typography.fontWeightRegular,
+  fontSize,
+  paddingTop: pt,
+  paddingBottom: pb,
+  paddingLeft: '24px',
+  paddingRight: '24px',
+}));
+
+const StyledList = styled(List)<{ maxHeight: string }>(({ theme, maxHeight }) => ({
+  overflowY: 'auto',
+  maxHeight,
+  padding: 0,
+  '&::-webkit-scrollbar': {
+    width: '8px',
+  },
+  '&::-webkit-scrollbar-track': {
+    background: theme.palette.background.default,
+  },
+  '&::-webkit-scrollbar-thumb': {
+    background: theme.palette.primary.main,
+    borderRadius: '4px',
+  },
+  '&::-webkit-scrollbar-thumb:hover': {
+    background: theme.palette.primary.dark,
+  },
+}));
+
+const StyledListItem = styled(ListItem)(({ theme }) => ({
+  cursor: 'pointer',
+  paddingLeft: '16px',
+  paddingRight: '50px',
+  paddingTop: '8px',
+  paddingBottom: '8px',
+  transition: 'all 0.2s ease',
+  borderRadius: '8px',
+  fontFamily: theme.typography.fontFamily,
+  fontWeight: theme.typography.fontWeightRegular,
+  color: theme.palette.text.primary,
+  '&:hover': {
+    backgroundColor: theme.palette.action.hover,
+  },
+  '&:active': {
+    backgroundColor: theme.palette.action.selected,
+    transform: 'scale(0.98)',
+  },
+}));
 
 export function CountryList({
   countries = allCountries,
@@ -42,86 +114,36 @@ export function CountryList({
 
   const titleStyle = titleSizeStyles[titleSize];
 
+  const getListMaxHeight = (mh: string | number | undefined): string => {
+    if (typeof mh === 'number') {
+      return `${String(mh)}px`;
+    }
+    if (typeof mh === 'string') {
+      return mh;
+    }
+    return '300px';
+  };
+
   return (
-    <Box
-      sx={{
-        backgroundColor: 'var(--color-white, white)',
-        border: '1px solid #E4DAFF',
-        boxShadow: '0 2px 8px rgb(0 0 0 / 10%)',
-        height: '350px',
-        maxWidth: '371px',
-        width: '100%',
-        overflow: 'hidden',
-        borderRadius,
-        '@media (max-width: 371px)': {
-          maxWidth: '100%',
-        },
-        '@media (max-height: 350px)': {
-          height: 'auto',
-          maxHeight: '100vh',
-        },
-      }}
-    >
+    <StyledContainer borderRadius={borderRadius}>
       {showTitle && (
-        <Typography
+        <StyledTitle
           variant="h6"
-          sx={{
-            color: 'var(--color-primary-text, #1B2037)',
-            fontFamily: 'Poppins, sans-serif',
-            fontWeight: 400,
-            fontSize: titleStyle.fontSize,
-            pt: titleStyle.pt,
-            pb: titleStyle.pb,
-            px: '24px',
-          }}
+          fontSize={titleStyle.fontSize}
+          pt={titleStyle.pt}
+          pb={titleStyle.pb}
         >
           {title}
-        </Typography>
+        </StyledTitle>
       )}
-
-      <List
-        sx={{
-          overflowY: 'auto',
-          maxHeight,
-          p: 0,
-          '&::-webkit-scrollbar': {
-            width: '8px',
-          },
-          '&::-webkit-scrollbar-track': {
-            background: '#f1f1f1',
-          },
-          '&::-webkit-scrollbar-thumb': {
-            background: '#1976d2',
-            borderRadius: '4px',
-          },
-          '&::-webkit-scrollbar-thumb:hover': {
-            background: '#1565c0',
-          },
-        }}
-        data-testid="country-list"
-      >
+      <StyledList maxHeight={getListMaxHeight(maxHeight)} data-testid="country-list">
         {countries.map((country) => (
-          <ListItem
+          <StyledListItem
             key={country.code}
             onClick={() => {
               handleCountryClick(country);
             }}
             data-testid={`country-item-${country.code}`}
-            sx={{
-              cursor: 'pointer',
-              px: '16px',
-              py: '8px',
-              pr: '50px',
-              transition: 'all 0.2s ease',
-              borderRadius: '8px',
-              '&:hover': {
-                backgroundColor: 'rgb(0 0 0 / 4%)',
-              },
-              '&:active': {
-                backgroundColor: 'var(--color-bg-active)',
-                transform: 'scale(0.98)',
-              },
-            }}
           >
             <CountryFlag
               src={country.src}
@@ -132,9 +154,9 @@ export function CountryList({
               size={size}
               variant={flagVariant}
             />
-          </ListItem>
+          </StyledListItem>
         ))}
-      </List>
-    </Box>
+      </StyledList>
+    </StyledContainer>
   );
 }

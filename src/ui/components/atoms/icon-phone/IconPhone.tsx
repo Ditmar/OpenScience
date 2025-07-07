@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, IconButton, useTheme } from '@mui/material';
+import { Box, Typography, IconButton, useTheme, styled } from '@mui/material';
 import type { IconPhoneProps } from './types/IProps';
 
 const phoneIconUrl = new URL('../../../../assets/icons/fi-rr-phone-flip.svg', import.meta.url).href;
@@ -7,6 +7,46 @@ const closeIconUrl = new URL(
   '../../../../assets/icons/fi-rr-circle-quarters-alt.svg',
   import.meta.url,
 ).href;
+
+const StyledBox = styled(Box)<{ disabled: boolean }>(({ disabled }) => ({
+  alignItems: 'center',
+  display: 'flex',
+  maxWidth: '371px',
+  width: '100%',
+  transition: 'opacity 0.2s ease',
+  opacity: disabled ? 0.5 : 1,
+}));
+
+const StyledImg = styled('img')<{
+  iconSize: number;
+  filter: string;
+}>(({ iconSize, filter }) => ({
+  width: iconSize,
+  height: iconSize,
+  flexShrink: 0,
+  filter,
+}));
+
+const StyledTypography = styled(Typography)<{
+  textSize: string;
+  marginLeft: string;
+  textColor?: string;
+}>(({ theme, textSize, marginLeft, textColor }) => ({
+  flexGrow: 1,
+  fontFamily: theme.typography.fontFamily,
+  fontWeight: theme.typography.fontWeightRegular,
+  fontSize: textSize,
+  marginLeft,
+  color: textColor ?? theme.palette.text.primary,
+}));
+
+const StyledIconButton = styled(IconButton)({
+  marginLeft: 'auto',
+  padding: 0,
+  '&:hover': {
+    backgroundColor: 'transparent',
+  },
+});
 
 export default function IconPhone({
   text = 'Phone Number',
@@ -36,76 +76,38 @@ export default function IconPhone({
   };
 
   const currentSize = sizeStyles[size];
-  const textColor = disabled ? theme.palette.text.disabled : '#1B2037';
+  const textColor = disabled ? theme.palette.text.disabled : theme.palette.text.primary;
   const filterBase =
     'brightness(0) saturate(100%) invert(8%) sepia(15%) saturate(2044%) hue-rotate(185deg) brightness(95%) contrast(95%)';
   const filter = `${filterBase} ${disabled ? 'opacity(0.5)' : ''}`;
 
   return (
-    <Box
-      data-testid="icon-phone"
-      className={className}
-      sx={{
-        alignItems: 'center',
-        display: 'flex',
-        maxWidth: '371px',
-        width: '100%',
-        transition: 'opacity 0.2s ease',
-        opacity: disabled ? 0.5 : 1,
-      }}
-    >
-      {/* Icono de teléfono */}
-      <img
+    <StyledBox data-testid="icon-phone" className={className} disabled={disabled}>
+      <StyledImg
         data-testid="phone-icon"
         src={phoneIconUrl}
         alt="Phone icon"
-        style={{
-          width: currentSize.iconSize,
-          height: currentSize.iconSize,
-          flexShrink: 0,
-          filter,
-        }}
+        iconSize={currentSize.iconSize}
+        filter={filter}
       />
-
-      <Typography
+      <StyledTypography
         variant="body2"
-        sx={{
-          flexGrow: 1,
-          fontFamily: 'Poppins, sans-serif',
-          fontWeight: 400,
-          fontSize: currentSize.textSize,
-          marginLeft: currentSize.marginLeft,
-          color: textColor,
-        }}
+        textSize={currentSize.textSize}
+        marginLeft={currentSize.marginLeft}
+        textColor={textColor}
       >
         {text}
-      </Typography>
-
+      </StyledTypography>
       {onClose && (
-        <IconButton
-          data-testid="close-button"
-          onClick={onClose}
-          disabled={disabled}
-          sx={{
-            marginLeft: 'auto',
-            padding: 0,
-            '&:hover': {
-              backgroundColor: 'transparent',
-            },
-          }}
-        >
-          <img
+        <StyledIconButton data-testid="close-button" onClick={onClose} disabled={disabled}>
+          <StyledImg
             src={closeIconUrl}
             alt="Close icon"
-            style={{
-              width: currentSize.iconSize,
-              height: currentSize.iconSize,
-              flexShrink: 0,
-              filter,
-            }}
+            iconSize={currentSize.iconSize}
+            filter={filter}
           />
-        </IconButton>
+        </StyledIconButton>
       )}
-    </Box>
+    </StyledBox>
   );
 }

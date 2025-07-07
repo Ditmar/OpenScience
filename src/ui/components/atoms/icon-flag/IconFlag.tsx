@@ -1,6 +1,44 @@
 import React from 'react';
-import { Box, Avatar, Typography } from '@mui/material';
+import { Box, Avatar, Typography, styled } from '@mui/material';
 import type { CountryFlagProps } from './types/IProps';
+
+const StyledBox = styled(Box)({
+  display: 'flex',
+  alignItems: 'center',
+  padding: '4px 8px',
+  width: 'max-content',
+  maxWidth: '100%',
+  cursor: 'pointer',
+  transition: 'background-color 0.2s ease',
+});
+
+const StyledAvatar = styled(Avatar)<{ avatarSize: number; borderRadius: string }>(
+  ({ avatarSize, borderRadius }) => ({
+    width: avatarSize,
+    height: avatarSize,
+    borderRadius,
+  }),
+);
+
+const StyledTypography = styled(Typography)<{
+  fontSize: string;
+  fontFamily?: string;
+  fontWeight?: number | string;
+  color?: string;
+}>(({ theme, fontSize, fontFamily, fontWeight, color }) => ({
+  marginLeft: '16px',
+  fontFamily: fontFamily ?? theme.typography.fontFamily,
+  fontWeight: fontWeight ?? theme.typography.fontWeightLight,
+  fontSize,
+  color: color ?? theme.palette.text.primary,
+  display: 'flex',
+  alignItems: 'center',
+}));
+
+const StyledDialCode = styled(Box)<{ color?: string }>(({ theme, color }) => ({
+  color: color ?? theme.palette.text.primary,
+  marginLeft: '4px',
+}));
 
 export function CountryFlag({
   src,
@@ -27,46 +65,30 @@ export function CountryFlag({
 
   const currentSize = sizeStyles[size];
   const borderRadius = variant === 'circular' ? '50%' : '2px';
+  const fontFamily = undefined;
+  const fontWeight = undefined;
+  const color = undefined;
 
   return (
-    <Box
-      data-testid="country-flag"
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        padding: '4px 8px',
-        width: 'max-content',
-        maxWidth: '100%',
-        cursor: 'pointer',
-        transition: 'background-color 0.2s ease',
-      }}
-    >
-      <Avatar
+    <StyledBox data-testid="country-flag">
+      <StyledAvatar
         src={src}
         alt={alt}
-        sx={{
-          width: currentSize.avatarSize,
-          height: currentSize.avatarSize,
-          borderRadius,
-        }}
+        avatarSize={currentSize.avatarSize}
+        borderRadius={borderRadius}
       />
-      <Typography
+      <StyledTypography
         variant="body1"
-        sx={{
-          ml: '16px',
-          fontFamily: 'Poppins, sans-serif',
-          fontWeight: 300,
-          fontSize: currentSize.fontSize,
-          color: '#1B2037',
-          display: 'flex',
-          alignItems: 'center',
-        }}
+        fontSize={currentSize.fontSize}
+        fontFamily={fontFamily}
+        fontWeight={fontWeight}
+        color={color}
       >
         {name}
-        <Box component="span" sx={{ color: '#1B2037', ml: '4px' }}>
+        <StyledDialCode as="span" color={color}>
           ({dialCode})
-        </Box>
-      </Typography>
-    </Box>
+        </StyledDialCode>
+      </StyledTypography>
+    </StyledBox>
   );
 }
