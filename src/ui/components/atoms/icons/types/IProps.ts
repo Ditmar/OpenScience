@@ -7,3 +7,7 @@ export interface IconProps {
   iconHeight: number;
   alt: string;
 }
+
+export type ValidationIconsProps = {
+  status: 'success' | 'error';
+};
