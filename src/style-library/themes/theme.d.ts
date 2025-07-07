@@ -7,6 +7,7 @@ declare module '@mui/material/styles' {
       primary: string;
       secondary: string;
       white: string;
+      gray:string
     };
   }
 
@@ -15,6 +16,8 @@ declare module '@mui/material/styles' {
       primary?: string;
       secondary?: string;
       white?: string;
+      gray?:string
+      gray500?:string
     };
   }
 }

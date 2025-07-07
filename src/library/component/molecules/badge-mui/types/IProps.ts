@@ -25,6 +25,6 @@ export interface StyleProps {
   color: 'neutral' | 'custom';
   variant: 'filled' | 'soft' | 'outline';
   customColor?: string;
-  shape: 'rounded' | 'square';
+  shape: 'square' | 'rounded';
   onClick?: () => void;
 }

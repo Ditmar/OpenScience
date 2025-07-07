@@ -11,9 +11,9 @@ const getBackgroundColor = (
   theme: Theme,
 ): string => {
   const colorMap: Record<string, string> = {
-    neutral: theme.palette.text.secondary,
+    neutral: theme.palette.common.white,
     white: theme.palette.common.white,
-    gray: '#e0e0e0',
+    gray: theme.customColors.gray,
     violet: theme.palette.secondary.main,
     blue: theme.palette.primary.main,
     custom: customColor ?? theme.palette.warning.main,
@@ -27,7 +27,6 @@ const getBackgroundColor = (
     case 'soft':
       return `${baseColor}20`;
     case 'outline':
-      return TRANSPARENT;
     default:
       return TRANSPARENT;
   }
@@ -49,6 +48,7 @@ export const BadgeContainer = styled('div', {
     !['size', 'color', 'variant', 'customColor', 'shape', 'onClick'].includes(prop as string),
 })<StyleProps>(({ size, variant, color, customColor, shape, onClick, theme }) => ({
   display: 'inline-flex',
+  alignItems: 'center',
   padding: getPadding(size),
   borderRadius: shape === 'rounded' ? 8 : 0,
   cursor: onClick ? 'pointer' : 'default',
@@ -58,4 +58,8 @@ export const BadgeContainer = styled('div', {
       ? `1px solid ${customColor ?? theme.palette.divider}`
       : '1px solid transparent',
   transition: 'all 0.2s ease',
+  fontFamily: '"Poppins", sans-serif',
+  '& *': {
+    fontFamily: '"Poppins", sans-serif !important',
+  },
 }));

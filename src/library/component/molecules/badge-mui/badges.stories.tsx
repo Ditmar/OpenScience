@@ -12,7 +12,7 @@ const meta: Meta<BadgeItemProps> = {
     },
     shape: {
       control: { type: 'radio' },
-      options: ['default', 'rounded'],
+      options: ['square', 'rounded'],
     },
     variant: {
       control: { type: 'radio' },

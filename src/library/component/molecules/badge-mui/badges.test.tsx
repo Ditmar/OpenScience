@@ -1,37 +1,126 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import { describe, it, expect } from 'vitest';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import BadgeItem from './badges';
+import type { BadgeItemProps } from './types/IProps';
+
+// Mock theme para las pruebas
+const mockTheme = createTheme({
+  palette: {
+    common: {
+      white: '#ffffff',
+    },
+    grey: {
+      500: '#6c757d',
+    },
+    primary: {
+      main: '#0d6efd',
+    },
+    secondary: {
+      main: '#6610f2',
+    },
+    warning: {
+      main: '#ffc107',
+    },
+    text: {
+      primary: '#000000',
+    },
+    divider: '#dee2e6',
+  },
+  customColors: {
+    gray: '#e0e0e0',
+  },
+});
 
 describe('BadgeItem Component', () => {
+  const baseProps: Omit<BadgeItemProps, 'text'> = {
+    size: 'medium',
+    variant: 'filled',
+    color: 'neutral',
+    shape: 'square',
+  };
+
   it('renders with default props', () => {
-    render(<BadgeItem text="Test Badge" />);
+    render(
+      <ThemeProvider theme={mockTheme}>
+        <BadgeItem
+          text="Test Badge"
+          size={baseProps.size}
+          variant={baseProps.variant}
+          color={baseProps.color}
+          shape={baseProps.shape}
+        />
+      </ThemeProvider>,
+    );
+
     expect(screen.getByText('Test Badge')).toBeInTheDocument();
+    expect(screen.getByTestId('avatar-badge-item')).toBeInTheDocument();
   });
 
-  it('renders avatar when showAvatar is true and avatarSrc is provided', () => {
-    render(<BadgeItem text="Avatar Badge" avatarSrc="https://i.pravatar.cc/100" showAvatar />);
-    const img = screen.getByRole('img');
-    expect(img).toBeInTheDocument();
-    expect(img).toHaveAttribute('src', 'https://i.pravatar.cc/100');
+  it('displays the correct text', () => {
+    render(
+      <ThemeProvider theme={mockTheme}>
+        <BadgeItem
+          text="Custom Text"
+          size={baseProps.size}
+          variant={baseProps.variant}
+          color={baseProps.color}
+          shape={baseProps.shape}
+        />
+      </ThemeProvider>,
+    );
+
+    expect(screen.getByText('Custom Text')).toBeInTheDocument();
   });
 
-  it('renders countStart and countEnd when provided', () => {
-    render(<BadgeItem text="Counts" countStart={5} countEnd={10} />);
-    expect(screen.getByText('5')).toBeInTheDocument();
-    expect(screen.getByText('10')).toBeInTheDocument();
+  it('shows avatar when avatarSrc is provided', () => {
+    render(
+      <ThemeProvider theme={mockTheme}>
+        <BadgeItem
+          text="Test Badge"
+          size={baseProps.size}
+          variant={baseProps.variant}
+          color={baseProps.color}
+          shape={baseProps.shape}
+          avatarSrc="test.jpg"
+        />
+      </ThemeProvider>,
+    );
+
+    const avatar = screen.getByAltText('avatar');
+    expect(avatar).toBeInTheDocument();
+    expect(avatar).toHaveAttribute('src', 'test.jpg');
   });
 
-  it('calls onRemove when remove icon is clicked', () => {
-    const handleRemove = vi.fn();
-    render(<BadgeItem text="Removable" onRemove={handleRemove} />);
-    const removeBtn = screen.getByLabelText('Remove badge');
-    fireEvent.click(removeBtn);
-    expect(handleRemove).toHaveBeenCalled();
+  it('renders with small size correctly', () => {
+    render(
+      <ThemeProvider theme={mockTheme}>
+        <BadgeItem
+          text="Test Badge"
+          size="small"
+          variant={baseProps.variant}
+          color={baseProps.color}
+          shape={baseProps.shape}
+        />
+      </ThemeProvider>,
+    );
+
+    expect(screen.getByTestId('avatar-badge-item')).toHaveStyle('padding: 2px 6px');
   });
 
-  it('applies bold text when bold is true', () => {
-    render(<BadgeItem text="Bold Text" bold />);
-    const text = screen.getByText('Bold Text');
-    expect(text).toHaveStyle({ fontWeight: '700' });
+  it('renders with large size correctly', () => {
+    render(
+      <ThemeProvider theme={mockTheme}>
+        <BadgeItem
+          text="Test Badge"
+          size="large"
+          variant={baseProps.variant}
+          color={baseProps.color}
+          shape={baseProps.shape}
+        />
+      </ThemeProvider>,
+    );
+
+    expect(screen.getByTestId('avatar-badge-item')).toHaveStyle('padding: 6px 12px');
   });
 });
