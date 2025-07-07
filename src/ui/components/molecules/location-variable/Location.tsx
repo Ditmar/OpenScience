@@ -1,21 +1,51 @@
-import './styles.scss';
-import type { IProps } from './types/IProps';
-import { Icon } from '../../../utils/svg-icons/icons';
+import React from 'react';
+import {
+  IconWrapper,
+  LocationContainer,
+  LocationDivider,
+  LocationSection,
+  LocationText,
+} from './Location.styles';
+import type { IFooterProps } from './types/IProps';
+import defaultFacebookIcon from '../../../../assets/icons/facelocation.svg?raw';
+import defaultLocationIcon from '../../../../assets/icons/location.svg?raw';
 
-function Location(props: IProps) {
-  const { variant, children, icon, icon1, children1 } = props;
+function Location({
+  locationText,
+  followUsText,
+  size = 'medium',
+  icons = {
+    location: defaultLocationIcon,
+    facebook: defaultFacebookIcon,
+  },
+}: IFooterProps) {
   return (
-    <div className="location">
-      <span className="location__label">{children}</span>
-      <button className="location__icon" aria-label="icon">
-        {icon && <Icon data-testid="location__button" src={icon} />}
-      </button>
-      <hr className={`divider--${variant}`} />
-      <span className="location__label1">{children1}</span>
-      <button className="location__icon1" aria-label="icon">
-        {icon1 && <Icon data-testid="location__button1" src={icon1} />}
-      </button>
-    </div>
+    <LocationContainer size={size} role="contentinfo">
+      <LocationSection>
+        <LocationText size={size} variant="body2">
+          {locationText}
+        </LocationText>
+        <IconWrapper
+          size={size}
+          aria-hidden="true"
+          dangerouslySetInnerHTML={{ __html: icons.location }}
+        />
+      </LocationSection>
+
+      <LocationDivider size={size} />
+
+      <LocationSection>
+        <LocationText size={size} variant="body2">
+          {followUsText}
+        </LocationText>
+        <IconWrapper
+          size={size}
+          aria-hidden="true"
+          dangerouslySetInnerHTML={{ __html: icons.facebook }}
+        />
+      </LocationSection>
+    </LocationContainer>
   );
 }
+
 export default Location;
