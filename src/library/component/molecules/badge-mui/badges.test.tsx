@@ -4,7 +4,6 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import BadgeItem from './badges';
 import type { BadgeItemProps } from './types/IProps';
 
-// Mock theme para las pruebas
 const mockTheme = createTheme({
   palette: {
     common: {
