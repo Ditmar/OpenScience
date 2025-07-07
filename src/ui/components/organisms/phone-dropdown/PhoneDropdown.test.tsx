@@ -1,6 +1,6 @@
 import React from 'react';
 import type { ReactNode } from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { screen, fireEvent, renderWithTheme } from '@testing/renderWithTheme';
 import { describe, it, vi, afterEach, expect } from 'vitest';
 
 interface BoxProps {
@@ -114,7 +114,7 @@ afterEach(() => {
 
 describe('PhoneDropdown (light)', () => {
   it('renders InputPhone with initial state CLOSED', () => {
-    render(<PhoneDropdown hintText="Phone Number" />);
+    renderWithTheme(<PhoneDropdown hintText="Phone Number" />);
     const hints = screen.getAllByTestId('hint');
     expect(hints.length).toBeGreaterThan(0);
     expect(hints[0].textContent).not.toEqual('');
@@ -122,7 +122,7 @@ describe('PhoneDropdown (light)', () => {
   });
 
   it('opens and closes the list on button click', () => {
-    render(<PhoneDropdown />);
+    renderWithTheme(<PhoneDropdown />);
     const toggleButton = screen.getByTestId('country-button');
     fireEvent.click(toggleButton);
     expect(screen.getByTestId('country-list')).toBeInTheDocument();
@@ -132,7 +132,7 @@ describe('PhoneDropdown (light)', () => {
 
   it('calls onCountrySelect and updates selectedCountry', () => {
     const onCountrySelect = vi.fn();
-    render(<PhoneDropdown onCountrySelect={onCountrySelect} />);
+    renderWithTheme(<PhoneDropdown onCountrySelect={onCountrySelect} />);
     const toggleButton = screen.getByTestId('country-button');
     fireEvent.click(toggleButton);
     const brazil = screen.getByText('Brasil');
@@ -148,7 +148,7 @@ describe('PhoneDropdown (light)', () => {
 
   it('filters digits and calls onChange when typing', () => {
     const onChange = vi.fn();
-    render(<PhoneDropdown onChange={onChange} />);
+    renderWithTheme(<PhoneDropdown onChange={onChange} />);
     const input = screen.getByPlaceholderText('Phone');
     fireEvent.change(input, { target: { value: 'abc123!@#' } });
     expect(onChange).toHaveBeenCalledWith('123');

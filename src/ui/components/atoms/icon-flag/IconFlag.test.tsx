@@ -1,9 +1,8 @@
 import React from 'react';
-import { screen } from '@testing-library/react';
+import { renderWithTheme, screen } from '@testing/renderWithTheme';
 import '@testing-library/jest-dom';
 import { CountryFlag } from './IconFlag';
 import { allCountries } from './countryMock';
-import { renderWithTheme } from '../../../../testUtils/renderWithTheme';
 
 describe('CountryFlag Component', () => {
   test('renders correctly with default props (circular medium)', () => {

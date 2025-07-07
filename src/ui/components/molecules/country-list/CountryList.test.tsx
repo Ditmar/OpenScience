@@ -1,11 +1,10 @@
 import React from 'react';
-import { screen, fireEvent } from '@testing-library/react';
+import { screen, fireEvent, renderWithTheme } from '@testing/renderWithTheme';
 import '@testing-library/jest-dom';
 import { vi } from 'vitest';
 import { CountryList } from './CountryList';
 import { allCountries } from '../../atoms/icon-flag/countryMock';
 import type { CountryListProps } from './types/IProps';
-import { renderWithTheme } from '../../../../testUtils/renderWithTheme';
 
 describe('CountryList Component', () => {
   const getDefaultProps = (): CountryListProps => ({

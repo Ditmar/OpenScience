@@ -1,10 +1,9 @@
 import React from 'react';
-import { screen, fireEvent, cleanup } from '@testing-library/react';
+import { screen, fireEvent, cleanup, renderWithTheme } from '@testing/renderWithTheme';
 import '@testing-library/jest-dom';
 import { vi, describe, it, afterEach } from 'vitest';
 import PhoneNumberInput from './NumberInput';
 import type { PhoneNumberInputProps } from './types/IProps';
-import { renderWithTheme } from '../../../../testUtils/renderWithTheme';
 
 vi.mock('@mui/icons-material', () => {
   return {

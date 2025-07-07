@@ -1,9 +1,8 @@
 import React from 'react';
-import { screen, fireEvent, cleanup } from '@testing-library/react';
+import { screen, fireEvent, cleanup, renderWithTheme } from '@testing/renderWithTheme';
 import '@testing-library/jest-dom';
 import { vi, describe, it, afterEach } from 'vitest';
 import InputPhone from './InputPhone';
-import { renderWithTheme } from '../../../../testUtils/renderWithTheme';
 
 vi.mock('@mui/icons-material', () => ({
   __esModule: true,

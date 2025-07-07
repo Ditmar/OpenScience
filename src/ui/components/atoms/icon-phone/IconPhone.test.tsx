@@ -1,8 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { screen, fireEvent } from '@testing-library/react';
+import { screen, fireEvent, renderWithTheme } from '@testing/renderWithTheme';
 import { vi } from 'vitest';
-import { renderWithTheme } from '../../../../testUtils/renderWithTheme';
 import IconPhone from './IconPhone';
 
 describe('IconPhone Component', () => {

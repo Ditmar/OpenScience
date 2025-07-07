@@ -1,7 +1,6 @@
 import React from 'react';
-import { screen } from '@testing-library/react';
+import { renderWithTheme, screen } from '@testing/renderWithTheme';
 import '@testing-library/jest-dom';
-import { renderWithTheme } from '../../../../testUtils/renderWithTheme';
 import HintText from './HintText';
 
 describe('HintText component', () => {
