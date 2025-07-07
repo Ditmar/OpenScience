@@ -8,7 +8,7 @@ export const OLItemRoot = styled(Box, {
   const borderRadiusValue =
     typeof theme.shape.borderRadius === 'number'
       ? theme.shape.borderRadius + 4
-      : `calc(${theme.shape.borderRadius as string} + 4px)`;
+      : `calc(${theme.shape.borderRadius} + 4px)`; 
 
   return {
     alignItems: 'center',
