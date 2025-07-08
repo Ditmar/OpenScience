@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import styles from './dropdown-stats.module.scss';
 import type { DropdownStatsProps } from './types/IProps';
+import { useDropdownToggle } from '../../../utils/hooks/useDropdownToggle'
 
 function DropdownStats({
   options,
@@ -15,25 +16,9 @@ function DropdownStats({
   onToggle,
   displayFormat = 'both',
 }: DropdownStatsProps) {
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useDropdownToggle(isOpen, onToggle);
   const selectedOption = options.find((option) => option.value === selectedValue) ?? options[0];
   const calculatedMaxValue = maxValue ?? Math.max(...options.map((option) => option.stat), 1);
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        onToggle();
-      }
-    }
-
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isOpen, onToggle]);
 
   function handleKeyDown(e: React.KeyboardEvent, value: string) {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -47,12 +32,12 @@ function DropdownStats({
     const percentage = Math.round((stat / calculatedMaxValue) * 100);
     switch (displayFormat) {
       case 'percentage':
-        return `${percentage.toString()}%`;
+        return `${percentage}%`;
       case 'value':
         return stat.toString();
       case 'both':
       default:
-        return `${stat.toString()} (${percentage.toString()}%)`;
+        return `${stat} (${percentage}%)`;
     }
   }
 
