@@ -1,5 +1,15 @@
+// src/components/ShareMenu/ShareMenu.tsx
+
 import { useState } from 'react';
-import './ShareMenu.scss';
+
+import {
+  ShareContainer,
+  ShareButton,
+  ShareOptions,
+  ShareOption,
+  ShareIconWrapper,
+} from './ShareMenu.styles';
+
 import MultiFunctionButton from '../../atoms/multi-function-button/MultiFunctionButton';
 import IconButton from '../../atoms/icon-button/IconButton';
 import Whatsapp from '../../../../assets/icons/whatsapp.svg?raw';
@@ -15,40 +25,40 @@ function ShareMenu() {
   };
 
   return (
-    <div className="share-container">
-      <button className="share-button" onClick={toggleShareOptions}>
+    <ShareContainer>
+      <ShareButton onClick={toggleShareOptions}>
         <MultiFunctionButton icon={Share} color="primary">
           share
         </MultiFunctionButton>{' '}
         COMPARTIR
-      </button>
+      </ShareButton>
 
       {isOpen && (
-        <div className="share-options">
-          <div className="share-option">
-            <div className="share-icon-wrapper whatsapp">
+        <ShareOptions>
+          <ShareOption>
+            <ShareIconWrapper className="whatsapp">
               <IconButton icon={Whatsapp} color="primary">
                 whatsapp
               </IconButton>
-            </div>
-          </div>
-          <div className="share-option">
-            <div className="share-icon-wrapper telegram">
+            </ShareIconWrapper>
+          </ShareOption>
+          <ShareOption>
+            <ShareIconWrapper className="telegram">
               <IconButton icon={Telegram} color="primary">
                 telegram
               </IconButton>
-            </div>
-          </div>
-          <div className="share-option">
-            <div className="share-icon-wrapper facebook">
+            </ShareIconWrapper>
+          </ShareOption>
+          <ShareOption>
+            <ShareIconWrapper className="facebook">
               <IconButton icon={Facebook} color="primary">
                 facebook
               </IconButton>
-            </div>
-          </div>
-        </div>
+            </ShareIconWrapper>
+          </ShareOption>
+        </ShareOptions>
       )}
-    </div>
+    </ShareContainer>
   );
 }
 
