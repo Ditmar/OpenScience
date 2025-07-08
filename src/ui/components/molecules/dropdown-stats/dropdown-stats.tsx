@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './dropdown-stats.module.scss';
 import type { DropdownStatsProps } from './types/IProps';
-import { useDropdownToggle } from '../../../utils/hooks/useDropdownToggle'
+import { useDropdownToggle } from '../../../utils/hooks/useDropdownToggle';
 
 function DropdownStats({
   options,
@@ -32,17 +32,17 @@ function DropdownStats({
     const percentage = Math.round((stat / calculatedMaxValue) * 100);
     switch (displayFormat) {
       case 'percentage':
-        return `${percentage}%`;
+        return `${percentage.toString()}%`;
       case 'value':
         return stat.toString();
       case 'both':
       default:
-        return `${stat} (${percentage}%)`;
+        return `${stat.toString()} (${percentage.toString()}%)`;
     }
   }
 
   function calculateWidthPercentage(stat: number): string {
-    return ((stat / calculatedMaxValue) * 100).toString();
+    return `${(stat / calculatedMaxValue) * 100}%`;
   }
 
   return (
@@ -101,7 +101,7 @@ function DropdownStats({
                   <div
                     className={styles['dropdown-stats__progress-bar']}
                     style={{
-                      width: `${calculateWidthPercentage(option.stat)}%`,
+                      width: calculateWidthPercentage(option.stat),
                       backgroundColor: barColor ?? 'var(--ads-primary-main)',
                     }}
                   />

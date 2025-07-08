@@ -17,7 +17,7 @@ export const OLItemRoot = styled(Box, {
     borderRadius: '0',
   }),
   ...(shape === 'rounded' && {
-    borderRadius: (theme.shape.borderRadius as number) + 4,
+    borderRadius: theme.shape.borderRadius + 4,
   }),
   ...(shape === 'circle' && {
     borderRadius: '50%',
