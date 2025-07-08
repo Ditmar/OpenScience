@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { CountryListDropdown } from './CountryList';
 import type { IProps } from './types/IProps';
-import type { ICountry } from 'ui/components/atoms/CountryList/interfaces/Country.interface';
+import type { ICountry } from './interfaces/Country.interface';
 
 const countryList: ICountry[] = [
   { code: 'ar', name: 'Argentina', dialCode: '+54' },
@@ -18,8 +18,15 @@ const countryList: ICountry[] = [
   { code: 'cu', name: 'Cuba', dialCode: '+53' },
   { code: 'de', name: 'Germany', dialCode: '+49' },
   { code: 'dk', name: 'Denmark', dialCode: '+45' },
-  { code: 'pe', name: 'Peru', dialCode: '+51' },
   { code: 'eg', name: 'Egypt', dialCode: '+20' },
+  { code: 'pe', name: 'Peru', dialCode: '+51' },
+];
+
+const countryListMinimum: ICountry[] = [
+  { code: 'ar', name: 'Argentina', dialCode: '+54' },
+  { code: 'at', name: 'Austria', dialCode: '+43' },
+  { code: 'bd', name: 'Bangladesh', dialCode: '+880' },
+  { code: 'be', name: 'Belgium', dialCode: '+32' },
 ];
 
 const commonProps: Partial<IProps> = {
@@ -42,3 +49,16 @@ export const Default: Story = {
     ...commonProps
   },
 };
+
+export const WithFewCountries: Story = {
+  args: {
+    countryList: countryListMinimum,
+  }
+}
+
+export const Error: Story = {
+  args: {
+    ...commonProps,
+    error: true
+  }
+}
