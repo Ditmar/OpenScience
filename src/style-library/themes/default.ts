@@ -82,6 +82,16 @@ export const lightTheme = createTheme({
       borderDefault: tokens.colors.stroke_dark_soft,
       borderCountryList: tokens.colors.stroke_primary_soft,
     },
+    burgerFloatingMenuPalette: {
+      buttonBackground: tokens.colors.text_main,
+      buttonIcon: tokens.colors.white,
+      barBackground: tokens.colors.white,
+      blueStripe: tokens.colors.quintary_main,
+      greenStripe: tokens.colors.text_main,
+      popupBackground: tokens.colors.main,
+      popupShadow: tokens.colors.shadow_md,
+      popupBorderRadius: tokens.colors.border_radius_rounded,
+    },
   },
   customColors: {
     primary: '#235347',
