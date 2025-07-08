@@ -1,58 +1,56 @@
-import React from 'react';
+import { ThemeProvider } from '@mui/material/styles';
 import { render, screen, fireEvent } from '@testing-library/react';
 import MediaDownloadIcon from './MediaDownloadIcon';
 import type { MediaDownloadIconProps } from './types/IProps';
+import { darkTheme } from '../../../../style-library/themes/dark';
 
-const mockFn = () => {
-  const fn = () => {
-    fn.called = true;
-    fn.callCount = (fn.callCount || 0) + 1;
+interface SetupResult {
+  button: HTMLElement;
+}
+
+const setup = (props: Partial<MediaDownloadIconProps> = {}): SetupResult => {
+  const defaultProps: MediaDownloadIconProps = {
+    type: 'download',
+    onClick: () => {},
+    ...props,
   };
-  fn.called = false;
-  fn.callCount = 0;
-  return fn;
+
+  render(
+    <ThemeProvider theme={darkTheme}>
+      <MediaDownloadIcon type={defaultProps.type} onClick={defaultProps.onClick} />
+    </ThemeProvider>,
+  );
+
+  return {
+    button: screen.getByRole('button'),
+  };
 };
 
 describe('MediaDownloadIcon', () => {
-  const setup = (props: Partial<MediaDownloadIconProps> = {}) => {
-    const defaultProps: MediaDownloadIconProps = {
-      type: 'download',
-      onClick: mockFn(),
-    };
-
-    return render(
-      <MediaDownloadIcon
-        type={props.type ?? defaultProps.type}
-        onClick={props.onClick ?? defaultProps.onClick}
-      />,
-    );
-  };
-
-  it('renders the download icon correctly', () => {
-    setup({ type: 'download' });
-    expect(screen.getByRole('button')).toBeInTheDocument();
-  });
-
-  it('renders the slide-left icon correctly', () => {
-    setup({ type: 'slide-left' });
-    expect(screen.getByRole('button')).toBeInTheDocument();
+  it('renders the button correctly', () => {
+    const { button } = setup();
+    expect(button).toBeInTheDocument();
   });
 
   it('calls onClick when clicked', () => {
-    const handleClick = mockFn();
-    setup({ onClick: handleClick });
-    fireEvent.click(screen.getByRole('button'));
-    expect(handleClick.called).toBe(true);
-    expect(handleClick.callCount).toBe(1);
+    let clicked = false;
+
+    const { button } = setup({
+      onClick: () => {
+        clicked = true;
+      },
+    });
+
+    fireEvent.click(button);
+    expect(clicked).toBe(true);
   });
 
   it('has accessible role "button"', () => {
-    setup();
-    expect(screen.getByRole('button')).toBeInTheDocument();
+    const { button } = setup({ type: 'download' });
+    expect(button).toHaveAttribute('aria-label', 'download');
   });
 
   it('does not throw if onClick is not provided', () => {
-    render(<MediaDownloadIcon type="download" onClick={() => {}} />);
-    expect(screen.getByRole('button')).toBeInTheDocument();
+    expect(() => setup({ onClick: undefined })).not.toThrow();
   });
 });

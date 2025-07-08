@@ -1,18 +1,21 @@
+import React from 'react';
 import { IconButton } from './MediaDownloadIcon.style';
 import type { MediaDownloadIconProps } from './types/IProps';
+import { Icon } from '../../../utils/svg-icons/icons';
+import iconSlideLeft from '../../../../assets/icons/left-white-arrow.svg?raw';
+import iconDownload from '../../../../assets/icons/downloads.svg?raw';
 
-import SlideLeftIcon from '../../../../assets/icons/left-white-arrow.svg?url';
-import DownloadIcon from '../../../../assets/icons/downloads.svg?url';
-
-const iconMap: Record<MediaDownloadIconProps['type'], string> = {
-  'slide-left': SlideLeftIcon,
-  download: DownloadIcon,
+const iconMap: Record<'slide-left' | 'download', string> = {
+  'slide-left': iconSlideLeft,
+  download: iconDownload,
 };
 
-function MediaDownloadIcon({ type, onClick }: MediaDownloadIconProps) {
+function MediaDownloadIcon({ type, onClick }: MediaDownloadIconProps): JSX.Element {
+  const iconSrc = iconMap[type];
+
   return (
-    <IconButton onClick={onClick} aria-label={type}>
-      <img src={iconMap[type]} alt="" role="presentation" />
+    <IconButton aria-label={type} onClick={onClick}>
+      <Icon src={iconSrc} />
     </IconButton>
   );
 }

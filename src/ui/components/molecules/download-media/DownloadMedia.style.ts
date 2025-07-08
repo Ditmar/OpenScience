@@ -15,7 +15,7 @@ export const Wrapper = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  backgroundColor: '#00352F',
+  backgroundColor: theme.customColors.primary,
   width: '100%',
   maxWidth: theme.breakpoints.values.md,
   padding: theme.spacing(2, 3.125, 3),

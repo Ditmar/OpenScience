@@ -1,15 +1,19 @@
 import React from 'react';
+import { ThemeProvider } from '@mui/material/styles';
 import { render, screen } from '@testing-library/react';
 import DownloadMedia from './DownloadMedia';
+import { darkTheme } from '../../../../style-library/themes/dark';
 
-const mockFn = () => {
+type MockFn = (() => void) & { called: boolean; callCount: number };
+
+const mockFn = (): MockFn => {
   const fn = () => {
     fn.called = true;
     fn.callCount = (fn.callCount || 0) + 1;
   };
   fn.called = false;
   fn.callCount = 0;
-  return fn;
+  return fn as MockFn;
 };
 
 describe('DownloadMedia', () => {
@@ -18,11 +22,13 @@ describe('DownloadMedia', () => {
     const onDownload = mockFn();
 
     render(
-      <DownloadMedia
-        imageSrc="https://example.com/img.jpg"
-        onSlidePrev={onSlidePrev}
-        onDownload={onDownload}
-      />,
+      <ThemeProvider theme={darkTheme}>
+        <DownloadMedia
+          imageSrc="https://example.com/img.jpg"
+          onSlidePrev={onSlidePrev}
+          onDownload={onDownload}
+        />
+      </ThemeProvider>,
     );
 
     const buttons = screen.getAllByRole('button');
