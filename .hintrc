@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "axe/aria": [
+      "off",
+      {
+        "aria-valid-attr-value": "off"
+      }
+    ]
+  }
+}
