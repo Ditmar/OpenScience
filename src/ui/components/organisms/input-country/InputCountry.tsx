@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
+import { InputSelect } from '../../molecules/input-select/InputSelect';
 import { InputLabel } from '../../molecules/input-label/InputLabel';
 import type { IProps } from './types/IProps';
-import { InputSelect } from 'ui/components/molecules/input-select/InputSelect';
 
 export function InputCountry(props: IProps) {
   const {

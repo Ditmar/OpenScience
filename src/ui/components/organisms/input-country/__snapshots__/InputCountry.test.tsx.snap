@@ -32,7 +32,7 @@ exports[`InputCountry Component > matches snapshot disabled 1`] = `
         class="MuiBox-root css-79elbk"
       >
         <div
-          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-disabled mouse-focus MuiSelect-root css-1rw9qf-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-disabled mouse-focus MuiSelect-root css-1owj41t-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
         >
           <div
             aria-disabled="true"
@@ -45,11 +45,14 @@ exports[`InputCountry Component > matches snapshot disabled 1`] = `
             role="combobox"
           >
             <img
-              alt="Argentina"
-              class="MuiBox-root css-19rsff"
+              alt="Argentina flag"
               src="./images/flags/ar.svg"
+              style="width: 20px; height: 14px; margin-right: 8px;"
             />
             Argentina
+             (
+            +54
+            )
           </div>
           <input
             aria-hidden="true"
@@ -57,7 +60,7 @@ exports[`InputCountry Component > matches snapshot disabled 1`] = `
             class="MuiSelect-nativeInput css-j0riat-MuiSelect-nativeInput"
             disabled=""
             tabindex="-1"
-            value=""
+            value="ar"
           />
           <svg
             aria-hidden="true"
@@ -157,18 +160,21 @@ exports[`InputCountry Component > matches snapshot in empty state 1`] = `
             tabindex="0"
           >
             <img
-              alt="Argentina"
-              class="MuiBox-root css-19rsff"
+              alt="Argentina flag"
               src="./images/flags/ar.svg"
+              style="width: 20px; height: 14px; margin-right: 8px;"
             />
             Argentina
+             (
+            +54
+            )
           </div>
           <input
             aria-hidden="true"
             aria-invalid="false"
             class="MuiSelect-nativeInput css-j0riat-MuiSelect-nativeInput"
             tabindex="-1"
-            value=""
+            value="ar"
           />
           <svg
             aria-hidden="true"
@@ -255,7 +261,7 @@ exports[`InputCountry Component > matches snapshot with error 1`] = `
         class="MuiBox-root css-79elbk"
       >
         <div
-          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary mouse-focus MuiSelect-root css-c8un2q-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary mouse-focus MuiSelect-root css-cky9aa-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
         >
           <div
             aria-expanded="false"
@@ -268,18 +274,21 @@ exports[`InputCountry Component > matches snapshot with error 1`] = `
             tabindex="0"
           >
             <img
-              alt="Argentina"
-              class="MuiBox-root css-19rsff"
+              alt="Argentina flag"
               src="./images/flags/ar.svg"
+              style="width: 20px; height: 14px; margin-right: 8px;"
             />
             Argentina
+             (
+            +54
+            )
           </div>
           <input
             aria-hidden="true"
             aria-invalid="false"
             class="MuiSelect-nativeInput css-j0riat-MuiSelect-nativeInput"
             tabindex="-1"
-            value=""
+            value="ar"
           />
           <svg
             aria-hidden="true"
@@ -324,6 +333,118 @@ exports[`InputCountry Component > matches snapshot with error 1`] = `
           >
             Hint Text
           </p>
+        </div>
+        <div
+          class="MuiBox-root css-0"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InputCountry Component > renders with custom borderRadiusMenu and matches snapshot 1`] = `
+<div>
+  <div
+    class="MuiBox-root css-1x1e0l8"
+  >
+    <div
+      class="MuiBox-root css-0"
+    >
+      <div
+        class="MuiBox-root css-1lekzkb"
+      >
+        <div
+          class="MuiBox-root css-19nzcwv"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-eq936y-MuiTypography-root"
+          >
+            Select Country
+          </p>
+        </div>
+        <div
+          class="MuiBox-root css-0"
+        />
+      </div>
+    </div>
+    <div
+      class="MuiBox-root css-79elbk"
+    >
+      <div
+        class="MuiBox-root css-79elbk"
+      >
+        <div
+          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary mouse-focus MuiSelect-root css-qgf974-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Without label"
+            aria-labelledby="country-select"
+            class="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+            id="country-select"
+            role="combobox"
+            tabindex="0"
+          >
+            <img
+              alt="Argentina flag"
+              src="./images/flags/ar.svg"
+              style="width: 20px; height: 14px; margin-right: 8px;"
+            />
+            Argentina
+             (
+            +54
+            )
+          </div>
+          <input
+            aria-hidden="true"
+            aria-invalid="false"
+            class="MuiSelect-nativeInput css-j0riat-MuiSelect-nativeInput"
+            tabindex="-1"
+            value="ar"
+          />
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-lohd6h-MuiSvgIcon-root-MuiSelect-icon"
+            data-testid="ArrowDropDownIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+          <fieldset
+            aria-hidden="true"
+            class="MuiOutlinedInput-notchedOutline css-1ll44ll-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              class="css-w4cd9x"
+            >
+              <span
+                aria-hidden="true"
+                class="notranslate"
+              >
+                ​
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiBox-root css-0"
+    >
+      <div
+        class="MuiBox-root css-1lekzkb"
+      >
+        <div
+          class="MuiBox-root css-19nzcwv"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-9lmazj-MuiTypography-root"
+          />
         </div>
         <div
           class="MuiBox-root css-0"

@@ -1,13 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import { InputSelectBase } from './InputSelectBase';
-import type { ICountry } from '../country-list/interfaces/Country.interface';
-
-export const options: ICountry[] = [
-  { name: 'Argentina', code: 'ar', dialCode: '+51' },
-  { name: 'Bolivia', code: 'bo', dialCode: '+51' },
-  { name: 'Chile', code: 'cl', dialCode: '+51' },
-  { name: 'Perú', code: 'pe', dialCode: '+51' },
-];
 
 describe('InputSelect Component', () => {
   it('renders disabled state', () => {

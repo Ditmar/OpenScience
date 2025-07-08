@@ -42,7 +42,10 @@ const ultraSoftColorMap = {
   error: theme.colors.feedback.negative[50],
 } as const;
 
-function stateKey<T extends keyof typeof defaultColorMap>(colorVariant: T | undefined, error?: boolean): keyof typeof defaultColorMap {
+function stateKey<T extends keyof typeof defaultColorMap>(
+  colorVariant: T | undefined,
+  error?: boolean,
+): keyof typeof defaultColorMap {
   if (error) return 'error';
   return colorVariant ?? 'primary';
 }
@@ -59,8 +62,8 @@ export const menuPropsSx = (opts: {
   const colorKey = stateKey(opts.colorVariant, opts.error);
 
   return {
-    maxHeight: `${(ITEM_HEIGHT * CANT_ITEMS) + 3.05}rem`,
-    overflowY: "auto",
+    maxHeight: `${(ITEM_HEIGHT * CANT_ITEMS + 3.05).toFixed(2)}rem`,
+    overflowY: 'auto',
     borderWidth: '1px',
     borderStyle: 'solid',
     borderColor: extraSoftColorMap[colorKey],
@@ -85,9 +88,7 @@ export const menuPropsSx = (opts: {
   };
 };
 
-export const paperPropsSx = (opts: {
-  borderRadiusMenu?: 'normal' | 'radius';
-}): SxProps<Theme> => {
+export const paperPropsSx = (opts: { borderRadiusMenu?: 'normal' | 'radius' }): SxProps<Theme> => {
   const borderRadius = borderRadiusMap[opts.borderRadiusMenu ?? 'normal'];
 
   return {

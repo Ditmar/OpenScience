@@ -1,9 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InputLabel } from './InputLabel';
-import type { IProps } from './types/IProps';
-
 import LanguageSharpIcon from '@mui/icons-material/LanguageSharp';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
+import { InputLabel } from './InputLabel';
+import type { IProps } from './types/IProps';
 
 const commonProps: Partial<IProps> = {
   label: 'Input Label',

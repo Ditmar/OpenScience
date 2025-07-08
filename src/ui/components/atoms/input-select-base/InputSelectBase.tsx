@@ -1,19 +1,22 @@
-import { useEffect, useState } from "react";
-import { Select } from "@mui/material";
-import { selectSx } from "./InputSelectBase.styles";
-import type { IProps } from "./types/IProps";
+import { useEffect, useState } from 'react';
+import { Select } from '@mui/material';
+import { selectSx } from './InputSelectBase.styles';
+import type { IProps } from './types/IProps';
 
 export function InputSelectBase(props: IProps) {
-  const { error, disabled, borderRadius, size, children, colorVariant, valueSelect, onChange, ...muiSelectProps } = props;
-  const [country, setCountry] = useState('');
+  const {
+    error,
+    disabled,
+    borderRadius,
+    size,
+    children,
+    colorVariant,
+    valueSelect,
+    onChange,
+    menuProps,
+    ...muiSelectProps
+  } = props;
   const [keyboardFocus, setKeyboardFocus] = useState(false);
-
-  const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement> | (Event & { target: { value: unknown; name: string } })
-  ) => {
-    const value = (event.target as { value: unknown }).value;
-    setCountry(typeof value === 'string' ? value : '');
-  };
 
   useEffect(() => {
     const onKey = () => {
@@ -43,7 +46,7 @@ export function InputSelectBase(props: IProps) {
       disabled={disabled}
       inputProps={{ 'aria-label': 'Without label' }}
       sx={selectStyles}
-      {...muiSelectProps}
+      MenuProps={muiSelectProps.MenuProps}
     >
       {children}
     </Select>

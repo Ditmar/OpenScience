@@ -23,7 +23,7 @@ const countryList: ICountry[] = [
 ];
 
 const commonProps: Partial<IProps> = {
-  countryList: countryList,
+  countryList,
 };
 
 const meta = {
@@ -37,7 +37,7 @@ const meta = {
     size: {
       control: 'radio',
       options: ['small', 'medium', 'large'],
-    }
+    },
   },
   args: {
     ...commonProps,
@@ -57,12 +57,12 @@ export const Error: Story = {
   args: {
     ...commonProps,
     error: true,
-  }
-}
+  },
+};
 
 export const ColorVariant: Story = {
   args: {
     ...commonProps,
     colorVariant: 'tertiary',
-  }
-}
+  },
+};

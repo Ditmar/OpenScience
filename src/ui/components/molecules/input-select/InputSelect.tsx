@@ -1,10 +1,10 @@
-import { Box, type SelectChangeEvent } from "@mui/material";
-import type { IProps } from "./types/IProps";
-import type { ICountry } from "ui/components/atoms/country-list/interfaces/Country.interface";
-import { CountryListDropdown } from "ui/components/atoms/country-list/CountryList";
-import { InputSelectBase } from "ui/components/atoms/input-select-base/InputSelectBase";
-import { menuPropsSx, paperPropsSx } from "./InputSelect.styles";
-import { useState } from "react";
+import { Box } from '@mui/material';
+import React, { useState } from 'react';
+import type { ICountry } from '../../atoms/country-list/interfaces/Country.interface';
+import { CountryListDropdown } from '../../atoms/country-list/CountryList';
+import { InputSelectBase } from '../../atoms/input-select-base/InputSelectBase';
+import { menuPropsSx, paperPropsSx } from './InputSelect.styles';
+import type { IProps } from './types/IProps';
 
 const countryList: ICountry[] = [
   { code: 'ar', name: 'Argentina', dialCode: '+54' },
@@ -27,24 +27,40 @@ const countryList: ICountry[] = [
 
 export function InputSelect(props: IProps) {
   const { error, disabled, borderRadius, borderRadiusMenu, colorVariant, size } = props;
-  const [selectedCountry, setSelectedCountry] = useState("ar");
+  const [selectedCountry, setSelectedCountry] = useState('ar');
 
   const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement> | (Event & { target: { value: unknown; name: string } }),
-    child?: React.ReactNode
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | (Event & { target: { value: unknown; name: string } }),
   ) => {
     setSelectedCountry((event.target as { value: string }).value);
   };
 
-  const inputBaseSize = (size === "small" || size === "medium") ? size : undefined;
-  const borderRadiusMenuValue = (borderRadiusMenu === "normal" || borderRadiusMenu === "radius") ? borderRadiusMenu : undefined;
+  const inputBaseSize = size === 'small' || size === 'medium' ? size : undefined;
+  const borderRadiusMenuValue =
+    borderRadiusMenu === 'normal' || borderRadiusMenu === 'radius' ? borderRadiusMenu : undefined;
 
-  const menuPropsStyles = menuPropsSx({ error, size, borderRadiusMenu: borderRadiusMenuValue, colorVariant });
+  const menuPropsStyles = menuPropsSx({
+    error,
+    size,
+    borderRadiusMenu: borderRadiusMenuValue,
+    colorVariant,
+  });
   const paperPropsStyles = paperPropsSx({ borderRadiusMenu });
 
   return (
     <Box sx={{ position: 'relative' }}>
-      <InputSelectBase colorVariant={colorVariant} onChange={handleChange} valueSelect={selectedCountry} disabled={disabled} error={error} borderRadius={borderRadius} size={inputBaseSize} MenuProps={{ MenuListProps: { sx: menuPropsStyles }, PaperProps: { sx: paperPropsStyles } }}>
+      <InputSelectBase
+        colorVariant={colorVariant}
+        onChange={handleChange}
+        valueSelect={selectedCountry}
+        disabled={disabled}
+        error={error}
+        borderRadius={borderRadius}
+        size={inputBaseSize}
+        MenuProps={{ MenuListProps: { sx: menuPropsStyles }, PaperProps: { sx: paperPropsStyles } }}
+      >
         {CountryListDropdown({
           countryList,
           size,

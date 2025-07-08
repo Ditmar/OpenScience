@@ -1,4 +1,7 @@
 import { render } from '@testing-library/react';
+
+import LanguageSharpIcon from '@mui/icons-material/LanguageSharp';
+import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import { InputLabel } from './InputLabel';
 
 describe('InputLabel Component', () => {
@@ -11,8 +14,8 @@ describe('InputLabel Component', () => {
     const { container } = render(
       <InputLabel
         label="Input Label"
-        leftIcon="LanguageSharpIcon"
-        rightIcon="CancelOutlinedIcon"
+        leftIcon={LanguageSharpIcon}
+        rightIcon={CancelOutlinedIcon}
       />,
     );
     expect(container).toMatchSnapshot();

@@ -7,15 +7,15 @@ const meta = {
   argTypes: {
     menuProps: { control: false },
     children: { control: false },
-  }
+    valueSelect: { control: false },
+  },
 } as Meta<typeof InputSelectBase>;
 
 export default meta;
 
 type Story = StoryObj<typeof InputSelectBase>;
 
-export const Default: Story = {
-};
+export const Default: Story = {};
 
 export const WithError: Story = {
   args: {

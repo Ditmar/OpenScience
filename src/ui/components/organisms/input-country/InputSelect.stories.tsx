@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InputCountry } from './InputCountry';
-import type { IProps } from './types/IProps';
 
 import LanguageSharpIcon from '@mui/icons-material/LanguageSharp';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import InfoOutlineRoundedIcon from '@mui/icons-material/InfoOutlineRounded';
 import type { ICountry } from 'ui/components/atoms/country-list/interfaces/Country.interface';
+import type { IProps } from './types/IProps';
+import { InputCountry } from './InputCountry';
 
 const countryList: ICountry[] = [
   { code: 'ar', name: 'Argentina', dialCode: '+54' },
@@ -55,7 +55,7 @@ const meta = {
     rightBottomIcon: {
       control: false,
     },
-  }
+  },
 } as Meta<typeof InputCountry>;
 
 export default meta;

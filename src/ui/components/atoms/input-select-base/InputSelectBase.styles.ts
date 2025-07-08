@@ -33,17 +33,11 @@ const extraSoftColorMap = {
   disabled: theme.colors.neutral.grayStrongDark[50],
 } as const;
 
-const ultraSoftColorMap = {
-  white: theme.colors.neutral.graySoft[50],
-  black: theme.colors.neutral.graySoft[50],
-  primary: theme.colors.brand.primary[50],
-  secondary: theme.colors.brand.secondary[50],
-  tertiary: theme.colors.brand.tertiary[50],
-  error: theme.colors.feedback.negative[50],
-  disabled: theme.colors.neutral.grayStrongDark[50],
-} as const;
-
-function stateKey<T extends keyof typeof defaultColorMap>(colorVariant: T | undefined, error?: boolean, disabled?: boolean): keyof typeof defaultColorMap {
+function stateKey<T extends keyof typeof defaultColorMap>(
+  colorVariant: T | undefined,
+  error?: boolean,
+  disabled?: boolean,
+): keyof typeof defaultColorMap {
   if (disabled) return 'disabled';
   if (error) return 'error';
   return colorVariant ?? 'primary';

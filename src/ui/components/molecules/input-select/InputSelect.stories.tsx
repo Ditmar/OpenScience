@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import type { IProps } from './types/IProps';
 import type { ICountry } from 'ui/components/atoms/country-list/interfaces/Country.interface';
+import type { IProps } from './types/IProps';
 import { InputSelect } from './InputSelect';
 
 const countryList: ICountry[] = [
@@ -23,7 +23,7 @@ const countryList: ICountry[] = [
 ];
 
 const commonProps: Partial<IProps> = {
-  countryList: countryList,
+  countryList,
 };
 
 const meta = {

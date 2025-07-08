@@ -1,4 +1,4 @@
-import type { ICountry } from "ui/components/atoms/country-list/interfaces/Country.interface";
+import type { ICountry } from 'ui/components/atoms/country-list/interfaces/Country.interface';
 
 export interface IProps {
   countryList: ICountry[];
