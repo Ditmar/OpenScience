@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
-import { InputSelect } from '../../atoms/input-select/InputSelect';
 import { InputLabel } from '../../molecules/input-label/InputLabel';
 import type { IProps } from './types/IProps';
+import { InputSelect } from 'ui/components/molecules/input-select/InputSelect';
 
 export function InputCountry(props: IProps) {
   const {
@@ -10,11 +10,13 @@ export function InputCountry(props: IProps) {
     rightUpperIcon,
     leftBottomIcon,
     rightBottomIcon,
-    options,
+    countryList,
     error,
     helperText,
     disabled,
     borderRadius,
+    borderRadiusMenu,
+    colorVariant,
     size,
   } = props;
 
@@ -32,11 +34,13 @@ export function InputCountry(props: IProps) {
       </Box>
       <Box sx={{ position: 'relative' }}>
         <InputSelect
-          options={options}
+          countryList={countryList}
           borderRadius={borderRadius}
           size={size}
           error={error}
           disabled={disabled}
+          borderRadiusMenu={borderRadiusMenu}
+          colorVariant={colorVariant}
         />
       </Box>
       <Box>

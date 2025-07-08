@@ -1,12 +1,12 @@
 import { render, screen, fireEvent } from '@testing-library/react';
+import type { ICountry } from 'ui/components/atoms/country-list/interfaces/Country.interface';
 import { InputSelect } from './InputSelect';
-import type { Option } from './interfaces/IOption.interface';
 
-export const options: Option[] = [
-  { country: 'Argentina', code: 'ar' },
-  { country: 'Bolivia', code: 'bo' },
-  { country: 'Chile', code: 'cl' },
-  { country: 'Perú', code: 'pe' },
+export const options: ICountry[] = [
+  { name: 'Argentina', code: 'ar', dialCode: '+51' },
+  { name: 'Bolivia', code: 'bo', dialCode: '+51' },
+  { name: 'Chile', code: 'cl', dialCode: '+51' },
+  { name: 'Perú', code: 'pe', dialCode: '+51' },
 ];
 
 describe('InputSelect Component', () => {

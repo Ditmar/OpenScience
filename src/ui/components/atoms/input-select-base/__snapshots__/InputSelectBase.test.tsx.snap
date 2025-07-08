@@ -18,12 +18,12 @@ exports[`InputSelect Component > matches snapshot disabled 1`] = `
         id="country-select"
         role="combobox"
       >
-        <img
-          alt="Argentina"
-          class="MuiBox-root css-19rsff"
-          src="./images/flags/ar.svg"
-        />
-        Argentina
+        <span
+          aria-hidden="true"
+          class="notranslate"
+        >
+          ​
+        </span>
       </div>
       <input
         aria-hidden="true"
@@ -82,12 +82,12 @@ exports[`InputSelect Component > matches snapshot in empty state 1`] = `
         role="combobox"
         tabindex="0"
       >
-        <img
-          alt="Argentina"
-          class="MuiBox-root css-19rsff"
-          src="./images/flags/ar.svg"
-        />
-        Argentina
+        <span
+          aria-hidden="true"
+          class="notranslate"
+        >
+          ​
+        </span>
       </div>
       <input
         aria-hidden="true"
@@ -145,12 +145,12 @@ exports[`InputSelect Component > matches snapshot with error 1`] = `
         role="combobox"
         tabindex="0"
       >
-        <img
-          alt="Argentina"
-          class="MuiBox-root css-19rsff"
-          src="./images/flags/ar.svg"
-        />
-        Argentina
+        <span
+          aria-hidden="true"
+          class="notranslate"
+        >
+          ​
+        </span>
       </div>
       <input
         aria-hidden="true"

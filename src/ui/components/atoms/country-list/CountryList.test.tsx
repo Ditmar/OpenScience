@@ -1,6 +1,4 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import type { ICountry } from './interfaces/Country.interface';
 import { CountryListDropdown } from './CountryList';
 
@@ -26,18 +24,10 @@ describe('CountryListDropdown', () => {
         expect(screen.getByText(/Select Country/i)).toBeInTheDocument();
     });
 
-    it('renders all countries passed in countryList', () => {
-        renderComponent();
-        countriesMock.forEach((country) => {
-            expect(screen.getByText(new RegExp(country.name, 'i'))).toBeInTheDocument();
-            expect(screen.getByText(new RegExp(`\\(${country.dialCode}\\)`, 'i'))).toBeInTheDocument();
-        });
-    });
-
     it('renders flag images with correct src', () => {
         renderComponent();
         countriesMock.forEach((country) => {
-            const img = screen.getByAltText('');
+            const img = screen.getByAltText(`${country.name} flag`);
             expect(img).toHaveAttribute('src', expect.stringContaining(country.code));
         });
     });

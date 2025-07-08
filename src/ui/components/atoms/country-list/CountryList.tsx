@@ -1,23 +1,26 @@
-import { Box, ListSubheader, MenuItem } from '@mui/material';
+import { ListSubheader, MenuItem } from '@mui/material';
 import type { IProps } from './types/IProps';
-import { listSubheaderSx, menuItemCointainerSx, menuItemSx } from './CountryList.styles';
+import { listSubheaderSx, menuItemSx } from './CountryList.styles';
 
 export function CountryListDropdown(props: IProps) {
-  const { countryList, error, colorVariant, size, borderRadius } = props;
+  const { countryList, error, colorVariant, size } = props;
 
   const menuItemStyles = menuItemSx({ error, size, colorVariant });
-  const menuItemContainerStyles = menuItemCointainerSx({ error, size, borderRadius, colorVariant });
-  const listSubheaderStyles = listSubheaderSx({ error, size });
+  const listSubheaderStyles = listSubheaderSx();
 
-  return (
-    <Box sx={menuItemContainerStyles}>
-      <ListSubheader sx={listSubheaderStyles}>Select Country</ListSubheader>
-      {countryList.map((item) => (
-        <MenuItem key={item.code} sx={menuItemStyles}>
-          <img src={`./images/flags/${item.code}.svg`} alt="" />
-          {item.name} ({item.dialCode})
-        </MenuItem>
-      ))}
-    </Box>
-  );
+  return [
+    <ListSubheader sx={listSubheaderStyles} key="subheader">
+      Select Country
+    </ListSubheader>,
+    ...countryList.map((item) => (
+      <MenuItem key={item.code} value={item.code} sx={menuItemStyles}>
+        <img
+          src={`./images/flags/${item.code}.svg`}
+          alt={`${item.name} flag`}
+          style={{ width: '20px', height: '14px', marginRight: '8px' }}
+        />
+        {item.name} ({item.dialCode})
+      </MenuItem>
+    )),
+  ];
 }

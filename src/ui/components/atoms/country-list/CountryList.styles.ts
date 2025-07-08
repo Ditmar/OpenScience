@@ -7,11 +7,6 @@ const fontSizeSelectMap = {
     large: '1.25rem',
 } as const;
 
-const borderRadiusMap = {
-    normal: '0',
-    radius: '0.25rem',
-} as const;
-
 const defaultColorMap = {
     white: theme.colors.neutral.grayStrongDark[500],
     black: theme.colors.neutral.grayStrongDark[500],
@@ -19,15 +14,6 @@ const defaultColorMap = {
     secondary: theme.colors.brand.secondary[500],
     tertiary: theme.colors.brand.tertiary[500],
     error: theme.colors.feedback.negative[500],
-} as const;
-
-const softColorMap = {
-    white: theme.colors.neutral.grayStrongDark[400],
-    black: theme.colors.neutral.grayStrongDark[400],
-    primary: theme.colors.brand.primary[400],
-    secondary: theme.colors.brand.secondary[400],
-    tertiary: theme.colors.brand.tertiary[400],
-    error: theme.colors.feedback.negative[400],
 } as const;
 
 const extraSoftColorMap = {
@@ -55,7 +41,6 @@ function stateKey<T extends keyof typeof defaultColorMap>(colorVariant: T | unde
 
 export const menuItemSx = (opts: {
     error?: boolean;
-    keyboardFocus?: boolean;
     size?: 'small' | 'medium' | 'large';
     colorVariant?: 'primary' | 'secondary' | 'tertiary' | 'white' | 'black';
 }): SxProps<Theme> => {
@@ -66,12 +51,13 @@ export const menuItemSx = (opts: {
         transition: 'all 0.3s',
         display: 'flex',
         gap: '10px',
+        backgroundColor: theme.colors.neutral.white[900],
         fontWeight: '400',
         fontFamily: 'Poppins-Light, sans-serif',
         height: '3.15rem',
         fontSize,
         padding: '10px 24px',
-        '&:focus, &:active': {
+        '&:focus, &:active, &:active:hover': {
             backgroundColor: extraSoftColorMap[colorKey],
         },
         '&:hover': {
@@ -80,52 +66,7 @@ export const menuItemSx = (opts: {
     };
 };
 
-export const menuItemCointainerSx = (opts: {
-    error?: boolean;
-    keyboardFocus?: boolean;
-    size?: 'small' | 'medium' | 'large';
-    borderRadius?: 'normal' | 'radius';
-    colorVariant?: 'primary' | 'secondary' | 'tertiary' | 'white' | 'black';
-}): SxProps<Theme> => {
-    const ITEM_HEIGHT = 3.15;
-    const CANT_ITEMS = 5;
-    const borderRadius = borderRadiusMap[opts.borderRadius ?? 'normal'];
-    const colorKey = stateKey(opts.colorVariant, opts.error);
-
-    return {
-        maxHeight: `${ITEM_HEIGHT * CANT_ITEMS}rem`,
-        overflowY: 'auto',
-        backgroundColor: theme.colors.neutral.white[900],
-        borderWidth: '1px',
-        borderStyle: 'solid',
-        borderColor: extraSoftColorMap[colorKey],
-        color: theme.colors.neutral.grayStrongDark[700],
-        borderRadius,
-        boxShadow: `0px 16px 18px 0px #0000000F`,
-        '&::-webkit-scrollbar': {
-            width: '0.313rem',
-        },
-        '&::-webkit-scrollbar-thumb': {
-            backgroundColor: defaultColorMap[colorKey],
-            borderRadius,
-            transition: 'all 0.4s',
-        },
-        '&::-webkit-scrollbar-thumb:hover': {
-            backgroundColor: softColorMap[colorKey],
-        },
-        '&::-webkit-scrollbar-track': {
-            backgroundColor: ultraSoftColorMap[colorKey],
-            borderTopRightRadius: borderRadius,
-            borderBottomRightRadius: borderRadius,
-        },
-    }
-}
-
-export const listSubheaderSx = (opts: {
-    error?: boolean;
-    keyboardFocus?: boolean;
-    size?: 'small' | 'medium' | 'large';
-}): SxProps<Theme> => {
+export const listSubheaderSx = (): SxProps<Theme> => {
 
     return {
         fontWeight: '500',

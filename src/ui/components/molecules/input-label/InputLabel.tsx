@@ -1,9 +1,4 @@
-import React from 'react';
 import { Box } from '@mui/material';
-
-import LanguageSharpIcon from '@mui/icons-material/LanguageSharp';
-import InfoOutlineRoundedIcon from '@mui/icons-material/InfoOutlineRounded';
-import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 
 import { IconMui } from '../../atoms/icon-mui/IconMui';
 import { InputLabelText } from '../../atoms/input-label-text/InputLabelText';
@@ -26,18 +21,12 @@ export function InputLabel(props: IProps) {
     rightIconDisabled,
   } = props;
 
-  const iconMap: Record<string, React.ElementType> = {
-    LanguageSharpIcon,
-    InfoOutlineRoundedIcon,
-    CancelOutlinedIcon,
-  };
-
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
         {leftIcon ? (
           <IconMui
-            iconName={iconMap[leftIcon]}
+            iconName={leftIcon}
             size={iconSize}
             error={leftIconError}
             disabled={leftIconDisabled}
@@ -54,7 +43,7 @@ export function InputLabel(props: IProps) {
       <Box>
         {rightIcon ? (
           <IconMui
-            iconName={iconMap[rightIcon]}
+            iconName={rightIcon}
             size={iconSize}
             error={rightIconError}
             disabled={rightIconDisabled}

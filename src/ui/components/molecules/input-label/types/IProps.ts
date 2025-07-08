@@ -1,3 +1,5 @@
+import type { ElementType, ReactNode } from "react";
+
 export interface IProps {
   label: string;
   labelError?: boolean;
@@ -7,11 +9,11 @@ export interface IProps {
 
   iconSize?: string;
 
-  leftIcon?: string;
+  leftIcon?: ElementType;
   leftIconError?: boolean;
   leftIconDisabled?: boolean;
 
-  rightIcon?: string;
+  rightIcon?: ElementType;
   rightIconError?: boolean;
   rightIconDisabled?: boolean;
 }

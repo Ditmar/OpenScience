@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { CountryListDropdown } from './CountryList';
-import type { ICountry } from './interfaces/Country.interface';
 import type { IProps } from './types/IProps';
+import type { ICountry } from 'ui/components/atoms/country-list/interfaces/Country.interface';
+import { InputSelect } from './InputSelect';
 
 const countryList: ICountry[] = [
   { code: 'ar', name: 'Argentina', dialCode: '+54' },
@@ -27,25 +27,15 @@ const commonProps: Partial<IProps> = {
 };
 
 const meta = {
-  title: 'ui/components/atoms/country-list',
-  component: CountryListDropdown,
-  argTypes: {
-    colorVariant: {
-      control: 'radio',
-      options: ['primary', 'secondary', 'tertiary', 'white', 'black'],
-    },
-    size: {
-      control: 'radio',
-      options: ['small', 'medium', 'large'],
-    }
-  },
+  title: 'ui/components/molecules/input-select',
+  component: InputSelect,
   args: {
     ...commonProps,
   },
-} as Meta<typeof CountryListDropdown>;
+} as Meta<typeof InputSelect>;
 export default meta;
 
-type Story = StoryObj<typeof CountryListDropdown>;
+type Story = StoryObj<typeof InputSelect>;
 
 export const Default: Story = {
   args: {
@@ -53,16 +43,16 @@ export const Default: Story = {
   },
 };
 
-export const Error: Story = {
+export const WithError: Story = {
   args: {
     ...commonProps,
     error: true,
-  }
-}
+  },
+};
 
-export const ColorVariant: Story = {
+export const Disabled: Story = {
   args: {
     ...commonProps,
-    colorVariant: 'tertiary',
-  }
-}
+    disabled: true,
+  },
+};
