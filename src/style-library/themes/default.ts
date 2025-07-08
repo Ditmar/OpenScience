@@ -82,7 +82,6 @@ export const lightTheme = createTheme({
       borderDefault: tokens.colors.stroke_dark_soft,
       borderCountryList: tokens.colors.stroke_primary_soft,
     },
-    
   },
   customColors: {
     primary: '#235347',
