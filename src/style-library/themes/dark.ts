@@ -29,7 +29,6 @@ export const darkTheme = createTheme({
       stroke_Primary: tokens.colors.stroke_primary,
       text_light: tokens.colors.main,
       stroke_primary_Soft: tokens.colors.stroke_primary_soft,
-      brandBlue: '#0793BF',
     },
   },
   customColors: {

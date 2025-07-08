@@ -125,7 +125,11 @@ declare module '@mui/material/styles' {
     errorPalette: {
       errorPrimary: string;
     };
+    paletteErrorPage?:{
+      brandBlue: string;
+    }
   }
+
 
   interface TypographyVariants {
     textSm: React.CSSProperties;
