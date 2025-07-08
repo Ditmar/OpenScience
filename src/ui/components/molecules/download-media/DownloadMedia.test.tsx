@@ -1,8 +1,6 @@
 import React from 'react';
-import { ThemeProvider } from '@mui/material/styles';
-import { render, screen } from '@testing-library/react';
+import { renderWithTheme, screen } from '@testing/renderWithTheme';
 import DownloadMedia from './DownloadMedia';
-import { darkTheme } from '../../../../style-library/themes/dark';
 
 type MockFn = (() => void) & { called: boolean; callCount: number };
 
@@ -21,14 +19,13 @@ describe('DownloadMedia', () => {
     const onSlidePrev = mockFn();
     const onDownload = mockFn();
 
-    render(
-      <ThemeProvider theme={darkTheme}>
-        <DownloadMedia
-          imageSrc="https://example.com/img.jpg"
-          onSlidePrev={onSlidePrev}
-          onDownload={onDownload}
-        />
-      </ThemeProvider>,
+    renderWithTheme(
+      <DownloadMedia
+        imageSrc="https://example.com/img.jpg"
+        onSlidePrev={onSlidePrev}
+        onDownload={onDownload}
+      />,
+      { mode: 'dark' },
     );
 
     const buttons = screen.getAllByRole('button');

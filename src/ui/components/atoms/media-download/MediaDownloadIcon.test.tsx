@@ -1,8 +1,6 @@
-import { ThemeProvider } from '@mui/material/styles';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { renderWithTheme, screen, fireEvent } from '@testing/renderWithTheme';
 import MediaDownloadIcon from './MediaDownloadIcon';
 import type { MediaDownloadIconProps } from './types/IProps';
-import { darkTheme } from '../../../../style-library/themes/dark';
 
 interface SetupResult {
   button: HTMLElement;
@@ -15,11 +13,9 @@ const setup = (props: Partial<MediaDownloadIconProps> = {}): SetupResult => {
     ...props,
   };
 
-  render(
-    <ThemeProvider theme={darkTheme}>
-      <MediaDownloadIcon type={defaultProps.type} onClick={defaultProps.onClick} />
-    </ThemeProvider>,
-  );
+  renderWithTheme(<MediaDownloadIcon type={defaultProps.type} onClick={defaultProps.onClick} />, {
+    mode: 'dark',
+  });
 
   return {
     button: screen.getByRole('button'),
