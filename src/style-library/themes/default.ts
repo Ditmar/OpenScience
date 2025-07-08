@@ -82,6 +82,7 @@ export const lightTheme = createTheme({
       borderDefault: tokens.colors.stroke_dark_soft,
       borderCountryList: tokens.colors.stroke_primary_soft,
     },
+    
   },
   customColors: {
     primary: '#235347',
@@ -89,6 +90,9 @@ export const lightTheme = createTheme({
     white: tokens.colors.main,
     navbarMain: tokens.colors.quintary_main,
     navbarBorder: tokens.colors.text_main,
+  },
+  paletteErrorPage: {
+    brandBlue: '#0793BF',
   },
   customColorsBadge: {
     gray: '#e0e0e0',

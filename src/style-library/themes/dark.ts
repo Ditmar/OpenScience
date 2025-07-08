@@ -38,6 +38,9 @@ export const darkTheme = createTheme({
     navbarMain: tokens.colors.quintary_main,
     navbarBorder: tokens.colors.text_main,
   },
+  paletteErrorPage: {
+    brandBlue: '#0793BF',
+  },
   typography: {
     fontFamily: '"Lato", "Roboto", "Montserrat", sans-serif',
     fontSize: 16,

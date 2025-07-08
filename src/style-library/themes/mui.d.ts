@@ -121,15 +121,7 @@ declare module '@mui/material/styles' {
       borderDefault?: string;
       borderCountryList?: string;
     };
-
-    errorPalette: {
-      errorPrimary: string;
-    };
-    paletteErrorPage?:{
-      brandBlue: string;
-    }
   }
-
 
   interface TypographyVariants {
     textSm: React.CSSProperties;
