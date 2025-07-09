@@ -1,0 +1,53 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/globals';
+
+.text-field-wrapper {
+  &--small {
+    .text-field-wrapper__input-base {
+      font-size: $ads-paragraph-xs;
+      height: 32px;
+    }
+  }
+
+  &--medium {
+    .text-field-wrapper__input-base {
+      font-size: $ads-paragraph-sm;
+      height: 40px;
+    }
+  }
+
+  &--large {
+    .text-field-wrapper__input-base {
+      font-size: $ads-paragraph-md;
+      height: 48px;
+    }
+  }
+
+  &__outlined-input {
+    border: 1px solid $ads-input-border-color;
+    border-radius: $ads-border-radius-rounded;
+
+    &:hover {
+      border-color: $ads-color-black-400;
+    }
+
+    &--focused {
+      border-color: $ads-color-primary;
+      box-shadow: 0 0 0 2px rgba($ads-color-primary, 0.2);
+    }
+
+    &--error {
+      border-color: $ads-color-negative;
+    }
+
+    &--success {
+      border-color: $ads-color-positive;
+    }
+
+    &--disabled {
+      background-color: $ads-color-background-disabled;
+      border-color: $ads-color-black-100;
+    }
+  }
+}

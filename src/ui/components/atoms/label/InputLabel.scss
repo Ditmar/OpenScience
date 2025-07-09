@@ -1,0 +1,16 @@
+@import '../../../../globals/variables';
+@import '../../../../globals/mixins';
+@import '../../../../globals/globals';
+
+.input-label {
+  color: $ads-icontextstat-color-title;
+  display: block;
+  font-size: $ads-paragraph-xs;
+  font-weight: $ads-icontextstat-weight-title;
+  margin-bottom: 8px;
+
+  &--disabled {
+    color: $ads-input-disabled-color;
+    opacity: $ads-state-disabled-opacity;
+  }
+}

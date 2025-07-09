@@ -44,5 +44,7 @@ export type IconName =
   | 'whatsapp'
   | 'circle-quarters'
   | 'Close-URL'
+  | 'check'
+  | 'errors'
   | 'close_circle'
   | 'link';
