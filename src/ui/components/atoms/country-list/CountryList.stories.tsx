@@ -1,11 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
-import LanguageSharpIcon from '@mui/icons-material/LanguageSharp';
-import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
-import InfoOutlineRoundedIcon from '@mui/icons-material/InfoOutlineRounded';
-import type { ICountry } from 'ui/components/atoms/country-list/interfaces/Country.interface';
+import { CountryListDropdown } from './CountryList';
+import type { ICountry } from './interfaces/Country.interface';
 import type { IProps } from './types/IProps';
-import { InputCountry } from './InputCountry';
 
 const countryList: ICountry[] = [
   { code: 'ar', name: 'Argentina', dialCode: '+54' },
@@ -28,39 +24,28 @@ const countryList: ICountry[] = [
 
 const commonProps: Partial<IProps> = {
   countryList,
-  label: 'Select Country',
-  helperText: 'Hint Text',
-  leftUpperIcon: LanguageSharpIcon,
-  rightUpperIcon: CancelOutlinedIcon,
-  leftBottomIcon: InfoOutlineRoundedIcon,
-  rightBottomIcon: InfoOutlineRoundedIcon,
 };
 
 const meta = {
-  title: 'ui/components/organisms/input-country',
-  component: InputCountry,
+  title: 'ui/components/atoms/country-list',
+  component: CountryListDropdown,
+  argTypes: {
+    colorVariant: {
+      control: 'radio',
+      options: ['primary', 'secondary', 'tertiary', 'white', 'black'],
+    },
+    size: {
+      control: 'radio',
+      options: ['small', 'medium', 'large'],
+    },
+  },
   args: {
     ...commonProps,
   },
-  argTypes: {
-    leftUpperIcon: {
-      control: false,
-    },
-    rightUpperIcon: {
-      control: false,
-    },
-    leftBottomIcon: {
-      control: false,
-    },
-    rightBottomIcon: {
-      control: false,
-    },
-  },
-} as Meta<typeof InputCountry>;
-
+} as Meta<typeof CountryListDropdown>;
 export default meta;
 
-type Story = StoryObj<typeof InputCountry>;
+type Story = StoryObj<typeof CountryListDropdown>;
 
 export const Default: Story = {
   args: {
@@ -74,9 +59,10 @@ export const Error: Story = {
     error: true,
   },
 };
-export const Disabled: Story = {
+
+export const ColorVariant: Story = {
   args: {
     ...commonProps,
-    disabled: true,
+    colorVariant: 'tertiary',
   },
 };

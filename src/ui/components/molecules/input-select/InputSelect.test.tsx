@@ -1,6 +1,11 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import type { ICountry } from 'ui/components/atoms/country-list/interfaces/Country.interface';
-import { InputCountry } from './InputCountry';
+import { InputSelect } from './InputSelect';
+
+interface ICountry {
+  name: string;
+  code: string;
+  dialCode: string;
+}
 
 const countryList: ICountry[] = [
   { code: 'ar', name: 'Argentina', dialCode: '+54' },
@@ -21,39 +26,15 @@ const countryList: ICountry[] = [
   { code: 'pe', name: 'Peru', dialCode: '+51' },
 ];
 
-describe('InputCountry Component', () => {
-  it('renders with label', () => {
-    render(<InputCountry label="Select Country" helperText="hint" countryList={countryList} />);
-    expect(screen.getByText('Select Country')).toBeInTheDocument();
-  });
-
-  it('renders with helperText and error', () => {
-    render(
-      <InputCountry
-        label="Select Country"
-        countryList={countryList}
-        error
-        helperText="Error text"
-      />,
-    );
-    expect(screen.getByText('Error text')).toBeInTheDocument();
-  });
-
+describe('InputSelect Component', () => {
   it('renders disabled state', () => {
-    render(
-      <InputCountry
-        label="Select Country"
-        countryList={countryList}
-        helperText="Hint Text"
-        disabled
-      />,
-    );
+    render(<InputSelect countryList={countryList} disabled />);
     const select = screen.getByRole('combobox');
     expect(select).toHaveAttribute('aria-disabled', 'true');
   });
 
   it('changes value on select', async () => {
-    render(<InputCountry countryList={countryList} />);
+    render(<InputSelect countryList={countryList} />);
 
     const button = screen.getByRole('combobox');
     fireEvent.mouseDown(button);
@@ -76,55 +57,52 @@ describe('InputCountry Component', () => {
   });
 
   it('matches snapshot in empty state', () => {
-    const { container } = render(
-      <InputCountry label="Country" countryList={countryList} helperText="Hint Text" />,
-    );
+    const { container } = render(<InputSelect countryList={countryList} />);
     expect(container).toMatchSnapshot();
   });
 
   it('matches snapshot with error', () => {
-    const { container } = render(
-      <InputCountry label="Country" countryList={countryList} error helperText="Hint Text" />,
-    );
+    const { container } = render(<InputSelect countryList={countryList} error />);
     expect(container).toMatchSnapshot();
   });
 
   it('matches snapshot disabled', () => {
-    const { container } = render(
-      <InputCountry label="Country" countryList={countryList} helperText="Hint Text" disabled />,
-    );
+    const { container } = render(<InputSelect countryList={countryList} disabled />);
     expect(container).toMatchSnapshot();
   });
 
-  it('renders with custom borderRadius', () => {
-    render(<InputCountry label="Select Country" countryList={countryList} borderRadius="circle" />);
+  it('renders with a custom borderRadius', () => {
+    render(<InputSelect countryList={countryList} borderRadius="circle" />);
     const select = screen.getByRole('combobox');
     expect(select).toBeInTheDocument();
   });
 
-  it('renders with custom colorVariant', () => {
-    render(
-      <InputCountry label="Select Country" countryList={countryList} colorVariant="primary" />,
-    );
+  it('renders with a custom colorVariant', () => {
+    render(<InputSelect countryList={countryList} colorVariant="primary" />);
     const select = screen.getByRole('combobox');
     expect(select).toBeInTheDocument();
   });
 
-  it('renders with small size', () => {
-    render(<InputCountry label="Select Country" countryList={countryList} size="small" />);
+  it('renders with a small size', () => {
+    render(<InputSelect countryList={countryList} size="small" />);
     const select = screen.getByRole('combobox');
     expect(select).toBeInTheDocument();
   });
 
-  it('renders with medium size', () => {
-    render(<InputCountry label="Select Country" countryList={countryList} size="medium" />);
+  it('renders with a medium size', () => {
+    render(<InputSelect countryList={countryList} size="medium" />);
     const select = screen.getByRole('combobox');
     expect(select).toBeInTheDocument();
   });
 
-  it('renders with custom borderRadiusMenu and matches snapshot', () => {
+  it('renders with an error state and matches snapshot', () => {
+    const { container } = render(<InputSelect countryList={countryList} error />);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders with a custom borderRadiusMenu and matches snapshot', () => {
     const { container } = render(
-      <InputCountry label="Select Country" countryList={countryList} borderRadiusMenu="radius" />,
+      <InputSelect countryList={countryList} borderRadiusMenu="radius" />,
     );
     expect(container).toMatchSnapshot();
   });

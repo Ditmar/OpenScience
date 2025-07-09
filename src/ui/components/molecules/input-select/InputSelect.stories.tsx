@@ -1,11 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
-import LanguageSharpIcon from '@mui/icons-material/LanguageSharp';
-import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
-import InfoOutlineRoundedIcon from '@mui/icons-material/InfoOutlineRounded';
 import type { ICountry } from 'ui/components/atoms/country-list/interfaces/Country.interface';
 import type { IProps } from './types/IProps';
-import { InputCountry } from './InputCountry';
+import { InputSelect } from './InputSelect';
 
 const countryList: ICountry[] = [
   { code: 'ar', name: 'Argentina', dialCode: '+54' },
@@ -28,39 +24,18 @@ const countryList: ICountry[] = [
 
 const commonProps: Partial<IProps> = {
   countryList,
-  label: 'Select Country',
-  helperText: 'Hint Text',
-  leftUpperIcon: LanguageSharpIcon,
-  rightUpperIcon: CancelOutlinedIcon,
-  leftBottomIcon: InfoOutlineRoundedIcon,
-  rightBottomIcon: InfoOutlineRoundedIcon,
 };
 
 const meta = {
-  title: 'ui/components/organisms/input-country',
-  component: InputCountry,
+  title: 'ui/components/molecules/input-select',
+  component: InputSelect,
   args: {
     ...commonProps,
   },
-  argTypes: {
-    leftUpperIcon: {
-      control: false,
-    },
-    rightUpperIcon: {
-      control: false,
-    },
-    leftBottomIcon: {
-      control: false,
-    },
-    rightBottomIcon: {
-      control: false,
-    },
-  },
-} as Meta<typeof InputCountry>;
-
+} as Meta<typeof InputSelect>;
 export default meta;
 
-type Story = StoryObj<typeof InputCountry>;
+type Story = StoryObj<typeof InputSelect>;
 
 export const Default: Story = {
   args: {
@@ -68,12 +43,13 @@ export const Default: Story = {
   },
 };
 
-export const Error: Story = {
+export const WithError: Story = {
   args: {
     ...commonProps,
     error: true,
   },
 };
+
 export const Disabled: Story = {
   args: {
     ...commonProps,

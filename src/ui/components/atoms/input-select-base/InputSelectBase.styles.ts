@@ -7,44 +7,40 @@ const fontSizeSelectMap = {
   large: '1.25rem',
 } as const;
 
-const borderColorMap = {
-  default: theme.colors.neutral.graySoft[100],
-  error: theme.colors.feedback.negative[500],
-  disabled: theme.colors.neutral.grayStrongDark[50],
-} as const;
-
 const borderRadiusMap = {
   normal: '0',
   semi: '0.5rem',
   circle: '3.125rem',
 } as const;
 
-const borderHoverMap = {
-  default: theme.colors.brand.primary[500],
+const defaultColorMap = {
+  white: theme.colors.neutral.grayStrongDark[500],
+  black: theme.colors.neutral.grayStrongDark[500],
+  primary: theme.colors.brand.primary[500],
+  secondary: theme.colors.brand.secondary[500],
+  tertiary: theme.colors.brand.tertiary[500],
   error: theme.colors.feedback.negative[500],
-  disabled: '',
+  disabled: theme.colors.neutral.grayStrongDark[50],
 } as const;
 
-const borderFocusMap = {
-  default: theme.colors.brand.primary[100],
+const extraSoftColorMap = {
+  white: theme.colors.neutral.graySoft[100],
+  black: theme.colors.neutral.graySoft[100],
+  primary: theme.colors.brand.primary[100],
+  secondary: theme.colors.brand.secondary[100],
+  tertiary: theme.colors.brand.tertiary[100],
   error: theme.colors.feedback.negative[100],
   disabled: theme.colors.neutral.grayStrongDark[50],
 } as const;
 
-const mouseFocusMap = {
-  default: theme.colors.brand.primary[500],
-  error: theme.colors.feedback.negative[500],
-} as const;
-
-const listFocusMap = {
-  default: theme.colors.brand.primary[50],
-  error: theme.colors.feedback.negative[50],
-} as const;
-
-function stateKey(disabled?: boolean, error?: boolean) {
+function stateKey<T extends keyof typeof defaultColorMap>(
+  colorVariant: T | undefined,
+  error?: boolean,
+  disabled?: boolean,
+): keyof typeof defaultColorMap {
   if (disabled) return 'disabled';
   if (error) return 'error';
-  return 'default';
+  return colorVariant ?? 'primary';
 }
 
 export const selectSx = (opts: {
@@ -53,9 +49,9 @@ export const selectSx = (opts: {
   borderRadius?: 'normal' | 'semi' | 'circle';
   keyboardFocus?: boolean;
   size?: 'small' | 'medium' | 'large';
+  colorVariant?: 'primary' | 'secondary' | 'tertiary' | 'white' | 'black';
 }): SxProps<Theme> => {
-  const colorKey = stateKey(opts.disabled, opts.error);
-  const keyMouse = opts.error ? 'error' : 'default';
+  const colorKey = stateKey(opts.colorVariant, opts.error, opts.disabled);
 
   const borderRadius = borderRadiusMap[opts.borderRadius ?? 'normal'];
   const fontSize = fontSizeSelectMap[opts.size ?? 'medium'];
@@ -69,7 +65,7 @@ export const selectSx = (opts: {
     border: '1px solid #e0e6e7',
     '@media(max-width:600px)': { maxWidth: '18rem' },
     '& .MuiOutlinedInput-notchedOutline': {
-      borderColor: borderColorMap[colorKey],
+      borderColor: theme.colors.neutral.graySoft[100],
       borderWidth: '1px',
     },
     '& .MuiInputBase-input': {
@@ -79,14 +75,14 @@ export const selectSx = (opts: {
       p: '0.938rem 1.125rem 0.938rem 0.875rem',
     },
     '&:hover .MuiOutlinedInput-notchedOutline': {
-      borderColor: borderHoverMap[colorKey],
+      borderColor: defaultColorMap[colorKey],
     },
     '&.keyboard-focus .MuiOutlinedInput-notchedOutline': {
-      borderColor: borderFocusMap[colorKey],
+      borderColor: extraSoftColorMap[colorKey],
       borderWidth: colorKey === 'disabled' ? '1px' : '4px',
     },
     '&.mouse-focus.Mui-focused .MuiOutlinedInput-notchedOutline': {
-      borderColor: mouseFocusMap[keyMouse],
+      borderColor: defaultColorMap[colorKey],
       borderWidth: '1px',
     },
     ...(opts.disabled && {
@@ -94,29 +90,5 @@ export const selectSx = (opts: {
       color: theme.colors.neutral.grayStrongDark[50],
       cursor: 'not-allowed',
     }),
-  };
-};
-
-export const selectListSx = (opts: {
-  error?: boolean;
-  keyboardFocus?: boolean;
-  size?: 'small' | 'medium' | 'large';
-}): SxProps<Theme> => {
-  const colorKey = opts.error ? 'error' : 'default';
-
-  const fontSize = fontSizeSelectMap[opts.size ?? 'medium'];
-
-  return {
-    '& .MuiMenuItem-root': {
-      transition: 'all 0.3s',
-      display: 'flex',
-      gap: '10px',
-      fontWeight: 300,
-      fontFamily: 'Poppins-Light, sans-serif',
-      fontSize,
-      '&:focus, &:active, &:hover': {
-        backgroundColor: listFocusMap[colorKey],
-      },
-    },
   };
 };
