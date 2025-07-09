@@ -1,1 +1,0 @@
-function s(f,c,e=void 0){const r={};for(const u in f){const i=f[u];let o="",l=!0;for(let n=0;n<i.length;n+=1){const t=i[n];t&&(o+=(l===!0?"":" ")+c(t),l=!1,e&&e[t]&&(o+=" "+e[t]))}r[u]=o}return r}export{s as c};
