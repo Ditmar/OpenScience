@@ -91,6 +91,7 @@ export const lightTheme = createTheme({
       popupBackground: tokens.colors.main,
       popupShadow: tokens.colors.shadow_md,
       popupBorderRadius: tokens.colors.border_radius_rounded,
+    },
     checkmuipalette: {
       dark: tokens.colors.dark,
       light: tokens.colors.light,
