@@ -92,6 +92,32 @@ export const lightTheme = createTheme({
       popupShadow: tokens.colors.shadow_md,
       popupBorderRadius: tokens.colors.border_radius_rounded,
     },
+    checkmuipalette: {
+      dark: tokens.colors.dark,
+      light: tokens.colors.light,
+      primary: tokens.colors.primary_main,
+      secondary: tokens.colors.secondary_main,
+      positive: tokens.colors.positive,
+      negative: tokens.colors.negative,
+      disabled: tokens.colors.disabled,
+
+      stroke_dark: tokens.colors.stroke_dark,
+      stroke_primary: tokens.colors.stroke_primary,
+      stroke_secondary: tokens.colors.stroke_secondary,
+      stroke_positive: tokens.colors.stroke_positive,
+      stroke_negative: tokens.colors.stroke_negative,
+      stroke_disabled: tokens.colors.stroke_disabled,
+
+      paragraph_dark: tokens.colors.paragraph_color_dark,
+      icon_text: tokens.colors.icontextstat_color_text,
+    },
+    badgeCard: {
+      primary: tokens.colors.primary_main,
+      secondary: tokens.colors.secondary_main,
+      warning: tokens.colors.warning_main,
+      success: tokens.colors.success_main,
+      danger: tokens.colors.danger_main,
+    },
   },
   customColors: {
     primary: '#235347',
