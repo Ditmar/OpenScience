@@ -51,6 +51,17 @@ declare module '@mui/material/styles' {
 
     customBlue: Palette['primary'];
 
+    burgerFloatingMenuPalette: {
+      buttonBackground: string;
+      buttonIcon: string;
+      barBackground: string;
+      blueStripe: string;
+      greenStripe: string;
+      popupBackground: string;
+      popupShadow: string;
+      popupBorderRadius: string;
+    };
+
     phonedropdownPalette: {
       textPrimary: string;
       textSecondary: string;
@@ -111,6 +122,17 @@ declare module '@mui/material/styles' {
     };
 
     customBlue?: PaletteOptions['primary'];
+
+    burgerFloatingMenuPalette?: {
+      buttonBackground?: string;
+      buttonIcon?: string;
+      barBackground?: string;
+      blueStripe?: string;
+      greenStripe?: string;
+      popupBackground?: string;
+      popupShadow?: string;
+      popupBorderRadius?: string;
+    };
 
     phonedropdownPalette?: {
       textPrimary?: string;
