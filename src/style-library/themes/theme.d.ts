@@ -10,6 +10,9 @@ declare module '@mui/material/styles' {
       navbarMain: string;
       navbarBorder: string;
     };
+    paletteErrorPage: {
+      brandBlue: string;
+    };
   }
 
   interface ThemeOptions {
@@ -19,6 +22,9 @@ declare module '@mui/material/styles' {
       white?: string;
       navbarMain?: string;
       navbarBorder?: string;
+    };
+    paletteErrorPage?: {
+      brandBlue?: string;
     };
   }
 }

@@ -90,6 +90,9 @@ export const lightTheme = createTheme({
     navbarMain: tokens.colors.quintary_main,
     navbarBorder: tokens.colors.text_main,
   },
+  paletteErrorPage: {
+    brandBlue: '#0793BF',
+  },
   customColorsBadge: {
     gray: '#e0e0e0',
   },

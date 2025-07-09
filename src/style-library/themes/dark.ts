@@ -25,6 +25,11 @@ export const darkTheme = createTheme({
       primary: tokens.colors.main,
       secondary: tokens.colors.text_input,
     },
+    olitemPalette: {
+      stroke_Primary: tokens.colors.stroke_primary,
+      text_light: tokens.colors.main,
+      stroke_primary_Soft: tokens.colors.stroke_primary_soft,
+    },
   },
   customColors: {
     primary: '#235347',
@@ -32,6 +37,9 @@ export const darkTheme = createTheme({
     white: tokens.colors.main,
     navbarMain: tokens.colors.quintary_main,
     navbarBorder: tokens.colors.text_main,
+  },
+  paletteErrorPage: {
+    brandBlue: '#0793BF',
   },
   typography: {
     fontFamily: '"Lato", "Roboto", "Montserrat", sans-serif',
