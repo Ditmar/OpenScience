@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import './NavbarMenu.scss';
 import HeroBanner from '../../atoms/hero-banner/HeroBanner';
 import type { IProps } from './types/IProps';
 import {
