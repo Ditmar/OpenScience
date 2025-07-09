@@ -5,9 +5,8 @@ import { ThemeProvider } from '@mui/material/styles';
 import { ErrorPage } from './ErrorPage';
 import { lightTheme } from '../../../../style-library/themes/default';
 
-function renderWithTheme(ui: React.ReactElement) {
-  return render(<ThemeProvider theme={lightTheme}>{ui}</ThemeProvider>);
-}
+const renderWithTheme = (ui: React.ReactElement) =>
+  render(<ThemeProvider theme={lightTheme}>{ui}</ThemeProvider>);
 
 describe('ErrorPage Component', () => {
   it('renders error code, title, and message', () => {
