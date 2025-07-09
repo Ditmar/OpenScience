@@ -2,35 +2,35 @@
 @import '../../../../globals/mixins';
 
 .variable-button {
-  background: $ads-background-main;
+  background: transparent;
   border: none;
   height: 3.3rem;
   padding: 0.5rem;
   width: 3rem;
 
   @include respond-to('small') {
-    background: $ads-background-main;
+    background: transparent;
     height: 3.7rem;
     padding: 0.5rem;
     width: 3.3rem;
   }
 
   @include respond-to('medium') {
-    background: $ads-primary-main;
+    background: transparent;
     height: 4.5rem;
     padding: 0.7rem;
     width: 4rem;
   }
 
   @include respond-to('large') {
-    background: $ads-primary-main;
+    background: transparent;
     height: 5.5rem;
     padding: 0.85rem;
     width: 5rem;
   }
 
   @include respond-to('extra-large') {
-    background: $ads-primary-main;
+    background: transparent;
     height: 6rem;
     padding: 1rem;
     width: 5.2rem;
@@ -61,7 +61,7 @@
 }
 
 .button-icon g path {
-  fill: $ads-primary-main;
+  fill: $ads-primary-twenty-five;
 
   @include respond-to('medium') {
     fill: $ads-color-main;

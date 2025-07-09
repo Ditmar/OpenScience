@@ -2,7 +2,7 @@
 @import '../../../../globals/mixins';
 
 .button__share {
-  background: $ads-primary-main;
+  background: transparent;
   border: none;
   height: 2.8rem;
   padding: 0.1rem;
@@ -36,5 +36,5 @@
 }
 
 .button__share:hover {
-  background: $ads-secondary-main;
+  background: $ads-color-feedback-positive-900;
 }
