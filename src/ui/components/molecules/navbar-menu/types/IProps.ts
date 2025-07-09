@@ -1,8 +1,9 @@
 import type { ReactNode } from 'react';
+import type { IconName } from '../../../../utils/vite-svgr/types/IProps';
 
 export interface NavbarItem {
   children: ReactNode;
-  icon: string;
+  icon: IconName;
   onClick?: () => void;
 }
 

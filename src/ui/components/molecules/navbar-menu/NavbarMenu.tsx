@@ -2,6 +2,13 @@ import { useCallback } from 'react';
 import './NavbarMenu.scss';
 import HeroBanner from '../../atoms/hero-banner/HeroBanner';
 import type { IProps } from './types/IProps';
+import {
+  IconCircle,
+  NavbarMenu as NavbarMenuUI,
+  NavbarMenuFooter,
+  NavbarWrapper,
+  OpenMenuButton,
+} from './NavbarMenu.styles';
 
 interface NavbarMenuProps extends IProps {
   isOpen: boolean;
@@ -36,33 +43,32 @@ function NavbarMenu({
       aria-label="Sección del menú de navegación"
     >
       {!isOpen && (
-        <button className="open-menu-button" onClick={onOpen} aria-label="Abrir menú" type="button">
+        <OpenMenuButton onClick={onOpen} aria-label="Abrir menú" type="button">
           Abrir menú
-        </button>
+        </OpenMenuButton>
       )}
 
       {isOpen && (
-        <nav className="navbar-menu" role="navigation" aria-label="Menú de navegación principal">
+        <NavbarMenuUI role="navigation" aria-label="Menú de navegación principal">
           {items.map(({ children, icon, onClick }) => (
-            <button
+            <NavbarWrapper
               key={String(children)}
               onClick={() => {
                 handleClick(onClick);
               }}
-              className="navbar-wrapper"
               aria-label={typeof children === 'string' ? children : undefined}
               type="button"
             >
-              <div className="icon-circle" dangerouslySetInnerHTML={{ __html: icon }} />
+              <IconCircle isCircle iconName={icon} />
               <div className="label-container">
                 <span className="label">{children}</span>
               </div>
-            </button>
+            </NavbarWrapper>
           ))}
 
           {footerItem && (
-            <div className="navbar-menu__footer">
-              <button
+            <NavbarMenuFooter>
+              <NavbarWrapper
                 onClick={handleFooterClick}
                 className="navbar-wrapper navbar-wrapper--logout"
                 aria-label={
@@ -72,17 +78,14 @@ function NavbarMenu({
                 }
                 type="button"
               >
-                <div
-                  className="logout-icon"
-                  dangerouslySetInnerHTML={{ __html: footerItem.icon }}
-                />
+                <IconCircle iconName={footerItem.icon} />
                 {typeof footerItem.children === 'string' && (
                   <span className="visually-hidden">{footerItem.children}</span>
                 )}
-              </button>
-            </div>
+              </NavbarWrapper>
+            </NavbarMenuFooter>
           )}
-        </nav>
+        </NavbarMenuUI>
       )}
     </HeroBanner>
   );

@@ -1,13 +1,28 @@
+import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import type { Shadows, Theme } from '@mui/material/styles';
 import NavbarMenu from './NavbarMenu';
+import type { NavbarItem } from './types/IProps';
 
 const clicks: string[] = [];
 
-const mockItems = [
-  { children: 'ARTÍCULOS', icon: '<svg>articles</svg>', onClick: () => clicks.push('ARTÍCULOS') },
-  { children: 'INICIO', icon: '<svg>start</svg>', onClick: () => clicks.push('INICIO') },
-  { children: 'VOLUMENES', icon: '<svg>volumes</svg>', onClick: () => clicks.push('VOLUMENES') },
+const mockItems: NavbarItem[] = [
+  { children: 'ARTÍCULOS', icon: 'articles', onClick: () => clicks.push('ARTÍCULOS') },
+  { children: 'INICIO', icon: 'start', onClick: () => clicks.push('INICIO') },
+  { children: 'VOLUMENES', icon: 'volumes', onClick: () => clicks.push('VOLUMENES') },
 ];
+
+const theme: Theme = createTheme({
+  shadows: Array(25).fill('none') as Shadows,
+  customColors: {
+    secondary: '#f50057',
+  },
+});
+
+function renderWithTheme(ui: React.ReactElement) {
+  return render(<ThemeProvider theme={theme}>{ui}</ThemeProvider>);
+}
 
 function createMock() {
   const fn = () => {
@@ -38,7 +53,7 @@ describe('NavbarMenu', () => {
   });
 
   test('renderiza los botones con texto e iconos', () => {
-    render(
+    renderWithTheme(
       <NavbarMenu
         items={baseProps.items}
         backgroundImage={baseProps.backgroundImage}
@@ -55,7 +70,7 @@ describe('NavbarMenu', () => {
   });
 
   test('dispara onClick al pulsar botón', () => {
-    render(
+    renderWithTheme(
       <NavbarMenu
         items={baseProps.items}
         backgroundImage={baseProps.backgroundImage}
@@ -72,7 +87,7 @@ describe('NavbarMenu', () => {
   });
 
   test('los botones son accesibles por foco', () => {
-    render(
+    renderWithTheme(
       <NavbarMenu
         items={baseProps.items}
         backgroundImage={baseProps.backgroundImage}
@@ -89,7 +104,7 @@ describe('NavbarMenu', () => {
   });
 
   test('los botones tienen aria-labels accesibles', () => {
-    render(
+    renderWithTheme(
       <NavbarMenu
         items={baseProps.items}
         backgroundImage={baseProps.backgroundImage}
@@ -105,7 +120,7 @@ describe('NavbarMenu', () => {
   });
 
   test('hace click en footer y llama onClose', () => {
-    render(
+    renderWithTheme(
       <NavbarMenu
         items={baseProps.items}
         backgroundImage={baseProps.backgroundImage}
@@ -116,21 +131,19 @@ describe('NavbarMenu', () => {
         onClose={onCloseMock}
         footerItem={{
           children: 'SALIR',
-          icon: '<svg>close-icon</svg>',
+          icon: 'Close-URL',
           onClick: () => clicks.push('SALIR'),
         }}
       />,
     );
-
     const footerButton = screen.getByRole('button', { name: /SALIR/i });
     fireEvent.click(footerButton);
-
     expect(clicks.includes('SALIR')).toBe(true);
     expect(onCloseMock.calls).toBeGreaterThan(0);
   });
 
   test('muestra botón de "Abrir menú" si isOpen es false', () => {
-    render(
+    renderWithTheme(
       <NavbarMenu
         items={baseProps.items}
         backgroundImage={baseProps.backgroundImage}
@@ -145,7 +158,7 @@ describe('NavbarMenu', () => {
   });
 
   test('llama onOpen al hacer click en "Abrir menú"', () => {
-    render(
+    renderWithTheme(
       <NavbarMenu
         items={baseProps.items}
         backgroundImage={baseProps.backgroundImage}

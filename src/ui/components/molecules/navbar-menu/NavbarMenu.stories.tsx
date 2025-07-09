@@ -4,11 +4,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import NavbarMenu from './NavbarMenu';
 import Rectangle17 from '../../atoms/hero-banner/__mock__/imgs/Rectangle17.png';
 
-import ArticlesIcon from '../../../../assets/icons/article.svg?raw';
-import StartIcon from '../../../../assets/icons/start.svg?raw';
-import VolumesIcon from '../../../../assets/icons/volumes.svg?raw';
-import CloseIcon from '../../../../assets/icons/Close-URL.svg?raw';
-
 import type { IProps, NavbarItem } from './types/IProps';
 
 const meta: Meta<typeof NavbarMenu> = {
@@ -86,13 +81,13 @@ function NavbarMenuWithActionWrapper({
 export const Default: Story = {
   args: {
     items: [
-      { children: 'ARTÍCULOS', icon: ArticlesIcon },
-      { children: 'INICIO', icon: StartIcon },
-      { children: 'VOLUMENES', icon: VolumesIcon },
+      { children: 'ARTÍCULOS', icon: 'articles' },
+      { children: 'INICIO', icon: 'start' },
+      { children: 'VOLUMENES', icon: 'volumes' },
     ],
     footerItem: {
       children: 'SALIR',
-      icon: CloseIcon,
+      icon: 'Close-URL',
     },
     backgroundImage: String(Rectangle17),
     alt: 'Fondo navbar',
