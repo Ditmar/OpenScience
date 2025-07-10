@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import UserTextStat from './UserTextStat';
+import InfoIcon from '../../../../assets/icons/Info-Tooltip.svg?react';
+import WarningIcon from '../../../../assets/icons/error.svg?react';
+import ErrorIcon from '../../../../assets/icons/circle-quarters.svg?react';
+import CheckIcon from '../../../../assets/icons/check.svg?react';
 
 const meta: Meta<typeof UserTextStat> = {
   title: 'ui/components/atoms/user-text-stat',
@@ -70,7 +74,7 @@ export const Default: Story = {
     title: 'Total usuarios',
     mainValue: 1278,
     subValue: 'Últimos 7 días',
-    icon: <span>ℹ️</span>,
+    icon: <InfoIcon />,
   },
 };
 
@@ -80,7 +84,7 @@ export const Success: Story = {
     mainValue: 1032,
     subValue: '82% activos',
     variant: 'success',
-    icon: <span>✅</span>,
+    icon: <CheckIcon />,
   },
 };
 
@@ -90,7 +94,7 @@ export const Warning: Story = {
     mainValue: 213,
     subValue: 'Alerta de vencimiento',
     variant: 'warning',
-    icon: <span>⚠️</span>,
+    icon: <WarningIcon />,
   },
 };
 
@@ -100,7 +104,7 @@ export const Error: Story = {
     mainValue: 7,
     subValue: 'Última hora',
     variant: 'error',
-    icon: <span>❌</span>,
+    icon: <ErrorIcon />,
   },
 };
 
@@ -111,17 +115,6 @@ export const WithDescription: Story = {
     subValue: 'Activas este mes',
     description: 'Incluye renovaciones automáticas',
     variant: 'success',
-    icon: <span>✅</span>,
-  },
-};
-
-export const LargeSize: Story = {
-  args: {
-    title: 'Ingresos totales',
-    mainValue: '$34,920',
-    subValue: 'Este trimestre',
-    size: 'large',
-    variant: 'default',
-    icon: <span>ℹ️</span>,
+    icon: <CheckIcon />,
   },
 };

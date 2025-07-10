@@ -17,7 +17,7 @@
   }
 
   &.lavender {
-    background-color: $ads-color-brand-primary-50;
+    background-color: $ads-color-brand-secondary-50;
   }
 
   &.gray {
@@ -60,5 +60,9 @@
       font-size: 0.75rem;
       margin-top: 0.5rem;
     }
+
+    .icon-wrapper {
+    margin-right: 0.5rem;
+}
   }
 }

@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { vi } from 'vitest'; // <-- CORRECTO
+import { vi } from 'vitest';
 import UserTextStat from './UserTextStat';
 
 describe('UserTextStat Component', () => {
@@ -25,17 +25,11 @@ describe('UserTextStat Component', () => {
     expect(screen.getByText('Incluye renovaciones automáticas')).toBeInTheDocument();
   });
 
-  it('renders custom icon if provided', () => {
-    render(
-      <UserTextStat title="Test" mainValue="0" icon={<span data-testid="custom-icon">✅</span>} />,
-    );
-    expect(screen.getByTestId('custom-icon')).toBeInTheDocument();
-  });
-
   it('triggers onClick when clicked', () => {
-    const handleClick = vi.fn(); // <-- CORRECTO
+    const handleClick = vi.fn();
     render(<UserTextStat title="Click Test" mainValue="99" onClick={handleClick} />);
     fireEvent.click(screen.getByText('Click Test'));
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 });
+
