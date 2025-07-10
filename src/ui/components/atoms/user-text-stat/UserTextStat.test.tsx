@@ -32,4 +32,3 @@ describe('UserTextStat Component', () => {
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 });
-
